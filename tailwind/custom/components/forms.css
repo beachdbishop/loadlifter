@@ -1,0 +1,45 @@
+/* Styles for HubSpot Form Embeds */
+
+.hbspt-form {
+	form {
+		@apply grid grid-flow-row auto-rows-max gap-2 md:gap-4;
+	}
+
+	.field > label {
+		@apply font-normal;
+	}
+
+	input:not([type=radio]):not([type=checkbox]):not([type=submit]),
+	select,
+	textarea {
+		@apply w-full bg-brand-gray-faint border-2 rounded-lg border-neutral-200 focus:bg-white focus:border-brand-blue/80;
+	}
+
+	input[type=checkbox] {
+		@apply shrink-0 -mt-0.5 mr-1 md:mr-2 border-2 border-neutral-200 rounded text-brand-blue pointer-events-none focus:outline-none focus:ring focus:ring-brand-blue-pale/80 checked:border-brand-blue;
+	}
+
+	input[type=radio] {
+		@apply shrink-0 -mt-0.5 mr-1 md:mr-2 border-2 border-neutral-200 text-brand-blue pointer-events-none focus:outline-none focus:ring focus:ring-brand-blue-pale/80 checked:border-brand-blue;
+	}
+
+	input[type=submit] {
+		@apply inline-flex items-center justify-center px-5 py-3 bg-brand-blue text-brand-blue-faint rounded-lg hover:bg-brand-blue-dark hover:text-white focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg shadow-neutral-800 hover:shadow-xl active:bg-brand-blue-dark active:shadow-sm;
+	}
+
+	span.hs-form-required {
+		@apply text-brand-red;
+	}
+
+	.hs-error-msg {
+		@apply italic text-brand-red-dark;
+	}
+}
+
+.form-columns-1 {}
+
+.form-columns-2 {
+	@apply md:grid md:grid-cols-2 md:gap-2 lg:gap-8;
+}
+
+/* date fields might be a problem */

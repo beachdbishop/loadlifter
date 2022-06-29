@@ -1,0 +1,46 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `base` layer
+ *
+ * “Add things like base typography styles [or] opinionated global resets.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-base-styles
+ */
+
+/**
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the block
+ * editor.
+*/
+body {
+	@apply bg-white font-body text-neutral-800 print:bg-transparent print:text-neutral-900;
+}
+
+h1, h2, h3, h4, h5 {
+	@apply font-head font-light;
+}
+
+h1 { @apply text-5xl; }
+h2 { @apply text-4xl; }
+h3 { @apply text-3xl; }
+h4 { @apply text-2xl; }
+h5 { @apply text-xl; }
+
+h6 {
+	@apply font-body text-lg uppercase tracking-wide;
+}
+
+dl {
+	@apply m-0 p-0;
+}
+
+dt {
+	@apply font-bold mt-2;
+}
+
+dd {
+	@apply list-item list-square ml-8 pb-2 border-b border-neutral-100;
+}
+
+dd::marker {
+	color: var(--wp--preset--color--brand-red-pale);
+}

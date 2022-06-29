@@ -1,0 +1,192 @@
+/**
+ * Custom styles to immediately follow Tailwind’s `components` layer
+ *
+ * “Add more opinionated, complex classes like buttons, form controls, alerts,
+ * etc; the sort of pre-built components you often see in other frameworks that
+ * you might need to override with utility classes.”
+ *
+ * — from https://tailwindcss.com/docs/plugins#adding-components
+ */
+
+/**
+ * Post title styles
+ *
+ * These will be applied to all headings with an `entry-title` class on the
+ * frontend and to the post heading in the block editor.
+ *
+ * The supplied styles are meant to match the default `h1` classes from
+ * Tailwind Typography.
+ *
+ * The `$post-title-selector` variable is replaced by PostCSS. Please see the
+ * `postcss.config.js` file for details.
+ */
+$post-title-selector {
+	@apply mb-6 md:mb-8 text-4xl text-neutral-900 break-words lg:text-5xl;
+}
+
+/**
+ * Post content styles (via Tailwind Typography)
+ *
+ * These will be applied to all content blocks with an `entry-content` class on
+ * the frontend and within the block editor.
+ *
+ * The `$post-content-selector` variable is replaced by PostCSS. Please see the
+ * `postcss.config.js` file for details.
+ *
+ * For details on how to customize Tailwind Typography via its modifier
+ * classes, please see:
+ *
+ * https://tailwindcss.com/docs/typography-plugin
+ */
+$post-content-selector {
+	@apply prose prose-neutral prose-headings:font-normal prose-th:border-b-2 prose-a:text-brand-blue prose-a:decoration-dotted prose-a:decoration-cyan-300/50 hover:prose-a:text-brand-blue-dark hover:prose-a:decoration-solid max-w-none lg:prose-xl;
+}
+
+
+/* Content width from the `theme.json` file */
+/* .entry-content > * { @apply max-w-content; } */
+
+/* Wide width from the `theme.json` file */
+.entry-content > .alignwide {
+	@apply max-w-wide;
+}
+
+/* Full width */
+.entry-content > .alignfull {
+	@apply max-w-none;
+}
+
+.wp-block-cover__inner-container {
+	@apply container;
+}
+
+
+
+
+.single-post .entry-content > p:first-of-type {
+	@apply text-xl pb-4 border-b border-neutral-200 lg:text-2xl;
+}
+
+
+.entry-content .aligncenter {
+	@apply mx-auto;
+}
+.entry-content .alignleft {
+	@apply float-left mr-4 mb-4 lg:mr-8 lg:mb-8;
+}
+.entry-content .alignright {
+	@apply float-right ml-4 mb-4 lg:ml-8 lg:mb-8;
+}
+
+
+
+
+.entry-content a.wp-block-button__link {
+	@apply text-white no-underline;
+}
+
+aside .timestamp {
+	@apply block my-4 py-4 w-full border-t border-b border-neutral-200;
+}
+.date-updated::before {
+	content: "(Updated: ";
+}
+.date-updated::after {
+	content: ")";
+}
+
+
+.list--tags {
+	@apply leading-relaxed;
+}
+.list--tags a {
+	@apply text-neutral-600 bg-neutral-100 papercorners-6 px-2 py-1 text-[12px] hover:bg-brand-blue-pale hover:text-brand-blue-dark;
+}
+
+.social-links a {
+	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;
+}
+.footer-social .social-links a {
+	@apply bg-transparent text-neutral-400 hover:bg-neutral-300 hover:text-brand-blue;
+}
+
+.is-style-fancy-quote {
+	@apply text-center border border-neutral-100 rounded-lg shadow-xl;
+}
+.is-style-fancy-quote p { @apply mt-2 mb-4; }
+.is-style-fancy-quote cite { @apply text-sm; }
+
+.image__featured--outer {
+	/* background-color: rgb(189,175,177); */
+	background-image: linear-gradient(0deg, hsla(218, 11%, 65%, 0) 40%, hsla(218, 11%, 65%, 1) 95%);
+}
+
+
+.breadcrumbs {
+	font-size: 1rem;
+}
+/* via: https://mtekk.us/archives/guides/trimming-breadcrumb-title-lengths-with-css/ */
+.breadcrumbs > span:last-child span {
+	font-weight: bold;
+}
+
+
+@media (min-width: 768px) {
+	.peepgrid {
+		grid-template-rows: 500px auto;
+	}
+}
+
+
+
+.icon-flexgrid--w-label {
+	/* @apply list-none grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4; */
+	@apply list-none flex flex-wrap gap-y-6 place-content-center;
+}
+.icon-flexgrid--w-label li {
+	@apply w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5;
+}
+
+
+.dps-inline > *:not(:last-child)::after {
+	content: ", ";
+}
+.dps-inline > *:last-child::before {
+	content: "and ";
+}
+
+
+
+
+
+/* Pagination */
+ul.page-numbers {
+	@apply text-brand-blue justify-center list-none font-head my-4 md:my-8 lg:my-16 mx-auto max-w-content flex flex-wrap gap-4;
+}
+a.page-numbers {
+	@apply text-brand-blue hover:text-brand-blue-dark;
+}
+span.current {
+	@apply opacity-50;
+}
+
+
+/* Separators */
+[class*='is-style-sep-'] {
+	@apply w-full h-[3px] border-0 my-4 md:my-6 lg:my-8;
+	background-image: linear-gradient(to bottom, var(--start) 33%, transparent 33%, transparent 66%, var(--end) 66%, var(--end) 100%);
+}
+.is-style-sep-blue {
+	--start: #00668e;
+	--end: #67e8f9;
+}
+
+.is-style-sep-red {
+	--start: #ce182d;
+	--end: #f87171;
+}
+
+.is-style-sep-gray {
+	--start: #262626;
+	--end: #525252;
+}

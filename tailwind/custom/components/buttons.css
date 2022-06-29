@@ -1,0 +1,18 @@
+/*   B u t t o n s   */
+
+.wp-block-button__link {
+	@apply inline-flex items-center justify-center px-5 py-3 focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg shadow-neutral-800 hover:shadow-xl;
+}
+.wp-block-button__link:not(.has-background) {
+	@apply hover:bg-brand-blue-dark hover:text-white;
+}
+.is-style-papercorners > .wp-block-button__link {
+	@apply papercorners-16;
+}
+.is-style-outline > .wp-block-button__link:not(.has-background) {
+	@apply text-current bg-transparent border-2 border-current border-solid hover:text-brand-blue hover:border-brand-blue hover:shadow-none;
+}
+
+
+/* on dark bg color? */
+

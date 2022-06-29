@@ -1,0 +1,90 @@
+/* Lists */
+
+.is-style-list-none,
+.prose .is-style-list-none {
+	@apply list-none pl-0;
+
+	li {
+		@apply pl-0;
+	}
+}
+
+.is-style-list-square,
+.prose .is-style-list-square {
+	@apply list-square;
+}
+
+.is-style-list-checked {
+	@apply list-none;
+}
+.is-style-list-checked li {
+	list-style-type: none !important;
+	padding-left: 10px;
+	position: relative;
+}
+.is-style-list-checked li::before {
+	/* background-color: currentColor; */
+	/* background-size: cover; */
+	content: "";
+	display: inline-block;
+	height: 20px;
+	left: -20px;
+}
+
+.is-style-circle,
+.is-style-circle-red,
+.is-style-circle-blue {
+	@apply my-4 lg:my-8 w-full flex flex-wrap gap-2 justify-center md:gap-8 lg:gap-14;
+}
+.is-style-circle > *,
+.is-style-circle-red > *,
+.is-style-circle-blue > * {
+	@apply w-[128px] aspect-square rounded-full text-white/75 text-lg font-body font-bold flex justify-center items-center text-center;
+}
+.is-style-circle a,
+.is-style-circle-red a,
+.is-style-circle-blue a {
+	@apply text-white/75 hover:text-white;
+}
+
+.is-style-circle li {
+	@apply bg-neutral-600;
+}
+.is-style-circle h5 {
+	@apply text-neutral-600;
+}
+.is-style-circle-red li {
+	@apply bg-brand-red;
+}
+.is-style-circle-red h5 {
+	@apply text-brand-red;
+}
+.is-style-circle-blue li {
+	@apply bg-brand-blue;
+}
+.is-style-circle-blue h5 {
+	@apply text-brand-blue;
+}
+/* Split Ball Lists
+*/
+.split-circle,
+.is-style-split-circle,
+.is-style-split-circle-red,
+.is-style-split-circle-blue {
+	@apply my-4 lg:my-8 w-full flex flex-wrap gap-2 justify-center lg:gap-4;
+}
+.split-circle > *,
+.is-style-split-circle > *,
+.is-style-split-circle-red > *,
+.is-style-split-circle-blue > * {
+	@apply w-[200px] aspect-square rounded-full text-neutral-200 hover:text-white text-xl font-body font-bold flex justify-center items-center text-center;
+}
+.is-style-split-circle > li {
+	background: var(--wp--preset--gradient--gray-split) !important;
+}
+.is-style-split-circle-red > li {
+	background: var(--wp--preset--gradient--red-split) !important;
+}
+.is-style-split-circle-blue > li {
+	background: var(--wp--preset--gradient--blue-split) !important;
+}
