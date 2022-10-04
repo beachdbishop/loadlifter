@@ -1,0 +1,44 @@
+{
+  "name": "loadlifter/ad",
+  "title": "Ad",
+  "description": "Block for displaying a cross-site ad/promo.",
+  "apiVersion": 2,
+  "style": "block-ad",
+  "script": "",
+  "category": "text",
+  "icon": "embed-photo",
+  "keywords": ["ad", "promo", "banner"],
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "brand-red", "label": "Brand Red" },
+    { "name": "brand-blue", "label": "Brand Blue" },
+    { "name": "brand-gray", "label": "Brand Gray" }
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+        "text": false,
+        "background": false,
+        "link": false
+    },
+    "alignText": false,
+    "spacing": false,
+    "fullHeight": false
+  },
+  "attributes": {
+  },
+  "example": {
+    "attributes": {
+      "data": {
+        "ll-ad-text": "This is the ad lead.",
+        "ll-ad-button-text": "Details"
+      }
+    }
+  },
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "render.php"
+  }
+}

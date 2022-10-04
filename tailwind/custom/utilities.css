@@ -7,24 +7,64 @@
  * https://tailwindcss.com/docs/plugins#adding-utilities
  */
 
-
 /* via: https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */
-.full-bleed {
+div:not(.block-editor-block-list__layout) .full-bleed {
 	width: 100vw;
-	margin-left: calc(50% - 50vw);
+	/* margin-left: calc(50% - 50vw); */
+	margin-left: 50%;
+	/* transform: translate3d(-50%, 0, 0); */
+	transform: translateX(-50%);
+
+	> div {
+		@apply md:container md:mx-auto;
+	}
 }
 
-.papercorners-4 { border-radius: 4px 0 4px; }
-.papercorners-6 { border-radius: 6px 0 6px; }
-.papercorners-8 { border-radius: 8px 0 8px; }
-.papercorners-12 { border-radius: 12px 0 12px; }
-.papercorners-16 { border-radius: 16px 0 16px; }
-.papercorners-24 { border-radius: 24px 0 24px; }
-.papercorners-36 { border-radius: 36px 0 36px; }
-.papercorners-48 { border-radius: 48px 0 48px; }
-.papercorners-60 { border-radius: 60px 0 60px; }
-.papercorners-72 { border-radius: 72px 0 72px; }
-.papercorners-84 { border-radius: 84px 0 84px; }
+.block-editor-block-list__layout .full-bleed {
+	width: 100%;
+	margin-left: 0;
+	transform: none;
+}
+
+.papercorners-4 {
+	@apply rounded-tr rounded-bl;
+	/* border-radius: 4px 0 4px; */
+}
+.papercorners-6 {
+	@apply rounded-tr-md rounded-bl-md;
+	/* border-radius: 6px 0 6px; */
+}
+.papercorners-8 {
+	@apply rounded-tr-lg rounded-bl-lg;
+	/* border-radius: 8px 0 8px; */
+}
+.papercorners-12 {
+	border-radius: 12px 0 12px;
+}
+.papercorners-16 {
+	border-radius: 16px 0 16px;
+}
+.papercorners-24 {
+	border-radius: 24px 0 24px;
+}
+.papercorners-36 {
+	border-radius: 36px 0 36px;
+}
+.papercorners-48 {
+	border-radius: 48px 0 48px;
+}
+.papercorners-60 {
+	border-radius: 60px 0 60px;
+}
+.papercorners-72 {
+	border-radius: 72px 0 72px;
+}
+.papercorners-84 {
+	border-radius: 84px 0 84px;
+}
+.papercorners-144 {
+	border-radius: 144px 0 144px;
+}
 
 .single-post .empty-feat-img {
 	@apply hidden;
@@ -34,18 +74,17 @@
 	@apply font-bold;
 }
 
-
 .list-square {
 	list-style-type: square;
 }
 
 .list-checked li::before {
-	content: '\f058';
+	content: "\f058";
 }
 
 @supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {
 	.mask-logo {
-		mask-image: url('/wp-content/themes/loadlifter/theme/img/mask__bio.svg');
+		mask-image: url("/wp-content/themes/loadlifter/theme/img/mask__bio.svg");
 		mask-position: center;
 		mask-repeat: no-repeat;
 		mask-size: 320px;

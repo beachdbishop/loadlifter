@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="front-page | ">
+	<main id="primary" class="front-page | bg-white">
 
 		<?php
 		while ( have_posts() ) :

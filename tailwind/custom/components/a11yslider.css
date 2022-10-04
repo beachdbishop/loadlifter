@@ -1,0 +1,68 @@
+.a11y-slider-container {
+	@apply my-4 max-w-3xl md:mx-auto;
+}
+.a11y-slider-container > button {
+	@apply rounded-full border border-solid bg-transparent py-2 px-3 text-brand-gray-dark;
+}
+.a11y-slider-container > button:hover {
+	@apply border-brand-gray bg-brand-gray text-white;
+}
+
+.on-darkbg .a11y-slider-container > button {
+	@apply border-white bg-transparent text-white;
+}
+.on-darkbg .a11y-slider-container > button:hover {
+	@apply border-white bg-white text-brand-gray-dark;
+}
+
+.a11y-slider-next {
+	@apply float-right;
+}
+
+[data-autoplaying] {
+	@apply ml-4 whitespace-normal;
+}
+[data-autoplaying]::after {
+	@apply static transform-none bg-none text-xs opacity-100;
+}
+[data-autoplaying][data-autoplaying="true"]::after {
+	content: " (Playing)";
+}
+[data-autoplaying][data-autoplaying="false"]::after {
+	content: " (Paused)";
+}
+
+.a11y-slider-dots {
+	@apply mb-16 flex list-none items-center justify-center p-0;
+}
+.a11y-slider-dots li {
+	@apply mx-1 my-2 block h-4 w-4 p-0;
+}
+.a11y-slider-dots button {
+	@apply block h-full w-full rounded-full border border-solid border-brand-gray bg-transparent -indent-[9999px] text-[0px] text-current;
+}
+.a11y-slider-dots li button.active,
+.a11y-slider-dots li button:focus,
+.a11y-slider-dots li button:hover {
+	@apply bg-brand-gray;
+}
+
+.on-darkbg .a11y-slider-dots button {
+	@apply border-white bg-transparent;
+}
+.on-darkbg .a11y-slider-dots li button.active,
+.on-darkbg .a11y-slider-dots li button:focus,
+.on-darkbg .a11y-slider-dots li button:hover {
+	@apply bg-white;
+}
+
+.slider {
+	@apply my-4;
+}
+
+.slider-quotes > * {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+.slider-quotes .a11y-slider-active {
+	@apply bg-white;
+}

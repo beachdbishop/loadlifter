@@ -5,6 +5,26 @@
 
 add_action( 'init', function() {
 
+	register_block_style( 'core/paragraph', [
+		'name'			=> 'note-info',
+		'label'			=> __( 'Info Note', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/paragraph', [
+		'name'			=> 'note-success',
+		'label'			=> __( 'Success Note', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/paragraph', [
+		'name'			=> 'note-warning',
+		'label'			=> __( 'Warning Note', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/paragraph', [
+		'name'			=> 'note-error',
+		'label'			=> __( 'Error Note', 'loadlifter' ),
+	] );
+
 	register_block_style( 'core/button', [
 		'name' 			=> 'papercorners',
 		'label' 		=> __( 'Papercorners', 'loadlifter' ),
@@ -34,6 +54,26 @@ add_action( 'init', function() {
 	register_block_style( 'core/list', [
 		'name'	=> 'list-square',
 		'label'	=> __( 'Square bullets', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/list', [
+		'name' => 'list-divide-light',
+		'label' => __( 'Light Border Between Items' ),
+	] );
+
+	register_block_style( 'core/list', [
+		'name' => 'list-divide-gray',
+		'label' => __( 'Gray Border Between Items' ),
+	] );
+
+	register_block_style( 'core/list', [
+		'name' => 'list-divide-red',
+		'label' => __( 'Red Border Between Items' ),
+	] );
+
+	register_block_style( 'core/list', [
+		'name' => 'list-divide-blue',
+		'label' => __( 'Blue Border Between Items' ),
 	] );
 
 	register_block_style( 'core/list', [
@@ -69,6 +109,31 @@ add_action( 'init', function() {
 	register_block_style( 'core/quote', [
 		'name'	=> 'fancy-quote',
 		'label'	=> __( 'Fancy Quote', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/spacer', [
+		'name'	=> 'xs',
+		'label'	=> __( 'XS', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/spacer', [
+		'name'	=> 'sm',
+		'label'	=> __( 'S', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/spacer', [
+		'name'	=> 'md',
+		'label'	=> __( 'M', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/spacer', [
+		'name'	=> 'lg',
+		'label'	=> __( 'L', 'loadlifter' ),
+	] );
+
+	register_block_style( 'core/spacer', [
+		'name'	=> 'xl',
+		'label'	=> __( 'XL', 'loadlifter' ),
 	] );
 
 });

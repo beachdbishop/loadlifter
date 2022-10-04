@@ -1,5 +1,14 @@
 /* Lists */
 
+ol.is-style-default {
+	list-style: decimal;
+	/* list-style-position: inside; */
+}
+ul.is-style-default {
+	list-style: disc;
+	/* list-style-position: inside; */
+}
+
 .is-style-list-none,
 .prose .is-style-list-none {
 	@apply list-none pl-0;
@@ -12,6 +21,33 @@
 .is-style-list-square,
 .prose .is-style-list-square {
 	@apply list-square;
+}
+
+/* inspiration: https://codepen.io/joshwcomeau/pen/VwxwYbG */
+[class*="is-style-list-divide-"],
+.prose [class*="is-style-list-divide-"] {
+	@apply list-none p-0;
+
+	li {
+		@apply p-2;
+
+		&:not(:last-of-type) {
+			@apply border-b-4 border-dotted;
+		}
+	}
+}
+
+.is-style-list-divide-light li:not(:last-of-type) {
+	@apply border-neutral-400;
+}
+.is-style-list-divide-gray li:not(:last-of-type) {
+	@apply border-brand-gray;
+}
+.is-style-list-divide-red li:not(:last-of-type) {
+	@apply border-brand-red-pale;
+}
+.is-style-list-divide-blue li:not(:last-of-type) {
+	@apply border-brand-blue;
 }
 
 .is-style-list-checked {
@@ -34,17 +70,17 @@
 .is-style-circle,
 .is-style-circle-red,
 .is-style-circle-blue {
-	@apply my-4 lg:my-8 w-full flex flex-wrap gap-2 justify-center md:gap-8 lg:gap-14;
+	@apply my-4 flex w-full flex-wrap justify-center gap-2 md:gap-8 lg:my-8 lg:gap-14;
 }
 .is-style-circle > *,
 .is-style-circle-red > *,
 .is-style-circle-blue > * {
-	@apply w-[128px] aspect-square rounded-full text-white/75 text-lg font-body font-bold flex justify-center items-center text-center;
+	@apply flex aspect-square w-[128px] items-center justify-center rounded-full text-center font-body text-lg font-bold text-white/80 leading-snug;
 }
 .is-style-circle a,
 .is-style-circle-red a,
 .is-style-circle-blue a {
-	@apply text-white/75 hover:text-white;
+	@apply text-white/80 hover:text-white;
 }
 
 .is-style-circle li {
@@ -71,13 +107,19 @@
 .is-style-split-circle,
 .is-style-split-circle-red,
 .is-style-split-circle-blue {
-	@apply my-4 lg:my-8 w-full flex flex-wrap gap-2 justify-center lg:gap-4;
+	@apply my-4 flex w-full flex-wrap justify-center gap-2 lg:my-8 lg:gap-4;
 }
 .split-circle > *,
 .is-style-split-circle > *,
 .is-style-split-circle-red > *,
 .is-style-split-circle-blue > * {
-	@apply w-[200px] aspect-square rounded-full text-neutral-200 hover:text-white text-xl font-body font-bold flex justify-center items-center text-center;
+	@apply flex aspect-square w-[200px] items-center justify-center rounded-full text-center font-body text-xl font-bold text-neutral-200 leading-snug;
+}
+.split-circle a,
+.is-style-split-circle a,
+.is-style-split-circle-red a,
+.is-style-split-circle-blue a {
+	@apply text-neutral-200 underline decoration-neutral-100/60 decoration-dotted decoration-1 hover:text-white hover:decoration-white hover:decoration-solid;
 }
 .is-style-split-circle > li {
 	background: var(--wp--preset--gradient--gray-split) !important;
@@ -87,4 +129,34 @@
 }
 .is-style-split-circle-blue > li {
 	background: var(--wp--preset--gradient--blue-split) !important;
+}
+
+
+
+
+
+/* Timeline pattern */
+.list-timeline {
+	@apply ml-4 list-none border-l-2;
+}
+.list-timeline-brand-red {
+	@apply border-brand-red;
+	.fa-stack {
+		@apply text-brand-red;
+	}
+}
+.list-timeline-brand-blue {
+	@apply border-brand-blue;
+	.fa-stack {
+		@apply text-brand-blue;
+	}
+}
+.list-timeline-brand-gray {
+	@apply border-brand-gray;
+	.fa-stack {
+		@apply text-brand-gray;
+	}
+}
+.list-timeline-node {
+	margin-left: -1.25em;
 }

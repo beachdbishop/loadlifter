@@ -107,6 +107,22 @@ if ( ! function_exists( 'll_setup' ) ) :
 		remove_theme_support( 'block-templates' );
 
 		add_theme_support( 'disable-custom-font-sizes' );
+
+		add_post_type_support( 'page', 'excerpt' );
+
+		remove_action('wp_head', 'rsd_link');
+		remove_action('wp_head', 'wp_generator');
+		remove_action('wp_head', 'index_rel_link');
+		remove_action('wp_head', 'wlwmanifest_link');
+		remove_action('wp_head', 'start_post_rel_link', 10, 0);
+		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
+		remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+		remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7);
+		remove_action( 'wp_print_styles', 'print_emoji_styles');
+		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'll_setup' );
@@ -184,24 +200,62 @@ add_action( 'widgets_init', 'll_widgets_init' );
 function ll_scripts() {
 	global $version_string;
 
-	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), array(), $version_string );
+	// wp_register_style( 'a11y-slider-base', get_template_directory_uri() . '/a11y-slider.css', [], $version_string );
+	wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
+	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], $version_string );
+
 	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
-	wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', array( 'wp-blocks' ), $version_string, true );
+	wp_enqueue_script( 'vanilla-tilt', get_template_directory_uri() . '/js/vanilla-tilt.min.js', [], $version_string, true );
+	wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
+	// wp_enqueue_script( 'detutils', get_template_directory_uri() . '/js/details-utils.js', [], '', true );
+	// wp_register_script( 'a11y-slider', get_template_directory_uri() . '/js/a11y-slider.js', [], $version_string, false );
+	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
 
 
-	// if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-	// 	wp_enqueue_script( 'comment-reply' );
-	// }
 }
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
 
 function ll_guten_scripts() {
 	global $version_string;
 
-	wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', array( 'wp-blocks' ), $version_string, true );
+	wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
 
 }
 add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
+
+
+/**
+ * Add Checka11y stylesheet on dev
+ */
+function ll_checka11y_style() {
+	wp_enqueue_style( 'checka11y', 'https://cdn.jsdelivr.net/npm/checka11y-css@2.3.0/checka11y.css', array(), '' );
+}
+
+switch( wp_get_environment_type() ) {
+	case 'local':
+		// add_action( 'wp_enqueue_scripts', 'll_checka11y_style' );
+		break;
+
+	default:
+		/**
+		 * Hide Jetpack upsell ads
+		 */
+		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
+		break;
+}
+
+
+/**
+ * Enqueue CSS and JS for A11y Slider when shortcode is present
+ */
+function ll_enq_a11y_slider_assets() {
+	global $post;
+	if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'a11yslider' ) ) {
+		wp_enqueue_style( 'a11y-slider-base' );
+		wp_enqueue_script( 'a11y-slider' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
 
 /**
  * Add the block editor class to TinyMCE.
@@ -217,28 +271,32 @@ function ll_tinymce_add_class( $settings ) {
 }
 add_filter( 'tiny_mce_before_init', 'll_tinymce_add_class' );
 
+
+/**
+ * ACF Pro settings
+ */
+require get_template_directory() . '/inc/acf.php';
+
 /**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
 require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Register block styles
- */
-require get_template_directory() . '/inc/block-styles.php';
-
-/**
- * Register block patterns
- */
-require get_template_directory() . '/inc/block-patterns.php';
 
 /**
  * Custom Post Types
  */
 require get_template_directory() . '/inc/cpt-people.php';
 require get_template_directory() . '/inc/cpt-industries.php';
+
+/**
+ * Register block categories, patterns, and styles
+ */
+remove_theme_support( 'core-block-patterns' );
+require get_template_directory() . '/inc/block-categories.php';
+require get_template_directory() . '/inc/block-styles.php';
+
+/**
+ * Register custom blocks
+ */
+require get_template_directory() . '/inc/blocks.php';

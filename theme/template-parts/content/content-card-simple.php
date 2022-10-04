@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card | p-4 mb-4 w-full md:w-1/2 lg:w-1/3' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-card | p-4 mb-4 ' ); ?>>
 
 	<div class="">
 		<a class="papercorners-60" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" rel="bookmark"><?php ll_featured_image( array( 'size' => 'card' ) ); ?></a>

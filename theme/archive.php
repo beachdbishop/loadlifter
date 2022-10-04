@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-4 bg-neutral-50 md:py-6 lg:py-8">
+	<main id="primary" class="py-4 bg-brand-blue-faint md:py-6 lg:py-8">
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<?php if ( function_exists( 'bcn_display' ) ) { ?>
 				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
@@ -26,7 +26,7 @@ get_header();
 				</header>
 
 
-				<div class="flex flex-wrap -m-4">
+				<div class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					<?php /* Start the Loop */
 					while ( have_posts() ) :
 						the_post();

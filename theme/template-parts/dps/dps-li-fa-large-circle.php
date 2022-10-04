@@ -8,7 +8,7 @@
  * @license GPL-2.0+
  */
 
-$icon = get_field( 'icon' );
+$icon = get_field( 'icon_duotone' );
 
 echo '<li class="text-center ">';
 	echo '<a href="' . get_permalink() . '" class="">';

@@ -7,20 +7,23 @@
  * @package Load_Lifter
  */
 
-$peepsep = ' <span class="sep">|</span> ';
+$peepsep = ' <span class="sep opacity-60">|</span> ';
 $peepdesig = get_field( 'person_desig' );
 $peeptitle = get_field( 'person_title' );
 $peepauthor = get_field( 'linked_author');
-$peepid = $peepauthor['ID'];
-$peepname = $peepauthor['display_name'];
-$peepnicename = $peepauthor['user_nicename'];
-$peepfirstname = $peepauthor['user_firstname'];
-$person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
-
-// $peepcard = ( ( $peepid > 0 ) && ( function_exists( 'sitefunx_generate_card' ) ) ) ? sitefunx_generate_card( $peepid, 'vCard' ) : "&nbsp;";
-
-$peeppostcount = ( $peepauthor ) ? count_user_posts( $peepid, 'post', true ) : 0;
-$recent_year_barrier = date( "Y", strtotime( "-1 year" ) );
+if ( $peepauthor ) {
+	$peepid = $peepauthor['ID'];
+	$peepname = $peepauthor['display_name'];
+	$peepnicename = $peepauthor['user_nicename'];
+	$peepfirstname = $peepauthor['user_firstname'];
+	$person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
+	// $peepcard = ( ( $peepid > 0 ) && ( function_exists( 'sitefunx_generate_card' ) ) ) ? sitefunx_generate_card( $peepid, 'vCard' ) : "&nbsp;";
+	$peeppostcount = ( $peepauthor ) ? count_user_posts( $peepid, 'post', true ) : 0;
+	$recent_year_barrier = date( "Y", strtotime( "-1 year" ) );
+} else {
+	$peepfirstname = '';
+	$peeppostcount = 0;
+}
 $peepofficeq = get_the_terms( get_the_ID(), 'location' );
 $peepdeptq = get_the_terms( get_the_ID(), 'department' );
 if( $peepdeptq && !is_wp_error( $peepdeptq ) ) {
@@ -28,7 +31,7 @@ if( $peepdeptq && !is_wp_error( $peepdeptq ) ) {
 	foreach( $peepdeptq as $dept ) {
 		$depts[] = $dept->name;
 	}
-	$peepdept = join( ", ", $depts );
+	$peepdept = join( $peepsep, $depts );
 }
 if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 	$officelist = [];
@@ -63,11 +66,22 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 					<?php if( $peeptitle ) { ?>
 						<h2 class="text-neutral-900 font-head">
 							<?php echo $peeptitle; ?>
-							<?php if( $peeptitle === 'Principal' ) {
-								echo ' | ' . $peepdept . ' Department';
-							} ?>
+							<?php
+							// if( $peeptitle === 'Principal' ) {
+								// echo ' | ' . $peepdept . ' Department';
+							// }
+							?>
 						</h2>
 					<?php } ?>
+
+					<div class="my-4 space-x-4 text-sm text-neutral-600 children:inline-block lg:my-6">
+						<?php if( $peepdept ) { ?>
+							<span class=""><i class="fa-solid fa-people-group"></i> <?php echo $peepdept; ?></span>
+						<?php } ?>
+						<?php if( $peepoffice ) { ?>
+							<span class=""><i class="fa-solid fa-location-dot"></i> <?php echo $peepoffice; ?></span>
+						<?php } ?>
+					</div>
 				</header>
 
 				<div class="entry-content">
@@ -100,7 +114,7 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 			</div>
 
 			<aside class="peepgrid-c | md:mt-0 ">
-				<h5 class="text-brand-blue">Contact <?php echo $peepfirstname; ?></h5>
+				<h5 class="text-brand-blue">Contact <?php if ( $peepfirstname != '' ) { echo $peepfirstname; } else { echo get_the_title(); } ?></h5>
 				<p class="mb-4 todo">SOCIAL CONTACT BUTTONS</p>
 				<blockquote class="peepquote | font-head font-medium italic text-xl text-brand-blue">"We come to work every day excited to make a difference. We will seize the opportunities of our changing world by building on our purpose and the great strength of the BeachFleischman culture."</blockquote>
 				<hr class="mt-8">
@@ -116,7 +130,7 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-brand-blue-faint py-4 md:py-6 lg:py-8' ); ?>>
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<h3 id="posts" class="my-4 text-4xl md:my-8 text-brand-blue head-last-bold">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
-			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="flex flex-wrap -m-4 " layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
+			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="grid grid-cols-3 gap-8 -m-4 " layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
 		</div>
 	</section>
 <?php endif; ?>

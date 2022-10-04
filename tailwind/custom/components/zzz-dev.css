@@ -1,12 +1,12 @@
-/* DEV DEV DEV */
+/* DEV */
 
 :not(img).todo {
-	@apply text-pink-500 italic;
+	@apply italic text-pink-500;
 }
 img.todo {
 	@apply bg-pink-500;
 }
 
-.env-dev .ll__widget-area {
+/* .env-dev .ll__widget-area {
 	@apply border-2 border-dashed border-pink-500;
-}
+} */

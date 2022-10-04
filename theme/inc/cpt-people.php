@@ -42,7 +42,7 @@ function ll_register_people_cpt() {
 		'label'                 => __( 'Person', 'loadlifter' ),
 		'description'           => __( 'Key People', 'loadlifter' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'revisions', 'thumbnail' ),
+		'supports'              => array( 'title', 'editor', 'revisions', 'thumbnail', 'page-attributes' ),
 		'taxonomies'            => array( 'location' ),
 		'hierarchical'          => false,
 		'public'                => true,
@@ -183,6 +183,18 @@ function ll_levels() {
 
 }
 
+
+function ll_sort_order_people( $orderby ) {
+	global $wpdb;
+
+	if ( is_archive() && get_query_var( "post_type" ) == "people" ) {
+		return "$wpdb->posts.menu_order ASC";
+	}
+
+	return $orderby;
+}
+
 add_action( 'init', 'll_locations', 0 );
 add_action( 'init', 'll_departments', 0 );
 add_action( 'init', 'll_levels', 0 );
+add_filter( 'posts_orderby', 'll_sort_order_people' );

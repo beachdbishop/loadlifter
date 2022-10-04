@@ -21,14 +21,22 @@ get_header();
 				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
-			<header class="mb-8 ">
-				<h2 class="text-4xl text-brand-blue head-last-bold">A-Z Blog</h2>
-				<p class="my-4 font-light">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
-				<div class="text-white bg-brand-blue-faint"><?php echo do_shortcode( '[social_links /]' ); ?></div>
+			<header class="flex gap-4 mb-8">
+				<div class="basis-2/3">
+					<h2 class="text-4xl text-brand-blue head-last-bold">A-Z Blog</h2>
+					<p class="my-4 font-light">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
+					<div class="text-white bg-brand-blue-faint"><?php echo do_shortcode( '[social_links /]' ); ?></div>
+				</div>
+				<?php if ( is_user_logged_in() ) { ?>
+					<div class="p-4 border-2 border-dashed basis-1/3 rounded-xl border-brand-blue-pale">
+						<p class="italic">This control only appears for viewers logged into WordPress. Use it to filter the list of posts within a date range.</p>
+						<?php wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] ); // Date Range Picker ?>
+					</div>
+				<?php } ?>
 			</header>
 
 			<?php if ( have_posts() ) : ?>
-				<div class="flex flex-wrap -m-4">
+				<div class="grid gap-8 -m-4 grid-auto-fit-xl">
 					<?php
 					while ( have_posts() ) :
 						the_post();

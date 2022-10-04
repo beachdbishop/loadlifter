@@ -48,6 +48,56 @@ add_filter( 'body_class', 'll_body_class' );
 
 
 /**
+ * Get taxonomies terms links.
+ *
+ * @see get_object_taxonomies()
+ *
+ * via: https://developer.wordpress.org/reference/functions/get_the_terms/#comment-405
+ */
+// function wpdocs_custom_taxonomies_terms_links() {
+// 	// Get post by post ID.
+// 	if ( ! $post = get_post() ) {
+// 		return '';
+// 	}
+
+// 	// Get post type by post.
+// 	$post_type = $post->post_type;
+
+// 	// Get post type taxonomies.
+// 	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
+
+// 	$out = array();
+
+// 	foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
+
+// 		// Get the terms related to post.
+// 		$terms = get_the_terms( $post->ID, $taxonomy_slug );
+
+// 		if ( ! empty( $terms ) ) {
+// 			$out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
+// 			foreach ( $terms as $term ) {
+// 				$out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
+// 					esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
+// 					esc_html( $term->name )
+// 				);
+// 			}
+// 			$out[] = "\n</ul>\n";
+// 		}
+// 	}
+// 	return implode( '', $out );
+// }
+
+
+/**
+ * Using a shortcode to conditionally enqueue the a11y-slider js
+ */
+function ll_a11y_slider_shortcode() {
+    return '';
+}
+add_shortcode( 'a11yslider', 'll_a11y_slider_shortcode' );
+
+
+/**
  * Social Links
  * Uses Social URLs specified in Yoast SEO. See SEO > Social
  *

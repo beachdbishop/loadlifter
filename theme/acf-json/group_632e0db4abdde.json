@@ -1,0 +1,106 @@
+{
+    "key": "group_632e0db4abdde",
+    "title": "Author Meta",
+    "fields": [
+        {
+            "key": "field_632e0db5dc4ea",
+            "label": "Headshot",
+            "name": "ll_headshot",
+            "type": "image",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min_width": 380,
+            "min_height": 508,
+            "min_size": ".01",
+            "max_width": 760,
+            "max_height": 1016,
+            "max_size": 1,
+            "mime_types": "",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_6335d3fb38ec5",
+            "label": "Displayed Title",
+            "name": "ll_title",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Tax Senior Manager",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6335d43c38ec6",
+            "label": "Designations",
+            "name": "ll_designations",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "CPA",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6335d76dfcc85",
+            "label": "Organization",
+            "name": "ll_organization",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BeachFleischman",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "user_form",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1664472988
+}

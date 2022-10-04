@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="page-industries | ">
+	<main id="primary" class="page-industries | bg-white">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
@@ -68,7 +68,11 @@ get_header();
 					</div>
 					<hr>
 					<h4>Cards</h4>
-					<?php echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="div" wrapper_class="flex flex-wrap -m-4 " layout="card-simple" /]' ); ?>
+					<?php echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="div" wrapper_class="grid grid-cols-3 " layout="card-simple" /]' ); ?>
+					<h4>Tiles - B/W</h4>
+					<?php echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="div" wrapper_class="ind-cards-flex-bw-tilt" layout="card-bw" /]' ); ?>
+					<h4>Tiles - B/W w/ tilt</h4>
+					<?php echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="div" wrapper_class="ind-cards-flex-bw-tilt" layout="card-bw-tilt" /]' ); ?>
 					<hr>
 					<h4>Icon Grid</h4>
 					<div class="not-prose min-w-[300px] mb-8 md:max-w-[1000px] md:mx-auto bg-brand-blue-faint text-brand-blue-dark px-8 py-4 md:py-8 papercorners-36">
@@ -80,7 +84,7 @@ get_header();
 					<div class="gap-8 mb-8 md:divide-x md:divide-neutral-400 md:divide-dashed md:grid md:grid-cols-2 not-prose">
 						<div class="">
 							<h4 class="text-5xl">Filler</h4>
-							<p>Lorem filler text bingo.</p>
+							<p class="font-bold text-neutral-500">Lorem filler text bingo.</p>
 							<p>Even more lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nibh mauris cursus mattis molestie. In fermentum et sollicitudin ac orci phasellus egestas. Diam donec adipiscing tristique risus nec feugiat. Purus faucibus ornare suspendisse sed nisi lacus sed viverra tellus. Fringilla urna porttitor rhoncus dolor purus non.</p>
 						</div>
 						<div class="">

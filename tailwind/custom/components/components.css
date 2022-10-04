@@ -21,7 +21,7 @@
  * `postcss.config.js` file for details.
  */
 $post-title-selector {
-	@apply mb-6 md:mb-8 text-4xl text-neutral-900 break-words lg:text-5xl;
+	@apply mb-6 break-words text-4xl text-neutral-900 md:mb-8 lg:text-5xl;
 }
 
 /**
@@ -39,9 +39,8 @@ $post-title-selector {
  * https://tailwindcss.com/docs/typography-plugin
  */
 $post-content-selector {
-	@apply prose prose-neutral prose-headings:font-normal prose-th:border-b-2 prose-a:text-brand-blue prose-a:decoration-dotted prose-a:decoration-cyan-300/50 hover:prose-a:text-brand-blue-dark hover:prose-a:decoration-solid max-w-none lg:prose-xl;
+	@apply prose prose-neutral max-w-none prose-headings:font-normal prose-a:text-brand-blue prose-a:decoration-cyan-300/50 prose-a:decoration-dotted hover:prose-a:text-brand-blue-dark hover:prose-a:decoration-solid prose-th:border-b-2 lg:prose-xl;
 }
-
 
 /* Content width from the `theme.json` file */
 /* .entry-content > * { @apply max-w-content; } */
@@ -60,13 +59,9 @@ $post-content-selector {
 	@apply container;
 }
 
-
-
-
-.single-post .entry-content > p:first-of-type {
-	@apply text-xl pb-4 border-b border-neutral-200 lg:text-2xl;
+.single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
+	@apply border-b border-neutral-200 pb-4 text-xl lg:text-2xl;
 }
-
 
 .entry-content .aligncenter {
 	@apply mx-auto;
@@ -78,15 +73,12 @@ $post-content-selector {
 	@apply float-right ml-4 mb-4 lg:ml-8 lg:mb-8;
 }
 
-
-
-
-.entry-content a.wp-block-button__link {
+/* .entry-content a.wp-block-button__link {
 	@apply text-white no-underline;
-}
+} */
 
 aside .timestamp {
-	@apply block my-4 py-4 w-full border-t border-b border-neutral-200;
+	@apply my-4 block w-full border-t border-b border-neutral-200 py-4;
 }
 .date-updated::before {
 	content: "(Updated: ";
@@ -95,32 +87,41 @@ aside .timestamp {
 	content: ")";
 }
 
-
 .list--tags {
 	@apply leading-relaxed;
 }
 .list--tags a {
-	@apply text-neutral-600 bg-neutral-100 papercorners-6 px-2 py-1 text-[12px] hover:bg-brand-blue-pale hover:text-brand-blue-dark;
+	@apply papercorners-6 bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 hover:bg-brand-blue-pale hover:text-brand-blue-dark;
 }
 
 .social-links a {
 	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;
 }
 .footer-social .social-links a {
-	@apply bg-transparent text-neutral-400 hover:bg-neutral-300 hover:text-brand-blue;
+	@apply bg-neutral-700 text-neutral-300 hover:bg-transparent hover:text-brand-blue-pale;
+}
+.on-darkbg .social-links a {
+	@apply bg-transparent text-neutral-300 hover:bg-neutral-700 hover:text-brand-blue-pale;
 }
 
 .is-style-fancy-quote {
-	@apply text-center border border-neutral-100 rounded-lg shadow-xl;
+	@apply rounded-lg border border-neutral-100 text-center shadow-xl;
 }
-.is-style-fancy-quote p { @apply mt-2 mb-4; }
-.is-style-fancy-quote cite { @apply text-sm; }
+.is-style-fancy-quote p {
+	@apply mt-2 mb-4;
+}
+.is-style-fancy-quote cite {
+	@apply text-sm;
+}
 
 .image__featured--outer {
 	/* background-color: rgb(189,175,177); */
-	background-image: linear-gradient(0deg, hsla(218, 11%, 65%, 0) 40%, hsla(218, 11%, 65%, 1) 95%);
+	background-image: linear-gradient(
+		0deg,
+		hsla(218, 11%, 65%, 0) 40%,
+		hsla(218, 11%, 65%, 1) 95%
+	);
 }
-
 
 .breadcrumbs {
 	font-size: 1rem;
@@ -130,22 +131,25 @@ aside .timestamp {
 	font-weight: bold;
 }
 
-
 @media (min-width: 768px) {
 	.peepgrid {
 		grid-template-rows: 500px auto;
 	}
 }
 
-
-
 .icon-flexgrid--w-label {
 	/* @apply list-none grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4; */
-	@apply list-none flex flex-wrap gap-y-6 place-content-center;
+	@apply flex list-none flex-wrap place-content-center gap-y-6;
 }
 .icon-flexgrid--w-label li {
 	@apply w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5;
 }
+
+
+.ind-cards-flex-bw-tilt {
+	@apply flex flex-wrap place-content-center gap-4;
+}
+
 
 
 .dps-inline > *:not(:last-child)::after {
@@ -155,13 +159,9 @@ aside .timestamp {
 	content: "and ";
 }
 
-
-
-
-
 /* Pagination */
 ul.page-numbers {
-	@apply text-brand-blue justify-center list-none font-head my-4 md:my-8 lg:my-16 mx-auto max-w-content flex flex-wrap gap-4;
+	@apply my-4 mx-auto flex max-w-content list-none flex-wrap justify-center gap-4 font-head text-brand-blue md:my-8 lg:my-16;
 }
 a.page-numbers {
 	@apply text-brand-blue hover:text-brand-blue-dark;
@@ -170,23 +170,153 @@ span.current {
 	@apply opacity-50;
 }
 
+/* Details */
+details[open] summary ~ * {
+	animation: sweep 0.4s ease-in-out;
+}
+@keyframes sweep {
+	0% {
+		opacity: 0;
+		margin-top: -10px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+summary {
+	list-style: none;
+	cursor: pointer;
+
+	> * {
+		display: inline;
+	}
+}
+
+/* summary::marker,
+summary::-webkit-details-marker {
+	display: none;
+}
+details[open] summary::marker,
+details[open] summary::-webkit-details-marker {
+	display: none;
+} */
+
+/* summary::before {
+	content: "⏵";
+	color: var(--wp--preset--color--brand-blue);
+}
+
+details[open] summary::before {
+	content: "⏷";
+	color: var(--wp--preset--color--brand-blue);
+} */
+
+/* .on-darkbg details summary::before {
+	color: var(--wp--preset--color--brand-blue-pale);
+} */
+
+
+/* Paragraphs / Callouts / Notes */
+p[class*="is-style-note-"] {
+	@apply px-8 py-4 mb-4 rounded-lg leading-snug w-full border border-solid md:max-w-xl lg:max-w-2xl xl:max-w-4xl;
+}
+.is-style-note-info {
+	@apply bg-cyan-50 text-cyan-800 border-cyan-100;
+
+	strong {
+		@apply text-cyan-700;
+	}
+}
+.is-style-note-success {
+	@apply bg-emerald-50 text-emerald-800 border-emerald-100;
+
+	strong {
+		@apply text-emerald-700;
+	}
+}
+.is-style-note-warning {
+	@apply bg-amber-50 text-amber-800 border-amber-100;
+
+	strong {
+		@apply text-amber-700;
+	}
+}
+.is-style-note-error {
+	@apply bg-red-50 text-red-800 border-red-100;
+
+	strong {
+		@apply text-red-700;
+	}
+}
+
 
 /* Separators */
-[class*='is-style-sep-'] {
-	@apply w-full h-[3px] border-0 my-4 md:my-6 lg:my-8;
-	background-image: linear-gradient(to bottom, var(--start) 33%, transparent 33%, transparent 66%, var(--end) 66%, var(--end) 100%);
+[class*="is-style-sep-"] {
+	@apply my-4 h-[3px] w-full border-0 md:my-6 lg:my-8;
+	background-image: linear-gradient(
+		to bottom,
+		var(--start) 33%,
+		transparent 33%,
+		transparent 66%,
+		var(--end) 66%,
+		var(--end) 100%
+	);
 }
 .is-style-sep-blue {
 	--start: #00668e;
 	--end: #67e8f9;
 }
-
 .is-style-sep-red {
 	--start: #ce182d;
 	--end: #f87171;
 }
-
 .is-style-sep-gray {
 	--start: #262626;
 	--end: #525252;
+}
+
+/* Spacers */
+.wp-block-spacer {
+	@apply mt-0 mb-0;
+
+	&.is-style-xs {
+		height: clamp(8px, 2vw, 24px) !important;
+	}
+	&.is-style-sm {
+		height: clamp(12px, 3vw, 36px) !important;
+	}
+	&.is-style-md {
+		height: clamp(24px, 5vw, 48px) !important;
+	}
+	&.is-style-lg {
+		height: clamp(36px, 8vw, 72px) !important;
+	}
+	&.is-style-xl {
+		height: clamp(48px, 9vw, 96px) !important;
+	}
+}
+
+
+/* Scrollbar */
+/* via: https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/ */
+.styled-scrollbars {
+	--scrollbar-foreground: #262626;
+	--scrollbar-background: #d4d4d4;
+	/* Foreground, Background */
+	scrollbar-color: var(--scrollbar-foreground) var(--scrollbar-background);
+}
+.styled-scrollbars::-webkit-scrollbar {
+	width: 16px; /* Mostly for vertical scrollbars */
+	height: 16px; /* Mostly for horizontal scrollbars */
+}
+.styled-scrollbars::-webkit-scrollbar-thumb {
+	/* Foreground */
+	background: var(--scrollbar-foreground);
+	border-radius: 8px 0 8px;
+}
+.styled-scrollbars::-webkit-scrollbar-track {
+	/* Background */
+	background: var(--scrollbar-background);
 }
