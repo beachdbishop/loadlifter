@@ -204,7 +204,7 @@
 				</li>
 				<li aria-haspopup="true" class="hoverable group ">
 					<details class="relative block group menu-level-0">
-						<?php echo ll_menu_det_summary( '/about-us/', 'About Us', '', 'font-bold' ); ?>
+						<?php echo ll_menu_det_summary( '/about/', 'About Us', '', 'font-bold' ); ?>
 						<div class="details-drop nav__panel--4col-trans | ">
 							<div class="container md:mx-auto md:grid md:grid-flow-col md:grid-cols-3">
 								<div class="hidden p-4 bg-brand-blue-faint md:block on-lightbg lg:p-8 ">
@@ -218,10 +218,11 @@
 											<li><a href="/">Mission, Vision, and Core Values</a></li>
 											<li><a href="/">Culture</a></li>
 											<li><a href="/people/">Our People</a></li>
+											<li><a href="/about-2/leadership-team/">Leadership Team</a></li>
 											<li><a href="/">Community Involvement</a></li>
 											<li><a href="/">Trade and Professional Involvement</a></li>
 											<li><a href="/">Women RISE</a></li>
-											<li><a href="/about-us/idea-committee/" title="">IDEA Committee</a></li>
+											<li><a href="/about/idea-committee/" title="">IDEA Committee</a></li>
 											<li><a href="/">Leading Edge Alliance</a></li>
 										</ul>
 									</div>
@@ -235,7 +236,7 @@
 				</li>
 				<li aria-haspopup="true" class="hoverable group ">
 					<details class="relative block group menu-level-0">
-						<?php echo ll_menu_det_summary( '/careers/', 'Careers', '', 'font-bold' ); ?>
+						<?php echo ll_menu_det_summary( '/career-opportunities/', 'Careers', '', 'font-bold' ); ?>
 						<div class="details-drop nav__panel--4col-trans | ">
 							<div class="container md:mx-auto md:grid md:grid-flow-col md:grid-cols-3">
 								<div class="hidden p-4 bg-brand-blue-faint md:block on-lightbg lg:p-8 ">
@@ -275,9 +276,16 @@
 			</ul>
 
 			<ul role="list" class="nav-secondary | md: md:order-first md:justify-end md:flex print:hidden">
+				<?php if ( wp_get_environment_type() == 'local' ) { ?>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold text-pink-600 md:uppercase hover:text-pink-400" href="/scratch/">Scratch-dev</a>
 				</li>
+				<?php } ?>
+				<?php if ( wp_get_environment_type() == 'staging' ) { ?>
+				<li>
+					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold text-pink-600 md:uppercase hover:text-pink-400" href="/all-pages/">All Pages</a>
+				</li>
+				<?php } ?>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/blog/">Insights</a>
 				</li>

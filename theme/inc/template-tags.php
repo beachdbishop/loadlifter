@@ -110,7 +110,7 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span>' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="catlist">' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			if ( $categories_list && $tags_list ) {
@@ -336,3 +336,60 @@ if ( ! function_exists( 'll_paging_nav' ) ) :
 		endif;
 	}
 endif;
+
+
+if ( ! function_exists( 'll_people_paging_nav' ) ) :
+	/**
+	 * Display navigation to next/previous set of people when applicable.
+	 *
+	 * via:
+	 */
+
+	function ll_people_paging_nav( $pages = '', $range = 4) {
+		$showitems = ( $range * 2 ) + 1;
+        global $paged;
+        if( empty( $paged ) ) $paged = 1;
+        if( $pages == '' )
+        {
+            global $wp_query;
+            $pages = $wp_query->max_num_pages;
+            if( !$pages ) {
+                $pages = 1;
+            }
+        }
+        if( 1 != $pages ) {
+            echo "<nav aria-label='Page navigation'><ul class='pagination'><li>Page ".$paged." of ".$pages."</li>";
+            if( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( 1 ) . "'>&laquo; First</a>";
+            if( $paged > 1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( $paged - 1 ) . "'>&lsaquo; Previous</a>";
+            for ( $i=1; $i <= $pages; $i++ )
+            {
+                if ( 1 != $pages &&( !( $i >= $paged+$range+1 || $i <= $paged-$range-1 ) || $pages <= $showitems ) ) {
+                    echo ( $paged == $i )? "<li class=\"page-item active\"><a class='page-link'>" . $i . "</a></li>" : "<li class='page-item'> <a href='" . get_pagenum_link( $i ) . "' class=\"page-link\">" . $i . "</a></li>";
+                }
+            }
+            if ( $paged < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link( $paged + 1 ) . "\">i class='fa-regular fa-back'></i></a></li>";
+            if ( $paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href='" . get_pagenum_link( $pages ) . "'><i class='fa-regular fa-forward'></i></a></li>";
+            echo "</ul></nav>\n";
+        }
+	}
+endif;
+
+
+/**
+ * Change the label of the footnotes section below the content.
+ */
+function ll_efn_change_label_markup( $output, $label ) {
+	return '<h6 class="mt-16 text-brand-red-pale">' . $label . '</h6>';
+}
+add_filter( 'efn_footnote_label', 'll_efn_change_label_markup', 10, 2 );
+
+/**
+ * Disable the js 'qTip' functionality for better performance
+ */
+function ll_efn_deregister_scripts() {
+	wp_deregister_style( 'qtipstyles' );
+	wp_deregister_script( 'imagesloaded' );
+	wp_deregister_script( 'qtip' );
+	wp_deregister_script( 'qtipcall' );
+}
+add_action( 'wp_enqueue_scripts', 'll_efn_deregister_scripts' );

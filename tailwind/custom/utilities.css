@@ -26,6 +26,10 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	transform: none;
 }
 
+.table-oldtab {
+	@apply oldstyle-nums tabular-nums;
+}
+
 .papercorners-4 {
 	@apply rounded-tr rounded-bl;
 	/* border-radius: 4px 0 4px; */
@@ -80,6 +84,12 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 
 .list-checked li::before {
 	content: "\f058";
+}
+
+.inline-comma-sep {
+	span:not(:last-of-type)::after {
+		content: ", ";
+	}
 }
 
 @supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {

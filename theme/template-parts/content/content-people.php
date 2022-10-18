@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying posts
+ * Template part for displaying a Person (single view)
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -8,37 +8,35 @@
  */
 
 $peepsep = ' <span class="sep opacity-60">|</span> ';
-$peepdesig = get_field( 'person_desig' );
-$peeptitle = get_field( 'person_title' );
-$peepauthor = get_field( 'linked_author');
+$peepauthor = get_field( 'll_people_user' );
+$peep_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+if ( $peep_thumbnail ) {
+	$headshot = esc_url( $peep_thumbnail[0] );
+} else {
+	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+}
+$peep_desigs = get_field( 'll_people_designations' );
+$peep_title = get_field( 'll_people_title' );
+$peep_level = get_field( 'll_people_level' );
+$peep_department = get_field_object( 'll_people_department' );
+$peep_dept_value = $peep_department['value'];
+$peep_dept = $peep_dept_value['label'];
+$peep_location = get_field_object( 'll_people_location' );
+$peep_loc_value = $peep_location['value'];
+$peep_loc = $peep_loc_value['label'];
+$peep_quote = get_field( 'll_people_quote' );
+
 if ( $peepauthor ) {
 	$peepid = $peepauthor['ID'];
 	$peepname = $peepauthor['display_name'];
 	$peepnicename = $peepauthor['user_nicename'];
 	$peepfirstname = $peepauthor['user_firstname'];
 	$person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
-	// $peepcard = ( ( $peepid > 0 ) && ( function_exists( 'sitefunx_generate_card' ) ) ) ? sitefunx_generate_card( $peepid, 'vCard' ) : "&nbsp;";
 	$peeppostcount = ( $peepauthor ) ? count_user_posts( $peepid, 'post', true ) : 0;
 	$recent_year_barrier = date( "Y", strtotime( "-1 year" ) );
 } else {
 	$peepfirstname = '';
 	$peeppostcount = 0;
-}
-$peepofficeq = get_the_terms( get_the_ID(), 'location' );
-$peepdeptq = get_the_terms( get_the_ID(), 'department' );
-if( $peepdeptq && !is_wp_error( $peepdeptq ) ) {
-	$deptlist = [];
-	foreach( $peepdeptq as $dept ) {
-		$depts[] = $dept->name;
-	}
-	$peepdept = join( $peepsep, $depts );
-}
-if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
-	$officelist = [];
-	foreach( $peepofficeq as $office ) {
-		$offices[] = $office->name;
-	}
-	$peepoffice = join( ", ", $offices );
 }
 ?>
 
@@ -49,7 +47,7 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 			<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
-		<div class="peepgrid | md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-8">
+		<div class="peepgrid | md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
 
 			<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0">
 				<?php ll_people_headshot(); ?>
@@ -59,29 +57,29 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 				<header class="mb-4">
 					<?php the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' ); ?>
 
-					<?php if( $peepdesig ) { ?>
-						<h6 class="tracking-tight text-brand-blue font-head"><?php echo $peepdesig; ?></h6>
+					<?php if( $peep_desigs ) { ?>
+						<h2 class="leading-normal tracking-tight text-neutral-500"><?php echo $peep_desigs; ?></h2>
 					<?php } ?>
 
-					<?php if( $peeptitle ) { ?>
-						<h2 class="text-neutral-900 font-head">
-							<?php echo $peeptitle; ?>
-							<?php
-							// if( $peeptitle === 'Principal' ) {
-								// echo ' | ' . $peepdept . ' Department';
-							// }
-							?>
+					<?php if( $peep_title ) { ?>
+						<h2 class="text-neutral-900">
+							<?php echo $peep_title; ?>
 						</h2>
 					<?php } ?>
 
-					<div class="my-4 space-x-4 text-sm text-neutral-600 children:inline-block lg:my-6">
-						<?php if( $peepdept ) { ?>
-							<span class=""><i class="fa-solid fa-people-group"></i> <?php echo $peepdept; ?></span>
-						<?php } ?>
-						<?php if( $peepoffice ) { ?>
-							<span class=""><i class="fa-solid fa-location-dot"></i> <?php echo $peepoffice; ?></span>
-						<?php } ?>
-					</div>
+					<?php if ( ( $peep_dept ) || ( $peep_loc ) ) { ?>
+						<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-500 border-neutral-200 children:inline-block">
+
+							<?php if( $peep_dept ) { ?>
+								<span class="inline-comma-sep"><i class="fa-solid fa-people-group"></i> <?php echo '<span class="">' . esc_html($peep_dept) . '</span>'; ?></span>
+							<?php } ?>
+
+							<?php if( $peep_loc ) { ?>
+								<span class=""><i class="fa-solid fa-location-dot"></i> <?php echo esc_html( $peep_loc ); ?></span>
+							<?php } ?>
+
+						</div>
+					<?php } ?>
 				</header>
 
 				<div class="entry-content">
@@ -102,23 +100,18 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 					);
 					?>
 					<div class="clear-both">&nbsp;</div>
-					<?php
-					wp_link_pages(
-						array(
-							'before' => '<div>' . esc_html__( 'Pages:', 'loadlifter' ),
-							'after'  => '</div>',
-						)
-					);
-					?>
+
 				</div>
 			</div>
 
 			<aside class="peepgrid-c | md:mt-0 ">
 				<h5 class="text-brand-blue">Contact <?php if ( $peepfirstname != '' ) { echo $peepfirstname; } else { echo get_the_title(); } ?></h5>
 				<p class="mb-4 todo">SOCIAL CONTACT BUTTONS</p>
-				<blockquote class="peepquote | font-head font-medium italic text-xl text-brand-blue">"We come to work every day excited to make a difference. We will seize the opportunities of our changing world by building on our purpose and the great strength of the BeachFleischman culture."</blockquote>
+				<?php if ( $peep_quote ) { ?>
 				<hr class="mt-8">
-				<p class="todo">NOTE: Do we want to restrict the above text to a quote... or do we give our folks some flexibility with what they want to feature there?</p>
+				<blockquote class="peepquote | font-head font-medium italic text-xl text-brand-blue">&quot;<?php echo esc_html( $peep_quote ); ?>&quot;</blockquote>
+				<?php } ?>
+
 			</aside>
 		</div>
 
@@ -129,8 +122,8 @@ if( $peepofficeq && !is_wp_error( $peepofficeq ) ) {
 <?php if ( $peeppostcount > 0 ) : ?>
 	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-brand-blue-faint py-4 md:py-6 lg:py-8' ); ?>>
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
-			<h3 id="posts" class="my-4 text-4xl md:my-8 text-brand-blue head-last-bold">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
-			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="grid grid-cols-3 gap-8 -m-4 " layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
+			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
+			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="dps-grid-4max" layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
 		</div>
 	</section>
 <?php endif; ?>

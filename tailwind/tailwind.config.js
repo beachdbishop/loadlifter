@@ -39,9 +39,10 @@ module.exports = {
     'bg-current',
     'bg-pink-900/70',
     'bg-gradient-to-r',
-    'border-2',
     'border-current',
     'border-transparent',
+    'columns-2',
+    'columns-3',
     'delay-150',
     'divide-brand-blue-faint',
     'divide-brand-blue',
@@ -81,6 +82,7 @@ module.exports = {
     'shadow-sm',
     'slider-quotes',
     'slider',
+    'table-oldtab',
     'text-base',
     'text-brand-gray-dark',
     'to-brand-gray',
@@ -97,13 +99,22 @@ module.exports = {
       pattern: /bg-(amber|neutral|green)-(50|100|200|300|400|500|600|700|800|900)/,
     },
     {
-      pattern: /border-(t|l|b|r|x|y)-(1|2)/,
+      pattern: /border-(t|l|b|r|x|y)-(1|2|3|4)/,
+    },
+    {
+      pattern: /border-(1|2|3|4)/,
     },
     {
       pattern: /m(t|l|b|r|x|y)-(0|1|2|4|6|8|10|12|16)/,
     },
     {
+      pattern: /m-(0|1|2|4|6|8|10|12|16)/,
+    },
+    {
       pattern: /p(t|l|b|r|x|y)-(0|1|2|4|6|8|10|12|16)/,
+    },
+    {
+      pattern: /p-(0|1|2|4|6|8|10|12|16)/,
     },
     {
       pattern: /(from|via|to)-(neutral)-(50|100|200|300|400|500|600|700|800|900)/,

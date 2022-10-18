@@ -42,8 +42,8 @@ function ll_register_people_cpt() {
 		'label'                 => __( 'Person', 'loadlifter' ),
 		'description'           => __( 'Key People', 'loadlifter' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'revisions', 'thumbnail', 'page-attributes' ),
-		'taxonomies'            => array( 'location' ),
+		'supports'              => array( 'title', 'editor', 'revisions', 'thumbnail' ),
+		'taxonomies'            => array( 'location', 'department', 'level' ),
 		'hierarchical'          => false,
 		'public'                => true,
 		'show_ui'               => true,
@@ -57,6 +57,7 @@ function ll_register_people_cpt() {
 		'exclude_from_search'   => false,
 		'publicly_queryable'    => true,
 		'rewrite'				=> $rewrite,
+		// 'query_var' 			=> true,
 		'capability_type'       => 'page',
 		'show_in_rest'          => true,
 	);
@@ -64,6 +65,117 @@ function ll_register_people_cpt() {
 
 }
 add_action( 'init', 'll_register_people_cpt', 0 );
+
+
+function ll_filter_people_columns( $columns ) {
+	$columns = [
+		'cb' => $columns['cb'],
+		'title' => __( 'Title' ),
+		'level' => __( 'Level', 'loadlifter' ),
+		'dept' => __( 'Department', 'loadlifter' ),
+		'location' => __( 'Location', 'loadlifter' ),
+		'll_id' => __( 'ID' ),
+		'date' => __( 'Date' ),
+	];
+	return $columns;
+}
+add_filter( 'manage_people_posts_columns', 'll_filter_people_columns' );
+
+
+function ll_people_columns( $column, $post_id ) {
+	// Level column
+	if ( 'level' === $column ) {
+		$level_obj = get_field_object( 'll_people_level');
+		$level_val = $level_obj['value'];
+		$level_display = $level_val['label'];
+		echo $level_display;
+	}
+
+	// Department column
+	if ( 'dept' === $column ) {
+		$dept_obj = get_field_object( 'll_people_department');
+		$dept_val = $dept_obj['value'];
+		$dept_display = $dept_val['label'];
+		echo $dept_display;
+	}
+
+	// Department column
+	if ( 'location' === $column ) {
+		$location_obj = get_field_object( 'll_people_location');
+		$location_val = $location_obj['value'];
+		$location_display = $location_val['label'];
+		echo $location_display;
+	}
+}
+add_action( 'manage_people_posts_custom_column', 'll_people_columns', 10, 2 );
+
+
+/* via: https://stackoverflow.com/questions/31434373/in-wordpress-how-do-i-set-the-default-admin-sort-order-for-a-custom-post-type-t */
+// is_admin() && add_action( 'pre_get_posts', 'll_people_orderby' );
+// function ll_people_orderby( $query ) {
+// 	// Nothing to do
+// 	if( !$query->is_main_query() || 'people' != $query->get( 'post_type' ) )
+// 		return;
+
+// 	//-----------------------------------------------------
+// 	// Modify the 'orderby' and 'meta_key' parts
+// 	//-----------------------------------------------------
+// 	$orderby = strtolower( $query->get( 'orderby' ) );
+// 	$mods = [
+// 		'level'			=> [ 'meta_key' => 'll_people_level', 'orderby' 		=> 'meta_value' ],
+// 		''				=> [ 'meta_key' => 'll_people_level', 'orderby' 		=> 'meta_value' ],
+// 		'department'	=> [ 'meta_key' => 'll_people_department', 'orderby' 	=> 'meta_value' ],
+// 		'location'		=> [ 'meta_key' => 'll_people_location', 'orderby' 		=> 'meta_value' ],
+// 	];
+// 	$key = 'people_sort_' . $orderby;
+// 	if ( isset( $mods[$key] ) ) {
+// 		$query->set( 'meta_key', $mods[$key]['meta_key'] );
+// 		$query->set( 'orderby', $mods[$key]['orderby'] );
+// 	}
+// }
+
+
+function ll_people_sortable_columns( $columns ) {
+	$columns['level'] = 'level';
+	$columns['dept'] = 'dept';
+	$columns['location'] = 'location';
+	return $columns;
+}
+add_filter( 'manage_edit-people_sortable_columns', 'll_people_sortable_columns' );
+
+
+function ll_people_orderby( $query ) {
+	if( !is_admin() || !$query->is_main_query() ) {
+		return;
+	}
+
+	if ( '' === $query->get( 'orderby' ) ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'order', 'ASC' );
+		$query->set( 'meta_key', 'll_people_level' );
+	}
+
+	if ( 'level' === $query->get( 'orderby' ) ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', 'll_people_level' );
+	}
+
+	if( 'dept' === $query->get( 'orderby' ) ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', 'll_people_department' );
+	}
+
+	if( 'location' === $query->get( 'orderby' ) ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', 'll_people_location' );
+	}
+}
+add_action( 'pre_get_posts', 'll_people_orderby' );
+
+
+
+
+
 
 
 // Register Custom Taxonomy
@@ -184,17 +296,16 @@ function ll_levels() {
 }
 
 
-function ll_sort_order_people( $orderby ) {
-	global $wpdb;
+// add_action( 'init', 'll_locations', 0 );
+// add_action( 'init', 'll_departments', 0 );
+// add_action( 'init', 'll_levels', 0 );
 
-	if ( is_archive() && get_query_var( "post_type" ) == "people" ) {
-		return "$wpdb->posts.menu_order ASC";
-	}
+// if( !function_exists( 'll_unregister_taxonomy' ) ) {
+// 	function ll_unregister_taxonomy(){
+//     	unregister_taxonomy( 'location' );
+//     	unregister_taxonomy( 'department' );
+//     	unregister_taxonomy( 'level' );
+// 	}
+// }
+// add_action('init','ll_unregister_taxonomy');
 
-	return $orderby;
-}
-
-add_action( 'init', 'll_locations', 0 );
-add_action( 'init', 'll_departments', 0 );
-add_action( 'init', 'll_levels', 0 );
-add_filter( 'posts_orderby', 'll_sort_order_people' );

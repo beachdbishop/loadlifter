@@ -47,6 +47,22 @@ h6 {
 	@apply font-body text-lg uppercase tracking-wide;
 }
 
+
+a:not([class]) {
+	@apply text-current;
+}
+:focus {
+	outline: 2px dashed;
+	outline-offset: 0.25rem;
+}
+main:focus {
+	outline: none;
+}
+[href]:hover {
+	text-decoration: none;
+}
+
+
 dl {
 	@apply m-0 p-0;
 }
@@ -61,4 +77,8 @@ dd {
 
 dd::marker {
 	color: var(--wp--preset--color--brand-red-pale);
+}
+
+table caption {
+	caption-side: bottom;
 }

@@ -231,9 +231,21 @@ function ll_checka11y_style() {
 	wp_enqueue_style( 'checka11y', 'https://cdn.jsdelivr.net/npm/checka11y-css@2.3.0/checka11y.css', array(), '' );
 }
 
+
+add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+function ll_disable_wp57_menu_hover() {
+	echo '<style>#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover { box-shadow: none !important; }</style>';
+}
+
+
 switch( wp_get_environment_type() ) {
 	case 'local':
 		// add_action( 'wp_enqueue_scripts', 'll_checka11y_style' );
+		// add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		break;
+
+	case 'staging':
+		// add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 		break;
 
 	default:
@@ -288,6 +300,7 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/cpt-people.php';
 require get_template_directory() . '/inc/cpt-industries.php';
+require get_template_directory() . '/inc/cpt-job-openings.php';
 
 /**
  * Register block categories, patterns, and styles
@@ -300,3 +313,8 @@ require get_template_directory() . '/inc/block-styles.php';
  * Register custom blocks
  */
 require get_template_directory() . '/inc/blocks.php';
+
+/**
+ * Register shortcodes
+ */
+require get_template_directory() . '/inc/shortcodes.php';

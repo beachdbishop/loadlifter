@@ -30,7 +30,7 @@ get_header();
 				<?php if ( is_user_logged_in() ) { ?>
 					<div class="p-4 border-2 border-dashed basis-1/3 rounded-xl border-brand-blue-pale">
 						<p class="italic">This control only appears for viewers logged into WordPress. Use it to filter the list of posts within a date range.</p>
-						<?php wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] ); // Date Range Picker ?>
+						<?php if ( function_exists( 'wpgb_render_facet' ) ) { wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] ); } // Date Range Picker ?>
 					</div>
 				<?php } ?>
 			</header>

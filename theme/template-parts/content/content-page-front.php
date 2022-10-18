@@ -17,7 +17,7 @@ $page_excerpt = 'Work with us and experience the power of collaboration and what
 	<div class="px-1 min-h-[240px] flex items-center md:container md:mx-auto md:px-0 md:flex md:min-h-hero ">
 		<div class="w-full md:w-1/2 ">
 			<header class="mb-4">
-				<h2 class="leading-none tracking-tight text-transparent bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text lg:text-6xl head-last-bold"><?php echo $brand_message; ?></h2>
+				<h1 class="leading-none tracking-tight text-transparent bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text lg:text-6xl head-last-bold"><?php echo $brand_message; ?></h1>
 			</header>
 			<p class="text-lg leading-normal text-brand-blue-faint lg:text-2xl"><?php echo $page_excerpt; ?></p>
 		</div>
@@ -26,9 +26,15 @@ $page_excerpt = 'Work with us and experience the power of collaboration and what
 
 <div class="py-4 mb-0 bg-gradient-to-br from-brand-blue to-brand-blue-dark md:py-8 2xl:py-12">
 	<section class="px-2 md:px-0 md:container md:mx-auto">
-		<h2 class="text-brand-blue-pale">Trending Now</h2>
-		<?php // echo do_shortcode( '[display-posts post_type="post,page,industries" id="2,1879,2019" ignore_sticky_posts="true" orderby="title" order="DESC" wrapper="div" wrapper_class="flex flex-wrap -mx-4 text-brand-blue-faint" layout="card-ondark" /]' ); ?>
-		<?php echo do_shortcode( '[display-posts post_type="post,page,industries" id="2,1879,2019" ignore_sticky_posts="true" orderby="title" order="DESC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8 -m-4 text-brand-blue-faint" layout="card-ondark" /]' ); ?>
+		<h2 class="mb-2 text-brand-blue-pale">Trending Now</h2>
+
+		<?php if ( wp_get_environment_type() == 'local' ) {
+			$trending_ids = '2,1879,2019';
+		} else {
+			$trending_ids = '30973,9873,23978';
+		} ?>
+		<?php echo do_shortcode( '[display-posts post_type="post,page,industries" id="' . $trending_ids . '" ignore_sticky_posts="true" orderby="title" order="DESC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8 -m-4 text-brand-blue-faint" layout="card-ondark" /]' ); ?>
+
 	</section>
 </div>
 
@@ -51,7 +57,7 @@ $page_excerpt = 'Work with us and experience the power of collaboration and what
 
 <div class="px-2 my-4 md:my-8 md:px-0 md:container md:mx-auto ">
 	<h2 class="leading-normal text-brand-blue">Recent Posts</h2>
-	<?php echo do_shortcode( '[display-posts posts_per_page="4" ignore_sticky_posts="true" orderby="date" order="DESC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8 -mx-4" layout="card" /]' ); ?>
+	<?php echo do_shortcode( '[display-posts posts_per_page="4" ignore_sticky_posts="true" orderby="date" order="DESC" wrapper="div" wrapper_class="dps-grid-4max" layout="card" /]' ); ?>
 	<div class="wp-block-buttons | text-center my-4">
 		<div class="wp-block-button is-style-outline">
 			<a class="wp-block-button__link" href="/blog/">See more</a>

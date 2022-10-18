@@ -1,0 +1,235 @@
+{
+    "key": "group_589cf4677b5bd",
+    "title": "Landing Page Options",
+    "fields": [
+        {
+            "key": "field_589cf8f087408",
+            "label": "Display Featured Image",
+            "name": "display_featured_image",
+            "type": "true_false",
+            "instructions": "Default ('Yes') will display a featured image if one is attached. 'No' will hide the display of the image on the front-end even if one is attached.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 1,
+            "message": "Show the featured image for this page",
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5a847ec88a0ce",
+            "label": "Out of State",
+            "name": "out_of_state",
+            "type": "true_false",
+            "instructions": "Should this count toward out-of-state lead counts?",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5e6a8ed8fddd6",
+            "label": "Service\/Industry",
+            "name": "svc_ind",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a847ec88a0ce",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "intl_tax": "Int'l Tax",
+                "cyber_pen": "Cyber - Pen. Testing",
+                "cyber_vciso": "Cyber - vCISO",
+                "cyber_soc2": "Cyber - SOC2",
+                "ca-us-tax": "Can-U.S. Tax",
+                "cost_seg": "Cost Segregation",
+                "constr": "Construction"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5c4f429dd838e",
+            "label": "State in Focus",
+            "name": "page_state",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a847ec88a0ce",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Alabama": "Alabama",
+                "Alaska": "Alaska",
+                "Arizona": "Arizona",
+                "Arkansas": "Arkansas",
+                "California": "California",
+                "Colorado": "Colorado",
+                "Connecticut": "Connecticut",
+                "Delaware": "Delaware",
+                "Florida": "Florida",
+                "Georgia": "Georgia",
+                "Hawaii": "Hawaii",
+                "Idaho": "Idaho",
+                "Illinois": "Illinois",
+                "Indiana": "Indiana",
+                "Iowa": "Iowa",
+                "Kansas": "Kansas",
+                "Kentucky": "Kentucky",
+                "Louisiana": "Louisiana",
+                "Maine": "Maine",
+                "Maryland": "Maryland",
+                "Massachusetts": "Massachusetts",
+                "Michigan": "Michigan",
+                "Minnesota": "Minnesota",
+                "Mississippi": "Mississippi",
+                "Missouri": "Missouri",
+                "Montana": "Montana",
+                "Nebraska": "Nebraska",
+                "Nevada": "Nevada",
+                "New Hampshire": "New Hampshire",
+                "New Jersey": "New Jersey",
+                "New Mexico": "New Mexico",
+                "New York": "New York",
+                "North Carolina": "North Carolina",
+                "North Dakota": "North Dakota",
+                "Ohio": "Ohio",
+                "Oklahoma": "Oklahoma",
+                "Oregon": "Oregon",
+                "Pennsylvania": "Pennsylvania",
+                "Rhode Island": "Rhode Island",
+                "South Carolina": "South Carolina",
+                "South Dakota": "South Dakota",
+                "Tennessee": "Tennessee",
+                "Texas": "Texas",
+                "Utah": "Utah",
+                "Vermont": "Vermont",
+                "Virginia": "Virginia",
+                "Washington": "Washington",
+                "West Virginia": "West Virginia",
+                "Wisconsin": "Wisconsin",
+                "Wyoming": "Wyoming"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_61eaf9290807a",
+            "label": "City in Focus",
+            "name": "page_city",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5a847ec88a0ce",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5a7b6a05d1061",
+            "label": "Footer Text",
+            "name": "footer_text",
+            "type": "textarea",
+            "instructions": "Add SEO footer text (up to the copyright+year sentence... that gets included automatically.)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Accountants | Auditors | Advisors | Consultants | CPAs :: BeachFleischman PC is one of the largest locally-owned public accounting and consulting firms in Southern Arizona and a Top 200 CPA firm in the United States. Serving clients in Phoenix, Tucson, Mesa, Scottsdale, Tempe, Gilbert, Glendale, Flagstaff, and Chandler, BeachFleischman provides accounting, audit, consulting, and tax services to businesses, organizations, and individuals (U.S. and foreign-based), doing business domestically and internationally.",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 6,
+            "new_lines": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl-landing-page.php"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1664941100
+}

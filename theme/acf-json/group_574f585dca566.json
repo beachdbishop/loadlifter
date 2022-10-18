@@ -1,0 +1,86 @@
+{
+    "key": "group_574f585dca566",
+    "title": "Post Options",
+    "fields": [
+        {
+            "key": "field_574f586dc354e",
+            "label": "Hide Authorbox",
+            "name": "hide_authorbox",
+            "type": "checkbox",
+            "instructions": "Check to prevent the display of the author box at the bottom of this post. (The author box is hidden by default when the author is bfcotaxdept.)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "hide": "Hide"
+            },
+            "default_value": [],
+            "layout": "vertical",
+            "toggle": 0,
+            "allow_custom": 0,
+            "save_custom": 0,
+            "return_format": "value"
+        },
+        {
+            "key": "field_6005096f3d3f9",
+            "label": "Hide Related Posts",
+            "name": "hide_relposts",
+            "type": "true_false",
+            "instructions": "Prevent display of the Jetpack Related Posts below the post content.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Hidden",
+            "ui_off_text": "Shown"
+        },
+        {
+            "key": "field_620f0a1b6d450",
+            "label": "Original Content",
+            "name": "original_content",
+            "type": "true_false",
+            "instructions": "Check if this post was written by BeachFleischman staff (i.e. not Checkpoint\/TR content)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": false,
+    "modified": 1664927608
+}

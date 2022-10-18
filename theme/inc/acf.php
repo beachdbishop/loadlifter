@@ -1,29 +1,28 @@
 <?php
 
 add_filter('acf/settings/save_json', 'll_json_save_point');
-
 function ll_json_save_point( $path ) {
-
-    // update path
     $path = get_stylesheet_directory() . '/acf-json';
-
-    // return
     return $path;
-
 }
-
 
 add_filter('acf/settings/load_json', 'll_json_load_point');
-
 function ll_json_load_point( $paths ) {
-
-    // remove original path (optional)
     unset($paths[0]);
-
-    // append path
     $paths[] = get_stylesheet_directory() . '/acf-json';
-
-    // return
     return $paths;
-
 }
+
+/**
+ * Site Meta Options Page
+ */
+if( function_exists( 'acf_add_options_page' ) ) {
+	acf_add_options_page(array(
+		'page_title'	=> 'Site General Settings',
+		'menu_title'	=> 'Site Meta',
+		'menu_slug'		=> 'theme-general-settings',
+		'capability'	=> 'manage_options',
+		'icon_url'		=> 'dashicons-building',
+	));
+}
+

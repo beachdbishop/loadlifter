@@ -28,6 +28,35 @@ function wpdocs_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
+
+
+/**
+ * Display post id column in posts list
+ */
+function ll_add_id_column( $columns ) {
+	$columns['ll_id'] = 'ID';
+	return $columns;
+}
+
+function ll_id_column_content( $column, $id ) {
+	if ( 'll_id' == $column ) {
+		echo $id;
+	}
+}
+
+add_filter( 'manage_posts_columns', 'll_add_id_column', 5 );
+add_filter( 'manage_pages_columns', 'll_add_id_column', 5 );
+add_action( 'manage_posts_custom_column', 'll_id_column_content', 5, 2 );
+add_action( 'manage_pages_custom_column', 'll_id_column_content', 5, 2 );
+
+
+
+
+
+
+
+
+
 /**
  * Custom body classes
  */
@@ -36,6 +65,10 @@ function ll_body_class( $classes ) {
 
 	if ( wp_get_environment_type() == 'production' ) {
 		$classes[] = 'env-prod';
+	}
+
+	if ( wp_get_environment_type() == 'staging' ) {
+		$classes[] = 'env-staging';
 	}
 
 	if ( wp_get_environment_type() == 'local' ) {
@@ -233,3 +266,20 @@ function ll_dps_add_posts_to_exclusion_list( $output ) {
   return $output;
 }
 // add_filter( 'display_posts_shortcode_output', 'll_dps_add_posts_to_exclusion_list' );
+
+
+/**
+ * Display Reusable Blocks in Menu
+ */
+function ll_show_reusable_blocks_menu() {
+	add_menu_page(
+		__( 'Reusable Blocks', 'loadlifter' ),
+		'Reusable Blocks',
+		'manage_options',
+		'edit.php?post_type=wp_block',
+		'',
+		'dashicons-insert',
+		31
+	);
+}
+add_action( 'admin_menu', 'll_show_reusable_blocks_menu' );
