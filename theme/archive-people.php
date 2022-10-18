@@ -21,7 +21,7 @@ $args = [
 	'posts_per_page'			=> -1,
 	'posts_per_archive_page'	=> -1,
 	'order' 					=> 'ASC',
-	'orderby' 					=> 'meta_value',
+	'orderby' 					=> 'meta_value title',
 	'wp_grid_builder'			=> 'wpgb-content-1',
 ];
 

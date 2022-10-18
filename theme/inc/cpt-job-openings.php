@@ -10,7 +10,6 @@
 
 // BACKEND  BACKEND  BACKEND  BACKEND  BACKEND  BACKEND  BACKEND  BACKEND  BACKEND
 
-add_action( 'init', 'll_make_bfco_job_opening', 0 );
 if ( ! function_exists( 'll_make_bfco_job_opening' ) ) {
 	// Register Custom Post Type
 	function ll_make_bfco_job_opening() {
@@ -92,10 +91,10 @@ if ( ! function_exists( 'll_make_bfco_job_opening' ) ) {
 		register_post_type( 'job_opening', $args );
 	}
 }
+add_action( 'init', 'll_make_bfco_job_opening', 0 );
 
 
 // Set active ADMIN COLUMNS for Job Openings
-add_filter( 'manage_edit-job_opening_columns', 'll_edit_job_opening_columns' );
 function ll_edit_job_opening_columns( $columns ) {
 
 	$columns = array(
@@ -109,6 +108,7 @@ function ll_edit_job_opening_columns( $columns ) {
 
 	return $columns;
 }
+add_filter( 'manage_edit-job_opening_columns', 'll_edit_job_opening_columns' );
 
 
 // Set default sort order for Job Openings in backend
@@ -126,7 +126,6 @@ function ll_edit_job_opening_columns( $columns ) {
 
 
 // Enable sorting on specific columns for Job Openings
-add_filter( 'manage_edit-job_opening_sortable_columns', 'll_job_opening_sortable_columns' );
 function ll_job_opening_sortable_columns( $columns ) {
 
 	$columns['opening_status'] = 'opening_status';
@@ -136,13 +135,14 @@ function ll_job_opening_sortable_columns( $columns ) {
 	return $columns;
 
 }
+add_filter( 'manage_edit-job_opening_sortable_columns', 'll_job_opening_sortable_columns' );
 
 
 /* Only run our customization on the 'edit.php' page in the admin. */
-add_action( 'load-edit.php', 'll_edit_job_opening_load' );
 function ll_edit_job_opening_load() {
 	add_filter( 'request', 'll_sort_job_openings' );
 }
+add_action( 'load-edit.php', 'll_edit_job_opening_load' );
 
 function ll_sort_job_openings( $vars ) {
 	/* Check if we're viewing the 'job_opening' post type. */
@@ -193,7 +193,6 @@ function ll_sort_job_openings( $vars ) {
 
 
 // Set data to display in admin columns
-add_action( 'manage_job_opening_posts_custom_column', 'll_pop_job_opening_column', 10, 2 );
 function ll_pop_job_opening_column( $column, $post_id ) {
 	global $post;
 
@@ -201,78 +200,75 @@ function ll_pop_job_opening_column( $column, $post_id ) {
 
 		/* If displaying the 'status' column... */
 		case 'opening_status' :
-
 			/* Get the post meta. */
 			$status = get_post_meta( $post_id, 'opening_status', true );
 
 			if ( $status === '1' )
-				echo '<span style="color: #15803d"><span class="dashicons dashicons-visibility"></span> ' . __( 'Open', 'loadlifter' ) . '</span>';
+			echo '<span style="color: #15803d"><span class="dashicons dashicons-visibility"></span> ' . __( 'Open', 'loadlifter' ) . '</span>';
 
 			if ( $status === '0' )
-				echo '<span style="color: #737373"><span class="dashicons dashicons-hidden"></span><em> ' . __( 'Closed', 'loadlifter' ) . '</em></span>';
+			echo '<span style="color: #737373"><span class="dashicons dashicons-hidden"></span><em> ' . __( 'Closed', 'loadlifter' ) . '</em></span>';
 
 			break;
 
 		case 'location' :
-
 			$locations = get_post_meta( $post_id, 'location', true );
 
 			if ( empty( $locations ) )
-				echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
+			echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
 
 			if ( !empty( $locations ) )
-				echo '<span style="text-transform: capitalize">' . implode( ', ', $locations ) . '</span>';
+			echo '<span style="text-transform: capitalize">' . implode( ', ', $locations ) . '</span>';
 
 			break;
 
 		case 'time_status' :
-
 			$time_status = get_post_meta( $post_id, 'time_status', true );
 
 			if ( empty( $time_status ) )
-				echo '<em>' . __( 'Unknown', 'loadlifter' ) . '</em>';
+			echo '<em>' . __( 'Unknown', 'loadlifter' ) . '</em>';
 
 			if ( $time_status === 'fulltime' )
-				echo '<span>Full-Time</span>';
+			echo '<span>Full-Time</span>';
 
 			if ( $time_status === 'parttime' )
-				echo '<span>Part-Time</span>';
+			echo '<span>Part-Time</span>';
 
 			break;
 
 			/* Just break out of the switch statement for everything else. */
 		default :
 			break;
+
 	}
 }
+add_action( 'manage_job_opening_posts_custom_column', 'll_pop_job_opening_column', 10, 2 );
 
 
 
 // FRONTEND  FRONTEND  FRONTEND  FRONTEND  FRONTEND  FRONTEND  FRONTEND  FRONTEND
 
-
 /* Register Custom Post Type Template */
+// if( !function_exists( 'll_job_opening_bfco_templates' ) ):
+// 	function ll_job_opening_bfco_templates( $template ) {
+// 		$post_types = [ 'job_opening' ];
+
+// 		if ( is_singular( $post_types ) && file_exists( plugin_dir_path( __FILE__ ) . 'template-parts/single_job_opening.php' ) ) {
+// 			$template = plugin_dir_path( __FILE__ ) . 'template-parts/single_job_opening.php';
+// 		}
+
+// 		if ( is_post_type_archive( $post_types ) && file_exists( plugin_dir_path( __FILE__ ) . 'template-parts/archive_job_opening.php' ) ) {
+// 			$template = plugin_dir_path( __FILE__ ) . 'template-parts/archive_job_opening.php';
+// 		}
+
+// 		return $template;
+// 	}
+// endif;
 // add_filter( 'template_include', 'll_job_opening_bfco_templates', 99 );
-if( !function_exists( 'll_job_opening_bfco_templates' ) ):
-function ll_job_opening_bfco_templates( $template ) {
-	$post_types = [ 'job_opening' ];
-
-	if ( is_singular( $post_types ) && file_exists( plugin_dir_path( __FILE__ ) . 'template-parts/single_job_opening.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) . 'template-parts/single_job_opening.php';
-	}
-
-	if ( is_post_type_archive( $post_types ) && file_exists( plugin_dir_path( __FILE__ ) . 'template-parts/archive_job_opening.php' ) ) {
-		$template = plugin_dir_path( __FILE__ ) . 'template-parts/archive_job_opening.php';
-	}
-
-	return $template;
-}
-endif;
 
 
 /* Customize the output of the Display Posts Shortcode to include the Location meta_value */
 /* via: https://displayposts.com/2019/06/23/display-meta-value-in-output/ */
-add_filter( 'display_posts_shortcode_output', 'll_dps_include_locations', 10, 11 );
 function ll_dps_include_locations( $output, $original_atts, $image, $title, $date, $excerpt, $inner_wrapper, $content, $class, $author, $category_display_text ) {
 	if( empty( $original_atts['include_location'] ) || false === filter_var( $original_atts['include_location'], FILTER_VALIDATE_BOOLEAN ) )
 		return $output;
@@ -292,3 +288,4 @@ function ll_dps_include_locations( $output, $original_atts, $image, $title, $dat
 	$output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' . $image . $title . $locations . $date . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';
 	return $output;
 }
+add_filter( 'display_posts_shortcode_output', 'll_dps_include_locations', 10, 11 );

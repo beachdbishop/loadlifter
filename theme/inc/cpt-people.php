@@ -110,31 +110,6 @@ function ll_people_columns( $column, $post_id ) {
 add_action( 'manage_people_posts_custom_column', 'll_people_columns', 10, 2 );
 
 
-/* via: https://stackoverflow.com/questions/31434373/in-wordpress-how-do-i-set-the-default-admin-sort-order-for-a-custom-post-type-t */
-// is_admin() && add_action( 'pre_get_posts', 'll_people_orderby' );
-// function ll_people_orderby( $query ) {
-// 	// Nothing to do
-// 	if( !$query->is_main_query() || 'people' != $query->get( 'post_type' ) )
-// 		return;
-
-// 	//-----------------------------------------------------
-// 	// Modify the 'orderby' and 'meta_key' parts
-// 	//-----------------------------------------------------
-// 	$orderby = strtolower( $query->get( 'orderby' ) );
-// 	$mods = [
-// 		'level'			=> [ 'meta_key' => 'll_people_level', 'orderby' 		=> 'meta_value' ],
-// 		''				=> [ 'meta_key' => 'll_people_level', 'orderby' 		=> 'meta_value' ],
-// 		'department'	=> [ 'meta_key' => 'll_people_department', 'orderby' 	=> 'meta_value' ],
-// 		'location'		=> [ 'meta_key' => 'll_people_location', 'orderby' 		=> 'meta_value' ],
-// 	];
-// 	$key = 'people_sort_' . $orderby;
-// 	if ( isset( $mods[$key] ) ) {
-// 		$query->set( 'meta_key', $mods[$key]['meta_key'] );
-// 		$query->set( 'orderby', $mods[$key]['orderby'] );
-// 	}
-// }
-
-
 function ll_people_sortable_columns( $columns ) {
 	$columns['level'] = 'level';
 	$columns['dept'] = 'dept';
@@ -143,37 +118,35 @@ function ll_people_sortable_columns( $columns ) {
 }
 add_filter( 'manage_edit-people_sortable_columns', 'll_people_sortable_columns' );
 
-
+// WP-Admin list sort
 function ll_people_orderby( $query ) {
-	if( !is_admin() || !$query->is_main_query() ) {
+	// Nothing to do
+	if( !$query->is_main_query() || 'people' != $query->get( 'post_type' ) )
 		return;
-	}
 
+	// Do
 	if ( '' === $query->get( 'orderby' ) ) {
-		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'orderby', 'meta_value title' );
 		$query->set( 'order', 'ASC' );
 		$query->set( 'meta_key', 'll_people_level' );
 	}
 
 	if ( 'level' === $query->get( 'orderby' ) ) {
-		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'orderby', 'meta_value title' );
 		$query->set( 'meta_key', 'll_people_level' );
 	}
 
 	if( 'dept' === $query->get( 'orderby' ) ) {
-		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'orderby', 'meta_value title' );
 		$query->set( 'meta_key', 'll_people_department' );
 	}
 
 	if( 'location' === $query->get( 'orderby' ) ) {
-		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'orderby', 'meta_value title' );
 		$query->set( 'meta_key', 'll_people_location' );
 	}
 }
-add_action( 'pre_get_posts', 'll_people_orderby' );
-
-
-
+is_admin() && add_action( 'pre_get_posts', 'll_people_orderby' );
 
 
 

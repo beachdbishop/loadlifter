@@ -8,8 +8,8 @@
  */
 
 if ( ! function_exists( 'll_menu_det_summary' ) ) :
-	function ll_menu_det_summary( $link = '', $name, $summaryclasses ='', $linkclasses = '' ) {
-		$html = sprintf( '<summary class="flex items-center px-3 py-2 md:py-1 rounded-lg lg:gap-2 %3$s"><span class=""><a href="%1$s" class="%4$s">%2$s</a></span><span class="ml-auto transition duration-300 shrink-0"><svg class="icon"><use xlink:href="#angle-down" /></svg></span></summary>', $link, $name, $summaryclasses, $linkclasses );
+	function ll_menu_det_summary( $name, $link = '', $summaryclasses ='', $linkclasses = '' ) {
+		$html = sprintf( '<summary class="flex items-center px-3 py-2 md:py-1 rounded-lg lg:gap-2 %3$s"><span class=""><a href="%1$s" class="%4$s">%2$s</a></span><span class="ml-auto transition duration-300 shrink-0"><svg class="icon"><use xlink:href="#angle-down" /></svg></span></summary>', $name, $link, $summaryclasses, $linkclasses );
 
 		return $html;
 	}
@@ -59,7 +59,7 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 				$coauthors = get_coauthors();
 				foreach( $coauthors as $coauthor ) {
 					// $avatar = coauthors_get_avatar( $coauthor, 200, '', $coauthor->display_name, 'mb-2 rounded-full ' );
-					$avatar = get_field( 'll_headshot', 'user_' . $coauthor->ID );
+					$avatar = get_field( 'll_user_headshot', 'user_' . $coauthor->ID );
 					if( !empty( $avatar ) ) {
 						$avatar_markup = sprintf( '<div class="headshot | max-w-[320px] mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover" style="background-image: url(%1$s);" title="%2$s"><div class="max-w-[320px] aspect-square">&nbsp;</div></div>', $avatar['url'], $coauthor->display_name );
 					} else {
