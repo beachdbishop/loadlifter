@@ -30,7 +30,8 @@ $peopleQuery = new WP_Query( $args );
 remove_filter( 'posts_orderby', 'll_people_filter_query' );
 /* via: https://wordpress.stackexchange.com/questions/109849/order-by-desc-asc-in-custom-wp-query */
 function ll_people_filter_query( $query ) {
-	$query .= ', wp_posts.menu_order ASC';
+	$table_pre = ( wp_get_environment_type() == 'local' ) ? 'wp' : 'ee7hu21rj';
+	$query .= ', ' . $table_pre . '_posts.menu_order ASC';
 	return $query;
 }
 
