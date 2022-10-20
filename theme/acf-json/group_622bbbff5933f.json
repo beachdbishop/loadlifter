@@ -129,10 +129,12 @@
             },
             "choices": {
                 "aa": "Accounting & Assurance",
-                "soar": "Consulting (SOAR)",
+                "ffvs": "Financial Forensics & Valuation Services",
                 "intops": "Internal Operations",
-                "tax": "Tax",
-                "none": "No Dept"
+                "oaas": "Outsourced Accounting & Advisory Services",
+                "ppd": "Pinnacle Plan Design",
+                "soar": "Strategic Operations & Advisory Resources",
+                "tax": "Tax"
             },
             "default_value": "",
             "return_format": "array",
@@ -259,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1666283836
+    "modified": 1666306969
 }

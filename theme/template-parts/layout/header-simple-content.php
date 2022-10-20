@@ -218,7 +218,6 @@
 											<li><a href="/">Mission, Vision, and Core Values</a></li>
 											<li><a href="/">Culture</a></li>
 											<li><a href="/people/">Our People</a></li>
-											<li><a href="/about-2/leadership-team/">Leadership Team</a></li>
 											<li><a href="/">Community Involvement</a></li>
 											<li><a href="/">Trade and Professional Involvement</a></li>
 											<li><a href="/">Women RISE</a></li>
