@@ -16,6 +16,13 @@ get_header();
 
 $args = [
 	'post_type' 				=> 'people',
+	'meta_query'				=> [
+		[
+			'key'		=> 'll_people_level',
+			'value'		=> '900',
+			'compare'	=> '!=',
+		],
+	],
 	'meta_key'					=> 'll_people_level',
 	'post_status' 				=> 'publish',
 	'posts_per_page'			=> -1,

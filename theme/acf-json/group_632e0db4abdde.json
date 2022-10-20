@@ -104,7 +104,7 @@
                 "500": "Supervisor",
                 "600": "Senior",
                 "700": "Associate",
-                "900": "Hiring"
+                "900": "Exclude"
             },
             "default_value": 100,
             "return_format": "array",
@@ -131,14 +131,15 @@
                 "aa": "Accounting & Assurance",
                 "soar": "Consulting (SOAR)",
                 "intops": "Internal Operations",
-                "tax": "Tax"
+                "tax": "Tax",
+                "none": "No Dept"
             },
             "default_value": "tax",
             "return_format": "array",
             "allow_null": 0,
             "other_choice": 0,
-            "save_other_choice": 0,
-            "layout": "vertical"
+            "layout": "vertical",
+            "save_other_choice": 0
         },
         {
             "key": "field_634b4dd8f97b8",
@@ -233,5 +234,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666040633
+    "modified": 1666136047
 }

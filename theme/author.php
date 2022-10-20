@@ -58,12 +58,12 @@ if (!empty($author_thumbnail)) {
 								echo sprintf('<li class="text-lg">%1$s</li>', $author_title);
 							} ?>
 							<?php if ( $author_org != 'BeachFleischman' ) {
-								echo sprintf('<li><strong>%1$s</strong></li>', $author_org);
+								echo sprintf('<li><strong class="text-lg">%1$s</strong></li>', $author_org);
 							} ?>
 						</ul>
 						<div class="w-12 h-2 mt-2 mb-4 rounded-tl-md rounded-br-md bg-brand-gray-dark"></div>
 
-						<?php if ( $author_depts ) {
+						<?php if ( ( $author_depts ) && ( $author_depts != 'No Dept' ) ) {
 							echo sprintf( '<p class="uppercase font-head text-neutral-700 tracking-loose"><i class="fa-solid fa-people-group"></i> <span class="">%1$s</span></p>', esc_html( $author_depts ) );
 						} ?>
 

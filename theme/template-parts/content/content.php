@@ -28,8 +28,8 @@
 			?>
 		</header>
 
-		<div class="md:flex md:gap-4 lg:gap-8">
-			<div class="md:order-last md:w-2/3 lg:w-3/4">
+		<div class="md:flex md:gap-4 lg:gap-x-12 lg:gap-y-8">
+			<div class="md:order-first md:w-2/3 lg:w-3/4">
 				<div class="entry-content">
 					<?php
 					the_content(
@@ -63,7 +63,7 @@
 				<?php get_sidebar( 'after-post' ); ?>
 			</div>
 
-			<aside class="mt-4 md:mt-0 md:order-first md:w-1/3 lg:w-1/4">
+			<aside class="mt-4 md:mt-0 md:order-last md:w-1/3 lg:w-1/4">
 				<?php
 				if ( 'post' === get_post_type() ) :
 				?>

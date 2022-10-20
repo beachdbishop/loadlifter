@@ -16,6 +16,7 @@ if ( $peep_thumbnail ) {
 	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
 $peep_desigs = get_field( 'll_people_designations' );
+$peep_org = get_field( 'll_people_organization' );
 $peep_title = get_field( 'll_people_title' );
 $peep_level = get_field( 'll_people_level' );
 $peep_department = get_field_object( 'll_people_department' );
@@ -70,11 +71,13 @@ if ( $peepauthor ) {
 					<?php if ( ( $peep_dept ) || ( $peep_loc ) ) { ?>
 						<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-500 border-neutral-200 children:inline-block">
 
-							<?php if( $peep_dept ) { ?>
-								<span class="inline-comma-sep"><i class="fa-solid fa-people-group"></i> <?php echo '<span class="">' . esc_html($peep_dept) . '</span>'; ?></span>
+							<?php if ( ( $peep_dept ) && ( $peep_dept != 'No Dept' ) ) { ?>
+								<span class=""><i class="fa-solid fa-people-group"></i> <?php echo '<span class="">' . esc_html($peep_dept) . '</span>'; ?></span>
+							<?php } else { ?>
+								<span class=""><i class="fa-regular fa-building"></i> <?php echo '<span class="font-bold">' . esc_html($peep_org) . '</span>'; ?></span>
 							<?php } ?>
 
-							<?php if( $peep_loc ) { ?>
+							<?php if ( ( $peep_loc ) && ( $peep_dept != 'No Dept' ) ) { ?>
 								<span class=""><i class="fa-solid fa-location-dot"></i> <?php echo esc_html( $peep_loc ); ?></span>
 							<?php } ?>
 

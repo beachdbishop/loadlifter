@@ -6,6 +6,7 @@
             "key": "field_622bbc7f2c7cb",
             "label": "Linked Author",
             "name": "ll_people_user",
+            "aria-label": "",
             "type": "user",
             "instructions": "",
             "required": 0,
@@ -24,6 +25,7 @@
             "key": "field_622bbc492c7ca",
             "label": "Designations",
             "name": "ll_people_designations",
+            "aria-label": "",
             "type": "text",
             "instructions": "Provide comma-separated list of designations",
             "required": 0,
@@ -40,9 +42,30 @@
             "append": ""
         },
         {
+            "key": "field_6351782282d83",
+            "label": "Organization",
+            "name": "ll_people_organization",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BeachFleischman",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6230fe373c886",
             "label": "Displayed Title",
             "name": "ll_people_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "This is the custom title that's shown on a person's bio page.",
             "required": 0,
@@ -62,6 +85,7 @@
             "key": "field_634da0fae1c21",
             "label": "Level",
             "name": "ll_people_level",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -79,7 +103,7 @@
                 "500": "Supervisor",
                 "600": "Senior",
                 "700": "Associate",
-                "900": "Hiring"
+                "900": "Exclude"
             },
             "default_value": false,
             "return_format": "array",
@@ -93,6 +117,7 @@
             "key": "field_634da138e1c22",
             "label": "Department",
             "name": "ll_people_department",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -106,19 +131,21 @@
                 "aa": "Accounting & Assurance",
                 "soar": "Consulting (SOAR)",
                 "intops": "Internal Operations",
-                "tax": "Tax"
+                "tax": "Tax",
+                "none": "No Dept"
             },
             "default_value": "",
             "return_format": "array",
             "allow_null": 0,
             "other_choice": 0,
-            "save_other_choice": 0,
-            "layout": "vertical"
+            "layout": "vertical",
+            "save_other_choice": 0
         },
         {
             "key": "field_634da154e1c23",
             "label": "Location",
             "name": "ll_people_location",
+            "aria-label": "",
             "type": "radio",
             "instructions": "",
             "required": 0,
@@ -143,6 +170,7 @@
             "key": "field_62a13531ffae8",
             "label": "Industries",
             "name": "ll_people_industries",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -156,7 +184,9 @@
                 "industries"
             ],
             "taxonomy": "",
-            "filters": "",
+            "filters": [
+                "search"
+            ],
             "return_format": "object",
             "min": "",
             "max": "",
@@ -166,6 +196,7 @@
             "key": "field_634da1a5e1c24",
             "label": "Featured Services",
             "name": "ll_people_services",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -191,6 +222,7 @@
             "key": "field_634da1d2e1c25",
             "label": "Favorite Quote",
             "name": "ll_people_quote",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -227,5 +259,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1666032160
+    "modified": 1666283836
 }
