@@ -95,23 +95,33 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 		if( function_exists( 'coauthors_posts_links' ) ) {
 			if( $config['show_thumb']) {
 				$coauthors = get_coauthors();
+				echo <<<EOT
+				<h6>Authored by:</h6>
+				<div class="flex items-center justify-start w-full py-8">
+					<div class="flex -space-x-3">
+				EOT;
 				foreach( $coauthors as $coauthor ) {
 					// $avatar = coauthors_get_avatar( $coauthor, 200, '', $coauthor->display_name, 'mb-2 rounded-full ' );
 					$avatar = get_field( 'll_user_headshot', 'user_' . $coauthor->ID );
 					if( !empty( $avatar ) ) {
-						$avatar_markup = sprintf( '<div class="headshot | max-w-[320px] mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover" style="background-image: url(%1$s);" title="%2$s"><div class="max-w-[320px] aspect-square">&nbsp;</div></div>', $avatar['url'], $coauthor->display_name );
+						$avatar_markup = sprintf( '<a href="%3$s" class="relative inline-flex items-center justify-center text-white rounded-full w-30"><img src="%1$s" alt="%2$s" title="%2$s" width="120" class="max-w-full border-2 border-white rounded-full" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
 					} else {
-						$avatar_markup = '';
+						$avatar_markup = sprintf( '<a href="%3$s" class="relative inline-flex items-center justify-center text-lg text-white rounded-full w-30 bg-neutral-400"><div class="px-4 w-30 " title="%2$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
 					}
 
-					$namelink = coauthors_posts_links_single( $coauthor );
-					echo <<<EOT
-					<div class="author | mb-4">
-						{$avatar_markup}
-						<h5 class="text-xl font-bold text-brand-red ">{$namelink}</h5>
-					</div>
-					EOT;
+					// $namelink = coauthors_posts_links_single( $coauthor );
+					// echo <<<EOT
+					// <div class="author | mb-4">
+					// 	<!-- {$avatar_markup} -->
+					// 	<h5 class="text-xl font-bold text-brand-red ">{$namelink}</h5>
+					// </div>
+					// EOT;
+					echo $avatar_markup;
 				}
+				echo <<<EOT
+					</div>
+				</div>
+				EOT;
 			} else {
 				coauthors_posts_links(); // plain jane list
 			}
