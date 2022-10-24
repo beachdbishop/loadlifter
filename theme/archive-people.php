@@ -55,7 +55,7 @@ function ll_people_filter_query( $query ) {
 				<?php if ( $peopleQuery->have_posts() ) : ?>
 
 					<header>
-						<h2 class="entry-title todo">Our People / Our Leadership Team / ???</h2>
+						<h2 class="entry-title">Leadership Team</h2>
 						<p class="font-head lg:text-xl todo">Lorem ipsum something our team something something.</p>
 					</header>
 
