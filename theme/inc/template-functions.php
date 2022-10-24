@@ -184,7 +184,7 @@ function ll_social_links() {
 	if( !empty( $output ) )
 		return '<p class="social-links | m-0 leading-none space-x-2">' . join( ' ', $output ) . '</p>';
 }
-add_shortcode( 'social_links', 'll_social_links' );
+// add_shortcode( 'social_links', 'll_social_links' );
 
 
 /**

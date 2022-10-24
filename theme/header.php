@@ -21,18 +21,10 @@
 <body <?php body_class( 'bg-fixed bg-gradient-to-t from-brand-red-pale via-brand-red to-brand-red-dark overflow-x-hidden styled-scrollbars' ); ?>>
 
 <?php wp_body_open(); ?>
-<svg xmlns="http://www.w3.org/2000/svg" style="display: none">
-	<!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
-	<symbol id="bars" viewBox="0 0 448 512" fill="currentColor"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></symbol>
 
-	<symbol id="caret-down" viewBox="0 0 320 512" fill="currentColor"><path d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z"/></symbol>
+<?php get_template_part( 'template-parts/svg/fa', 'symbols' ); ?>
 
-	<symbol id="angle-down" viewBox="0 0 448 512" fill="currentColor"><path d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></symbol>
-
-	<symbol id="arrow-right" viewBox="0 0 448 512" fill="currentColor"><path d="M264.6 70.63l176 168c4.75 4.531 7.438 10.81 7.438 17.38s-2.688 12.84-7.438 17.38l-176 168c-9.594 9.125-24.78 8.781-33.94-.8125c-9.156-9.5-8.812-24.75 .8125-33.94l132.7-126.6H24.01c-13.25 0-24.01-10.76-24.01-24.01s10.76-23.99 24.01-23.99h340.1l-132.7-126.6C221.8 96.23 221.5 80.98 230.6 71.45C239.8 61.85 254.1 61.51 264.6 70.63z"/></symbol>
-</svg>
-
-<?php get_sidebar( 'prehead' ); ?>
+<?php // get_sidebar( 'prehead' ); ?>
 
 <div id="page" class="">
 	<a href="#primary" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'loadlifter' ); ?></a>

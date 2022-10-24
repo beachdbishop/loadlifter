@@ -21,7 +21,7 @@ $peep_title = get_field( 'll_people_title' );
 $peep_level = get_field( 'll_people_level' );
 $peep_department = get_field_object( 'll_people_department' );
 $peep_dept_value = $peep_department['value'];
-$peep_dept = $peep_dept_value['label'];
+// $peep_dept = $peep_dept_value['label'];
 $peep_location = get_field_object( 'll_people_location' );
 $peep_loc_value = $peep_location['value'];
 $peep_loc = $peep_loc_value['label'];
@@ -68,18 +68,18 @@ if ( $peepauthor ) {
 						</h2>
 					<?php } ?>
 
-					<?php if ( ( $peep_dept ) || ( $peep_loc ) ) { ?>
-						<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-500 border-neutral-200 children:inline-block">
+					<?php if ( ( $peep_dept_value ) || ( $peep_loc ) ) { ?>
+						<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-400 border-neutral-200 children:inline-block">
 
-							<?php if ( ( $peep_dept ) && ( $peep_dept != 'No Dept' ) ) { ?>
-								<span class=""><i class="fa-solid fa-people-group"></i> <?php echo '<span class="">' . esc_html($peep_dept) . '</span>'; ?></span>
-							<?php } else { ?>
-								<span class=""><i class="fa-regular fa-building"></i> <?php echo '<span class="font-bold">' . esc_html($peep_org) . '</span>'; ?></span>
-							<?php } ?>
+							<?php
+							if ( $peep_dept_value ) {
+								ll_people_show_dept_list( $peep_dept_value );
+							}
 
-							<?php if ( ( $peep_loc ) && ( $peep_dept != 'No Dept' ) ) { ?>
-								<span class=""><i class="fa-solid fa-location-dot"></i> <?php echo esc_html( $peep_loc ); ?></span>
-							<?php } ?>
+							if ( $peep_loc ) {
+								ll_people_show_location( $peep_loc );
+							}
+							?>
 
 						</div>
 					<?php } ?>

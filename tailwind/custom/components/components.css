@@ -95,6 +95,14 @@ aside .timestamp {
 	@apply papercorners-6 bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 hover:bg-brand-blue-pale hover:text-brand-blue-dark;
 }
 
+
+.llicon {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+}
+
+
 .social-links a {
 	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;
 }

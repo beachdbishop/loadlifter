@@ -45,14 +45,6 @@ if ( ! function_exists( 'll_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		// This theme uses wp_nav_menu() in one location.
-		// register_nav_menus(
-		// 	array(
-		// 		'menu-1' => esc_html__( 'Primary', 'loadlifter' ),
-		// 		'menu-2' => esc_html__( 'Footer', 'loadlifter' ),
-		// 	)
-		// );
-
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -68,35 +60,8 @@ if ( ! function_exists( 'll_setup' ) ) :
 			)
 		);
 
-		// Set up the WordPress core custom background feature.
-		// add_theme_support(
-		// 	'custom-background',
-		// 	apply_filters(
-		// 		'll_custom_background_args',
-		// 		array(
-		// 			'default-color' => 'ffffff',
-		// 			'default-image' => '',
-		// 		)
-		// 	)
-		// );
-
 		// Add theme support for selective refresh for widgets.
-		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add support for core custom logo.
-		 *
-		 * @link https://codex.wordpress.org/Theme_Logo
-		 */
-		add_theme_support(
-			'custom-logo',
-			array(
-				'height'      => 250,
-				'width'       => 250,
-				'flex-width'  => true,
-				'flex-height' => true,
-			)
-		);
+		// add_theme_support( 'customize-selective-refresh-widgets' );
 
 		/**
 		 * Add responsive embeds and block editor styles.
@@ -104,7 +69,7 @@ if ( ! function_exists( 'll_setup' ) ) :
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style-editor.css' );
-		remove_theme_support( 'block-templates' );
+		remove_theme_support( 'block-templates' ); // <-- FSE?
 
 		add_theme_support( 'disable-custom-font-sizes' );
 
@@ -140,56 +105,6 @@ function ll_content_width() {
 add_action( 'after_setup_theme', 'll_content_width', 0 );
 
 /**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function ll_widgets_init() {
-
-	register_sidebar( [
-		'id' 			=> 'sidebar-prehead',
-		'name'			=> esc_html__( 'Pre-Head Banner Area', 'loadlifter' ),
-		'description'	=> esc_html__( 'Add a single Custom HTML widget here.', 'loadlifter' ),
-		'before_widget'	=> '',
-		'after_widget'	=> '',
-		'before_title'	=> '<h5 class="hidden">',
-		'after_title'	=> '</h5>',
-	] );
-
-	register_sidebar( [
-		'id'            => 'sidebar-1',
-		'name'          => esc_html__( 'Sidebar', 'loadlifter' ),
-		'description'   => esc_html__( 'Add widgets here.', 'loadlifter' ),
-		'before_widget' => '<section id="%1$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h5 class="text-lg">',
-		'after_title'   => '</h5>',
-	] );
-
-	register_sidebar( [
-		'id'            => 'sidebar-after-post',
-		'name'          => esc_html__( 'After-Post Area', 'loadlifter' ),
-		'description'   => esc_html__( 'Add widgets here.', 'loadlifter' ),
-		'before_widget' => '<section id="%1$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h5 class="text-lg">',
-		'after_title'   => '</h5>',
-	] );
-
-	register_sidebar( [
-		'id' 			=> 'sidebar-prefoot',
-		'name'			=> esc_html__( 'Pre-Footer Banner Area', 'loadlifter' ),
-		'description'	=> esc_html__( 'Add a single Custom HTML widget here.', 'loadlifter' ),
-		'before_widget'	=> '',
-		'after_widget'	=> '',
-		'before_title'	=> '<h5 class="hidden">',
-		'after_title'	=> '</h5>',
-	] );
-
-}
-add_action( 'widgets_init', 'll_widgets_init' );
-
-/**
  * Enqueue scripts and styles.
  */
 // function ll_remove_default_block_styles() {
@@ -200,15 +115,12 @@ add_action( 'widgets_init', 'll_widgets_init' );
 function ll_scripts() {
 	global $version_string;
 
-	// wp_register_style( 'a11y-slider-base', get_template_directory_uri() . '/a11y-slider.css', [], $version_string );
 	wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
 	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], $version_string );
 
 	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
 	wp_enqueue_script( 'vanilla-tilt', get_template_directory_uri() . '/js/vanilla-tilt.min.js', [], $version_string, true );
 	wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
-	// wp_enqueue_script( 'detutils', get_template_directory_uri() . '/js/details-utils.js', [], '', true );
-	// wp_register_script( 'a11y-slider', get_template_directory_uri() . '/js/a11y-slider.js', [], $version_string, false );
 	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
 
 
@@ -219,7 +131,6 @@ function ll_guten_scripts() {
 	global $version_string;
 
 	wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
-
 }
 add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
 
@@ -231,8 +142,10 @@ function ll_checka11y_style() {
 	wp_enqueue_style( 'checka11y', 'https://cdn.jsdelivr.net/npm/checka11y-css@2.3.0/checka11y.css', array(), '' );
 }
 
+function ll_disable_wp_links_menu() {
+	remove_menu_page( 'link-manager.php' );
+}
 
-add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 function ll_disable_wp57_menu_hover() {
 	echo '<style>#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover { box-shadow: none !important; }</style>';
 }
@@ -252,6 +165,8 @@ switch( wp_get_environment_type() ) {
 		/**
 		 * Hide Jetpack upsell ads
 		 */
+		add_action( 'admin_menu', 'll_disable_wp_links_menu' );
+		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;
 }

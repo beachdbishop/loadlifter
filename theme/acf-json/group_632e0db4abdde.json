@@ -124,7 +124,7 @@
             "label": "Department",
             "name": "ll_user_department",
             "aria-label": "",
-            "type": "radio",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -142,12 +142,12 @@
                 "soar": "Strategic Operations & Advisory Resources",
                 "tax": "Tax"
             },
-            "default_value": "tax",
+            "default_value": [],
             "return_format": "array",
-            "allow_null": 0,
-            "other_choice": 0,
+            "allow_custom": 0,
+            "save_custom": 0,
             "layout": "vertical",
-            "save_other_choice": 0
+            "toggle": 0
         },
         {
             "key": "field_634b4dd8f97b8",
@@ -245,5 +245,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666306939
+    "modified": 1666309174
 }

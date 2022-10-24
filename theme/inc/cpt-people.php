@@ -95,8 +95,15 @@ function ll_people_columns( $column, $post_id ) {
 	if ( 'dept' === $column ) {
 		$dept_obj = get_field_object( 'll_people_department');
 		$dept_val = $dept_obj['value'];
-		$dept_display = $dept_val['label'];
-		echo $dept_display;
+		// $dept_display = $dept_val['label'];
+		// echo $dept_display;
+		if ( $dept_val ) {
+			echo '<span class="inline-comma-sep">';
+			foreach( $dept_val as $dept ) {
+				echo '<span>' . $dept['label'] . '</span>';
+			}
+			echo '</span>';
+		}
 	}
 
 	// Department column
@@ -149,6 +156,20 @@ function ll_people_orderby( $query ) {
 is_admin() && add_action( 'pre_get_posts', 'll_people_orderby' );
 
 
+function ll_cpt_people_admin_styles(){
+
+	// Global Admin Variable, It tells which page is on now.
+	global $pagenow;
+
+	// Global Admin Variable, It tells which post type is on now.
+	global $post_type;
+
+	if( ( $pagenow == 'edit.php' ) && ( $post_type ==  'people' ) ) {
+		wp_enqueue_style( 'admin-people', get_template_directory_uri().'/admin-people.css' );
+	}
+
+}
+add_action( 'admin_enqueue_scripts', 'll_cpt_people_admin_styles' );
 
 
 // Register Custom Taxonomy

@@ -92,6 +92,12 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	}
 }
 
+.inline-pipe-sep {
+	span:not(:last-of-type)::after {
+		content: " | ";
+	}
+}
+
 @supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {
 	.mask-logo {
 		mask-image: url("/wp-content/themes/loadlifter/theme/img/mask__bio.svg");

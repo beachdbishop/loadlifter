@@ -23,7 +23,7 @@ $author_thumbnail = get_field('ll_user_headshot', $author_id);
 $author_org = get_field('ll_user_organization', $author_id);
 $author_department = get_field_object( 'll_user_department', $author_id );
 $author_dept_value = $author_department['value'];
-$author_depts = $author_dept_value['label'];
+// $author_depts = $author_dept_value['label'];
 // $author_location = get_field_object( 'll_user_location', $author_id );
 // $author_loc_value = $author_location['value'];
 // $author_loc = $author_loc_value['label'];
@@ -63,8 +63,8 @@ if (!empty($author_thumbnail)) {
 						</ul>
 						<div class="w-12 h-2 mt-2 mb-4 rounded-tl-md rounded-br-md bg-brand-gray-dark"></div>
 
-						<?php if ( ( $author_depts ) && ( $author_depts != 'No Dept' ) ) {
-							echo sprintf( '<p class="uppercase font-head text-neutral-700 tracking-loose"><i class="fa-solid fa-people-group"></i> <span class="">%1$s</span></p>', esc_html( $author_depts ) );
+						<?php if ( $author_dept_value ) {
+							ll_people_show_dept_list( $author_dept_value );
 						} ?>
 
 					</div>

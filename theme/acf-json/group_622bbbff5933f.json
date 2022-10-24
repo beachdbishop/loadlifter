@@ -118,7 +118,7 @@
             "label": "Department",
             "name": "ll_people_department",
             "aria-label": "",
-            "type": "radio",
+            "type": "checkbox",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -136,12 +136,12 @@
                 "soar": "Strategic Operations & Advisory Resources",
                 "tax": "Tax"
             },
-            "default_value": "",
+            "default_value": [],
             "return_format": "array",
-            "allow_null": 0,
-            "other_choice": 0,
+            "allow_custom": 0,
             "layout": "vertical",
-            "save_other_choice": 0
+            "toggle": 0,
+            "save_custom": 0
         },
         {
             "key": "field_634da154e1c23",
@@ -261,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1666306969
+    "modified": 1666309224
 }

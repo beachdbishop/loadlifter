@@ -20,7 +20,7 @@ $peep_title = get_field( 'll_people_title' );
 $peep_level = get_field( 'll_people_level' );
 $peep_department = get_field_object( 'll_people_department' );
 $peep_dept_value = $peep_department['value'];
-$peep_dept = $peep_dept_value['label'];
+// $peep_dept = $peep_dept_value['label'];
 $peep_location = get_field_object( 'll_people_location' );
 $peep_loc_value = $peep_location['value'];
 $peep_loc = $peep_loc_value['label'];
@@ -43,16 +43,17 @@ $peep_loc = $peep_loc_value['label'];
 			<?php echo $peep_title; ?>
 		</p>
 
-		<?php if ( ( $peep_dept ) && ( $peep_dept != 'No Dept' ) ) { ?>
+		<?php if ( ( $peep_dept_value ) || ( $peep_loc ) ) { ?>
 			<footer class="mt-2 text-sm text-center text-neutral-400 group-hover:text-neutral-600 children:block children:px-2 lg:mt-4">
-				<span class="">
-					<i class="fa-solid fa-people-group"></i>
-					<?php echo $peep_dept; ?>
-				</span>
-				<span class="">
-					<i class="fa-solid fa-location-dot"></i>
-					<?php echo $peep_loc; ?>
-				</span>
+				<?php
+				if ( $peep_dept_value ) {
+					ll_people_show_dept_list( $peep_dept_value );
+				}
+
+				if ( $peep_loc ) {
+					ll_people_show_location( $peep_loc );
+				}
+				?>
 			</footer>
 		<?php } ?>
 	</a>

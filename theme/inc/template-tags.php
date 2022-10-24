@@ -15,6 +15,29 @@ if ( ! function_exists( 'll_menu_det_summary' ) ) :
 	}
 endif;
 
+
+if ( ! function_exists( 'll_show_social_links' ) ) :
+	/**
+	 *
+	 */
+	function ll_show_social_links() {
+		$soc_li = get_field( 'll_social_linkedin', 'option' );
+		$soc_tw = get_field( 'll_social_twitter', 'option' );
+		$soc_fb = get_field( 'll_social_facebook', 'option' );
+		$soc_ig = get_field( 'll_social_instagram', 'option' );
+		$soc_yt = get_field( 'll_social_youtube', 'option' );
+
+		echo '<span class="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
+			<a href="'.$soc_li.'"><svg class="llicon"><use xlink:href="#linkedin" /></svg><span class="screen-reader-text">LinkedIn</span></a>
+			<a href="'.$soc_tw.'"><svg class="llicon"><use xlink:href="#twitter" /></svg><span class="screen-reader-text">Twitter</span></a>
+			<a href="'.$soc_fb.'"><svg class="llicon"><use xlink:href="#facebook" /></svg><span class="screen-reader-text">Facebook</span></a>
+			<a href="'.$soc_ig.'"><svg class="llicon"><use xlink:href="#instagram" /></svg><span class="screen-reader-text">Instagram</span></a>
+			<a href="'.$soc_yt.'"><svg class="llicon"><use xlink:href="#youtube" /></svg><span class="screen-reader-text">YouTube</span></a>
+		</span>';
+	}
+endif;
+
+
 if ( ! function_exists( 'll_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
@@ -43,6 +66,21 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 
 	}
 endif;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if ( ! function_exists( 'll_posted_by' ) ) :
 	/**
@@ -82,6 +120,7 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 		}
 	}
 endif;
+
 
 if ( ! function_exists( 'll_social_shares' ) ) :
 	/**
@@ -283,6 +322,29 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 endif;
 
 
+if ( ! function_exists( 'll_people_dept_list' ) ) :
+	/**
+	 * Display People/Author department(s)
+	 */
+	function ll_people_show_dept_list( $departments ) {
+		echo '<span class="inline-pipe-sep | "><i class="fa-solid fa-people-group" title="Department(s)"></i> ';
+		foreach( $departments as $dept ) {
+			echo '<span class="text-neutral-600">' . $dept['label'] . '</span>';
+		}
+		echo '</span>';
+	}
+endif;
+
+if ( ! function_exists( 'll_people_show_location' ) ) :
+	/**
+	 * Display People/Author location
+	 */
+	function ll_people_show_location( $location ) {
+		echo '<span class=""><i class="fa-solid fa-location-dot" title="Location"></i> <span class="text-neutral-600">' . esc_html( $location ) . '</span></span>';
+	}
+endif;
+
+
 if ( ! function_exists( 'll_paging_nav' ) ) :
 	/**
 	 * Display navigation to next/previous set of posts when applicable.
@@ -338,41 +400,41 @@ if ( ! function_exists( 'll_paging_nav' ) ) :
 endif;
 
 
-if ( ! function_exists( 'll_people_paging_nav' ) ) :
-	/**
-	 * Display navigation to next/previous set of people when applicable.
-	 *
-	 * via:
-	 */
+// if ( ! function_exists( 'll_people_paging_nav' ) ) :
+// 	/**
+// 	 * Display navigation to next/previous set of people when applicable.
+// 	 *
+// 	 * via:
+// 	 */
 
-	function ll_people_paging_nav( $pages = '', $range = 4) {
-		$showitems = ( $range * 2 ) + 1;
-        global $paged;
-        if( empty( $paged ) ) $paged = 1;
-        if( $pages == '' )
-        {
-            global $wp_query;
-            $pages = $wp_query->max_num_pages;
-            if( !$pages ) {
-                $pages = 1;
-            }
-        }
-        if( 1 != $pages ) {
-            echo "<nav aria-label='Page navigation'><ul class='pagination'><li>Page ".$paged." of ".$pages."</li>";
-            if( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( 1 ) . "'>&laquo; First</a>";
-            if( $paged > 1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( $paged - 1 ) . "'>&lsaquo; Previous</a>";
-            for ( $i=1; $i <= $pages; $i++ )
-            {
-                if ( 1 != $pages &&( !( $i >= $paged+$range+1 || $i <= $paged-$range-1 ) || $pages <= $showitems ) ) {
-                    echo ( $paged == $i )? "<li class=\"page-item active\"><a class='page-link'>" . $i . "</a></li>" : "<li class='page-item'> <a href='" . get_pagenum_link( $i ) . "' class=\"page-link\">" . $i . "</a></li>";
-                }
-            }
-            if ( $paged < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link( $paged + 1 ) . "\">i class='fa-regular fa-back'></i></a></li>";
-            if ( $paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href='" . get_pagenum_link( $pages ) . "'><i class='fa-regular fa-forward'></i></a></li>";
-            echo "</ul></nav>\n";
-        }
-	}
-endif;
+// 	function ll_people_paging_nav( $pages = '', $range = 4) {
+// 		$showitems = ( $range * 2 ) + 1;
+//         global $paged;
+//         if( empty( $paged ) ) $paged = 1;
+//         if( $pages == '' )
+//         {
+//             global $wp_query;
+//             $pages = $wp_query->max_num_pages;
+//             if( !$pages ) {
+//                 $pages = 1;
+//             }
+//         }
+//         if( 1 != $pages ) {
+//             echo "<nav aria-label='Page navigation'><ul class='pagination'><li>Page ".$paged." of ".$pages."</li>";
+//             if( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( 1 ) . "'>&laquo; First</a>";
+//             if( $paged > 1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( $paged - 1 ) . "'>&lsaquo; Previous</a>";
+//             for ( $i=1; $i <= $pages; $i++ )
+//             {
+//                 if ( 1 != $pages &&( !( $i >= $paged+$range+1 || $i <= $paged-$range-1 ) || $pages <= $showitems ) ) {
+//                     echo ( $paged == $i )? "<li class=\"page-item active\"><a class='page-link'>" . $i . "</a></li>" : "<li class='page-item'> <a href='" . get_pagenum_link( $i ) . "' class=\"page-link\">" . $i . "</a></li>";
+//                 }
+//             }
+//             if ( $paged < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link( $paged + 1 ) . "\">i class='fa-regular fa-back'></i></a></li>";
+//             if ( $paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href='" . get_pagenum_link( $pages ) . "'><i class='fa-regular fa-forward'></i></a></li>";
+//             echo "</ul></nav>\n";
+//         }
+// 	}
+// endif;
 
 
 /**

@@ -14,7 +14,6 @@
 	<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 		<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 			<div>
-				<!-- <span class="block w-32 h-10 rounded-lg bg-neutral-200"></span> -->
 				<div class="max-w-xs fill-current">
 					<a href="<?php bloginfo( 'url' ); ?>" aria-label="<?php echo bloginfo( 'name' );?>">
 						<?php get_template_part( 'template-parts/svg/svg', 'logomono' ); ?>
@@ -25,8 +24,8 @@
 					We work collaboratively with your business to take it to the next level.
 				</p>
 
-				<div class="footer-social | ">
-					<?php echo do_shortcode( '[social_links bg="dark" /]' ); ?>
+				<div class="footer-social">
+					<?php ll_show_social_links(); ?>
 				</div>
 			</div>
 
@@ -36,8 +35,8 @@
 
 					<nav class="flex flex-col mt-4 space-y-2 text-base">
 						<a class="hover:text-brand-blue-pale" href="/about/"> About </a>
-						<a class="hover:text-brand-blue-pale" href="/people/"> Meet the Team </a>
-						<a class="hover:text-brand-blue-pale" href="/career-opportunities/"> Careers </a>
+						<a class="hover:text-brand-blue-pale" href="/people/"> Leadership Team </a>
+						<a class="-m-1" href="/career-opportunities/"> <span class="p-1 font-bold rounded-sm bg-amber-400 text-neutral-800 hover:bg-amber-200">We're Hiring!</span> </a>
 						<a class="tracking-tight hover:text-brand-blue-pale" href="/about/leading-edge-alliance/">Leading Edge Alliance</a>
 					</nav>
 				</div>
