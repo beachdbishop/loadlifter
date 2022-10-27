@@ -40,7 +40,7 @@ $post-title-selector {
  */
 $post-content-selector {
 	/* @apply prose prose-neutral max-w-none prose-headings:font-normal prose-a:text-brand-blue prose-a:decoration-cyan-300/50 prose-a:decoration-dotted hover:prose-a:text-brand-blue-dark hover:prose-a:decoration-solid prose-th:border-b-2 lg:prose-xl; */
-	@apply prose prose-neutral max-w-none prose-headings:font-normal prose-th:border-b-2 md:prose-lg lg:prose-xl;
+	@apply prose prose-neutral max-w-none prose-headings:font-normal prose-th:px-0 prose-th:text-center prose-th:text-sm prose-th:font-bold prose-th:uppercase prose-th:tracking-wide prose-th:border-b-2 md:prose-lg lg:prose-xl;
 }
 
 /* Content width from the `theme.json` file */
