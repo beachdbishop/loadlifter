@@ -115,16 +115,9 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 					if( !empty( $avatar ) ) {
 						$avatar_markup = sprintf( '<a href="%3$s" class="relative inline-flex items-center justify-center text-white rounded-full w-30"><img src="%1$s" alt="%2$s" title="%2$s" width="120" class="max-w-full border-2 border-white rounded-full" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
 					} else {
-						$avatar_markup = sprintf( '<a href="%3$s" class="relative border-2 border-white rounded-full text-neutral-100 bg-neutral-400"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%2$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
+						$avatar_markup = sprintf( '<a href="%2$s" class="relative border-2 border-white rounded-full text-neutral-100 bg-neutral-400"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_url );
 					}
 
-					// $namelink = coauthors_posts_links_single( $coauthor );
-					// echo <<<EOT
-					// <div class="author | mb-4">
-					// 	<!-- {$avatar_markup} -->
-					// 	<h5 class="text-xl font-bold text-brand-red ">{$namelink}</h5>
-					// </div>
-					// EOT;
 					echo $avatar_markup;
 				}
 				echo <<<EOT
