@@ -106,5 +106,4 @@ function ll_people_filter_query( $query ) {
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

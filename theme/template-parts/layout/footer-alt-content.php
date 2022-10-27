@@ -10,6 +10,9 @@
 
 ?>
 
+<!--   P R E F O O T E R   A R E A   -->
+<?php get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
+
 <footer role="contentinfo" id="colophon" class="site-footer | border-t-4 border-solid border-neutral-900 bg-neutral-800 text-neutral-200 print:bg-transparent bg:text-neutral-600">
 	<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 		<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
@@ -20,13 +23,9 @@
 					</a>
 				</div>
 
-				<p class="max-w-xs my-4 text-base">
-					We work collaboratively with your business to take it to the next level.
-				</p>
+				<p class="max-w-xs my-4 text-base lg:my-6">We work collaboratively with your business to take it to the next level.</p>
 
-				<div class="footer-social">
-					<?php ll_show_social_links(); ?>
-				</div>
+				<?php ll_show_social_links( $out = 'echo' ); ?>
 			</div>
 
 			<div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4 print:hidden">

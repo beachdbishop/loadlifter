@@ -40,6 +40,7 @@ if (!empty($author_thumbnail)) {
 	$height = $author_thumbnail['sizes'][$size . '-height'];
 }
 ?>
+
 <main id="primary" class="bg-neutral-50">
 	<div class="py-8 md:py-8 bg-gradient-to-l from-neutral-300 print:py-8">
 		<div class="container md:mx-auto">

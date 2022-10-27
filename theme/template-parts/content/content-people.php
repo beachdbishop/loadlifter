@@ -15,28 +15,25 @@ if ( $peep_thumbnail ) {
 } else {
 	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
-$peep_desigs = get_field( 'll_people_designations' );
-$peep_org = get_field( 'll_people_organization' );
-$peep_title = get_field( 'll_people_title' );
+
+if ( get_field( 'll_people_organization' ) === 'BeachFleischman' ) {
+	$peep_class = 'internal';
+} else {
+	$peep_class = 'external';
+}
+
 $peep_level = get_field( 'll_people_level' );
-$peep_department = get_field_object( 'll_people_department' );
-$peep_dept_value = $peep_department['value'];
-// $peep_dept = $peep_dept_value['label'];
-$peep_location = get_field_object( 'll_people_location' );
-$peep_loc_value = $peep_location['value'];
-$peep_loc = $peep_loc_value['label'];
-$peep_quote = get_field( 'll_people_quote' );
 
 if ( $peepauthor ) {
 	$peepid = $peepauthor['ID'];
 	$peepname = $peepauthor['display_name'];
 	$peepnicename = $peepauthor['user_nicename'];
-	$peepfirstname = $peepauthor['user_firstname'];
+	// $peepfirstname = $peepauthor['user_firstname'];
 	$person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
 	$peeppostcount = ( $peepauthor ) ? count_user_posts( $peepid, 'post', true ) : 0;
 	$recent_year_barrier = date( "Y", strtotime( "-1 year" ) );
 } else {
-	$peepfirstname = '';
+	// $peepfirstname = '';
 	$peeppostcount = 0;
 }
 ?>
@@ -48,7 +45,7 @@ if ( $peepauthor ) {
 			<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
-		<div class="peepgrid | md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
+		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
 
 			<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0">
 				<?php ll_people_headshot(); ?>
@@ -56,33 +53,47 @@ if ( $peepauthor ) {
 
 			<div class="peepgrid-b | md:col-span-2 md:row-span-2 lg:col-span-3">
 				<header class="mb-4">
-					<?php the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' ); ?>
+					<?php
+					if ( $peep_class === 'internal' ) {
+						the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' );
 
-					<?php if( $peep_desigs ) { ?>
-						<h2 class="leading-normal tracking-tight text-neutral-500"><?php echo $peep_desigs; ?></h2>
-					<?php } ?>
+						if( get_field( 'll_people_designations' ) ) {
+							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', get_field( 'll_people_designations' ) );
+						}
 
-					<?php if( $peep_title ) { ?>
-						<h2 class="text-neutral-900">
-							<?php echo $peep_title; ?>
-						</h2>
-					<?php } ?>
+						if( get_field( 'll_people_title' ) ) {
+							echo sprintf( '<h2 class="text-neutral-900">%1$s</h2>', get_field( 'll_people_title' ) );
+						}
 
-					<?php if ( ( $peep_dept_value ) || ( $peep_loc ) ) { ?>
-						<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-400 border-neutral-200 children:inline-block">
+						if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
+							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-400 border-neutral-200 children:inline-block">';
+								$peep_department = get_field_object( 'll_people_department' );
+								$peep_dept_value = $peep_department['value'];
+								if ( $peep_dept_value ) {
+									ll_people_show_dept_list( $peep_dept_value );
+								}
 
-							<?php
-							if ( $peep_dept_value ) {
-								ll_people_show_dept_list( $peep_dept_value );
-							}
+								$peep_location = get_field_object( 'll_people_location' );
+								$peep_loc_value = $peep_location['value'];
+								$peep_loc = $peep_loc_value['label'];
+								if ( $peep_loc ) {
+									ll_people_show_location( $peep_loc );
+								}
 
-							if ( $peep_loc ) {
-								ll_people_show_location( $peep_loc );
-							}
-							?>
+							echo '</div>';
+						}
+					} else {
+						the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' );
 
-						</div>
-					<?php } ?>
+						if( get_field( 'll_people_title' ) ) {
+							echo sprintf( '<h2 class="text-neutral-900">%1$s</h2>', get_field( 'll_people_title' ) );
+						}
+
+						if ( get_field( 'll_people_organization' ) ) {
+							echo sprintf( '<h2 class="text-neutral-600">%1$s</h2>', get_field( 'll_people_organization' ) );
+						}
+					}
+					?>
 				</header>
 
 				<div class="entry-content">
@@ -108,11 +119,11 @@ if ( $peepauthor ) {
 			</div>
 
 			<aside class="peepgrid-c | md:mt-0 ">
-				<h5 class="text-brand-blue">Contact <?php if ( $peepfirstname != '' ) { echo $peepfirstname; } else { echo get_the_title(); } ?></h5>
-				<p class="mb-4 todo">SOCIAL CONTACT BUTTONS</p>
-				<?php if ( $peep_quote ) { ?>
+				<?php get_template_part( 'template-parts/form/form-hubspot-contact', 'sidebar' ); ?>
+
+				<?php if ( get_field( 'll_people_quote' ) ) { ?>
 				<hr class="mt-8">
-				<blockquote class="peepquote | font-head font-medium italic text-xl text-brand-blue">&quot;<?php echo esc_html( $peep_quote ); ?>&quot;</blockquote>
+				<blockquote class="peepquote | font-head font-medium italic text-xl text-brand-blue">&quot;<?php echo esc_html( get_field( 'll_people_quote' ) ); ?>&quot;</blockquote>
 				<?php } ?>
 
 			</aside>

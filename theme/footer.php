@@ -9,8 +9,6 @@
  * @package Load_Lifter
  */
 
-	get_sidebar( 'prefoot' );
-
 	get_template_part( 'template-parts/layout/footer-alt', 'content' );
 	?>
 

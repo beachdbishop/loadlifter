@@ -10,6 +10,9 @@
 
 ?>
 
+<!--   P R E H E A D E R   A R E A   -->
+<?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
+
 <header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
 	<div role="navigation" class="flex items-center justify-between px-1 py-3 mx-auto md:container md:px-0 md:py-4">
 

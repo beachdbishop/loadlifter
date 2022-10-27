@@ -60,7 +60,7 @@
 
 				<?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
 
-				<?php get_sidebar( 'after-post' ); ?>
+				<?php get_template_part( 'template-parts/siteblocks/area', 'after-post' ); ?>
 			</div>
 
 			<aside class="mt-4 md:mt-0 md:order-last md:w-1/3 lg:w-1/4">
@@ -93,8 +93,10 @@
 						?>
 					</ul>
 				</div> -->
-				<?php get_sidebar(); ?>
-			<?php endif; ?>
+				<?php endif; ?>
+
+				<!--   A R E A   S I D E   -->
+				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 			</aside>
 		</div>
 

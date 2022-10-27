@@ -92,11 +92,9 @@ function ll_people_columns( $column, $post_id ) {
 	}
 
 	// Department column
-	if ( 'dept' === $column ) {
+	if ( ( 'dept' === $column ) && ( get_field_object( 'll_people_department') ) ) {
 		$dept_obj = get_field_object( 'll_people_department');
 		$dept_val = $dept_obj['value'];
-		// $dept_display = $dept_val['label'];
-		// echo $dept_display;
 		if ( $dept_val ) {
 			echo '<span class="inline-comma-sep">';
 			foreach( $dept_val as $dept ) {
@@ -107,7 +105,7 @@ function ll_people_columns( $column, $post_id ) {
 	}
 
 	// Department column
-	if ( 'location' === $column ) {
+	if ( ( 'location' === $column ) && ( get_field_object( 'll_people_location' ) ) ){
 		$location_obj = get_field_object( 'll_people_location');
 		$location_val = $location_obj['value'];
 		$location_display = $location_val['label'];

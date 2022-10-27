@@ -127,7 +127,15 @@
             "type": "checkbox",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6335d76dfcc85",
+                        "operator": "==",
+                        "value": "BeachFleischman"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -138,16 +146,15 @@
                 "ffvs": "Financial Forensics & Valuation Services",
                 "intops": "Internal Operations",
                 "oaas": "Outsourced Accounting & Advisory Services",
-                "ppd": "Pinnacle Plan Design",
                 "soar": "Strategic Operations & Advisory Resources",
                 "tax": "Tax"
             },
             "default_value": [],
             "return_format": "array",
             "allow_custom": 0,
-            "save_custom": 0,
             "layout": "vertical",
-            "toggle": 0
+            "toggle": 0,
+            "save_custom": 0
         },
         {
             "key": "field_634b4dd8f97b8",
@@ -157,7 +164,15 @@
             "type": "radio",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6335d76dfcc85",
+                        "operator": "==",
+                        "value": "BeachFleischman"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -246,5 +261,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666648952
+    "modified": 1666730432
 }

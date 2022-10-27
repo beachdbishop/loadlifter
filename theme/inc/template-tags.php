@@ -20,20 +20,26 @@ if ( ! function_exists( 'll_show_social_links' ) ) :
 	/**
 	 *
 	 */
-	function ll_show_social_links() {
-		$soc_li = get_field( 'll_social_linkedin', 'option' );
-		$soc_tw = get_field( 'll_social_twitter', 'option' );
-		$soc_fb = get_field( 'll_social_facebook', 'option' );
-		$soc_ig = get_field( 'll_social_instagram', 'option' );
-		$soc_yt = get_field( 'll_social_youtube', 'option' );
+	function ll_show_social_links( $out = '' ) {
+		$socials = [
+			'linkedin' => get_field( 'll_social_linkedin', 'option' ),
+			'twitter' => get_field( 'll_social_twitter', 'option' ),
+			'facebook' => get_field( 'll_social_facebook', 'option' ),
+			'instagram' => get_field( 'll_social_instagram', 'option' ),
+			'youtube' => get_field( 'll_social_youtube', 'option' ),
+		];
 
-		echo '<span class="inline-flex justify-center mt-4 sm:ml-auto sm:mt-0 sm:justify-start">
-			<a href="'.$soc_li.'"><svg class="llicon"><use xlink:href="#linkedin" /></svg><span class="screen-reader-text">LinkedIn</span></a>
-			<a href="'.$soc_tw.'"><svg class="llicon"><use xlink:href="#twitter" /></svg><span class="screen-reader-text">Twitter</span></a>
-			<a href="'.$soc_fb.'"><svg class="llicon"><use xlink:href="#facebook" /></svg><span class="screen-reader-text">Facebook</span></a>
-			<a href="'.$soc_ig.'"><svg class="llicon"><use xlink:href="#instagram" /></svg><span class="screen-reader-text">Instagram</span></a>
-			<a href="'.$soc_yt.'"><svg class="llicon"><use xlink:href="#youtube" /></svg><span class="screen-reader-text">YouTube</span></a>
-		</span>';
+		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
+		foreach( $socials as $key=>$value ) {
+			$social_html .= sprintf( '<a href="%1$s" class="hover:scale-125"><svg class="llicon-2x"><use xlink:href="#%2$s" /></svg><span class="screen-reader-text">%2$s</span></a>', esc_url( $value ), esc_attr( $key ) );
+		}
+		$social_html .= '</div>';
+
+		if ( $out === 'echo' ) {
+			echo $social_html;
+		} else {
+			return $social_html;
+		}
 	}
 endif;
 
@@ -97,16 +103,19 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 				$coauthors = get_coauthors();
 				echo <<<EOT
 				<h6>Authored by:</h6>
-				<div class="flex items-center justify-start w-full py-8">
+				<div class="flex items-center justify-center w-full py-4 ">
 					<div class="flex -space-x-3">
 				EOT;
 				foreach( $coauthors as $coauthor ) {
 					// $avatar = coauthors_get_avatar( $coauthor, 200, '', $coauthor->display_name, 'mb-2 rounded-full ' );
+					// aspect ratio = 95:127
 					$avatar = get_field( 'll_user_headshot', 'user_' . $coauthor->ID );
+					// $person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
+
 					if( !empty( $avatar ) ) {
 						$avatar_markup = sprintf( '<a href="%3$s" class="relative inline-flex items-center justify-center text-white rounded-full w-30"><img src="%1$s" alt="%2$s" title="%2$s" width="120" class="max-w-full border-2 border-white rounded-full" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
 					} else {
-						$avatar_markup = sprintf( '<a href="%3$s" class="relative inline-flex items-center justify-center text-lg text-white rounded-full w-30 bg-neutral-400"><div class="px-4 w-30 " title="%2$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
+						$avatar_markup = sprintf( '<a href="%3$s" class="relative border-2 border-white rounded-full text-neutral-100 bg-neutral-400"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%2$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_url );
 					}
 
 					// $namelink = coauthors_posts_links_single( $coauthor );
