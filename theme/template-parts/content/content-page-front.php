@@ -24,49 +24,6 @@ $page_excerpt = 'Work with us and experience the power of collaboration and what
 	</div>
 </div>
 
-<!-- <div class="py-4 mb-0 bg-gradient-to-br from-brand-blue to-brand-blue-dark md:py-8 2xl:py-12">
-	<section class="px-2 md:px-0 md:container md:mx-auto">
-		<h2 class="mb-2 text-brand-blue-pale">Trending Now</h2>
-
-		<?php
-		// if ( wp_get_environment_type() == 'local' ) {
-		// 	$trending_ids = '2,1879,2019';
-		// } else {
-		// 	$trending_ids = '30973,9873,23978';
-		// }
-		?>
-		<?php // echo do_shortcode( '[display-posts post_type="post,page,industries" id="' . $trending_ids . '" ignore_sticky_posts="true" orderby="title" order="DESC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8 -m-4 text-brand-blue-faint" layout="card-ondark" /]' ); ?>
-
-	</section>
-</div> -->
-
-<!-- <section class="py-4 mb-4 bg-brand-blue-faint md:py-8 2xl:py-12">
-	<div class="px-2 md:px-0 md:container md:mx-auto md:flex md:space-x-4">
-		<div class="w-full md:w-1/3 lg:1/4">
-			<h2 class="text-brand-red">Industry Expertise</h2>
-			<p class="my-4">We work collaboratively with your business to take it to the next level. Whether you want to bring your dreams to fruition, solve problems, or get needed support when the stakes are the highest, we work with you to navigate change and prepare your organization for the future.</p>
-			<div class="wp-block-buttons | text-center my-4">
-				<div class="wp-block-button is-style-outline">
-					<a class="wp-block-button__link wp-element-button has-brand-red-color has-text-color">Send us a request for proposal</a>
-				</div>
-			</div>
-		</div>
-		<div class="w-full md:mt-0 md:w-2/3 lg:3/4">
-			<?php // echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label text-brand-blue" layout="li-fa-large-circle" /]' ); ?>
-		</div>
-	</div>
-</section> -->
-
-<!-- <div class="px-2 my-4 md:my-8 md:px-0 md:container md:mx-auto ">
-	<h2 class="leading-normal text-brand-blue">Recent Posts</h2>
-	<?php // echo do_shortcode( '[display-posts posts_per_page="4" ignore_sticky_posts="true" orderby="date" order="DESC" wrapper="div" wrapper_class="dps-grid-4max" layout="card" /]' ); ?>
-	<div class="wp-block-buttons | text-center my-4">
-		<div class="wp-block-button is-style-outline">
-			<a class="wp-block-button__link" href="/blog/">See more</a>
-		</div>
-	</div>
-</div> -->
-
 <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
 
