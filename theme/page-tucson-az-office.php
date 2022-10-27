@@ -23,7 +23,7 @@ get_header();
 			</header>
 
 			<!-- transform: translate3d(-50%, 0, 0); -->
-			<section class="w-screen ml-[50%] -translate-x-1/2 relative h-[600px] overflow-hidden bg-brand-blue-pale not-prose">
+			<section class="w-screen ml-[50%] -translate-x-1/2 relative h-[600px] overflow-hidden bg-brand-blue not-prose">
 				<div class="absolute inset-0">
 					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3372.90727268908!2d-110.94434314844987!3d32.2874709159975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d67236d49085cd%3A0xeebf5afa4f8dc671!2sBeachFleischman%20PLLC!5e0!3m2!1sen!2sus!4v1658530857801!5m2!1sen!2sus" width="100%" height="600" style="border: 0; filter: grayscale(1) contrast(1.2) opacity(0.4)" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
