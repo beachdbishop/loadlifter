@@ -46,7 +46,7 @@
 					<nav class="flex flex-col mt-4 space-y-2 text-base ">
 						<a class="hover:text-brand-blue-pale" href="/assurance/"> Assurance </a>
 						<a class="hover:text-brand-blue-pale" href="/tax/"> Tax </a>
-						<a class="hover:text-brand-blue-pale" href="/consulting/"> Consulting </a>
+						<a class="hover:text-brand-blue-pale" href="/soar/"> Consulting </a>
 					</nav>
 				</div>
 

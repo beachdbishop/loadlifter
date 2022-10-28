@@ -116,7 +116,7 @@
 									<div class="pl-2 text-white md:pl-4">
 										<details class="group menu-level-1 ">
 											<summary class="flex items-center px-3 py-1 rounded-lg">
-												<h5 class="font-bold text-brand-blue-pale"><a href="/consulting/">Consulting</a></h5>
+												<h5 class="font-bold text-brand-blue-pale"><a href="/soar/">Consulting (SOAR)</a></h5>
 												<span class="ml-auto transition duration-300 shrink-0 ">
 													<svg class="icon"><use xlink:href="#angle-down" /></svg>
 												</span>
@@ -193,12 +193,15 @@
 							<div class="container md:mx-auto md:grid md:grid-flow-col md:grid-cols-4">
 								<div class="hidden p-4 bg-brand-blue-faint md:block on-lightbg lg:p-8 ">
 									<h3 class="mb-2 text-brand-blue">Industry Expertise</h3>
-									<p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Auctor neque vitae tempus quam pellentesque nec nam aliquam sem. Amet risus nullam eget felis eget nunc lobortis.</p>
+									<p class="">Every type of business has very distinct requirements for operations, data collection, and reporting that are specific to the nature of its respective industry. Understanding the implications of these requirements and how they can affect other aspects of the business requires the acumen of specialists with experience in the intricacies of various types of industries.</p>
 									<p class="text-center"><a href="/industries/" class="inline-block p-4 my-4 border-2 border-solid rounded-lg font-body text-brand-red hover:text-brand-red-dark border-brand-red hover:border-brand-blue-pale">Explore</a></p>
 								</div>
 								<div class="py-4 md:grid md:grid-flow-col md:col-span-3 lg:py-8 md:auto-cols-fr">
 									<div class="px-4 text-neutral-300 lg:px-8">
-										<?php echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label " layout="li-fa-large-circle" /]' ); ?>
+										<?php
+										// echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label " layout="li-fa-large-circle" /]' );
+										echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label" layout="li-fa-large-circle" /]' );
+										?>
 									</div>
 								</div>
 							</div>

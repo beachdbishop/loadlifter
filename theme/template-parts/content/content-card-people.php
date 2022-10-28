@@ -14,17 +14,14 @@ if ( $peep_thumbnail ) {
 } else {
 	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
-$peep_desigs = get_field( 'll_people_designations' );
-$peep_org = get_field( 'll_people_organization' );
-$peep_title = get_field( 'll_people_title' );
-$peep_level = get_field( 'll_people_level' );
-$peep_department = get_field_object( 'll_people_department' );
-$peep_dept_value = $peep_department['value'];
-// $peep_dept = $peep_dept_value['label'];
-$peep_location = get_field_object( 'll_people_location' );
-$peep_loc_value = $peep_location['value'];
-$peep_loc = $peep_loc_value['label'];
 
+// if ( get_field( 'll_people_organization' ) === 'BeachFleischman' ) {
+// 	$peep_class = 'internal';
+// } else {
+// 	$peep_class = 'external';
+// }
+
+$peep_level = get_field( 'll_people_level' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
@@ -34,27 +31,40 @@ $peep_loc = $peep_loc_value['label'];
 		</div>
 
 		<header>
-			<?php the_title( '<h3 class="font-bold leading-none text-center text-brand-gray group-hover:text-brand-red">', '</h3>' ); ?>
+			<?php
+			$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
+			echo sprintf( '<h3 class="font-bold leading-none text-center text-brand-gray %1$s">%2$s</h3>', $title_classes, get_the_title() );
+			?>
 		</header>
-		<p class="italic font-bold leading-tight tracking-tighter text-center uppercase font-head text-neutral-500">
-			<?php echo $peep_desigs; ?>
-		</p>
-		<p class="text-lg leading-tight text-center font-head">
-			<?php echo $peep_title; ?>
-		</p>
 
-		<?php if ( ( $peep_dept_value ) || ( $peep_loc ) ) { ?>
-			<footer class="mt-2 text-sm text-center text-neutral-400 group-hover:text-neutral-600 children:block children:px-2 lg:mt-4">
-				<?php
-				if ( $peep_dept_value ) {
-					ll_people_show_dept_list( $peep_dept_value );
-				}
+		<?php
+		// Only show designations for non-subsidiary entries
+		if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
+			echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
+		}
 
-				if ( $peep_loc ) {
-					ll_people_show_location( $peep_loc );
-				}
-				?>
-			</footer>
-		<?php } ?>
+		if( get_field( 'll_people_title' ) ) {
+			echo sprintf( '<p class="text-lg leading-tight text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
+		}
+
+		if ( $peep_level['value'] != 800 ) {
+			if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
+				echo '<footer class="mt-2 text-sm text-center text-neutral-400 group-hover:text-neutral-600 children:block children:px-2 lg:mt-4">';
+					$peep_department = get_field_object( 'll_people_department' );
+					$peep_dept_value = $peep_department['value'];
+					if ( $peep_dept_value ) {
+						ll_people_show_dept_list( $peep_dept_value );
+					}
+
+					$peep_location = get_field_object( 'll_people_location' );
+					$peep_loc_value = $peep_location['value'];
+					$peep_loc = $peep_loc_value['label'];
+					if ( $peep_loc ) {
+						ll_people_show_location( $peep_loc );
+					}
+				echo '</footer>';
+			}
+		}
+		?>
 	</a>
 </article><!-- #post-<?php the_ID(); ?> -->

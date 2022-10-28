@@ -5,10 +5,6 @@
 	<h3 class="mb-4 text-brand-red">Stay up-to-date</h3>
 	<p class="mb-8">Get a collection of our latest blog posts in your inbox every 3-4 weeks.</p>
 	<script>
-		// hbspt.forms.create({
-		// 	region: "na1",
-		// 	portalId: "5578910",
-		// 	formId: "e9f9a025-96c0-4a18-b642-17a605422edf",
-		// });
+		hbspt.forms.create({region: "na1", portalId: "5578910", formId: "e9f9a025-96c0-4a18-b642-17a605422edf"});
 	</script>
 </div>

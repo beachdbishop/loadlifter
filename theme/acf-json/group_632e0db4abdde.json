@@ -109,6 +109,7 @@
                 "500": "Supervisor",
                 "600": "Senior",
                 "700": "Associate",
+                "800": "Subsidiary or Partner",
                 "900": "Exclude"
             },
             "default_value": 100,
@@ -239,7 +240,7 @@
             ],
             "return_format": "object",
             "min": "",
-            "max": 5,
+            "max": 0,
             "elements": ""
         }
     ],
@@ -261,5 +262,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666730432
+    "modified": 1666987932
 }

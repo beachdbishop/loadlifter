@@ -98,6 +98,7 @@ module.exports = {
     'via-brand-blue',
     'w-40',
     'w-8',
+    'w-fit',
     {
       pattern: /bg-(amber|neutral|green)-(50|100|200|300|400|500|600|700|800|900)/,
     },

@@ -1,5 +1,5 @@
 <?php
-if ( ( empty( get_field( 'll_normal_contact_form_location' ) ) ) || ( get_field( 'll_normal_contact_form_location' ) != false ) ) {
+if ( get_field( 'll_normal_contact_form_location' ) !== false ) {
 ?>
 
 	<a href="#contact" class="fixed flex justify-center w-12 h-12 transition duration-300 rounded-full shadow-md cursor-pointer text-neutral-300 shadow-brand-gray-dark/50 right-4 bottom-4 bg-brand-blue active:bg-brand-red-pale ease place-items-center hover:text-white print:hidden" title="Contact Us">

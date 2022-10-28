@@ -97,6 +97,8 @@
 
 				<!--   A R E A   S I D E   -->
 				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
+
+				<?php get_template_part( 'template-parts/form/form', 'hubspot-newsletter-onlight' ); ?>
 			</aside>
 		</div>
 

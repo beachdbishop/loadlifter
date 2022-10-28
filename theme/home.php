@@ -23,9 +23,9 @@ get_header();
 
 			<header class="flex gap-4 mb-8">
 				<div class="basis-2/3">
-					<h2 class="text-4xl text-brand-blue head-last-bold">A-Z Blog</h2>
-					<p class="my-4 font-light">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
-					<div class="text-white bg-brand-blue-faint"><?php echo do_shortcode( '[social_links /]' ); ?></div>
+					<h1 class="text-brand-blue head-last-bold">A-Z Blog</h1>
+					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
+					<div class="text-neutral-600"><?php echo do_shortcode( '[social_links /]' ); ?></div>
 				</div>
 				<?php if ( is_user_logged_in() ) { ?>
 					<div class="p-4 border-2 border-dashed basis-1/3 rounded-xl border-brand-blue-pale">
