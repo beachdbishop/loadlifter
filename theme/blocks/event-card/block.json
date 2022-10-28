@@ -1,0 +1,42 @@
+{
+  "name": "loadlifter/event-card",
+  "title": "Event Card",
+  "description": "Block for displaying event cards.",
+  "apiVersion": 2,
+  "style": "block-event-card",
+  "script": "",
+  "category": "common",
+  "icon": "embed-photo",
+  "keywords": ["ad", "promo", "banner"],
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "compact", "label": "Compact" }
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+        "text": false,
+        "background": false,
+        "link": false
+    },
+    "alignText": false,
+    "spacing": false,
+    "fullHeight": false
+  },
+  "attributes": {
+  },
+  "example": {
+    "attributes": {
+      "data": {
+        "ll-event-name": "A Really Engaging Webinar",
+        "ll-event-cta-label": "Save your spot"
+      }
+    }
+  },
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "render.php"
+  }
+}
