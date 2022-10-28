@@ -3,9 +3,30 @@
     "title": "Page\/Post\/CPT Options",
     "fields": [
         {
+            "key": "field_635ad7f7354fb",
+            "label": "Title Override",
+            "name": "ll_title_override",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 255,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6336305aa87d8",
             "label": "Normal Contact Form Location",
             "name": "ll_normal_contact_form_location",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -46,7 +67,7 @@
         ]
     ],
     "menu_order": 1,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "left",
     "instruction_placement": "field",
@@ -54,5 +75,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664496406
+    "modified": 1666897964
 }
