@@ -61,7 +61,8 @@ if ( $class_name != 'lleventcard is-style-compact' ) { ?>
 	<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose mb-8 lg:mb-10 overflow-hidden bg-white rounded shadow-md text-neutral-500 shadow-neutral-200 hover:shadow-neutral-400 group">
 		<a href="<?php esc_url( $event_cta_url ); ?>">
 			<?php if( !empty( $event_image ) ): ?>
-				<figure><img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt']); ?>" class="aspect-video" /></figure>
+				<style>.wp-duotone-blue img { filter: url('#wp-duotone-blue') !important; }</style>
+				<figure class="wp-duotone-blue"><img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt']); ?>" class="aspect-video" /></figure>
 			<?php endif; ?>
 			<div class="p-6">
 				<header>
