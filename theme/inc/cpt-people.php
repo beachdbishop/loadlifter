@@ -108,8 +108,10 @@ function ll_people_columns( $column, $post_id ) {
 	if ( ( 'location' === $column ) && ( get_field_object( 'll_people_location' ) ) ){
 		$location_obj = get_field_object( 'll_people_location');
 		$location_val = $location_obj['value'];
-		$location_display = $location_val['label'];
-		echo $location_display;
+		if ( $location_val ) {
+			$location_display = $location_val['label'];
+			echo $location_display;
+		}
 	}
 }
 add_action( 'manage_people_posts_custom_column', 'll_people_columns', 10, 2 );

@@ -84,7 +84,7 @@ if (!empty($author_thumbnail)) {
 					<?php /* Featured industry experience */ ?>
 					<?php if ($author_industries) : ?>
 						<h6 class="mt-4 mb-1 text-base font-bold text-brand-blue"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h6>
-						<p class="inline-flex items-start gap-1">
+						<p class="inline-flex flex-wrap items-start gap-1">
 						<?php foreach ($author_industries as $industry) :
 							$permalink 	= get_permalink( $industry->ID );
 							$title 		= get_the_title( $industry->ID );
@@ -100,7 +100,7 @@ if (!empty($author_thumbnail)) {
 					<?php /* Featured services */ ?>
 					<?php if ($author_services) : ?>
 						<h6 class="mt-4 mb-1 text-base font-bold text-brand-blue"><?php esc_html_e('Related Services', 'rttheme18'); ?></h6>
-						<p class="inline-flex items-start gap-1">
+						<p class="inline-flex flex-wrap items-start gap-1">
 						<?php foreach ($author_services as $service) :
 							$permalink 	= get_permalink($service->ID);
 							$title 		= get_the_title($service->ID);
