@@ -76,18 +76,15 @@
 
 		<p role="text" class="mt-8 text-xs text-neutral-400">
 			<?php
-			//esc_html_e( sprintf( 'Accountants | Auditors | Advisors | Consultants | CPAs :: BeachFleischman PLLC is one of the largest locally-owned public accounting and consulting firms in Southern Arizona and a Top 200 CPA firm in the United States. Serving clients in Phoenix, Tucson, Mesa, Scottsdale, Tempe, Gilbert, Glendale, Flagstaff, and Chandler, BeachFleischman provides accounting, audit, consulting, and tax services to businesses, organizations, and individuals (U.S. and foreign-based), doing business domestically and internationally. The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %1$s. ©%2$s %1$s. All rights reserved.', COMPANY_LEGAL_NAME, date('Y') ), 'loadlifter' );
-			if ( is_page( 'Construction' ) || is_page_template( 'tpl-landing-page.php' ) ) {
-				$footer_markup = sprintf( '%1$s The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %2$s. &copy;%3$s %2$s. All rights reserved.', get_field( 'footer_text', get_queried_object_id(), false ), COMPANY_LEGAL_NAME, date('Y') );
-			}
-
-			if ( !is_page( 'Construction' ) && !is_page_template( 'tpl-landing-page.php' ) ) {
+			if ( ( is_page() ) && ( get_field( 'll_seo_footer' ) ) ) {
+				// if this is a page and special footer text is set...
+				$footer_markup = sprintf( '%1$s The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %2$s. &copy;%3$s %2$s. All rights reserved.', get_field( 'll_seo_footer', get_queried_object_id(), false ), COMPANY_LEGAL_NAME, date('Y') );
+			} else {
+				// this isn't a page or special footer text isn't set...
 				$footer_markup = sprintf( 'Accountants | Auditors | Advisors | Consultants | CPAs :: %1$s The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %2$s. &copy;%3$s %2$s. All rights reserved.', get_field( 'seo_footer_text', 'option' ), COMPANY_LEGAL_NAME, date('Y') );
 			}
-
 			echo $footer_markup;
-			?>
-			<?php
+
 			switch ( wp_get_environment_type() ) {
 				case 'local':
 					echo '<span role="text" class=" hover:text-pink-500">' . wp_get_theme()->get('Name') . ' ' . wp_get_theme()->get('Version') . '</span>';

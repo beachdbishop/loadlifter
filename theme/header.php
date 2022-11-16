@@ -16,6 +16,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- <link rel="profile" href="https://gmpg.org/xfn/11"> -->
 	<?php wp_head(); ?>
+
+	<?php if ( get_field( 'll_postpage_css' ) ) {
+		the_field( 'll_postpage_css' );
+	} ?>
 </head>
 
 <body <?php body_class( 'bg-fixed bg-gradient-to-t from-brand-red-pale via-brand-red to-brand-red-dark overflow-x-hidden styled-scrollbars' ); ?>>
@@ -29,7 +33,7 @@
 <div id="page" class="">
 	<a href="#primary" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'loadlifter' ); ?></a>
 
-	<?php if ( ! is_page_template( 'tpl-landing-page.php' ) ) {
+	<?php if ( ( !is_page_template( 'tpl-landing-page.php' ) ) && ( !is_page_template( 'tpl-landing-page-bare.php' ) ) ) {
 		// get_template_part( 'template-parts/layout/header', 'content' );
 		// get_template_part( 'template-parts/layout/header-alt', 'content' );
 		// get_template_part( 'template-parts/layout/header-kp', 'content' );

@@ -38,11 +38,11 @@ $event_cta_url			= get_field( 'll_event_cta_url' );
 $event_cta_label		= get_field( 'll_event_cta_label' );
 
 if ( $class_name != 'lleventcard is-style-compact' ) { ?>
-	<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | mb-8 lg:mb-12 overflow-hidden bg-white rounded shadow-lg not-prose w-fit text-neutral-500 shadow-neutral-400">
+	<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | mb-8 lg:mb-12 overflow-hidden bg-white rounded shadow-lg not-prose max-w-socimg text-neutral-500 shadow-neutral-400">
 		<?php if( !empty( $event_image ) ): ?>
 			<figure><img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt']); ?>" class="aspect-video" /></figure>
 		<?php endif; ?>
-		<div class="p-6">
+		<div class="p-4 border-t border-solid md:p-6 lg:p-8 border-neutral-600">
 			<header class="mb-4">
 				<h3 class="mb-4 text-brand-blue-dark"><?php echo $event_name; ?></h3>
 				<p class="leading-tight text-neutral-600"><?php echo $event_date; ?> | <?php echo $event_format; ?></p>
@@ -50,26 +50,21 @@ if ( $class_name != 'lleventcard is-style-compact' ) { ?>
 			</header>
 			<p><?php echo $event_desc; ?></p>
 		</div>
-		<!-- <div class="flex justify-end p-6 pt-0">
-			<a href="<?php // esc_url( $event_cta_url ); ?>" class="inline-flex items-center justify-center w-full h-10 gap-2 px-4 py-1 text-sm tracking-wide transition duration-300 rounded text-brand-blue-faint focus-visible:outline-none whitespace-nowrap bg-brand-blue-dark hover:text-white hover:bg-brand-blue focus:bg-brand-blue"><i class="fa-regular fa-calendar-circle-plus"></i><?php // echo $event_cta_label; ?></a>
-		</div> -->
 		<p class="text-center">
-			<a href="<?php esc_url( $event_cta_url ); ?>" class="inline-block px-4 py-2 mb-4 border-2 border-solid rounded-lg lg:mb-8 font-body text-brand-blue hover:text-brand-blue-dark border-brand-blue hover:border-brand-blue-pale hover:bg-brand-blue-pale"><?php echo $event_cta_label; ?></a>
+			<a href="<?php echo esc_url( $event_cta_url ); ?>" class="inline-block px-4 py-2 mb-4 border-2 border-solid rounded-lg lg:mb-8 font-body text-brand-blue hover:text-brand-blue-dark border-brand-blue hover:border-brand-blue-pale hover:bg-brand-blue-pale"><?php echo $event_cta_label; ?></a>
 		</p>
 	</div>
 <?php } else { ?>
 	<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose mb-8 lg:mb-10 overflow-hidden bg-white rounded shadow-md text-neutral-500 shadow-neutral-200 hover:shadow-neutral-400 group">
-		<a href="<?php esc_url( $event_cta_url ); ?>">
-			<?php if( !empty( $event_image ) ): ?>
-				<style>.wp-duotone-blue img { filter: url('#wp-duotone-blue') !important; }</style>
-				<figure class="wp-duotone-blue"><img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt']); ?>" class="aspect-video" /></figure>
-			<?php endif; ?>
-			<div class="p-6">
-				<header>
-					<h4 class="text-neutral-600 group-hover:text-neutral-800"><?php echo $event_name; ?></h4>
-					<p class="text-sm text-neutral-400 group-hover:text-neutral-800"><?php echo $event_date; ?> | <?php echo $event_format; ?></p>
-				</header>
-			</div>
-		</a>
+		<?php if( !empty( $event_image ) ): ?>
+			<style>.wp-duotone-blue img { filter: url('#wp-duotone-blue') !important; }</style>
+			<figure class="wp-duotone-blue"><a href="<?php echo esc_url( $event_cta_url ); ?>"><img src="<?php echo esc_url($event_image['url']); ?>" alt="<?php echo esc_attr($event_image['alt']); ?>" class="aspect-video" /></a></figure>
+		<?php endif; ?>
+		<div class="p-4 border-t border-solid md:p-6 lg:p-8 border-brand-blue-faint">
+			<header class="text-neutral-600">
+				<h4 class=""><a class="group-hover:text-brand-blue" href="<?php echo esc_url( $event_cta_url ); ?>"><?php echo $event_name; ?></a></h4>
+				<p class="text-sm"><a class="group-hover:text-neutral-800" href="<?php echo esc_url( $event_cta_url ); ?>"><?php echo $event_date; ?> | <?php echo $event_format; ?></a></p>
+			</header>
+		</div>
 	</div>
 <?php } ?>

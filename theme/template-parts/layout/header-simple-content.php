@@ -16,8 +16,8 @@
 <header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
 	<div role="navigation" class="flex items-center justify-between px-1 py-3 mx-auto md:container md:px-0 md:py-4">
 
-		<div role="img" class="w-[240px] lg:w-[320px] order-first" title="Go to BeachFleischman's front page">
-			<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>">
+		<div class="w-[240px] lg:w-[320px] order-first">
+			<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>" title="Go to BeachFleischman's front page">
 				<?php get_template_part('template-parts/svg/svg', 'logonewbrandsimple'); ?>
 			</a>
 		</div>
@@ -186,9 +186,9 @@
 						</div>
 					</details>
 				</li>
-				<li aria-haspopup="true" class="hoverable group ">
+				<!-- <li aria-haspopup="true" class="hoverable group ">
 					<details class="relative block group menu-level-0">
-						<?php echo ll_menu_det_summary( '/industries/', 'Industries', '', 'font-bold' ); ?>
+						<?php // echo ll_menu_det_summary( '/industries/', 'Industries', '', 'font-bold' ); ?>
 						<div class="details-drop nav__panel--4col-trans | ">
 							<div class="container md:mx-auto md:grid md:grid-flow-col md:grid-cols-4">
 								<div class="hidden p-4 bg-brand-blue-faint md:block on-lightbg lg:p-8 ">
@@ -200,14 +200,14 @@
 									<div class="px-4 text-neutral-300 lg:px-8">
 										<?php
 										// echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label " layout="li-fa-large-circle" /]' );
-										echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label" layout="li-fa-large-circle" /]' );
+										// echo do_shortcode( '[display-posts post_type="industries" post_parent="0" orderby="title" order="ASC" posts_per_page="-1" wrapper="ul" wrapper_class="icon-flexgrid--w-label" layout="li-fa-large-circle" /]' );
 										?>
 									</div>
 								</div>
 							</div>
 						</div>
 					</details>
-				</li>
+				</li> -->
 				<li aria-haspopup="true" class="hoverable group ">
 					<details class="relative block group menu-level-0">
 						<?php echo ll_menu_det_summary( '/about/', 'About Us', '', 'font-bold' ); ?>
@@ -266,7 +266,7 @@
 											<p class="leading-relaxed text-neutral-800">I love the benefits, health care, vision, dental &ndash; including orthodontics, 401(k), profit-sharing, disability, dry cleaning pick-up, gym memberships, cell phone reimbursements&hellip;and there's even a service that will come and take care of my kids in an emergency.</p>
 										</blockquote>
 										<div class="flex items-center gap-4 mt-4">
-											<a href="/"><img src="https://dummyimage.com/103x103" class="object-cover w-12 h-12 bg-pink-500 rounded-full" alt="" /></a>
+											<a href="/"><img src="https://dummyimage.com/103x103" class="object-cover w-12 h-12 bg-pink-500 rounded-full" alt="photo: Tori Meyer" /></a>
 											<div class="text-sm">
 												<p class="font-bold"><a href="/">Tori Meyer</a></p>
 												<p class="mt-1">Senior A&amp;A Manager</p>
@@ -286,11 +286,11 @@
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold text-pink-600 md:uppercase hover:text-pink-400" href="/scratch/">Scratch-dev</a>
 				</li>
 				<?php } ?>
-				<?php if ( wp_get_environment_type() == 'staging' ) { ?>
+				<?php // if ( wp_get_environment_type() == 'staging' ) { ?>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold text-pink-600 md:uppercase hover:text-pink-400" href="/all-pages/">All Pages</a>
 				</li>
-				<?php } ?>
+				<?php // } ?>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/blog/">Insights</a>
 				</li>

@@ -3,28 +3,10 @@
     "title": "Landing Page Options",
     "fields": [
         {
-            "key": "field_589cf8f087408",
-            "label": "Display Featured Image",
-            "name": "display_featured_image",
-            "type": "true_false",
-            "instructions": "Default ('Yes') will display a featured image if one is attached. 'No' will hide the display of the image on the front-end even if one is attached.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": 1,
-            "message": "Show the featured image for this page",
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5a847ec88a0ce",
             "label": "Out of State",
-            "name": "out_of_state",
+            "name": "ll_out_of_state",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "Should this count toward out-of-state lead counts?",
             "required": 0,
@@ -36,14 +18,15 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
         },
         {
             "key": "field_5e6a8ed8fddd6",
             "label": "Service\/Industry",
-            "name": "svc_ind",
+            "name": "ll_svc_ind",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -71,17 +54,18 @@
                 "constr": "Construction"
             },
             "default_value": false,
-            "allow_null": 0,
+            "return_format": "array",
             "multiple": 0,
+            "allow_null": 0,
             "ui": 0,
-            "return_format": "value",
             "ajax": 0,
             "placeholder": ""
         },
         {
             "key": "field_5c4f429dd838e",
             "label": "State in Focus",
-            "name": "page_state",
+            "name": "ll_page_state",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 1,
@@ -152,17 +136,18 @@
                 "Wyoming": "Wyoming"
             },
             "default_value": false,
-            "allow_null": 0,
+            "return_format": "array",
             "multiple": 0,
+            "allow_null": 0,
             "ui": 0,
-            "return_format": "value",
             "ajax": 0,
             "placeholder": ""
         },
         {
             "key": "field_61eaf9290807a",
             "label": "City in Focus",
-            "name": "page_city",
+            "name": "ll_page_city",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 1,
@@ -181,29 +166,10 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5a7b6a05d1061",
-            "label": "Footer Text",
-            "name": "footer_text",
-            "type": "textarea",
-            "instructions": "Add SEO footer text (up to the copyright+year sentence... that gets included automatically.)",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Accountants | Auditors | Advisors | Consultants | CPAs :: BeachFleischman PC is one of the largest locally-owned public accounting and consulting firms in Southern Arizona and a Top 200 CPA firm in the United States. Serving clients in Phoenix, Tucson, Mesa, Scottsdale, Tempe, Gilbert, Glendale, Flagstaff, and Chandler, BeachFleischman provides accounting, audit, consulting, and tax services to businesses, organizations, and individuals (U.S. and foreign-based), doing business domestically and internationally.",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": 6,
-            "new_lines": ""
+            "append": ""
         }
     ],
     "location": [
@@ -213,17 +179,10 @@
                 "operator": "==",
                 "value": "tpl-landing-page.php"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            }
         ]
     ],
-    "menu_order": 0,
-    "position": "side",
+    "menu_order": 3,
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
@@ -231,5 +190,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664941100
+    "modified": 1667940771
 }

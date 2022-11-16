@@ -213,7 +213,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Custom Post Types
  */
 require get_template_directory() . '/inc/cpt-people.php';
-require get_template_directory() . '/inc/cpt-industries.php';
+// require get_template_directory() . '/inc/cpt-industries.php';
 require get_template_directory() . '/inc/cpt-job-openings.php';
 
 /**

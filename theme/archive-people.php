@@ -60,7 +60,7 @@ function ll_people_filter_query( $query ) {
 					</header>
 
 					<div class="grid grid-cols-1 mt-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4">
-						<div class="col-span-1 p-2 rounded-xl bg-brand-blue-faint md:p-4">
+						<div class="col-span-1 p-2 border-2 border-solid rounded-lg rounded-xl border-brand-blue md:p-4">
 							<?php
 							wpgb_render_facet( ['id' => 6, 'grid' => 'wpgb-content-1' ] ); // Search
 							wpgb_render_facet( ['id' => 1, 'grid' => 'wpgb-content-1' ] ); // Location

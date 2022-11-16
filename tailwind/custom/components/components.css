@@ -92,8 +92,32 @@ aside .timestamp {
 	@apply leading-relaxed;
 }
 .list--tags a {
-	@apply papercorners-6 bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 hover:bg-brand-blue-pale hover:text-brand-blue-dark;
+	@apply papercorners-6 bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 whitespace-nowrap hover:bg-brand-blue-pale hover:text-brand-blue-dark;
 }
+
+
+
+.card-headshot {
+	--s: 160px; /* size of the image */
+	--b: 4px; /* border thickness */
+	--g: 8px; /* gap */
+	--c: #00668e; /* color */
+
+	width: var(--s);
+	aspect-ratio: 1;
+	outline-color: rgba(0, 0, 0, 0.5);
+	outline-style: solid;
+	outline-width: calc(var(--s)/2);
+	outline-offset: calc(var(--s)/-2);
+	cursor: pointer;
+	transition: 0.2s;
+
+	&:hover {
+		outline: var(--c) solid var(--b);
+		outline-offset: var(--g);
+	}
+}
+
 
 
 .llicon {

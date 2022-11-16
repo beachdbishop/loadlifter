@@ -205,7 +205,8 @@
                 "id": ""
             },
             "post_type": [
-                "industries"
+                "industries",
+                "page"
             ],
             "taxonomy": "",
             "filters": [
@@ -262,5 +263,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666987932
+    "modified": 1667487745
 }

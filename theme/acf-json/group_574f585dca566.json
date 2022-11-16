@@ -4,9 +4,10 @@
     "fields": [
         {
             "key": "field_574f586dc354e",
-            "label": "Hide Authorbox",
-            "name": "hide_authorbox",
-            "type": "checkbox",
+            "label": "Hide Author Info",
+            "name": "ll_hide_author",
+            "aria-label": "",
+            "type": "true_false",
             "instructions": "Check to prevent the display of the author box at the bottom of this post. (The author box is hidden by default when the author is bfcotaxdept.)",
             "required": 0,
             "conditional_logic": 0,
@@ -15,20 +16,17 @@
                 "class": "",
                 "id": ""
             },
-            "choices": {
-                "hide": "Hide"
-            },
-            "default_value": [],
-            "layout": "vertical",
-            "toggle": 0,
-            "allow_custom": 0,
-            "save_custom": 0,
-            "return_format": "value"
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_6005096f3d3f9",
             "label": "Hide Related Posts",
-            "name": "hide_relposts",
+            "name": "ll_hide_related",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "Prevent display of the Jetpack Related Posts below the post content.",
             "required": 0,
@@ -40,14 +38,15 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "Hidden",
-            "ui_off_text": "Shown"
+            "ui_off_text": "Shown",
+            "ui": 1
         },
         {
             "key": "field_620f0a1b6d450",
             "label": "Original Content",
             "name": "original_content",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "Check if this post was written by BeachFleischman staff (i.e. not Checkpoint\/TR content)",
             "required": 0,
@@ -57,11 +56,39 @@
                 "class": "",
                 "id": ""
             },
-            "message": "",
+            "message": "Deprecated!",
             "default_value": 0,
-            "ui": 1,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_636189e8493ae",
+            "label": "Content Source",
+            "name": "ll_content_source",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "--": "Unknown",
+                "original": "Original Content",
+                "checkpoint": "Checkpoint",
+                "other": "Other"
+            },
+            "default_value": false,
+            "return_format": "array",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
         }
     ],
     "location": [
@@ -73,7 +100,7 @@
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 2,
     "position": "normal",
     "style": "default",
     "label_placement": "top",
@@ -81,6 +108,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "show_in_rest": false,
-    "modified": 1664927608
+    "show_in_rest": 0,
+    "modified": 1667337704
 }

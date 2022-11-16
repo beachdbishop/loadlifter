@@ -26,7 +26,7 @@ $peep_level = get_field( 'll_people_level' );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
 	<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-		<div class="headshot | max-w-[160px] mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover opacity-70 transition-all delay-100 duration-300 ease-in-out group-hover:opacity-100" style="background-image: url('<?php echo $headshot; ?>');" aria-label="">
+		<div class="card-headshot | mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover" style="background-image: url('<?php echo $headshot; ?>');" aria-label="">
 			<div class="max-w-[160px] aspect-square">&nbsp;</div>
 		</div>
 

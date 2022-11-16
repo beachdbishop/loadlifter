@@ -15,6 +15,5 @@
 <i data-fa-symbol="facebook" class="fa-brands fa-facebook"></i>
 <i data-fa-symbol="instagram" class="fa-brands fa-instagram"></i>
 <i data-fa-symbol="youtube" class="fa-brands fa-youtube"></i>
-
 <!-- Use the defined name later in the page -->
 <!-- <svg><use xlink:href="#bars"></use> -->

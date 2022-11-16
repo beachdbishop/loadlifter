@@ -29,6 +29,7 @@ module.exports = {
       },
       maxWidth: {
         '46char': '46ch',
+        'socimg': '736px',
       },
 		},
 	},
@@ -40,7 +41,6 @@ module.exports = {
     'a11y-slider-next',
     'a11y-slider',
     'bg-current',
-    'bg-pink-900/70',
     'bg-gradient-to-r',
     'border-current',
     'border-transparent',

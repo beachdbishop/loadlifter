@@ -88,10 +88,10 @@ if (!empty($author_thumbnail)) {
 						<?php foreach ($author_industries as $industry) :
 							$permalink 	= get_permalink( $industry->ID );
 							$title 		= get_the_title( $industry->ID );
-							$icon 		= get_field( 'icon', $industry->ID );
+							$icon 		= get_field( 'll_page_icon', $industry->ID );
 						?>
 							<a class="inline-flex items-center gap-2 px-4 py-2 rounded-full group bg-neutral-100 hover:bg-brand-blue-faint" href="<?php echo esc_url($permalink); ?>">
-								<i class="<?php echo $icon; ?> text-neutral-500 group-hover:text-brand-red-pale"></i>
+								<i class="fa-regular <?php echo $icon; ?> text-neutral-500 group-hover:text-brand-red-pale"></i>
 								<span class="text-sm text-neutral-900 group-hover:text-brand-red-dark"> <?php echo esc_html($title); ?> </span>
 							</a>
 						<?php endforeach; ?>

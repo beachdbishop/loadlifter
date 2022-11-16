@@ -1,27 +1,7 @@
 {
     "key": "group_6336305994613",
-    "title": "Page\/Post\/CPT Options",
+    "title": "Post and Page Options",
     "fields": [
-        {
-            "key": "field_635ad7f7354fb",
-            "label": "Title Override",
-            "name": "ll_title_override",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": 255,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
         {
             "key": "field_6336305aa87d8",
             "label": "Normal Contact Form Location",
@@ -41,6 +21,46 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_63618b5520b38",
+            "label": "Hide Featured Image",
+            "name": "ll_hide_featured_image",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_636a8f8c20eee",
+            "label": "Post-specific CSS",
+            "name": "ll_postpage_css",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Note: this gets appended to the &lt;head&gt; of the document. Pay attention to what you're adding!",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "<style>.table230823 { border: 1px solid hotpink; }<\/style>",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -62,7 +82,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "industries"
+                "value": "post"
             }
         ]
     ],
@@ -75,5 +95,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666897964
+    "modified": 1668112692
 }

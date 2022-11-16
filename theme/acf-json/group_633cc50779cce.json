@@ -6,6 +6,7 @@
             "key": "field_633cc508946fb",
             "label": "Featured Industry",
             "name": "cat_featured_industry",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "Select the Industry related to this Category of posts",
             "required": 0,
@@ -16,7 +17,8 @@
                 "id": ""
             },
             "post_type": [
-                "industries"
+                "industries",
+                "page"
             ],
             "taxonomy": "",
             "filters": [
@@ -31,6 +33,7 @@
             "key": "field_633cc5d7946fc",
             "label": "Featured Services",
             "name": "cat_featured_services",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "Select the Service page related to this Category of posts",
             "required": 0,
@@ -71,5 +74,5 @@
     "active": true,
     "description": "Show featured industries and services on Category archives",
     "show_in_rest": 0,
-    "modified": 1664927270
+    "modified": 1667340427
 }

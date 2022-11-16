@@ -157,7 +157,7 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'loadlifter' ) );
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'loadlifter' ) );
+			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'loadlifter' ) );
 
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
@@ -309,7 +309,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				$featmarkup = '';
 			} else {
 				$featmarkup = sprintf(
-					'<div class="image__featured--outer | empty-feat-img print:hidden"><div class="image__featured--inner | %4$s " style="background-image: url(%1$s); aspect-ratio: %2$s" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="%3$s"></div></div>',
+					'<div class="image__featured--outer | empty-feat-img print:hidden"><div class="image__featured--inner | %4$s " style="background-image: url(%1$s); aspect-ratio: %2$s" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="%3$s"></div></div>',
 					esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' ),
 					esc_attr( $feat_aspect_ratio ),
 					esc_attr( get_the_title() ),
@@ -321,7 +321,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'large' );
 			$thumb_url = $thumb_url_array[0];
 			$featmarkup = sprintf(
-				'<div class="image__featured--outer print:hidden"><div class="image__featured--inner | %4$s " style="background-image: url(%1$s); aspect-ratio: %2$s" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="%3$s"></div></div>',
+				'<div class="image__featured--outer print:hidden"><div class="image__featured--inner | %4$s " style="background-image: url(%1$s); aspect-ratio: %2$s" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="%3$s"></div></div>',
 				esc_url( $feat_image_url[0] ),
 				esc_attr( $feat_aspect_ratio ),
 				esc_attr( get_the_title() ),

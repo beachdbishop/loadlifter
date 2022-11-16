@@ -6,6 +6,7 @@
             "key": "field_629e4c48aeb67",
             "label": "Icon Duotone",
             "name": "icon_duotone",
+            "aria-label": "",
             "type": "font-awesome",
             "instructions": "",
             "required": 0,
@@ -32,6 +33,7 @@
             "key": "field_6335db4803cc9",
             "label": "Icon",
             "name": "icon",
+            "aria-label": "",
             "type": "font-awesome",
             "instructions": "",
             "required": 0,
@@ -56,25 +58,6 @@
             "enqueue_fa": 0,
             "fa_live_preview": "",
             "choices": []
-        },
-        {
-            "key": "field_62acddcda5a8f",
-            "label": "Brand Message",
-            "name": "ll_brand_message",
-            "type": "text",
-            "instructions": "Choose one of our brand messages to be displayed on this page.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "Our team backs your dream.",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": 255
         }
     ],
     "location": [
@@ -99,8 +82,8 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": true,
-    "description": "",
+    "active": false,
+    "description": "Get rid of this group after replacing Industries CPT",
     "show_in_rest": 0,
-    "modified": 1664474019
+    "modified": 1667516515
 }
