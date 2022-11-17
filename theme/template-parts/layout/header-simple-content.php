@@ -281,21 +281,17 @@
 			</ul>
 
 			<ul role="list" class="nav-secondary | md: md:order-first md:justify-end md:flex print:hidden">
-				<?php if ( wp_get_environment_type() == 'local' ) { ?>
-				<li>
-					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold text-pink-600 md:uppercase hover:text-pink-400" href="/scratch/">Scratch-dev</a>
-				</li>
-				<?php } ?>
-				<?php // if ( wp_get_environment_type() == 'staging' ) { ?>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold text-pink-600 md:uppercase hover:text-pink-400" href="/all-pages/">All Pages</a>
 				</li>
-				<?php // } ?>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/blog/">Insights</a>
 				</li>
 				<li>
-					<a href="/events/" class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark">Events</a>
+					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/events/">Events</a>
+				</li>
+				<li>
+					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/resources/">Resources</a>
 				</li>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/client-center/">Client Center</a>
