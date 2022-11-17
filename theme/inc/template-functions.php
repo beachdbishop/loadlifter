@@ -40,7 +40,7 @@ function ll_add_id_column( $columns ) {
 
 function ll_id_column_content( $column, $id ) {
 	if ( 'll_id' == $column ) {
-		echo $id;
+		echo '<code>'.$id.'</code>';
 	}
 }
 
@@ -50,7 +50,54 @@ add_action( 'manage_posts_custom_column', 'll_id_column_content', 5, 2 );
 add_action( 'manage_pages_custom_column', 'll_id_column_content', 5, 2 );
 
 
+/**
+ * Show Content Source in Post List Table
+ */
+function ll_add_post_source_column( $columns ) {
+	unset( $columns['tags'] );
+	unset( $columns['comments'] );
 
+	$columns['ll_source'] = 'Source';
+
+	return $columns;
+}
+add_filter( 'manage_posts_columns', 'll_add_post_source_column' );
+
+function ll_posts_columns_custom_order( $columns ) {
+
+	$custom_col_order = [
+		'cb' => $columns['cb'],
+		'title' => $columns['title'],
+		'll_id' => $columns['ll_id'],
+		'll_source' => $columns['ll_source'],
+		'categories' => $columns['categories'],
+		'date' => $columns['date'],
+	];
+	return $custom_col_order;
+
+}
+add_filter( 'manage_posts_columns', 'll_posts_columns_custom_order' );
+
+function ll_show_post_source( $column, $post_id ) {
+
+	// Source column
+	if ( 'll_source' === $column ) {
+		$source = get_post_meta( $post_id, 'll_content_source', true );
+
+		if ( $source != true )
+			echo '<em style="color:#ccc">Unknown</em>';
+
+		if ( $source === 'original' )
+			echo '<strong>Original Content</strong>';
+
+		if ( $source === 'checkpoint' )
+			echo '<span style="color:#666">Checkpoint</span>';
+
+		if ( $source === 'other:' )
+			echo '<span style="color:#666">Other</span>';
+	}
+}
+add_action( 'manage_posts_custom_column', 'll_show_post_source', 10, 2 );
 
 
 
