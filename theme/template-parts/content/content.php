@@ -9,7 +9,9 @@
 
 ?>
 
-<?php ll_featured_image(); ?>
+<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
+	ll_featured_image();
+endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 md:py-6 lg:py-8' ); ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0 ">

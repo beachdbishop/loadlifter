@@ -57,9 +57,9 @@ get_header();
 							</div>
 						</div>
 
-						<div class="space-y-4 lg:flex lg:flex-wrap md:w-1/2 lg:space-x-8 lg:w-3/4">
+						<div class="space-y-4 md:w-1/2 lg:flex lg:flex-wrap lg:gap-8 lg:w-3/4">
 
-							<div class="w-full lg:w-1/3 lg:grow-0 lg:shrink">
+							<div class="lg:basis-1/4 lg:grow">
 								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100">
 									<div class="w-full bg-white"><a href="https://beachfleischman.sharefile.com/" target="_blank" rel="noopener"><img class="mx-auto" src="https://beachfleischman.com/wp-content/uploads/2022/02/res__guide-sharefile.png" alt="logo: Citrix Sharefile" width="240" height="160"></a></div>
 									<div class="p-6 ">
@@ -70,7 +70,7 @@ get_header();
 								</div>
 							</div>
 
-							<div class="w-full lg:w-1/3 lg:grow-0 lg:shrink">
+							<div class="lg:basis-1/4 lg:grow">
 								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100">
 									<div class="w-full bg-white"><a href="https://taxcaddy.com/" target="_blank" rel="noopener"><img class="mx-auto" src="https://beachfleischman.com/wp-content/uploads/2021/06/res__guide-taxcaddy.png" alt="logo: TaxCaddy" width="240" height="160"></a></div>
 									<div class="p-6 ">
@@ -81,7 +81,7 @@ get_header();
 								</div>
 							</div>
 
-							<div class="w-full lg:w-1/3 lg:grow-0 lg:shrink">
+							<div class="lg:basis-1/4 lg:grow">
 								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100">
 									<div class="w-full bg-white"><a href="https://beachfleischman.com/resources/safesend-returns-guide/"><img class="mx-auto" src="https://beachfleischman.com/wp-content/uploads/2021/06/res__guide-safesend.png" alt="logo: SafeSend Returns" width="240" height="160"></a></div>
 									<div class="p-6 ">
