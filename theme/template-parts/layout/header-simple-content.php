@@ -288,7 +288,7 @@
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/blog/">Insights</a>
 				</li>
 				<li>
-					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/events/">Events</a>
+					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/category/events/">Events</a>
 				</li>
 				<li>
 					<a class="relative block px-3 pt-3 pb-1 text-sm font-bold md:uppercase text-neutral-500 hover:text-brand-red-dark" href="/resources/">Resources</a>
