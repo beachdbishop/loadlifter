@@ -10,7 +10,7 @@
 
 ?>
 
-<!--   P R E H E A D E R   A R E A   -->
+<?php //   P R E H E A D E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
 <header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
@@ -186,15 +186,15 @@
 						</div>
 					</details>
 				</li>
-				<!-- <li aria-haspopup="true" class="hoverable group ">
+				<li aria-haspopup="true" class="hoverable group ">
 					<details class="relative block group menu-level-0">
-						<?php // echo ll_menu_det_summary( '/industries/', 'Industries', '', 'font-bold' ); ?>
+						<?php echo ll_menu_det_summary( '/industries/', 'Industries', '', 'font-bold' ); ?>
 						<div class="details-drop nav__panel--4col-trans | ">
 							<div class="container md:mx-auto md:grid md:grid-flow-col md:grid-cols-4">
 								<div class="hidden p-4 bg-brand-blue-faint md:block on-lightbg lg:p-8 ">
 									<h3 class="mb-2 text-brand-blue">Industry Expertise</h3>
 									<p class="">Every type of business has very distinct requirements for operations, data collection, and reporting that are specific to the nature of its respective industry. Understanding the implications of these requirements and how they can affect other aspects of the business requires the acumen of specialists with experience in the intricacies of various types of industries.</p>
-									<p class="text-center"><a href="/industries/" class="inline-block p-4 my-4 border-2 border-solid rounded-lg font-body text-brand-red hover:text-brand-red-dark border-brand-red hover:border-brand-blue-pale">Explore</a></p>
+									<p class="text-center"><a href="/industries/" class="inline-block px-4 py-1 my-4 border-2 border-solid rounded-lg font-body text-brand-red hover:text-brand-red-dark border-brand-red hover:border-brand-blue-pale">Explore</a></p>
 								</div>
 								<div class="py-4 md:grid md:grid-flow-col md:col-span-3 lg:py-8 md:auto-cols-fr">
 									<div class="px-4 text-neutral-300 lg:px-8">
@@ -207,7 +207,7 @@
 							</div>
 						</div>
 					</details>
-				</li> -->
+				</li>
 				<li aria-haspopup="true" class="hoverable group ">
 					<details class="relative block group menu-level-0">
 						<?php echo ll_menu_det_summary( '/about/', 'About Us', '', 'font-bold' ); ?>
@@ -221,14 +221,12 @@
 								<div class="py-4 md:grid md:grid-flow-col md:col-span-2 on-darkbg lg:py-8 md:auto-cols-fr">
 									<div class="px-4 text-white lg:px-8 on-darkbg">
 										<ul class="leading-loose">
-											<li><a href="/">Mission, Vision, and Core Values</a></li>
-											<li><a href="/">Culture</a></li>
-											<li><a href="/people/">Our People</a></li>
-											<li><a href="/">Community Involvement</a></li>
-											<li><a href="/">Trade and Professional Involvement</a></li>
-											<li><a href="/">Women RISE</a></li>
+											<li><a href="/about/mission-vision-and-core-values/">Mission, Vision, and Core Values</a></li>
+											<li><a href="/about/culture/">Culture</a></li>
+											<li><a href="/people/">Leadership Team</a></li>
+											<li><a href="/about/women-rise/">Women RISE</a></li>
 											<li><a href="/about/idea-committee/" title="">IDEA Committee</a></li>
-											<li><a href="/">Leading Edge Alliance</a></li>
+											<li><a href="/about/leading-edge-alliance/">Leading Edge Alliance</a></li>
 										</ul>
 									</div>
 									<div class="hidden px-4 text-white md:block lg:px-8 on-darkbg">

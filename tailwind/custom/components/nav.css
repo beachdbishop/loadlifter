@@ -52,7 +52,6 @@
 	}
 }
 
-
 .has-details {
 	margin-left: calc(-1 * var(--wp--preset--font-size--small));
 
@@ -69,7 +68,6 @@
 	}
 }
 
-
 .toggle-input {
 	/* display: none; */
 	@apply invisible opacity-0;
@@ -83,8 +81,6 @@
 	/* display: block; */
 	@apply visible opacity-100;
 }
-
-
 
 .nav__panel--insights {
 	background: linear-gradient(to right, #fff 0 50%, #262626 50% 100%);
@@ -129,7 +125,6 @@
 	}
 }
 
-
 @media (max-width: 767px) {
 	/* .nav-header[data-overlay]::before {
 		content: "";
@@ -138,12 +133,12 @@
 		background-image: linear-gradient(rgb(0 0 0 / 0), rgb(0 0 0 / 0.8));
 	} */
 
-	.toggle-mobile-nav[aria-expanded=true] {
+	.toggle-mobile-nav[aria-expanded="true"] {
 		@apply text-brand-blue-dark;
 	}
 
 	.menus-container {
-		@apply hidden absolute bg-transparent text-neutral-100 p-4 w-full  inset-0 transition-colors duration-500 ease-linear;
+		@apply absolute inset-0 hidden w-full bg-transparent p-4  text-neutral-100 transition-colors duration-500 ease-linear;
 		inset: 3.5em 0 auto;
 	}
 
@@ -165,7 +160,7 @@
 	}
 
 	.menus-container[data-visible] {
-		@apply block bg-neutral-800/70 backdrop-blur-md shadow-xl shadow-neutral-900/60;
+		@apply block bg-neutral-800/70 shadow-xl shadow-neutral-900/60 backdrop-blur-md;
 	}
 
 	.menus-container .icon {
@@ -181,15 +176,12 @@
 	}
 }
 
-
-
 .details-drop {
 	@apply opacity-0 transition-opacity duration-500 ease-in-out;
 }
 details[open] .details-drop {
 	@apply opacity-100;
 }
-
 
 @media (min-width: 768px) {
 	/* details[] {} */
@@ -198,7 +190,7 @@ details[open] .details-drop {
 		@apply hover:bg-white group-open:bg-white;
 
 		& + .details-drop {
-			@apply fixed top-24 left-0 min-w-full px-2 z-30 overflow-hidden border-t border-solid shadow-xl border-neutral-800 backdrop-blur-md;
+			@apply fixed top-24 left-0 z-30 min-w-full overflow-hidden border-t border-solid border-neutral-800 px-2 shadow-xl backdrop-blur-md;
 		}
 	}
 
@@ -206,14 +198,13 @@ details[open] .details-drop {
 		/**/
 
 		& + .details-drop {
-			@apply relative top-0 min-w-fit px-2 z-40 backdrop-blur-none overflow-hidden;
+			@apply relative top-0 z-40 min-w-fit overflow-hidden px-2 backdrop-blur-none;
 		}
 	}
 
 	.menu-level-2 > summary {
-
 		& + .details-drop {
-			@apply relative top-0 min-w-fit px-2 z-50 backdrop-blur-none overflow-hidden;
+			@apply relative top-0 z-50 min-w-fit overflow-hidden px-2 backdrop-blur-none;
 		}
 	}
 }

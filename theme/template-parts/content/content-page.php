@@ -20,7 +20,7 @@ $gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, 
 			<?php the_title( '<h1 class="entry-title | ">', '</h1>' ); ?>
 		</header>
 
-		<div class="entry-content">
+		<div class="prose lg:prose-xl entry-content">
 			<?php the_content(); ?>
 
 			<div class="clear-both">&nbsp;</div>

@@ -339,7 +339,7 @@ if ( ! function_exists( 'll_people_dept_list' ) ) :
 	 * Display People/Author department(s)
 	 */
 	function ll_people_show_dept_list( $departments ) {
-		echo '<span class="inline-pipe-sep | "><i class="fa-solid fa-people-group" title="Department(s)"></i> ';
+		echo '<span class="inline-pipe-sep | "><svg class="inline llicon"><use xlink:href="#people-group" title="Department(s)"></use></svg> ';
 		foreach( $departments as $dept ) {
 			echo '<span class="text-neutral-600">' . $dept['label'] . '</span>';
 		}
@@ -352,7 +352,7 @@ if ( ! function_exists( 'll_people_show_location' ) ) :
 	 * Display People/Author location
 	 */
 	function ll_people_show_location( $location ) {
-		echo '<span class=""><i class="fa-solid fa-location-dot" title="Location"></i> <span class="text-neutral-600">' . esc_html( $location ) . '</span></span>';
+		echo '<span class=""><svg class="inline llicon"><use xlink:href="#location-dot" title="Location"></use></svg> <span class="text-neutral-600">' . esc_html( $location ) . '</span></span>';
 	}
 endif;
 

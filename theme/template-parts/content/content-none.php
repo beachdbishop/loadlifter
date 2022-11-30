@@ -14,7 +14,7 @@
 		<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'loadlifter' ); ?></h1>
 	</header>
 
-	<div class="entry-content">
+	<div class="prose lg:prose-xl entry-content">
 		<?php
 		if ( is_home() && current_user_can( 'publish_posts' ) ) :
 

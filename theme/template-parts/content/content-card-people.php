@@ -25,46 +25,46 @@ $peep_level = get_field( 'll_people_level' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
-	<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
-		<div class="card-headshot | mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover" style="background-image: url('<?php echo $headshot; ?>');" aria-label="">
-			<div class="max-w-[160px] aspect-square">&nbsp;</div>
-		</div>
+	<div class="card-headshot | mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover grayscale-[60%] group-hover:grayscale-0" style="background-image: url('<?php echo $headshot; ?>');" aria-label="">
+		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+			<div class="w-[200px] aspect-square">&nbsp;</div>
+		</a>
+	</div>
 
-		<header>
-			<?php
-			$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
-			echo sprintf( '<h3 class="font-bold leading-none text-center text-brand-gray %1$s">%2$s</h3>', $title_classes, get_the_title() );
-			?>
-		</header>
-
+	<header>
 		<?php
-		// Only show designations for non-subsidiary entries
-		if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
-			echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
-		}
-
-		if( get_field( 'll_people_title' ) ) {
-			echo sprintf( '<p class="text-lg leading-tight text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
-		}
-
-		if ( $peep_level['value'] != 800 ) {
-			if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-				echo '<footer class="mt-2 text-sm text-center text-neutral-400 group-hover:text-neutral-600 children:block children:px-2 lg:mt-4">';
-					$peep_department = get_field_object( 'll_people_department' );
-					$peep_dept_value = $peep_department['value'];
-					if ( $peep_dept_value ) {
-						ll_people_show_dept_list( $peep_dept_value );
-					}
-
-					$peep_location = get_field_object( 'll_people_location' );
-					$peep_loc_value = $peep_location['value'];
-					$peep_loc = $peep_loc_value['label'];
-					if ( $peep_loc ) {
-						ll_people_show_location( $peep_loc );
-					}
-				echo '</footer>';
-			}
-		}
+		$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
+		echo sprintf( '<h3 class="font-bold leading-none text-center text-brand-gray %1$s"><a href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
 		?>
-	</a>
+	</header>
+
+	<?php
+	// Only show designations for non-subsidiary entries
+	if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
+		echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
+	}
+
+	if( get_field( 'll_people_title' ) ) {
+		echo sprintf( '<p class="text-lg leading-tight text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
+	}
+
+	if ( $peep_level['value'] != 800 ) {
+		if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
+			echo '<footer class="mt-2 text-sm text-center text-neutral-400 children:block children:px-2 lg:mt-4">';
+				$peep_department = get_field_object( 'll_people_department' );
+				$peep_dept_value = $peep_department['value'];
+				if ( $peep_dept_value ) {
+					ll_people_show_dept_list( $peep_dept_value );
+				}
+
+				$peep_location = get_field_object( 'll_people_location' );
+				$peep_loc_value = $peep_location['value'];
+				$peep_loc = $peep_loc_value['label'];
+				if ( $peep_loc ) {
+					ll_people_show_location( $peep_loc );
+				}
+			echo '</footer>';
+		}
+	}
+	?>
 </article><!-- #post-<?php the_ID(); ?> -->

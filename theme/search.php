@@ -29,7 +29,7 @@ get_header();
 					</h1>
 				</header>
 
-				<div class="search-results | prose prose-neutral max-w-none">
+				<div class="search-results | prose lg:prose-xl max-w-none">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :

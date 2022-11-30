@@ -37,7 +37,7 @@ echo the_field('ll_hide_featured_image');
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
 
-		<div class="entry-content">
+		<div class="prose lg:prose-xl entry-content">
 
 			<?php the_content(); ?>
 

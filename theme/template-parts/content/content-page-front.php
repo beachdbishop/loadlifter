@@ -37,7 +37,7 @@ $page_excerpt = 'Work with us and experience the power of collaboration and what
 			?>
 		</header>
 
-		<div class="entry-content">
+		<div class="prose lg:prose-xl entry-content">
 			<?php the_content(); ?>
 
 			<div class="clear-both">&nbsp;</div>

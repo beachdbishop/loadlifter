@@ -25,24 +25,24 @@ $f_applylink = get_field( 'apply_link' );
 
 		<div class="grid__jobopening | md:grid md:grid-rows-[200px_auto] md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-8">
 
-			<div class="grid__jobopening-a | pb-8 overflow-x-auto md:pt-2 md:pb-0">
+			<div class="grid__jobopening-a | pb-8 overflow-x-auto">
 				<table class="jobopening_meta | min-w-full divide-y divide-solid divide-neutral-200 lg:max-w-fit">
 					<?php if ( $f_openclosed == '0' ) : ?>
 					<tr>
-						<th width="33%" class="px-4 py-2 text-left whitespace-nowrap ">Opening</th>
-						<td width="67%" class="px-4 py-2 text-left text-brand-red-dark whitespace-nowrap "><strong><?php echo ( $f_openclosed == '0' ? 'Closed' : 'Open' ); ?></strong></td>
+						<th width="33%" class="py-2 text-left whitespace-nowrap ">Opening</th>
+						<td width="67%" class="py-2 text-left text-brand-red-dark whitespace-nowrap "><strong><?php echo ( $f_openclosed == '0' ? 'Closed' : 'Open' ); ?></strong></td>
 					</tr>
 					<?php endif; ?>
 					<?php if ( $f_timestatus ) : ?>
 					<tr>
-						<th width="33%" class="px-4 py-2 text-left whitespace-nowrap ">Time/Status</th>
-						<td width="67%" class="px-4 py-2 text-left whitespace-nowrap "><strong><?php echo ( $f_timestatus == 'fulltime' ? 'Full-Time' : 'Part-Time' ); ?></strong></td>
+						<th width="33%" class="py-2 text-left whitespace-nowrap ">Time/Status</th>
+						<td width="67%" class="py-2 text-left whitespace-nowrap "><strong><?php echo ( $f_timestatus == 'fulltime' ? 'Full-Time' : 'Part-Time' ); ?></strong></td>
 					</tr>
 					<?php endif; ?>
 					<?php if ( $f_location ) : ?>
 					<tr>
-						<th class="px-4 py-2 text-left whitespace-nowrap ">Location</th>
-						<td class="px-4 py-2 text-left uppercase whitespace-nowrap"><?php echo $f_location_str; ?></td>
+						<th class="py-2 text-left whitespace-nowrap ">Location</th>
+						<td class="py-2 text-left uppercase whitespace-nowrap"><?php echo $f_location_str; ?></td>
 					</tr>
 					<?php endif; ?>
 				</table>
@@ -53,7 +53,7 @@ $f_applylink = get_field( 'apply_link' );
 					<?php the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' ); ?>
 				</header>
 
-				<div class="entry-content">
+				<div class="prose lg:prose-xl entry-content">
 					<?php
 					// Don't include the normal sharing display right after content
 					// This lets us place it exactly where we want it later

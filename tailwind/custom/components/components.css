@@ -20,7 +20,7 @@
  * The `$post-title-selector` variable is replaced by PostCSS. Please see the
  * `postcss.config.js` file for details.
  */
-$post-title-selector {
+$(post-title-selector) {
 	@apply mb-6 break-words text-4xl text-neutral-900 md:mb-8 lg:text-5xl;
 }
 
@@ -38,20 +38,31 @@ $post-title-selector {
  *
  * https://tailwindcss.com/docs/typography-plugin
  */
-$post-content-selector {
-	/* @apply prose prose-neutral max-w-none prose-headings:font-normal prose-a:text-brand-blue prose-a:decoration-cyan-300/50 prose-a:decoration-dotted hover:prose-a:text-brand-blue-dark hover:prose-a:decoration-solid prose-th:border-b-2 lg:prose-xl; */
-	@apply prose prose-neutral max-w-none prose-headings:font-normal prose-th:px-0 prose-th:text-center prose-th:text-sm prose-th:font-bold prose-th:uppercase prose-th:tracking-wide prose-th:border-b-2 md:prose-lg lg:prose-xl;
+/* $post-content-selector {
+	@apply prose prose-neutral max-w-none prose-headings:font-normal prose-th:border-purple-500 prose-td:border-purple-500 prose-th:px-0 prose-th:text-center prose-th:text-sm prose-th:font-bold prose-th:uppercase prose-th:tracking-wide md:prose-lg lg:prose-xl;
+} */
+
+/**
+ * Layout styles for centered content areas
+ *
+ * If you are controlling the width of your content area with styles applied
+ * to its container, you can delete the following styles whose selectors begin
+ * with `.page-content >` and `.entry-content >`. For more details, please see
+ * the following:
+ *
+ * https://make.wordpress.org/core/2021/06/29/on-layout-and-content-width-in-wordpress-5-8/
+ */
+.page-content > *,
+.entry-content > * {
+	/* Content width from the `theme.json` file */
+	@apply mx-auto max-w-content;
 }
 
-/* Content width from the `theme.json` file */
-/* .entry-content > * { @apply max-w-content; } */
-
-/* Wide width from the `theme.json` file */
 .entry-content > .alignwide {
+	/* Wide width from the `theme.json` file */
 	@apply max-w-wide;
 }
 
-/* Full width */
 .entry-content > .alignfull {
 	@apply max-w-none;
 }
@@ -78,6 +89,23 @@ $post-content-selector {
 	@apply text-white no-underline;
 } */
 
+@supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {
+	.mask-logo {
+		mask-image: url("/wp-content/themes/loadlifter/theme/img/mask__bio.svg");
+		mask-position: center;
+		mask-repeat: no-repeat;
+		mask-size: 320px;
+	}
+}
+
+.single-post .empty-feat-img {
+	@apply hidden;
+}
+
+.head-last-bold strong:last-child {
+	@apply font-bold;
+}
+
 aside .timestamp {
 	@apply my-4 block w-full border-t border-b border-neutral-200 py-4;
 }
@@ -92,34 +120,29 @@ aside .timestamp {
 	@apply leading-relaxed;
 }
 .list--tags a {
-	@apply papercorners-6 bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 whitespace-nowrap hover:bg-brand-blue-pale hover:text-brand-blue-dark;
+	@apply papercorners-6 whitespace-nowrap bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 hover:bg-brand-blue-pale hover:text-brand-blue-dark;
 }
 
-
-
 .card-headshot {
-	--s: 160px; /* size of the image */
+	--s: 200px; /* size of the image */
 	--b: 4px; /* border thickness */
 	--g: 8px; /* gap */
 	--c: #00668e; /* color */
 
 	width: var(--s);
 	aspect-ratio: 1;
-	outline-color: rgba(0, 0, 0, 0.5);
-	outline-style: solid;
-	outline-width: calc(var(--s)/2);
-	outline-offset: calc(var(--s)/-2);
-	cursor: pointer;
-	transition: 0.2s;
-
-	&:hover {
-		outline: var(--c) solid var(--b);
-		outline-offset: var(--g);
-	}
+	transition: filter 0.3s ease-in-out;
 }
 
+.logogrid {
+	@apply mx-auto my-16 grid max-w-max grid-cols-1 place-content-center gap-y-12 gap-x-32 sm:grid-cols-3 md:gap-x-16 lg:gap-x-32;
+}
+.logogrid > div {
+	@apply flex items-center justify-center;
+}
 
-
+/* FontAwesome svg-js method ...
+via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
 .llicon {
 	width: 1em;
 	height: 1em;
@@ -131,7 +154,6 @@ aside .timestamp {
 	height: 2em;
 	vertical-align: -0.25em;
 }
-
 
 .social-links a {
 	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;
@@ -174,7 +196,6 @@ aside .timestamp {
 	@apply font-bold;
 }
 
-
 @media (min-width: 768px) {
 	.peepgrid {
 		grid-template-rows: 500px auto;
@@ -189,19 +210,10 @@ aside .timestamp {
 	@apply w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5;
 }
 
-
 .ind-cards-flex-bw-tilt {
 	@apply flex flex-wrap place-content-center gap-4;
 }
 
-
-
-.dps-inline > *:not(:last-child)::after {
-	content: ", ";
-}
-.dps-inline > *:last-child::before {
-	content: "and ";
-}
 
 /* Pagination */
 ul.page-numbers {
@@ -261,40 +273,38 @@ details[open] summary::before {
 	color: var(--wp--preset--color--brand-blue-pale);
 } */
 
-
 /* Paragraphs / Callouts / Notes */
 p[class*="is-style-note-"] {
-	@apply px-8 py-4 mb-4 rounded-lg leading-snug w-full border border-solid md:max-w-xl lg:max-w-2xl xl:max-w-4xl;
+	@apply mb-4 w-full rounded-lg border border-solid px-8 py-4 leading-snug md:max-w-xl lg:max-w-2xl xl:max-w-4xl;
 }
 .is-style-note-info {
-	@apply bg-cyan-50 text-cyan-800 border-cyan-100;
+	@apply border-cyan-100 bg-cyan-50 text-cyan-800;
 
 	strong {
 		@apply text-cyan-700;
 	}
 }
 .is-style-note-success {
-	@apply bg-emerald-50 text-emerald-800 border-emerald-100;
+	@apply border-emerald-100 bg-emerald-50 text-emerald-800;
 
 	strong {
 		@apply text-emerald-700;
 	}
 }
 .is-style-note-warning {
-	@apply bg-amber-50 text-amber-800 border-amber-100;
+	@apply border-amber-100 bg-amber-50 text-amber-800;
 
 	strong {
 		@apply text-amber-700;
 	}
 }
 .is-style-note-error {
-	@apply bg-red-50 text-red-800 border-red-100;
+	@apply border-red-100 bg-red-50 text-red-800;
 
 	strong {
 		@apply text-red-700;
 	}
 }
-
 
 /* Separators */
 [class*="is-style-sep-"] {
@@ -342,7 +352,6 @@ p[class*="is-style-note-"] {
 	}
 }
 
-
 /* Scrollbar */
 /* via: https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/ */
 .styled-scrollbars {
@@ -365,10 +374,9 @@ p[class*="is-style-note-"] {
 	background: var(--scrollbar-background);
 }
 
-
 .easy-footnotes-wrapper {
-	@apply text-sm max-w-prose;
+	@apply max-w-prose text-sm;
 }
 .easy-footnote a {
-	@apply no-underline text-brand-red hover:text-current;
+	@apply text-brand-red no-underline hover:text-current;
 }

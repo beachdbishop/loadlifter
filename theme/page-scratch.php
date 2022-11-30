@@ -30,46 +30,52 @@ get_header();
 				<header>
 					<?php the_title('<h1 class="entry-title | ">', '</h1>'); ?>
 				</header>
-				<div class="entry-content">
+				<div class="prose entry-content">
 					<?php the_content(); ?>
 					<div class="clear-both">&nbsp;</div>
 
-					<section class="not-prose group bg-gray-500 md:rounded-lg bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply lg:mx-auto lg:max-w-5xl">
-						<a href="#" class="decoration-none">
-							<div class="container px-5 py-16 mx-auto">
-								<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
-									<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
-									<div class="flex-shrink-0 px-8 py-2 mt-10 text-lg text-white bg-transparent border border-white border-solid rounded-tl-lg rounded-br-lg focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
+					<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
+
+					<div class="not-prose">
+						<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <svg class="inline llicon"><use xlink:href="#arrow-right"></use></svg></p>
+
+						<section class="group bg-gray-500 md:rounded-lg bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply lg:mx-auto lg:max-w-5xl">
+							<a href="#" class="decoration-none">
+								<div class="container px-5 py-16 mx-auto">
+									<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
+										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
+										<div class="flex-shrink-0 px-8 py-2 mt-10 text-base text-white bg-transparent border border-white border-solid papercorners-16 focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-grill-hot"></i> Button</div>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>
+							</a>
+						</section>
 
-					<div class="wp-block-spacer">&nbsp;</div>
+						<div class="wp-block-spacer">&nbsp;</div>
 
-					<section class="not-prose group full-bleed bg-gray-500 bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply">
-						<a href="#">
-							<div class="container px-5 py-16 mx-auto">
-								<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
-									<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
-									<div class="flex-shrink-0 px-8 py-2 mt-10 text-lg text-white bg-transparent border border-white border-solid rounded-tl-lg rounded-br-lg focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
+						<section class="group full-bleed bg-gray-500 bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply">
+							<a href="#">
+								<div class="container px-5 py-16 mx-auto">
+									<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
+										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
+										<div class="flex-shrink-0 px-8 py-2 mt-10 text-white bg-transparent border border-white border-solid papercorners-16 focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-mustache"></i> Details</div>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>
+							</a>
+						</section>
 
-					<div class="wp-block-spacer">&nbsp;</div>
+						<div class="wp-block-spacer">&nbsp;</div>
 
-					<section class="not-prose group full-bleed bg-brand-red bg-center bg-cover bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply is-style-brand-red">
-						<a href="#">
-							<div class="container px-5 py-16 mx-auto">
-								<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
-									<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
-									<div class="flex-shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase bg-transparent border border-white border-solid rounded-tl-lg rounded-br-lg focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
+						<section class="group full-bleed bg-brand-red bg-center bg-cover bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply is-style-brand-red">
+							<a href="#">
+								<div class="container px-5 py-16 mx-auto">
+									<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
+										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
+										<div class="flex-shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase bg-transparent border border-white border-solid papercorners-16 focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
+									</div>
 								</div>
-							</div>
-						</a>
-					</section>
+							</a>
+						</section>
+					</div>
 
 					<div class="wp-block-spacer">&nbsp;</div>
 

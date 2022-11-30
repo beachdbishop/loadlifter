@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="landing-page-bare | bg-white">
+	<main id="primary" class="landing-page-bare | bg-white prose">
 
 		<?php
 		while ( have_posts() ) :

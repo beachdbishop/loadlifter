@@ -36,11 +36,11 @@ get_header();
 					<?php the_title('<h1 class="entry-title | ">', '</h1>'); ?>
 				</header>
 
-				<div class="entry-content not-prose">
+				<div class="not-prose entry-cont">
 					<?php // the_content();
 					?>
 
-					<section class="container p-2 mx-auto mb-8 bg-white md:p-4 lg:p-8 md:flex md:gap-4 lg:gap-8 rounded-xl lg:p-16 lg:mb-16">
+					<section class="w-full p-2 mb-8 bg-white md:p-4 lg:p-8 md:flex md:gap-4 lg:gap-8 rounded-xl lg:p-16 lg:mb-16">
 
 						<div class="p-4 mb-10 border-2 border-orange-200 border-solid divide-y rounded-lg bg-orange-50 md:mb-0 divide-neutral-300 divide-solid lg:p-8 md:w-1/2 lg:w-1/4">
 							<div class="pb-4 lg:pb-8">
@@ -117,7 +117,7 @@ get_header();
 
 	<?php endwhile; ?>
 
-</main><!-- #main -->
+</main>
 
 <?php
 get_footer();

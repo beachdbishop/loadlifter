@@ -1,7 +1,7 @@
 <?php
 // form - HubSpot - Newsletter Subscription (on light bg)
 ?>
-<div class="p-4 md:p-8 bg-neutral-50 text-neutral-800 sticky top-[104px]">
+<div class="p-4 md:p-8 bg-neutral-50 text-neutral-800 sticky z-10 top-[104px]">
 	<h3 class="mb-4 text-brand-red">Stay up-to-date</h3>
 	<p class="mb-8">Get a collection of our latest blog posts in your inbox every 3-4 weeks.</p>
 	<script>

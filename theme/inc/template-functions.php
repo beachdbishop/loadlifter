@@ -91,7 +91,7 @@ function ll_show_post_source( $column, $post_id ) {
 			echo '<span style="background-color: #ce182d; color: #fff1f2; border-radius: 8px 0 8px 0; padding: 2px 8px; font-weight: bold">Original Content</span>';
 
 		if ( $source === 'checkpoint' )
-			echo '<span style="background-color: #ececec; color: #fa5d00; border-radius: 4px; padding: 2px 8px; font-weight: bold">Checkpoint</span>';
+			echo '<span style="color: #fa5d00; border: 1px solid #fa5d00; border-radius: 4px; padding: 2px 8px; font-weight: bold">Checkpoint</span>';
 
 		if ( $source === 'other' )
 			echo '<span style="background-color: #f3e8ff; color: #7e22ce; border-radius: 4px; padding: 2px 8px; font-weight: bold">Other</span>';

@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-4 md:mb-8 ' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'prose lg:prose-xl mb-4 md:mb-8' ); ?>>
 	<header>
 		<?php the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' ); ?>
 

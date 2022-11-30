@@ -45,7 +45,7 @@ if ( $ind_featimg == true ) {
 	<div class="px-1 md:container md:mx-auto md:px-0">
 
 
-		<div class="entry-content">
+		<div class="prose lg:prose-xl entry-content">
 			<?php the_content(); ?>
 
 			<div class="clear-both">&nbsp;</div>

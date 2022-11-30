@@ -10,7 +10,7 @@
 
 ?>
 
-<!--   P R E F O O T E R   A R E A   -->
+<?php //   P R E F O O T E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 <footer role="contentinfo" id="colophon" class="site-footer | border-t-4 border-solid border-neutral-900 bg-neutral-800 text-neutral-200 print:bg-transparent bg:text-neutral-600">

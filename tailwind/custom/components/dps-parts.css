@@ -1,3 +1,12 @@
 .dps-grid-4max {
-	@apply grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 -m-4
+	@apply -m-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4;
+}
+.dps-grid-3max {
+	@apply -m-4 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3;
+}
+.dps-inline > *:not(:last-child)::after {
+	content: ", ";
+}
+.dps-inline > *:last-child::before {
+	content: "and ";
 }

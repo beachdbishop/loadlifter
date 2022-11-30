@@ -26,20 +26,18 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	transform: none;
 }
 
-.table-oldtab {
-	@apply oldstyle-nums tabular-nums;
-}
+
 
 .papercorners-4 {
-	@apply rounded-tr rounded-bl;
+	@apply rounded-tl rounded-br;
 	/* border-radius: 4px 0 4px; */
 }
 .papercorners-6 {
-	@apply rounded-tr-md rounded-bl-md;
+	@apply rounded-tl-md rounded-br-md;
 	/* border-radius: 6px 0 6px; */
 }
 .papercorners-8 {
-	@apply rounded-tr-lg rounded-bl-lg;
+	@apply rounded-tl-lg rounded-br-lg;
 	/* border-radius: 8px 0 8px; */
 }
 .papercorners-12 {
@@ -70,39 +68,14 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	border-radius: 144px 0 144px;
 }
 
-.single-post .empty-feat-img {
-	@apply hidden;
-}
-
-.head-last-bold strong:last-child {
-	@apply font-bold;
-}
-
-.list-square {
-	list-style-type: square;
-}
-
-.list-checked li::before {
-	content: "\f058";
-}
 
 .inline-comma-sep {
 	span:not(:last-of-type)::after {
 		content: ", ";
 	}
 }
-
 .inline-pipe-sep {
 	span:not(:last-of-type)::after {
 		content: " | ";
-	}
-}
-
-@supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {
-	.mask-logo {
-		mask-image: url("/wp-content/themes/loadlifter/theme/img/mask__bio.svg");
-		mask-position: center;
-		mask-repeat: no-repeat;
-		mask-size: 320px;
 	}
 }

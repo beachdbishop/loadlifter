@@ -12,7 +12,7 @@
  * editor.
 */
 html {
-	@apply scroll-smooth scroll-pt-[52px] md:scroll-pt-[76px];
+	@apply scroll-pt-[52px] scroll-smooth md:scroll-pt-[76px];
 }
 
 body {
@@ -47,7 +47,6 @@ h6 {
 	@apply font-body text-lg uppercase tracking-wide;
 }
 
-
 a:not([class]) {
 	@apply text-current;
 }
@@ -61,7 +60,6 @@ main:focus {
 [href]:hover {
 	text-decoration: none;
 }
-
 
 dl {
 	@apply m-0 p-0;

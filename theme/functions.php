@@ -75,15 +75,15 @@ if ( ! function_exists( 'll_setup' ) ) :
 
 		add_post_type_support( 'page', 'excerpt' );
 
-		remove_action('wp_head', 'rsd_link');
-		remove_action('wp_head', 'wp_generator');
-		remove_action('wp_head', 'index_rel_link');
-		remove_action('wp_head', 'wlwmanifest_link');
-		remove_action('wp_head', 'start_post_rel_link', 10, 0);
-		remove_action('wp_head', 'parent_post_rel_link', 10, 0);
-		remove_action('wp_head', 'adjacent_posts_rel_link', 10, 0);
-		remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-		remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'wp_head', 'index_rel_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7);
 		remove_action( 'wp_print_styles', 'print_emoji_styles');
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -119,8 +119,8 @@ function ll_scripts() {
 	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], $version_string );
 
 	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
-	wp_enqueue_script( 'hubspot-forms', '//js.hsforms.net/forms/v2.js', [], '', false );
 	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
+	wp_enqueue_script( 'hubspot-forms', '//js.hsforms.net/forms/v2.js', [], '', false );
 	wp_enqueue_script( 'vanilla-tilt', get_template_directory_uri() . '/js/vanilla-tilt.min.js', [], $version_string, true );
 	wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
 }

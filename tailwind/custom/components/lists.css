@@ -9,6 +9,14 @@ ul.is-style-default {
 	/* list-style-position: inside; */
 }
 
+.list-square {
+	list-style-type: square;
+}
+
+.list-checked li::before {
+	content: "\f058";
+}
+
 .is-style-list-none,
 .prose .is-style-list-none {
 	@apply list-none pl-0;
@@ -75,7 +83,7 @@ ul.is-style-default {
 .is-style-circle > *,
 .is-style-circle-red > *,
 .is-style-circle-blue > * {
-	@apply flex aspect-square w-[128px] items-center justify-center rounded-full text-center font-body text-lg font-bold text-white/80 leading-snug;
+	@apply flex aspect-square w-[128px] items-center justify-center rounded-full text-center font-body text-lg font-bold leading-snug text-white/80;
 }
 .is-style-circle a,
 .is-style-circle-red a,
@@ -113,7 +121,7 @@ ul.is-style-default {
 .is-style-split-circle > *,
 .is-style-split-circle-red > *,
 .is-style-split-circle-blue > * {
-	@apply flex aspect-square w-[200px] items-center justify-center rounded-full text-center font-body text-xl font-bold text-neutral-200 leading-snug;
+	@apply flex aspect-square w-[200px] items-center justify-center rounded-full text-center font-body text-xl font-bold leading-snug text-neutral-200;
 }
 .split-circle a,
 .is-style-split-circle a,
@@ -130,10 +138,6 @@ ul.is-style-default {
 .is-style-split-circle-blue > li {
 	background: var(--wp--preset--gradient--blue-split) !important;
 }
-
-
-
-
 
 /* Timeline pattern */
 .list-timeline {
