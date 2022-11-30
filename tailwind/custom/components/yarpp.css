@@ -1,0 +1,16 @@
+/* Styles for Yet Another Related Posts Plugin */
+.yarpp-related {
+	@apply my-4 lg:mt-8 lg:mb-16;
+}
+.yarpp-related h3 {
+	@apply text-lg uppercase tracking-wide;
+}
+.yarpp-thumbnails-horizontal {
+	@apply md:grid md:gap-4 md:grid-auto-fit lg:gap-8;
+}
+.yarpp-thumbnail-default img {
+	@apply -mt-[1px] border border-solid border-neutral-100;
+}
+.yarpp-thumbnail-title {
+	@apply mt-4 font-head text-2xl;
+}
