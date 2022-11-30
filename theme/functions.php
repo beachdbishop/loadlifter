@@ -150,6 +150,15 @@ function ll_disable_wp57_menu_hover() {
 }
 
 
+/**
+ * Disable automatic creation of YARPP thumbnail sizes
+ * ... and disable yarpp stylesheets
+ */
+add_filter( 'yarpp_add_image_size', '__return_false' );
+add_filter( 'yarpp_enqueue_related_style', '__return_false' );
+add_filter( 'yarpp_enqueue_thumbnails_style', '__return_false' );
+
+
 switch( wp_get_environment_type() ) {
 	case 'local':
 		// add_action( 'wp_enqueue_scripts', 'll_checka11y_style' );
