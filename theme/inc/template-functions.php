@@ -28,6 +28,27 @@ function wpdocs_custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
 
+/**
+ * Exclude archived events from Posts loop
+ */
+function ll_exclude_categories( $wp_query ) {
+	if ( wp_get_environment_type() == 'production' ) {
+		$catid = '1733';
+	}
+
+	if ( wp_get_environment_type() == 'staging' ) {
+		$catid = '1733';
+	}
+
+	if ( wp_get_environment_type() == 'local' ) {
+		$catid = '258';
+	}
+
+	if( is_home() || is_feed() || ( is_archive() && !is_category() ) ) {
+		set_query_var( 'cat', '-' . $catid );
+	}
+}
+add_action( 'pre_get_posts', 'll_exclude_categories' );
 
 
 /**
