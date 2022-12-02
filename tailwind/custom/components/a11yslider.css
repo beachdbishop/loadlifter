@@ -61,8 +61,12 @@
 }
 
 .slider-quotes > * {
-	background-color: rgba(255, 255, 255, 0.8);
+	@apply bg-white/80;
 }
 .slider-quotes .a11y-slider-active {
 	@apply bg-white;
+}
+
+.slide .quote {
+	@apply before:content-['"'] after:content-['"'];
 }

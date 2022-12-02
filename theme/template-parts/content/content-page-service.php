@@ -13,8 +13,8 @@ $gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 70%, 
 $gradientmd = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)';
 $svc_id = get_the_ID();
 // $svc_message = get_field( 'll_brand_message' );
-if ( get_field( 'll_title_override' ) ) {
-	$svc_title = get_field( 'll_title_override' );
+if ( get_field( 'll_page_title_override' ) ) {
+	$svc_title = get_field( 'll_page_title_override' );
 } else {
 	$svc_title = get_the_title();
 }

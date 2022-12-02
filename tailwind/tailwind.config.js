@@ -42,6 +42,7 @@ module.exports = {
   safelist: [
     '-ml-4',
     '-ml-8',
+    'alignright',
     'a11y-slider-container',
     'a11y-slider-dots',
     'a11y-slider-next',

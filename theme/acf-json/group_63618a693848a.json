@@ -112,7 +112,7 @@
                 "hospitality7": "Give your operations an upgrade.",
                 "hospitality8": "Your business deserves the VIP treatment.",
                 "notforprofit1": "Champions of people who make change.",
-                "notforprofit2": "Partners in your non-profit’s cause.",
+                "notforprofit2": "Partners in your nonprofit's cause.",
                 "notforprofit3": "We believe community comes first.",
                 "notforprofit4": "Helping those who help our community.",
                 "notforprofit5": "Your impact deserves solid support.",
@@ -126,7 +126,8 @@
                 "realestate8": "Strategies that support you.",
                 "realestate9": "Partners who help you make an impact.",
                 "realestate10": "Own the way you do business.",
-                "realestate11": "Partners in your development."
+                "realestate11": "Partners in your development.",
+                "soar1": "Strategic Operations & Advisory Resources"
             },
             "default_value": false,
             "return_format": "array",
@@ -150,7 +151,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Accountants | Auditors | Advisors | Consultants | CPAs :: BeachFleischman PC is one of the largest locally-owned public accounting and consulting firms in Southern Arizona and a Top 200 CPA firm in the United States. Serving clients in Phoenix, Tucson, Mesa, Scottsdale, Tempe, Gilbert, Glendale, Flagstaff, and Chandler, BeachFleischman provides accounting, audit, consulting, and tax services to businesses, organizations, and individuals (U.S. and foreign-based), doing business domestically and internationally.",
+            "default_value": "Accountants | Auditors | Advisors | Consultants | CPAs :: BeachFleischman PLLC is one of the largest locally-owned public accounting and consulting firms in Southern Arizona and a Top 200 CPA firm in the United States. Serving clients in Phoenix, Tucson, Mesa, Scottsdale, Tempe, Gilbert, Glendale, Flagstaff, and Chandler, BeachFleischman provides accounting, audit, consulting, and tax services to businesses, organizations, and individuals (U.S. and foreign-based), doing business domestically and internationally.",
             "maxlength": "",
             "rows": 6,
             "placeholder": "",
@@ -175,5 +176,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667516542
+    "modified": 1669938534
 }
