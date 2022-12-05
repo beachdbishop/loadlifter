@@ -10,6 +10,13 @@ function ll_register_block_pattern_categories() {
 			]
 		);
 
+		register_block_pattern_category(
+			'text',
+			[
+				'label' => esc_html__( 'Text', 'loadlifter' ),
+			]
+		);
+
 	}
 }
 add_action( 'init', 'll_register_block_pattern_categories' );
