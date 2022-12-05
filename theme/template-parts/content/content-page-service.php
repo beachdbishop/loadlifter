@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying Service page content in page.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -19,6 +19,7 @@ if ( get_field( 'll_page_title_override' ) ) {
 	$svc_title = get_the_title();
 }
 
+$svc_icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
 $svc_excerpt = get_the_excerpt();
 $svc_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $svc_featimg == true ) {
@@ -34,20 +35,31 @@ if ( $svc_featimg == true ) {
 @media (min-width: 768px) { .ind-feat-image { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); } }
 </style>
 
-<div class="ind-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-center bg-cover bg-fixed print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="<?php the_title_attribute(); ?>">
+<header class="ind-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-no-repeat bg-cover md:bg-center md:bg-fixed print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="<?php the_title_attribute(); ?>">
 	<div class="px-1 md:container md:mx-auto md:px-0">
+
+		<div class="md:flex">
 			<div class="w-full md:w-1/2 lg:w-1/3">
-				<header class="mb-4">
-					<?php // the_title( '<h1 class="text-4xl leading-none tracking-tight text-transparent bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text lg:text-5xl head-last-bold">', '</h1>' ); ?>
-					<h1 class="leading-none text-transparent tracking-light bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text head-last-bold"><?php echo $svc_title; ?></h1>
-				</header>
-				<p class="leading-normal text-white lg:text-lg"><?php echo $svc_excerpt; ?></p>
+				<h1 class="leading-none text-transparent tracking-light bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text head-last-bold"><?php echo $svc_title; ?></h1>
+				<p class="mt-4 leading-normal text-white lg:text-lg"><?php echo $svc_excerpt; ?></p>
 			</div>
+			<?php if ( $svc_icon ) : ?>
+				<div class="hidden w-full md:flex md:items-center md:justify-end md:w-1/2 lg:w-2/3">
+					<p class="text-white/50">
+						<span class="fa-stack fa-4x fa-pull-right">
+							<i class="fa-regular fa-circle fa-stack-2x"></i>
+							<i class="fa-solid <?php echo $svc_icon; ?> fa-stack-1x text-brand-blue-faint"></i>
+						</span>
+					</p>
+				</div>
+			<?php endif; ?>
+		</div>
+
 		<?php if ( function_exists( 'bcn_display' ) && !is_front_page() ) { ?>
 			<div class="breadcrumbs | font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 	</div>
-</div>
+</header>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
@@ -57,11 +69,6 @@ if ( $svc_featimg == true ) {
 
 			<div class="clear-both">&nbsp;</div>
 		</div>
-
-		<!-- <footer class="px-4 py-4 my-4 bg-pink-100 rounded-lg todo md:my-8 md:py-8 2xl:py-12 print:hidden">
-			<h2>Contact Us</h2>
-			<p>HubSpot Form?</p>
-		</footer> -->
 
 		<?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
 
