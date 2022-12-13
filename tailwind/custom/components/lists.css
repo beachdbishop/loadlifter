@@ -139,6 +139,17 @@ ul.is-style-default {
 	background: var(--wp--preset--gradient--blue-split) !important;
 }
 
+
+.is-style-boxed {
+	@apply md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-8 -mx-2 list-none !pl-0;
+}
+.is-style-boxed > li {
+	@apply text-base border rounded-lg border-solid border-neutral-900/10 p-4 !my-0 lg:p-8;
+}
+.is-style-boxed li > strong {
+	@apply mb-4;
+}
+
 /* Timeline pattern */
 .list-timeline {
 	@apply ml-4 list-none border-l-2;

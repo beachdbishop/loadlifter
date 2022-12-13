@@ -106,6 +106,11 @@ add_action( 'init', function() {
 		'label'	=> __( 'Split Circle Blue', 'loadlifter' ),
 	] );
 
+	register_block_style( 'core/list', [
+		'name'	=> 'boxed',
+		'label'	=> __( 'Boxed', 'loadlifter' ),
+	] );
+
 	register_block_style( 'core/quote', [
 		'name'	=> 'fancy-quote',
 		'label'	=> __( 'Fancy Quote', 'loadlifter' ),
