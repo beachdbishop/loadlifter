@@ -7,8 +7,8 @@ if ( get_field( 'll_normal_contact_form_location' ) !== false ) {
 	</a>
 	<!-- motion-safe:animate-bounce -->
 
-	<footer class="p-4 my-4 bg-white md:p-8 lg:my-8 lg:p-16 print:hidden" id="contact">
-		<h4 class="mb-4 text-brand-blue-dark">Contact Us</h4>
+	<footer class="page-content | mx-auto !mb-8 p-4 bg-white md:p-8 lg:p-12 print:hidden" id="contact">
+		<h4 class="mb-4 font-bold text-brand-blue-dark">Contact Us</h4>
 		<?php
 		if ( is_category( 'construction' ) ) { ?>
 			<!-- <script>
@@ -28,6 +28,13 @@ if ( get_field( 'll_normal_contact_form_location' ) !== false ) {
 				});
 			</script>
 		<?php } ?>
+
+		<?php
+		/* Include disclaimer text after form if this is the main Cybersecurity page or any of its children */
+		$cyber_page = ( wp_get_environment_type() == 'local' ) ? '2325' : '23978' ;
+		if ( ll_is_tree( $cyber_page ) ) : ?>
+			<p class="my-8 text-sm italic text-neutral-600">Disclaimer: BeachFleischman PLLC and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither BeachFleischman PLLC nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.</p>
+		<?php endif; ?>
 	</footer>
 	<?php
 }
