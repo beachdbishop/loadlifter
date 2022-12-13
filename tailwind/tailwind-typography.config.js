@@ -33,7 +33,7 @@ module.exports = {
 							'--tw-prose-headings': colors.neutral[ 900 ],
 							'--tw-prose-lead': colors.neutral[ 600 ],
 							'--tw-prose-links': theme( 'colors.brand-blue' ),
-							'--tw-prose-bold': colors.neutral[ 900 ],
+							'--tw-prose-bold': 'currentColor',
 							'--tw-prose-counters': colors.neutral[ 500 ],
 							'--tw-prose-bullets': colors.neutral[ 300 ],
 							'--tw-prose-hr': colors.neutral[ 200 ],
