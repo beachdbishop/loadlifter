@@ -10,6 +10,7 @@
 /* via: https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */
 div:not(.block-editor-block-list__layout) .full-bleed {
 	width: 100vw;
+	max-width: unset;
 	/* margin-left: calc(50% - 50vw); */
 	margin-left: 50%;
 	/* transform: translate3d(-50%, 0, 0); */

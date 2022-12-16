@@ -22,6 +22,12 @@ module.exports = {
 							 * A value of false removes the max-width property.
 							 */
 							maxWidth: false,
+              a: {
+                fontWeight: '400',
+              },
+              'strong a': {
+                fontWeight: '700',
+              },
 
 							/**
 							 * You can customize your color theme below. The
