@@ -221,12 +221,10 @@
 								<div class="py-4 md:grid md:grid-flow-col md:col-span-2 on-darkbg lg:py-8 md:auto-cols-fr">
 									<div class="px-4 text-white lg:px-8 on-darkbg">
 										<ul class="leading-loose">
-											<li><a href="/about/mission-vision-and-core-values/">Mission, Vision, and Core Values</a></li>
 											<li><a href="/about/culture/">Culture</a></li>
 											<li><a href="/people/">Leadership Team</a></li>
 											<li><a href="/about/women-rise/">Women RISE</a></li>
 											<li><a href="/about/idea-committee/" title="">IDEA Committee</a></li>
-											<li><a href="/about/leading-edge-alliance/">Leading Edge Alliance</a></li>
 										</ul>
 									</div>
 									<div class="hidden px-4 text-white md:block lg:px-8 on-darkbg">

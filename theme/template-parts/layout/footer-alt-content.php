@@ -36,7 +36,6 @@
 						<a class="hover:text-brand-blue-pale" href="/about/"> About </a>
 						<a class="hover:text-brand-blue-pale" href="/people/"> Leadership Team </a>
 						<a class="-m-1" href="/career-opportunities/"> <span class="p-1 font-bold rounded-sm bg-amber-400 text-neutral-800 hover:bg-amber-200">We're Hiring!</span> </a>
-						<a class="tracking-tight hover:text-brand-blue-pale" href="/about/leading-edge-alliance/">Leading Edge Alliance</a>
 					</nav>
 				</div>
 
