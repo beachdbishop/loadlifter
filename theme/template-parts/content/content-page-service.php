@@ -30,6 +30,9 @@ if ( $svc_featimg == true ) {
 ?>
 
 <style>
+<?php if ( $svc_icon ) {
+	echo ':root { --page-icon-class: ' . $svc_icon . ' }';
+} ?>
 <?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>
 .ind-feat-image { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); }
 @media (min-width: 768px) { .ind-feat-image { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); } }
@@ -45,10 +48,10 @@ if ( $svc_featimg == true ) {
 			</div>
 			<?php if ( $svc_icon ) : ?>
 				<div class="hidden w-full md:flex md:items-center md:justify-end md:w-1/2 lg:w-2/3">
-					<p class="text-white/50">
+					<p class="text-neutral-100">
 						<span class="fa-stack fa-4x fa-pull-right">
-							<i class="fa-regular fa-circle fa-stack-2x"></i>
-							<i class="fa-solid <?php echo $svc_icon; ?> fa-stack-1x text-brand-blue-faint"></i>
+							<i class="fa-solid fa-circle fa-stack-2x"></i>
+							<i class="fa-duotone <?php echo $svc_icon; ?> fa-stack-1x text-brand-blue"></i>
 						</span>
 					</p>
 				</div>
