@@ -349,6 +349,30 @@ function ll_dps_add_posts_to_exclusion_list( $output ) {
 }
 // add_filter( 'display_posts_shortcode_output', 'll_dps_add_posts_to_exclusion_list' );
 
+/**
+ * DPS People query w/ Dept filter
+ */
+function ll_dps_filter_people_query( $args, $atts ) {
+	// Only run on People queries
+	if( empty( $atts['deptlist'] ) )
+		return $args;
+
+	$args['orderby'] 	= 'meta_value_num';
+	$args['meta_key'] 	= 'll_people_level';
+	$args['order'] 		= 'ASC';
+
+	$meta_query = array(
+		array(
+			'key' => 'll_people_department',
+			'value' => $atts['deptlist'],
+			'compare' => 'LIKE',
+		)
+	);
+
+	$args['meta_query'] = $meta_query;
+	return $args;
+}
+add_filter( 'display_posts_shortcode_args', 'll_dps_filter_people_query', 10, 2 );
 
 /**
  * Display Reusable Blocks in Menu
