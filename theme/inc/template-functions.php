@@ -357,7 +357,7 @@ function ll_dps_filter_people_query( $args, $atts ) {
 	if( empty( $atts['deptlist'] ) )
 		return $args;
 
-	$args['orderby'] 	= 'meta_value_num';
+	$args['orderby'] 	= 'meta_value_num title';
 	$args['meta_key'] 	= 'll_people_level';
 	$args['order'] 		= 'ASC';
 
