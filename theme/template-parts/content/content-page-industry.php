@@ -28,7 +28,7 @@ if ( $ind_featimg == true ) {
 @media (min-width: 768px) { .ind-feat-image { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }
 </style>
 
-<header role="img" aria-labelledby="page-title" class="ind-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-no-repeat bg-cover md:bg-center md:bg-fixed print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+<header class="ind-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-no-repeat bg-cover bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-labelledby="page-title">
 	<div class="px-1 md:container md:mx-auto md:px-0">
 		<div class="w-full md:w-1/2 lg:w-1/3">
 			<h1 class="mb-2 text-lg lg:text-xl text-brand-blue-faint " id="page-title"><i class="fa-duotone <?php echo esc_attr( $ind_icon ); ?>"></i> <?php echo get_the_title(); ?></h1>
