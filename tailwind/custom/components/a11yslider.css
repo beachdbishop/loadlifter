@@ -79,5 +79,5 @@
 	@apply flex py-4 lg:py-8 gap-2;
 }
 .slider-people > * {
-	@apply w-full grow-0 shrink-0 basis-auto md:w-1/2 lg:w-80;
+	@apply w-52 grow-0 shrink-0 basis-auto md:w-64;
 }

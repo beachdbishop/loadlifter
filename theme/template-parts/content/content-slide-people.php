@@ -20,27 +20,27 @@ $peep_level = get_field( 'll_people_level' );
 
 <article
 	id="post-<?php the_ID(); ?>"
-	<?php post_class( 'slide | static w-80 aspect-[3/5] group bg-no-repeat bg-center bg-cover bg-brand-red-faint shadow-lg shadow-neutral-400/50 cursor-pointer flex flex-col' ); ?>
+	<?php post_class( 'slide | static aspect-[3/5] group bg-no-repeat bg-center bg-cover bg-brand-red-faint shadow-lg shadow-neutral-400/50 cursor-pointer flex flex-col' ); ?>
 	style="background-image: url('<?php echo $headshot; ?>');"
 	onclick="window.location = '<?php echo esc_url( get_permalink() ); ?>';"
 	>
 
 	<div class="seethru | grow bg-transparent">&nbsp;</div>
 
-	<div class="slide-info | shrink-0 h-1/3 bg-white p-4 z-10 ">
+	<div class="slide-info | shrink-0 h-1/3 bg-white px-4 py-2 z-10 ">
 		<header>
 			<?php
 			$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
-			echo sprintf( '<h3 class="leading-none text-center text-brand-gray %1$s">%2$s</h3>', $title_classes, get_the_title() );
+			echo sprintf( '<p class="font-head text-xl leading-none text-center text-brand-gray %1$s">%2$s</p>', $title_classes, get_the_title() );
 			?>
 		</header>
 		<?php
 		// Only show designations for non-subsidiary entries
 		if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
-			echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
+			echo sprintf( '<p class="italic font-bold leading-none tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
 		}
 		if( get_field( 'll_people_title' ) ) {
-			echo sprintf( '<p class="leading-tight text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
+			echo sprintf( '<p class="leading-none text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
 		}
 		// if ( $peep_level['value'] != 800 ) {
 		// 	if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
