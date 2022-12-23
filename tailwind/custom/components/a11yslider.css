@@ -1,6 +1,10 @@
 .a11y-slider-container {
 	@apply my-4 max-w-3xl md:mx-auto;
 }
+.a11y-slider-container:has(.slider-people) {
+	@apply max-w-full;
+}
+
 .a11y-slider-container > button {
 	@apply rounded-full border border-solid bg-transparent py-2 px-3 text-brand-gray-dark;
 }
@@ -69,4 +73,11 @@
 
 .slide .quote {
 	@apply before:content-['"'] after:content-['"'];
+}
+
+.slider-people {
+	@apply flex py-4 lg:py-8 gap-2;
+}
+.slider-people > * {
+	@apply w-full grow-0 shrink-0 basis-auto md:w-1/2 lg:w-80;
 }
