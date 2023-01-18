@@ -1,9 +1,25 @@
+
+
+/* Style a parent element based on its number of children using CSS :has()
+via: https://www.bram.us/2022/11/17/style-a-parent-element-based-on-its-number-of-children-using-css-has/ */
+/* DANGER! Firefox doesn't support :has() yet! */
+/* .dps-grid {
+	@apply !max-w-md mx-auto md:!max-w-none md:-m-4 md:grid md:gap-4 lg:gap-8;
+}
+.dps-grid:has(> :nth-child(-n+2):last-child) {
+	@apply md:grid-cols-2;
+}
+.dps-grid:has(> :nth-child(3):last-child) {
+	@apply md:grid-cols-3;
+} */
+
 .dps-grid-4max {
-	@apply -m-4 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4;
+	@apply !max-w-md mx-auto md:!max-w-none md:-m-4 md:grid md:gap-8 md:grid-cols-2 xl:grid-cols-4;
 }
 .dps-grid-3max {
-	@apply -m-4 grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3;
+	@apply !max-w-md mx-auto md:!max-w-none md:-m-4 md:grid md:gap-8 md:grid-cols-3;
 }
+
 .dps-inline > *:not(:last-child)::after {
 	content: ", ";
 }

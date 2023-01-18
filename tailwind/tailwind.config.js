@@ -30,12 +30,16 @@ module.exports = {
       aspectRatio: {
         'headshot': '95 / 127',
       },
-      minHeight: {
-        'hero': '420px',
+      backgroundImage: {
+        'mesh-blue': "url('/wp-content/themes/loadlifter/theme/img/mesh-374-blue.jpg')",
+        'mesh-red': "url('/wp-content/themes/loadlifter/theme/img/mesh-767-red.jpg')",
       },
       maxWidth: {
         '46char': '46ch',
         'socimg': '736px',
+      },
+      minHeight: {
+        'hero': '420px',
       },
 		},
 	},

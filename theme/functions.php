@@ -27,28 +27,9 @@ if ( ! function_exists( 'll_setup' ) ) :
 		 */
 		load_theme_textdomain( 'loadlifter', get_template_directory() . '/languages' );
 
-		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-
-		/*
-		 * Let WordPress manage the document title.
-		 * By adding theme support, we declare that this theme does not use a
-		 * hard-coded <title> tag in the document head, and expect WordPress to
-		 * provide it for us.
-		 */
 		add_theme_support( 'title-tag' );
-
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 */
 		add_theme_support( 'post-thumbnails' );
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
 		add_theme_support(
 			'html5',
 			array(
@@ -59,22 +40,16 @@ if ( ! function_exists( 'll_setup' ) ) :
 				'script',
 			)
 		);
-
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'disable-custom-font-sizes' );
 		// Add theme support for selective refresh for widgets.
 		// add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Add responsive embeds and block editor styles.
-		 */
-		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style-editor.css' );
-		remove_theme_support( 'block-templates' ); // <-- FSE?
-
-		add_theme_support( 'disable-custom-font-sizes' );
 
 		add_post_type_support( 'page', 'excerpt' );
 
+		remove_theme_support( 'block-templates' ); // <-- FSE?
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wp_generator' );
 		remove_action( 'wp_head', 'index_rel_link' );
@@ -91,6 +66,23 @@ if ( ! function_exists( 'll_setup' ) ) :
 	}
 endif;
 add_action( 'after_setup_theme', 'll_setup' );
+
+/**
+ * Register Nav Menus
+ *
+ * should be usable in site Footer and Header.
+ */
+function ll_register_submenus() {
+	register_nav_menus( array(
+		'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
+		'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
+		'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
+		'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
+		'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
+	) );
+}
+add_action( 'after_setup_theme', 'll_register_submenus', 0 );
+
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -241,3 +233,8 @@ require get_template_directory() . '/inc/blocks.php';
  * Register shortcodes
  */
 require get_template_directory() . '/inc/shortcodes.php';
+
+/**
+ * Custom menu walkers
+ */
+require get_template_directory() . '/inc/menu-walker.php';

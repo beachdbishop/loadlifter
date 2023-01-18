@@ -5,6 +5,21 @@
 	height: 1em;
 }
 
+
+.submenu .menu {
+	@apply list-none;
+}
+.submenu .menu-item {
+	@apply mt-2;
+}
+.submenu a {
+	@apply text-current border-b-2 border-transparent hover:text-brand-blue hover:border-brand-blue-pale;
+}
+.submenu .ll-we-are-hiring a {
+	@apply -m-1 font-bold rounded-sm p-1 bg-amber-300 border-b-0 hover:text-amber-900 hover:bg-amber-100;
+}
+
+
 .nav-primary {
 	@apply font-head;
 

@@ -9,7 +9,7 @@
  * @package Load_Lifter
  */
 
-	get_template_part( 'template-parts/layout/footer-alt', 'content' );
+	get_template_part( 'template-parts/layout/footer-exp', 'content' );
 	?>
 
 </div><!-- #page -->

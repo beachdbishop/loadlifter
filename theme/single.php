@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-<main id="primary" class="bg-white">
+<main id="primary" class="bg-fixed bg-white bg-no-repeat bg-cover bg-mesh-blue">
 
 	<?php
 	while ( have_posts() ) :

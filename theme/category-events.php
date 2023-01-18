@@ -25,11 +25,11 @@ get_header();
 
 			<div class="entry-con">
 				<h2 class=" text-brand-red font-body">Upcoming</h2>
-				<?php echo do_shortcode( '[display-posts category="events" tag="upcoming" orderby="date" order="DESC" wrapper="div" wrapper_class="grid grid-cols-3 -mx-4" layout="card-simple" no_posts_message="Check back for upcoming events." /]' ); ?>
+				<?php echo do_shortcode( '[display-posts category="events" tag="upcoming" orderby="date" order="DESC" wrapper="div" wrapper_class="dps-grid-3max" layout="card-simple" no_posts_message="Check back for upcoming events." /]' ); ?>
 				<div class="py-4 full-bleed not-prose bg-gradient-to-br from-neutral-100 to-neutral-300 md:py-8 2xl:py-12">
 					<div class="px-1 md:container md:mx-auto md:px-0">
 						<h4 class="tracking-wide uppercase font-body">Archived Events</h4>
-						<?php echo do_shortcode( '[display-posts category="archived-events" orderby="date" order="DESC" wrapper="div" wrapper_class="grid grid-cols-4 -mx-4" layout="card-simple" /]' ); ?>
+						<?php echo do_shortcode( '[display-posts category="archived-events" orderby="date" order="DESC" wrapper="div" wrapper_class="dps-grid-4max" layout="card-simple" /]' ); ?>
 					</div>
 				</div>
 			</div>

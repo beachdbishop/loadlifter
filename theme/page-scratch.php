@@ -14,7 +14,8 @@
  */
 get_header();
 ?>
-<main id="primary" class="bg-gradient-to-r from-white via-amber-50 to-amber-100">
+<!-- <main id="primary" class="bg-gradient-to-r from-white via-amber-50 to-amber-100"> -->
+<main id="primary" class="bg-fixed bg-no-repeat bg-cover bg-mesh-blue">
 	<?php
 	while (have_posts()) :
 		the_post();
