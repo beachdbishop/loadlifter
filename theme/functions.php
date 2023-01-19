@@ -77,6 +77,7 @@ function ll_register_submenus() {
 		'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
 		'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
 		'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
+		'll_submenu_industries' => __( 'Industries submenu', 'loadlifter' ),
 		'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
 		'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
 	) );

@@ -16,7 +16,7 @@
 <footer role="contentinfo" id="colophon" class="site-footer |  print:bg-transparent">
 	<div class="bg-white border-solid border-y-4 border-brand-blue">
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
-			<div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-y-8 lg:grid-cols-5 lg:gap-8 print:hidden">
+			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8 lg:grid-cols-6 lg:gap-8 print:hidden">
 				<nav>
 					<h5>Accounting &amp; Assurance</h5>
 					<?php
@@ -42,6 +42,16 @@
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_soar',
+						'container_class' => 'submenu mt-4 text-sm',
+						'walker' => new LL_Menu_Walker()
+					) );
+					?>
+				</nav>
+				<nav>
+					<h5><a href="/industries/">Industry Expertise</a></h5>
+					<?php
+					wp_nav_menu( array(
+						'theme_location' => 'll_submenu_industries',
 						'container_class' => 'submenu mt-4 text-sm',
 						'walker' => new LL_Menu_Walker()
 					) );
