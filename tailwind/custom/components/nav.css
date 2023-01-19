@@ -175,7 +175,7 @@
 	}
 
 	.menus-container[data-visible] {
-		@apply block bg-neutral-800/70 shadow-xl shadow-neutral-900/60 backdrop-blur-md;
+		@apply block bg-neutral-900/90 shadow-xl shadow-neutral-900/60 backdrop-blur-md;
 	}
 
 	.menus-container .icon {

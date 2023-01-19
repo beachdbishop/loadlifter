@@ -8,10 +8,36 @@
  * @package Load_Lifter
  */
 
+// $menuItemsPrimary = [
+// 	"services" => [
+// 		"label" => 'Services',
+// 		"url" => '/services/',
+// 	],
+// 	"industries" => [
+// 		"label" => 'Industries',
+// 		"url" => '/industries/',
+// 	],
+// 	"about" => [
+// 		"label" => 'About Us',
+// 		"url" => '/about/',
+// 	],
+// 	"careers" => [
+// 		"label" => 'Careers',
+// 		"url" => '/career-opportunities/',
+// 	],
+// ];
 $menuItemsPrimary = [
-	"services" => [
-		"label" => 'Services',
-		"url" => '/services/',
+	"assurance" => [
+		"label" => 'Assurance',
+		"url" => '/assurance/',
+	],
+	"tax" => [
+		"label" => 'Tax',
+		"url" => '/tax/',
+	],
+	"soar" => [
+		"label" => 'Consulting <small>(SOAR)</small>',
+		"url" => '/soar/',
 	],
 	"industries" => [
 		"label" => 'Industries',
@@ -59,7 +85,7 @@ $menuItemsSecondary = [
 <?php get_template_part('template-parts/siteblocks/pre', 'header'); ?>
 
 <header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
-	<div role="navigation" class="flex items-center justify-between px-1 py-3 mx-auto md:container md:px-0 md:py-4">
+	<div role="navigation" class="flex items-center justify-between px-1 py-3 mx-auto md:container md:px-0 md:py-4 lg:gap-8">
 
 		<div class="w-[240px] lg:w-[320px] order-first">
 			<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>" title="Go to BeachFleischman's front page">
@@ -89,17 +115,17 @@ $menuItemsSecondary = [
 			</button>
 		</div>
 
-		<nav class="menus-container | md:flex md:flex-col md:order-1 lg:min-w-[600px] print:hidden" id="primary-navigation" aria-label="main menu">
-			<ul role="list" class="nav-primary | list-none flex font-bold md:justify-end md:items-center order-first md:order-last children:inline">
+		<nav class="menus-container | md:flex md:flex-col md:order-1 md:grow  print:hidden" id="primary-navigation" aria-label="main menu">
+			<!-- <ul role="list" class="nav-primary | list-none flex font-bold md:justify-end md:items-center order-first md:order-last children:inline"> -->
+			<ul role="list" class="nav-primary | list-none font-bold flex flex-col gap-2 md:flex-row md:justify-end lg:gap-4">
 				<?php
-				echo '<li class="font-normal todo">Yes, this temp goofy =></li>';
 				foreach ($menuItemsPrimary as $primary) {
 					echo '<li class="menu-item"><a class="menu-level-0" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
 				}
 				?>
 			</ul>
 
-			<ul role="list" class="nav-secondary | md:flex md:gap-2 md:order-first md:justify-end md:items-center print:hidden text-sm uppercase ">
+			<ul role="list" class="nav-secondary | mt-4 flex flex-col gap-2 md:mt-0 md:flex-row md:order-first md:justify-end md:items-center print:hidden text-sm uppercase lg:gap-4">
 				<?php
 				foreach ($menuItemsSecondary as $secondary) {
 					echo '<li class="font-bold menu-item text-neutral-500"><a class="menu-level-0" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
