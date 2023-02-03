@@ -27,6 +27,21 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	transform: none;
 }
 
+.icon {
+	@apply w-4 h-4;
+}
+/* FontAwesome svg-js method ...
+via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
+.llicon {
+	width: 1em;
+	height: 1em;
+	vertical-align: -0.125em;
+}
+.llicon-2x {
+	width: 2em;
+	height: 2em;
+	vertical-align: -0.25em;
+}
 
 .papercorners-4 {
 	@apply rounded-tl rounded-br;

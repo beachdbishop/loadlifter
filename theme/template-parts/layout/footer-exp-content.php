@@ -14,7 +14,7 @@
 <?php get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 <footer role="contentinfo" id="colophon" class="site-footer |  print:bg-transparent">
-	<div class="bg-white border-solid border-y-4 border-brand-blue">
+	<div class="bg-white .on-lightbg border-solid border-y-4 border-brand-blue">
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8 lg:grid-cols-6 lg:gap-8 print:hidden">
 				<nav>
@@ -76,6 +76,9 @@
 						'walker' => new LL_Menu_Walker()
 					) );
 					?>
+                    <ul class="mt-4 text-sm">
+                        <li><a href="/styleguide/">Styleguide</a></li>
+                    </ul>
 				</nav>
 			</div>
 		</div>

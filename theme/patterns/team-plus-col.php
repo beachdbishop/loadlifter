@@ -3,7 +3,7 @@
  * Title: Team Section
  * Slug: loadlifter/team-plus-col
  * Categories: fullwidthsections
- * Description: A full-width section showing featured team members plus a column for some contnet.
+ * Description: A full-width section showing featured team members plus a column for some content.
  * Keywords: team, services, industry, industries
  * Block Types: core/group, core/columns, core/heading, core/shortcode
  *

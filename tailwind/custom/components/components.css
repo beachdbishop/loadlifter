@@ -141,19 +141,7 @@ aside .timestamp {
 	@apply flex items-center justify-center;
 }
 
-/* FontAwesome svg-js method ...
-via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
-.llicon {
-	width: 1em;
-	height: 1em;
-	vertical-align: -0.125em;
-}
 
-.llicon-2x {
-	width: 2em;
-	height: 2em;
-	vertical-align: -0.25em;
-}
 
 .social-links a {
 	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;

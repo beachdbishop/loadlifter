@@ -8,36 +8,10 @@
  * @package Load_Lifter
  */
 
-// $menuItemsPrimary = [
-// 	"services" => [
-// 		"label" => 'Services',
-// 		"url" => '/services/',
-// 	],
-// 	"industries" => [
-// 		"label" => 'Industries',
-// 		"url" => '/industries/',
-// 	],
-// 	"about" => [
-// 		"label" => 'About Us',
-// 		"url" => '/about/',
-// 	],
-// 	"careers" => [
-// 		"label" => 'Careers',
-// 		"url" => '/career-opportunities/',
-// 	],
-// ];
 $menuItemsPrimary = [
-	"assurance" => [
-		"label" => 'Assurance',
-		"url" => '/assurance/',
-	],
-	"tax" => [
-		"label" => 'Tax',
-		"url" => '/tax/',
-	],
-	"soar" => [
-		"label" => 'Consulting <small>(SOAR)</small>',
-		"url" => '/soar/',
+	"services" => [
+		"label" => 'Services',
+		"url" => '/services/',
 	],
 	"industries" => [
 		"label" => 'Industries',
@@ -51,23 +25,19 @@ $menuItemsPrimary = [
 		"label" => 'Careers',
 		"url" => '/career-opportunities/',
 	],
+	"resources" => [
+		"label" => 'Resources',
+		"url" => '/resources/',
+	],
 ];
 $menuItemsSecondary = [
-	"all" => [
-		"label" => 'All',
-		"url" => '/all-pages/',
-	],
 	"insights" => [
 		"label" => 'Insights',
 		"url" => '/blog/',
 	],
 	"events" => [
 		"label" => 'Events',
-		"url" => '/events/',
-	],
-	"resources" => [
-		"label" => 'Resources',
-		"url" => '/resources/',
+		"url" => '/category/events/',
 	],
 	"clients" => [
 		"label" => 'Client Center',
@@ -115,20 +85,20 @@ $menuItemsSecondary = [
 			</button>
 		</div>
 
-		<nav class="menus-container | md:flex md:flex-col md:order-1 md:grow  print:hidden" id="primary-navigation" aria-label="main menu">
+		<nav class="menus-container | md:flex md:flex-col md:order-1 md:grow print:hidden" id="primary-navigation" aria-label="main menu">
 			<!-- <ul role="list" class="nav-primary | list-none flex font-bold md:justify-end md:items-center order-first md:order-last children:inline"> -->
-			<ul role="list" class="nav-primary | list-none font-bold flex flex-col gap-2 md:flex-row md:justify-end lg:gap-4">
+			<ul role="list" class="nav-primary | list-none flex flex-col gap-2 md:flex-row md:justify-end lg:gap-6">
 				<?php
 				foreach ($menuItemsPrimary as $primary) {
-					echo '<li class="menu-item"><a class="menu-level-0" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
+					echo '<li class="menu-item md:text-lg lg:text-xl "><a class="menu-level-0 hover:text-brand-red" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
 				}
 				?>
 			</ul>
 
-			<ul role="list" class="nav-secondary | mt-4 flex flex-col gap-2 md:mt-0 md:flex-row md:order-first md:justify-end md:items-center print:hidden text-sm uppercase lg:gap-4">
+			<ul role="list" class="nav-secondary | mt-4 flex flex-col gap-2 md:flex-row md:order-first md:mt-0 md:justify-end md:items-center print:hidden md:uppercase md:font-bold lg:gap-6">
 				<?php
 				foreach ($menuItemsSecondary as $secondary) {
-					echo '<li class="font-bold menu-item text-neutral-500"><a class="menu-level-0" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
+					echo '<li class="menu-item text-neutral-500 md:text-sm"><a class="menu-level-0 hover:text-brand-blue" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
 				}
 				?>
 			</ul>

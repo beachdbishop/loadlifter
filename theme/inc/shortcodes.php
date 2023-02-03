@@ -13,6 +13,51 @@ add_shortcode( 'seoabout', 'll_seo_about_shortcode' );
 add_shortcode( 'seo_about', 'll_seo_about_shortcode' );
 
 
+// Menu Shortcode
+function ll_listmenu_shortcode($atts, $content = null) {
+    extract(
+        shortcode_atts(
+            [
+                'menu' => '',
+                'container' => 'div',
+                'container_class' => '',
+                'container_id' => '',
+                'menu_class' => 'menu',
+                'menu_id' => '',
+                'echo' => true,
+                'fallback_cb' => 'wp_page_menu',
+                'before' => '',
+                'after' => '',
+                'link_before' => '',
+                'link_after' => '',
+                'depth' => 0,
+                'theme_location' => '',
+            ],
+            $atts
+        )
+    );
+
+    return wp_nav_menu([
+        'menu' => $menu,
+        'container' => $container,
+        'container_class' => $container_class,
+        'container_id' => $container_id,
+        'menu_class' => $menu_class,
+        'menu_id' => $menu_id,
+        'echo' => false,
+        'fallback_cb' => $fallback_cb,
+        'before' => $before,
+        'after' => $after,
+        'link_before' => $link_before,
+        'link_after' => $link_after,
+        'depth' => $depth,
+        'walker' => new LL_Menu_Walker(),
+        'theme_location' => $theme_location,
+    ]);
+}
+add_shortcode( 'listmenu', 'll_listmenu_shortcode' );
+
+
 /* * * * C O U N T S * * * */
 
 // Client count shortcode

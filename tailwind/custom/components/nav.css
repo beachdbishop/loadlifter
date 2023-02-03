@@ -1,87 +1,116 @@
 /*   N a v i g a t i o n   */
 
-.icon {
-	width: 1em;
-	height: 1em;
+.menu-item-has-children > ul {
+	@apply ml-4;
 }
 
 
+
+.disclosure-nav .dropmenu {
+  @apply bg-neutral-50 block drop-shadow-xl border border-solid border-brand-blue rounded-b-sm min-w-[300px] md:min-w-[400px] absolute top-[100%];
+}
+
+.disclosure-nav .dropmenu.mega {
+  @apply lg:min-w-[1000px] lg:top-[100%] lg:-left-[500px] xl:min-w-[1200px] xl:-left-[600px];
+}
+.disclosure-nav .dropdown.mega > ul {
+  @apply lg:container;
+}
+
+.disclosure-nav ul {
+  /* border-top-width: 5px; */
+  @apply list-none font-normal;
+}
+
+.disclosure-nav > li {
+  @apply flex relative;
+}
+
+.disclosure-nav ul a {
+  @apply border-0 text-neutral-900 block m-0 py-2 px-4 no-underline;
+}
+
+.disclosure-nav ul a:hover,
+.disclosure-nav ul a:focus {
+  @apply bg-neutral-100 text-black mb-0 underline decoration-brand-blue-pale;
+}
+
+.disclosure-nav ul a:focus {
+  @apply relative outline outline-offset-4 outline-brand-blue/75;
+}
+
+.disclosure-nav button,
+.disclosure-nav .main-link {
+  @apply px-1 py-2 flex border border-solid border-transparent items-center bg-transparent
+}
+
+.disclosure-nav .main-link {
+  @apply border-r-transparent;
+}
+
+.disclosure-nav button::after {
+  content: "";
+  @apply border-b border-r border-neutral-900 h-2 ml-3 w-2 rotate-45;
+}
+
+.disclosure-nav .main-link + button::after {
+  @apply ml-0;
+}
+
+.disclosure-nav button:focus,
+.disclosure-nav .main-link:focus {
+  @apply border-brand-blue relative outline outline-offset-4 outline-brand-blue/75;
+}
+
+.disclosure-nav button:hover,
+.disclosure-nav button[aria-expanded="true"] {
+  @apply bg-brand-blue text-white;
+}
+
+.disclosure-nav button:hover::after,
+.disclosure-nav button[aria-expanded="true"]::after {
+  @apply border-white;
+}
+
+
+
+
+
+
+/* Footer Nav */
 .submenu .menu {
 	@apply list-none;
 }
 .submenu .menu-item {
 	@apply mt-2;
 }
-.submenu a {
-	@apply text-current border-b-2 border-transparent hover:text-brand-blue hover:border-brand-blue-pale;
+.submenu .sub-menu {
+  @apply hidden;
 }
+.submenu .current-menu-ancestor > a {
+  @apply font-bold text-neutral-600;
+}
+.submenu .current_page_item > a {
+  @apply !text-brand-blue;
+}
+/* .submenu a {
+	@apply text-current border-b-2 border-transparent hover:text-brand-blue hover:border-brand-blue-pale;
+} */
 .submenu .ll-we-are-hiring a {
 	@apply -m-1 font-bold rounded-sm p-1 bg-amber-300 border-b-0 hover:text-amber-900 hover:bg-amber-100;
 }
 
 
-.nav-primary {
-	@apply font-head;
 
-	> li > a {
-		text-decoration: none;
-	}
 
-	.other-recent-posts {
-		@apply list-none;
 
-		li {
-			@apply text-base lg:text-lg;
-		}
-	}
 
-	.on-lightbg a:not(.wp-block-button__link) {
-		@apply decoration-neutral-300 hover:text-neutral-900 hover:underline hover:decoration-brand-blue-pale hover:decoration-solid hover:decoration-2;
-	}
-
-	.on-darkbg a:not(.wp-block-button__link) {
-		@apply decoration-neutral-500 hover:text-brand-blue-pale hover:underline hover:decoration-brand-blue hover:decoration-solid hover:decoration-2;
-	}
-}
-.nav-secondary {
-	@apply font-head;
-}
 
 .mega-menu {
 	@apply invisible absolute left-0 w-full text-left opacity-0 transition-opacity duration-300 ease-in-out;
 }
 
-.hoverable {
-	@apply static;
 
-	&:hover .mega-menu {
-		@apply visible z-20 opacity-100;
-	}
-}
-
-.hoverable-sub {
-	@apply static;
-
-	&:hover .sub-menu {
-		@apply left-1 z-30 mb-4 block rounded-lg bg-neutral-700 px-2 py-1 shadow-lg;
-	}
-}
-
-.has-details {
-	margin-left: calc(-1 * var(--wp--preset--font-size--small));
-
-	.sub-menu {
-		padding-left: calc(1.5 * var(--wp--preset--font-size--base));
-	}
-}
-
-.mega-menu .has-details {
-	margin-left: -14px;
-
-	.sub-menu {
-		padding-left: var(--wp--preset--font-size--small);
-	}
-}
 
 .toggle-input {
 	/* display: none; */
@@ -97,48 +126,6 @@
 	@apply visible opacity-100;
 }
 
-.nav__panel--insights {
-	background: linear-gradient(to right, #fff 0 50%, #262626 50% 100%);
-}
-.nav__panel--services {
-	background: linear-gradient(to right, #ecfeff 0 26%, #262626 26% 100%);
-}
-
-.nav__panel--3col-trans {
-	--ll-3col-cstop: 33%;
-	background: transparent;
-	@media (min-width: 768px) {
-		background: linear-gradient(
-			to right,
-			#ecfeff 0 var(--ll-3col-cstop),
-			rgba(38, 38, 38, 0.9) var(--ll-3col-cstop) 100%
-		);
-	}
-	@media (min-width: 1280px) {
-		--ll-3col-cstop: calc(calc(calc(100vw - 1280px) * 0.5) + 10px);
-	}
-	@media (min-width: 1536px) {
-		--ll-3col-cstop: calc(calc(calc(100vw - 1536px) * 0.5) + 10px);
-	}
-}
-
-.nav__panel--4col-trans {
-	--ll-4col-cstop: 24%;
-	background: transparent;
-	@media (min-width: 768px) {
-		background: linear-gradient(
-			to right,
-			#ecfeff 0 var(--ll-4col-cstop),
-			rgba(38, 38, 38, 0.9) var(--ll-4col-cstop) 100%
-		);
-	}
-	@media (min-width: 1280px) {
-		--ll-4col-cstop: calc(calc(calc(100vw - 1280px) * 0.5) + 10px);
-	}
-	@media (min-width: 1536px) {
-		--ll-4col-cstop: calc(calc(calc(100vw - 1536px) * 0.5) + 10px);
-	}
-}
 
 @media (max-width: 767px) {
 	/* .nav-header[data-overlay]::before {
@@ -156,10 +143,6 @@
 		@apply absolute inset-0 hidden w-full bg-transparent p-4  text-neutral-100 transition-colors duration-500 ease-linear;
 		inset: 3.5em 0 auto;
 	}
-
-	/* .menus-container ul {
-		@apply divide-y divide-dashed divide-neutral-400;
-	} */
 
 	.menus-container a,
 	.menus-container a:link,
@@ -181,45 +164,5 @@
 	.menus-container .icon {
 		@apply fill-neutral-200;
 	}
-
-	.menu-container details[open] > summary .icon {
-		@apply fill-brand-blue-pale;
-	}
-
-	.details-drop {
-		@apply px-2 pb-1;
-	}
 }
 
-.details-drop {
-	@apply opacity-0 transition-opacity duration-500 ease-in-out;
-}
-details[open] .details-drop {
-	@apply opacity-100;
-}
-
-@media (min-width: 768px) {
-	/* details[] {} */
-
-	.menu-level-0 > summary {
-		@apply hover:bg-white group-open:bg-white;
-
-		& + .details-drop {
-			@apply fixed top-24 left-0 z-30 min-w-full overflow-hidden border-t border-solid border-neutral-800 px-2 shadow-xl backdrop-blur-md;
-		}
-	}
-
-	.menu-level-1 > summary {
-		/**/
-
-		& + .details-drop {
-			@apply relative top-0 z-40 min-w-fit overflow-hidden px-2 backdrop-blur-none;
-		}
-	}
-
-	.menu-level-2 > summary {
-		& + .details-drop {
-			@apply relative top-0 z-50 min-w-fit overflow-hidden px-2 backdrop-blur-none;
-		}
-	}
-}
