@@ -49,11 +49,7 @@
                     <a class="main-link" href="/services/">Services</a>
                     <button type="" aria-expanded="false" aria-controls="id_services_menu" aria-label="More Industry Expertise items"></button>
                     <div id="id_services_menu" class="dropmenu mega" style="display:none">
-                        <ul class="lg:grid lg:grid-cols-4 lg:gap-8">
-                            <li class="hidden lg:h-full lg:p-4 lg:block bg-neutral-800 text-neutral-200">
-                                <h2 class="mb-4 text-brand-blue-pale">Services</h2>
-                                <p class="text-base">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet sunt, provident nemo sapiente error minima suscipit quas corrupti quo quia aliquam debitis fugit eaque autem cupiditate, minus ratione? Quod, similique?</p>
-                            </li>
+                        <ul class="lg:grid lg:grid-cols-3 lg:gap-8">
                             <li class="lg:py-4">
                                 <h4><a href="/assurance/">Assurance</a></h4>
                                 <ul class="mt-2 text-base">
@@ -98,8 +94,9 @@
                 <li>
                     <a href="/industries/" class="main-link">Industries</a>
                     <button type="" aria-expanded="false" aria-controls="id_industries_menu" aria-label="More Industry Expertise items"></button>
-                    <div id="id_industries_menu" class="dropmenu mega" style="display:none">
-                        <ul class="lg:grid lg:grid-cols-3 lg:gap-8 lg:p-8">
+                    <div id="id_industries_menu" class="dropmenu " style="display:none">
+                        <!-- <ul class="lg:grid lg:grid-cols-3 lg:gap-8 lg:p-8"> -->
+                        <ul>
                             <li><a href="/industries/cannabis-phoenix-tucson-arizona-accountants-cpas/"><i class="fa-duotone fa-fw fa-cannabis"></i> Cannabis</a></li>
                             <li><a href="/industries/construction-phoenix-tucson-arizona-accountants-cpas/"><i class="fa-duotone fa-fw fa-helmet-safety"></i> Construction</a></li>
                             <li><a href="/industries/financial-professional-services/"><i class="fa-duotone fa-fw fa-briefcase"></i> Financial &amp; Professional Services</a></li>
