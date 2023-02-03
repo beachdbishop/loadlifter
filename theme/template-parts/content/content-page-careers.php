@@ -8,6 +8,12 @@
  */
 
 $gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)';
+
+if ( 'local' === wp_get_environment_type() ) {
+    $hr_ids = '1842,1843,3969';
+} else {
+    $hr_ids = '31394,31603,32639';
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'pt-4 md:pt-6 lg:pt-8' ); } ?>>
@@ -200,7 +206,7 @@ $gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, 
                             </div>
                             <div class="col-span-2">
                                 <h3 class="text-center">Non-creepy people that will stalk you until you apply</h3>
-                                <?php echo do_shortcode( '[display-posts post_type="people" id="1842,1843,3969" orderby="ll_people_level" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-cols-3 gap-8" layout="card-people" /]' ); ?>
+                                <?php echo do_shortcode( '[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-cols-3 gap-8" layout="card-people" /]' ); ?>
                             </div>
                         </div>
                     </div>
