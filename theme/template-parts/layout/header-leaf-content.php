@@ -79,11 +79,9 @@
                                 <h4><a href="/soar/">Strategic Operations &amp; Advisory Resources <small>(SOAR)</small></a></h4>
                                 <ul class="mt-2 text-base">
                                     <li class="soar-as"><a href="/soar/accounting-services-phoenix-tucson-arizona-accountants-cpas/">Accounting Services</a></li>
-                                    <li class="soar-cs"><a href="/soar/cfo-services-phoenix-tucson-arizona-accountants-cpas/">CFO Services</a></li>
                                     <li class="soar-cyber"><a href="/soar/cybersecurity-phoenix-tucson-arizona/">Cybersecurity</a></li>
                                     <li class="soar-ffvs"><a href="/soar/financial-forensics-valuation-services-accounting-phoenix-tucson-arizona-cpas/">Financial Forensics &amp; Valuation&nbsp;Services</a></li>
                                     <li class="soar-pp"><a href="/soar/payroll-processing-phoenix-tucson-arizona/">Payroll Processing</a></li>
-                                    <li class="soar-ss"><a href="/soar/strategic-services-phoenix-tucson-az-consultants/">Strategic Services</a></li>
                                     <li class="soar-ppd"><a href="/soar/pension-plan-design-and-administration-phoenix-tucson-arizona-accountants-cpas/">Pension Plan Design and&nbsp;Administration</a></li>
                                 </ul>
                             </li>

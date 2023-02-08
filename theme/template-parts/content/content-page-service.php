@@ -34,11 +34,11 @@ if ( $svc_featimg == true ) {
 	echo ':root { --page-icon-class: ' . $svc_icon . ' }';
 } ?>
 <?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>
-.ind-feat-image { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); }
-@media (min-width: 768px) { .ind-feat-image { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); } }
+.svc-feat-image { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); }
+@media (min-width: 768px) { .svc-feat-image { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); } }
 </style>
 
-<header class="ind-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-no-repeat bg-cover print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
+<header class="svc-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-no-repeat bg-cover print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
 	<div class="px-1 md:container md:mx-auto md:px-0">
 
 		<div class="md:flex">

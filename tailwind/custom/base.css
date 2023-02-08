@@ -11,6 +11,10 @@
  * `theme.json` file and is applied both to the frontend and in the block
  * editor.
 */
+:root {
+  --nav-height: 114px;
+}
+
 html {
 	@apply scroll-pt-[52px] scroll-smooth md:scroll-pt-[76px];
 }
@@ -18,6 +22,10 @@ html {
 body {
 	@apply bg-white font-body text-neutral-800 print:bg-transparent print:text-neutral-900;
 }
+
+/* [id] {
+  scroll-margin-top: var(--nav-height);
+} */
 
 h1,
 h2,

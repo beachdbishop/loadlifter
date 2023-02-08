@@ -294,6 +294,54 @@ p[class*="is-style-note-"] {
 	}
 }
 
+
+/* Cards that flip */
+.card {
+  --card-size: 288px;
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: var(--card-size);
+  height: var(--card-size);
+  perspective: 600px;
+}
+
+.card-content {
+  @apply absolute w-full h-full rounded-lg;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .card-content,
+.card:active .card-content,
+.card:focus .card-content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.5s;
+}
+
+.card-front {
+  @apply bg-white text-center;
+}
+
+.card-front h4 { }
+
+.card-front,
+.card-back {
+  @apply absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  @apply bg-brand-blue-dark text-white;
+  transform: rotateY( 180deg );
+}
+.card-back p,
+.card-back li {
+  @apply text-sm;
+}
+
+
 /* Separators */
 [class*="is-style-sep-"] {
 	@apply my-4 h-[3px] w-full border-0 md:my-6 lg:my-8;
