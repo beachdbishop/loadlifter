@@ -42,22 +42,23 @@ if ( $ind_featimg == true ) {
 ?>
 
 <style>
-<?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>
-.ind-feat-image { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
-@media (min-width: 768px) { .ind-feat-image { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }
+<?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
+@media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }
 </style>
 
-<header class="ind-feat-image | py-8 md:py-12 lg:py-24 bg-brand-blue-dark bg-no-repeat bg-cover bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-labelledby="page-title">
-	<div class="px-1 md:container md:mx-auto md:px-0">
-		<div class="w-full md:w-1/2 lg:w-1/3">
+<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-labelledby="page-title">
+	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
+
+		<div class="md:w-1/2">
 			<h1 class="mb-2 text-lg lg:text-xl text-brand-blue-faint " id="page-title"><i class="fa-duotone <?php echo esc_attr( $ind_icon ); ?>"></i> <?php echo get_the_title(); ?></h1>
 			<h2 class="text-4xl leading-none tracking-tight text-transparent bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text lg:text-5xl head-last-bold"><?php echo $ind_message['label']; ?></h2>
 			<p class="mt-4 leading-normal text-white lg:text-lg"><?php echo $ind_excerpt; ?></p>
 		</div>
-		<?php if ( function_exists( 'bcn_display' ) && !is_front_page() ) { ?>
-			<div class="breadcrumbs | font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
-		<?php } ?>
+
 	</div>
+    <?php if (function_exists('bcn_display') && !is_front_page()) { ?>
+        <div class="breadcrumbs | container mx-auto px-1 md:px-0 font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+    <?php } ?>
 </header>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

@@ -38,7 +38,7 @@
 					?>
 				</nav>
 				<nav>
-					<h5>Consulting (SOAR)</h5>
+					<h5>SOAR (Consulting)</h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_soar',
