@@ -58,9 +58,7 @@ if ('local' === wp_get_environment_type()) {
     } ?><?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration;
     ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); }
 
-    @media (min-width: 768px) {
-        .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); }
-    }
+    @media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); } }
 </style>
 
 
@@ -416,7 +414,7 @@ if ('local' === wp_get_environment_type()) {
                 <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
                     <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-square lg:aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698306/feat__buddy-mentor_g81otc.jpg" alt="A mentor and mentee smile while having a discussion" /></div>
+                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698306/feat__buddy-mentor_g81otc.jpg" alt="A mentor and mentee smile while having a discussion" /></div>
                         <h4 class="font-light text-brand-blue-dark">Buddy/Mentor Program</h4>
                         <p class="text-base">When you start at BeachFleischman, you&apos;ll be assigned a buddy and a mentor to help support you through your onboarding and long-term career.</p>
                         <p class="text-base">Your buddy is a person designated to be a &quot;go to&quot; person for any questions you have; they help to make your onboarding comfortable and successful. Your buddy will be from the same department that you are, i.e. Tax, Audit, or Administration, and they will help you get settled into your new job.</p>
@@ -424,21 +422,21 @@ if ('local' === wp_get_environment_type()) {
                     </div>
 
                     <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-square lg:aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698311/feat__developu_bobcnr.jpg" alt="A woman stands in front of a whiteboard" /></div>
+                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698311/feat__developu_bobcnr.jpg" alt="A woman stands in front of a whiteboard" /></div>
                         <h4 class="font-light text-brand-blue-dark">developU</h4>
                         <p class="text-base">As part of our commitment to continuous learning and growth, we provide training on professional skills through our developU program. developU classes and workshops support our employees' long-term career goals and provide them the opportunity and resources to advance their leadership skills, client and team interactions, and cultivate healthy stress management techniques.</p>
                     </div>
 
                     <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-square lg:aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698767/feat__women-rise_genexx.png" alt="logo: Women RISE = reach, inspire, support, empower" /></div>
-                        <h4 class="font-light text-brand-blue-dark">Women RISE</h4>
+                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-video"><a href="/about/women-rise/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698767/feat__women-rise_genexx.png" alt="logo: Women RISE = reach, inspire, support, empower" /></a></div>
+                        <h4 class="font-light text-brand-blue-dark"><a href="/about/women-rise/" class="no-underline hover:underline">Women RISE</a></h4>
                         <p class="text-base">Women R.I.S.E. is a committee of employees dedicated to building and sustaining a collaborative and diverse workplace that strategically supports the development and advancement of women. We do this by creating and maintaining an environment that recognizes, cultivates and utilizes the talent of female employees.</p>
                         <p><a class="text-brand-blue hover:text-brand-red" href="/about/women-rise/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                     </div>
 
                     <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border border-neutral-200 lg:p-8 aspect-square lg:aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,cs_srgb,dpr_auto,f_auto,w_400/v1644339189/logolib/IDEA_with_tagline_and_meaning.png" alt="logo: IDEA = inclusion, diversity, equity, and action" /></div>
-                        <h4 class="font-light text-brand-blue-dark">IDEA Committee</h4>
+                        <div class="flex items-center justify-center p-4 bg-white border border-neutral-200 lg:p-8 aspect-video"><a href="/about/idea-committee/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,cs_srgb,dpr_auto,f_auto,w_400/v1644339189/logolib/IDEA_with_tagline_and_meaning.png" alt="logo: IDEA = inclusion, diversity, equity, and action" /></a></div>
+                        <h4 class="font-light text-brand-blue-dark"><a href="/about/idea-committee/" class="no-underline hover:underline">IDEA Committee</a></h4>
                         <p class="text-base">At BeachFleischman, we intentionally cultivate a diverse, equitable, and inclusive environment where each person feels welcomed, accepted, empowered, valued, respected, and safe. This not only allows each one of us to achieve personal and professional success, but also allows us to better know and serve our clients and communities.</p>
                         <p><a class="text-brand-blue hover:text-brand-red" href="/about/idea-committee/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                     </div>
@@ -452,19 +450,140 @@ if ('local' === wp_get_environment_type()) {
             <section id="benefits" class="full-bleed">
                 <div class="px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12">
                     <h3 class="mb-6 text-center uppercase text-brand-blue ">Additional Benefits</h3>
-                    <div class="mx-auto max-w-prose">
-                        <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
-                        <ul class="gap-2 mt-4 space-y-2 list-inside columns-2 list-square">
-                            <li>Medical, dental, and vision insurance</li>
-                            <li>Supplemental insurance</li>
-                            <li>Life insurance</li>
-                            <li>401(k) program with employer matching</li>
-                            <li>CPA exam reimbursement and bonus</li>
-                            <li>Performance-based bonuses</li>
-                            <li>Paid time off and sick leave</li>
-                            <li>Health and wellness reimbursement</li>
-                            <li>Busy season meals and snacks</li>
-                        </ul>
+
+                    <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
+                    <!-- <ul class="gap-2 my-4 space-y-2 list-inside columns-2 lg:columns-3 list-square">
+                        <li>Medical, dental, and vision insurance</li>
+                        <li>Supplemental insurance</li>
+                        <li>Life insurance</li>
+                        <li>401(k) program with employer matching</li>
+                        <li>CPA exam reimbursement and bonus</li>
+                        <li>Performance-based bonuses</li>
+                        <li>Paid time off and sick leave</li>
+                        <li>Health and wellness reimbursement</li>
+                        <li>Busy season meals and snacks</li>
+                    </ul> -->
+
+                    <div class="sick-cards | grid gap-2 px-2 mx-auto my-4 text-center text-neutral-700 sm:grid-cols-2 md:my-8 md:px-0 md:gap-4 md:grid-cols-3">
+                        <div class="sick-card sick-snake | " style="--color1: #67e8f9; --color2: #092f42">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-bandage fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Medical</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #67e8f9; --color2: #092f42">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-tooth fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Dental</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #67e8f9; --color2: #092f42">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-glasses-round fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Vision</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--padding: 2px">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-piggy-bank fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">401(k) with Employer Matching</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--padding: 2px">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-file-certificate fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">CPA Exam Reimbursement</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--padding: 2px">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-chart-user fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Performance Bonuses</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | ">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-person-through-window fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Paid Time Off &amp; Sick Leave</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | ">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-dumbbell fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Health &amp; Wellness Reimbursement</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | ">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-pot-food fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Busy Season Meals</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </section>
+            <section class="full-bleed bg-neutral-900">
+                <div class="container px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12 text-neutral-200">
+                    <h3 class="mb-6 text-center uppercase text-brand-blue-pale ">Additional Benefits</h3>
+                    <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
+                    <div class="sick-cards | on-darkbg grid gap-2 px-2 mx-auto my-4 text-center sm:grid-cols-2 md:my-8 md:px-0 md:gap-4 md:grid-cols-3" style="--innerbg: #171717">
+                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #00668e">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-bandage fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Medical</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #00668e">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-tooth fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Dental</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #00668e">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-glasses-round fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Vision</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #940418; --color2: #f87171">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-piggy-bank fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">401(k) with Employer Matching</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #940418; --color2: #f87171">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-file-certificate fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">CPA Exam Reimbursement</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | " style="--color1: #940418; --color2: #f87171">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-chart-user fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Performance Bonuses</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | ">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-person-through-window fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Paid Time Off &amp; Sick Leave</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | ">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-dumbbell fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Health &amp; Wellness Reimbursement</p>
+                            </div>
+                        </div>
+                        <div class="sick-card sick-snake | ">
+                            <div class="sick-inner">
+                                <i class="fa-light fa-pot-food fa-2x "></i>
+                                <p class="text-xl leading-relaxed uppercase font-body">Busy Season Meals</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -527,16 +646,16 @@ if ('local' === wp_get_environment_type()) {
             </div>
         </section>
 
-        <section class="full-bleed bg-brand-gray text-neutral-100">
+        <section class="full-bleed bg-neutral-100">
             <div class="px-1 py-12 mx-auto md:px-0 lg:py-20">
-                <p class="text-2xl text-center ">View our current openings and apply today!
-                    <a
-                        class="px-4 py-3 ml-2 border-2 border-transparent rounded-lg bg-neutral-100 text-neutral-700 hover:bg-brand-blue-dark hover:text-white hover:shadow-md hover:border-white"
-                        href="/career-opportunities/#openings"
-                        >
-                        <i class="fa-solid fa-users"></i> Join our team
-                    </a>
-                </p>
+                <div class="flex flex-col items-start justify-center gap-4 mx-auto text-2xl lg:w-2/3 sm:flex-row sm:items-center ">
+                    <p class="">View our current openings and apply today!</p>
+                    <div class="wp-block-button">
+                        <a class="wp-block-button__link wp-element-button" href="/career-opportunities/#openings">
+                            <i class="fa-solid fa-users"></i> Join our team
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 

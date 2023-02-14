@@ -38,7 +38,7 @@
 					?>
 				</nav>
 				<nav>
-					<h5>SOAR (Consulting)</h5>
+					<h5><abbr title="Strategic Operations & Advisory Resources">SOAR</abbr> <span class="text-neutral-500">(Consulting)</span></h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_soar',
@@ -76,9 +76,6 @@
 						'walker' => new LL_Menu_Walker()
 					) );
 					?>
-                    <ul class="mt-4 text-sm">
-                        <li><a href="/styleguide/">Styleguide</a></li>
-                    </ul>
 				</nav>
 			</div>
 		</div>
@@ -88,12 +85,11 @@
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				<div>
-					<div class="max-w-xs fill-current">
+					<div class="max-w-xs mb-4 fill-current">
 						<a href="<?php bloginfo( 'url' ); ?>" aria-label="<?php echo bloginfo( 'name' );?>">
 							<?php get_template_part( 'template-parts/svg/svg', 'logomono' ); ?>
 						</a>
 					</div>
-					<p class="max-w-xs my-4 text-base lg:my-6">We work collaboratively with your business to take it to the next level.</p>
 					<?php ll_show_social_links( $out = 'echo' ); ?>
 				</div>
 				<div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 print:hidden">
@@ -102,8 +98,8 @@
 						<address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
 							<p class="street-address | font-head leading-none " property="streetAddress">2201 E. Camelback Road, Suite 200</p>
 							<p class="locality | font-head leading-none "><span property="addressLocality">Phoenix</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85016</span></p>
-							<p class="font-bold leading-none font-head " property="telephone">P: <a href="tel:16022657011" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (602) 265-7011', 0);">1 (602) 265-7011</a></p>
-							<p class="font-bold leading-none font-head " property="faxNumber">F: 1 (602) 265-7060</p>
+							<p class="font-bold leading-none font-head " property="telephone">P: <a href="tel:16022657011" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (602) 265-7011', 0);">602.265.7011</a></p>
+							<p class="font-bold leading-none font-head " property="faxNumber">F: 602.265.7060</p>
 						</address>
 					</div>
 					<div>
@@ -111,8 +107,8 @@
 						<address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
 							<p class="street-address | font-head leading-none" property="streetAddress">1985 E. River Road, Suite 201</p>
 							<p class="locality | font-head leading-none"><span property="addressLocality">Tucson</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85718</span></p>
-							<p class="font-bold leading-none font-head" property="telephone">P: <a href="tel:15203214600" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (520) 321-4600', 0);">1 (520) 321-4600</a></p>
-							<p class="font-bold leading-none font-head" property="faxNumber">F: 1 (520) 321-4040</p>
+							<p class="font-bold leading-none font-head" property="telephone">P: <a href="tel:15203214600" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (520) 321-4600', 0);">520.321.4600</a></p>
+							<p class="font-bold leading-none font-head" property="faxNumber">F: 520.321.4040</p>
 						</address>
 					</div>
 				</div>

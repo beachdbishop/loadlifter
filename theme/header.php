@@ -39,7 +39,8 @@
 		// get_template_part( 'template-parts/layout/header-kp', 'content' );
 		// get_template_part( 'template-parts/layout/header-simple', 'content' );
 		// get_template_part( 'template-parts/layout/header', 'nomega' );
-        get_template_part( 'template-parts/layout/header-leaf', 'content');
+        // get_template_part( 'template-parts/layout/header-leaf', 'content');
+        get_template_part( 'template-parts/layout/header-lessleaf', 'content');
 	} else {
 		get_template_part( 'template-parts/layout/header', 'lp' );
 	} ?>
