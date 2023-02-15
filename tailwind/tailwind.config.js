@@ -53,6 +53,7 @@ module.exports = {
     'bg-current',
     'border-brand-blue-dark',
     'border-brand-red-dark',
+    'border-amber-300',
     'border-current',
     'border-transparent',
     'columns-2',

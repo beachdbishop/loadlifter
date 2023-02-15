@@ -62,7 +62,7 @@ if ('local' === wp_get_environment_type()) {
 </style>
 
 
-<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
+<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
     <div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
 
         <div class="">
@@ -112,7 +112,7 @@ if ('local' === wp_get_environment_type()) {
                     <div class="grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8">
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="http://placekitten.com/736/385" class="transition duration-200 ease-in-out group-hover:scale-110" alt="placeholder img">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-internships--social_q07na1.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Man and young man having a converstion at a table">
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/internships/">Internships</a></h4>
                             <p class="text-base lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
@@ -120,7 +120,7 @@ if ('local' === wp_get_environment_type()) {
                         </div>
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="http://placekitten.com/736/385" class="transition duration-200 ease-in-out group-hover:scale-110" alt="placeholder img">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-college-grads--social_jlh5qx.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Group of happy college students walking down a street">
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/recent-college-graduates/">Recent College Graduates</a></h4>
                             <p class="text-base lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
@@ -128,7 +128,7 @@ if ('local' === wp_get_environment_type()) {
                         </div>
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="http://placekitten.com/736/385" class="transition duration-200 ease-in-out group-hover:scale-110" alt="placeholder img">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Happy person in glasses shaking the hand of someone out of frame">
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/experienced-professionals/">Experienced Professionals</a></h4>
                             <p class="text-base lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga more sentence just to see how it alters the display doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
@@ -198,7 +198,7 @@ if ('local' === wp_get_environment_type()) {
                                     <div class="card-back">
                                         <h6>Enhanced ability</h6>
                                         <p>You will have continuous opportunities to learn and grow here. BeachFleischman has built a learning culture that includes:</p>
-                                        <ul class="mt-2 list-disc list-inside">
+                                        <ul class="mt-2 ml-3 list-disc">
                                             <li>Mentoring program</li>
                                             <li>CPA exam bonus and reimbursement</li>
                                             <li>Paid continuing professional education, membership dues, and licenses</li>
@@ -290,7 +290,7 @@ if ('local' === wp_get_environment_type()) {
                                             <div class="card-back">
                                                 <h6>Enhanced ability</h6>
                                                 <p>You will have continuous opportunities to learn and grow here. BeachFleischman has built a learning culture that includes:</p>
-                                                <ul class="mt-2 list-disc list-inside">
+                                                <ul class="mt-2 ml-3 list-disc">
                                                     <li>Mentoring program</li>
                                                     <li>CPA exam bonus and reimbursement</li>
                                                     <li>Paid continuing professional education, membership dues, and licenses</li>
@@ -450,6 +450,31 @@ if ('local' === wp_get_environment_type()) {
             <section id="benefits" class="full-bleed">
                 <div class="px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12">
                     <h3 class="mb-6 text-center uppercase text-brand-blue ">Additional Benefits</h3>
+                    <div class="md:grid md:grid-cols-3 md:gap-4">
+
+                        <div class="md:col-span-3 lg:col-span-2">
+                            <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
+                            <ul class="gap-4 my-4 ml-3 space-y-2 md:columns-3 lg:columns-2 list-square">
+                                <li>Medical, dental, and vision insurance</li>
+                                <li>Supplemental insurance</li>
+                                <li>Life insurance</li>
+                                <li>401(k) program with employer matching</li>
+                                <li>CPA exam reimbursement and bonus</li>
+                                <li>Performance-based bonuses</li>
+                                <li>Paid time off and sick leave</li>
+                                <li>Health and wellness reimbursement</li>
+                                <li>Busy season meals and snacks</li>
+                            </ul>
+                        </div>
+                        <div class="hidden lg:block">
+                            <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-benefits--social_hv6tcv.jpg" alt="Girl in classes pointing toward the list of benefits behind her">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="full-bleed">
+                <div class="px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12">
+                    <h3 class="mb-6 text-center uppercase text-brand-blue ">Additional Benefits</h3>
 
                     <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
                     <!-- <ul class="gap-2 my-4 space-y-2 list-inside columns-2 lg:columns-3 list-square">
@@ -525,24 +550,24 @@ if ('local' === wp_get_environment_type()) {
 
                 </div>
             </section>
-            <section class="full-bleed bg-neutral-900">
+            <section class="full-bleed bg-brand-blue-dark">
                 <div class="container px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12 text-neutral-200">
                     <h3 class="mb-6 text-center uppercase text-brand-blue-pale ">Additional Benefits</h3>
                     <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
-                    <div class="sick-cards | on-darkbg grid gap-2 px-2 mx-auto my-4 text-center sm:grid-cols-2 md:my-8 md:px-0 md:gap-4 md:grid-cols-3" style="--innerbg: #171717">
-                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #00668e">
+                    <div class="sick-cards | on-darkbg grid gap-2 px-2 mx-auto my-4 text-center sm:grid-cols-2 md:my-8 md:px-0 md:gap-4 md:grid-cols-3" style="--innerbg: #092f42">
+                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #67e8f9">
                             <div class="sick-inner">
                                 <i class="fa-light fa-bandage fa-2x "></i>
                                 <p class="text-xl leading-relaxed uppercase font-body">Medical</p>
                             </div>
                         </div>
-                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #00668e">
+                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #67e8f9">
                             <div class="sick-inner">
                                 <i class="fa-light fa-tooth fa-2x "></i>
                                 <p class="text-xl leading-relaxed uppercase font-body">Dental</p>
                             </div>
                         </div>
-                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #00668e">
+                        <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #67e8f9">
                             <div class="sick-inner">
                                 <i class="fa-light fa-glasses-round fa-2x "></i>
                                 <p class="text-xl leading-relaxed uppercase font-body">Vision</p>
@@ -590,7 +615,7 @@ if ('local' === wp_get_environment_type()) {
         <?php endif; ?>
 
         <!--   S T A F F   T E S T I M O N I A L S   -->
-        <section id="testimonials" class="full-bleed text-neutral-600 bg-gradient-to-t from-neutral-500 via-neutral-200 via-neutral-100 via-neutral-50">
+        <section id="testimonials" class="full-bleed text-neutral-600 bg-gradient-to-t from-neutral-300 via-neutral-200 via-neutral-100 via-neutral-50">
             <div class="container px-1 py-8 mx-auto md:px-0 lg:py-12">
                 <h3 class="mb-6 text-center uppercase font-head text-brand-blue">Staff Testimonials</h3>
                 <div class="flex flex-wrap -m-4">
@@ -639,20 +664,20 @@ if ('local' === wp_get_environment_type()) {
         </section>
 
         <!-- CTA and Recruiting Contact(s) -->
-        <section id="team" class="full-bleed bg-gradient-to-t from-brand-blue-faint via-neutral-100 via-neutral-50 to-white">
+        <section id="team" class="bg-white full-bleed">
             <div class="container px-1 py-8 mx-auto md:px-0 lg:py-12">
                 <h3 class="text-center uppercase text-brand-blue-dark">Our Recruiting Team</h3>
                 <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-small" /]'); ?>
             </div>
         </section>
 
-        <section class="full-bleed bg-neutral-100">
+        <section class="full-bleed bg-neutral-300">
             <div class="px-1 py-12 mx-auto md:px-0 lg:py-20">
-                <div class="flex flex-col items-start justify-center gap-4 mx-auto text-2xl lg:w-2/3 sm:flex-row sm:items-center ">
+                <div class="flex flex-col items-start justify-center gap-4 mx-auto text-2xl text-neutral-800 lg:w-2/3 sm:flex-row sm:items-center ">
                     <p class="">View our current openings and apply today!</p>
                     <div class="wp-block-button">
                         <a class="wp-block-button__link wp-element-button" href="/career-opportunities/#openings">
-                            <i class="fa-solid fa-users"></i> Join our team
+                            <i class="mr-1 fa-solid fa-users"></i> Join our team
                         </a>
                     </div>
                 </div>

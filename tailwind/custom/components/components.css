@@ -143,6 +143,12 @@ aside .timestamp {
 
 
 
+.has-upperright-corner-gradient-amber-300 {
+  background-image: linear-gradient(225deg, #fcd34d 0%, #fcd34d 36px, transparent 36px);
+}
+
+
+
 .social-links a {
 	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;
 }
