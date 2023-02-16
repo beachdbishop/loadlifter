@@ -56,6 +56,21 @@
           "slug": "blue-split",
           "gradient": "linear-gradient(135deg, #00668e, #00668e 50%, #092f42 50%, #092f42)",
           "name": "Blue Split"
+        },
+        {
+          "slug": "faint-red",
+          "gradient": "linear-gradient(0deg, #fef2f2, #ffffff 40%, #ffffff)",
+          "name": "Faint Red"
+        },
+        {
+          "slug": "faint-blue",
+          "gradient": "linear-gradient(0deg, #ecfeff, #ffffff 40%, #ffffff)",
+          "name": "Faint Blue"
+        },
+        {
+          "slug": "faint-gray",
+          "gradient": "linear-gradient(0deg, #fafafa, #ffffff 40%, #ffffff)",
+          "name": "Faint Gray"
         }
       ],
       "defaultGradients": false,
