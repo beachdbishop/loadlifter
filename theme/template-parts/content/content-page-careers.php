@@ -112,27 +112,27 @@ if ('local' === wp_get_environment_type()) {
                     <div class="grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8">
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-internships--social_q07na1.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Man and young man having a converstion at a table">
+                                <a href="/career-opportunities/internships/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-internships--social_q07na1.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Man and young man having a converstion at a table"></a>
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/internships/">Internships</a></h4>
                             <p class="text-base lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
-                            <p><a class="text-brand-blue hover:text-brand-red" href="#">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
+                            <p><a class="text-brand-blue hover:text-brand-red" href="/career-opportunities/internships/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                         </div>
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-college-grads--social_jlh5qx.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Group of happy college students walking down a street">
+                                <a href="/career-opportunities/recent-college-graduates/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-college-grads--social_jlh5qx.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Group of happy college students walking down a street"></a>
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/recent-college-graduates/">Recent College Graduates</a></h4>
                             <p class="text-base lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
-                            <p><a class="text-brand-blue hover:text-brand-red" href="#">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
+                            <p><a class="text-brand-blue hover:text-brand-red" href="/career-opportunities/recent-college-graduates/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                         </div>
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
-                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Happy person in glasses shaking the hand of someone out of frame">
+                                <a href="/career-opportunities/experienced-professionals/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Happy person in glasses shaking the hand of someone out of frame"></a>
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/experienced-professionals/">Experienced Professionals</a></h4>
                             <p class="text-base lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga more sentence just to see how it alters the display doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
-                            <p><a class="text-brand-blue hover:text-brand-red" href="#">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
+                            <p><a class="text-brand-blue hover:text-brand-red" href="/career-opportunities/experienced-professionals/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                         </div>
                     </div>
                 </div>
@@ -550,11 +550,11 @@ if ('local' === wp_get_environment_type()) {
 
                 </div>
             </section>
-            <section class="full-bleed bg-brand-blue-dark">
+            <section class="full-bleed bg-brand-gray-dark">
                 <div class="container px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12 text-neutral-200">
                     <h3 class="mb-6 text-center uppercase text-brand-blue-pale ">Additional Benefits</h3>
                     <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
-                    <div class="sick-cards | on-darkbg grid gap-2 px-2 mx-auto my-4 text-center sm:grid-cols-2 md:my-8 md:px-0 md:gap-4 md:grid-cols-3" style="--innerbg: #092f42">
+                    <div class="sick-cards | on-darkbg grid gap-2 px-2 mx-auto my-4 text-center sm:grid-cols-2 md:my-8 md:px-0 md:gap-4 md:grid-cols-3" style="--innerbg: #262626">
                         <div class="sick-card sick-snake | " style="--color1: #ecfeff; --color2: #67e8f9">
                             <div class="sick-inner">
                                 <i class="fa-light fa-bandage fa-2x "></i>
@@ -671,7 +671,7 @@ if ('local' === wp_get_environment_type()) {
             </div>
         </section>
 
-        <section class="full-bleed bg-neutral-300">
+        <section class="full-bleed bg-mesh-blue">
             <div class="px-1 py-12 mx-auto md:px-0 lg:py-20">
                 <div class="flex flex-col items-start justify-center gap-4 mx-auto text-2xl text-neutral-800 lg:w-2/3 sm:flex-row sm:items-center ">
                     <p class="">View our current openings and apply today!</p>
