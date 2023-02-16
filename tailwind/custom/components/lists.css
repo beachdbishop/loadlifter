@@ -37,10 +37,10 @@ ul.is-style-default {
 	@apply list-none p-0;
 
 	li {
-		@apply p-2;
+		@apply pl-0;
 
 		&:not(:last-of-type) {
-			@apply border-b-4 border-dotted;
+			@apply border-b-2 border-dotted;
 		}
 	}
 }
