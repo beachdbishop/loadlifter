@@ -18,7 +18,7 @@
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8 lg:grid-cols-6 lg:gap-8 print:hidden">
 				<nav>
-					<h5>Accounting &amp; Assurance</h5>
+					<h5><a href="/assurance/">Accounting &amp; Assurance</a></h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_assurance',
@@ -28,7 +28,7 @@
 					?>
 				</nav>
 				<nav>
-					<h5>Tax</h5>
+					<h5><a href="/tax/">Tax</a></h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_tax',
@@ -38,7 +38,7 @@
 					?>
 				</nav>
 				<nav>
-					<h5><abbr title="Strategic Operations & Advisory Resources">SOAR</abbr> <span class="text-neutral-500">(Consulting)</span></h5>
+					<h5><a href="/soar/"><abbr title="Strategic Operations & Advisory Resources">SOAR</abbr></a> <span class="text-neutral-500">(Consulting)</span></h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_soar',
@@ -58,7 +58,7 @@
 					?>
 				</nav>
 				<nav>
-					<h5>Our Firm</h5>
+					<h5><a href="/about/">Our Firm</a></h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_about',
@@ -68,7 +68,7 @@
 					?>
 				</nav>
 				<nav>
-					<h5>Careers</h5>
+					<h5><a href="/career-opportunities/">Careers</a></h5>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_careers',
