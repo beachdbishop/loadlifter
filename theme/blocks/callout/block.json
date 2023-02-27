@@ -1,0 +1,53 @@
+{
+  "name": "loadlifter/callout",
+  "title": "Callout",
+  "description": "Block for displaying a callout or admonition.",
+  "apiVersion": 2,
+  "style": "block-callout",
+  "script": "",
+  "category": "common",
+  "icon": "info",
+  "keywords": ["note", "callout", "admonition"],
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "note", "label": "Note" },
+    { "name": "info", "label": "Info" },
+    { "name": "tip", "label": "Tip" },
+    { "name": "success", "label": "Success" },
+    { "name": "question", "label": "Question" },
+    { "name": "warning", "label": "Warning" },
+    { "name": "danger", "label": "Danger" },
+    { "name": "example", "label": "Example" },
+    { "name": "quote", "label": "Quote" }
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+        "text": false,
+        "background": false,
+        "link": false
+    },
+    "alignText": false,
+    "html": false,
+    "jsx": true,
+    "spacing": false,
+    "fullHeight": false
+  },
+  "attributes": {
+  },
+  "example": {
+    "attributes": {
+      "data": {
+        "ll-callout-title": "Callout",
+        "ll-callout-icon": "fa-regular fa-notebook",
+        "ll-callout-body": "Here's some info worth calling out."
+      }
+    }
+  },
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "render.php"
+  }
+}
