@@ -96,15 +96,15 @@ get_header();
 
 					</section>
 
-					<div class="px-2 my-4 md:my-8 md:px-0">
+					<!-- <div class="px-2 my-4 md:my-8 md:px-0">
 						<h2 class="leading-normal text-brand-blue">Recent Posts</h2>
-						<?php echo do_shortcode('[display-posts posts_per_page="4" ignore_sticky_posts="true" orderby="date" order="DESC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8 -mx-4" layout="card" /]'); ?>
+						<?php // echo do_shortcode('[display-posts posts_per_page="4" ignore_sticky_posts="true" orderby="date" order="DESC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8 -mx-4" layout="card" /]'); ?>
 						<div class="wp-block-buttons | text-center my-4">
 							<div class="wp-block-button is-style-outline">
 								<a class="wp-block-button__link" href="/blog/">See more</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
 
 					<div class="">&nbsp;</div>
 
