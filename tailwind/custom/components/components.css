@@ -208,6 +208,10 @@ aside .timestamp {
 	);
 }
 
+.post-grid .image__featured--outer {
+  @apply border-2 border-neutral-100;
+}
+
 .breadcrumbs {
 	font-size: 1rem;
 }
