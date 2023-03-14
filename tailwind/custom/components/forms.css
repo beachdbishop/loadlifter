@@ -6,13 +6,13 @@
 	}
 
 	.field > label {
-		@apply font-normal;
+		@apply font-head;
 	}
 
 	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 	select,
 	textarea {
-		@apply w-full rounded-lg border-2 border-neutral-200 bg-brand-gray-faint focus:border-brand-blue/80 focus:bg-white;
+		@apply w-full border border-neutral-400 bg-neutral-50 focus:border-brand-blue/80 focus:bg-white;
 	}
 
 	input[type="checkbox"] {
@@ -24,7 +24,7 @@
 	}
 
 	input[type="submit"] {
-		@apply inline-flex items-center justify-center rounded-lg bg-brand-blue px-5 py-3 text-brand-blue-faint shadow-neutral-800 hover:bg-brand-blue-dark hover:text-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-blue-dark active:shadow-sm sm:w-auto lg:text-lg;
+		@apply font-head font-bold inline-flex items-center justify-center rounded-lg bg-brand-red px-5 py-3 text-brand-red-faint shadow-neutral-800 hover:bg-brand-red-dark hover:text-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg;
 	}
 
 	span.hs-form-required {

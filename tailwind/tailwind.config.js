@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 // Set Preflight flag and Tailwind Typography class name based on the build target.
 let includePreflight, typographyClassName;
 if ( 'editor' === process.env._TW_TARGET ) {
@@ -40,6 +42,11 @@ module.exports = {
       minHeight: {
         'hero': '420px',
       },
+      textShadow: {
+        sm: '0 1px 2px var(--tw-shadow-color)',
+        DEFAULT: '0 2px 4px var(--tw-shadow-color)',
+        lg: '0 8px 16px var(--tw-shadow-color)',
+      },
 		},
 	},
   safelist: [
@@ -51,6 +58,9 @@ module.exports = {
     'a11y-slider-next',
     'a11y-slider',
     'bg-current',
+    'bg-brand-gray-dark',
+    'bg-brand-red-dark',
+    'bg-brand-blue-dark',
     'border-brand-blue-dark',
     'border-brand-red-dark',
     'border-amber-300',
@@ -80,6 +90,7 @@ module.exports = {
     'hover:bg-neutral-100',
     'hover:bg-neutral-200',
     'hover:bg-orange',
+    'hover:bg-brand-red-dark',
     'hover:border-transparent',
     'hover:border-neutral-600',
     'hover:text-white',
@@ -156,6 +167,17 @@ module.exports = {
 		// require( '@tailwindcss/forms' ),
 		// require( '@tailwindcss/line-clamp' ),
     require('@shrutibalasa/tailwind-grid-auto-fit'),
+
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'text-shadow': (value) => ({
+            textShadow: value,
+          }),
+        },
+        { values: theme('textShadow') }
+      )
+    }),
 
     function ({ addVariant }) {
       addVariant('children', '&>*')

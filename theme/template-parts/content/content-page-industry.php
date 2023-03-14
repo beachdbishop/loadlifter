@@ -32,7 +32,9 @@ $ind_id = get_the_ID();
 
 $ind_icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
 $ind_message = get_field( 'll_brand_message' );
-$ind_excerpt = get_the_excerpt();
+// $ind_excerpt = get_the_excerpt();
+$page_content_main = get_field( 'll_content_main' );
+$page_content_sec = get_field( 'll_content_secondary' );
 $ind_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $ind_featimg == true ) {
 	$ind_featimg_url = $ind_featimg[0];
@@ -46,13 +48,14 @@ if ( $ind_featimg == true ) {
 @media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }
 </style>
 
-<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-labelledby="page-title">
+<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
 	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
 
-		<div class="md:w-1/2">
-			<h1 class="mb-2 text-lg lg:text-xl text-brand-blue-faint " id="page-title"><i class="fa-duotone <?php echo esc_attr( $ind_icon ); ?>"></i> <?php echo get_the_title(); ?></h1>
-			<h2 class="text-4xl leading-none tracking-tight text-transparent bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text lg:text-5xl head-last-bold"><?php echo $ind_message['label']; ?></h2>
-			<p class="mt-4 leading-normal text-white lg:text-lg"><?php echo $ind_excerpt; ?></p>
+		<div class="">
+			<!-- <h1 class="leading-none tracking-light text-brand-blue-pale lg:text-6xl"><i class="fa-duotone <?php // echo esc_attr( $ind_icon ); ?> "></i> <?php // echo get_the_title(); ?></h1> -->
+            <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 md:text-6xl"><?php echo get_the_title(); ?></h1>
+			<h2 class="max-w-md mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 md:text-4xl"><?php echo $ind_message['label']; ?></h2>
+			<!-- <p class="mt-4 leading-normal text-white lg:text-lg"><?php // echo $ind_excerpt; ?></p> -->
 		</div>
 
 	</div>
@@ -63,15 +66,26 @@ if ( $ind_featimg == true ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
+        <div class="entry-cont | industry-page-grid mt-4 md:mt-8 md:grid md:auto-rows-auto md:gap-2 lg:mt-16 lg:gap-8">
 
+            <?php // the_content(); ?>
 
-		<div class="prose lg:prose-xl entry-content">
-			<?php the_content(); ?>
+            <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
+                <?php echo do_shortcode( $page_content_main ); ?>
+            </div>
 
-			<div class="clear-both">&nbsp;</div>
-		</div>
+            <?php if ( $page_content_sec ) { ?>
+            <div class="ind-grid-area-b md:col-span-3">
+                <?php echo do_shortcode( $page_content_sec ); ?>
+            </div>
+            <?php } ?>
 
-		<?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
+		    <div class="ind-grid-area-c">
+                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
+                    <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+                </div>
+            </div>
 
+        </div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->

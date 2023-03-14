@@ -62,7 +62,7 @@ if ('local' === wp_get_environment_type()) {
 </style>
 
 
-<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
+<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
     <div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
 
         <div class="">
@@ -88,8 +88,8 @@ if ('local' === wp_get_environment_type()) {
                     <span>On this page:</span>
                     <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#why">Why BeachFleischman?</a>
                     <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#opportunities">Opportunities</a>
-                    <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#benefits">Benefits</a>
                     <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#culture">Culture</a>
+                    <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#benefits">Benefits</a>
                     <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#awards">Awards</a>
                 </div>
             </section>
@@ -407,45 +407,36 @@ if ('local' === wp_get_environment_type()) {
         <?php } ?>
 
         <!--   C U L T U R E   -->
-        <section id="culture" class="full-bleed bg-gradient-to-t from-brand-blue via-brand-blue-faint ">
+        <section id="culture" class="full-bleed not-prose">
             <div class="container px-1 py-8 mx-auto md:px-0 lg:py-12">
                 <h3 class="mb-6 text-center uppercase font-head">Culture</h3>
-                <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
-                    <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-video"><a href="/about/women-rise/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698767/feat__women-rise_genexx.png" alt="logo: Women RISE = reach, inspire, support, empower" /></a></div>
-                        <h4 class="font-light text-brand-blue-dark"><a href="/about/women-rise/" class="no-underline hover:underline">Women RISE</a></h4>
-                        <p class="text-base">Women R.I.S.E. is a committee of employees dedicated to building and sustaining a collaborative and diverse workplace that strategically supports the development and advancement of women. We do this by creating and maintaining an environment that recognizes, cultivates and utilizes the talent of female employees.</p>
-                        <p><a class="text-brand-blue hover:text-brand-red" href="/about/women-rise/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
-                    </div>
-
-                    <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border border-neutral-200 lg:p-8 aspect-video"><a href="/about/idea-committee/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,cs_srgb,dpr_auto,f_auto,w_400/v1644339189/logolib/IDEA_with_tagline_and_meaning.png" alt="logo: IDEA = inclusion, diversity, equity, and action" /></a></div>
-                        <h4 class="font-light text-brand-blue-dark"><a href="/about/idea-committee/" class="no-underline hover:underline">IDEA Committee</a></h4>
-                        <p class="text-base">At BeachFleischman, we intentionally cultivate a diverse, equitable, and inclusive environment where each person feels welcomed, accepted, empowered, valued, respected, and safe. This not only allows each one of us to achieve personal and professional success, but also allows us to better know and serve our clients and communities.</p>
-                        <p><a class="text-brand-blue hover:text-brand-red" href="/about/idea-committee/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
-                    </div>
-
-                    <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698306/feat__buddy-mentor_g81otc.jpg" alt="A mentor and mentee smile while having a discussion" /></div>
-                        <h4 class="font-light text-brand-blue-dark">Buddy/Mentor Program</h4>
-                        <p class="text-base">When you start at BeachFleischman, you&apos;ll be assigned a buddy and a mentor to help support you through your onboarding and long-term career.</p>
-                        <p class="text-base">Your buddy is a person designated to be a &quot;go to&quot; person for any questions you have; they help to make your onboarding comfortable and successful. Your buddy will be from the same department that you are, i.e. Tax, Audit, or Administration, and they will help you get settled into your new job.</p>
-                        <p class="text-base">Your mentor guides you through career progress and opportunities. They impart their knowledge and experience to help you navigate promotions, new duties, and questions about the accounting industry. With their support, you will be well equipped to pursue a successful, fulfilling career.</p>
-                    </div>
-
-                    <div class="p-4 prose bg-white lg:p-8">
-                        <div class="flex items-center justify-center p-4 bg-white border lg:p-8 border-neutral-200 aspect-video"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698311/feat__developu_bobcnr.jpg" alt="A woman stands in front of a whiteboard" /></div>
-                        <h4 class="font-light text-brand-blue-dark">developU</h4>
-                        <p class="text-base">As part of our commitment to continuous learning and growth, we provide training on professional skills through our developU program. developU classes and workshops support our employees' long-term career goals and provide them the opportunity and resources to advance their leadership skills, client and team interactions, and cultivate healthy stress management techniques.</p>
+                <div class="mb-6 overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1678295483/feat__careers--women-rise2_ed405i.jpg')]">
+                    <div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-16 lg:py-24">
+                        <div class="text-center sm:text-left">
+                            <h4 class="font-light text-brand-blue-pale"><a href="/about/women-rise/" class="no-underline hover:underline">Women RISE</a></h4>
+                            <p class="hidden max-w-lg md:my-4 md:block md:text-base md:leading-relaxed text-neutral-100">Women R.I.S.E. is a committee of employees dedicated to building and sustaining a collaborative and diverse workplace that strategically supports the development and advancement of women. We do this by creating and maintaining an environment that recognizes, cultivates and utilizes the talent of female employees.</p>
+                            <p><a class="text-brand-blue-faint hover:text-brand-red" href="/about/women-rise/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
+                        </div>
                     </div>
                 </div>
+
+                <div class="overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1677875018/feat__careers--idea_ifhenr.jpg')]">
+                    <div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-16 lg:py-24">
+                        <div class="text-center sm:text-left">
+                            <h4 class="font-light text-brand-blue-pale"><a href="/about/idea-committee/" class="no-underline hover:underline">IDEA Committee</a></h4>
+                            <p class="hidden max-w-lg md:my-4 md:block md:text-base md:leading-relaxed text-neutral-100">At BeachFleischman, we intentionally cultivate a diverse, equitable, and inclusive environment where each person feels welcomed, accepted, empowered, valued, respected, and safe. This not only allows each one of us to achieve personal and professional success, but also allows us to better know and serve our clients and communities.</p>
+                            <p><a class="text-brand-blue-faint hover:text-brand-red" href="/about/idea-committee/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
 
         <!--   B E N E F I T S   -->
         <?php if ( !is_page('internships') ) : ?>
-            <section id="benefits" class="full-bleed">
+            <!-- <section id="benefits" class="full-bleed">
                 <div class="px-1 py-8 mx-auto md:px-0 lg:px-5 lg:py-12">
                     <h3 class="mb-6 text-center uppercase text-brand-blue ">Additional Benefits</h3>
                     <div class="md:grid md:grid-cols-3 md:gap-4">
@@ -466,6 +457,52 @@ if ('local' === wp_get_environment_type()) {
                         </div>
                         <div class="hidden lg:block">
                             <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-benefits--social_hv6tcv.jpg" alt="Girl in classes pointing toward the list of benefits behind her">
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+            <section id="benefits" class="full-bleed bg-gradient-to-t from-brand-blue via-brand-blue-faint ">
+                <div class="container px-1 py-8 mx-auto md:px-0 lg:py-12">
+                    <h3 class="mb-6 text-center uppercase font-head">Benefits &amp; Perks</h3>
+                    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+
+                        <div class="p-4 prose bg-white lg:p-8">
+                            <div class="flex items-center justify-center p-4 bg-white border not-prose border-neutral-200"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698306/feat__buddy-mentor_g81otc.jpg" alt="A mentor and mentee smile while having a discussion" /></div>
+                            <h4 class="font-light text-brand-blue-dark">Career Development</h4>
+                            <p class="text-base todo">When you start at BeachFleischman, you&apos;ll be assigned a buddy and a mentor to help support you through your onboarding and long-term career. Your buddy is a person designated to be a &quot;go to&quot; person for any questions you have; they help to make your onboarding comfortable and successful. Your mentor guides you through career progress and opportunities.</p>
+                            <p class="text-base todo">As part of our commitment to continuous learning and growth, we provide training on professional skills through our developU program.</p>
+                        </div>
+
+                        <div class="p-4 prose bg-white lg:p-8">
+                            <div class="flex items-center justify-center p-4 bg-white border not-prose border-neutral-200"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1677875018/feat__careers-health-wellness_am649w.jpg" alt="A patient has a discussion with a medical professional" /></div>
+                            <h4 class="font-light text-brand-blue-dark">Health &amp; Wellness</h4>
+                            <p class="text-base todo">BeachFleischman offers a variety of healthcare benefits to cover employees and their families.</p>
+                        </div>
+
+                        <div class="p-4 prose bg-white lg:p-8">
+                            <div class="flex items-center justify-center p-4 bg-white border not-prose border-neutral-200"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1677875018/feat__careers-financial-wellness_ugapx0.jpg" alt="5 stacks of coins increasing in height from one to the next" /></div>
+                            <h4 class="font-light text-brand-blue-dark">Financial Wellness</h4>
+                            <p class="text-base todo">We offer a comprehensive retirement package including: </p>
+                            <ul class="todo">
+                                <li>Medical, dental, and vision insurance</li>
+                                <li>Supplemental insurance</li>
+                                <li>Life insurance</li>
+                                <li>401(k) program with employer matching and defined benefit plan</li>
+                                <li>CPA exam reimbursement and bonus</li>
+                                <li>Performance-based bonuses</li>
+                            </ul>
+                        </div>
+
+                        <div class="p-4 prose bg-white lg:p-8">
+                            <div class="flex items-center justify-center p-4 bg-white border not-prose border-neutral-200"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1677875018/feat__careers-perks_qwhc1n.jpg" alt="A man looks out the window with his hands raised in happiness" /></div>
+                            <h4 class="font-light text-brand-blue-dark">Perks</h4>
+                            <ul class="todo">
+                                <li>"Dress for your day" dress code</li>
+                                <li>Flexible scheduling</li>
+                                <li>Hybrid/remote work options</li>
+                                <li>Busy season meals and snacks</li>
+                                <li>Great snacks -- if you work in the Phoenix office</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -511,7 +548,7 @@ if ('local' === wp_get_environment_type()) {
         <section id="awards">
             <div class="max-w-3xl px-1 py-8 mx-auto md:px-0 lg:py-16 lg:max-w-4xl">
                 <h3 class="mb-6 text-center uppercase font-head text-brand-blue-dark">Awards &amp; Recognition</h3>
-                <div class="flex flex-wrap items-center gap-2 mx-auto -m-4 place-content-between lg:gap-4">
+                <div class="flex flex-col flex-wrap items-center gap-2 mx-auto -m-4 place-content-center md:place-content-between md:flex-row lg:gap-4">
                     <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634570038/Move_bestfirm_EL_2021_dpoubu.png" alt="2021 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
                     <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
                     <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
@@ -524,7 +561,7 @@ if ('local' === wp_get_environment_type()) {
         <!-- CTA and Recruiting Contact(s) -->
         <section id="team" class="bg-white full-bleed">
             <div class="container px-1 py-8 mx-auto md:px-0 lg:py-12">
-                <h3 class="text-center uppercase text-brand-blue-dark">Our Recruiting Team</h3>
+                <h3 class="text-center uppercase text-brand-blue-dark">The people that will grill you from one side of the interview table</h3>
                 <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-small" /]'); ?>
             </div>
         </section>

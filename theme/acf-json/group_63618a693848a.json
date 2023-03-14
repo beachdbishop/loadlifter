@@ -75,6 +75,7 @@
                 "construction4": "Take business to new heights.",
                 "construction5": "Structurally sound insights.",
                 "construction6": "We’ll help carry the load.",
+                "construction7": "Building a structurally sound plan.",
                 "prosvcs1": "Invested in your firm’s prosperity.",
                 "prosvcs2": "Performance partners in your profession.",
                 "prosvcs3": "Concentrate on your craft. We’ll do the rest.",
@@ -127,7 +128,8 @@
                 "realestate9": "Partners who help you make an impact.",
                 "realestate10": "Own the way you do business.",
                 "realestate11": "Partners in your development.",
-                "soar1": "Strategic Operations & Advisory Resources"
+                "soar1": "Strategic Operations & Advisory Resources",
+                "cannabis1": "Navigating the highs and lows of a cutting edge industry."
             },
             "default_value": false,
             "return_format": "array",
@@ -176,5 +178,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1674671095
+    "modified": 1678403829
 }
