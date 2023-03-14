@@ -35,26 +35,26 @@ navMenu.addEventListener('keyup', e => {
 
 
 
-const cards = document.querySelectorAll(`.sick-card`);
+// const cards = document.querySelectorAll(`.sick-card`);
 // Add the tails to each card
-cards.forEach((card) => {
-  [`sick-top`, `sick-right`, `sick-bottom`, `sick-left`].forEach((side) => {
-    const tail = document.createElement(`div`);
-    tail.classList.add(`sick-tail`, side);
-    card.appendChild(tail);
-  });
-  // if that card has no colours, add some
-  if (!card.style.getPropertyValue(`--color1`)) {
-    card.style.setProperty(
-      `--color1`,
-      `hsl(${Math.random() * 360}, 100%, 50%)`
-    );
-    card.style.setProperty(
-      `--color2`,
-      `hsl(${Math.random() * 360}, 100%, 50%)`
-    );
-  }
-});
+// cards.forEach((card) => {
+//   [`sick-top`, `sick-right`, `sick-bottom`, `sick-left`].forEach((side) => {
+//     const tail = document.createElement(`div`);
+//     tail.classList.add(`sick-tail`, side);
+//     card.appendChild(tail);
+//   });
+//   // if that card has no colours, add some
+//   if (!card.style.getPropertyValue(`--color1`)) {
+//     card.style.setProperty(
+//       `--color1`,
+//       `hsl(${Math.random() * 360}, 100%, 50%)`
+//     );
+//     card.style.setProperty(
+//       `--color2`,
+//       `hsl(${Math.random() * 360}, 100%, 50%)`
+//     );
+//   }
+// });
 
 // setInterval(() => {
 //   cards.forEach((card) => {

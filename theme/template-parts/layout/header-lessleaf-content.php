@@ -46,13 +46,12 @@
 		</div>
 
 		<nav class="menus-container | md:flex md:flex-col md:order-1 lg:min-w-[600px] print:hidden" id="primary-navigation" aria-label="Main Navigation">
-			<ul class="disclosure-nav | list-none font-head font-bold md:flex md:gap-x-2 md:justify-end lg:gap-x-4 lg:text-xl">
-				<li>
-                    <!-- <span class="main-link | border-0 text-neutral-900 block m-0 py-2 px-4">Services</span> -->
+			<ul class="disclosure-nav | list-none font-head font-bold order-first md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-4 lg:text-xl">
+				<li><?php // Services ?>
                     <a class="main-link" href="/services/">Services</a>
                     <button type="" aria-expanded="false" aria-controls="id_services_menu" aria-label="More Industry Expertise items"></button>
                     <div id="id_services_menu" class="dropmenu mega" style="display:none">
-                        <ul class="md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
+                        <ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
                             <li class="lg:py-4">
                                 <p class="text-lg md:border-b-2 md:border-brand-blue-pale"><a href="/assurance/">Assurance</a></p>
                                 <ul class="hidden mb-2 text-base md:block">
@@ -92,7 +91,7 @@
                     </div>
                 </li>
 
-                <li>
+                <li><?php // Industries ?>
                     <a href="/industries/" class="main-link">Industries</a>
                     <button type="" aria-expanded="false" aria-controls="id_industries_menu" aria-label="More Industry Expertise items"></button>
                     <div id="id_industries_menu" class="dropmenu " style="display:none">
@@ -111,7 +110,7 @@
                     </div>
                 </li>
 
-                <li>
+                <li><?php // About ?>
                     <a href="/about/" class="main-link">About</a>
                     <button type="" aria-expanded="false" aria-controls="id_about_menu" aria-label="More About Us items"></button>
                     <div id="id_about_menu" class="dropmenu" style="display:none">
@@ -124,7 +123,7 @@
                     </div>
                 </li>
 
-                <li>
+                <li><?php // Careers ?>
                     <a href="/career-opportunities/" class="main-link">Careers</a>
                     <button type="" aria-expanded="false" aria-controls="id_careers_menu" aria-label="More Careers items"></button>
                     <div id="id_careers_menu" class="dropmenu" style="display:none">
@@ -137,22 +136,16 @@
                     </div>
                 </li>
 
-                <li>
-                    <a href="/resources/" class="main-link">Resources</a>
-                    <button type="" aria-expanded="false" aria-controls="id_careers_menu" aria-label="More Resource items"></button>
-                    <div id="id_resources_menu" class="dropmenu" style="display:none">
-                        <ul>
-                            <li><a href="/blog/">Insights</a></li>
-                            <li><a href="/category/events/">Events</a></li>
-                            <li><a href="/client-center/">Client Center</a></li>
-                        </ul>
-                    </div>
-                </li>
-
-				<li>
+				<li><?php // Contact ?>
                     <a href="/contact-us/" class="main-link">Contact</a>
                 </li>
 			</ul>
+
+            <ul class="secondary-nav | md:text-sm font-bold md:uppercase text-neutral-500 md:order-first md:justify-end md:flex md:gap-x-2 md:py-2 lg:gap-x-4 print:hidden">
+                <li><a class="text-brand-red-dark hover:text-brand-red" href="/client-center/">Client Center</a></li>
+                <li><a class="hover:text-brand-blue" href="/blog/">Insights</a></li>
+                <li><a class="hover:text-brand-blue" href="/category/events/">Events</a></li>
+            </ul>
 		</nav>
 
 	</div>
