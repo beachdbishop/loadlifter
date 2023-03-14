@@ -19,7 +19,7 @@ $peep_level = get_field( 'll_people_level' );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | group p-2' ); ?>>
 	<div class="flex items-center h-full p-4 border rounded-lg border-neutral-200">
-		<div class="bg-neutral-100 object-cover object-center flex-shrink-0 rounded-full mr-4 grayscale-[60%] group-hover:grayscale-0" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;" aria-label="">
+		<div class="bg-neutral-100 object-cover object-center flex-shrink-0 rounded-full mr-4 grayscale-0 group-hover:grayscale-[30%]" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;" aria-label="">
 			<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
 				<div class="w-16 h-16 aspect-square">&nbsp;</div>
 			</a>
