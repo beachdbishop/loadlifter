@@ -97,6 +97,7 @@ module.exports = {
     'hover:text-white',
     'inline',
     'leading-tight',
+    'lg:gap-16',
     'lg:grid-cols-2',
     'list-square',
     'max-w-2xl',
