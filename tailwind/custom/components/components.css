@@ -170,6 +170,9 @@ aside .timestamp {
 .logogrid > div {
 	@apply flex items-center justify-center;
 }
+.logogrid > div img {
+  @apply max-h-[55px];
+}
 
 
 

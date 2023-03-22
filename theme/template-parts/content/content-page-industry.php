@@ -44,17 +44,18 @@ if ( $ind_featimg == true ) {
 ?>
 
 <style>
-<?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
-@media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }
+<?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>
+/* .page-hero { background-image: <?php // echo $gradient; ?>, url('<?php // echo esc_url( $ind_featimg_url ); ?>'); }
+@media (min-width: 768px) { .page-hero { background-image: <?php // echo $easedGradient; ?>, url('<?php // echo esc_url( $ind_featimg_url ); ?>'); } } */
+.page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
 </style>
 
 <header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
 	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
 
 		<div class="">
-			<!-- <h1 class="leading-none tracking-light text-brand-blue-pale lg:text-6xl"><i class="fa-duotone <?php // echo esc_attr( $ind_icon ); ?> "></i> <?php // echo get_the_title(); ?></h1> -->
             <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 md:text-6xl"><?php echo get_the_title(); ?></h1>
-			<h2 class="max-w-md mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 md:text-4xl"><?php echo $ind_message['label']; ?></h2>
+			<h2 class="mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 md:text-4xl"><?php echo $ind_message['label']; ?></h2>
 			<!-- <p class="mt-4 leading-normal text-white lg:text-lg"><?php // echo $ind_excerpt; ?></p> -->
 		</div>
 
@@ -68,8 +69,6 @@ if ( $ind_featimg == true ) {
 	<div class="px-1 md:container md:mx-auto md:px-0">
         <div class="entry-cont | industry-page-grid mt-4 md:mt-8 md:grid md:auto-rows-auto md:gap-2 lg:mt-16 lg:gap-8">
 
-            <?php // the_content(); ?>
-
             <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
                 <?php echo do_shortcode( $page_content_main ); ?>
             </div>
@@ -82,7 +81,11 @@ if ( $ind_featimg == true ) {
 
 		    <div class="ind-grid-area-c">
                 <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
-                    <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+                    <?php if ( is_page( 'Construction' ) ) {
+                        get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
+                    } else {
+                        get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
+                    } ?>
                 </div>
             </div>
 

@@ -1,5 +1,5 @@
 .a11y-slider-container {
-	@apply my-4 max-w-3xl md:mx-auto;
+	@apply my-4 md:mx-auto;
 }
 .a11y-slider-container:has(.slider-people) {
 	@apply max-w-full;
@@ -61,7 +61,7 @@
 }
 
 .slider {
-	@apply my-4;
+	/* @apply my-4; */
 }
 
 .slider-quotes > * {
@@ -76,7 +76,7 @@
 }
 
 .slider-people {
-	@apply flex py-4 lg:py-8 gap-2;
+	@apply flex pt-2 pb-4 lg:pb-8 gap-2;
 }
 .slider-people > * {
 	@apply w-52 grow-0 shrink-0 basis-auto md:w-64;

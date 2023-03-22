@@ -13,12 +13,8 @@
   @apply z-30;
 }
 
-.disclosure-nav .dropmenu.mega {
-  /* @apply md:min-w-[700px] md:-left-[250px] lg:min-w-[1000px] lg:top-[100%] lg:-left-[500px] xl:min-w-[1200px] xl:-left-[600px]; */
+.disclosure-nav .dropdown.mega {
   @apply md:min-w-[90vw] md:-left-[30vw] lg:min-w-[80vw] xl:min-w-[70vw];
-}
-.disclosure-nav .dropdown.mega > ul {
-  @apply md:container;
 }
 
 .disclosure-nav ul {
