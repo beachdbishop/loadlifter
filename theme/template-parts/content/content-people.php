@@ -55,7 +55,7 @@ if ( $peepauthor ) {
 				<header class="mb-4">
 					<?php
 					if ( $peep_class === 'internal' ) {
-						the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' );
+						the_title( '<h1 class="entry-title | mb-0 text-brand-blue">', '</h1>' );
 
 						if( get_field( 'll_people_designations' ) ) {
 							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', get_field( 'll_people_designations' ) );
@@ -134,7 +134,7 @@ if ( $peepauthor ) {
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php if ( $peeppostcount > 0 ) : ?>
-	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-brand-blue-faint py-4 md:py-6 lg:py-8' ); ?>>
+	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-gradient-to-b from-neutral-300 via-neutral-100 to-white py-4 md:py-6 lg:py-8' ); ?>>
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
 			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="dps-grid-4max" layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
