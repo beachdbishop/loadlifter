@@ -38,9 +38,9 @@
 				</li>
 			</ul>
 
-			<button class="toggle-mobile-nav | ml-2 pl-2 py-2 cursor-pointer md:hidden focus:bg-brand-blue-faint" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
-				<svg class="w-8 h-8" aria-hidden="true"><use xlink:href="#bars" /></svg>
-				<span class="sr-only">Menu</span>
+			<button class="toggle-mobile-nav | ml-2 p-2 border border-neutral-500 cursor-pointer md:hidden focus:bg-brand-blue-faint" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
+				<!-- <svg class="w-8 h-8" aria-hidden="true"><use xlink:href="#bars" /></svg> -->
+				<span class="">Menu</span>
 			</button>
 
 		</div>
