@@ -209,7 +209,7 @@ aside .timestamp {
 }
 
 .post-grid .image__featured--outer {
-  @apply border-2 border-neutral-100;
+  @apply border-2 border-neutral-200 group-hover:border-white;
 }
 
 .breadcrumbs {
