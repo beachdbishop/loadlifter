@@ -127,13 +127,6 @@ function ll_guten_scripts() {
 add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
 
 
-/**
- * Add Checka11y stylesheet on dev
- */
-function ll_checka11y_style() {
-	wp_enqueue_style( 'checka11y', 'https://cdn.jsdelivr.net/npm/checka11y-css@2.3.0/checka11y.css', array(), '' );
-}
-
 function ll_disable_wp_links_menu() {
 	remove_menu_page( 'link-manager.php' );
 }
