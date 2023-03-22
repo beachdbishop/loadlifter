@@ -22,7 +22,10 @@
 	} ?>
 </head>
 
-<body <?php body_class( 'bg-fixed bg-gradient-to-t from-brand-red-pale via-brand-red to-brand-red-dark overflow-x-hidden styled-scrollbars' ); ?>>
+<body <?php
+    // body_class( 'bg-fixed bg-gradient-to-t from-brand-red-pale via-brand-red to-brand-red-dark overflow-x-hidden styled-scrollbars' );
+    body_class( ' overflow-x-hidden styled-scrollbars' );
+?>>
 
 <?php wp_body_open(); ?>
 
