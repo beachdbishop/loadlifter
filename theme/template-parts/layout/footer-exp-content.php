@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<div class="bg-brand-blue-dark text-neutral-200">
+	<div class=" text-neutral-200">
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				<div>
