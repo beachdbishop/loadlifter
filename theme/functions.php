@@ -239,3 +239,8 @@ require get_template_directory() . '/inc/shortcodes.php';
  * Custom menu walkers
  */
 require get_template_directory() . '/inc/menu-walker.php';
+
+/**
+ * Include ACF field content in search results
+ */
+require get_template_directory() . '/inc/search-mods.php';
