@@ -34,6 +34,7 @@ module.exports = {
       backgroundImage: {
         'mesh-blue': "url('/wp-content/themes/loadlifter/theme/img/mesh-374-blue.jpg')",
         'mesh-red': "url('/wp-content/themes/loadlifter/theme/img/mesh-767-red.jpg')",
+        'mesh-white': "url('/wp-content/themes/loadlifter/theme/img/mesh-grad-whites-blues.jpg')",
       },
       maxWidth: {
         '46char': '46ch',
@@ -96,10 +97,12 @@ module.exports = {
     'hover:text-white',
     'inline',
     'leading-tight',
+    'lg:grid-cols-2',
     'list-square',
     'max-w-2xl',
     'max-w-3xl',
     'max-w-4xl',
+    'max-w-5xl',
     'max-w-md',
     'max-w-prose',
     'rounded-md',
