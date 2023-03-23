@@ -55,7 +55,7 @@ $(post-title-selector) {
 .page-content > *,
 .entry-content > * {
 	/* Content width from the `theme.json` file */
-	@apply mx-auto max-w-content;
+	/* @apply mx-auto max-w-content; */
 }
 
 .entry-content > .alignwide {

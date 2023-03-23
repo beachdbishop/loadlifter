@@ -13,8 +13,8 @@
 <?php //   P R E F O O T E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
-<footer role="contentinfo" id="colophon" class="site-footer |  print:bg-transparent">
-	<div class="bg-white .on-lightbg border-solid border-y-4 border-brand-blue">
+<footer role="contentinfo" id="colophon" class="site-footer | print:bg-transparent">
+	<div class="bg-white border-solid on-lightbg border-y-4 border-brand-blue">
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-y-8 lg:grid-cols-6 lg:gap-8 print:hidden">
 				<nav>
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<div class=" text-neutral-200">
+	<div class="bg-no-repeat bg-cover text-neutral-200 bg-mooney-desert2 bg-brand-blue bg-blend-multiply">
 		<div class="px-2 py-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
 				<div>
@@ -93,8 +93,7 @@
 					<?php ll_show_social_links( $out = 'echo' ); ?>
 				</div>
 				<div class="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 print:hidden">
-					<div>
-						<h5 class="mb-2"><a class="hover:text-brand-blue-pale" href="/contact-us/phoenix-az-office/">Phoenix</a></h5>
+					<div class="md:pt-2">
 						<address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
 							<p class="street-address | font-head leading-none " property="streetAddress">2201 E. Camelback Road, Suite 200</p>
 							<p class="locality | font-head leading-none "><span property="addressLocality">Phoenix</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85016</span></p>
@@ -102,8 +101,7 @@
 							<p class="font-bold leading-none font-head " property="faxNumber">F: 602.265.7060</p>
 						</address>
 					</div>
-					<div>
-						<h5 class="mb-2"><a class="hover:text-brand-blue-pale" href="/contact-us/tucson-az-office/">Tucson</a></h5>
+					<div class="md:pt-2">
 						<address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
 							<p class="street-address | font-head leading-none" property="streetAddress">1985 E. River Road, Suite 201</p>
 							<p class="locality | font-head leading-none"><span property="addressLocality">Tucson</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85718</span></p>
@@ -113,7 +111,7 @@
 					</div>
 				</div>
 			</div>
-			<p role="text" class="mt-8 text-xs text-neutral-400">
+			<p role="text" class="mt-8 text-xs">
 				<?php
 				if ( ( is_page() ) && ( get_field( 'll_seo_footer' ) ) ) {
 					// if this is a page and special footer text is set...
@@ -135,7 +133,7 @@
 				?>
 			</p>
 			<p class="pt-4 pb-0 text-sm text-center uppercase">
-				<a class="hover:text-brand-red-pale" href="#top" title="Back to top"><i class="fa-regular fa-arrow-up-to-dotted-line"></i></a>
+				<a class="hover:text-brand-blue-faint" href="#top" title="Back to top"><i class="fa-regular fa-arrow-up-to-dotted-line"></i></a>
 			</p>
 		</div>
 	</div>

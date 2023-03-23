@@ -35,6 +35,8 @@ module.exports = {
         'mesh-blue': "url('/wp-content/themes/loadlifter/theme/img/mesh-374-blue.jpg')",
         'mesh-red': "url('/wp-content/themes/loadlifter/theme/img/mesh-767-red.jpg')",
         'mesh-white': "url('/wp-content/themes/loadlifter/theme/img/mesh-grad-whites-blues.jpg')",
+        'mooney-desert1': "url('/wp-content/themes/loadlifter/theme/img/cmooney-dsc_834372-bw.jpg')",
+        'mooney-desert2': "url('/wp-content/themes/loadlifter/theme/img/cmooney-dsc_835072-bw.jpg')",
       },
       maxWidth: {
         '46char': '46ch',
