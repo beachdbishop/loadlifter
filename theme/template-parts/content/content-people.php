@@ -45,13 +45,13 @@ if ( $peepauthor ) {
 			<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
-		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
+		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
-			<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0">
+			<div class="peepgrid-a |  pb-8 md:pt-2 md:pb-0 md:order-2">
 				<?php ll_people_headshot(); ?>
 			</div>
 
-			<div class="peepgrid-b | md:col-span-2 md:row-span-2 lg:col-span-3">
+			<div class="peepgrid-b |  md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
 				<header class="mb-4">
 					<?php
 					if ( $peep_class === 'internal' ) {
@@ -118,7 +118,7 @@ if ( $peepauthor ) {
 				</div>
 			</div>
 
-			<aside class="peepgrid-c | md:mt-0 ">
+			<aside class="peepgrid-c |  md:mt-0 md:order-3">
 				<?php get_template_part( 'template-parts/form/form-hubspot-contact', 'sidebar' ); ?>
 
 				<?php if ( get_field( 'll_people_quote' ) ) { ?>

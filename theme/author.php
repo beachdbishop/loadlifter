@@ -56,9 +56,9 @@ if ( $author_org === 'BeachFleischman' ) {
 				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
-			<div class="peepgrid peep-<?php echo $peep_class; ?> | md:grid md:grid-cols-3 md:gap-4 lg:grid-cols-4 lg:gap-x-10 lg:gap-y-8">
+			<div class="peepgrid peep-<?php echo $peep_class; ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
-				<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0">
+				<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0 md:order-2">
 				<?php if ( $author_thumbnail ) { ?>
                     <div class="headshot | max-w-[380px] mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>">
 						<div class="aspect-headshot">&nbsp;</div>
@@ -66,7 +66,7 @@ if ( $author_org === 'BeachFleischman' ) {
                 <?php } ?>
 				</div>
 
-				<div class="peepgrid-b | md:col-span-2 md:row-span-2 lg:col-span-3">
+				<div class="peepgrid-b | md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
                     <header class="mb-4">
                         <h1 class="entry-title | mb-0 text-brand-blue">Articles by <span class="text-brand-red"><?php echo $author_name; ?></span></h1>
                         <?php if (!empty($author_desigs)) {
@@ -130,7 +130,7 @@ if ( $author_org === 'BeachFleischman' ) {
 					endif; ?>
 				</div>
 
-                <aside class="peepgrid-c | md:mt-0">
+                <aside class="peepgrid-c | md:mt-0 md:order-3">
                     <?php /* Featured industry experience */ ?>
                     <?php if ($author_industries) : ?>
                         <h6 class="mt-4 mb-1 text-base font-bold text-brand-blue"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h6>
