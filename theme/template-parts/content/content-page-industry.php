@@ -8,7 +8,6 @@
  */
 
 $gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.9) 60%, rgba(0,0,0,0.7) 75%, rgba(0,0,0,0.5) 90%, rgba(0,0,0,0.2) 100%)';
-$gradientmd = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)';
 $easedGradient = 'linear-gradient(
 	  to right,
 	  hsla(0, 0%, 0%, 0.97) 0%,
@@ -43,12 +42,8 @@ if ( $ind_featimg == true ) {
 }
 ?>
 
-<style>
-<?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>
-/* .page-hero { background-image: <?php // echo $gradient; ?>, url('<?php // echo esc_url( $ind_featimg_url ); ?>'); }
-@media (min-width: 768px) { .page-hero { background-image: <?php // echo $easedGradient; ?>, url('<?php // echo esc_url( $ind_featimg_url ); ?>'); } } */
-.page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
-</style>
+<style><?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
+@media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }</style>
 
 <header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
 	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
@@ -67,7 +62,7 @@ if ( $ind_featimg == true ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
-        <div class="entry-cont | industry-page-grid mt-4 md:mt-8 md:grid md:auto-rows-auto md:gap-2 lg:mt-16 lg:gap-8">
+        <div class="entry-cont | industry-page-grid my-4 gap-4 md:my-8 md:grid md:auto-rows-auto lg:my-16 lg:gap-16">
 
             <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
                 <?php echo do_shortcode( $page_content_main ); ?>
