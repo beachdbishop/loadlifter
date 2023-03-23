@@ -2,7 +2,7 @@
 /**
  * Extend WordPress search to include custom fields
  *
- * https://adambalee.com
+ * https://adambalee.com/search-wordpress-by-custom-fields-without-a-plugin/
  */
 
 /**
