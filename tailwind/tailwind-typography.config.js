@@ -41,7 +41,7 @@ module.exports = {
 							'--tw-prose-links': theme( 'colors.brand-blue' ),
 							'--tw-prose-bold': 'currentColor',
 							'--tw-prose-counters': colors.neutral[ 500 ],
-							'--tw-prose-bullets': colors.neutral[ 300 ],
+							'--tw-prose-bullets': colors.neutral[ 500 ],
 							'--tw-prose-hr': colors.neutral[ 200 ],
 							'--tw-prose-quotes': colors.neutral[ 900 ],
 							'--tw-prose-quote-borders': colors.neutral[ 200 ],
