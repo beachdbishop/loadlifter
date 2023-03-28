@@ -1,7 +1,6 @@
 <?php
-
 /**
- * Template part for displaying page content in page.php
+ * Template part for displaying Careers page content in page.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,7 +8,6 @@
  */
 
 $gradient = 'linear-gradient(to right, rgba(9,47,66,1) 0%, rgba(9,47,66,0.9) 25%, rgba(9,47,66,0.8) 40%, rgba(9,47,66,0.6) 55%, rgba(9,47,66,0.3) 70%, rgba(9,47,66,0.2) 80%, rgba(9,47,66,0.1) 90%, rgba(9,47,66,0) 100%)';
-$gradientmd = 'linear-gradient(to right, rgba(9,47,66,1) 0%, rgba(9,47,66,0.9) 30%, rgba(9,47,66,0.3) 60%, rgba(9,47,66,0.2) 70%, rgba(9,47,66,0.1) 80%, rgba(9,47,66,0) 100%)';
 $easedGradient = 'linear-gradient(
     to right,
     hsla(0, 0%, 0%, 0.97) 0%,
@@ -53,14 +51,12 @@ if ('local' === wp_get_environment_type()) {
 ?>
 
 <style>
-    <?php if ($page_icon) {
-        echo ':root { --page-icon-class: ' . $page_icon . ' }';
-    } ?><?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration;
-    ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); }
-
-    @media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); } }
+<?php if ($page_icon) {
+    echo ':root { --page-icon-class: ' . $page_icon . ' }';
+} ?><?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration;
+?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); }
+@media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); } }
 </style>
-
 
 <header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
     <div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
@@ -77,9 +73,7 @@ if ('local' === wp_get_environment_type()) {
 </header>
 
 
-<article id="post-<?php the_ID(); ?>" <?php if (!is_front_page()) {
-                                            post_class('');
-                                        } ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
     <div class="px-1 md:container md:mx-auto md:px-0">
 
         <?php if (is_page('career-opportunities')) : ?>
@@ -548,7 +542,7 @@ if ('local' === wp_get_environment_type()) {
         <section id="awards">
             <div class="max-w-3xl px-1 py-8 mx-auto md:px-0 lg:py-16 lg:max-w-4xl">
                 <h3 class="mb-6 text-center uppercase font-head text-brand-blue-dark">Awards &amp; Recognition</h3>
-                <div class="flex flex-col flex-wrap items-center gap-2 mx-auto -m-4 place-content-center md:place-content-between md:flex-row lg:gap-4">
+                <div class="flex flex-col flex-wrap items-center max-w-5xl gap-2 mx-auto -m-4 place-content-center md:place-content-between md:flex-row lg:gap-8">
                     <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634570038/Move_bestfirm_EL_2021_dpoubu.png" alt="2021 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
                     <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
                     <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
@@ -588,7 +582,7 @@ if ('local' === wp_get_environment_type()) {
             </div>
         </section> -->
 
-        <?php get_template_part('template-parts/form/form', 'hubspot'); ?>
+        <?php // get_template_part('template-parts/form/form', 'hubspot'); ?>
 
     </div>
 </article><!-- #post-<?php the_ID(); ?> -->

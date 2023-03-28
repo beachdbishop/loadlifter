@@ -32,8 +32,6 @@ $ind_id = get_the_ID();
 $ind_icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
 $ind_message = get_field( 'll_brand_message' );
 // $ind_excerpt = get_the_excerpt();
-$page_content_main = get_field( 'll_content_main' );
-$page_content_sec = get_field( 'll_content_secondary' );
 $ind_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $ind_featimg == true ) {
 	$ind_featimg_url = $ind_featimg[0];
@@ -46,7 +44,7 @@ if ( $ind_featimg == true ) {
 @media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }</style>
 
 <header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
-	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
+	<div class="flex flex-col justify-center px-2 md:container md:mx-auto md:px-0 min-h-hero">
 
 		<div class="">
             <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 md:text-6xl"><?php echo get_the_title(); ?></h1>
@@ -56,33 +54,17 @@ if ( $ind_featimg == true ) {
 
 	</div>
     <?php if (function_exists('bcn_display') && !is_front_page()) { ?>
-        <div class="breadcrumbs | container mx-auto px-1 md:px-0 font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+        <div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
     <?php } ?>
 </header>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="px-1 md:container md:mx-auto md:px-0">
-        <div class="entry-cont | industry-page-grid my-4 gap-4 md:my-8 md:grid md:auto-rows-auto lg:my-16 lg:gap-16">
+	<div class="px-2 md:container md:mx-auto md:px-0">
+        <div class="prose lg:prose-xl entry-content">
 
-            <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
-                <?php echo do_shortcode( $page_content_main ); ?>
-            </div>
+			<?php the_content(); ?>
 
-            <?php if ( $page_content_sec ) { ?>
-            <div class="ind-grid-area-b md:col-span-3">
-                <?php echo do_shortcode( $page_content_sec ); ?>
-            </div>
-            <?php } ?>
-
-		    <div class="ind-grid-area-c">
-                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
-                    <?php if ( is_page( 'Construction' ) ) {
-                        get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
-                    } else {
-                        get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
-                    } ?>
-                </div>
-            </div>
+			<div class="clear-both">&nbsp;</div>
 
         </div>
 	</div>

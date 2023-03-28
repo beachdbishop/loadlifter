@@ -14,7 +14,7 @@
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
 <header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
-	<div role="navigation" class="flex items-center justify-between px-1 py-3 mx-auto md:container md:px-0 md:py-4">
+	<div role="navigation" class="flex items-center justify-between px-2 py-3 mx-auto md:container md:px-0 md:py-4">
 
 		<div class="w-[240px] lg:w-[320px] order-first">
 			<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>" title="Go to BeachFleischman's front page">
