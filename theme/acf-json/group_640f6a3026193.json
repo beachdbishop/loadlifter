@@ -9,7 +9,7 @@
             "aria-label": "",
             "type": "textarea",
             "instructions": "This is the content that will be shown first (next to the contact form on desktop views)",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -29,7 +29,7 @@
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -68,5 +68,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678732929
+    "modified": 1679959266
 }
