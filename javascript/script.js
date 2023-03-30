@@ -202,8 +202,8 @@ class DisclosureNav {
 
   toggleMenu(domNode, show) {
     if (domNode) {
-      // domNode.style.display = show ? 'block' : 'none';
-      domNode.style.visibility = show ? 'visible' : 'hidden';
+      domNode.style.display = show ? 'block' : 'none';
+      // domNode.style.visibility = show ? 'visible' : 'hidden';
     }
   }
 
