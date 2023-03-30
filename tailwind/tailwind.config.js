@@ -96,6 +96,7 @@ module.exports = {
     'hover:bg-brand-red-dark',
     'hover:border-transparent',
     'hover:border-neutral-600',
+    'hover:shadow-brand-blue-pale/20',
     'hover:text-white',
     'inline',
     'leading-tight',
