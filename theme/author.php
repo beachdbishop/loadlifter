@@ -98,7 +98,7 @@ if ( $author_org === 'BeachFleischman' ) {
 					}
 					?>
 					<?php if ( (!empty($author_url)) && ( $peep_class === 'internal' ) ) {
-						echo '<p class="text-right"><a class="inline-flex items-center text-brand-red-dark hover:text-brand-red" href="' . esc_attr($author_url) . '">Learn More <svg class="w-4 h-4 ml-1" aria-hidden="true"><use xlink:href="#arrow-right" /></svg></a></p>';
+						echo '<p class="text-right"><a class="inline-flex items-center text-brand-red-dark hover:text-brand-red" href="' . esc_attr($author_url) . '">Read more about ' . esc_html($author_name) . ' <svg class="w-4 h-4 ml-1" aria-hidden="true"><use xlink:href="#arrow-right" /></svg></a></p>';
 					} ?>
                     </div>
 
