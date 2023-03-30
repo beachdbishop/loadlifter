@@ -107,6 +107,7 @@ module.exports = {
     'max-w-3xl',
     'max-w-4xl',
     'max-w-5xl',
+    'max-w-6xl',
     'max-w-md',
     'max-w-prose',
     'rounded-md',
