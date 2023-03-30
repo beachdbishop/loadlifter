@@ -6,7 +6,7 @@
  * For esbuild documentation, please see:
  * https://esbuild.github.io/
  */
-
+'use strict';
 
 var ready = (callback) => {
   if (document.readyState != "loading") callback();
@@ -32,49 +32,6 @@ navMenu.addEventListener('keyup', e => {
 });
 
 
-
-
-
-// const cards = document.querySelectorAll(`.sick-card`);
-// Add the tails to each card
-// cards.forEach((card) => {
-//   [`sick-top`, `sick-right`, `sick-bottom`, `sick-left`].forEach((side) => {
-//     const tail = document.createElement(`div`);
-//     tail.classList.add(`sick-tail`, side);
-//     card.appendChild(tail);
-//   });
-//   // if that card has no colours, add some
-//   if (!card.style.getPropertyValue(`--color1`)) {
-//     card.style.setProperty(
-//       `--color1`,
-//       `hsl(${Math.random() * 360}, 100%, 50%)`
-//     );
-//     card.style.setProperty(
-//       `--color2`,
-//       `hsl(${Math.random() * 360}, 100%, 50%)`
-//     );
-//   }
-// });
-
-// setInterval(() => {
-//   cards.forEach((card) => {
-//     if (!card.style.getPropertyValue(`--color1`)) {
-//       card.style.setProperty(
-//         `--color1`,
-//         `hsl(${Math.random() * 360}, 100%, 50%)`
-//       );
-//       card.style.setProperty(
-//         `--color2`,
-//         `hsl(${Math.random() * 360}, 100%, 50%)`
-//       );
-//     }
-//   });
-// }, 7000);
-
-
-
-
-
 /* via: https://w3c.github.io/aria-practices/examples/disclosure/disclosure-navigation-hybrid.html */
 /*
  *   This content is licensed according to the W3C Software License at
@@ -82,8 +39,6 @@ navMenu.addEventListener('keyup', e => {
  *
  *   Supplemental JS for the disclosure menu keyboard behavior
  */
-
-'use strict';
 
 class DisclosureNav {
   constructor(domNode) {
@@ -247,7 +202,8 @@ class DisclosureNav {
 
   toggleMenu(domNode, show) {
     if (domNode) {
-      domNode.style.display = show ? 'block' : 'none';
+      // domNode.style.display = show ? 'block' : 'none';
+      domNode.style.visibility = show ? 'visible' : 'hidden';
     }
   }
 
