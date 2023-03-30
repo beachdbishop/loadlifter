@@ -12,25 +12,34 @@ $menuItemsPrimary = [
 	"services" => [
 		"label" => 'Services',
 		"url" => '/services/',
+		"hasChildren" => true,
 	],
 	"industries" => [
 		"label" => 'Industries',
 		"url" => '/industries/',
+		"hasChildren" => true,
 	],
 	"about" => [
-		"label" => 'About Us',
+		"label" => 'About',
 		"url" => '/about/',
+		"hasChildren" => true,
 	],
 	"careers" => [
 		"label" => 'Careers',
 		"url" => '/career-opportunities/',
+		"hasChildren" => true,
 	],
 	"resources" => [
-		"label" => 'Resources',
-		"url" => '/resources/',
+		"label" => 'Contact',
+		"url" => '/contact-us/',
+		"hasChildren" => false,
 	],
 ];
 $menuItemsSecondary = [
+    "clients" => [
+		"label" => 'Client Center',
+		"url" => '/client-center/',
+	],
 	"insights" => [
 		"label" => 'Insights',
 		"url" => '/blog/',
@@ -38,15 +47,7 @@ $menuItemsSecondary = [
 	"events" => [
 		"label" => 'Events',
 		"url" => '/category/events/',
-	],
-	"clients" => [
-		"label" => 'Client Center',
-		"url" => '/client-center/',
-	],
-	"contact" => [
-		"label" => 'Contact Us',
-		"url" => '/contact-us/',
-	],
+    ],
 ];
 ?>
 
@@ -78,22 +79,35 @@ $menuItemsSecondary = [
 				</li>
 			</ul>
 			<button class="toggle-mobile-nav | ml-2 pl-2 py-2 cursor-pointer md:hidden" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
-				<svg class="w-8 h-8" aria-hidden="true">
-					<use xlink:href="#bars" />
-				</svg>
-				<span class="sr-only">Menu</span>
+				<span class="">Menu</span>
 			</button>
 		</div>
 
 		<nav class="menus-container | md:flex md:flex-col md:order-1 md:grow print:hidden" id="primary-navigation" aria-label="main menu">
 			<!-- <ul role="list" class="nav-primary | list-none flex font-bold md:justify-end md:items-center order-first md:order-last children:inline"> -->
-			<ul role="list" class="nav-primary | list-none flex flex-col gap-2 md:flex-row md:justify-end lg:gap-6">
+			<div role="list" class="nav-primary | list-none flex flex-col gap-2 md:flex-row md:justify-end lg:gap-6">
 				<?php
 				foreach ($menuItemsPrimary as $primary) {
-					echo '<li class="menu-item md:text-lg lg:text-xl "><a class="menu-level-0 hover:text-brand-red" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
+					if ( $primary['hasChildren'] ) {
+                        echo '<section class="">
+                            <div class=" | font-bold font-head md:text-lg lg:text-xl ">
+						        <button type="button" class="py-2 menu-level-0 md:py-4 hover:text-brand-red" aria-expanded="false">
+                                    <span>' . $primary['label'] . '</span>
+						            <svg focusable="false" class="inline-block llicon" aria-hidden="true"><use xlink:href="#angle-down"></use></svg>
+						        </button>
+						    </div>
+                            <div class="global-nav__sub-menu" style="visibility: hidden">
+                                <div class="container global-nav__container">
+                                    <p>brb, this broken.</p>
+                                </div>
+                            </div>
+                        </section>';
+					} else {
+						echo '<li class="font-bold menu-item font-head md:text-lg lg:text-xl "><a class="py-2 menu-level-0 md:py-4 hover:text-brand-red" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
+					}
 				}
 				?>
-			</ul>
+			</div>
 
 			<ul role="list" class="nav-secondary | mt-4 flex flex-col gap-2 md:flex-row md:order-first md:mt-0 md:justify-end md:items-center print:hidden md:uppercase md:font-bold lg:gap-6">
 				<?php
