@@ -78,7 +78,7 @@
 
                             </li>
                             <li class="lg:py-4">
-                                <p class="text-lg md:border-b-2 md:border-brand-blue-pale"><a href="/soar/">Strategic Operations &amp; Advisory Resources <small class="hidden md:inline">(SOAR)</small></a></p>
+                                <p class="text-lg md:border-b-2 md:border-brand-blue-pale"><a href="/soar/"><abbr title="Strategic Operations &amp; Advisory Resources">SOAR</abbr></a></p>
                                 <ul class="hidden mb-2 text-base md:block">
                                     <li class="soar-as"><a href="/soar/accounting-services-phoenix-tucson-arizona-accountants-cpas/">Accounting Services</a></li>
                                     <li class="soar-cyber"><a href="/soar/cybersecurity-phoenix-tucson-arizona/">Cybersecurity</a></li>
@@ -141,10 +141,10 @@
                 </li>
 			</ul>
 
-            <ul class="secondary-nav | md:text-sm font-bold md:uppercase text-neutral-500 md:order-first md:justify-end md:flex md:gap-x-2 md:py-2 lg:gap-x-4 print:hidden">
-                <li><a class="text-brand-red-dark hover:text-brand-red" href="/client-center/">Client Center</a></li>
-                <li><a class="hover:text-brand-blue" href="/blog/">Insights</a></li>
-                <li><a class="hover:text-brand-blue" href="/category/events/">Events</a></li>
+            <ul class="secondary-nav | mt-2 font-bold font-head md:text-sm md:font-body md:uppercase text-neutral-500 md:order-first md:justify-end flex flex-col gap-2 md:flex-row md:py-2 md:mt-0 lg:gap-x-4 print:hidden">
+                <li class="px-1 md:px-0"><a class="text-brand-red-dark hover:text-brand-red" href="/client-center/">Client Center</a></li>
+                <li class="px-1 md:px-0"><a class="hover:text-brand-blue" href="/blog/">Insights</a></li>
+                <li class="px-1 md:px-0"><a class="hover:text-brand-blue" href="/category/events/">Events</a></li>
             </ul>
 		</nav>
 
