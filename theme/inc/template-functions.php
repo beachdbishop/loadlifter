@@ -389,3 +389,19 @@ function ll_show_reusable_blocks_menu() {
 	);
 }
 add_action( 'admin_menu', 'll_show_reusable_blocks_menu' );
+
+/**
+ * Prevent Widows for headlines and such
+ *
+ * @via https://davidwalsh.name/word-wrap-mootools-php
+ */
+function ll_no_widows( $text, $minWords = 3) {
+	$return = $text;
+	$arr = explode(' ',$text);
+	if(count($arr) >= $minWords) {
+		$arr[count($arr) - 2].= '&nbsp;'.$arr[count($arr) - 1];
+		array_pop($arr);
+		$return = implode(' ',$arr);
+	}
+	return $return;
+}
