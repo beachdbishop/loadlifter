@@ -3,46 +3,6 @@
     "title": "Industry and Service Content Fields",
     "fields": [
         {
-            "key": "field_640f6a3139283",
-            "label": "Main Content",
-            "name": "ll_content_main",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "This is the content that will be shown first (next to the contact form on desktop views)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": 16,
-            "placeholder": "Opening para",
-            "new_lines": ""
-        },
-        {
-            "key": "field_640f6be239286",
-            "label": "Secondary Content",
-            "name": "ll_content_secondary",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "rows": 16,
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
             "key": "field_6424a9679d8fd",
             "label": "Industry Post Category",
             "name": "ll_ind_category",
@@ -183,5 +143,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680133015
+    "modified": 1680198230
 }
