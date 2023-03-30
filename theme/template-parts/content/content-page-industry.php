@@ -125,11 +125,9 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
             <div class="ind-grid-area-c">
                 <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
                     <?php if ( is_page( 'Construction' ) ) {
-                        // get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
-                        echo 'construction newsletter FORM';
+                        get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
                     } else {
-                        // get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
-                        echo 'reg newsletter FORM';
+                        get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
                     } ?>
                 </div>
             </div>
