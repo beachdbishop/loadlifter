@@ -128,8 +128,7 @@
                 "realestate9": "Partners who help you make an impact.",
                 "realestate10": "Own the way you do business.",
                 "realestate11": "Partners in your development.",
-                "soar1": "Strategic Operations & Advisory Resources",
-                "cannabis1": "Navigating the highs and lows of a cutting edge industry."
+                "soar1": "Strategic Operations & Advisory Resources"
             },
             "default_value": false,
             "return_format": "array",
@@ -146,14 +145,14 @@
             "aria-label": "",
             "type": "textarea",
             "instructions": "Add SEO footer text (up to the copyright+year sentence... that gets included automatically.)",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "default_value": "Accountants | Auditors | Advisors | Consultants | CPAs :: BeachFleischman PLLC is the largest locally-owned public accounting and consulting firm in Southern Arizona and a Top 200 CPA firm in the United States. Serving clients in Phoenix, Tucson, Mesa, Scottsdale, Tempe, Gilbert, Glendale, Flagstaff, and Chandler, BeachFleischman provides accounting, audit, consulting, and tax services to businesses, organizations, and individuals (U.S. and foreign-based), doing business domestically and internationally.",
+            "default_value": "",
             "maxlength": "",
             "rows": 6,
             "placeholder": "",
@@ -178,5 +177,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1678403829
+    "modified": 1680134334
 }

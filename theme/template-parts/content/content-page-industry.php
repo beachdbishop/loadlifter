@@ -38,6 +38,15 @@ if ( $ind_featimg == true ) {
 } else {
 	$ind_featimg_url = '';
 }
+
+$ind_post_category = get_field( 'll_ind_category' );
+$ind_cta_html = get_field( 'll_ind_cta_html' );
+$ind_groups_html = get_field( 'll_ind_groups_html' );
+$ind_people = get_field( 'll_ind_people' );
+$ind_people_display = get_field( 'll_ind_people_display_style' );
+// if ( $ind_people_display === 'slider' ) {
+//     add_action( 'wp_enqueue_scripts', 'll_forceenq_a11y_slider_assets' );
+// }
 ?>
 
 <style><?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
@@ -60,12 +69,82 @@ if ( $ind_featimg == true ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-2 md:container md:mx-auto md:px-0">
-        <div class="prose lg:prose-xl entry-content">
+        <div class="entry-cont | industry-page-grid my-4 md:gap-8 md:my-8 md:grid md:auto-rows-auto lg:my-16 lg:gap-16">
 
-			<?php the_content(); ?>
+            <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
+                <?php the_content(); ?>
+            </div>
 
-			<div class="clear-both">&nbsp;</div>
+            <div class="my-16 ind-grid-area-b md:my-0 md:col-span-3">
+
+                <?php if ( $ind_post_category ) : ?>
+                    <section class="py-4 full-bleed not-prose bg-neutral-900 text-neutral-100 md:py-8 lg:py-16">
+                        <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3>Insights</h3>
+                                <a href="/blog/" class="px-4 py-2 border-2 rounded-lg border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
+                            </div>
+                            <?php echo do_shortcode( '[display-posts taxonomy="category" tax_term="' . $ind_post_category->slug . '" tax_operator="IN" taxonomy_2="category" tax_2_term="archived-events" tax_2_operator="NOT IN" orderby="date" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="dps-grid-3max" layout="card-simple" /]' ); ?>
+                        </div>
+                    </section>
+                <?php endif; ?>
+
+                <?php // CTA
+                if ( $ind_cta_html ) :
+                    echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>';
+                    echo $ind_cta_html;
+                endif;
+                ?>
+
+                <?php // INDUSTRY PROFESSIONALS AND INVOLVEMENT   ?>
+                <section class="py-4 bg-white full-bleed not-prose md:py-8 lg:py-16">
+                    <div class="px-2 md:container md:mx-auto md:px-0">
+                        <?php if ( ( $ind_people ) && ( $ind_people_display != 'hide' ) ) : ?>
+                            <h3 class="text-brand-red">Industry Professionals</h3>
+
+                            <?php
+                            if ( $ind_people_display === 'slider' ) :
+                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $ind_people ) . '" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="slider slider-people mx-auto max-w-5xl" layout="slide-people" /]' );
+                            endif;
+
+                            if ( $ind_people_display === 'grid' ) :
+                                // echo '<pre class="todo">$ind_people = ' . implode( ', ', $ind_people ) . '</pre>';
+                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $ind_people ) . '" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-md" /]' );
+                            endif; ?>
+
+                        <?php endif; ?>
+
+                        <?php if ( $ind_groups_html ) :
+                            echo $ind_groups_html;
+                        endif; ?>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="ind-grid-area-c">
+                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
+                    <?php if ( is_page( 'Construction' ) ) {
+                        // get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
+                        echo 'construction newsletter FORM';
+                    } else {
+                        // get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
+                        echo 'reg newsletter FORM';
+                    } ?>
+                </div>
+            </div>
 
         </div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
+
+<?php if ( $ind_people_display === 'slider' ) : ?>
+<script>
+  const slider = new A11YSlider(document.querySelector(".slider"), {
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    dots: true
+  });
+</script>
+<?php endif; ?>
