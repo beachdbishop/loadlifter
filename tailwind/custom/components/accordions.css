@@ -1,0 +1,66 @@
+/* Details */
+.accordions {}
+.accordions-wide {
+  @apply mx-0 md:mx-12 lg:mx-16;
+}
+.accordions-wide {
+  @apply md:mx-8 lg:mx-16;
+}
+
+.accordions details {
+  @apply mb-[2px];
+}
+.accordions summary {
+  @apply font-head text-3xl leading-relaxed bg-brand-blue text-brand-blue-faint px-4 pb-1;
+}
+
+details[open] summary ~ * {
+	animation: sweep 0.4s ease-in-out;
+}
+@keyframes sweep {
+	0% {
+		opacity: 0;
+		margin-top: -10px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+summary {
+	list-style: none;
+	cursor: pointer;
+
+	> * {
+		display: inline;
+	}
+}
+
+summary::marker,
+summary::-webkit-details-marker {
+	display: none;
+}
+details[open] summary::marker,
+details[open] summary::-webkit-details-marker {
+	display: none;
+}
+
+.accordions summary::before {
+	content: "+";
+	color: var(--wp--preset--color--brand-blue-pale);
+  font-family: monospace;
+  margin-right: 0.2em;
+}
+
+.accordions details[open] summary::before {
+	content: "-";
+}
+
+/* .on-darkbg details summary::before {
+	color: var(--wp--preset--color--brand-blue-pale);
+} */
+
+.accordions .details-inner {
+  @apply bg-neutral-100 px-2 pb-4 lg:pt-4 lg:px-4 lg:pb-6;
+}

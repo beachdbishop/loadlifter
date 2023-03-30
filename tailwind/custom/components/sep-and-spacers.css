@@ -1,0 +1,45 @@
+/* Separators */
+[class*="is-style-sep-"] {
+	@apply my-4 h-[3px] w-full border-0 md:my-6 lg:my-8;
+	background-image: linear-gradient(
+		to bottom,
+		var(--start) 33%,
+		transparent 33%,
+		transparent 66%,
+		var(--end) 66%,
+		var(--end) 100%
+	);
+}
+.is-style-sep-blue {
+	--start: #00668e;
+	--end: #67e8f9;
+}
+.is-style-sep-red {
+	--start: #ce182d;
+	--end: #f87171;
+}
+.is-style-sep-gray {
+	--start: #262626;
+	--end: #525252;
+}
+
+/* Spacers */
+.wp-block-spacer {
+	@apply mt-0 mb-0;
+
+	&.is-style-xs {
+		height: clamp(8px, 2vw, 24px) !important;
+	}
+	&.is-style-sm {
+		height: clamp(12px, 3vw, 36px) !important;
+	}
+	&.is-style-md {
+		height: clamp(24px, 5vw, 48px) !important;
+	}
+	&.is-style-lg {
+		height: clamp(36px, 8vw, 72px) !important;
+	}
+	&.is-style-xl {
+		height: clamp(48px, 9vw, 96px) !important;
+	}
+}
