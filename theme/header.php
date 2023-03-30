@@ -37,14 +37,7 @@
 	<a href="#primary" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'loadlifter' ); ?></a>
 
 	<?php if ( ( !is_page_template( 'tpl-landing-page.php' ) ) && ( !is_page_template( 'tpl-landing-page-bare.php' ) ) ) {
-		// get_template_part( 'template-parts/layout/header', 'content' );
-		// get_template_part( 'template-parts/layout/header-alt', 'content' );
-		// get_template_part( 'template-parts/layout/header-kp', 'content' );
-		// get_template_part( 'template-parts/layout/header-simple', 'content' );
-		// get_template_part( 'template-parts/layout/header', 'nomega' );
-        // get_template_part( 'template-parts/layout/header-leaf', 'content');
         get_template_part( 'template-parts/layout/header-lessleaf', 'content');
-        // get_template_part( 'template-parts/layout/header-maxmegamenu', 'content' );
 	} else {
 		get_template_part( 'template-parts/layout/header', 'lp' );
 	} ?>
