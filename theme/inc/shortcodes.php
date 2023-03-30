@@ -105,4 +105,4 @@ function ll_tptdisclaimer_shortcode() {
 	return '<p class="">Any accounting, business or tax advice contained in this communication, including attachments and enclosures, is not intended as a thorough, in-depth analysis of specific issues, nor a substitute for a formal opinion, nor is it sufficient to avoid tax-related penalties. If desired, BeachFleischman PLLC would be pleased to perform the requisite research and provide you with a detailed written analysis. Such an engagement may be the subject of a separate engagement letter that would define the scope and limits of the desired consultation services.</p>';
 
 }
-add_shortcode( 'tptdisclaimer', 'll_tptdisclaimer_shortcode');
+// add_shortcode( 'tptdisclaimer', 'll_tptdisclaimer_shortcode');
