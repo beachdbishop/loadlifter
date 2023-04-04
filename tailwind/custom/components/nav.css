@@ -70,7 +70,9 @@
   @apply border-white;
 }
 
-
+.disclosure-nav .nav-footer-only {
+  @apply hidden;
+}
 
 
 
