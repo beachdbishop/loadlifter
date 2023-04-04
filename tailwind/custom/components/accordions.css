@@ -1,32 +1,4 @@
 /* Details */
-.accordions {}
-.accordions-wide {
-  @apply mx-0 md:mx-12 lg:mx-16;
-}
-.accordions-wide {
-  @apply md:mx-8 lg:mx-16;
-}
-
-.accordions details {
-  @apply mb-[2px];
-}
-.accordions summary {
-  @apply font-head text-3xl leading-relaxed bg-brand-blue text-brand-blue-faint px-4 pb-1;
-}
-
-details[open] summary ~ * {
-	animation: sweep 0.4s ease-in-out;
-}
-@keyframes sweep {
-	0% {
-		opacity: 0;
-		margin-top: -10px;
-	}
-	100% {
-		opacity: 1;
-		margin-top: 0px;
-	}
-}
 
 summary {
 	list-style: none;
@@ -46,21 +18,83 @@ details[open] summary::-webkit-details-marker {
 	display: none;
 }
 
-.accordions summary::before {
-	content: "+";
-	color: var(--wp--preset--color--brand-blue-pale);
-  font-family: monospace;
-  margin-right: 0.2em;
+
+.accordions {
+  @apply mb-8;
+
+  details {
+    @apply mb-[2px];
+  }
+
+  details[open] summary {
+    @apply before:content-['-'];
+  }
+
+  summary {
+    @apply font-head text-3xl leading-relaxed px-4 pb-1 before:content-['+']  before:font-mono before:mr-1;
+  }
+
+  .details-inner {
+    @apply bg-neutral-100 px-2 pb-4 lg:pt-4 lg:px-4 lg:pb-6;
+  }
 }
 
-.accordions details[open] summary::before {
-	content: "-";
+
+.accordions.is-style-default {
+  details[open] summary {
+    @apply text-neutral-900;
+  }
+
+  summary {
+    @apply bg-neutral-200 text-neutral-700;
+
+    &::before {
+      color: #525252;
+    }
+  }
 }
 
-/* .on-darkbg details summary::before {
-	color: var(--wp--preset--color--brand-blue-pale);
-} */
 
-.accordions .details-inner {
-  @apply bg-neutral-100 px-2 pb-4 lg:pt-4 lg:px-4 lg:pb-6;
+.accordions.is-style-blue {
+  details[] summary {
+    @apply text-white;
+  }
+
+  summary {
+    @apply bg-brand-blue text-brand-blue-faint;
+
+    &::before {
+      @apply text-brand-blue-pale;
+    }
+  }
+}
+
+
+.accordions.is-style-red {
+  details[] summary {
+    @apply text-white;
+  }
+
+  summary {
+    @apply bg-brand-red text-brand-red-faint;
+
+    &::before {
+      @apply text-brand-red-pale;
+    }
+  }
+}
+
+
+details[open] summary ~ * {
+	animation: sweep 0.4s ease-in-out;
+}
+@keyframes sweep {
+	0% {
+		opacity: 0;
+		margin-top: -10px;
+	}
+	100% {
+		opacity: 1;
+		margin-top: 0px;
+	}
 }
