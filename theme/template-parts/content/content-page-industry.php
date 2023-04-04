@@ -52,24 +52,24 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
 <style><?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>.page-hero { background-image: <?php echo $gradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); }
 @media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $ind_featimg_url ); ?>'); } }</style>
 
-<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
-	<div class="flex flex-col justify-center px-2 md:container md:mx-auto md:px-0 min-h-hero">
+<header class="page-hero | ll-equal-vert-padding bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
+	<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
 
 		<div class="">
-            <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 md:text-6xl"><?php echo get_the_title(); ?></h1>
-			<h2 class="mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 md:text-4xl"><?php echo $ind_message['label']; ?></h2>
+            <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl"><?php echo get_the_title(); ?></h1>
+			<h2 class="mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl"><?php echo $ind_message['label']; ?></h2>
 			<!-- <p class="mt-4 leading-normal text-white lg:text-lg"><?php // echo $ind_excerpt; ?></p> -->
 		</div>
 
 	</div>
     <?php if (function_exists('bcn_display') && !is_front_page()) { ?>
-        <div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+        <div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
     <?php } ?>
 </header>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-2 md:container md:mx-auto md:px-0">
-        <div class="entry-cont | industry-page-grid my-4 md:gap-8 md:my-8 md:grid md:auto-rows-auto lg:my-16 lg:gap-16">
+        <div class="entry-cont | industry-page-grid mt-4 md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
             <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
                 <?php the_content(); ?>
@@ -81,7 +81,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                     <section class="py-4 full-bleed not-prose bg-neutral-900 text-neutral-100 md:py-8 lg:py-16">
                         <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
                             <div class="flex items-center justify-between mb-4">
-                                <h3>Insights</h3>
+                                <h2>Insights</h2>
                                 <a href="/blog/" class="px-4 py-2 border-2 rounded-lg border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
                             </div>
                             <?php echo do_shortcode( '[display-posts taxonomy="category" tax_term="' . $ind_post_category->slug . '" tax_operator="IN" taxonomy_2="category" tax_2_term="archived-events" tax_2_operator="NOT IN" orderby="date" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="dps-grid-3max" layout="card-simple" /]' ); ?>
