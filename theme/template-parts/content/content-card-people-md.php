@@ -15,17 +15,11 @@ if ( $peep_thumbnail ) {
 	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
 
-// if ( get_field( 'll_people_organization' ) === 'BeachFleischman' ) {
-// 	$peep_class = 'internal';
-// } else {
-// 	$peep_class = 'external';
-// }
-
 $peep_level = get_field( 'll_people_level' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
-	<div class="card-headshot | mx-auto mb-2 md:mb-4 rounded-full bg-brand-red-faint bg-top bg-cover grayscale-0 group-hover:grayscale-[30%]" style="background-image: url('<?php echo $headshot; ?>');">
+	<div class="card-headshot | mx-auto mb-2 md:mb-4 bg-brand-red-faint bg-top bg-cover grayscale-0 group-hover:grayscale-[30%]" style="background-image: url('<?php echo $headshot; ?>');">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>">
 			<div class="w-[200px] aspect-square">&nbsp;</div>
 		</a>
