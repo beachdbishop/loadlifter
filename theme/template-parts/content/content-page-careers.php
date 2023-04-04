@@ -43,6 +43,58 @@ if ($page_featimg == true) {
     $page_featimg_url = '';
 }
 
+$cards_expect = [
+    "personal" => [
+        "label" => 'Personal success',
+        "icon" => 'fa-handshake',
+        "backContent" => '<p>You will have a challenging and rewarding career with many options for growth. You are unique, so your goals and dreams are unique; we help you pursue your success.</p>',
+    ],
+    "easy" => [
+        "label" => 'Easy interactions',
+        "icon" => 'fa-comments',
+        "backContent" => '<p>Clear communication and accessible management provide you with a supportive environment. When serving clients, we integrate our service teams to provide a collaborative experience for our staff and clients alike.</p>',
+    ],
+    "ability" => [
+        "label" => 'Enhanced ability',
+        "icon" => 'fa-gauge-high',
+        "backContent" => '<p>You will have continuous opportunities to learn and grow here. BeachFleischman has built a learning culture that includes:</p>
+        <ul class="mt-2 ml-3 list-disc">
+            <li>Mentoring program</li>
+            <li>CPA exam bonus and reimbursement</li>
+            <li>Paid continuing professional education, membership dues, and licenses</li>
+            <li>Leadership development</li>
+        </ul>',
+    ],
+    "community" => [
+        "label" => 'Community impact',
+        "icon" => 'fa-house-building',
+        "backContent" => '<p>Are you passionate about supporting the community? BeachFleischman encourages and financially supports your involvement in local organizations.</p>',
+    ],
+];
+$cards_future = [
+    "advancement" => [
+        "label" => 'Career advancement',
+        "icon" => 'fa-rocket',
+        "backContent" => '<p>You will have many avenues to advance your career. You choose your area of specialization and we\'ll provide challenging work that empowers you to be your best.</p>',
+    ],
+    "easy" => [
+        "label" => 'Be heard',
+        "icon" => 'fa-microphone',
+        "backContent" => '<p>Your feedback and ideas are important to us. Through our collaborative work style, your voice will be heard.</p>',
+    ],
+    "ability" => [
+        "label" => 'Embrace technology',
+        "icon" => 'fa-laptop-mobile',
+        "backContent" => '<p>Be part of our continuous drive to innovate through technology. We automate many processes and use cloud-based solutions to create a seamless experience for our clients and staff alike.</p>',
+    ],
+    "community" => [
+        "label" => 'Seek success',
+        "icon" => 'fa-thumbs-up',
+        "backContent" => '<p>Our success depends on you, your career, your development, and your growth. Here, you will follow your passions, including working with growth-oriented clients and taking ownership of your projects. Seek success and the future is yours!</p>',
+    ],
+];
+
+
 if ('local' === wp_get_environment_type()) {
     $hr_ids = '1842,1843,3969';
 } else {
@@ -58,17 +110,17 @@ if ('local' === wp_get_environment_type()) {
 @media (min-width: 768px) { .page-hero { background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url($page_featimg_url); ?>'); } }
 </style>
 
-<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
-    <div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
+<header class="page-hero | ll-equal-vert-padding bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" aria-label="<?php the_title_attribute(); ?>">
+    <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
 
         <div class="">
-            <h1 class="leading-none text-transparent tracking-light bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text head-last-bold lg:text-6xl"><?php echo $page_title; ?></h1>
-            <p class="mt-4 leading-normal text-white lg:text-2xl"><?php echo $page_excerpt; ?></p>
+            <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl"><?php echo $page_title; ?></h1>
+            <h2 class="mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl"><?php echo $page_excerpt; ?></h2>
         </div>
 
     </div>
     <?php if (function_exists('bcn_display') && !is_front_page()) { ?>
-        <div class="breadcrumbs | container mx-auto px-1 md:px-0 font-head text-brand-gray-faint mt-4 md:mt-6 lg:mt-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+        <div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
     <?php } ?>
 </header>
 
@@ -137,89 +189,30 @@ if ('local' === wp_get_environment_type()) {
             <section class="full-bleed not-prose bg-gradient-to-b from-brand-blue-faint via-neutral-100 via-neutral-50 to-white">
                 <div class="px-1 pt-8 mx-auto max-w-prose md:px-0 lg:pt-12">
                     <h3 class="font-bold text-center text-brand-red">What you can expect</h3>
-                    <div class="flex flex-wrap justify-center gap-8 mx-auto my-4 md:my-12 lg:my-12">
+                    <div class="ind-card-flips is-style-blue | justify-center mx-auto my-4 md:my-12 lg:my-12 ">
+                    <?php foreach( $cards_expect as $card ) { ?>
                         <div>
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-front">
-                                        <div class="card-icon">
+                            <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size]">
+                                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-1000">
+                                    <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4">
+                                        <?php if ( $card['icon'] ) : ?>
+                                        <div class="card-icon | text-[--card-front-icon]">
                                             <span class="fa-stack fa-2x">
-                                                <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                <i class="fa-duotone fa-handshake fa-stack-1x text-brand-blue"></i>
+                                                <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                                <i class="fa-duotone <?php echo $card['icon']; ?> fa-stack-1x "></i>
                                             </span>
                                         </div>
-                                        <h4>Personal success</h4>
+                                        <?php endif; ?>
+                                        <h3 class="mt-2 font-light leading-none text-current"><?php echo $card['label']; ?></h3>
                                     </div>
-                                    <div class="card-back">
-                                        <h6>Personal success</h6>
-                                        <p>You will have a challenging and rewarding career with many options for growth. You are unique, so your goals and dreams are unique; we help you pursue your success.</p>
+                                    <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50">
+                                        <h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow"><?php echo $card['label']; ?></h6>
+                                        <p class="text-center text-shadow"><?php echo $card['backContent']; ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div>
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-front">
-                                        <div class="card-icon">
-                                            <span class="fa-stack fa-2x">
-                                                <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                <i class="fa-duotone fa-comments fa-stack-1x text-brand-blue"></i>
-                                            </span>
-                                        </div>
-                                        <h4>Easy interactions</h4>
-                                    </div>
-                                    <div class="card-back">
-                                        <h6>Easy interactions</h6>
-                                        <p>Clear communication and accessible management provide you with a supportive environment. When serving clients, we integrate our service teams to provide a collaborative experience for our staff and clients alike.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-front">
-                                        <div class="card-icon">
-                                            <span class="fa-stack fa-2x">
-                                                <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                <i class="fa-duotone fa-gauge-high fa-stack-1x text-brand-blue"></i>
-                                            </span>
-                                        </div>
-                                        <h4>Enhanced ability</h4>
-                                    </div>
-                                    <div class="card-back">
-                                        <h6>Enhanced ability</h6>
-                                        <p>You will have continuous opportunities to learn and grow here. BeachFleischman has built a learning culture that includes:</p>
-                                        <ul class="mt-2 ml-3 list-disc">
-                                            <li>Mentoring program</li>
-                                            <li>CPA exam bonus and reimbursement</li>
-                                            <li>Paid continuing professional education, membership dues, and licenses</li>
-                                            <li>Leadership development</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="card">
-                                <div class="card-content">
-                                    <div class="card-front">
-                                        <div class="card-icon">
-                                            <span class="fa-stack fa-2x">
-                                                <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                <i class="fa-duotone fa-house-building fa-stack-1x text-brand-blue"></i>
-                                            </span>
-                                        </div>
-                                        <h4>Community impact</h4>
-                                    </div>
-                                    <div class="card-back">
-                                        <h6>Community impact</h6>
-                                        <p>Are you passionate about supporting the community? BeachFleischman encourages and financially supports your involvement in local organizations.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <?php } ?>
                     </div>
                 </div>
             </section>
@@ -229,170 +222,58 @@ if ('local' === wp_get_environment_type()) {
                     <div class="grid gap-2 md:grid-cols-2 md:gap-4 lg:gap-8">
                         <div>
                             <h3 class="font-bold text-center text-brand-red">What you can expect</h3>
-                            <div class="flex flex-wrap justify-center gap-8 mx-auto my-4 md:my-12 lg:my-12">
+                            <div class="ind-card-flips is-style-blue | justify-center mx-auto my-4 md:my-12 lg:my-12 ">
+                            <?php foreach( $cards_expect as $card ) { ?>
                                 <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
+                                    <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size]">
+                                        <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-1000">
+                                            <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4">
+                                                <?php if ( $card['icon'] ) : ?>
+                                                <div class="card-icon | text-[--card-front-icon]">
                                                     <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-handshake fa-stack-1x text-brand-blue"></i>
+                                                        <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                                        <i class="fa-duotone <?php echo $card['icon']; ?> fa-stack-1x "></i>
                                                     </span>
                                                 </div>
-                                                <h4>Personal success</h4>
+                                                <?php endif; ?>
+                                                <h3 class="mt-2 font-light leading-none text-current"><?php echo $card['label']; ?></h3>
                                             </div>
-                                            <div class="card-back">
-                                                <h6>Personal success</h6>
-                                                <p>You will have a challenging and rewarding career with many options for growth. You are unique, so your goals and dreams are unique; we help you pursue your success.</p>
+                                            <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50">
+                                                <h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow"><?php echo $card['label']; ?></h6>
+                                                <p class="text-center text-shadow"><?php echo $card['backContent']; ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
-                                                    <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-comments fa-stack-1x text-brand-blue"></i>
-                                                    </span>
-                                                </div>
-                                                <h4>Easy interactions</h4>
-                                            </div>
-                                            <div class="card-back">
-                                                <h6>Easy interactions</h6>
-                                                <p>Clear communication and accessible management provide you with a supportive environment. When serving clients, we integrate our service teams to provide a collaborative experience for our staff and clients alike.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
-                                                    <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-gauge-high fa-stack-1x text-brand-blue"></i>
-                                                    </span>
-                                                </div>
-                                                <h4>Enhanced ability</h4>
-                                            </div>
-                                            <div class="card-back">
-                                                <h6>Enhanced ability</h6>
-                                                <p>You will have continuous opportunities to learn and grow here. BeachFleischman has built a learning culture that includes:</p>
-                                                <ul class="mt-2 ml-3 list-disc">
-                                                    <li>Mentoring program</li>
-                                                    <li>CPA exam bonus and reimbursement</li>
-                                                    <li>Paid continuing professional education, membership dues, and licenses</li>
-                                                    <li>Leadership development</li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
-                                                    <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-house-building fa-stack-1x text-brand-blue"></i>
-                                                    </span>
-                                                </div>
-                                                <h4>Community impact</h4>
-                                            </div>
-                                            <div class="card-back">
-                                                <h6>Community impact</h6>
-                                                <p>Are you passionate about supporting the community? BeachFleischman encourages and financially supports your involvement in local organizations.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <?php } ?>
                             </div>
                         </div>
                         <div>
                             <h3 class="font-bold text-center text-brand-red">Your future</h3>
-                            <div class="flex flex-wrap justify-center gap-8 mx-auto my-4 md:my-12 lg:my-12">
+                            <div class="ind-card-flips is-style-blue | justify-center mx-auto my-4 md:my-12 lg:my-12 ">
+                            <?php foreach( $cards_future as $card ) { ?>
                                 <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
+                                    <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size]">
+                                        <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-1000">
+                                            <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4">
+                                                <?php if ( $card['icon'] ) : ?>
+                                                <div class="card-icon | text-[--card-front-icon]">
                                                     <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-rocket fa-stack-1x text-brand-blue"></i>
+                                                        <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                                        <i class="fa-duotone <?php echo $card['icon']; ?> fa-stack-1x "></i>
                                                     </span>
                                                 </div>
-                                                <h4>Career advancement</h4>
+                                                <?php endif; ?>
+                                                <h3 class="mt-2 font-light leading-none text-current"><?php echo $card['label']; ?></h3>
                                             </div>
-                                            <div class="card-back">
-                                                <h6>Career advancement</h6>
-                                                <p>You will have many avenues to advance your career. You choose your area of specialization and we’ll provide challenging work that empowers you to be your best.</p>
+                                            <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50">
+                                                <h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow"><?php echo $card['label']; ?></h6>
+                                                <p class="text-center text-shadow"><?php echo $card['backContent']; ?></p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
-                                                    <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-microphone fa-stack-1x text-brand-blue"></i>
-                                                    </span>
-                                                </div>
-                                                <h4>Be heard</h4>
-                                            </div>
-                                            <div class="card-back">
-                                                <h6>Be heard</h6>
-                                                <p>Your feedback and ideas are important to us. Through our collaborative work style, your voice will be heard.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
-                                                    <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-laptop-mobile fa-stack-1x text-brand-blue"></i>
-                                                    </span>
-                                                </div>
-                                                <h4>Embrace technology</h4>
-                                            </div>
-                                            <div class="card-back">
-                                                <h6>Embrace technology</h6>
-                                                <p>Be part of our continuous drive to innovate through technology. We automate many processes and use cloud-based solutions to create a seamless experience for our clients and staff alike.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="card">
-                                        <div class="card-content">
-                                            <div class="card-front">
-                                                <div class="card-icon">
-                                                    <span class="fa-stack fa-2x">
-                                                        <i class="fa-solid fa-circle fa-stack-2x text-neutral-100"></i>
-                                                        <i class="fa-duotone fa-thumbs-up fa-stack-1x text-brand-blue"></i>
-                                                    </span>
-                                                </div>
-                                                <h4>Seek success</h4>
-                                            </div>
-                                            <div class="card-back">
-                                                <h6>Seek success</h6>
-                                                <p>Our success depends on you, your career, your development, and your growth. Here, you will follow your passions, including working with growth-oriented clients and taking ownership of your projects. Seek success and the future is yours!</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <?php } ?>
                             </div>
                         </div>
                     </div>
