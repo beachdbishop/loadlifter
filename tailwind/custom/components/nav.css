@@ -12,7 +12,7 @@
 }
 
 .disclosure-nav .dropmenu.mega {
-  @apply bg-white block border-t-4 border-brand-blue drop-shadow-xl rounded-b-sm w-full md:min-w-[640px] md:-left-[240px] lg:min-w-[960px] lg:-left-[320px] absolute top-[100%] z-20;
+  @apply bg-white block border-t-4 border-brand-blue drop-shadow-xl rounded-b-sm w-full md:min-w-[680px] md:-left-[240px] lg:min-w-[960px] lg:-left-[320px] absolute top-[100%] z-20;
 }
 
 .disclosure-nav ul {
@@ -39,7 +39,7 @@
 
 .disclosure-nav button,
 .disclosure-nav .main-link {
-  @apply px-0.5 py-1.5 lg:px-1 lg:py-2 flex border border-solid border-transparent items-center bg-transparent
+  @apply p-2 md:px-0.5 lg:px-1 flex border border-solid border-transparent items-center bg-transparent
 }
 
 .disclosure-nav .main-link {
