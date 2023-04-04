@@ -44,7 +44,7 @@ if ( $page_featimg == true ) {
 @media (min-width: 768px) { .page-hero { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $page_featimg_url ); ?>'); } }
 </style>
 
-<div class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-cover bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="<?php esc_attr( get_the_title() ); ?>">
+<div class="page-hero | ll-equal-vert-padding bg-brand-blue-dark bg-no-repeat bg-cover bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="<?php esc_attr( get_the_title() ); ?>">
 	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
 		<div class="w-full md:w-1/2">
 			<?php the_title( '<h1 class="leading-none text-transparent tracking-light bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text head-last-bold lg:text-6xl">', '</h1>' ); ?>

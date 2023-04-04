@@ -27,6 +27,16 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	transform: none;
 }
 
+
+.ll-equal-vert-padding {
+  @apply py-8 md:py-12 lg:py-16;
+}
+
+.ll-equal-vert-spacing {
+  @apply my-8 md:my-12 lg:my-16;
+}
+
+
 .icon {
 	@apply w-4 h-4;
 }

@@ -53,7 +53,7 @@ if ( $svc_featimg == true ) {
 @media (min-width: 768px) { .page-hero { background-image: <?php echo $gradientmd; ?>, url('<?php echo esc_url( $svc_featimg_url ); ?>'); } }
 </style>
 
-<header class="page-hero | py-8 md:py-12 bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
+<header class="page-hero | ll-equal-vert-padding bg-brand-blue-dark bg-no-repeat bg-[right_30%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="<?php the_title_attribute(); ?>">
 	<div class="flex flex-col justify-center px-1 md:container md:mx-auto md:px-0 min-h-hero">
 
 		<div class="md:flex">

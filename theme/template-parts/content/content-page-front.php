@@ -32,16 +32,19 @@ $brand_message = 'Partners who value your <strong>vision</strong>.';
 $page_excerpt = 'Work with us and experience the power of collaboration and what it can accomplish.';
 ?>
 
-<div class="page-hero | py-8 md:py-12 lg:py-20 bg-brand-blue-dark bg-center bg-cover bg-fixed" style="background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $featimg[0] ); ?>');" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="<?php esc_attr_e( get_the_title(), 'loadlifter' ); ?>">
-	<div class="px-1 min-h-[240px] flex items-center md:container md:mx-auto md:px-0 md:flex md:min-h-hero ">
-		<div class="w-full md:w-1/2 ">
-			<header class="mb-4">
-				<h1 class="leading-none tracking-tight text-transparent bg-gradient-to-r from-brand-blue-pale to-white bg-clip-text lg:text-6xl head-last-bold"><?php echo $brand_message; ?></h1>
-			</header>
-			<p class="text-lg leading-normal text-brand-blue-faint lg:text-2xl"><?php echo $page_excerpt; ?></p>
+<header class="page-hero | ll-equal-vert-padding bg-brand-blue-dark bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" style="background-image: <?php echo $easedGradient; ?>, url('<?php echo esc_url( $featimg[0] ); ?>');" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="image" aria-label="<?php esc_attr_e( get_the_title(), 'loadlifter' ); ?>">
+    <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
+
+        <div class="">
+            <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl"><?php echo $brand_message; ?></h1>
+			<h2 class="mt-4 text-2xl leading-normal text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl"><?php echo $page_excerpt; ?></h2>
 		</div>
+
 	</div>
-</div>
+    <?php if (function_exists('bcn_display') && !is_front_page()) { ?>
+        <div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+    <?php } ?>
+</header>
 
 <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
