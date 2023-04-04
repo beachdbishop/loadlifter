@@ -9,14 +9,14 @@
 		"@tailwindcss/line-clamp": "^0.4.0",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/tailwindcss": "^3.0.10",
-    "@wordpress/prettier-config": "^2.7.0",
+		"@wordpress/prettier-config": "^2.7.0",
 		"@zachleat/details-utils": "^2.0.2",
 		"a11y-slider": "^0.4.15",
 		"archiver": "^5.3.1",
 		"browser-sync": "^2.27.10",
 		"cross-env": "^7.0.3",
 		"esbuild": "^0.16.16",
-    "eslint-config-prettier": "^8.6.0",
+		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-php-markup": "^6.0.0",
 		"eslint-plugin-tailwindcss": "^3.5.0",
 		"npm-run-all": "^4.1.5",
@@ -25,7 +25,7 @@
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.8.2",
 		"prettier-plugin-tailwindcss": "^0.2.1",
-		"tailwindcss": "^3.2.4",
+		"tailwindcss": "^3.3.1",
 		"vanilla-tilt": "^1.7.2"
 	},
 	"scripts": {
@@ -39,7 +39,7 @@
 		"watch:esbuild": "npm run development:esbuild -- --watch",
 		"watch:browser-sync": "browser-sync start --proxy \"peoplecptauthortest.local\" --files \"theme\" --no-notify --no-inject-changes",
 		"watch": "run-p watch:**",
-    "start": "run-p watch:**",
+		"start": "run-p watch:**",
 		"lint:eslint": "npx eslint theme/",
 		"lint:prettier": "npx prettier --check .",
 		"lint": "run-p lint:*",
@@ -54,5 +54,5 @@
 		"zip": "node node_scripts/zip.js loadlifter",
 		"bundle": "run-s production zip"
 	},
-  "prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config"
 }
