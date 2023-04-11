@@ -29,8 +29,7 @@ $trending = get_field( 'll_front_trending_items' );
 		</header>
 
 		<div class="entry-content">
-            <!-- <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-20% via-brand-blue-pale via-40% via-brand-blue via-60% to-neutral-900 bg-180pct animate-sway"> -->
-            <section class="full-bleed ll-equal-vert-padding bg-brand-blue ">
+            <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway">
                 <div class="px-2 wp-block-group post-grid md:container md:mx-auto md:px-0 has-brand-blue-faint-color">
                     <h2 class="mb-4 lg:mb-8">Trending Now</h2>
                     <?php echo do_shortcode( '[display-posts post_type="post,page,industries" id="' . implode( ', ', $trending ) . '" ignore_sticky_posts="true" orderby="title" order="DESC" wrapper="div" wrapper_class="dps-grid-3max text-brand-blue-faint" layout="card-simple" /]' ); ?>

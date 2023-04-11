@@ -38,6 +38,9 @@ module.exports = {
         'mooney-desert1': "url('img/cmooney-dsc_834372-bw.jpg')",
         'mooney-desert2': "url('img/cmooney-dsc_835072-bw.jpg')",
       },
+      backgroundSize: {
+        '180pct': '180% 180%',
+      },
       maxWidth: {
         '46char': '46ch',
         'socimg': '736px',
@@ -60,6 +63,7 @@ module.exports = {
     'a11y-slider-dots',
     'a11y-slider-next',
     'a11y-slider',
+    'bg-180pct',
     'bg-current',
     'bg-brand-gray-dark',
     'bg-brand-red-dark',

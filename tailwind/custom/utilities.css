@@ -36,6 +36,28 @@ div:not(.block-editor-block-list__layout) .full-bleed {
   @apply my-8 md:my-12 lg:my-16;
 }
 
+.bg-gradient-70 {
+  background-image: linear-gradient(70deg, var(--tw-gradient-stops));
+}
+.bg-gradient-110 {
+  background-image: linear-gradient(110deg, var(--tw-gradient-stops));
+}
+
+.animate-sway {
+  animation: sway 21s ease infinite;
+}
+
+@keyframes sway {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .icon {
 	@apply w-4 h-4;
@@ -104,3 +126,5 @@ via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
 		content: " | ";
 	}
 }
+
+

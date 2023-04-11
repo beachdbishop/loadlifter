@@ -135,6 +135,9 @@ function ll_disable_wp57_menu_hover() {
 	echo '<style>#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover { box-shadow: none !important; }</style>';
 }
 
+function ll_enable_monospace_acf_textarea() {
+    echo '<style>.acf-input textarea { font-family: "IBM Plex Mono", monospace; background-color: #2d2b55; color: #face00; line-height: 1.2; }</style>';
+}
 
 /**
  * Disable automatic creation of YARPP thumbnail sizes
@@ -148,11 +151,12 @@ add_filter( 'yarpp_enqueue_thumbnails_style', '__return_false' );
 switch( wp_get_environment_type() ) {
 	case 'local':
 		// add_action( 'wp_enqueue_scripts', 'll_checka11y_style' );
-		// add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+        add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
 		break;
 
 	case 'staging':
-		// add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 		break;
 
 	default:

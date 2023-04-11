@@ -65,16 +65,17 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                 <section class="py-4 bg-white full-bleed not-prose md:py-8 lg:py-16">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $ind_people ) && ( $ind_people_display != 'hide' ) ) : ?>
-                            <h3 class="text-brand-red">Industry Professionals</h3>
+                            <h2 class="text-brand-red">Industry Professional<?php if( count( $ind_people ) > 1 ) { echo "s"; } ?></h2>
 
                             <?php
                             if ( $ind_people_display === 'slider' ) :
                                 echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $ind_people ) . '" posts_per_page="-1" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="slider slider-people mx-auto max-w-5xl" layout="slide-people" /]' );
                             endif;
 
-                            if ( $ind_people_display === 'grid' ) :
-                                // echo '<pre class="todo">$ind_people = ' . implode( ', ', $ind_people ) . '</pre>';
-                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $ind_people ) . '" posts_per_page="-1" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-md" /]' );
+                            if ( $ind_people_display === 'grid') :
+                                $grid_class = (count( $ind_people ) == 1) ? 'grid-cols-4' : 'grid-auto-fit';
+
+                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $ind_people ) . '" posts_per_page="-1" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="grid ' . $grid_class . ' gap-8" layout="card-people-md" /]' );
                             endif; ?>
 
                         <?php endif; ?>

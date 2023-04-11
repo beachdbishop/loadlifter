@@ -315,28 +315,3 @@ p[class*="is-style-note-"] {
 .easy-footnote a {
 	@apply text-brand-red no-underline hover:text-current;
 }
-
-
-.bg-gradient-blue-dark-anim {
-  background: linear-gradient(70deg, #00668e, #092f42, #00668e, #00668e, #171717);
-  background-size: 180% 180%;
-  animation: gradient-animation 21s ease infinite;
-}
-
-.bg-gradient-red-dark-anim {
-  background: linear-gradient(70deg, #ce182d, #940418, #ce182d, #ce182d, #171717);
-  background-size: 180% 180%;
-  animation: gradient-animation 21s ease infinite;
-}
-
-@keyframes gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
