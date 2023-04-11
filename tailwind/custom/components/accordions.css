@@ -49,7 +49,7 @@ details[open] summary::-webkit-details-marker {
     @apply bg-neutral-200 text-neutral-700;
 
     &::before {
-      color: #525252;
+      color: #a3a3a3;
     }
   }
 }
