@@ -6,30 +6,12 @@
   --card-back-bg: #262626;
   --card-front-text: #e5e5e5;
   --card-back-text: #f5f5f5;
-  @apply flex flex-wrap place-content-center gap-4 lg:gap-8;
-
-  .card {
-    perspective: 600px;
-  }
-
-  .card-content {
-    transform-style: preserve-3d;
-  }
+  @apply flex flex-wrap place-content-center gap-4 lg:place-content-between lg:gap-8;
 
   .card:hover .card-content,
   .card:active .card-content,
   .card:focus .card-content {
     transform: rotateY( 180deg ) ;
-    transition: transform 0.5s;
-  }
-
-  .card-front,
-  .card-back {
-    backface-visibility: hidden;
-  }
-
-  .card-back {
-    transform: rotateY( 180deg );
   }
 
   .card-back p,
@@ -42,6 +24,7 @@
 .ind-card-flips.is-style-default {
   --card-front-bg: #f5f5f5;
   --card-front-text: #262626;
+  --card-front-icon: #00668e;
   --card-back-bg: #404040;
 }
 
@@ -58,3 +41,4 @@
   --card-front-icon: #940418;
   --card-back-bg: #940418;
 }
+
