@@ -136,7 +136,7 @@ function ll_disable_wp57_menu_hover() {
 }
 
 function ll_enable_monospace_acf_textarea() {
-    echo '<style>.acf-input textarea { font-family: "IBM Plex Mono", monospace; background-color: #2d2b55; color: #face00; line-height: 1.2; }</style>';
+    echo '<style>.acf-input textarea { font-family: "IBM Plex Mono", monospace; background-color: #20293c; color: #84c6ef; line-height: 1.3; }</style>';
 }
 
 /**
@@ -157,14 +157,13 @@ switch( wp_get_environment_type() ) {
 
 	case 'staging':
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+        add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
 		break;
 
 	default:
-		/**
-		 * Hide Jetpack upsell ads
-		 */
-		add_action( 'admin_menu', 'll_disable_wp_links_menu' );
+        add_action( 'admin_menu', 'll_disable_wp_links_menu' );
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		/* Hide Jetpack upsell ads */
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;
 }
