@@ -62,6 +62,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                 ?>
 
                 <?php // INDUSTRY PROFESSIONALS AND INVOLVEMENT   ?>
+                <?php if ( ( $ind_people_display != 'hide' ) || ( !empty( $ind_groups_html ) ) ) : ?>
                 <section class="py-4 bg-white full-bleed not-prose md:py-8 lg:py-16">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $ind_people ) && ( $ind_people_display != 'hide' ) ) : ?>
@@ -85,6 +86,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                         endif; ?>
                     </div>
                 </section>
+                <?php endif; ?>
 
             </div>
 
