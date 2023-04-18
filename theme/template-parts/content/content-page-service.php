@@ -44,7 +44,7 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
             <div class="my-16 ind-grid-area-b md:my-0 md:col-span-3">
 
                 <?php if ( $svc_post_category ) : ?>
-                    <section class="py-4 full-bleed not-prose bg-neutral-900 text-neutral-100 md:py-8 lg:py-16">
+                    <section class="full-bleed not-prose bg-neutral-900 text-neutral-100 ll-equal-vert-padding">
                         <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
                             <div class="flex items-center justify-between mb-4">
                                 <h2>Insights</h2>
@@ -66,7 +66,7 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
                 // SERVICE PROFESSIONALS AND INVOLVEMENT
                 if ( $svc_people_display != 'hide' ) :
                 ?>
-                <section class="py-4 bg-white full-bleed not-prose md:py-8 lg:py-16">
+                <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $svc_people ) && ( $svc_people_display != 'hide' ) ) : ?>
                             <h3 class="text-brand-red">Industry Professionals</h3>
@@ -89,7 +89,7 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
             </div>
 
             <div class="ind-grid-area-c">
-                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
+                <div id="contact" class="p-4 border lg:p-8 bg-neutral-50 border-neutral-400 not-prose">
                     <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
                 </div>
             </div>

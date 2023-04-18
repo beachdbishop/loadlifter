@@ -23,10 +23,10 @@
 <i data-fa-symbol="people-group" class="fa-solid fa-people-group"></i>
 <i data-fa-symbol="location-dot" class="fa-solid fa-location-dot"></i>
 <i data-fa-symbol="linkedin" class="fa-brands fa-linkedin"></i>
-<i data-fa-symbol="twitter" class="fa-brands fa-twitter"></i>
-<i data-fa-symbol="facebook" class="fa-brands fa-facebook"></i>
-<i data-fa-symbol="instagram" class="fa-brands fa-instagram"></i>
-<i data-fa-symbol="youtube" class="fa-brands fa-youtube"></i>
+<i data-fa-symbol="twitter" class="fa-brands fa-square-twitter"></i>
+<i data-fa-symbol="facebook" class="fa-brands fa-square-facebook"></i>
+<i data-fa-symbol="instagram" class="fa-brands fa-square-instagram"></i>
+<i data-fa-symbol="youtube" class="fa-brands fa-square-youtube"></i>
 <?php
 /**
  * Use the defined name later in the page

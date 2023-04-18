@@ -37,7 +37,7 @@ $cards_expect = [
     "ability" => [
         "label" => 'Enhanced ability',
         "icon" => 'fa-gauge-high',
-        "backContent" => '<p>You will have continuous opportunities to learn and grow in our learning culture that includes:</p>
+        "backContent" => '<p>You will have continuous opportunities to learn and grow in our learning culture including:</p>
         <ul class="mt-2 ml-3 list-disc">
             <li>Mentoring program</li>
             <li>CPA exam bonus and reimbursement</li>
@@ -134,7 +134,7 @@ function ll_no_link_card( $card ) {
         <!--   O P P O R T U N I T I E S   -->
             <section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-blue-faint via-neutral-100 to-white">
                 <div class="container px-2 mx-auto md:px-0">
-                    <h3 class="mb-6 text-center uppercase font-head">Opportunities</h3>
+                    <h2 class="mb-6 font-head">Opportunities</h2>
                     <div class="grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8">
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
                             <div class="!mt-0 -mx-4 mb-4 lg:-mx-8 relative overflow-hidden bg-no-repeat bg-cover">
@@ -169,7 +169,7 @@ function ll_no_link_card( $card ) {
         <!--   Expect & Future   -->
             <section class="full-bleed not-prose bg-gradient-to-b from-brand-blue-faint via-neutral-100 to-white">
                 <div class="px-2 pt-8 mx-auto max-w-prose md:px-0 lg:pt-12">
-                    <h3 class="font-bold text-center text-brand-red">What you can expect</h3>
+                    <h2 class=" text-brand-red">What you can expect</h2>
                     <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
                     <?php foreach( $cards_expect as $card ) {
                         ll_no_link_card( $card );
@@ -180,14 +180,14 @@ function ll_no_link_card( $card ) {
         <?php } else { ?>
             <section class="full-bleed not-prose bg-gradient-to-b from-brand-blue-faint via-neutral-100 to-white">
                 <div class="container px-2 pt-8 mx-auto md:px-0 lg:pt-12">
-                    <h3 class="font-bold text-brand-red">What you can expect</h3>
+                    <h2 class=" text-brand-red">What you can expect</h2>
                     <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
                     <?php foreach( $cards_expect as $card ) {
                         ll_no_link_card( $card );
                     } ?>
                     </div>
 
-                    <h3 class="font-bold text-brand-red">Your future</h3>
+                    <h2 class=" text-brand-red">Your future</h2>
                     <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
                     <?php foreach( $cards_future as $card ) {
                         ll_no_link_card( $card );
@@ -201,7 +201,7 @@ function ll_no_link_card( $card ) {
         <!--   C U L T U R E   -->
         <section id="culture" class="full-bleed not-prose ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
-                <h3 class="mb-6 text-center uppercase font-head">Culture</h3>
+                <h2 class="mb-6 font-head">Culture</h2>
 
                 <div class="mb-6 overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1678295483/feat__careers--women-rise2_ed405i.jpg')]">
                     <div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-26 lg:py-24">
@@ -228,34 +228,9 @@ function ll_no_link_card( $card ) {
 
         <!--   B E N E F I T S   -->
         <?php if ( !is_page('internships') ) : ?>
-            <!-- <section id="benefits" class="full-bleed">
-                <div class="px-2 py-8 mx-auto md:px-0 lg:px-5 lg:py-12">
-                    <h3 class="mb-6 text-center uppercase text-brand-blue ">Additional Benefits</h3>
-                    <div class="md:grid md:grid-cols-3 md:gap-4">
-
-                        <div class="md:col-span-3 lg:col-span-2">
-                            <p>Additionally, we offer a variety of benefits to support your professional and personal well-being:</p>
-                            <ul class="gap-4 my-4 ml-3 space-y-2 md:columns-3 lg:columns-2 list-square">
-                                <li>Medical, dental, and vision insurance</li>
-                                <li>Supplemental insurance</li>
-                                <li>Life insurance</li>
-                                <li>401(k) program with employer matching</li>
-                                <li>CPA exam reimbursement and bonus</li>
-                                <li>Performance-based bonuses</li>
-                                <li>Paid time off and sick leave</li>
-                                <li>Health and wellness reimbursement</li>
-                                <li>Busy season meals and snacks</li>
-                            </ul>
-                        </div>
-                        <div class="hidden lg:block">
-                            <img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-benefits--social_hv6tcv.jpg" alt="Girl in classes pointing toward the list of benefits behind her">
-                        </div>
-                    </div>
-                </div>
-            </section> -->
             <section id="benefits" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-blue via-brand-blue-faint ">
                 <div class="container px-2 mx-auto md:px-0">
-                    <h3 class="mb-6 text-center uppercase font-head">Benefits &amp; Perks</h3>
+                    <h2 class="mb-6 font-head">Benefits &amp; Perks</h2>
                     <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
                         <div class="p-4 prose bg-white lg:p-8">
@@ -304,7 +279,7 @@ function ll_no_link_card( $card ) {
         <!--   S T A F F   T E S T I M O N I A L S   -->
         <!-- <section id="testimonials" class="full-bleed ll-equal-vert-padding text-neutral-600 bg-gradient-to-t from-neutral-300 via-neutral-200 via-neutral-100 via-neutral-50">
             <div class="container px-2 mx-auto md:px-0">
-                <h3 class="mb-6 text-center uppercase font-head text-brand-blue">Staff Testimonials</h3>
+                <h2 class="mb-6 font-head text-brand-blue">Staff Testimonials</h2>
                 <div class="flex flex-wrap -m-4">
                     <div class="w-full p-4 md:w-1/2">
                         <div class="h-full p-8 bg-white rounded-xl">
@@ -337,15 +312,17 @@ function ll_no_link_card( $card ) {
         </section> -->
 
         <!--   A W A R D S   -->
-        <section id="awards" class="ll-equal-vert-padding">
-            <div class="max-w-3xl px-2 mx-auto md:px-0 lg:max-w-4xl">
-                <h3 class="mb-6 text-center uppercase font-head text-brand-blue-dark">Awards &amp; Recognition</h3>
-                <div class="flex flex-col flex-wrap items-center max-w-5xl gap-2 mx-auto -m-4 place-content-center md:place-content-between md:flex-row lg:gap-8">
-                    <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634570038/Move_bestfirm_EL_2021_dpoubu.png" alt="2021 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
-                    <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
-                    <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
-                    <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1570228350/clearlyrated-best-of-accounting-2019_b4g2yx.png" alt="Best of Accounting 2019 - Clearly Rated" width="100" height="100">
-                    <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="Inside Public Accounting's All Star Firms" width="100" height="100">
+        <section id="awards" class="bg-white full-bleed ll-equal-vert-padding">
+            <div class="container px-2 mx-auto md:px-0">
+                <h2 class="mb-6 font-head text-brand-blue-dark">Awards &amp; Recognition</h2>
+                <div class="max-w-3xl px-2 mx-auto md:px-0 lg:max-w-4xl">
+                    <div class="flex flex-col flex-wrap items-center max-w-5xl gap-2 mx-auto -m-4 place-content-center md:place-content-between md:flex-row lg:gap-8">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634570038/Move_bestfirm_EL_2021_dpoubu.png" alt="2021 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1570228350/clearlyrated-best-of-accounting-2019_b4g2yx.png" alt="Best of Accounting 2019 - Clearly Rated" width="100" height="100">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="Inside Public Accounting's All Star Firms" width="100" height="100">
+                    </div>
                 </div>
             </div>
         </section>
@@ -353,7 +330,7 @@ function ll_no_link_card( $card ) {
         <!-- CTA and Recruiting Contact(s) -->
         <section id="team" class="bg-white full-bleed ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
-                <h3 class="text-center uppercase text-brand-blue-dark">The people that will grill you from one side of the interview table</h3>
+                <h2 class=" text-brand-blue-dark">Hrrrrrrrrrrrr?</h2>
                 <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-small" /]'); ?>
             </div>
         </section>

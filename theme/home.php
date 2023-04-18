@@ -25,7 +25,7 @@ get_header();
 				<div class="basis-2/3">
 					<h1 class="text-brand-blue head-last-bold">A-Z Blog</h1>
 					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
-					<div class="text-neutral-600"><?php echo do_shortcode( '[social_links /]' ); ?></div>
+					<div class="text-brand-blue"><?php echo do_shortcode( '[social_links /]' ); ?></div>
 				</div>
 				<?php if ( is_user_logged_in() ) { ?>
 					<div class="p-4 border-2 border-dashed basis-1/3 rounded-xl border-brand-blue-pale">

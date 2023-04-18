@@ -399,7 +399,7 @@
       "h6": {
         "typography": {
           "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "400",
+          "fontWeight": "300",
           "textTransform": "uppercase",
           "fontSize": "var(--wp--preset--font-size--base)"
         }

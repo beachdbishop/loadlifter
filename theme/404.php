@@ -17,7 +17,7 @@ get_header();
 				<h1 class="entry-title | text-amber-800"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'loadlifter' ); ?></h1>
 			</header>
 
-			<div class="entry-content">
+			<div <?php ll_content_class( 'entry-content' ); ?>>
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'loadlifter' ); ?></p>
 
 					<?php

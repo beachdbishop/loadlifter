@@ -7,8 +7,38 @@
  * @package Load_Lifter
  */
 
-$theme_version = wp_get_theme()->get( 'Version' );
-$version_string = is_string( $theme_version ) ? $theme_version : false;
+if ( ! defined( 'LL_VERSION' ) ) {
+	/*
+	 * Set the theme’s version number.
+	 *
+	 * This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
+	 */
+	define( 'LL_VERSION', '2.0.0' );
+}
+
+if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
+	/*
+	 * Set Tailwind Typography classes for the front end, block editor and
+	 * classic editor using the constant below.
+	 *
+	 * For the front end, these classes are added by the `_tw_content_class`
+	 * function. You will see that function used everywhere an `entry-content`
+	 * or `page-content` class has been added to a wrapper element.
+	 *
+	 * For the block editor, these classes are converted to a JavaScript array
+	 * and then used by the `./javascript/block-editor.js` file, which adds
+	 * them to the appropriate elements in the block editor (and adds them
+	 * again when they’re removed.)
+	 *
+	 * For the classic editor (and anything using TinyMCE, like Advanced Custom
+	 * Fields), these classes are added to TinyMCE’s body class when it
+	 * initializes.
+	 */
+	define(
+		'LL_TYPOGRAPHY_CLASSES',
+		'prose prose-neutral max-w-none prose-a:text-primary prose-headings:font-light lg:prose-xl'
+	);
+}
 
 if ( ! function_exists( 'll_setup' ) ) :
 	/**
@@ -40,6 +70,18 @@ if ( ! function_exists( 'll_setup' ) ) :
 				'script',
 			)
 		);
+
+        register_nav_menus(
+            array(
+                'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
+                'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
+                'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
+                'll_submenu_industries' => __( 'Industries submenu', 'loadlifter' ),
+                'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
+                'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
+            )
+        );
+
 		add_theme_support( 'responsive-embeds' );
 		add_theme_support( 'disable-custom-font-sizes' );
 		// Add theme support for selective refresh for widgets.
@@ -67,23 +109,6 @@ if ( ! function_exists( 'll_setup' ) ) :
 endif;
 add_action( 'after_setup_theme', 'll_setup' );
 
-/**
- * Register Nav Menus
- *
- * should be usable in site Footer and Header.
- */
-function ll_register_submenus() {
-	register_nav_menus( array(
-		'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
-		'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
-		'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
-		'll_submenu_industries' => __( 'Industries submenu', 'loadlifter' ),
-		'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
-		'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
-	) );
-}
-add_action( 'after_setup_theme', 'll_register_submenus', 0 );
-
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -106,25 +131,21 @@ add_action( 'after_setup_theme', 'll_content_width', 0 );
 // add_action( 'admin_init', 'll_remove_default_block_styles' );
 
 function ll_scripts() {
-	global $version_string;
-
 	wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
-	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], $version_string );
+	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
 
 	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
 	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
 	wp_enqueue_script( 'hubspot-forms', '//js.hsforms.net/forms/v2.js', [], '', false );
-	// wp_enqueue_script( 'vanilla-tilt', get_template_directory_uri() . '/js/vanilla-tilt.min.js', [], $version_string, true );
-	wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
+	// wp_enqueue_script( 'vanilla-tilt', get_template_directory_uri() . '/js/vanilla-tilt.min.js', [], LL_VERSION, true );
+	wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
 }
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
 
 function ll_guten_scripts() {
-	global $version_string;
-
-	wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], $version_string, true );
+	// wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
 }
-add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
+// add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
 
 
 function ll_disable_wp_links_menu() {
@@ -182,15 +203,44 @@ function ll_enq_a11y_slider_assets() {
 add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
 
 /**
- * Add the block editor class to TinyMCE.
- *
- * This allows TinyMCE to use Tailwind Typography styles with no other changes.
+ * Enqueue the block editor script.
+ */
+function ll_enqueue_block_editor_script() {
+	wp_enqueue_script(
+		'll-editor',
+		get_template_directory_uri() . '/js/block-editor.min.js',
+		array(
+			'wp-blocks',
+			'wp-edit-post',
+		),
+		LL_VERSION,
+		true
+	);
+}
+add_action( 'enqueue_block_editor_assets', 'll_enqueue_block_editor_script' );
+
+/**
+ * Create a JavaScript array containing the Tailwind Typography classes from
+ * LL_TYPOGRAPHY_CLASSES for use when adding Tailwind Typography support
+ * to the block editor.
+ */
+function ll_admin_scripts() {
+	?>
+	<script>
+		tailwindTypographyClasses = '<?php echo esc_attr( LL_TYPOGRAPHY_CLASSES ); ?>'.split(' ');
+	</script>
+	<?php
+}
+add_action( 'admin_print_scripts', 'll_admin_scripts' );
+
+/**
+ * Add the Tailwind Typography classes to TinyMCE.
  *
  * @param array $settings TinyMCE settings.
  * @return array
  */
 function ll_tinymce_add_class( $settings ) {
-	$settings['body_class'] = 'block-editor-block-list__layout';
+	$settings['body_class'] = LL_TYPOGRAPHY_CLASSES;
 	return $settings;
 }
 add_filter( 'tiny_mce_before_init', 'll_tinymce_add_class' );
