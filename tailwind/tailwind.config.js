@@ -28,8 +28,8 @@ module.exports = {
         'mesh-blue': "url('img/mesh-374-blue.jpg')",
         'mesh-red': "url('img/mesh-767-red.jpg')",
         'mesh-white': "url('img/mesh-grad-whites-blues.jpg')",
-        'mooney-desert1': "url('img/cmooney-dsc_834372-bw.jpg')",
-        'mooney-desert2': "url('img/cmooney-dsc_835072-bw.jpg')",
+        'phoenix-desert1': "url('img/phx-desert.jpg')",
+        'phoenix-desert2': "url('img/phx-desert-no-crop.jpg')",
       },
       backgroundSize: {
         '180pct': '180% 180%',
