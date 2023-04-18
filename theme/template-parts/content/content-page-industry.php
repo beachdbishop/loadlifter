@@ -43,7 +43,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
             <div class="my-16 ind-grid-area-b md:my-0 md:col-span-3">
 
                 <?php if ( $ind_post_category ) : ?>
-                    <section class="py-4 full-bleed not-prose bg-neutral-900 text-neutral-100 md:py-8 lg:py-16">
+                    <section class="full-bleed not-prose bg-neutral-900 text-neutral-100 ll-equal-vert-padding">
                         <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
                             <div class="flex items-center justify-between mb-4">
                                 <h2>Insights</h2>
@@ -63,7 +63,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
 
                 <?php // INDUSTRY PROFESSIONALS AND INVOLVEMENT   ?>
                 <?php if ( ( $ind_people_display != 'hide' ) || ( !empty( $ind_groups_html ) ) ) : ?>
-                <section class="py-4 bg-white full-bleed not-prose md:py-8 lg:py-16">
+                <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $ind_people ) && ( $ind_people_display != 'hide' ) ) : ?>
                             <h2 class="text-brand-red">Industry Professional<?php if( count( $ind_people ) > 1 ) { echo "s"; } ?></h2>
