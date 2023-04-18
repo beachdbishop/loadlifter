@@ -6,8 +6,9 @@
 */
 
 // Require modules.
-const AdmZip = require( 'adm-zip' );
-const archiver = require( 'archiver' );
+const AdmZip = require('adm-zip');
+const archiver = require('archiver');
+const fs = require('fs');
 
 const args = process.argv.slice( 2 );
 const slug = args[ 0 ];
