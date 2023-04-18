@@ -31,7 +31,7 @@ if ( ! function_exists( 'll_show_social_links' ) ) :
 
 		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
 		foreach( $socials as $key=>$value ) {
-			$social_html .= sprintf( '<a href="%1$s" class="hover:scale-125"><svg class="llicon-2x"><use xlink:href="#%2$s" /></svg><span class="screen-reader-text">%2$s</span></a>', esc_url( $value ), esc_attr( $key ) );
+			$social_html .= sprintf( '<a href="%1$s" class="duration-200 ease-in-out hover:scale-125"><svg class="llicon-2x"><use xlink:href="#%2$s" /></svg><span class="screen-reader-text">%2$s</span></a>', esc_url( $value ), esc_attr( $key ) );
 		}
 		$social_html .= '</div>';
 
