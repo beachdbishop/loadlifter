@@ -59,7 +59,7 @@ if ( $page_featimg == true ) {
 <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
 
-		<div class="prose lg:prose-xl entry-content">
+		<div <?php ll_content_class( 'entry-content' ); ?>>
 			<?php the_content(); ?>
 
 			<div class="clear-both">&nbsp;</div>

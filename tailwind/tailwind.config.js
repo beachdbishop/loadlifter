@@ -1,14 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
-// Set Preflight flag and Tailwind Typography class name based on the build target.
-let includePreflight, typographyClassName;
-if ( 'editor' === process.env._TW_TARGET ) {
-	includePreflight = false;
-	typographyClassName = 'block-editor-block-list__layout';
-} else {
-	includePreflight = true;
-	typographyClassName = 'prose';
-}
+// Set the Preflight flag based on the build target.
+const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
 
 module.exports = {
 	presets: [
@@ -69,6 +62,7 @@ module.exports = {
     'bg-brand-red-dark',
     'bg-brand-blue-dark',
     'border-brand-blue-dark',
+    'border-brand-gray-dark',
     'border-brand-red-dark',
     'border-brand-red-pale',
     'border-amber-300',
@@ -124,12 +118,14 @@ module.exports = {
     'max-w-prose',
     'rounded-md',
     'shadow-brand-blue-dark/50',
+    'shadow-brand-blue-dark',
     'shadow-sm',
     'slider-quotes',
     'slider',
     'table-oldtab',
     'text-base',
     'text-brand-gray-dark',
+    'text-shadow',
     'to-brand-gray',
     'to-brand-red',
     'to-brand-blue',
@@ -179,14 +175,12 @@ module.exports = {
 		require('@_tw/themejson')(require('../theme/theme.json')),
 
     // Add Tailwind Typography.
-		require('@tailwindcss/typography' )({
-			className: typographyClassName,
-		}),
+		require('@tailwindcss/typography' ),
 
 		// Uncomment below to add additional first-party Tailwind plugins.
 		// require( '@tailwindcss/aspect-ratio' ),
 		// require( '@tailwindcss/forms' ),
-		// require( '@tailwindcss/line-clamp' ),
+    // require( '@tailwindcss/container-queries' ),
     require('@shrutibalasa/tailwind-grid-auto-fit'),
 
     plugin(function ({ matchUtilities, theme }) {

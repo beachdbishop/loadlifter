@@ -32,7 +32,7 @@ endif; ?>
 
 		<div class="md:flex md:gap-8 lg:gap-16">
 			<div class="md:order-first md:w-2/3 lg:w-3/4">
-				<div class="prose lg:prose-xl entry-content">
+				<div <?php ll_content_class( 'entry-content' ) ?>>
 					<?php
 					the_content(
 						sprintf(
