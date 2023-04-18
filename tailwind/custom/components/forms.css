@@ -32,7 +32,7 @@
 	}
 
 	.hs-error-msg {
-		@apply italic text-brand-red-dark;
+		@apply italic text-brand-red-dark text-base;
 	}
 }
 
