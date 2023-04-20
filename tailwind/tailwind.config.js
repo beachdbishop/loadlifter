@@ -116,6 +116,7 @@ module.exports = {
     'max-w-6xl',
     'max-w-md',
     'max-w-prose',
+    'md:place-content-start',
     'rounded-md',
     'shadow-brand-blue-dark/50',
     'shadow-brand-blue-dark',
