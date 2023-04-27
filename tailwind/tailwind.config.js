@@ -25,9 +25,6 @@ module.exports = {
         'headshot': '95 / 127',
       },
       backgroundImage: {
-        'mesh-blue': "url('img/mesh-374-blue.jpg')",
-        'mesh-red': "url('img/mesh-767-red.jpg')",
-        'mesh-white': "url('img/mesh-grad-whites-blues.jpg')",
         'phoenix-desert1': "url('img/phx-desert.jpg')",
         'phoenix-desert2': "url('img/phx-desert-no-crop.jpg')",
       },
