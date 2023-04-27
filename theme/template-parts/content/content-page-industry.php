@@ -24,6 +24,10 @@ if ( $ind_featimg == true ) {
 }
 
 $ind_post_category = get_field( 'll_ind_category' );
+$ind_cta_standard = get_field( 'll_ind_show_standard_cta' );
+$ind_cta_heading = get_field( 'll_ind_cta_heading' );
+$ind_cta_body = get_field( 'll_ind_cta_body' );
+$ind_cta_button_text = get_field( 'll_ind_cta_button_text' );
 $ind_cta_html = get_field( 'll_ind_cta_html' );
 $ind_groups_html = get_field( 'll_ind_groups_html' );
 $ind_people = get_field( 'll_ind_people' );
@@ -34,9 +38,9 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-2 md:container md:mx-auto md:px-0">
-        <div class="entry-cont | industry-page-grid mt-4 md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
+        <div class="mt-4 industry-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
-            <div class="ind-grid-area-a md:col-span-2 | prose lg:prose-xl">
+            <div <?php ll_content_class( 'entry-content ind-grid-area-a md:col-span-2' ); ?>>
                 <?php the_content(); ?>
             </div>
 
@@ -55,7 +59,22 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                 <?php endif; ?>
 
                 <?php // CTA
-                if ( $ind_cta_html ) :
+                if ( $ind_cta_standard ) :
+                    echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>';
+                    echo '<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
+                        <div class="px-2 md:container md:mx-auto md:px-0">
+                            <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
+                                <div class="prose lg:prose-xl ">
+                                    <h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark">' . $ind_cta_heading . '</h2>
+                                    <p class="text-neutral-100 text-shadow shadow-brand-blue-dark">' . $ind_cta_body . '</p>
+                                </div>
+                                <div class="w-full md:max-w-fit">
+                                    <div class="wp-block-button"><a class="border-2 wp-block-button__link wp-element-button has-brand-blue-dark-background-color has-background-color border-brand-blue-dark hover:border-brand-blue-faint hover:text-brand-blue-faint" href="#contact">' . $ind_cta_button_text . '</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>';
+                elseif ( ( $ind_cta_standard == false ) && ( !empty( $ind_cta_html ) ) ) :
                     echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>';
                     echo $ind_cta_html;
                 endif;
@@ -66,7 +85,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                 <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $ind_people ) && ( $ind_people_display != 'hide' ) ) : ?>
-                            <h2 class="text-brand-red">Industry Professional<?php if( count( $ind_people ) > 1 ) { echo "s"; } ?></h2>
+                            <h2>Industry Professional<?php if( count( $ind_people ) > 1 ) { echo "s"; } ?></h2>
 
                             <?php
                             if ( $ind_people_display === 'slider' ) :

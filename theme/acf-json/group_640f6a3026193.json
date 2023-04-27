@@ -26,8 +26,112 @@
             "multiple": 0
         },
         {
+            "key": "field_6442d3a946bd3",
+            "label": "Show 'standard' CTA",
+            "name": "ll_ind_show_standard_cta",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "True will result in showing the standard heading, body, and button linking to the contact form. False will result in showing whatever is in the custom CTA HTML field.",
+            "default_value": 1,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_6442d43e46bd4",
+            "label": "CTA Heading",
+            "name": "ll_ind_cta_heading",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6442d3a946bd3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Partner with our PAGETITLE team!",
+            "maxlength": 255,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6442d4af46bd5",
+            "label": "CTA Body",
+            "name": "ll_ind_cta_body",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6442d3a946bd3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "BeachFleischman provides accounting, assurance, tax, and comprehensive advisory services that WHO of all sizes need to succeed. Contact us today to learn more.",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6442d51146bd6",
+            "label": "CTA Button Text",
+            "name": "ll_ind_cta_button_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6442d3a946bd3",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Contact Us",
+            "maxlength": 48,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6424b697635c7",
-            "label": "CTA HTML",
+            "label": "Custom CTA HTML",
             "name": "ll_ind_cta_html",
             "aria-label": "",
             "type": "textarea",
@@ -143,5 +247,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680648678
+    "modified": 1682101614
 }
