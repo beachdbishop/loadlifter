@@ -9,8 +9,12 @@
  * @package Load_Lifter
  */
 
-	get_template_part( 'template-parts/layout/footer', 'content' );
-	?>
+    if ( is_page_template( LL_LP_TEMPLATES ) ) {
+        get_template_part( 'template-parts/layout/footer', 'lp' );
+    } else {
+        get_template_part( 'template-parts/layout/footer', 'content' );
+    }
+?>
 
 </div><!-- #page -->
 

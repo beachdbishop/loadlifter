@@ -96,7 +96,7 @@ if ( $peepauthor ) {
 					?>
 				</header>
 
-				<div class="prose lg:prose-xl entry-content">
+				<div <?php ll_content_class( 'entry-content' ); ?>>
 					<?php
 					the_content(
 						sprintf(

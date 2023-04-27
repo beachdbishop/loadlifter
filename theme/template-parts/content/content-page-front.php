@@ -28,7 +28,7 @@ $trending = get_field( 'll_front_trending_items' );
 			?>
 		</header>
 
-		<div class="entry-content">
+		<div <?php ll_content_class( 'entry-content' ); ?>>
             <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway">
                 <div class="px-2 wp-block-group post-grid md:container md:mx-auto md:px-0 has-brand-blue-faint-color">
                     <h2 class="mb-4 lg:mb-8">Trending Now</h2>

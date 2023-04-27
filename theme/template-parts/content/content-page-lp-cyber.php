@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying landing page content
+ * Template part for displaying cybersecurity landing page content
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *

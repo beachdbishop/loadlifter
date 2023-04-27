@@ -13,7 +13,7 @@
 	ll_featured_image();
 endif; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php ll_content_class( 'event prose lg:prose-xl' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php ll_content_class( 'event' ); ?>>
 	<?php if ( get_field( 'll_hide_featured_image' ) === false ) : ?>
 		<style>
 		<?php // We're setting inline styles here because we need to include the responsive gradient AND dynamic image URL in the same background-image declaration; ?>

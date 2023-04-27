@@ -36,8 +36,8 @@
 <div id="page" class="">
 	<a href="#primary" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'loadlifter' ); ?></a>
 
-	<?php if ( ( !is_page_template( 'tpl-landing-page.php' ) ) && ( !is_page_template( 'tpl-landing-page-bare.php' ) ) ) {
-        get_template_part( 'template-parts/layout/header', 'content');
+	<?php if ( is_page_template( LL_LP_TEMPLATES ) ) {
+        get_template_part( 'template-parts/layout/header', 'lp');
 	} else {
-		get_template_part( 'template-parts/layout/header', 'lp' );
+		get_template_part( 'template-parts/layout/header', 'content' );
 	} ?>

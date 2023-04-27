@@ -122,13 +122,13 @@ function ll_no_link_card( $card ) {
             </section>
         <?php endif; ?>
 
-        <div class="prose lg:prose-xl entry-content">
+        <div <?php ll_content_class( 'entry-content' ); ?>>
 
             <?php the_content(); ?>
 
         </div>
 
-        <div class="clear-both">&nbsp;</div>
+        <!-- <div class="clear-both">&nbsp;</div> -->
 
         <?php if (is_page('career-opportunities')) : ?>
         <!--   O P P O R T U N I T I E S   -->
@@ -198,7 +198,7 @@ function ll_no_link_card( $card ) {
             </section>
         <?php } ?>
 
-        <!--   C U L T U R E   -->
+        <?php // C U L T U R E ... ?>
         <section id="culture" class="full-bleed not-prose ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
                 <h2 class="mb-6 font-head">Culture</h2>
@@ -226,7 +226,7 @@ function ll_no_link_card( $card ) {
             </div>
         </section>
 
-        <!--   B E N E F I T S   -->
+        <?php // B E N E F I T S ... ?>
         <?php if ( !is_page('internships') ) : ?>
             <section id="benefits" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-blue via-brand-blue-faint ">
                 <div class="container px-2 mx-auto md:px-0">
@@ -276,7 +276,7 @@ function ll_no_link_card( $card ) {
             </section>
         <?php endif; ?>
 
-        <!--   S T A F F   T E S T I M O N I A L S   -->
+        <?php // S T A F F   T E S T I M O N I A L S ... ?>
         <!-- <section id="testimonials" class="full-bleed ll-equal-vert-padding text-neutral-600 bg-gradient-to-t from-neutral-300 via-neutral-200 via-neutral-100 via-neutral-50">
             <div class="container px-2 mx-auto md:px-0">
                 <h2 class="mb-6 font-head text-brand-blue">Staff Testimonials</h2>
@@ -311,7 +311,7 @@ function ll_no_link_card( $card ) {
             </div>
         </section> -->
 
-        <!--   A W A R D S   -->
+        <?php // A W A R D S ... ?>
         <section id="awards" class="bg-white full-bleed ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
                 <h2 class="mb-6 font-head text-brand-blue-dark">Awards &amp; Recognition</h2>
@@ -327,26 +327,28 @@ function ll_no_link_card( $card ) {
             </div>
         </section>
 
-        <!-- CTA and Recruiting Contact(s) -->
+        <?php // C T A   a n d   R e c r u i t i n g   C o n t a c t ( s ) ... ?>
         <section id="team" class="bg-white full-bleed ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
                 <h2 class=" text-brand-blue-dark">Hrrrrrrrrrrrr?</h2>
-                <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-small" /]'); ?>
+                <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="ASC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-small" /]'); ?>
             </div>
         </section>
 
-        <section class="full-bleed bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct animate-sway py-16 lg:py-20">
-            <div class="px-2 mx-auto md:px-0">
-                <div class="flex flex-col items-start justify-center gap-8 mx-auto text-2xl sm:gap-4 text-neutral-100 lg:w-2/3 sm:flex-row sm:items-center ">
-                    <p class="">View our current openings and apply today!</p>
-                    <div class="">
-                        <a href="/career-opportunities/#openings" class="p-4 bg-transparent border-2 rounded-lg border-brand-blue-pale text-brand-blue-pale hover:bg-brand-blue-pale hover:text-brand-blue-dark"><i class="mr-1 fa-solid fa-users"></i>&nbsp;Join&nbsp;our&nbsp;team</a>
+        <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
+            <div class="px-2 md:max-w-2xl md:mx-auto md:px-0 lg:max-w-4xl">
+                <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
+                    <div class="prose lg:prose-xl grow">
+                        <h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark">View our current openings and apply today!</h2>
+                    </div>
+                    <div class="w-full md:max-w-fit">
+                        <div class="wp-block-button"><a class="border-2 wp-block-button__link wp-element-button has-brand-blue-dark-background-color has-background-color border-brand-blue-dark hover:border-brand-blue-faint hover:text-brand-blue-faint" href="/career-opportunities/#openings"><i class="mr-1 fa-solid fa-users"></i> Join our team</a></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!--   S O C I A L   F E E D   -->
+        <?php // S O C I A L   F E E D ... ?>
         <!-- <section class="full-bleed ll-equal-vert-padding">
             <div class="container px-0 mx-auto lg:px-5">
                 <h6 class="text-brand-blue">Recently on Instagram</h6>

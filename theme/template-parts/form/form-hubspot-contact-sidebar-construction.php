@@ -1,7 +1,7 @@
 <?php
 // intended partial to be used in sidebar of People/Bio pages
 ?>
-<h5 class="mb-4 text-brand-blue">Contact Us</h5>
+<h3 class="mb-4 text-brand-blue">Contact Us</h3>
 <script>
   hbspt.forms.create({
     region: "na1",

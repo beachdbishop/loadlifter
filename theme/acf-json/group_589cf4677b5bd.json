@@ -3,26 +3,6 @@
     "title": "Landing Page Options",
     "fields": [
         {
-            "key": "field_5a847ec88a0ce",
-            "label": "Out of State",
-            "name": "ll_out_of_state",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Should this count toward out-of-state lead counts?",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
             "key": "field_5e6a8ed8fddd6",
             "label": "Service\/Industry",
             "name": "ll_svc_ind",
@@ -30,15 +10,7 @@
             "type": "select",
             "instructions": "",
             "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5a847ec88a0ce",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -69,15 +41,7 @@
             "type": "select",
             "instructions": "",
             "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5a847ec88a0ce",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -151,15 +115,7 @@
             "type": "text",
             "instructions": "",
             "required": 1,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5a847ec88a0ce",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -179,6 +135,20 @@
                 "operator": "==",
                 "value": "tpl-landing-page.php"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl-landing-page-bare.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl-landing-page-cyber.php"
+            }
         ]
     ],
     "menu_order": 3,
@@ -190,5 +160,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667940771
+    "modified": 1682446456
 }

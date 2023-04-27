@@ -53,7 +53,7 @@ $f_applylink = get_field( 'apply_link' );
 					<?php the_title( '<h1 class="entry-title | mb-0 text-brand-blue font-bold">', '</h1>' ); ?>
 				</header>
 
-				<div class="prose lg:prose-xl entry-content">
+				<div <?php ll_content_class( 'entry-content' ); ?>>
 					<?php
 					// Don't include the normal sharing display right after content
 					// This lets us place it exactly where we want it later
