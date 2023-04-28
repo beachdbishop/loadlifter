@@ -21,23 +21,32 @@ if ( $page_featimg == true ) {
 } else {
 	$page_featimg_url = '';
 }
+$page_form = get_field( 'll_hs_form_html' );
+$page_below_fold_content = get_field( 'll_below_fold' );
 ?>
 
 <?php ll_page_hero( $page_title, $page_message['label'], $page_featimg_url ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
-	<div class="px-2 md:container md:mx-auto md:px-0">
+    <div class="px-2 md:container md:mx-auto md:px-0">
+        <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
-		<div <?php ll_content_class( 'entry-content' ); ?>>
+            <div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
+                <?php the_content(); ?>
+            </div>
 
-			<?php the_content(); ?>
+            <div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
+                <?php if ( $page_below_fold_content ) :
+                    echo $page_below_fold_content;
+                endif; ?>
+            </div>
 
-			<div class="clear-both">&nbsp;</div>
-		</div>
+            <div class="ll-page-grid-area-c">
+                <?php if ( $page_form ) :
+                    echo do_shortcode( $page_form );
+                endif; ?>
+            </div>
 
-
-		<?php // commenting out for now... should probably include desired form within the page content
-		// get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
-
+        </div>
 	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
