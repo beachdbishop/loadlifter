@@ -50,7 +50,7 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 	 */
 	function ll_posted_on() {
 		$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
-		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		if ( get_the_time( 'YY "/" mm "/" dd' ) !== get_the_modified_time( 'YY "/" mm "/" dd' ) ) {
 			$time_string = '<time class="entry-date | date-published" datetime="%1$s">%2$s</time> <time class="date-updated" datetime="%3$s">%4$s</time>';
 		}
 
