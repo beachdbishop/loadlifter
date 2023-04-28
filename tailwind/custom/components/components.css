@@ -88,20 +88,20 @@
 } */
 
 @media (min-width: 768px) {
-  .industry-page-grid {
+  .ll-page-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-areas:
       "aaa aaa ccc"
       "bbb bbb bbb";
   }
-  .ind-grid-area-a {
+  .ll-page-grid-area-a {
     grid-area: aaa; /* Main content */
 
   }
-  .ind-grid-area-b {
+  .ll-page-grid-area-b {
     grid-area: bbb; /* Secondary content */
   }
-  .ind-grid-area-c {
+  .ll-page-grid-area-c {
     grid-area: ccc; /* FORM */
   }
 }

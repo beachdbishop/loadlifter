@@ -17,7 +17,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 	 *
 	 * This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'LL_VERSION', '2.0.3' );
+	define( 'LL_VERSION', '2.0.4' );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
@@ -32,7 +32,7 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'LL_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral prose-headings:font-light max-w-none prose-a:text-primary lg:prose-xl'
+		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-a:text-primary lg:prose-xl'
 	);
 }
 

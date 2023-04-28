@@ -38,13 +38,13 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-2 md:container md:mx-auto md:px-0">
-        <div class="mt-4 industry-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
+        <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
-            <div <?php ll_content_class( 'entry-content ind-grid-area-a md:col-span-2' ); ?>>
+            <div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
                 <?php the_content(); ?>
             </div>
 
-            <div class="my-16 ind-grid-area-b md:my-0 md:col-span-3">
+            <div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
 
                 <?php if ( $ind_post_category ) : ?>
                     <section class="full-bleed not-prose bg-neutral-900 text-neutral-100 ll-equal-vert-padding">
@@ -109,7 +109,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
 
             </div>
 
-            <div class="ind-grid-area-c">
+            <div class="ll-page-grid-area-c">
                 <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose">
                     <?php if ( is_page( 'Construction' ) ) {
                         get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
