@@ -100,7 +100,7 @@
                 "Wyoming": "Wyoming"
             },
             "default_value": false,
-            "return_format": "array",
+            "return_format": "label",
             "multiple": 0,
             "allow_null": 0,
             "ui": 0,
@@ -200,5 +200,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682639019
+    "modified": 1682719118
 }

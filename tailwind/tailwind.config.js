@@ -33,6 +33,7 @@ module.exports = {
       },
       maxWidth: {
         '46char': '46ch',
+        '65char': '65ch',
         'socimg': '736px',
       },
       minHeight: {

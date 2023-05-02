@@ -23,10 +23,22 @@ if ( $page_featimg == true ) {
 }
 ?>
 
-<?php ll_page_hero( $page_title, $page_message['label'], $page_featimg_url ); ?>
+<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
+    ll_page_hero( $page_title, $page_message['label'], $page_featimg_url );
+endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
 	<div class="px-1 md:container md:mx-auto md:px-0">
+
+        <?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
+            <?php if ( function_exists( 'bcn_display' ) ) { ?>
+                <div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+            <?php } ?>
+
+            <header class="mb-4">
+                <?php the_title( '<h1 class="entry-title | text-brand-blue">', '</h1>' ); ?>
+            </header>
+        <?php } ?>
 
 		<div <?php ll_content_class( 'entry-content' ); ?>>
 

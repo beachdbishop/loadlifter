@@ -19,7 +19,7 @@
  */
 .page-title,
 .entry-title {
-	@apply max-w-content mb-6 break-words text-4xl text-neutral-900 md:mb-8 lg:text-5xl;
+	@apply mb-6 break-words text-4xl text-neutral-900 md:mb-8 lg:text-5xl;
 }
 
 /**

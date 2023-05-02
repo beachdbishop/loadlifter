@@ -25,7 +25,9 @@ $page_form = get_field( 'll_hs_form_html' );
 $page_below_fold_content = get_field( 'll_below_fold' );
 ?>
 
-<?php ll_page_hero( $page_title, $page_message['label'], $page_featimg_url ); ?>
+<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
+	ll_page_hero( $page_title, $page_message['label'], $page_featimg_url );
+endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
     <div class="px-2 md:container md:mx-auto md:px-0">
