@@ -56,7 +56,6 @@ function ll_people_filter_query( $query ) {
 
 					<header>
 						<h2 class="entry-title">Leadership Team</h2>
-						<p class="font-head lg:text-xl todo">Lorem ipsum something our team something something.</p>
 					</header>
 
 					<div class="grid grid-cols-1 mt-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4">
