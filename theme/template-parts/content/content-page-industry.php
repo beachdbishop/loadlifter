@@ -51,7 +51,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
                         <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
                             <div class="flex items-center justify-between mb-4">
                                 <h2>Insights</h2>
-                                <a href="/blog/" class="px-4 py-2 border-2 rounded-lg border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
+                                <a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
                             </div>
                             <?php echo do_shortcode( '[display-posts taxonomy="category" tax_term="' . $ind_post_category->slug . '" tax_operator="IN" taxonomy_2="category" tax_2_term="archived-events" tax_2_operator="NOT IN" orderby="date" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="dps-grid-3max" layout="card-simple" /]' ); ?>
                         </div>

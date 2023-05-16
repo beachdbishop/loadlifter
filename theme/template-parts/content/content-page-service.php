@@ -30,6 +30,7 @@ $svc_cta_heading = get_field( 'll_ind_cta_heading' );
 $svc_cta_body = get_field( 'll_ind_cta_body' );
 $svc_cta_button_text = get_field( 'll_ind_cta_button_text' );
 $svc_cta_html = get_field( 'll_ind_cta_html' );
+$svc_groups_html = get_field( 'll_ind_groups_html' );
 $svc_people = get_field( 'll_ind_people' );
 $svc_people_display = get_field( 'll_ind_people_display_style' );
 ?>
@@ -51,7 +52,7 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
                         <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
                             <div class="flex items-center justify-between mb-4">
                                 <h2>Insights</h2>
-                                <a href="/blog/" class="px-4 py-2 border-2 rounded-lg border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
+                                <a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
                             </div>
                             <?php echo do_shortcode( '[display-posts taxonomy="category" tax_term="' . $svc_post_category->slug . '" tax_operator="IN" taxonomy_2="category" tax_2_term="archived-events" tax_2_operator="NOT IN" orderby="date" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="dps-grid-3max" layout="card-simple" /]' ); ?>
                         </div>
@@ -80,14 +81,12 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
                 endif;
                 ?>
 
-                <?php
-                // SERVICE PROFESSIONALS AND INVOLVEMENT
-                if ( $svc_people_display != 'hide' ) :
-                ?>
+                <?php // SERVICE PROFESSIONALS AND INVOLVEMENT   ?>
+                <?php if ( ( $svc_people_display != 'hide' ) || ( !empty( $svc_groups_html ) ) ) : ?>
                 <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $svc_people ) && ( $svc_people_display != 'hide' ) ) : ?>
-                            <h3 class="text-brand-red">Industry Professionals</h3>
+                            <h2>Key Team Members | Experts | ???</h2>
 
                             <?php
                             if ( $svc_people_display === 'slider' ) :
@@ -99,6 +98,10 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
                             endif; ?>
 
                         <?php endif; ?>
+
+                        <?php if ( $svc_groups_html ) :
+                            echo $svc_groups_html;
+                        endif; ?>
 
                     </div>
                 </section>

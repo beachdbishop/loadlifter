@@ -12,12 +12,12 @@
 get_header();
 ?>
 
-	<main id="primary" class="landing-page-bare | bg-white">
+	<main id="primary" class="landing-page | bg-white">
 
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			get_template_part( 'template-parts/content/content', 'page-lp' );
+			get_template_part( 'template-parts/content/content', 'page-lp-bare' );
 		endwhile; // End of the loop.
 		?>
 
