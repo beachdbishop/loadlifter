@@ -111,7 +111,13 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
 
             <div class="ll-page-grid-area-c">
                 <div id="contact" class="p-4 border lg:p-8 bg-neutral-50 border-neutral-400 not-prose">
-                    <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+                    <?php
+                        if ( is_page( 'mexico-y-eu-contadores-publicos-certificados' ) ) {
+                            get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-spanish' );
+                        } else {
+                            get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
+                        }
+                    ?>
                 </div>
             </div>
 
