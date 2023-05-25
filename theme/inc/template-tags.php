@@ -254,14 +254,18 @@ if ( ! function_exists( 'll_page_hero' ) ) :
                 }
             }
         </style>';
-        // style="background-image: ' . $easedGradient . ', url(' . $bg . ');"
-        echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="">
+
+		echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="">
             <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
                 <div class="">
-                    <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>
-                    <h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>
-                </div>
-            </div>';
+                    <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>';
+					if ( is_front_page() ) {
+						echo '<p class="mt-4 text-xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-3xl">' . $h2 . '</p>';
+					} else {
+						echo '<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>';
+					}
+			echo '</div>
+		</div>';
 
         if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
             echo '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
