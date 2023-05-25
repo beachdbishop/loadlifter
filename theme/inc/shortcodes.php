@@ -30,7 +30,7 @@ function ll_listmenu_shortcode($atts, $content = null) {
                 'after' => '',
                 'link_before' => '',
                 'link_after' => '',
-                'depth' => 0,
+                'depth' => 1,
                 'theme_location' => '',
             ],
             $atts
