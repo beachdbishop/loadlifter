@@ -3,8 +3,9 @@
  * Pre-Footer
  */
 ?>
-<!-- <section class="py-4 full-bleed lg:py-8">
-	<div class="container mx-auto">
-		<p>Pre-Footer</p>
-	</div>
-</section> -->
+<?php // <section class="full-bleed ll-equal-vert-padding ">
+//	<div class="container mx-auto">
+//        <p>Pre-footer content</p>
+//	</div>
+// </section>
+?>
