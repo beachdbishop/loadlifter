@@ -224,36 +224,8 @@ if ( ! function_exists( 'll_page_hero' ) ) :
     function ll_page_hero( $h1, $h2, $img ) {
         $bg = esc_url( $img );
         $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 0%, 0.97) 0%, hsla(210, 50%, 0.78%, 0.959) 8.1%, hsla(210, 66.67%, 2.35%, 0.928) 15.5%, hsla(206.25, 61.54%, 5.1%, 0.88) 22.5%, hsla(206.67, 62.79%, 8.43%, 0.817) 29%, hsla(207, 62.5%, 12.55%, 0.744) 35.3%, hsla(207.78, 61.36%, 17.25%, 0.664) 41.2%, hsla(207.43, 62.5%, 21.96%, 0.578) 47.1%, hsla(208.24, 62.04%, 26.86%, 0.492) 52.9%, hsla(207.92, 62.73%, 31.57%, 0.406) 58.8%, hsla(208.17, 62.16%, 36.27%, 0.326) 64.7%, hsla(208.13, 62.14%, 40.39%, 0.253) 71%, hsla(208.06, 62.33%, 43.73%, 0.19) 77.5%, hsla(207.76, 62.03%, 46.47%, 0.142) 84.5%, hsla(207.84, 62.45%, 48.04%, 0.111) 91.9%, hsla(207.87, 62.25%, 48.82%, 0.1) 100%)';
-        $easedGrad2 = 'linear-gradient(
-              to right,
-              hsl(0, 0%, 16%) 0%,
-              hsla(0, 0%, 16%, 0.99) 8.1%,
-              hsla(0, 0%, 16%, 0.961) 15.5%,
-              hsla(0, 0%, 16%, 0.917) 22.5%,
-              hsla(0, 0%, 16%, 0.86) 29%,
-              hsla(0, 0%, 16%, 0.793) 35.3%,
-              hsla(0, 0%, 16%, 0.718) 41.2%,
-              hsla(0, 0%, 16%, 0.64) 47.1%,
-              hsla(0, 0%, 16%, 0.56) 52.9%,
-              hsla(0, 0%, 16%, 0.482) 58.8%,
-              hsla(0, 0%, 16%, 0.407) 64.7%,
-              hsla(0, 0%, 16%, 0.34) 71%,
-              hsla(0, 0%, 16%, 0.283) 77.5%,
-              hsla(0, 0%, 16%, 0.239) 84.5%,
-              hsla(0, 0%, 16%, 0.21) 91.9%,
-              hsla(0, 0%, 16%, 0.2) 100%
-            )';
 
-        echo '<style>
-            .page-hero {
-                background-image: linear-gradient(to right, hsl(0 0% 0% / 1) 5%, hsl(0 0% 0% / 0.8) 40%, hsl(0 0% 0% / 0.2) 95%), url(' . $bg . ');
-            }
-            @media (min-width: 768px) {
-                .page-hero {
-                    background-image: ' . $easedGradient . ', url(' . $bg . ');
-                }
-            }
-        </style>';
+        echo '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 0% / 1) 5%, hsl(0 0% 0% / 0.8) 40%, hsl(0 0% 0% / 0.2) 95%), url(' . $bg . '); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', url(' . $bg . '); } }</style>';
 
 		echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="">
             <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
