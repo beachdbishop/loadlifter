@@ -40,10 +40,10 @@ get_header();
 
 					<section class="mb-8 lg:mb-16">
 
-						<div class="lg:flex lg:flex-row lg:items-start lg:gap-8">
+						<div class="flex flex-col gap-8 lg:flex-row lg:items-start">
 
 							<div class="lg:basis-1/3 lg:grow">
-								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100">
+								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100 hover:bg-white">
 									<div class="w-full bg-white"><a href="https://beachfleischman.sharefile.com/" target="_blank" rel="noopener"><img class="mx-auto" src="https://beachfleischman.com/wp-content/uploads/2022/02/res__guide-sharefile.png" alt="logo: Citrix Sharefile" width="240" height="160"></a></div>
 									<div class="p-6 ">
 										<h3 class="mb-3 text-neutral-800 ">ShareFile</h3>
@@ -54,7 +54,7 @@ get_header();
 							</div>
 
 							<div class="lg:basis-1/3 lg:grow">
-								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100">
+								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100 hover:bg-white">
 									<div class="w-full bg-white"><a href="https://taxcaddy.com/" target="_blank" rel="noopener"><img class="mx-auto" src="https://beachfleischman.com/wp-content/uploads/2021/06/res__guide-taxcaddy.png" alt="logo: TaxCaddy" width="240" height="160"></a></div>
 									<div class="p-6 ">
 										<h3 class="mb-3 text-neutral-800 ">TaxCaddy</h3>
@@ -65,7 +65,7 @@ get_header();
 							</div>
 
 							<div class="lg:basis-1/3 lg:grow">
-								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100">
+								<div class="h-full overflow-hidden border-2 rounded-lg bg-neutral-100 border-neutral-100 hover:bg-white">
 									<div class="w-full bg-white"><a href="/client-center/safesend-returns-guide/"><img class="mx-auto" src="https://beachfleischman.com/wp-content/uploads/2021/06/res__guide-safesend.png" alt="logo: SafeSend Returns" width="240" height="160"></a></div>
 									<div class="p-6 ">
 										<h3 class="mb-3 text-neutral-800 ">SafeSend Returns</h3>
@@ -80,7 +80,7 @@ get_header();
 					</section>
 
 					<section>
-                        <div class="p-4 mb-10 border-2 border-solid divide-y rounded-lg border-neutral-200 bg-neutral-50 md:mb-0 divide-neutral-200 divide-solid lg:p-8 ">
+                        <div class="p-4 mb-10 border-2 border-solid divide-y rounded-lg border-neutral-200 bg-neutral-50 md:mb-0 divide-neutral-200 divide-solid lg:p-8 hover:bg-white">
 							<div class="pb-4 lg:pb-8">
 								<h3 class="mb-2 text-brand-red">Payment Options</h3>
 								<p class="mb-4">Use the options below to pay an invoice or a deposit.</p>
