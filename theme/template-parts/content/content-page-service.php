@@ -86,7 +86,7 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
                 <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $svc_people ) && ( $svc_people_display != 'hide' ) ) : ?>
-                            <h2>Key Team Members | Experts | ???</h2>
+                            <h2>Our Advisors</h2>
 
                             <?php
                             if ( $svc_people_display === 'slider' ) :
