@@ -19,8 +19,8 @@ $args = [
 	'meta_query'				=> [
 		[
 			'key'		=> 'll_people_level',
-			'value'		=> '900',
-			'compare'	=> '!=',
+			'value'		=> '400',
+			'compare'	=> '<=',
 		],
 	],
 	'meta_key'					=> 'll_people_level',
