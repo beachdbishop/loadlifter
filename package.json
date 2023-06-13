@@ -57,7 +57,7 @@
 	},
 	"prettier": "@wordpress/prettier-config",
 	"browserslist": [
-		"defaults and supports es6-module",
+		"defaults",
 		"maintained node versions"
 	]
 }
