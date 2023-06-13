@@ -38,7 +38,7 @@
 		"watch:tailwind:frontend": "npm run development:tailwind:frontend -- --watch",
 		"watch:tailwind:editor": "npm run development:tailwind:editor -- --watch",
 		"watch:esbuild": "npm run development:esbuild -- --watch",
-		"watch:browser-sync": "browser-sync start --proxy \"peoplecptauthortest.local\" --files \"theme\" --no-notify --no-inject-changes",
+		"watch:browser-sync": "browser-sync start --proxy \"peoplecptauthortest.local\" --files \"theme\" --no-notify --no-inject-changes --no-ghost-mode",
 		"watch": "run-p watch:**",
 		"start": "run-p watch:**",
 		"lint:eslint": "npx eslint theme/",
@@ -55,5 +55,9 @@
 		"zip": "node node_scripts/zip.js loadlifter",
 		"bundle": "run-s production zip"
 	},
-	"prettier": "@wordpress/prettier-config"
+	"prettier": "@wordpress/prettier-config",
+	"browserslist": [
+		"defaults and supports es6-module",
+		"maintained node versions"
+	]
 }
