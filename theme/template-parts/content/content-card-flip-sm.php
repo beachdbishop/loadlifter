@@ -25,7 +25,7 @@ $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbna
                         </span>
                     </div>
                     <?php endif; ?>
-                    <?php the_title( '<h4 class="my-2 font-light leading-none text-current">', '</h4>' ); ?>
+                    <?php the_title( '<h4 class="mt-2 font-light leading-none text-current">', '</h4>' ); ?>
                 </div>
                 <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]" style="background-image: url('<?php echo $feat_image_url[0]; ?>')">
                     <?php
