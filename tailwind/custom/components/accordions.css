@@ -31,7 +31,7 @@ details[open] summary::-webkit-details-marker {
   }
 
   summary {
-    @apply font-head text-3xl leading-relaxed px-4 pb-1 before:content-['+']  before:font-mono before:mr-1;
+    @apply font-head text-3xl px-4 pt-1 pb-2 before:content-['+']  before:font-mono before:mr-1;
   }
 
   .details-inner {
