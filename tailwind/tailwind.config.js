@@ -37,7 +37,7 @@ module.exports = {
         'socimg': '736px',
       },
       minHeight: {
-        'hero': '420px',
+        'hero': '360px',
       },
       textShadow: {
         sm: '0 1px 2px var(--tw-shadow-color)',
