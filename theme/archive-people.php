@@ -17,30 +17,32 @@ get_header();
 $args = [
 	'post_type' 				=> 'people',
 	'meta_query'				=> [
-		[
+        'relation' => 'AND',
+		'level_clause' => [
 			'key'		=> 'll_people_level',
 			'value'		=> '400',
 			'compare'	=> '<=',
 		],
+        'lastname_clause' => [
+            'key'       => 'll_people_last_name',
+            'compare'   => 'EXISTS',
+        ],
 	],
 	'meta_key'					=> 'll_people_level',
 	'post_status' 				=> 'publish',
 	'posts_per_page'			=> -1,
 	'posts_per_archive_page'	=> -1,
 	'order' 					=> 'ASC',
-	'orderby' 					=> 'meta_value title',
+	'orderby' 					=> [
+        'level_clause' => 'ASC',
+        'lastname_clause' => 'ASC',
+    ],
 	'wp_grid_builder'			=> 'wpgb-content-1',
 ];
+/* Sort a query by multiple custom fields */
+/* via: https://wordpress.stackexchange.com/a/305930 */
 
-add_filter( 'posts_orderby', 'll_people_filter_query' );
 $peopleQuery = new WP_Query( $args );
-remove_filter( 'posts_orderby', 'll_people_filter_query' );
-/* via: https://wordpress.stackexchange.com/questions/109849/order-by-desc-asc-in-custom-wp-query */
-function ll_people_filter_query( $query ) {
-	$table_pre = ( wp_get_environment_type() == 'local' ) ? 'wp' : 'ee7hu21rj';
-	$query .= ', ' . $table_pre . '_posts.menu_order ASC';
-	return $query;
-}
 
 ?>
 

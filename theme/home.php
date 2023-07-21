@@ -21,18 +21,21 @@ get_header();
 				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
-			<header class="flex gap-4 mb-8">
-				<div class="basis-2/3">
+			<header class="md:grid md:grid-cols-2 md:gap-16 mb-8">
+				<div class="">
 					<h1 class="text-brand-blue head-last-bold">A-Z Blog</h1>
 					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
 					<div class="text-brand-blue"><?php echo do_shortcode( '[social_links /]' ); ?></div>
 				</div>
-				<?php if ( is_user_logged_in() ) { ?>
-					<div class="p-4 border-2 border-dashed basis-1/3 rounded-xl border-brand-blue-pale">
-						<p class="italic">This control only appears for viewers logged into WordPress. Use it to filter the list of posts within a date range.</p>
-						<?php if ( function_exists( 'wpgb_render_facet' ) ) { wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] ); } // Date Range Picker ?>
-					</div>
-				<?php } ?>
+
+                <div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16">
+                    <div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
+                        wpgb_render_facet( ['id' => 9, 'grid' => 'wpgb-content', ] );
+                    } ?></div>
+                    <div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
+                        wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] );
+                    } ?></div>
+                </div>
 			</header>
 
 			<?php if ( have_posts() ) : ?>

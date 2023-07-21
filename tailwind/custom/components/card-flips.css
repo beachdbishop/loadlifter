@@ -6,7 +6,7 @@
   --card-back-bg: #262626;
   --card-front-text: #e5e5e5;
   --card-back-text: #f5f5f5;
-  @apply flex flex-wrap place-content-center gap-4 lg:place-content-between lg:gap-8;
+  @apply flex flex-wrap place-content-center gap-4 lg:gap-8;
 
   .card:hover .card-content,
   .card:active .card-content,

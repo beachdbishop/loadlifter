@@ -87,7 +87,7 @@
             "name": "ll_people_level",
             "aria-label": "",
             "type": "select",
-            "instructions": "",
+            "instructions": "(Primary sort on Leadership Team page)",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -113,6 +113,26 @@
             "ui": 1,
             "ajax": 0,
             "placeholder": ""
+        },
+        {
+            "key": "field_64b82ab01e649",
+            "label": "Last Name",
+            "name": "ll_people_last_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "(Secondary sort on Leadership Team page)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_634da138e1c22",
@@ -149,7 +169,8 @@
             "allow_custom": 0,
             "layout": "vertical",
             "toggle": 0,
-            "save_custom": 0
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         },
         {
             "key": "field_634da154e1c23",
@@ -279,5 +300,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1667487728
+    "modified": 1689791514
 }
