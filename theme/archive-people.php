@@ -61,7 +61,7 @@ $peopleQuery = new WP_Query( $args );
 					</header>
 
 					<div class="grid grid-cols-1 mt-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4">
-						<div class="col-span-1 p-2 border-2 border-solid rounded-lg rounded-xl border-brand-blue md:p-4">
+						<div class="col-span-1 p-2 border-2 border-solid rounded-lg lg:rounded-xl border-brand-blue md:p-4">
 							<?php
 							wpgb_render_facet( ['id' => 6, 'grid' => 'wpgb-content-1' ] ); // Search
 							wpgb_render_facet( ['id' => 1, 'grid' => 'wpgb-content-1' ] ); // Location
