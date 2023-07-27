@@ -21,7 +21,7 @@ get_header();
 				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
-			<header class="md:grid md:grid-cols-2 md:gap-16 mb-8">
+			<header class="mb-8 md:grid md:grid-cols-2 md:gap-16">
 				<div class="">
 					<h1 class="text-brand-blue head-last-bold">A-Z Blog</h1>
 					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
@@ -39,7 +39,7 @@ get_header();
 			</header>
 
 			<?php if ( have_posts() ) : ?>
-				<div class="grid gap-8 -m-4 grid-auto-fit-xl">
+				<div class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					<?php
 					while ( have_posts() ) :
 						the_post();
@@ -47,8 +47,12 @@ get_header();
 					endwhile; // End of the loop.
 					?>
 				</div>
-				<div>
-					<?php ll_paging_nav(); ?>
+
+				<div class="mt-8">
+					<?php // ll_paging_nav();
+                    if ( function_exists( 'wpgb_render_facet' ) ) {
+                        wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
+                    } ?>
 				</div>
 			<?php else : ?>
 
