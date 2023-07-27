@@ -39,13 +39,32 @@ $trending = get_field( 'll_front_trending_items' );
 			<?php the_content(); ?>
 
 			<?php
-			wp_link_pages(
-				array(
-					'before' => '<div>' . esc_html__( 'Pages:', 'loadlifter' ),
-					'after'  => '</div>',
-				)
-			);
+			// wp_link_pages(
+			// 	array(
+			// 		'before' => '<div>' . esc_html__( 'Pages:', 'loadlifter' ),
+			// 		'after'  => '</div>',
+			// 	)
+			// );
 			?>
+
+            <section class="full-bleed ll-equal-vert-padding not-prose">
+                <div class="post-grid | px-2 md:container md:mx-auto md:px-0">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2>Recent Posts</h2>
+                        <a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark">View All</a>
+                    </div>
+                    <?php echo do_shortcode(
+                        '[display-posts
+                        posts_per_page="4"
+                        ignore_sticky_posts="true"
+                        orderby="date"
+                        order="DESC"
+                        wrapper="div"
+                        wrapper_class="dps-grid-4max"
+                        layout="card" /]'
+                    ); ?>
+                </div>
+            </section>
 		</div>
 
 	</div>
