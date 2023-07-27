@@ -5,16 +5,24 @@
 	@apply max-w-full;
 }
 
-.a11y-slider-container > button {
+/* .a11y-slider-container > button {
 	@apply font-head font-bold border inline-flex items-center justify-center rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-800/50 border-neutral-800/50 shadow-neutral-800 hover:text-brand-blue hover:border-brand-blue hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg;
 }
 
 .on-darkbg .a11y-slider-container > button {
 	@apply font-head font-bold border inline-flex items-center justify-center rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-200/50 border-neutral-200/50 shadow-neutral-800 hover:text-white hover:border-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:shadow-sm sm:w-auto lg:text-lg;
+} */
+
+.a11y-slider-container > button {
+	@apply font-head font-bold border rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-800/50 border-neutral-800/50 shadow-neutral-800 hover:text-brand-blue hover:border-brand-blue hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg;
+}
+
+.on-darkbg .a11y-slider-container > button {
+	@apply font-head font-bold border rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-200/50 border-neutral-200/50 shadow-neutral-800 hover:text-white hover:border-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:shadow-sm sm:w-auto lg:text-lg;
 }
 
 .a11y-slider-next {
-	@apply float-right;
+	@apply float-none md:float-right;
 }
 
 [data-autoplaying] {
@@ -74,4 +82,16 @@
 }
 .slider-people > * {
 	@apply w-52 grow-0 shrink-0 basis-auto md:w-64;
+}
+
+
+@media screen and (max-width: 743px) {
+  .a11y-slider-autoplay,
+  .a11y-slider-next,
+  .a11y-slider-prev {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 0 0 10px;
+  }
 }

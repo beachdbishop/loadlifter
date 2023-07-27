@@ -10,7 +10,7 @@
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/tailwindcss": "^3.0.10",
 		"@wordpress/prettier-config": "^2.13.0",
-		"a11y-slider": "^0.4.15",
+		"a11y-slider": "^0.4.22",
 		"adm-zip": "^0.5.10",
 		"archiver": "^5.3.1",
 		"browser-sync": "^2.27.10",
