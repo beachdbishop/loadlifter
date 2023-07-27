@@ -99,19 +99,18 @@ function ll_add_post_source_column( $columns ) {
 add_filter( 'manage_posts_columns', 'll_add_post_source_column' );
 
 function ll_posts_columns_custom_order( $columns ) {
+    $custom_col_order = [
+        'cb' => $columns['cb'],
+        'title' => $columns['title'],
+        'll_id' => $columns['ll_id'],
+        'll_source' => $columns['ll_source'],
+        'categories' => $columns['categories'],
+        'date' => $columns['date'],
+    ];
 
-	$custom_col_order = [
-		'cb' => $columns['cb'],
-		'title' => $columns['title'],
-		'll_id' => $columns['ll_id'],
-		'll_source' => $columns['ll_source'],
-		'categories' => $columns['categories'],
-		'date' => $columns['date'],
-	];
-	return $custom_col_order;
-
+    return $custom_col_order;
 }
-add_filter( 'manage_posts_columns', 'll_posts_columns_custom_order' );
+add_filter( 'manage_post_posts_columns', 'll_posts_columns_custom_order', 10 );
 
 function ll_show_post_source( $column, $post_id ) {
 
