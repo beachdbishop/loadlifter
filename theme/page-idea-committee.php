@@ -130,7 +130,7 @@ $idea_quotes = [
 
                 <div class="clear-both">&nbsp;</div>
 
-                <section class="mb-0 full-bleed ll-equal-vert-padding bg-gradient-to-br from-brand-blue to-brand-blue-pale text-neutral-200">
+                <section class="mb-0 full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway text-neutral-200 on-darkbg">
                     <div class="container">
                         <div class="max-w-3xl md:mx-auto not-prose">
                             <h2>Thoughts from some of our IDEA Committee Members</h2>
