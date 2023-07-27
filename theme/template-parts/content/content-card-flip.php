@@ -27,9 +27,9 @@ $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'
                     <?php endif; ?>
                     <?php the_title( '<h3 class="mt-2 font-light leading-none text-current">', '</h3>' ); ?>
                 </div>
-                <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]" style="background-image: url('<?php echo $feat_image_url[0]; ?>')">
+                <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]" style="background-image: url('<?php echo $feat_image_url[0]; ?>')">
                     <?php
-                    the_title( '<h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">', '</h6>' );
+                    the_title( '<h5 class="my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">', '</h5>' );
                     echo '<p class="text-center text-shadow">' . ll_no_widows( $message['label'] ) . '</p>';
                     ?>
                 </div>
