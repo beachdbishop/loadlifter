@@ -28,15 +28,12 @@ $args = [
             'compare'   => 'EXISTS',
         ],
 	],
-	'meta_key'					=> 'll_people_level',
+	'meta_key'					=> 'll_people_last_name',
 	'post_status' 				=> 'publish',
 	'posts_per_page'			=> -1,
 	'posts_per_archive_page'	=> -1,
 	'order' 					=> 'ASC',
-	'orderby' 					=> [
-        'level_clause' => 'ASC',
-        'lastname_clause' => 'ASC',
-    ],
+	'orderby' 					=> 'meta_value',
 	'wp_grid_builder'			=> 'wpgb-content-1',
 ];
 /* Sort a query by multiple custom fields */

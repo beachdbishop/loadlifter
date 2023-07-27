@@ -68,21 +68,28 @@ add_action( 'init', 'll_register_people_cpt', 0 );
 
 
 function ll_filter_people_columns( $columns ) {
-	$columns = [
-		'cb' => $columns['cb'],
-		'title' => __( 'Title' ),
-		'level' => __( 'Level', 'loadlifter' ),
-		'dept' => __( 'Department', 'loadlifter' ),
-		'location' => __( 'Location', 'loadlifter' ),
-		'll_id' => __( 'ID' ),
-		'date' => __( 'Date' ),
-	];
-	return $columns;
+    $columns = [
+        'cb' => $columns['cb'],
+        'title' => __( 'Title' ),
+        'lastname' => __( 'Last Name' ),
+        'level' => __( 'Level', 'loadlifter' ),
+        'dept' => __( 'Department', 'loadlifter' ),
+        'location' => __( 'Location', 'loadlifter' ),
+        'll_id' => __( 'ID' ),
+        'date' => __( 'Date' ),
+    ];
+    return $columns;
 }
 add_filter( 'manage_people_posts_columns', 'll_filter_people_columns' );
 
 
 function ll_people_columns( $column, $post_id ) {
+    // Last Name column
+    if ( 'lastname' === $column ) {
+		$lastname_val = get_field( 'll_people_last_name');
+		echo $lastname_val;
+	}
+
 	// Level column
 	if ( 'level' === $column ) {
 		$level_obj = get_field_object( 'll_people_level');
@@ -118,6 +125,7 @@ add_action( 'manage_people_posts_custom_column', 'll_people_columns', 10, 2 );
 
 
 function ll_people_sortable_columns( $columns ) {
+    $columns['lastname'] = 'lastname';
 	$columns['level'] = 'level';
 	$columns['dept'] = 'dept';
 	$columns['location'] = 'location';
@@ -127,15 +135,49 @@ add_filter( 'manage_edit-people_sortable_columns', 'll_people_sortable_columns' 
 
 // WP-Admin list sort
 function ll_people_orderby( $query ) {
+
+
+    // $args = [
+    //     'post_type' 				=> 'people',
+    //     'meta_query'				=> [
+    //         'relation' => 'AND',
+    //         'level_clause' => [
+    //             'key'		=> 'll_people_level',
+    //             'value'		=> '400',
+    //             'compare'	=> '<=',
+    //         ],
+    //         'lastname_clause' => [
+    //             'key'       => 'll_people_last_name',
+    //             'compare'   => 'EXISTS',
+    //         ],
+    //     ],
+    //     'meta_key'					=> 'll_people_level',
+    //     'post_status' 				=> 'publish',
+    //     'posts_per_page'			=> -1,
+    //     'posts_per_archive_page'	=> -1,
+    //     'order' 					=> 'ASC',
+    //     'orderby' 					=> [
+    //         'level_clause' => 'ASC',
+    //         'lastname_clause' => 'ASC',
+    //     ],
+    //     'wp_grid_builder'			=> 'wpgb-content-1',
+    // ];
+
+
 	// Nothing to do
 	if( !$query->is_main_query() || 'people' != $query->get( 'post_type' ) )
 		return;
 
 	// Do
 	if ( '' === $query->get( 'orderby' ) ) {
-		$query->set( 'orderby', 'meta_value title' );
+		$query->set( 'orderby', 'meta_value' );
 		$query->set( 'order', 'ASC' );
-		$query->set( 'meta_key', 'll_people_level' );
+		$query->set( 'meta_key', 'll_people_last_name' );
+	}
+
+    if ( 'lastname' === $query->get( 'orderby' ) ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', 'll_people_last_name' );
 	}
 
 	if ( 'level' === $query->get( 'orderby' ) ) {
