@@ -79,7 +79,7 @@
             "choices": {
                 "--": "Unknown",
                 "original": "Original Content",
-                "checkpoint": "Checkpoint",
+                "checkpoint": "TopLine (Checkpoint)",
                 "other": "Other"
             },
             "default_value": false,
@@ -109,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667337704
+    "modified": 1690835526
 }
