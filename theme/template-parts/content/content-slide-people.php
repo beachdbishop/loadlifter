@@ -27,11 +27,11 @@ $peep_level = get_field( 'll_people_level' );
 
 	<div class="seethru | grow bg-transparent">&nbsp;</div>
 
-	<div class="slide-info | shrink-0 h-1/3 bg-white px-6 py-2 z-10 ">
+	<div class="slide-info | shrink-0 h-2/5 bg-white px-6 py-2 z-10 ">
 		<header>
 			<?php
 			$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
-			echo sprintf( '<p class="font-head text-xl leading-none text-center text-brand-gray %1$s">%2$s</p>', $title_classes, get_the_title() );
+			echo sprintf( '<p class="font-head text-2xl leading-none text-center text-brand-gray %1$s">%2$s</p>', $title_classes, get_the_title() );
 			?>
 		</header>
 		<?php
