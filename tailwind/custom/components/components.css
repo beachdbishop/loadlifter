@@ -306,10 +306,3 @@ p[class*="is-style-note-"] {
 	/* Background */
 	background: var(--scrollbar-background);
 }
-
-.easy-footnotes-wrapper {
-	@apply max-w-prose text-sm;
-}
-.easy-footnote a {
-	@apply text-brand-red no-underline hover:text-current;
-}
