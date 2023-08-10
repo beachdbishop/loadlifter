@@ -73,38 +73,41 @@ $cards_future = [
         "backContent" => '<p>Our success depends on you, your career, your development, and your growth. Here, you will follow your passions, including working with growth-oriented clients and taking ownership of your projects. Seek success and the future is yours!</p>',
     ],
 ];
-
+$cards_benefits = [
+    "career_dev" => [
+        "label" => 'Career Development',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1675698306/feat__buddy-mentor_g81otc.jpg',
+        "imgAlt" => 'A mentor and mentee smile while having a discussion',
+        "onHoverContent" => '<ul><li>CPA Certification Bonus</li><li>Certification Reimbursement</li><li>Continuing Professional Education</li><li>Leadership Development</li><li>Mentor Program</li><li>Employee Referral Program</li></ul>',
+    ],
+    "health" => [
+        "label" => 'Well-Being',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-health-wellness_am649w.jpg',
+        "imgAlt" => 'A patient has a discussion with a medical professional',
+        "onHoverContent" => '<ul><li>Medical Insurance</li><li>Dental Insurance</li><li>Vision Insurance</li><li>Life Insurance</li><li>Short and Long-Term Disability Insurance</li><li>Accident Insurance</li><li>Critical Illness Insurance</li><li>Hospital Indemnity Insurance</li><li>Flexible Spending Account</li><li>Dependent Care Account</li></ul>',
+    ],
+    "wellbeing" => [
+        "label" => 'Well-Being',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-perks_qwhc1n.jpg',
+        "imgAlt" => 'A man looks out a window with his arms raised in celebration',
+        "onHoverContent" => '<ul><li>Paid Time Off</li><li>Flextime Options</li><li>Hybrid/Remote Work Options</li><li>Employee Assistance Program</li><li>Wellness Campaigns</li><li>Busy Season Meals and Snacks</li></ul>',
+    ],
+    "financial" => [
+        "label" => 'Financial',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-financial-wellness_ugapx0.jpg',
+        "imgAlt" => 'Five stacks of coins increasing in height from one to the next',
+        "onHoverContent" => '<ul><li>401(k) Retirement Plan</li><li>Employer Match</li><li>Profit Sharing Plan</li><li>Cash Balance Plan</li><li>Access to Financial Advisors</li><li>Performance-Based Bonuses</li></ul>',
+    ],
+];
 
 if ('local' === wp_get_environment_type()) {
-    $hr_ids = '1842,1843,3969';
+    $hr_ids = '1842,1843,3969,5169';
 } else {
-    $hr_ids = '31394,31603,32639';
-}
-
-function ll_no_link_card( $card ) {
-    echo '<div>
-        <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
-            <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
-                <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-                    <div class="card-icon | text-[--card-front-icon]">
-                        <span class="fa-stack fa-2x">
-                            <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
-                            <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
-                        </span>
-                    </div>
-                    <h3 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h3>
-                </div>
-                <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
-                    <h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $card['label'] . '</h6>
-                    <p class="text-center text-shadow">' . $card['backContent'] . '</p>
-                </div>
-            </div>
-        </div>
-    </div>';
+    $hr_ids = '31394,31603,32639,35019';
 }
 ?>
 
-<?php ll_page_hero( $page_title, $page_excerpt, $page_featimg_url ); ?>
+<?php ll_page_hero( $page_title, '', $page_featimg_url ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
     <div class="px-2 md:container md:mx-auto md:px-0">
@@ -132,7 +135,7 @@ function ll_no_link_card( $card ) {
 
         <?php if (is_page('career-opportunities')) : ?>
         <!--   O P P O R T U N I T I E S   -->
-            <section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-blue-faint via-neutral-100 to-white">
+            <section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-gray-pale via-neutral-100 to-white">
                 <div class="container px-2 mx-auto md:px-0">
                     <h2 class="mb-6 font-head">Opportunities</h2>
                     <div class="grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8">
@@ -141,7 +144,6 @@ function ll_no_link_card( $card ) {
                                 <a href="/career-opportunities/internships/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-internships--social_q07na1.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Man and young man having a converstion at a table"></a>
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/internships/">Internships</a></h4>
-                            <p class="text-base todo lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
                             <p><a class="text-brand-blue hover:text-brand-red" href="/career-opportunities/internships/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                         </div>
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
@@ -149,7 +151,6 @@ function ll_no_link_card( $card ) {
                                 <a href="/career-opportunities/recent-college-graduates/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-college-grads--social_jlh5qx.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Group of happy college students walking down a street"></a>
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/recent-college-graduates/">Recent College Graduates</a></h4>
-                            <p class="text-base todo lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
                             <p><a class="text-brand-blue hover:text-brand-red" href="/career-opportunities/recent-college-graduates/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                         </div>
                         <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group">
@@ -157,7 +158,6 @@ function ll_no_link_card( $card ) {
                                 <a href="/career-opportunities/experienced-professionals/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg" class="transition duration-200 ease-in-out group-hover:scale-110" alt="Happy person in glasses shaking the hand of someone out of frame"></a>
                             </div>
                             <h4 class="font-bold lg:mb-4 group-hover:text-brand-blue"><a href="/career-opportunities/experienced-professionals/">Experienced Professionals</a></h4>
-                            <p class="text-base todo lg:mb-4 group-hover:text-neutral-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit totam voluptas aspernatur dicta nisi tenetur incidunt eum laudantium fuga more sentence just to see how it alters the display doloremque sapiente veniam asperiores, consequatur, consequuntur odio, quos aliquam qui!</p>
                             <p><a class="text-brand-blue hover:text-brand-red" href="/career-opportunities/experienced-professionals/">Learn more <i class="fa-regular fa-arrow-right"></i></a></p>
                         </div>
                     </div>
@@ -167,7 +167,7 @@ function ll_no_link_card( $card ) {
 
         <?php if ( is_page('internships') ) { ?>
         <!--   Expect & Future   -->
-            <section class="full-bleed not-prose bg-gradient-to-b from-brand-blue-faint via-neutral-100 to-white">
+            <section class="full-bleed not-prose bg-gradient-to-b from-brand-gray-pale via-neutral-100 to-white">
                 <div class="px-2 pt-8 mx-auto max-w-prose md:px-0 lg:pt-12">
                     <h2 class=" text-brand-red">What you can expect</h2>
                     <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
@@ -178,7 +178,7 @@ function ll_no_link_card( $card ) {
                 </div>
             </section>
         <?php } else { ?>
-            <section class="full-bleed not-prose bg-gradient-to-b from-brand-blue-faint via-neutral-100 to-white">
+            <section class="full-bleed not-prose bg-gradient-to-b from-brand-gray-pale via-neutral-100 to-white">
                 <div class="container px-2 pt-8 mx-auto md:px-0 lg:pt-12">
                     <h2 class=" text-brand-red">What you can expect</h2>
                     <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
@@ -228,10 +228,10 @@ function ll_no_link_card( $card ) {
 
         <?php // B E N E F I T S ... ?>
         <?php if ( !is_page('internships') ) : ?>
-            <section id="benefits" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-blue via-brand-blue-faint ">
+            <section id="benefits" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-red-faint to-white/30 ">
                 <div class="container px-2 mx-auto md:px-0">
-                    <h2 class="mb-6 font-head">Benefits &amp; Perks</h2>
-                    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                    <h2 class="mb-6 font-head">Benefits</h2>
+                    <!-- <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 
                         <div class="p-4 prose bg-white lg:p-8">
                             <div class="flex items-center justify-center p-4 bg-white border not-prose border-neutral-200"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_400/v1675698306/feat__buddy-mentor_g81otc.jpg" alt="A mentor and mentee smile while having a discussion" /></div>
@@ -271,6 +271,12 @@ function ll_no_link_card( $card ) {
                                 <li>Great snacks -- if you work in the Phoenix office</li>
                             </ul>
                         </div>
+                    </div> -->
+
+                    <div class="grid gap-4 mt-16 md:grid-cols-2 lg:grid-cols-4">
+                        <?php foreach( $cards_benefits as $card ) {
+                            ll_render_hover_card( $card );
+                        } ?>
                     </div>
                 </div>
             </section>
@@ -320,7 +326,7 @@ function ll_no_link_card( $card ) {
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634570038/Move_bestfirm_EL_2021_dpoubu.png" alt="2021 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1570228350/clearlyrated-best-of-accounting-2019_b4g2yx.png" alt="Best of Accounting 2019 - Clearly Rated" width="100" height="100">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="Best of Accounting 2023 - Clearly Rated" width="100" height="100">
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="Inside Public Accounting's All Star Firms" width="100" height="100">
                     </div>
                 </div>
@@ -330,8 +336,8 @@ function ll_no_link_card( $card ) {
         <?php // C T A   a n d   R e c r u i t i n g   C o n t a c t ( s ) ... ?>
         <section id="team" class="bg-white full-bleed ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
-                <h2 class=" text-brand-blue-dark">Hrrrrrrrrrrrr?</h2>
-                <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="ASC" posts_per_page="3" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-small" /]'); ?>
+                <h2 class=" text-brand-blue-dark">Our Team</h2>
+                <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="ASC" posts_per_page="4" wrapper="div" wrapper_class="grid grid-auto-fit gap-2" layout="card-people-small-desigs" /]'); ?>
             </div>
         </section>
 

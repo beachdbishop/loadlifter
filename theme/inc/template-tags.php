@@ -535,3 +535,45 @@ if ( ! function_exists( 'll_content_class' ) ) :
 		echo 'class="' . esc_attr( implode( ' ', $combined_classes ) ) . '"';
 	}
 endif;
+
+
+if ( ! function_exists( 'll_no_link_card' ) ) :
+    function ll_no_link_card( $card ) {
+        echo '<div>
+            <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
+                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
+                    <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+                        <div class="card-icon | text-[--card-front-icon]">
+                            <span class="fa-stack fa-2x">
+                                <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
+                            </span>
+                        </div>
+                        <h3 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h3>
+                    </div>
+                    <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
+                        <h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $card['label'] . '</h6>
+                        <p class="text-center text-shadow">' . $card['backContent'] . '</p>
+                    </div>
+                </div>
+            </div>
+        </div>';
+    }
+endif;
+
+
+if ( ! function_exists( 'll_render_hover_card' ) ) :
+    function ll_render_hover_card( $card ) {
+        echo '<a href="#" class="relative block bg-brand-blue-dark group">
+            <img alt="' . $card['imgAlt'] . '" src="' . $card['img'] . '" class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75 group-hover:opacity-25" />
+
+            <div class="relative p-4 sm:p-6 lg:p-8">
+                <p class="text-xl font-bold text-white font-head text-shadow shadow-neutral-700 hover:shadow-brand-blue-dark sm:text-2xl ">' . $card['label'] . '</p>
+
+                <div class="mt-8 sm:mt-16 lg:mt-24">
+                    <div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-brand-blue-dark group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>
+                </div>
+            </div>
+        </a>';
+    }
+endif;
