@@ -15,7 +15,7 @@
 		"hasChildren" => true,
         "submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
             <li class="lg:py-4">
-                <p class="md:border-b-2 md:border-brand-blue-pale"><a href="/assurance/">Assurance</a></p>
+                <p class="md:border-b-2 md:border-brand-blue-pale"><a href="/assurance/">Accounting &amp; Assurance</a></p>
                 [listmenu menu="submenu Assurance" container_class="hidden submenu mb-2 md:block" /]
             </li>
             <li class="lg:py-4">
@@ -23,7 +23,7 @@
                 [listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
             </li>
             <li class="lg:py-4">
-                <p class=" md:border-b-2 md:border-brand-blue-pale"><a href="/soar/"><abbr title="Strategic Operations &amp; Advisory Resources">SOAR</abbr></a></p>
+                <p class=" md:border-b-2 md:border-brand-blue-pale"><a href="/soar/">Strategic Operations &amp; Advisory Resources</a></p>
                 [listmenu menu="submenu SOAR" container_class="hidden submenu mb-2 md:block" /]
             </li>
         </ul>',
