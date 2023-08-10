@@ -48,13 +48,6 @@ $idea_quotes = [
       "headshot" => "2022/01/bio_sq-gkhawam.jpg",
       "quote" => "Diversity is being able to look at a group of people and seeing different ethnicities, religions, cultures, languages being spoken, etc. and acknowledging and celebrating that those differences exist."
     ],
-    "edubravic" => [
-      "id" => 4,
-      "name" => "Erna Dubravic",
-      "title" => "Accounting &amp; Assurance Senior Manager",
-      "headshot" => "2018/10/bio_sq-edubravic.jpg",
-      "quote" => "Diversity means creating a path and opportunities for success for all people, especially for those who are not given enough of those opportunities in today's world."
-    ],
     "culibarri" => [
       "id" => 5,
       "name" => "Christine Ulibarri",
