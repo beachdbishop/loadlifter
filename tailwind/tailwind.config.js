@@ -27,6 +27,7 @@ module.exports = {
       backgroundImage: {
         'phoenix-desert1': "url('img/phx-desert.jpg')",
         'phoenix-desert2': "url('img/phx-desert-no-crop.jpg')",
+        'phoenix-desert3': "url('img/phx-desert-color-no-crop.jpg')",
       },
       backgroundSize: {
         '180pct': '180% 180%',
@@ -40,6 +41,7 @@ module.exports = {
         'hero': '360px',
       },
       textShadow: {
+        none: 'none',
         sm: '0 1px 2px var(--tw-shadow-color)',
         DEFAULT: '0 2px 4px var(--tw-shadow-color)',
         lg: '0 8px 16px var(--tw-shadow-color)',

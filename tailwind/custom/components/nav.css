@@ -75,9 +75,7 @@
 }
 
 
-
-
-/* Footer Nav */
+/* Submenus */
 .submenu .menu {
 	@apply list-none;
 }
@@ -98,6 +96,30 @@
 } */
 .submenu .ll-we-are-hiring a {
 	@apply -m-1 font-bold rounded-sm p-1 bg-amber-300 border-b-0 hover:text-amber-900 hover:bg-amber-100;
+}
+
+
+/* Footer Nav */
+.footermenu .menu {
+	@apply list-none;
+}
+.footermenu .menu-item {
+  @apply leading-4 mb-1 md:mb-2;
+}
+.footermenu .sub-menu {
+  @apply hidden;
+}
+.footermenu .current-menu-ancestor > a {
+  @apply font-bold text-neutral-600;
+}
+.footermenu .current_page_item > a {
+  @apply !text-brand-blue-pale;
+}
+/* .footermenu a {
+	@apply text-current border-b-2 border-transparent hover:text-brand-blue hover:border-brand-blue-pale;
+} */
+.footermenu .ll-we-are-hiring a {
+	@apply -m-1 font-bold rounded-sm p-1 text-amber-900 text-shadow-none bg-amber-300 border-b-0 hover:text-white hover:bg-brand-red;
 }
 
 
