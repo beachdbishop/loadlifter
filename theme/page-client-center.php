@@ -35,10 +35,30 @@ get_header();
 				</header>
 
 				<div class="not-prose entry-cont">
-					<?php // the_content();
-					?>
+					<?php // the_content(); ?>
 
 					<section class="mb-8 lg:mb-16">
+                        <div class="p-4 mb-10 border-2 border-solid divide-y rounded-lg border-neutral-200 bg-neutral-50 md:mb-0 divide-neutral-200 divide-solid lg:p-8 hover:bg-white">
+							<div class="pb-4 lg:pb-8">
+								<h3 class="mb-2 text-brand-red">Payment Options</h3>
+								<p class="mb-4">Use the options below to pay an invoice or a deposit.</p>
+                                <div class="wp-block-buttons is-layout-flex">
+                                    <div class="wp-block-button is-style-outline">
+                                        <a class="border-2 wp-block-button__link has-brand-red-color has-text-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoice(s)</a>
+                                    </div>
+								    <div class="wp-block-button is-style-outline">
+                                        <a class="border-2 wp-block-button__link has-brand-red-color has-text-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a>
+                                    </div>
+                                </div>
+							</div>
+							<div class="pt-4 lg:pt-8">
+								<h5 class="font-bold text-brand-blue-dark">Need Help?</h5>
+								<p class="text-base ">Reach out to our Internal Accounting Team (Available 8am-5pm, M-F) &mdash; <strong>(520) 321-4600</strong> or <a href="mailto:ccs@beachfleischman.com">Internal Accounting <i class="fa-regular fa-envelope"></i></a></p>
+							</div>
+						</div>
+                    </section>
+
+                    <section class="mb-8 lg:mb-16">
 
 						<div class="flex flex-col gap-8 lg:flex-row lg:items-start">
 
@@ -78,27 +98,6 @@ get_header();
 						</div>
 
 					</section>
-
-					<section>
-                        <div class="p-4 mb-10 border-2 border-solid divide-y rounded-lg border-neutral-200 bg-neutral-50 md:mb-0 divide-neutral-200 divide-solid lg:p-8 hover:bg-white">
-							<div class="pb-4 lg:pb-8">
-								<h3 class="mb-2 text-brand-red">Payment Options</h3>
-								<p class="mb-4">Use the options below to pay an invoice or a deposit.</p>
-                                <div class="wp-block-buttons is-layout-flex">
-                                    <div class="wp-block-button is-style-outline">
-                                        <a class="border-2 wp-block-button__link has-brand-red-color has-text-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoice(s)</a>
-                                    </div>
-								    <div class="wp-block-button is-style-outline">
-                                        <a class="border-2 wp-block-button__link has-brand-red-color has-text-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a>
-                                    </div>
-                                </div>
-							</div>
-							<div class="pt-4 lg:pt-8">
-								<h5 class="font-bold text-brand-blue-dark">Need Help?</h5>
-								<p class="text-base ">Reach out to our Internal Accounting Team (Available 8am-5pm, M-F) &mdash; <strong>(520) 321-4600</strong> or <a href="mailto:ccs@beachfleischman.com">Internal Accounting <i class="fa-regular fa-envelope"></i></a></p>
-							</div>
-						</div>
-                    </section>
 
 					<div class="">&nbsp;</div>
 
