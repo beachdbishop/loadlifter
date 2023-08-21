@@ -219,16 +219,26 @@ function ll_enqueue_block_editor_script() {
 add_action( 'enqueue_block_editor_assets', 'll_enqueue_block_editor_script' );
 
 /**
- * Create a JavaScript array containing the Tailwind Typography classes from LL_TYPOGRAPHY_CLASSES for use when adding Tailwind Typography support to the block editor.
+ * Enqueue the script necessary to support Tailwind Typography in the block
+ * editor, using an inline script to create a JavaScript array containing the
+ * Tailwind Typography classes from _S_TYPOGRAPHY_CLASSES.
  */
-function ll_admin_scripts() {
-	?>
-	<script>
-		tailwindTypographyClasses = '<?php echo esc_attr( LL_TYPOGRAPHY_CLASSES ); ?>'.split(' ');
-	</script>
-	<?php
+function ll_enqueue_typography_script() {
+	if ( is_admin() ) {
+		wp_enqueue_script(
+			'll-typography',
+			get_template_directory_uri() . '/js/tailwind-typography-classes.min.js',
+			array(
+				'wp-blocks',
+				'wp-edit-post',
+			),
+			LL_VERSION,
+			true
+		);
+		wp_add_inline_script( 'll-typography', "tailwindTypographyClasses = '" . esc_attr( LL_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
+	}
 }
-add_action( 'admin_print_scripts', 'll_admin_scripts' );
+add_action( 'enqueue_block_assets', 'll_enqueue_typography_script' );
 
 /**
  * Add the Tailwind Typography classes to TinyMCE.
