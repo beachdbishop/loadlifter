@@ -81,7 +81,7 @@ $cards_benefits = [
         "onHoverContent" => '<ul><li>CPA Certification Bonus</li><li>Certification Reimbursement</li><li>Continuing Professional Education</li><li>Leadership Development</li><li>Mentor Program</li><li>Employee Referral Program</li></ul>',
     ],
     "health" => [
-        "label" => 'Well-Being',
+        "label" => 'Health',
         "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-health-wellness_am649w.jpg',
         "imgAlt" => 'A patient has a discussion with a medical professional',
         "onHoverContent" => '<ul><li>Medical Insurance</li><li>Dental Insurance</li><li>Vision Insurance</li><li>Life Insurance</li><li>Short and Long-Term Disability Insurance</li><li>Accident Insurance</li><li>Critical Illness Insurance</li><li>Hospital Indemnity Insurance</li><li>Flexible Spending Account</li><li>Dependent Care Account</li></ul>',
@@ -113,7 +113,7 @@ if ('local' === wp_get_environment_type()) {
     <div class="px-2 md:container md:mx-auto md:px-0">
 
         <?php if (is_page('career-opportunities')) : ?>
-            <section class="full-bleed bg-gradient-to-r from-brand-blue-faint via-white">
+            <section class="full-bleed ">
                 <div class="container flex flex-wrap justify-center gap-2 px-2 py-4 mx-auto text-sm md:px-0 lg:gap-4">
                     <span>On this page:</span>
                     <a class="underline text-brand-blue-dark hover:text-brand-blue hover:underline hover:decoration-brand-blue-pale" href="#why">Why BeachFleischman?</a>
@@ -228,7 +228,7 @@ if ('local' === wp_get_environment_type()) {
 
         <?php // B E N E F I T S ... ?>
         <?php if ( !is_page('internships') ) : ?>
-            <section id="benefits" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-red-faint to-white/30 ">
+            <section id="benefits" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-gray-pale to-white/30 ">
                 <div class="container px-2 mx-auto md:px-0">
                     <h2 class="mb-6 font-head">Benefits</h2>
                     <!-- <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -321,9 +321,10 @@ if ('local' === wp_get_environment_type()) {
         <section id="awards" class="bg-white full-bleed ll-equal-vert-padding">
             <div class="container px-2 mx-auto md:px-0">
                 <h2 class="mb-6 font-head text-brand-blue-dark">Awards &amp; Recognition</h2>
-                <div class="max-w-3xl px-2 mx-auto md:px-0 lg:max-w-4xl">
-                    <div class="flex flex-col flex-wrap items-center max-w-5xl gap-2 mx-auto -m-4 place-content-center md:place-content-between md:flex-row lg:gap-8">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634570038/Move_bestfirm_EL_2021_dpoubu.png" alt="2021 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
+                <div class="px-2 mx-auto md:px-0">
+                    <div class="flex flex-col flex-wrap items-center gap-8 mx-auto place-content-center md:flex-row lg:gap-16">
+                        <img class="image" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691706692/2022__MOVE--best-firm-women_gr4kpq.png" alt="2022 Best Firm for Women - MOVE Project" width="158" height="100">
+                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691706692/2022__MOVE--best-firm-equity-leadership_qjd6o2.png" alt="2022 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
                         <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="Best of Accounting 2023 - Clearly Rated" width="100" height="100">
