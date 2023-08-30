@@ -43,26 +43,6 @@
             "ui": 1
         },
         {
-            "key": "field_620f0a1b6d450",
-            "label": "Original Content",
-            "name": "original_content",
-            "aria-label": "",
-            "type": "true_false",
-            "instructions": "Check if this post was written by BeachFleischman staff (i.e. not Checkpoint\/TR content)",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "Deprecated!",
-            "default_value": 0,
-            "ui_on_text": "",
-            "ui_off_text": "",
-            "ui": 1
-        },
-        {
             "key": "field_636189e8493ae",
             "label": "Content Source",
             "name": "ll_content_source",
@@ -109,5 +89,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1690835526
+    "modified": 1693415162
 }
