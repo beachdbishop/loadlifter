@@ -39,7 +39,7 @@
 }
 
 .a11y-slider-dots {
-	@apply mb-16 flex list-none items-center justify-center p-0;
+	@apply flex list-none items-center justify-center p-0;
 }
 .a11y-slider-dots li {
 	@apply mx-1 my-2 block h-4 w-4 p-0;
