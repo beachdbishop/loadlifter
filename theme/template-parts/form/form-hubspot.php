@@ -9,7 +9,7 @@ if ( get_field( 'll_normal_contact_form_location' ) !== false ) {
 	<!-- motion-safe:animate-bounce -->
 
 	<footer class="page-content | mx-auto !mb-8 p-4 bg-white md:p-8 lg:p-12 print:hidden" id="contact">
-		<h4 class="mb-4 font-bold text-brand-blue-dark">Contact Us</h4>
+		<h4 class="mb-4 font-bold text-brand-blue-dark">Contact us</h4>
 		<?php
 		if ( is_category( 'construction' ) ) { ?>
 			<!-- <script>
