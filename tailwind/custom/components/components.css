@@ -189,15 +189,19 @@ aside .timestamp {
 	@apply bg-transparent text-neutral-300 hover:bg-neutral-700 hover:text-brand-blue-pale;
 }
 
-.is-style-fancy-quote {
-	@apply rounded-lg border border-neutral-100 text-center shadow-xl;
+
+/* Quotes */
+.wp-block-quote p {
+  @apply my-4 text-xl lg:text-2xl;
 }
-.is-style-fancy-quote p {
-	@apply mt-2 mb-4;
+.wp-block-quote cite {
+  @apply font-head text-base not-italic lg:text-lg before:content-['—'];
 }
-.is-style-fancy-quote cite {
-	@apply text-sm;
+
+.wp-block-quote.is-style-default {
+  @apply relative p-4 lg:px-8 rounded-lg border-t-4 border-r-0 border-b-4 border-l-0 text-brand-blue-dark border-brand-blue quote;
 }
+
 
 .image__featured--outer {
 	/* background-color: rgb(189,175,177); */

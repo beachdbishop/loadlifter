@@ -227,6 +227,11 @@
               "src": [ "file:./fonts/worksans-bolditalic-webfont.woff2" ]
             }
           ]
+        },
+        {
+          "fontFamily": "serif",
+          "name": "System Serif",
+          "slug": "system-serif"
         }
       ],
       "fontSizes": [

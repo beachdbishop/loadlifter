@@ -32,7 +32,7 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'LL_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-a:text-primary lg:prose-xl'
+		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-primary lg:prose-xl'
 	);
 }
 

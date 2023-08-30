@@ -18,6 +18,7 @@ module.exports = {
       head: ['serenity', 'sans-serif'],
       body: ['Work Sans', 'sans-serif'],
       mono: ['Fira Code', 'Consolas', 'monospace'],
+      serif: ['Georgia', 'serif'],
     },
 		// Extend the default Tailwind theme.
 		extend: {

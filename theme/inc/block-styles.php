@@ -111,11 +111,6 @@ add_action( 'init', function() {
 		'label'	=> __( 'Boxed', 'loadlifter' ),
 	] );
 
-	register_block_style( 'core/quote', [
-		'name'	=> 'fancy-quote',
-		'label'	=> __( 'Fancy Quote', 'loadlifter' ),
-	] );
-
 	register_block_style( 'core/spacer', [
 		'name'	=> 'xs',
 		'label'	=> __( 'XS', 'loadlifter' ),
