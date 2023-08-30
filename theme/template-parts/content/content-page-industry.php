@@ -82,7 +82,7 @@ $ind_people_display = get_field( 'll_ind_people_display_style' );
 
                 <?php // INDUSTRY PROFESSIONALS AND INVOLVEMENT   ?>
                 <?php if ( ( $ind_people_display != 'hide' ) || ( !empty( $ind_groups_html ) ) ) : ?>
-                <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
+                <section class="bg-gradient-to-b from-neutral-300 via-neutral-100 to-white full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $ind_people ) && ( $ind_people_display != 'hide' ) ) : ?>
                             <h2>Industry Professional<?php if( count( $ind_people ) > 1 ) { echo "s"; } ?></h2>
