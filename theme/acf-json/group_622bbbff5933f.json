@@ -19,7 +19,8 @@
             "role": "",
             "return_format": "array",
             "multiple": 0,
-            "allow_null": 0
+            "allow_null": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_622bbc492c7ca",
@@ -230,7 +231,8 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": []
         },
         {
             "key": "field_634da1a5e1c24",
@@ -257,12 +259,33 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": []
         },
         {
             "key": "field_634da1d2e1c25",
             "label": "Favorite Quote",
             "name": "ll_people_quote",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_64ef76a8ff406",
+            "label": "IDEA Quote",
+            "name": "ll_people_idea_quote",
             "aria-label": "",
             "type": "textarea",
             "instructions": "",
@@ -300,5 +323,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1689791514
+    "modified": 1693415118
 }
