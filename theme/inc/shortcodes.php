@@ -92,6 +92,23 @@ add_shortcode( 'count_employees', 'll_count_employees_shortcode' );
 
 /* * * * O T H E R * * * */
 
+function ll_svgpart_shortcode( $atts ) {
+    extract( shortcode_atts( [
+        'part' => '',
+    ], $atts ) );
+    $file = locate_template( 'template-parts/svg/svg-' . $part . '.php' );
+
+    if( ! empty( $file ) ) {
+		ob_start();
+		include $file;
+		$svgout = ob_get_contents();
+		ob_end_clean();
+
+		return $svgout;
+	}
+}
+add_shortcode( 'svg', 'll_svgpart_shortcode' );
+
 function ll_cyberdisclaimer_shortcode() {
 
 	return '<p class="my-8 text-sm italic text-neutal-600">Disclaimer: BeachFleischman PLLC and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither BeachFleischman PLLC nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.</p>';
