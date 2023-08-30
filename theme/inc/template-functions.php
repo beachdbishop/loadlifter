@@ -349,7 +349,7 @@ function ll_show_reusable_blocks_menu() {
  */
 function ll_no_widows( $text, $minWords = 3) {
 	$return = $text;
-	$arr = explode(' ',$text);
+	$arr = explode(' ', $text);
 	if(count($arr) >= $minWords) {
 		$arr[count($arr) - 2].= '&nbsp;'.$arr[count($arr) - 1];
 		array_pop($arr);
