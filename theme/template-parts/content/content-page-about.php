@@ -97,28 +97,19 @@ $cards_about = [
                 <?php the_content(); ?>
 
                 <?php if ( is_page( 'idea-committee' ) ) :
-
-                    switch( wp_get_environment_type() ) {
-                        case 'local':
-                            $idea_people = [ 1842, 3969, 2840 ];
-                            break;
-                        default:
-                            $idea_people = [ 31212, 31398, 31576, 31414, 31394, 35148, 31499, 31132, 31237, 32639 ];
-                            break;
-                    }
-
                     $args = [
                         'post_type' 				=> 'people',
-                        'post__in'                  => $idea_people,
                         'post_status' 				=> 'publish',
                         'posts_per_page'			=> -1,
                         'posts_per_archive_page'	=> -1,
+                        'meta_key'                  => 'll_people_include_in_idea_slider',
+                        'meta_value'                => '1',
                         'order' 					=> 'ASC',
                         'orderby' 					=> 'll_people_last_name',
                     ];
 
-                    $peopleQuery = new WP_Query( $args );
-                    ?>
+                    $peopleQuery = new WP_Query( $args ); ?>
+
                     <section class="mb-0 rounded-lg ll-equal-vert-padding lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white">
                         <div class="max-w-3xl md:mx-auto not-prose">
                             <h2 class="text-brand-blue">Thoughts from some of our IDEA Committee members</h2>
@@ -142,7 +133,7 @@ $cards_about = [
                     </section>
 
                     <h3>Progress</h3>
-                    <img class="md:float-right md:mt-0 md:ml-8 lg:ml-12" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group">
+                    <img class="md:float-right md:mt-0 md:ml-8 lg:ml-12" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_160/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group">
                     <p>BeachFleischman has been recognized as an <strong>Inclusive Workplace for 2023</strong> by the <em>Best Companies Group</em> and <em>COLOR Magazine</em>! This is a testament to our ongoing commitment to fostering an environment of inclusivity and belonging in our workplace.</p>
 
                 <?php endif; ?>

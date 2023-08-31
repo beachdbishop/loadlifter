@@ -301,6 +301,33 @@
             "rows": "",
             "placeholder": "",
             "new_lines": ""
+        },
+        {
+            "key": "field_64f0c8cb6f797",
+            "label": "Include in IDEA Quote Slider",
+            "name": "ll_people_include_in_idea_slider",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_64ef76a8ff406",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Show this person's quote in the IDEA slider",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -323,5 +350,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1693415118
+    "modified": 1693501832
 }
