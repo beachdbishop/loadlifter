@@ -2,7 +2,7 @@
 
 .hbspt-form {
 	form {
-		@apply grid grid-flow-row auto-rows-max gap-2 md:gap-4;
+		@apply grid grid-flow-row auto-rows-max gap-2 md:gap-4 print:hidden;
 	}
 
 	.field > label {

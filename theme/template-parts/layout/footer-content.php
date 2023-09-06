@@ -13,9 +13,9 @@
 <?php //   P R E F O O T E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
-<footer role="contentinfo" id="colophon" class="site-footer | print:bg-transparent">
+<footer role="contentinfo" id="colophon" class="site-footer print:bg-white">
 
-	<div class="bg-center bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply">
+	<div class="bg-center bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply print:bg-white print:bg-none print:text-neutral-700">
         <div class="px-2 pt-16 md:px-0 md:container md:mx-auto">
 			<div class="grid grid-cols-1 gap-x-4 gap-y-8 text-shadow shadow-neutral-900 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6 print:hidden">
 				<nav>
