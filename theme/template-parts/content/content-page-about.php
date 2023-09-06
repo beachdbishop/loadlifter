@@ -133,9 +133,8 @@ $cards_about = [
                     </section>
 
                     <h3>Progress</h3>
-                    <img class="md:float-right md:mt-0 md:ml-8 lg:ml-12" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group">
                     <p>BeachFleischman has been recognized as an <strong>Inclusive Workplace for 2023</strong> by the <em>Best Companies Group</em> and <em>COLOR Magazine</em>. This is a testament to our ongoing commitment to fostering an environment of inclusivity and belonging in our workplace.</p>
-
+                    <img class="" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group">
                 <?php endif; ?>
 
             </div>
