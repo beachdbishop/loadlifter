@@ -322,13 +322,14 @@ if ('local' === wp_get_environment_type()) {
             <div class="container px-2 mx-auto md:px-0">
                 <h2 class="mb-6 font-head text-brand-blue-dark">Awards &amp; Recognition</h2>
                 <div class="px-2 mx-auto md:px-0">
-                    <div class="flex flex-col flex-wrap items-center gap-8 mx-auto place-content-center md:flex-row lg:gap-16">
-                        <img class="image" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691706692/2022__MOVE--best-firm-women_gr4kpq.png" alt="2022 Best Firm for Women - MOVE Project" width="158" height="100">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691706692/2022__MOVE--best-firm-equity-leadership_qjd6o2.png" alt="2022 Best Firm for Equity Leadership - MOVE Project" width="158" height="100">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="Best Firms for Young Accountants 2022 - Accounting Today" width="170" height="100">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1659635345/award-images--2022-ipa-top-200_ofqhce.png" alt="Inside Public Accounting's 2022 Top 200 Firms" width="100" height="100">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="Best of Accounting 2023 - Clearly Rated" width="100" height="100">
-                        <img class="image " src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="Inside Public Accounting's All Star Firms" width="100" height="100">
+                    <div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center lg:place-content-evenly md:flex-row lg:gap-16">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="2023 Best of Accounting - Client Satisfaction - ClearlyRated">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691787197/IPA_-_Award_Logos_-_Top_200_Firms_nfmdem.png" alt="2023 Top 200 Firms - Inside Public Accounting">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691706692/2022__MOVE--best-firm-equity-leadership_qjd6o2.png" alt="2022 Best Firm for Equity Leadership - Accounting MOVE Project">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691706692/2022__MOVE--best-firm-women_gr4kpq.png" alt="2022 Best Firm for Women - Accounting MOVE Project">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="2022 Best Firm for Young Accountants - Accounting Today">
+                        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="All Star Firms - Inside Public Accounting">
                     </div>
                 </div>
             </div>
