@@ -37,7 +37,7 @@ $peep_level = get_field( 'll_people_level' );
 		<?php
 		// Only show designations for non-subsidiary entries
 		if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
-			echo sprintf( '<p class="my-1 italic font-bold leading-none tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
+			echo sprintf( '<p class="my-1 italic font-bold leading-none tracking-tighter text-center font-head text-neutral-600">%1$s</p>', get_field( 'll_people_designations' ) );
 		}
 		if( get_field( 'll_people_title' ) ) {
 			echo sprintf( '<p class="leading-none text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
