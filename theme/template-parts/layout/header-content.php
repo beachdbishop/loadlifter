@@ -23,7 +23,7 @@
                 [listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
             </li>
             <li class="lg:py-4">
-                <p class=" md:border-b-2 md:border-brand-blue-pale"><a href="/soar/">Strategic Operations &amp; Advisory Resources</a></p>
+                <p class=" md:border-b-2 md:border-brand-blue-pale"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
                 [listmenu menu="submenu SOAR" container_class="hidden submenu mb-2 md:block" /]
             </li>
         </ul>',

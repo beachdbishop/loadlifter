@@ -39,7 +39,7 @@
 					?>
 				</nav>
 				<nav>
-					<p class="text-lg leading-5 font-head"><a href="/soar/">Strategic Operations &amp; Advisory Resources</a></p>
+					<p class="text-lg leading-5 font-head"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_soar',
@@ -49,7 +49,7 @@
 					?>
 				</nav>
 				<nav>
-					<p class="text-lg font-head"><a href="/industries/">Industry Expertise</a></p>
+					<p class="text-lg font-head"><a href="/industries/">Industry Knowledge</a></p>
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'll_submenu_industries',
