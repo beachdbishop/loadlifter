@@ -107,6 +107,8 @@ module.exports = {
     'leading-tight',
     'lg:collapse',
     'lg:gap-16',
+    'lg:gap-x-16',
+    'lg:gap-y-12',
     'lg:grid-cols-2',
     'lg:visible',
     'list-square',
@@ -160,12 +162,6 @@ module.exports = {
     },
     {
       pattern: /p-(0|1|2|4|6|8|10|12|16)/,
-    },
-    {
-      pattern: /(from|via|to)-(neutral)-(50|100|200|300|400|500|600|700|800|900)/,
-    },
-    {
-      pattern: /(from|via|to)-brand-(gray|red|blue)-(faint|pale|dark)/,
     }
   ],
 	corePlugins: {
