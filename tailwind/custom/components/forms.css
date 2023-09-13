@@ -24,7 +24,7 @@
 	}
 
 	input[type="submit"] {
-		@apply font-head font-bold inline-flex items-center justify-center rounded-lg bg-brand-red px-5 py-3 text-brand-red-faint shadow-neutral-800 hover:bg-brand-red-dark hover:text-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg;
+		@apply font-head font-bold inline-flex items-center justify-center rounded-lg bg-brand-red-dark px-5 py-3 text-white shadow-neutral-800 hover:bg-brand-red hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red active:shadow-sm sm:w-auto lg:text-lg;
 	}
 
 	span.hs-form-required {
