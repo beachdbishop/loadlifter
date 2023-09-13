@@ -20,12 +20,12 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
     //   P R E F O O T E R   A R E A
     get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
-    <footer role="contentinfo" id="colophon" class="site-footer | print:bg-transparent">
+    <footer role="contentinfo" id="colophon" class="site-footer | print:bg-white">
 
-        <div class="bg-center bg-no-repeat bg-cover bg-brand-blue text-neutral-200 bg-phoenix-desert1 bg-blend-multiply">
+        <div class="bg-center bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply print:bg-white print:bg-none print:text-neutral-700">
             <div class="px-2 py-16 md:px-0 md:container md:mx-auto">
-                <div class="grid grid-cols-1 gap-8 lg:grid-cols-6">
-                    <div class="lg:col-span-2">
+                <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3 lg:gap-x-8">
+                    <div class="">
                         <div class="max-w-xs mb-4 fill-current">
                             <a href="<?php bloginfo( 'url' ); ?>" aria-label="<?php echo bloginfo( 'name' );?>">
                                 <?php get_template_part( 'template-parts/svg/svg', 'logomono' ); ?>
@@ -33,7 +33,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
                         </div>
                         <?php ll_show_social_links( $out = 'echo' ); ?>
                     </div>
-                    <div class="lg:col-span-2 md:pt-2">
+                    <div class=" md:pt-2">
                         <address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
                             <p class="street-address | font-head leading-none " property="streetAddress">2201 E. Camelback Road, Suite 200</p>
                             <p class="locality | font-head leading-none "><span property="addressLocality">Phoenix</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85016</span></p>
@@ -41,16 +41,13 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
                             <p class="font-bold leading-none font-head " property="faxNumber">F: 602.265.7060</p>
                         </address>
                     </div>
-                    <div class="md:pt-2">
+                    <div class=" md:pt-2">
                         <address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
                             <p class="street-address | font-head leading-none" property="streetAddress">1985 E. River Road, Suite 201</p>
                             <p class="locality | font-head leading-none"><span property="addressLocality">Tucson</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85718</span></p>
                             <p class="font-bold leading-none font-head" property="telephone">P: <a href="tel:15203214600" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (520) 321-4600', 0);">520.321.4600</a></p>
                             <p class="font-bold leading-none font-head" property="faxNumber">F: 520.321.4040</p>
                         </address>
-                    </div>
-                    <div class="md:pt-2"><? // ClearlyRated widget ?>
-                        <div id="cr-widget-60934044" class="mx-auto lg:ml-auto lg:mr-0"><a href="https://www.clearlyrated.com/accounting/az-usa/tucson-az/beachfleischman-pllc-tucson-az">See BeachFleischman PLLC ratings and testimonials on ClearlyRated.<script src="https://widget.clearlyrated.com/fbe00528-7a1f-11ea-876b-1c98ec2f111c/widget.js?audience=client&layout=vertical&id=cr-widget-60934044&size=small"></script></a></div>
                     </div>
                 </div>
                 <?php if ( is_page_template( 'tpl-landing-page-cyber.php' ) ) { ?>
@@ -76,7 +73,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
                     ?></p>
                 <?php } ?>
 
-                <p class="pt-4 pb-0 text-sm text-center uppercase">
+                <p class="pt-4 pb-0 text-sm text-center uppercase print:hidden">
                     <a class="hover:text-brand-blue-faint" href="#top" title="Back to top"><i class="fa-regular fa-arrow-up-to-dotted-line"></i></a>
                 </p>
             </div>
