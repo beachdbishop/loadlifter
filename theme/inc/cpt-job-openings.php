@@ -101,6 +101,7 @@ function ll_edit_job_opening_columns( $columns ) {
 		'cb' => '<input type="checkbox" />',
 		'title' => __( 'Opening' ),
 		'opening_status' => __( 'Status' ),
+        'apply_link' => __( 'Apply Link' ),
 		'time_status' => __( 'Time/Status' ),
 		'location' => __( 'Location(s)' ),
 		'date' => __( 'Date' )
@@ -210,6 +211,18 @@ function ll_pop_job_opening_column( $column, $post_id ) {
 			echo '<span style="color: #737373"><span class="dashicons dashicons-hidden"></span><em> ' . __( 'Closed', 'loadlifter' ) . '</em></span>';
 
 			break;
+
+        case 'apply_link' :
+            $link = get_post_meta( $post_id, 'apply_link', true );
+            $truncatedlink = substr( $link, -18 );
+
+            if ( empty( $link ) )
+            echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
+
+            if ( !empty( $link ) )
+            echo '<a href="' . $link . '" target="_blank"><span class="dashicons dashicons-external"></span> &hellip;' . $truncatedlink . '</a>';
+
+            break;
 
 		case 'location' :
 			$locations = get_post_meta( $post_id, 'location', true );
