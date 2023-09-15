@@ -112,7 +112,7 @@ $cards_about = [
 
                     <section class="mb-0 rounded-lg ll-equal-vert-padding lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white">
                         <div class="max-w-3xl md:mx-auto not-prose">
-                            <h2 class="text-brand-blue">Thoughts from IDEA Committee members</h2>
+                            <h2 class="text-brand-blue">Voices of diversity, equity, and inclusion</h2>
                             <div class="slider slider-quotes">
                             <?php /* Start the People slider loop */
                             while ( $peopleQuery->have_posts() ) :
@@ -132,8 +132,8 @@ $cards_about = [
                         </div>
                     </section>
 
-                    <h3>Progress</h3>
-                    <p>BeachFleischman has been recognized as an <strong>Inclusive Workplace for 2023</strong> by the <em>Best Companies Group</em> and <em>COLOR Magazine</em>. This is a testament to our ongoing commitment to fostering an environment of inclusivity and belonging in our workplace.</p>
+                    <h3>Commitment to inclusivity and belonging</h3>
+                    <p>BeachFleischman has been recognized as an <strong>Inclusive Workplace for 2023</strong> by the <em>Best Companies Group</em> and <em>COLOR Magazine</em>.</p>
                     <img class="" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group">
                 <?php endif; ?>
 
@@ -142,7 +142,7 @@ $cards_about = [
             <div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
 
                 <?php if ( is_page( 'about' ) ) : ?>
-                    <h3 class="mb-4">Awards and recognition</h3>
+                    <h3 class="mb-6">Awards and recognition</h3>
                     <p>We are proud of our unique workplace culture.</p>
                     <div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center lg:place-content-evenly md:flex-row lg:gap-16">
                         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="2023 Best of Accounting - Client Satisfaction - ClearlyRated">
