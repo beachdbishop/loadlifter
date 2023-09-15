@@ -90,11 +90,13 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
 
                             <?php
                             if ( $svc_people_display === 'slider' ) :
-                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $svc_people ) . '" posts_per_page="-1" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="slider slider-people mx-auto max-w-5xl" layout="slide-people" /]' );
+                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $svc_people ) . '" posts_per_page="-1" meta_key="ll_people_last_name" orderby="meta_value" order="ASC" wrapper="div" wrapper_class="slider slider-people mx-auto max-w-5xl" layout="slide-people" /]' );
                             endif;
 
                             if ( $svc_people_display === 'grid' ) :
-                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $svc_people ) . '" posts_per_page="-1" meta_key="ll_people_level" orderby="meta_value_num" order="ASC" wrapper="div" wrapper_class="grid grid-auto-fit gap-8" layout="card-people-md" /]' );
+                                $grid_class = (count( $svc_people ) == 1) ? 'grid-cols-4' : 'grid-auto-fit';
+
+                                echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $svc_people ) . '" posts_per_page="-1" meta_key="ll_people_last_name" orderby="meta_value" order="ASC" wrapper="div" wrapper_class="grid ' . $grid_class . ' gap-8" layout="card-people-md" /]' );
                             endif; ?>
 
                         <?php endif; ?>
@@ -110,7 +112,7 @@ $svc_people_display = get_field( 'll_ind_people_display_style' );
             </div>
 
             <div class="ll-page-grid-area-c">
-                <div id="contact" class="p-4 border lg:p-8 bg-neutral-50 border-neutral-400 not-prose print:hidden">
+                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
                     <?php
                         if ( is_page( 'mexico-y-eu-contadores-publicos-certificados' ) ) {
                             get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-spanish' );
