@@ -126,7 +126,7 @@ endif; ?>
 
 					<?php ll_posted_on(); ?>
 
-					<h4 class="mt-8 mb-2 text-lg">Related topics</h4>
+					<h3 class="mt-8 mb-2">Related topics</h3>
 					<?php ll_entry_footer(); ?>
 					<p class="my-4"><?php ll_social_shares(); ?></p>
 

@@ -102,7 +102,7 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 			if( $config['show_thumb']) {
 				$coauthors = get_coauthors();
 				echo <<<EOT
-				<h6>Authored by:</h6>
+				<h3>Authored by:</h3>
 				<div class="flex items-center justify-center w-full py-4 ">
 					<div class="flex -space-x-3">
 				EOT;
@@ -227,7 +227,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 
         echo '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), url(' . $bg . '); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', url(' . $bg . '); } }</style>';
 
-		echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+		echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">
             <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
                 <div class="">
                     <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>';
@@ -338,7 +338,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				$featmarkup = '';
 			} else {
 				$featmarkup = sprintf(
-					'<div class="image__featured--outer | overflow-hidden empty-feat-img  print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="%3$s"></div></div>',
+					'<div class="image__featured--outer | overflow-hidden empty-feat-img  print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s"  aria-label="%3$s"></div></div>',
 					esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' ),
 					esc_attr( $feat_aspect_ratio ),
 					esc_attr( get_the_title() ),

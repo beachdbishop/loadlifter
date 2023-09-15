@@ -83,7 +83,7 @@ $menuItemsSecondary = [
 <?php //   P R E H E A D E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
-<header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
+<header id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
 	<div role="navigation" class="flex items-center justify-between px-2 py-3 mx-auto md:container md:px-0 md:py-4">
 
 		<div class="w-[240px] lg:w-[320px] order-first">
@@ -99,6 +99,7 @@ $menuItemsSecondary = [
 					<input type="checkbox" value="selected" id="toggle-search" class="hidden toggle-input peer">
 					<label for="toggle-search" class="block px-4 py-4 font-bold cursor-pointer lg:py-6 hover:text-brand-red peer-checked:text-brand-red peer-checked:bg-white" aria-label="Toggle Search">
 						<i class="fa-solid fa-magnifying-glass"></i>
+                        <span class="sr-only">Search</span>
 					</label>
 					<div role="toggle" class="z-40 py-2 mb-16 border-t border-solid shadow-xl md:py-4 border-brand-blue mega-menu lg:py-6 sm:mb-0 bg-neutral-800/80 backdrop-blur-sm">
 						<div class="container px-2 mx-auto text-white md:px-0">
@@ -123,8 +124,8 @@ $menuItemsSecondary = [
                         $isMega = ( $primary['label'] === 'Services' ) ? ' mega' : '';
                         echo sprintf( '<li>
                                 <a class="main-link" href="%1$s">%2$s</a>
-                                <button type="" aria-expanded="false" aria-controls="id_%3$s_menu" aria-label="%2$s"></button>
-                                <div id="%3$s" class="dropmenu %5$s" style="display:none">%4$s</div>
+                                <button type="button" aria-expanded="false" aria-controls="id_%3$s_menu" aria-label="%2$s"></button>
+                                <div id="id_%3$s_menu" class="dropmenu %5$s" style="display:none">%4$s</div>
                             </li>',
                             $primary['url'],
                             $primary['label'],

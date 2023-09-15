@@ -12,7 +12,7 @@
 
 <?php if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) { ?>
 
-    <header role="banner" id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
+    <header id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
         <div role="navigation" class="flex items-center justify-between px-1 py-3 mx-auto md:container md:px-0 md:py-4">
 
             <div role="img" class="w-[240px] lg:w-[320px] order-first">
