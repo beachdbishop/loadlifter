@@ -94,7 +94,7 @@ $menuItemsSecondary = [
 
 		<div class="nav-ctrls | flex flex-row order-last">
 
-			<ul role="list" class="flex print:hidden">
+			<ul class="flex print:hidden">
 				<li class="toggleable |  group  ">
 					<input type="checkbox" value="selected" id="toggle-search" class="hidden toggle-input peer">
 					<label for="toggle-search" class="block px-4 py-4 font-bold cursor-pointer lg:py-6 hover:text-brand-red peer-checked:text-brand-red peer-checked:bg-white" aria-label="Toggle Search">

@@ -11,7 +11,7 @@
  * @since 2.0.21
  */
 ?>
-<!-- wp:group {"className":"accordions is-style-blue","layout":{"type":"constrained","justifyContent":"left"}} -->
+<!-- wp:group {"className":"accordions is-style-blue","layout":{"type":"default"}} -->
 <div class="wp-block-group accordions is-style-blue"><!-- wp:details {"summary":"Services we offer"} -->
 <details class="wp-block-details"><summary>Services we offer</summary><!-- wp:group {"className":"details-inner","layout":{"type":"default"}} -->
 <div class="wp-block-group details-inner"><!-- wp:list -->

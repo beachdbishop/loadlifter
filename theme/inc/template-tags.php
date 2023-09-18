@@ -31,7 +31,7 @@ if ( ! function_exists( 'll_show_social_links' ) ) :
 
 		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
 		foreach( $socials as $key=>$value ) {
-			$social_html .= sprintf( '<a href="%1$s" class="duration-200 ease-in-out hover:scale-125"><svg class="llicon-2x"><use xlink:href="#%2$s" /></svg><span class="screen-reader-text">%2$s</span></a>', esc_url( $value ), esc_attr( $key ) );
+			$social_html .= sprintf( '<a href="%1$s" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-%2$s"><svg class="llicon-2x" aria-hidden="true"><use xlink:href="#%2$s" /></svg><span id="soclink-%2$s" class="screen-reader-text">%2$s</span></a>', esc_url( $value ), esc_attr( $key ) );
 		}
 		$social_html .= '</div>';
 
@@ -159,6 +159,9 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'loadlifter' ) );
 
+            echo '<div class="my-4"><h3 class="">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
+
+
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
 				printf( '<span class="catlist">' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -172,6 +175,8 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 				/* translators: 1: list of tags. */
 				printf( '<span class="list--tags | ">' . esc_html__( 'Tagged: %1$s', 'loadlifter' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
+
+            echo '</div>';
 		}
 	}
 endif;
@@ -350,7 +355,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'large' );
 			$thumb_url = $thumb_url_array[0];
 			$featmarkup = sprintf(
-				'<div class="overflow-hidden image__featured--outer print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s" itemprop="image" itemscope itemtype="https://schema.org/ImageObject" role="img" aria-label="%3$s"></div></div>',
+				'<div class="overflow-hidden image__featured--outer print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s" aria-label="%3$s"></div></div>',
 				esc_url( $feat_image_url[0] ),
 				esc_attr( $feat_aspect_ratio ),
 				esc_attr( get_the_title() ),

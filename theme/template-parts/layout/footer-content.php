@@ -13,7 +13,7 @@
 <?php //   P R E F O O T E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
-<footer role="contentinfo" id="colophon" class="site-footer print:bg-white">
+<footer id="colophon" class="site-footer print:bg-white">
 
 	<div class="bg-center bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply print:bg-white print:bg-none print:text-neutral-700">
         <div class="px-2 pt-16 md:px-0 md:container md:mx-auto">
@@ -108,7 +108,7 @@
                     </address>
                 </div>
 			</div>
-			<p role="text" class="mt-8 text-xs">
+			<p class="mt-8 text-xs">
 				<?php
 				if ( ( is_page() ) && ( get_field( 'll_seo_footer' ) ) ) {
 					// if this is a page and special footer text is set...
