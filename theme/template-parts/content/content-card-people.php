@@ -24,7 +24,7 @@ if ( $peep_thumbnail ) {
 $peep_level = get_field( 'll_people_level' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
+<article <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
 	<div class="card-headshot | mx-auto mb-2 md:mb-4 bg-brand-red-faint border-2 border-white bg-top bg-cover group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>');">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>">
 			<div class="w-[200px] aspect-square">&nbsp;</div>
@@ -67,4 +67,4 @@ $peep_level = get_field( 'll_people_level' );
 		}
 	}
 	?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

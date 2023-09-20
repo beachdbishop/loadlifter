@@ -17,7 +17,7 @@ if ( $peep_thumbnail ) {
 $peep_level = get_field( 'll_people_level' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'person-card | group p-2' ); ?>>
+<article <?php post_class( 'person-card | group p-2' ); ?>>
 	<div class="flex items-center h-full p-4 border rounded-lg border-neutral-200">
 		<div class="flex-shrink-0 object-cover object-center mr-4 rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;" aria-label="">
         <?php if ($peep_level['value'] !== '900') { ?>
@@ -71,4 +71,4 @@ $peep_level = get_field( 'll_people_level' );
 	// 	}
 	// }
 	?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

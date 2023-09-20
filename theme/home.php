@@ -15,17 +15,16 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-4 bg-brand-gray-faint md:py-6 lg:py-8">
+	<main id="primary" class="py-4 md:py-6 lg:py-8">
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<?php if ( function_exists( 'bcn_display' ) ) { ?>
-				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
 			<header class="mb-8 md:grid md:grid-cols-2 md:gap-16">
 				<div class="">
 					<h1 class="text-brand-blue head-last-bold">A-Z Blog</h1>
 					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
-					<div class="text-brand-blue"><?php echo do_shortcode( '[social_links /]' ); ?></div>
 				</div>
 
                 <div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16">

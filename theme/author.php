@@ -53,14 +53,14 @@ if ( $author_org === 'BeachFleischman' ) {
 	<div class="py-4 md:py-6 lg:py-8 print:py-8">
 		<div class="container md:mx-auto">
 			<?php if (function_exists('bcn_display') && !is_front_page()) { ?>
-				<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
 			<div class="peepgrid peep-<?php echo $peep_class; ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
 				<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0 md:order-2">
 				<?php if ( $author_thumbnail ) { ?>
-                    <div class="headshot | max-w-[380px] mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>">
+                    <div class="headshot | max-w-[380px] mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>" role="img">
 						<div class="aspect-headshot">&nbsp;</div>
 					</div>
                 <?php } ?>

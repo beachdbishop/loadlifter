@@ -11,7 +11,7 @@ $icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : 'fa-page
 /* wrapper should be: flex flex-wrap -m-2 */
 ?>
 
-<article id="item-<?php the_ID(); ?>" <?php post_class( 'group p-2 lg:w-1/3 md:w-1/2 w-full' ); ?>>
+<article <?php post_class( 'group p-2 lg:w-1/3 md:w-1/2 w-full' ); ?>>
 	<div class="flex items-center h-full p-4 border rounded-lg border-neutral-200 group-hover:border-brand-blue">
 
 		<a class="flex items-center justify-center flex-shrink-0 w-12 mr-4 rounded-full aspect-square bg-neutral-100 text-neutral-500 group-hover:bg-brand-blue group-hover:text-brand-blue-faint" href="<?php echo esc_url( get_permalink() ); ?>"><i class="fa-duotone <?php echo esc_attr( $icon ); ?>"></i></a>
@@ -22,4 +22,4 @@ $icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : 'fa-page
 		</div>
 
 	</div>
-</article><!-- #item-<?php the_ID(); ?> -->
+</article>

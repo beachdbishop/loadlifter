@@ -11,7 +11,7 @@ $icon = get_field( 'll_page_icon' );
 $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 rounded-2xl group' ); ?> data-tilt data-tilt-reverse="true">
+<article <?php post_class( 'bg-neutral-100 rounded-2xl group' ); ?> data-tilt data-tilt-reverse="true">
 
 	<div class="card-inner | p-4 bg-center rounded-2xl bg-blend-multiply" style="background-image: url('<?php echo $feat_image_url[0]; ?>'), linear-gradient(to bottom, #a3a3a3 0%, #282828 100%)">
 		<a class="flex flex-col justify-center w-[240px] h-auto aspect-square p-4 no-underline" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" rel="bookmark">
@@ -20,4 +20,4 @@ $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'
 		</a>
 	</div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

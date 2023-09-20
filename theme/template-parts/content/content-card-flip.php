@@ -12,7 +12,7 @@ $message = get_field( 'll_brand_message', $post->ID );
 $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 ?>
 
-<div id="post-<?php the_ID(); ?>">
+<div>
     <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
         <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-size: 260px">
             <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">

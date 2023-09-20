@@ -42,7 +42,7 @@ get_header();
 				</section>
 
 				<?php if ( function_exists( 'bcn_display' ) && !is_front_page() ) { ?>
-					<div class="breadcrumbs | font-head text-neutral-500 py-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+					<div class="breadcrumbs | font-head text-neutral-600 py-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 				<?php } ?>
 
 				<div class="entry-content">

@@ -48,7 +48,7 @@ $peopleQuery = new WP_Query( $args );
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 lg:pt-8 lg:pb-12' ); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
 				<?php if ( function_exists( 'bcn_display' ) ) { ?>
-					<div class="breadcrumbs | font-head text-neutral-500 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 				<?php } ?>
 
 				<?php if ( $peopleQuery->have_posts() ) : ?>

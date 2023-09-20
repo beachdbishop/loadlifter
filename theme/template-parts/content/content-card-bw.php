@@ -11,7 +11,7 @@ $icon = get_field( 'icon' );
 $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 rounded-2xl group transition duration-300 ease-in-out' ); ?>>
+<article <?php post_class( 'bg-neutral-100 rounded-2xl group transition duration-300 ease-in-out' ); ?>>
 
 	<div class="card-inner | p-4 bg-center rounded-2xl grayscale group-hover:grayscale-0 group-hover:bg-blend-overlay" style="background-image: url('<?php echo $feat_image_url[0]; ?>'), linear-gradient(to bottom, #737373 0%, #282828 100%)">
 		<a class="flex flex-col place-content-between w-[240px] h-auto aspect-square p-4 " href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" rel="bookmark">
@@ -20,4 +20,4 @@ $feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium'
 		</a>
 	</div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
