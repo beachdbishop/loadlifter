@@ -113,9 +113,9 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 					// $person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
 
 					if( !empty( $avatar ) ) {
-						$avatar_markup = sprintf( '<a href="/author/%3$s" class="relative inline-flex items-center justify-center text-white w-30 rounded-2xl"><img src="%1$s" alt="%2$s" title="%2$s" width="120" class="max-w-full border-2 border-white rounded-2xl" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_nicename );
+						$avatar_markup = sprintf( '<a href="/author/%3$s" class="relative inline-flex items-center justify-center text-white w-30 rounded-2xl" aria-label="Visit %2$s\'s author page"><img src="%1$s" alt="%2$s" title="%2$s" width="120" class="max-w-full border-2 border-white rounded-2xl" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_nicename );
 					} else {
-						$avatar_markup = sprintf( '<a href="/author/%2$s" class="relative border-2 border-white text-neutral-100 bg-neutral-400 rounded-2xl"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_nicename );
+						$avatar_markup = sprintf( '<a href="/author/%2$s" class="relative border-2 border-white text-neutral-100 bg-neutral-400 rounded-2xl" aria-label="Visit %2$s\'s author page"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_nicename );
 					}
 
 					echo $avatar_markup;
@@ -225,31 +225,59 @@ if ( ! function_exists( 'll_post_thumbnail' ) ) :
 endif;
 
 
-if ( ! function_exists( 'll_page_hero' ) ) :
-    function ll_page_hero( $h1, $h2, $img ) {
-        $bg = esc_url( $img );
-        $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
-
-        echo '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), url(' . $bg . '); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', url(' . $bg . '); } }</style>';
-
-		echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">
-            <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
-                <div class="">
-                    <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>';
-					if ( is_front_page() ) {
-						echo '<p class="mt-4 text-xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-3xl">' . $h2 . '</p>';
-					} else {
-						echo '<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>';
-					}
-			echo '</div>
-		</div>';
+if ( ! function_exists( 'll_page_title' ) ) :
+    function ll_page_title( $h1, $h2 ) {
+        echo '<div class="px-2 md:container md:mx-auto md:px-0">
+            <h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
+            <h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale lg:text-4xl">'.$h2.'</h2>
+        </div>';
 
         if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
-            echo '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
+            echo '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
             </div>';
         }
+    }
+endif;
 
-        echo '</div>';
+
+if ( ! function_exists( 'll_page_hero' ) ) :
+    function ll_page_hero( $h1, $h2 ) {
+        $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
+
+        // echo '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
+
+		// echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">
+        //     <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
+        //         <div class="">
+        //             <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>';
+		// 			if ( is_front_page() ) {
+		// 				echo '<p class="mt-4 text-xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-3xl">' . $h2 . '</p>';
+		// 			} else {
+		// 				echo '<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>';
+		// 			}
+		// 	echo '</div>
+		// </div>';
+
+        // if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
+        //     echo '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
+        //     </div>';
+        // }
+
+        // echo '</div>';
+
+        $hero_html = '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
+
+        $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
+        $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
+                <div class="">
+                    <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>
+					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>
+                </div>
+		    </div>';
+        $hero_html .= '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>';
+        $hero_html .= '</div>';
+
+        return $hero_html;
     }
 endif;
 
@@ -343,7 +371,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				$featmarkup = '';
 			} else {
 				$featmarkup = sprintf(
-					'<div class="image__featured--outer | overflow-hidden empty-feat-img  print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s"  aria-label="%3$s"></div></div>',
+					'<div class="image__featured--outer | overflow-hidden empty-feat-img  print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s"  aria-label="%3$s" role="img"></div></div>',
 					esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' ),
 					esc_attr( $feat_aspect_ratio ),
 					esc_attr( get_the_title() ),
@@ -355,7 +383,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'large' );
 			$thumb_url = $thumb_url_array[0];
 			$featmarkup = sprintf(
-				'<div class="overflow-hidden image__featured--outer print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s" aria-label="%3$s"></div></div>',
+				'<div class="overflow-hidden image__featured--outer print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s" aria-label="%3$s" role="img"></div></div>',
 				esc_url( $feat_image_url[0] ),
 				esc_attr( $feat_aspect_ratio ),
 				esc_attr( get_the_title() ),

@@ -24,7 +24,7 @@ if ( $page_featimg == true ) {
 ?>
 
 <?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-    ll_page_hero( $page_title, $page_message['label'], $page_featimg_url );
+	echo ll_page_hero( $page_title, $page_message['label'] );
 endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>

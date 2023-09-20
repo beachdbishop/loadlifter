@@ -57,7 +57,7 @@ $cards_about = [
 ];
 ?>
 
-<?php ll_page_hero( $page_title, $page_message['label'], $page_featimg_url ); ?>
+<?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-2 md:container md:mx-auto md:px-0">

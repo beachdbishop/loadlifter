@@ -23,6 +23,23 @@
             "ui": 1
         },
         {
+            "key": "field_650b40583c3f5",
+            "label": "Page Hero Video",
+            "name": "ll_page_hero_video",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Provide a CDN URL where the video is hosted. Video will loop automatically. Be sure to set matching Featured Image based on early video frame.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_63618b5520b38",
             "label": "Hide Featured Image",
             "name": "ll_hide_featured_image",
@@ -77,13 +94,6 @@
                 "operator": "==",
                 "value": "page"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "post"
-            }
         ]
     ],
     "menu_order": 1,
@@ -95,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1668112692
+    "modified": 1695236325
 }

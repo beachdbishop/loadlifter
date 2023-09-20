@@ -15,12 +15,6 @@ if (get_field('ll_page_title_override')) {
 }
 $page_message = get_field( 'll_brand_message' );
 $page_excerpt = get_the_excerpt();
-$page_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-if ( $page_featimg == true ) {
-	$page_featimg_url = $page_featimg[0];
-} else {
-	$page_featimg_url = '';
-}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
