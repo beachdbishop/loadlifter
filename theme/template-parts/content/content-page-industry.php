@@ -103,7 +103,7 @@ $page_people_display = get_field( 'll_ind_people_display_style' );
             </div>
 
             <div class="ll-page-grid-area-c">
-                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
+                <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
                     <?php if ( is_page( 'Construction' ) ) {
                         get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-construction' );
                     } else {
