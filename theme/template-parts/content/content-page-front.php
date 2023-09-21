@@ -16,7 +16,7 @@ $trending       = get_field( 'll_front_trending_items' );
 
 <div class="page-hero | ll-equal-vert-padding bg-no-repeat overflow-hidden flex items-center justify-center print:py-8">
     <video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="absolute top-[-200px] left-0 object-cover w-full h-[1080px] print:hidden">
-        <source src="<?php echo $featvideo; ?>" type="video/webm">
+        <source src="<?php echo $featvideo; ?>">
         Your browser does not support the video tag.
     </video>
 
