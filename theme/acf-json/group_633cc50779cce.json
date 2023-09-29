@@ -17,17 +17,19 @@
                 "id": ""
             },
             "post_type": [
-                "industries",
                 "page"
             ],
+            "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search"
             ],
             "return_format": "object",
             "min": "",
-            "max": 3,
-            "elements": ""
+            "max": "",
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_633cc5d7946fc",
@@ -46,14 +48,17 @@
             "post_type": [
                 "page"
             ],
+            "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search"
             ],
             "return_format": "object",
             "min": "",
-            "max": 5,
-            "elements": ""
+            "max": 10,
+            "elements": "",
+            "bidirectional": 0,
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -74,5 +79,5 @@
     "active": true,
     "description": "Show featured industries and services on Category archives",
     "show_in_rest": 0,
-    "modified": 1667340427
+    "modified": 1695750170
 }

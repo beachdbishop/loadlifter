@@ -109,6 +109,20 @@ function ll_svgpart_shortcode( $atts ) {
 }
 add_shortcode( 'svg', 'll_svgpart_shortcode' );
 
+
+function ll_cybercertlogos_shortcode() {
+
+    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 lg:my-12 place-content-center md:place-content-start md:flex-row lg:gap-x-16 print:hidden">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="257" height="100">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="224" height="100">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="137" height="100">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="100" height="100">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="324" height="100">
+</div>';
+
+}
+add_shortcode( 'cybercertlogos', 'll_cybercertlogos_shortcode' );
+
 function ll_cyberdisclaimer_shortcode() {
 
 	return '<p class="my-8 text-sm italic text-neutal-600">Disclaimer: BeachFleischman PLLC and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither BeachFleischman PLLC nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.</p>';

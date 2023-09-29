@@ -128,6 +128,30 @@
             "append": ""
         },
         {
+            "key": "field_650e188c096a9",
+            "label": "Google Map URL",
+            "name": "ll_page_gmap_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "From a cookie-less session, go to maps.google.com, search the city. Then click Share > Embed a map > Copy HTML. Paste only the URL in the src attribute of that snippet.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_61eaf9290807a",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https:\/\/www.google.com\/maps\/embed?pb=..."
+        },
+        {
             "key": "field_644b06a4f8144",
             "label": "HubSpot Form HTML",
             "name": "ll_hs_form_html",
@@ -193,5 +217,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1683243465
+    "modified": 1695425181
 }
