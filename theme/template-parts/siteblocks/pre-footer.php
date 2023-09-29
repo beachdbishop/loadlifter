@@ -3,9 +3,10 @@
  * Pre-Footer
  */
 ?>
-<?php // <section class="full-bleed ll-equal-vert-padding ">
-//	<div class="container mx-auto">
-//        <p>Pre-footer content</p>
-//	</div>
-// </section>
-?>
+<?php /*
+<section class="full-bleed ">
+	<div class="container py-2 mx-auto">
+        <p>Pre-footer content</p>
+	</div>
+</section>
+*/ ?>

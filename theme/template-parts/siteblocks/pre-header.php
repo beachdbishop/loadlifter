@@ -3,8 +3,10 @@
  * Pre-Header
  */
 ?>
-<!-- <section class="py-4 full-bleed lg:py-8">
-	<div class="container mx-auto">
+<?php /*
+<section class="bg-yellow-300 full-bleed text-neutral-900">
+	<div class="container py-2 mx-auto">
 		<p>Pre-Header</p>
 	</div>
-</section> -->
+</section>
+*/ ?>
