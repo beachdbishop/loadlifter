@@ -357,3 +357,10 @@ function ll_no_widows( $text, $minWords = 3) {
 	}
 	return $return;
 }
+
+
+function ll_is_plural( $target ) {
+    if ( count( $target ) != 1) {
+        return true;
+    }
+}

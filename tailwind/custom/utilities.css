@@ -29,7 +29,7 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 
 
 .ll-equal-vert-padding {
-  @apply py-8 md:py-12 lg:py-16;
+  @apply py-12 lg:py-16;
 }
 
 .ll-equal-vert-spacing {
