@@ -7,14 +7,14 @@
  * @package Load_Lifter
  */
 
-$peepauthor = get_field( 'll_people_user' );
-$peep_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+$peepauthor                     = get_field( 'll_people_user' );
+$peep_thumbnail                 = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 if ( $peep_thumbnail ) {
-	$headshot = esc_url( $peep_thumbnail[0] );
+	$headshot                       = esc_url( $peep_thumbnail[0] );
 } else {
-	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+	$headshot                       = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
-$peep_level = get_field( 'll_people_level' );
+$peep_level                     = get_field( 'll_people_level' );
 ?>
 
 <article <?php post_class( 'person-card | group p-2' ); ?>>
@@ -45,30 +45,4 @@ $peep_level = get_field( 'll_people_level' );
 			?>
 		</div>
 	</div>
-
-	<?php
-	// Only show designations for non-subsidiary entries
-	// if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
-	// 	echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
-	// }
-
-	// if ( $peep_level['value'] != 800 ) {
-	// 	if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-	// 		echo '<footer class="mt-2 text-sm text-center text-neutral-400 children:block children:px-2 lg:mt-4">';
-	// 			$peep_department = get_field_object( 'll_people_department' );
-	// 			$peep_dept_value = $peep_department['value'];
-	// 			if ( $peep_dept_value ) {
-	// 				ll_people_show_dept_list( $peep_dept_value );
-	// 			}
-
-	// 			$peep_location = get_field_object( 'll_people_location' );
-	// 			$peep_loc_value = $peep_location['value'];
-	// 			$peep_loc = $peep_loc_value['label'];
-	// 			if ( $peep_loc ) {
-	// 				ll_people_show_location( $peep_loc );
-	// 			}
-	// 		echo '</footer>';
-	// 	}
-	// }
-	?>
 </article>

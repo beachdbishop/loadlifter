@@ -7,13 +7,13 @@
  * @package Load_Lifter
  */
 
-$f_timestatus = get_field( 'time_status' );
-$f_location = get_field( 'location' );
-$f_location_str = implode( ', ', $f_location);
-$f_openclosed = get_field( 'opening_status' );
-$f_opening = get_the_title(); // for form field population
-$f_openingid = get_the_ID(); // for form field population
-$f_applylink = get_field( 'apply_link' );
+$f_timestatus                   = get_field( 'time_status' );
+$f_location                     = get_field( 'location' );
+$f_location_str                 = implode( ', ', $f_location);
+$f_openclosed                   = get_field( 'opening_status' );
+$f_opening                      = get_the_title(); // for form field population
+$f_openingid                    = get_the_ID(); // for form field population
+$f_applylink                    = get_field( 'apply_link' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 md:py-6 lg:py-8' ); ?>>
@@ -91,5 +91,4 @@ $f_applylink = get_field( 'apply_link' );
 
 	</div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
-
+</article>

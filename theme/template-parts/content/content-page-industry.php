@@ -7,24 +7,24 @@
  * @package Load_Lifter
  */
 
-$page_id = get_the_ID();
+$page_id                        = get_the_ID();
 if (get_field('ll_page_title_override')) {
-    $page_title = get_field('ll_page_title_override');
+    $page_title                 = get_field('ll_page_title_override');
 } else {
-    $page_title = get_the_title();
+    $page_title                 = get_the_title();
 }
-$page_icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
-$page_message = get_field( 'll_brand_message' );
-$page_excerpt = get_the_excerpt();
-$page_post_category = get_field( 'll_ind_category' );
-$page_cta_standard = get_field( 'll_ind_show_standard_cta' );
-$page_cta_heading = get_field( 'll_ind_cta_heading' );
-$page_cta_body = get_field( 'll_ind_cta_body' );
-$page_cta_button_text = get_field( 'll_ind_cta_button_text' );
-$page_cta_html = get_field( 'll_ind_cta_html' );
-$page_groups_html = get_field( 'll_ind_groups_html' );
-$page_people = get_field( 'll_ind_people' );
-$page_people_display = get_field( 'll_ind_people_display_style' );
+$page_icon                      = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
+$page_message                   = get_field( 'll_brand_message' );
+$page_excerpt                   = get_the_excerpt();
+$page_post_category             = get_field( 'll_ind_category' );
+$page_cta_standard              = get_field( 'll_ind_show_standard_cta' );
+$page_cta_heading               = get_field( 'll_ind_cta_heading' );
+$page_cta_body                  = get_field( 'll_ind_cta_body' );
+$page_cta_button_text           = get_field( 'll_ind_cta_button_text' );
+$page_cta_html                  = get_field( 'll_ind_cta_html' );
+$page_groups_html               = get_field( 'll_ind_groups_html' );
+$page_people                    = get_field( 'll_ind_people' );
+$page_people_display            = get_field( 'll_ind_people_display_style' );
 ?>
 
 <?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
@@ -94,7 +94,7 @@ $page_people_display = get_field( 'll_ind_people_display_style' );
                         <?php endif; ?>
 
                         <?php if ( $page_groups_html ) :
-                            echo $page_groups_html;
+                            echo do_shortcode( $page_groups_html );
                         endif; ?>
                     </div>
                 </section>
@@ -114,7 +114,7 @@ $page_people_display = get_field( 'll_ind_people_display_style' );
 
         </div>
 	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
 
 <?php if ( $page_people_display === 'slider' ) : ?>
 <script>

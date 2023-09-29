@@ -7,29 +7,29 @@
  * @package Load_Lifter
  */
 
-$page_id = get_the_ID();
+$page_id                        = get_the_ID();
 if (get_field('ll_page_title_override')) {
-    $page_title = get_field('ll_page_title_override');
+    $page_title                 = get_field('ll_page_title_override');
 } else {
-    $page_title = get_the_title();
+    $page_title                 = get_the_title();
 }
 // $page_icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
-$page_message = get_field( 'll_brand_message' );
-$page_excerpt = get_the_excerpt();
-$page_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+$page_message                   = get_field( 'll_brand_message' );
+$page_excerpt                   = get_the_excerpt();
+$page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $page_featimg == true ) {
-	$page_featimg_url = $page_featimg[0];
+	$page_featimg_url           = $page_featimg[0];
 } else {
-	$page_featimg_url = '';
+	$page_featimg_url           = '';
 }
 
 $cards_about = [
-    "culture" => [
-        "label" => 'Culture',
-        "icon" => 'fa-people-roof',
-        "link" => '/about/culture/',
-        "backContent" => 'Whatever we end up picking for this page.',
-    ],
+    // "culture" => [
+    //     "label" => 'Culture',
+    //     "icon" => 'fa-people-roof',
+    //     "link" => '/about/culture/',
+    //     "backContent" => 'Whatever we end up picking for this page.',
+    // ],
     "leadership" => [
         "label" => 'Leadership Team',
         "icon" => 'fa-people-line',
@@ -62,37 +62,37 @@ $cards_about = [
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="px-2 md:container md:mx-auto md:px-0">
 
-        <?php if ( is_page('about') ) : ?>
-            <div class="mt-8 ind-card-flips is-style-blue md:mt-12 lg:mt-16">
-                <?php foreach( $cards_about as $card ) {
-                    echo '<div class="ind-' . $card['icon'] . '">
-                        <a href="' . $card['link'] . '" rel="bookmark">
-                            <div class="card | group relative inline-block float-left w-[180px] h-[180px] [perspective:600px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
-                                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
-                                    <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-                                        <div class="card-icon | text-[--card-front-icon]">
-                                            <span class="fa-stack fa-2x">
-                                                <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
-                                                <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
-                                            </span>
-                                        </div>
-                                        <h4 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h4>
-                                    </div>
-                                    <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                                        <h5 class="my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">' . $card['label'] . '</h5>
-                                        <p class="text-center text-shadow">' . $card['backContent'] . '</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>';
-                } ?>
-            </div>
-        <?php endif; ?>
-
         <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
             <div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
+
+                <?php if ( is_page('about') ) : ?>
+                    <div class="not-prose ind-card-flips is-style-blue">
+                        <?php foreach( $cards_about as $card ) {
+                            echo '<div class="ind-' . $card['icon'] . '">
+                                <a href="' . $card['link'] . '" rel="bookmark">
+                                    <div class="card | group relative inline-block float-left w-[180px] h-[180px] [perspective:600px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
+                                        <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
+                                            <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+                                                <div class="card-icon | text-[--card-front-icon]">
+                                                    <span class="fa-stack fa-2x">
+                                                        <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                                        <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
+                                                    </span>
+                                                </div>
+                                                <h4 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h4>
+                                            </div>
+                                            <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                                                <h5 class="my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">' . $card['label'] . '</h5>
+                                                <p class="text-center text-shadow">' . $card['backContent'] . '</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>';
+                        } ?>
+                    </div>
+                <?php endif; ?>
 
                 <?php the_content(); ?>
 
@@ -160,7 +160,7 @@ $cards_about = [
             </div>
 
             <div class="ll-page-grid-area-c">
-                <div id="contact" class="p-4 border lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
+                <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
                     <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
                 </div>
             </div>

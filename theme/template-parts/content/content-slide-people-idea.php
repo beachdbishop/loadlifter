@@ -7,18 +7,17 @@
  * @package Load_Lifter
  */
 
-$peepauthor = get_field( 'll_people_user' );
-$peep_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+$peepauthor                     = get_field( 'll_people_user' );
+$peep_thumbnail                 = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $peep_thumbnail ) {
-	$headshot = esc_url( $peep_thumbnail[0] );
+	$headshot                   = esc_url( $peep_thumbnail[0] );
 } else {
-	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+	$headshot                   = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
-// $peep_level = get_field( 'll_people_level' );
-$peep_idea_quote = get_field( 'll_people_idea_quote' );
+$peep_idea_quote                = get_field( 'll_people_idea_quote' );
 ?>
 
-<div id="q-<?php the_ID(); ?>" <?php post_class( 'p-6 transition-colors ease-in-out rounded-lg slide' ); ?> tabindex="0">
+<div <?php post_class( 'p-6 transition-colors ease-in-out rounded-lg slide' ); ?> tabindex="0">
     <div class="mb-8">
         <p class="font-serif text-lg italic leading-6 quote text-brand-gray-dark lg:text-xl"><?php echo $peep_idea_quote; ?></p>
     </div>

@@ -7,20 +7,17 @@
  * @package Load_Lifter
  */
 
-$peepauthor = get_field( 'll_people_user' );
-$peep_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+$peepauthor                     = get_field( 'll_people_user' );
+$peep_thumbnail                 = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $peep_thumbnail ) {
-	$headshot = esc_url( $peep_thumbnail[0] );
+	$headshot                   = esc_url( $peep_thumbnail[0] );
 } else {
-	$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+	$headshot                   = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
-
-$peep_level = get_field( 'll_people_level' );
+$peep_level                     = get_field( 'll_people_level' );
 ?>
 
-<article
-	id="post-<?php the_ID(); ?>"
-	<?php post_class( 'slide | static aspect-[3/5] group bg-no-repeat bg-center bg-cover bg-brand-red-faint shadow-lg shadow-neutral-400/50 cursor-pointer flex flex-col' ); ?>
+<article <?php post_class( 'slide | static aspect-[3/5] group bg-no-repeat bg-center bg-cover bg-brand-red-faint shadow-lg shadow-neutral-400/50 cursor-pointer flex flex-col' ); ?>
 	style="background-image: url('<?php echo $headshot; ?>');"
 	onclick="window.location = '<?php echo esc_url( get_permalink() ); ?>';"
 	>
@@ -42,23 +39,6 @@ $peep_level = get_field( 'll_people_level' );
 		if( get_field( 'll_people_title' ) ) {
 			echo sprintf( '<p class="leading-none text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
 		}
-		// if ( $peep_level['value'] != 800 ) {
-		// 	if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-		// 		echo '<footer class="mt-2 text-sm text-center text-neutral-400 children:block children:px-2 lg:mt-4">';
-		// 			$peep_department = get_field_object( 'll_people_department' );
-		// 			$peep_dept_value = $peep_department['value'];
-		// 			if ( $peep_dept_value ) {
-		// 				ll_people_show_dept_list( $peep_dept_value );
-		// 			}
-		// 			$peep_location = get_field_object( 'll_people_location' );
-		// 			$peep_loc_value = $peep_location['value'];
-		// 			$peep_loc = $peep_loc_value['label'];
-		// 			if ( $peep_loc ) {
-		// 				ll_people_show_location( $peep_loc );
-		// 			}
-		// 		echo '</footer>';
-		// 	}
-		// }
 		?>
 	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>

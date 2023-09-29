@@ -7,14 +7,14 @@
  * @package Load_Lifter
  */
 
-$page_id = get_the_ID();
+$page_id                    = get_the_ID();
 if (get_field('ll_page_title_override')) {
-    $page_title = get_field('ll_page_title_override');
+    $page_title             = get_field('ll_page_title_override');
 } else {
-    $page_title = get_the_title();
+    $page_title             = get_the_title();
 }
-$page_message = get_field( 'll_brand_message' );
-$page_excerpt = get_the_excerpt();
+$page_message               = get_field( 'll_brand_message' );
+$page_excerpt               = get_the_excerpt();
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>

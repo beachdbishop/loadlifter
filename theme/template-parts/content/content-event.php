@@ -29,4 +29,4 @@ endif; ?>
 
 	<?php the_content(); ?>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
