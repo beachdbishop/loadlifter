@@ -14,17 +14,53 @@
  */
 
 if ( get_field( 'll_page_title_override' ) ) {
-	$page_title = get_field( 'll_page_title_override' );
+	$page_title                     = get_field( 'll_page_title_override' );
 } else {
-	$page_title = get_the_title();
+	$page_title                     = get_the_title();
 }
-$page_message = get_field( 'll_brand_message' );
-$page_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+$page_message                   = get_field( 'll_brand_message' );
+$page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $page_featimg == true ) {
-	$page_featimg_url = $page_featimg[0];
+	$page_featimg_url               = $page_featimg[0];
 } else {
-	$page_featimg_url = '';
+	$page_featimg_url               = '';
 }
+
+
+function ll_clientcenter_platform_card( $card ) {
+
+    $plat_html = '<div class="p-2 md:p-0">';
+    $plat_html .= '<img src="'.$card['image'].'" alt="'.$card['image_alt'].'" width="'.$card['image_width'].'" height="'.$card['image_height'].'">';
+    $plat_html .= '<p class="my-8 lg:my-12 lg:text-xl">' . $card['blurb'] . '</p>';
+
+    $plat_html .= '<div class="mb-8 wp-block-buttons is-layout-flex">';
+    $plat_html .= '<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="'.$card['button1_url'].'" target="_blank""><i class="mr-1 '.$card['button1_icon'].'"></i> '.$card['button1_text'].'</a></div>';
+    if ( $card['button2_url'] ) {
+        $plat_html .= '<div class="wp-block-button is-style-outline"><a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="'.$card['button2_url'].'" target="_blank""><i class="mr-1 '.$card['button2_icon'].'"></i> '.$card['button2_text'].'</a></div>';
+    }
+    $plat_html .= '</div></div>';
+
+    return $plat_html;
+}
+
+
+$platforms = [
+    "dashboard" => [
+        "label"         => 'BeachFleischman Dashboard',
+        "image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1695918473/BF_Dashboard_yzwir1.png',
+        "image_alt"     => 'logo: BeachFleischman Dashboard',
+        "image_width"   => '387',
+        "image_height"  => '100',
+        "blurb"         => 'BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling everyone to collaborate on one dynamic request list.',
+        "button1_url"   => 'https://beachfleischman.auditdashboard.com/',
+        "button1_text"  => 'Dashboard',
+        "button1_icon"  => 'fa-solid fa-arrow-up-right-from-square',
+    ],
+];
+
+
+
+
 
 get_header();
 ?>
@@ -34,51 +70,92 @@ get_header();
 	<?php
 	while (have_posts()) :
 		the_post();
-		// get_template_part( 'template-parts/content/content', 'page' );
 	?>
 
-    <?php ll_page_hero( $page_title, $page_message['label'], $page_featimg_url ); ?>
+    <?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php if (!is_front_page()) { post_class('py-4 lg:py-8'); } ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4 lg:py-8'); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
 
-				<div class="not-prose entry-cont">
-					<?php // the_content(); ?>
+                <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
-                    <div class="prose">
-                        <h2 class="todo">Elements to include on page:</h2>
-                        <ul class="mb-24 todo">
-                            <li>AuditDashboard</li>
-                            <li>ShareFile</li>
-                            <li>TaxCaddy</li>
-                            <li>SafeSend Returns</li>
-                            <li>Payment Options (Invoice + Deposit)</li>
-                            <li>Payment Help info</li>
-                        </ul>
-                    </div>
+                    <div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
+                        <!-- <div class="prose lg:prose-xl"><?php // the_content(); ?></div> -->
 
-					<section class="mb-8 lg:mb-16">
-                        <div class="p-4 mb-10 border-2 border-solid divide-y rounded-lg border-neutral-200 bg-neutral-50 md:mb-0 divide-neutral-200 divide-solid lg:p-8 hover:bg-white">
-							<div class="pb-4 lg:pb-8">
-								<h3 class="mb-2 text-brand-red">Payment Options</h3>
-								<p class="mb-4">Use the options below to pay an invoice or a deposit.</p>
-                                <div class="wp-block-buttons is-layout-flex">
+                        <p class="visible mb-8 text-xl text-center text-brand-red md:mb-0 md:invisible md:h-0"><a href="#paymentopts" class="underline">Skip to <strong>Payment Options</strong></a></p>
+
+						<div class="grid gap-16 lg:grid-cols-2 lg:grid-rows-2">
+
+							<div class="p-2 md:p-0">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918473/BF_Dashboard_yzwir1.png" alt="logo: BeachFleischman Dashboard" width="348" height="100">
+                                <p class="my-8 lg:my-12 lg:text-xl">BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling everyone to collaborate on one dynamic request list.</p>
+                                <div class="mb-8 wp-block-buttons is-layout-flex">
                                     <div class="wp-block-button is-style-outline">
-                                        <a class="border-2 wp-block-button__link has-brand-red-color has-text-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoice(s)</a>
-                                    </div>
-								    <div class="wp-block-button is-style-outline">
-                                        <a class="border-2 wp-block-button__link has-brand-red-color has-text-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a>
+                                        <a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="https://beachfleischman.auditdashboard.com/ target="_blank""><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard</a>
                                     </div>
                                 </div>
-							</div>
-							<div class="pt-4 lg:pt-8">
-								<h5 class="font-bold text-brand-blue-dark">Need Help?</h5>
-								<p class="text-base ">Reach out to our Internal Accounting Team (Available 8am-5pm, M-F) &mdash; <strong>(520) 321-4600</strong> or <a href="mailto:ccs@beachfleischman.com">Internal Accounting <i class="fa-regular fa-envelope"></i></a></p>
-							</div>
+                            </div>
+							<div class="p-2 md:p-0">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png" alt="logo: ShareFile" width="279" height="90">
+                                <p class="my-8 lg:my-12 lg:text-xl">ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.</p>
+                                <div class="mb-8 wp-block-buttons is-layout-flex">
+                                    <div class="wp-block-button is-style-outline">
+                                        <a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="https://beachfleischman.sharefile.com/" target="_blank"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> ShareFile</a>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="p-2 md:p-0">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695862452/TaxCaddyLogo_emmblh.png" alt="logo: TaxCaddy, part of Thomson Reuters" width="348" height="90">
+                                <p class="my-8 lg:my-12 lg:text-xl">TaxCaddy is a secure, cloud-based platform that makes gathering and sharing your tax documents a breeze.</p>
+                                <div class="mb-8 wp-block-buttons is-layout-flex">
+                                    <div class="wp-block-button is-style-outline">
+                                        <a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="https://taxcaddy.com/" target="_blank"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> TaxCaddy</a>
+                                    </div>
+                                    <div class="wp-block-button is-style-outline">
+                                        <a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="/client-center/taxcaddy-guide/"><i class="mr-1 fa-solid fa-map"></i> TaxCaddy User Guide</a>
+                                    </div>
+                                </div>
+                            </div>
+							<div class="p-2 md:p-0">
+                                <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png" alt="logo: SafeSend Returns" width="340" height="90">
+                                <p class="my-8 lg:my-12 lg:text-xl">SafeSend Returns is a digital platform that facilitates the delivering and signing of a tax return.</p>
+                                <div class="mb-8 wp-block-buttons is-layout-flex">
+                                    <div class="wp-block-button is-style-outline">
+                                        <a class="wp-block-button__link has-brand-blue-dark-color has-text-color wp-element-button" href="/client-center/safesend-returns-guide"><i class="mr-1 fa-solid fa-map"></i> SafeSend User Guide</a>
+                                    </div>
+                                </div>
+                            </div>
 						</div>
-                    </section>
+                    </div>
 
-                    <section class="mb-8 lg:mb-16">
+                    <div class="ll-page-grid-area-b">
+                        <?php // BBB ?>
+                    </div>
+
+                    <div class="ll-page-grid-area-c">
+                        <div class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-100 border-neutral-400 not-prose lg:text-xl">
+                            <h2 class="text-brand-blue" id="paymentopts">Payment Options</h2>
+                            <p class="my-4">Use the options below to pay an invoice or a deposit.</p>
+                            <div class="mb-8 wp-block-buttons is-layout-flex">
+                                <div class="wp-block-button is-style-default">
+                                    <a class="wp-block-button__link has-brand-red-background-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoices</a>
+                                </div>
+                                <div class="wp-block-button is-style-default">
+                                    <a class="wp-block-button__link has-brand-red-background-color wp-element-button" href="#"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a>
+                                </div>
+                            </div>
+                            <h3 class="">Need Help?</h3>
+                            <p class="my-4">Contact our internal accounting team for assistance.<br />
+                            <i class="mr-1 fa-solid fa-phone-office"></i><a class="underline hover:no-underline" href="tel://5203214600">520.321.4600</a><br />
+                            <i class="mr-1 fa-solid fa-envelope"></i><a class="underline hover:no-underline" href="mailto:ccs@beachfleischman.com">Internal Accounting</a></p>
+						</div>
+                    </div>
+
+                </div>
+
+				<div class="not-prose entry-cont">
+
+                    <?php /* <section class="mb-8 lg:mb-16">
 
 						<div class="flex flex-col gap-8 lg:flex-row lg:items-start">
 
@@ -117,16 +194,16 @@ get_header();
 
 						</div>
 
-					</section>
+					</section> */ ?>
 
 					<div class="">&nbsp;</div>
 
 				</div>
 
-				<?php get_template_part('template-parts/form/form', 'hubspot'); ?>
+				<?php // get_template_part('template-parts/form/form', 'hubspot'); ?>
 
 			</div>
-		</article><!-- #post-<?php the_ID(); ?> -->
+		</article>
 
 	<?php endwhile; ?>
 
