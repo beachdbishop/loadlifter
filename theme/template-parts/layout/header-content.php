@@ -8,7 +8,7 @@
  */
 
 
- $menuItemsPrimary = [
+$menuItemsPrimary = [
 	"services" => [
 		"label" => 'Services',
 		"url" => '/services/',
@@ -88,14 +88,18 @@ $menuItemsSecondary = [
 
 		<div class="w-[240px] lg:w-[320px] order-first">
 			<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>" title="Go to BeachFleischman's front page">
-				<?php get_template_part('template-parts/svg/svg', 'logonewbrandsimple'); ?>
+				<?php if ( is_front_page() ) {
+                    get_template_part('template-parts/svg/svg', 'logoserviceline');
+                } else {
+                    get_template_part('template-parts/svg/svg', 'logonewbrandsimple');
+                } ?>
 			</a>
 		</div>
 
 		<div class="nav-ctrls | flex flex-row order-last">
 
 			<ul class="flex print:hidden">
-				<li class="toggleable |  group  ">
+				<li class="toggleable | group  ">
 					<input type="checkbox" value="selected" id="toggle-search" class="hidden toggle-input peer">
 					<label for="toggle-search" class="block px-4 py-4 font-bold cursor-pointer lg:py-6 hover:text-brand-red peer-checked:text-brand-red peer-checked:bg-white" aria-label="Toggle Search">
 						<i class="fa-solid fa-magnifying-glass"></i>
