@@ -113,11 +113,11 @@ add_shortcode( 'svg', 'll_svgpart_shortcode' );
 function ll_cybercertlogos_shortcode() {
 
     return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 lg:my-12 place-content-center md:place-content-start md:flex-row lg:gap-x-16 print:hidden">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="257" height="100">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="224" height="100">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="137" height="100">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="100" height="100">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="324" height="100">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="180" height="70">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="157" height="70">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="96" height="70">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="70" height="70">
+    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="227" height="70">
 </div>';
 
 }
