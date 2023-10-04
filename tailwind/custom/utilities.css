@@ -128,3 +128,10 @@ via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
 }
 
 
+.context-alert {
+  @apply absolute p-2 bg-yellow-100 text-neutral-800 font-bold text-center transition-opacity animate-bounce;
+  inset: auto 0 calc(100% + 0.5em) 0;
+}
+.context-alert[data-state='empty'] {
+  @apply opacity-0 translate-y-1 transition-none;
+}

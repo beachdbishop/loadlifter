@@ -134,19 +134,6 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 endif;
 
 
-if ( ! function_exists( 'll_social_shares' ) ) :
-	/**
-	 *
-	 *
-	 * Depends on Shared Counts plugin
-	 */
-	function ll_social_shares() {
-		if( function_exists( 'shared_counts' ) ) {
-			shared_counts()->front->display();
-		}
-	}
-endif;
-
 if ( ! function_exists( 'll_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
@@ -159,16 +146,16 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'loadlifter' ) );
 
-            echo '<div class="my-4"><h3 class="">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
+            echo '<div class="my-8"><h3 class="mb-2">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
 
 
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="catlist">' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				printf( '<span class="catlist lg:mb-2">' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
 			if ( $categories_list && $tags_list ) {
-				printf( '<br />' );
+				printf( '<div>&nbsp;</div>' );
 			}
 
 			if ( $tags_list ) {

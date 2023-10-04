@@ -127,7 +127,7 @@ endif; ?>
 
 					ll_entry_footer();
 
-					ll_social_shares();
+					get_template_part( 'template-parts/form/form', 'webshare' );
                     ?>
 
 				</div>
