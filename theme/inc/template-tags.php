@@ -107,13 +107,11 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 					<div class="flex -space-x-3">
 				EOT;
 				foreach( $coauthors as $coauthor ) {
-					// $avatar = coauthors_get_avatar( $coauthor, 200, '', $coauthor->display_name, 'mb-2 rounded-full ' );
-					// aspect ratio = 95:127
+
 					$avatar = get_field( 'll_user_headshot', 'user_' . $coauthor->ID );
-					// $person_archivelink = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
 
 					if( !empty( $avatar ) ) {
-						$avatar_markup = sprintf( '<a href="/author/%3$s" class="relative inline-flex items-center justify-center text-white w-30 rounded-2xl" aria-label="Visit %2$s\'s author page"><img src="%1$s" alt="%2$s" title="%2$s" width="120" class="max-w-full border-2 border-white rounded-2xl" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_nicename );
+						$avatar_markup = sprintf( '<a href="/author/%3$s" class="relative inline-flex items-center justify-center text-white w-30 rounded-2xl" aria-label="Visit %2$s\'s author page"><img src="%1$s" alt="%2$s" title="%2$s" width="120" height="159" class="max-w-full border-2 border-white rounded-2xl" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_nicename );
 					} else {
 						$avatar_markup = sprintf( '<a href="/author/%2$s" class="relative border-2 border-white text-neutral-100 bg-neutral-400 rounded-2xl" aria-label="Visit %2$s\'s author page"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_nicename );
 					}
