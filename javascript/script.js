@@ -13,7 +13,7 @@ var ready = (callback) => {
   else document.addEventListener("DOMContentLoaded", callback);
 }
 
-const navHeader = document.querySelector('.nav-header')
+const navHeader = document.querySelector('.nav-header');
 const navToggle = document.querySelector('.toggle-mobile-nav');
 const navMenu = document.querySelector('#primary-navigation');
 
