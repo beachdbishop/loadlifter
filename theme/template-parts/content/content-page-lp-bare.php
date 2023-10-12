@@ -23,4 +23,4 @@ $page_excerpt               = get_the_excerpt();
         <?php the_content(); ?>
     </div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- post-<?php the_ID(); ?> -->
