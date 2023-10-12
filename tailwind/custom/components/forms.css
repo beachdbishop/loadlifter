@@ -1,39 +1,47 @@
-/* Styles for HubSpot Form Embeds */
+/* Styles for Forms and HubSpot Form Embeds */
+form {
+  @apply grid grid-flow-row auto-rows-max gap-2 md:gap-4 print:hidden;
+}
+
+.field > label {
+  @apply font-head;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
+select,
+textarea {
+  @apply w-full border border-neutral-400 bg-neutral-50 focus:border-brand-blue/80 focus:bg-white dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:focus:bg-neutral-950;
+}
+
+select {
+  @apply py-1;
+}
+
+input[type="checkbox"] {
+  @apply pointer-events-none -mt-0.5 mr-1 shrink-0 rounded border-2 border-neutral-200 text-brand-blue checked:border-brand-blue focus:outline-none focus:ring focus:ring-brand-blue-pale/80 md:mr-2 dark:bg-neutral-700 dark:border-neutral-600;
+}
+
+input[type="radio"] {
+  @apply pointer-events-none -mt-0.5 mr-1 shrink-0 border-2 border-neutral-200 text-brand-blue checked:border-brand-blue focus:outline-none focus:ring focus:ring-brand-blue-pale/80 md:mr-2 dark:bg-neutral-700 dark:border-neutral-600;
+}
+
+input[type="submit"],
+button.ab-button {
+  @apply font-head font-bold inline-flex items-center justify-center rounded-lg bg-brand-red-dark px-5 py-3 text-white shadow-neutral-800 hover:bg-brand-red hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red active:shadow-sm sm:w-auto lg:text-lg;
+}
 
 .hbspt-form {
-	form {
-		@apply grid grid-flow-row auto-rows-max gap-2 md:gap-4 print:hidden;
-	}
-
-	.field > label {
-		@apply font-head;
-	}
-
-	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
-	select,
-	textarea {
-		@apply w-full border border-neutral-400 bg-neutral-50 focus:border-brand-blue/80 focus:bg-white;
-	}
-
-	input[type="checkbox"] {
-		@apply pointer-events-none -mt-0.5 mr-1 shrink-0 rounded border-2 border-neutral-200 text-brand-blue checked:border-brand-blue focus:outline-none focus:ring focus:ring-brand-blue-pale/80 md:mr-2;
-	}
-
-	input[type="radio"] {
-		@apply pointer-events-none -mt-0.5 mr-1 shrink-0 border-2 border-neutral-200 text-brand-blue checked:border-brand-blue focus:outline-none focus:ring focus:ring-brand-blue-pale/80 md:mr-2;
-	}
-
-	input[type="submit"] {
-		@apply font-head font-bold inline-flex items-center justify-center rounded-lg bg-brand-red-dark px-5 py-3 text-white shadow-neutral-800 hover:bg-brand-red hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red active:shadow-sm sm:w-auto lg:text-lg;
-	}
-
 	span.hs-form-required {
-		@apply text-brand-red;
+		@apply font-bold text-orange-500;
 	}
 
 	.hs-error-msg {
-		@apply italic text-brand-red-dark text-base;
+		@apply font-bold italic text-red-500 text-base;
 	}
+
+  .invalid {
+    @apply border-2 !border-red-500;
+  }
 }
 
 .form-columns-1 {
