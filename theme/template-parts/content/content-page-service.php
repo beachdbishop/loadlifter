@@ -8,6 +8,8 @@
  */
 
 $page_id                        = get_the_ID();
+$page_id_industries             = ( wp_get_environment_type() == 'local' ) ? '3196' : '31923';
+
 if ( get_field( 'll_page_title_override' ) ) {
 	$page_title                 = get_field( 'll_page_title_override' );
 } else {
@@ -41,8 +43,8 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
             <div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
 
                 <?php if ( $page_post_category ) : ?>
-                    <section class="full-bleed not-prose bg-neutral-900 text-neutral-100 ll-equal-vert-padding">
-                        <div class="post-grid | px-2 text-neutral-100 md:container md:mx-auto md:px-0">
+                    <section class="full-bleed not-prose bg-neutral-800 text-neutral-100 ll-equal-vert-padding">
+                        <div class="post-grid | px-2 md:container md:mx-auto md:px-0 ">
                             <div class="flex items-center justify-between mb-4">
                                 <h2>Insights</h2>
                                 <a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-neutral-300 text-neutral-300 hover:text-brand-blue-pale hover:border-white">View All</a>
@@ -52,7 +54,9 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                     </section>
                 <?php endif; ?>
 
-                <?php // CTA
+                <?php /* CTA
+                 * TODO: Should this get maybe turned into a template part?
+                 */
                 if ( $page_cta_standard ) :
                     echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>';
                     echo '<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
@@ -76,10 +80,19 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
 
                 <?php // SERVICE PROFESSIONALS AND INVOLVEMENT   ?>
                 <?php if ( ( $page_people_display != 'hide' ) || ( !empty( $page_groups_html ) ) ) : ?>
-                <section class="bg-white full-bleed not-prose ll-equal-vert-padding">
+                <section class="full-bleed not-prose ll-equal-vert-padding">
                     <div class="px-2 md:container md:mx-auto md:px-0">
                         <?php if ( ( $page_people ) && ( $page_people_display != 'hide' ) ) : ?>
-                            <h2>Our Advisors</h2>
+
+                            <h2>
+                            <?php
+                                if ( $post->post_parent == $page_id_industries ) {
+                                    echo ( ( ll_is_plural( $page_people ) ) ? 'Industry Professionals' : 'Industry Professional' );
+                                } else {
+                                    echo ( ( ll_is_plural( $page_people ) ) ? 'Our Advisors' : 'Our Advisor' );
+                                }
+                            ?>
+                            </h2>
 
                             <?php
                             if ( $page_people_display === 'slider' ) :
@@ -105,14 +118,8 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
             </div>
 
             <div class="ll-page-grid-area-c">
-                <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
-                    <?php
-                        if ( is_page( 'mexico-y-eu-contadores-publicos-certificados' ) ) {
-                            get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar-spanish' );
-                        } else {
-                            get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
-                        }
-                    ?>
+                <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400">
+                    <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
                 </div>
             </div>
 

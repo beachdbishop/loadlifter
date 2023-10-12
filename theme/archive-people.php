@@ -43,18 +43,18 @@ $peopleQuery = new WP_Query( $args );
 
 ?>
 
-	<main id="primary" class="page-people | bg-white">
+	<main id="primary" class="page-people | ">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 lg:pt-8 lg:pb-12' ); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
 				<?php if ( function_exists( 'bcn_display' ) ) { ?>
-					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 				<?php } ?>
 
 				<?php if ( $peopleQuery->have_posts() ) : ?>
 
 					<header>
-						<h2 class="entry-title">Leadership Team</h2>
+						<h2 class="entry-title dark:text-neutral-200">Leadership Team</h2>
 					</header>
 
 					<div class="grid grid-cols-1 mt-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4">

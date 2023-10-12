@@ -22,7 +22,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 
     <footer id="colophon" class="site-footer | print:bg-white">
 
-        <div class="bg-center bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply print:bg-white print:bg-none print:text-neutral-700">
+        <div class="bg-fixed bg-center lg:bg-[center_top_10rem] bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply print:bg-white print:bg-none print:text-neutral-700">
             <div class="px-2 py-16 md:px-0 md:container md:mx-auto">
                 <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3 lg:gap-x-8">
                     <div class="">
@@ -33,22 +33,9 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
                         </div>
                         <?php ll_show_social_links( $out = 'echo' ); ?>
                     </div>
-                    <div class=" md:pt-2">
-                        <address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
-                            <p class="street-address | font-head leading-none " property="streetAddress">2201 E. Camelback Road, Suite 200</p>
-                            <p class="locality | font-head leading-none "><span property="addressLocality">Phoenix</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85016</span></p>
-                            <p class="font-bold leading-none font-head " property="telephone">P: <a href="tel:16022657011" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (602) 265-7011', 0);">602.265.7011</a></p>
-                            <p class="font-bold leading-none font-head " property="faxNumber">F: 602.265.7060</p>
-                        </address>
-                    </div>
-                    <div class=" md:pt-2">
-                        <address class="space-y-2 not-italic" property="address" typeof="PostalAddress">
-                            <p class="street-address | font-head leading-none" property="streetAddress">1985 E. River Road, Suite 201</p>
-                            <p class="locality | font-head leading-none"><span property="addressLocality">Tucson</span>, <span class="state" property="addressRegion">AZ</span> <span class="zip" property="postalCode">85718</span></p>
-                            <p class="font-bold leading-none font-head" property="telephone">P: <a href="tel:15203214600" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '1 (520) 321-4600', 0);">520.321.4600</a></p>
-                            <p class="font-bold leading-none font-head" property="faxNumber">F: 520.321.4040</p>
-                        </address>
-                    </div>
+                    <?php foreach( $offices as $office ) {
+                        ( $office['open'] == true ) ? ll_footer_address( $office ) : 'nope';
+                    } ?>
                 </div>
                 <?php if ( is_page_template( 'tpl-landing-page-cyber.php' ) ) { ?>
                     <p class="mt-8 text-xs"><?php echo $disclaimer_cyber; ?></p>

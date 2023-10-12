@@ -72,11 +72,11 @@ $cards_about = [
                             echo '<div class="ind-' . $card['icon'] . '">
                                 <a href="' . $card['link'] . '" rel="bookmark">
                                     <div class="card | group relative inline-block float-left w-[180px] h-[180px] [perspective:600px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
-                                        <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
+                                        <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
                                             <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
                                                 <div class="card-icon | text-[--card-front-icon]">
                                                     <span class="fa-stack fa-2x">
-                                                        <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                                        <i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
                                                         <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
                                                     </span>
                                                 </div>
@@ -110,9 +110,9 @@ $cards_about = [
 
                     $peopleQuery = new WP_Query( $args ); ?>
 
-                    <section class="mb-0 rounded-lg ll-equal-vert-padding lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white">
+                    <section class="mb-0 rounded-lg ll-equal-vert-padding lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white dark:lg:from-neutral-600 dark:lg:to-80% dark:to-neutral-900">
                         <div class="max-w-3xl md:mx-auto not-prose">
-                            <h2 class="text-brand-blue">Voices of diversity, equity, and inclusion</h2>
+                            <h2 class="text-brand-blue dark:text-brand-blue-pale">Voices of diversity, equity, and inclusion</h2>
                             <div class="slider slider-quotes">
                             <?php /* Start the People slider loop */
                             while ( $peopleQuery->have_posts() ) :
@@ -160,11 +160,11 @@ $cards_about = [
             </div>
 
             <div class="ll-page-grid-area-c">
-                <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden">
+                <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400">
                     <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
                 </div>
             </div>
 
         </div>
 	</div>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- post-<?php the_ID(); ?> -->

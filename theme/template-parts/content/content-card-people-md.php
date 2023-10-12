@@ -28,7 +28,7 @@ $peep_level = get_field( 'll_people_level' );
 	<header>
 		<?php
 		$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
-		echo sprintf( '<h3 class="font-bold leading-none text-center text-brand-gray %1$s"><a href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
+		echo sprintf( '<h3 class="font-bold leading-none text-center %1$s"><a href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
 		?>
 	</header>
 
@@ -44,7 +44,7 @@ $peep_level = get_field( 'll_people_level' );
 
     if ( $peep_level['value'] != 800 ) {
 		if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-			echo '<footer class="mt-2 text-sm text-center text-neutral-400 children:block children:px-2">';
+			echo '<footer class="mt-2 text-sm text-center text-neutral-600 children:block children:px-2 dark:text-neutral-400">';
 				$peep_department = get_field_object( 'll_people_department' );
 				$peep_dept_value = $peep_department['value'];
 				if ( $peep_dept_value ) {

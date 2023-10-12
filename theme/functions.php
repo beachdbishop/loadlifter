@@ -10,6 +10,9 @@
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
 	define( 'LL_COMPANY_LEGAL_NAME', 'BeachFleischman PLLC' );
 }
+if ( ! defined( 'LL_COMPANY_NICE_NAME' ) ) {
+    define( 'LL_COMPANY_NICE_NAME', 'BeachFleischman' );
+}
 
 if ( ! defined( 'LL_VERSION' ) ) {
 	/*
@@ -17,7 +20,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 	 *
 	 * This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'LL_VERSION', '2.1.8' );
+	define( 'LL_VERSION', '2.2.0' );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
@@ -32,7 +35,7 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 	 */
 	define(
 		'LL_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-primary lg:prose-xl'
+		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-primary lg:prose-xl dark:prose-invert'
 	);
 }
 
@@ -132,6 +135,10 @@ add_action( 'after_setup_theme', 'll_content_width', 0 );
 function ll_scripts() {
 	wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
 	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
+    if ( get_field( 'll_postpage_css' ) ) {
+        $inline_css = get_field( 'll_postpage_css' );
+        wp_add_inline_style( 'loadlifter-style', $inline_css );
+    }
 
 	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
     wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], wp_get_theme()->get('Version'), true );
@@ -151,6 +158,7 @@ function ll_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
 
+
 function ll_guten_scripts() {
 	// wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
 }
@@ -166,7 +174,7 @@ function ll_disable_wp57_menu_hover() {
 }
 
 function ll_enable_monospace_acf_textarea() {
-    echo '<style>.acf-input textarea { font-family: "IBM Plex Mono", monospace; background-color: #20293c; color: #84c6ef; line-height: 1.3; }</style>';
+    echo '<style>.acf-input textarea { font-family: "Fira Code", monospace; background-color: #171717; color: #a3e635; line-height: 1.2; }</style>';
 }
 
 /**
@@ -278,7 +286,6 @@ require get_template_directory() . '/inc/template-functions.php';
  * Custom Post Types
  */
 require get_template_directory() . '/inc/cpt-people.php';
-// require get_template_directory() . '/inc/cpt-industries.php';
 require get_template_directory() . '/inc/cpt-job-openings.php';
 
 /**

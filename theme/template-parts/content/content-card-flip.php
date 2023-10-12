@@ -18,12 +18,12 @@ $feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnai
 <div class="card-<?php echo $icon; ?>">
     <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
         <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-size: 260px">
-            <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
+            <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
                 <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
                     <?php if ( $icon ) : ?>
                     <div class="card-icon | text-[--card-front-icon]">
                         <span class="fa-stack fa-2x">
-                            <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
                             <i class="fa-duotone <?php echo $icon; ?> fa-stack-1x "></i>
                         </span>
                     </div>

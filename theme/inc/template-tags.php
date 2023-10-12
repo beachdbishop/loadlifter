@@ -229,28 +229,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
     function ll_page_hero( $h1, $h2 ) {
         $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
 
-        // echo '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
-
-		// echo '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">
-        //     <div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
-        //         <div class="">
-        //             <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>';
-		// 			if ( is_front_page() ) {
-		// 				echo '<p class="mt-4 text-xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-3xl">' . $h2 . '</p>';
-		// 			} else {
-		// 				echo '<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>';
-		// 			}
-		// 	echo '</div>
-		// </div>';
-
-        // if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
-        //     echo '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
-        //     </div>';
-        // }
-
-        // echo '</div>';
-
-        $hero_html = '<style>.page-hero { background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
+        $hero_html = '<style>.page-hero { background-color: #282828; background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
 
         $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
         $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
@@ -259,7 +238,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>
                 </div>
 		    </div>';
-        $hero_html .= '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>';
+        $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
         $hero_html .= '</div>';
 
         return $hero_html;
@@ -388,7 +367,7 @@ if ( ! function_exists( 'll_people_dept_list' ) ) :
 	function ll_people_show_dept_list( $departments ) {
 		echo '<span class="inline-pipe-sep | "><svg class="inline llicon"><use xlink:href="#people-group" title="Department(s)"></use></svg> ';
 		foreach( $departments as $dept ) {
-			echo '<span class="text-neutral-600">' . $dept['label'] . '</span>';
+			echo '<span class="">' . $dept['label'] . '</span>';
 		}
 		echo '</span>';
 	}
@@ -399,7 +378,7 @@ if ( ! function_exists( 'll_people_show_location' ) ) :
 	 * Display People/Author location
 	 */
 	function ll_people_show_location( $location ) {
-		echo '<span class=""><svg class="inline llicon"><use xlink:href="#location-dot" title="Location"></use></svg> <span class="text-neutral-600">' . esc_html( $location ) . '</span></span>';
+		echo '<span class=""><svg class="inline llicon"><use xlink:href="#location-dot" title="Location"></use></svg> <span class="">' . esc_html( $location ) . '</span></span>';
 	}
 endif;
 
@@ -554,15 +533,29 @@ if ( ! function_exists( 'll_content_class' ) ) :
 endif;
 
 
+if ( ! function_exists( 'll_footer_address' ) ) :
+    function ll_footer_address( $addr ) {
+        echo '<div class=" md:pt-2">
+            <address class="space-y-2 not-italic text-shadow shadow-neutral-900" property="address" typeof="PostalAddress">
+                <p class="street-address | font-head leading-none " property="streetAddress">' . $addr['street1'] . '</p>
+                <p class="locality | font-head leading-none "><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
+                <p class="font-bold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>
+                <p class="font-bold leading-none font-head " property="faxNumber">F: ' . ll_format_phone_number( $addr['fax'], 'beach' ) . '</p>
+            </address>
+        </div>';
+    }
+endif;
+
+
 if ( ! function_exists( 'll_no_link_card' ) ) :
     function ll_no_link_card( $card ) {
         echo '<div>
             <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
-                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
+                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-brand-blue-dark">
                     <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
                         <div class="card-icon | text-[--card-front-icon]">
                             <span class="fa-stack fa-2x">
-                                <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                                <i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-700"></i>
                                 <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
                             </span>
                         </div>

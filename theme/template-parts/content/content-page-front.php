@@ -83,13 +83,30 @@ $video_subheading               = 'Work with our advisors and experience the pow
             </div>
         </section>
 
-        <?php the_content(); ?>
+        <?php // the_content(); ?>
 
-        <section class="full-bleed ll-equal-vert-padding not-prose">
+        <section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300">
+            <div class="ind-grid | px-2 md:container md:mx-auto md:px-0">
+                <h2 class="mb-4 lg:mb-8">Industry Knowledge</h2>
+                <?php echo do_shortcode(
+                    '[display-posts
+                    post_type="page"
+                    post_parent="3196"
+                    orderby="title"
+                    order="ASC"
+                    posts_per_page="-1"
+                    wrapper="div"
+                    wrapper_class="ind-card-flips is-style-default mx-auto max-w-6xl"
+                    layout="card-flip-sm" /]'
+                ); ?>
+            </div>
+        </section>
+
+        <section class="full-bleed ll-equal-vert-padding not-prose dark:bg-neutral-800 dark:text-neutral-300">
             <div class="post-grid | px-2 md:container md:mx-auto md:px-0">
                 <div class="flex items-center justify-between mb-4">
                     <h2>Recent Posts</h2>
-                    <a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark">View All</a>
+                    <a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-brand-blue-faint dark:hover:border-brand-blue-faint">View All</a>
                 </div>
                 <?php echo do_shortcode(
                     '[display-posts

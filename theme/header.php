@@ -22,10 +22,6 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )
     } ?>
 
 	<?php wp_head(); ?>
-
-	<?php if ( get_field( 'll_postpage_css' ) ) {
-		the_field( 'll_postpage_css' );
-	} ?>
 </head>
 
 <body <?php body_class( ' overflow-x-hidden styled-scrollbars' ); ?>>

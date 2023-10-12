@@ -18,7 +18,7 @@ $peep_level                     = get_field( 'll_people_level' );
 ?>
 
 <article <?php post_class( 'person-card | p-4 mb-4 group' ); ?>>
-	<div class="card-headshot | mx-auto mb-2 md:mb-4 bg-brand-red-faint border-2 border-white bg-top bg-cover group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>');">
+	<div class="card-headshot | mx-auto mb-2 md:mb-4 bg-brand-red-faint border-2 border-white bg-top bg-cover group-hover:border-brand-red dark:border-neutral-700" style="background-image: url('<?php echo $headshot; ?>');">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>">
 			<div class="w-[200px] aspect-square">&nbsp;</div>
 		</a>
@@ -27,14 +27,14 @@ $peep_level                     = get_field( 'll_people_level' );
 	<header>
 		<?php
 		$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
-		echo sprintf( '<h3 class="font-bold leading-none text-center text-brand-gray %1$s"><a href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
+		echo sprintf( '<h3 class="font-bold leading-none text-center text-brand-gray %1$s dark:text-neutral-200"><a href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
 		?>
 	</header>
 
 	<?php
 	// Only show designations for non-subsidiary entries
 	if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
-		echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500">%1$s</p>', get_field( 'll_people_designations' ) );
+		echo sprintf( '<p class="italic font-bold leading-tight tracking-tighter text-center font-head text-neutral-500 ">%1$s</p>', get_field( 'll_people_designations' ) );
 	}
 
 	if( get_field( 'll_people_title' ) ) {

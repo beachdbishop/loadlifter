@@ -1,7 +1,7 @@
 <?php
 /*
- * Template Name: Service Page
- * This is the template that displays ...
+ * Template Name: Service or Industry Page
+ * This is the template that displays Services or Industry pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="service-page | bg-white">
+	<main id="primary" class="">
 
 		<?php
 		while ( have_posts() ) :

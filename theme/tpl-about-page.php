@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="about-page | bg-white">
+	<main id="primary" class="about-page | ">
 
 		<?php
 		while ( have_posts() ) :

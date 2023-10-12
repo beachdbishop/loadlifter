@@ -38,7 +38,7 @@ $inner_template = [
 ?>
 
 
-<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose bg-white shadow-md">
+<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose bg-white shadow-md dark:bg-neutral-800">
     <p class="llcallout-title">
         <?php if( !empty( $callout_icon ) ): ?>
             <i class="<?php echo esc_attr( $callout_icon ); ?>"></i>

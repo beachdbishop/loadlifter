@@ -360,7 +360,39 @@ function ll_no_widows( $text, $minWords = 3) {
 
 
 function ll_is_plural( $target ) {
-    if ( count( $target ) != 1) {
+    if ( count( $target ) > 1) {
         return true;
+    }
+}
+
+
+/**
+ * Wrap last word with span
+ * @author: Elron
+ * https://stackoverflow.com/questions/18612872/get-the-last-word-of-a-string
+ */
+function ll_wrap_last_word( $string ) {
+    // Breaks string to pieces
+    $pieces = explode(" ", $string);
+    // Modifies the last word
+    $pieces[count($pieces)-1] = '<span class="font-bold">' . $pieces[count($pieces)-1] . '</span>';
+    // Returns the glued pieces
+    return implode(" ", $pieces);
+}
+
+
+function ll_format_phone_number( $number, $output = null ) {
+    $number = preg_replace( "/[^0-9]/", "", $number );
+
+    switch( $output ) {
+        case 'us':
+            return preg_replace( "/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{4})/", "$1 ($2) $3-$4", $number );
+            break;
+        case 'beach':
+            return preg_replace( "/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{4})/", "$2.$3.$4", $number );
+            break;
+        default:
+            return $number;
+            break;
     }
 }

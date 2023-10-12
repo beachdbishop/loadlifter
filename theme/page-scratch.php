@@ -26,12 +26,12 @@ get_header();
 												} ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
 				<?php if (function_exists('bcn_display')) { ?>
-					<div class="breadcrumbs | font-head text-neutral-700 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 				<?php } ?>
 				<header>
-					<?php the_title('<h1 class="entry-title | ">', '</h1>'); ?>
+					<?php the_title('<h1 class="entry-title | dark:text-neutral-200">', '</h1>'); ?>
 				</header>
-				<div class="prose entry-content">
+				<div class="entry-content">
 					<?php the_content(); ?>
 					<div class="clear-both">&nbsp;</div>
 

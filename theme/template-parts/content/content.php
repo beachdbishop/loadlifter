@@ -17,15 +17,15 @@ endif; ?>
 	<div class="px-1 md:container md:mx-auto md:px-0 ">
 
 		<?php if ( function_exists( 'bcn_display' ) ) { ?>
-			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
 		<header>
 			<?php
 			if ( is_singular() ) :
-				the_title( '<h1 class="entry-title | md:py-8">', '</h1>' );
+				the_title( '<h1 class="entry-title | md:py-8 dark:text-neutral-100">', '</h1>' );
 			else :
-				the_title( '<h2 class="entry-title | "><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( '<h2 class="entry-title | dark:text-neutral-100"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
 			?>
 		</header>
@@ -60,56 +60,19 @@ endif; ?>
 					?>
 				</div>
 
-				<?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
-
 				<?php get_template_part( 'template-parts/siteblocks/area', 'after-post' ); ?>
 
 				<?php
 				if( yarpp_related_exist() ) {
 					yarpp_related(
 						[
-							'limit' => 3,
-							'extra_css_class' => 'container mx-0',
+							'limit'                         => 3,
+							'extra_css_class'               => 'container mx-0',
+                            'generate_missing_thumbnails'   => false,
+                            'recent'                        => '18 month',
 						]
 					);
 				}
-
-				// yarpp_related(
-				// 	array(
-				// 		// Pool options: these determine the "pool" of entities which are considered
-				// 		'post_type' => array( 'post' ), //  post types to include in results
-				// 		'show_pass_post' => false, // show password-protected posts
-				// 		'show_sticky_posts' => true, // show sticky posts
-				// 		'past_only' => true, // show only posts which were published before the reference post
-				// 		'exclude' => array(), // a list of term_taxonomy_ids. entities with any of these terms will be excluded from consideration.
-				// 		'recent' => '12 month', // to limit to entries published recently, set to like '15 day', '20 week', or '12 month' (https://www.mysqltutorial.org/mysql-interval/)
-
-				// 		// Relatedness algorithm options: these determine how "relatedness" is computed
-				// 		// Weights are used to construct the "match score" between candidates and the reference post
-				// 		'weight' => array(
-				// 		'body' => 1,
-				// 		'title' => 2, // larger weights mean this criteria will be weighted more heavily
-				// 		'tax' => array(
-				// 			'post_tag' => 1,
-				// 			... // put any taxonomies you want to consider here with their weights
-				// 		)
-				// 		),
-				// 		// Specify taxonomies and a number here to require that a certain number be shared:
-				// 		'require_tax' => array(
-				// 			'post_tag' => 1 // for example, this requires all results to have at least one 'post_tag' in common
-				// 		),
-				// 		// The threshold which must be met by the "match score" to be considered related
-				// 		'threshold' => 5,
-
-				// 		// Display options:
-				// 		'template' => 'thumbnails', // which theme/custom template to use. Built-in ones include "list" and "thumbnails", or the name of a YARPP template file in your active theme folder starting with "yarpp-template-". Example: yarpp-template-videos or yarpp-template-videos.php
-				// 		'limit' => 4, // maximum number of results
-				// 		'order' => 'score DESC', // column on "wp_posts" to order by, then a space, and whether to order in ascending ("ASC") or descending ("DESC") order
-				// 		'promote_yarpp' => false, // boolean indicating whether to add 'Powered by YARPP' below related posts
-				// 		'generate_missing_thumbnails' => true, // automatically generate missing thumbnail sizes on the fly
-				// 		'extra_css_class' => 'container mx-auto', // add CSS classes to YARPP's parent div
-				// 	)
-				// );
 				?>
 			</div>
 
@@ -117,7 +80,7 @@ endif; ?>
 				<?php
 				if ( 'post' === get_post_type() ) :
 				?>
-				<div class="post-meta | text-sm text-neutral-600 ">
+				<div class="post-meta | text-sm text-neutral-600 dark:text-neutral-400">
 					<?php
 					ll_posted_by( array(
 						'show_thumb' => true,
@@ -136,10 +99,12 @@ endif; ?>
 				<!--   A R E A   S I D E   -->
 				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 
-				<?php get_template_part( 'template-parts/form/form', 'hubspot-newsletter-onlight' ); ?>
+				<div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400">
+                    <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+                </div>
 			</aside>
 		</div>
 
 	</div>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article><!-- post-<?php the_ID(); ?> -->

@@ -11,7 +11,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="careers-page | bg-white">
+	<main id="primary" class="careers-page | ">
 
 		<?php
 		while ( have_posts() ) :

@@ -5,14 +5,14 @@
 }
 
 .disclosure-nav .dropmenu:not(.mega) {
-  @apply bg-white block border-t-4 border-brand-blue drop-shadow-xl rounded-b-sm w-full md:min-w-[320px] absolute top-[100%] z-20;
+  @apply bg-white block border-t-4 border-brand-blue drop-shadow-xl rounded-b-sm w-full md:min-w-[320px] absolute top-[100%] z-20 dark:bg-neutral-800 dark:text-neutral-200;
 }
 .disclosure-nav .dropmenu > ul {
   @apply z-30;
 }
 
 .disclosure-nav .dropmenu.mega {
-  @apply bg-white block border-t-4 border-brand-blue drop-shadow-xl rounded-b-sm w-full md:min-w-[680px] md:-left-[240px] lg:min-w-[960px] lg:-left-[320px] absolute top-[100%] z-20;
+  @apply bg-white block border-t-4 border-brand-blue drop-shadow-xl rounded-b-sm w-full md:min-w-[680px] md:-left-[240px] lg:min-w-[960px] lg:-left-[320px] absolute top-[100%] z-20 dark:bg-neutral-800 dark:text-neutral-200;
 }
 
 .disclosure-nav ul {
@@ -25,12 +25,12 @@
 }
 
 .disclosure-nav ul a {
-  @apply border-0 text-neutral-900 block m-0 py-1.5 px-4 lg:py-2 no-underline;
+  @apply border-0 text-neutral-900 block m-0 py-1.5 px-4 lg:py-2 no-underline dark:text-neutral-200;
 }
 
 .disclosure-nav ul a:hover,
 .disclosure-nav ul a:focus {
-  @apply bg-neutral-100 text-black mb-0 underline decoration-brand-blue-pale;
+  @apply bg-neutral-100 text-black mb-0 underline decoration-brand-blue-pale dark:bg-neutral-900 dark:text-neutral-100;
 }
 
 .disclosure-nav ul a:focus {
@@ -48,7 +48,7 @@
 
 .disclosure-nav button::after {
   content: "";
-  @apply border-b border-r border-neutral-900 h-2 ml-3 w-2 rotate-45;
+  @apply border-b border-r border-neutral-900 h-2 ml-3 w-2 rotate-45 dark:border-neutral-200;
 }
 
 .disclosure-nav .main-link + button::after {

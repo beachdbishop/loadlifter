@@ -10,18 +10,18 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-4 bg-neutral-100 md:py-6 lg:py-8">
+	<main id="primary" class="py-4 md:py-6 lg:py-8">
 
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 
 			<?php if ( function_exists( 'bcn_display' ) ) { ?>
-				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
 			<?php if ( have_posts() ) : ?>
 
 				<header>
-					<h1 class="entry-title | has-huge-font-size">
+					<h1 class="entry-title | has-huge-font-size dark:text-neutral-200">
 						<?php
 						/* translators: %s: search query. */
 						printf( esc_html__( 'Search Results for: %s', 'loadlifter' ), '<span class="px-2 text-black rounded bg-yellow-400/75">' . get_search_query() . '</span>' );

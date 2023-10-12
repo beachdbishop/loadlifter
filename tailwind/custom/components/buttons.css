@@ -1,11 +1,12 @@
 /*   B u t t o n s   */
 
 .wp-block-button__link {
-  /* hsform submit */
-  /* font-head font-bold inline-flex items-center justify-center rounded-lg bg-brand-red px-5 py-3 text-brand-red-faint shadow-neutral-800 hover:bg-brand-red-dark hover:text-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg */
-
-	@apply font-head font-bold inline-flex items-center justify-center rounded-lg px-5 py-3 shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg;
+	@apply font-head font-bold no-underline inline-flex items-center justify-center rounded-lg px-5 py-3 shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg;
 }
+
+/*
+<a href="$url" class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline rounded-lg font-head shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg" target="_blank"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard</a>
+*/
 
 .wp-block-button__link:not(.has-background) {
 	@apply hover:bg-brand-blue-dark hover:text-white;

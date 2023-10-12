@@ -19,15 +19,15 @@ $peep_idea_quote                = get_field( 'll_people_idea_quote' );
 
 <div <?php post_class( 'p-6 transition-colors ease-in-out rounded-lg slide' ); ?> tabindex="0">
     <div class="mb-8">
-        <p class="font-serif text-lg italic leading-6 quote text-brand-gray-dark lg:text-xl"><?php echo $peep_idea_quote; ?></p>
+        <p class="font-serif text-lg italic leading-6 quote text-brand-gray-dark lg:text-xl dark:text-neutral-300"><?php echo $peep_idea_quote; ?></p>
     </div>
     <div class="text-lg text-center cite text-brand-gray">
-        <div class="w-40 mx-auto mb-2 bg-top bg-cover border-2 border-white md:mb-4 bg-brand-red-faint group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>');">
+        <div class="w-40 mx-auto mb-2 bg-top bg-cover border-2 border-white md:mb-4 bg-brand-red-faint group-hover:border-brand-red dark:border-neutral-500" style="background-image: url('<?php echo $headshot; ?>');">
             <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>"><div class="w-40 aspect-square">&nbsp;</div></a>
         </div>
-        <h4 class="mt-2 text-brand-blue">
+        <h4 class="mt-2 text-brand-blue dark:text-brand-blue-pale">
             <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></a>
         </h4>
-        <p class="text-base text-brand-blue-dark"><?php echo get_field( 'll_people_title' ); ?></p>
+        <p class="text-base text-brand-blue-dark dark:text-neutral-400"><?php echo get_field( 'll_people_title' ); ?></p>
     </div>
 </div>

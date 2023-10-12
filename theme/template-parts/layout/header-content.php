@@ -83,7 +83,7 @@ $menuItemsSecondary = [
 <?php //   P R E H E A D E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
-<header id="masthead" class="nav-header | bg-white print:bg-white print:shadow-none sticky top-0 z-[39] ">
+<header id="masthead" class="nav-header | bg-white dark:bg-neutral-900 dark:text-neutral-100 print:bg-white print:shadow-none sticky top-0 z-[39] ">
 	<div role="navigation" class="flex items-center justify-between px-2 py-3 mx-auto md:container md:px-0 md:py-4">
 
 		<div class="w-[240px] lg:w-[320px] order-first">
@@ -113,7 +113,7 @@ $menuItemsSecondary = [
 				</li>
 			</ul>
 
-			<button class="toggle-mobile-nav | ml-2 p-2 border border-neutral-500 cursor-pointer md:hidden focus:bg-brand-blue-faint" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
+			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-brand-blue-faint" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<!-- <svg class="w-8 h-8" aria-hidden="true"><use xlink:href="#bars" /></svg> -->
 				<span class="">Menu</span>
 			</button>
@@ -144,7 +144,7 @@ $menuItemsSecondary = [
                 ?>
 			</ul>
 
-            <ul class="secondary-nav | font-bold font-head md:text-sm md:font-body md:uppercase text-neutral-600 md:order-first md:justify-end flex flex-col md:gap-x-2 md:flex-row md:py-2 lg:gap-x-4 print:hidden">
+            <ul class="secondary-nav | font-bold font-head md:text-sm md:font-body md:uppercase text-neutral-600 dark:text-neutral-400 md:order-first md:justify-end flex flex-col md:gap-x-2 md:flex-row md:py-2 lg:gap-x-4 print:hidden">
                 <?php
                 foreach ( $menuItemsSecondary as $secondary ) {
                     echo '<li class="p-2 md:py-0"><a class="hover:text-brand-blue" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';

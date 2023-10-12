@@ -1,7 +1,9 @@
 <?php
-// intended partial to be used in sidebar of People/Bio pages
+// Contact us form w/ added option to subscribe to Construction newsletter
 ?>
-<h3 class="mb-4 text-brand-blue print:hidden">Contact us</h3>
+
+<?php echo ( wp_get_environment_type() == 'local' ) ? '<p class="todo">form-hubspot-contact-sidebar-construction.php</p>' : ''; ?>
+<h3 class="mb-4 text-brand-blue">Contact us</h3>
 <script>
   hbspt.forms.create({
     region: "na1",

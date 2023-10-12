@@ -12,18 +12,19 @@ $title                          = get_the_title();
 $title_is_long                  = ( ( iconv_strlen( get_the_title(), 'UTF-8' ) > 30 ) ? 'text-lg' : '' );
 $icon                           = get_field( 'll_page_icon' );
 $message                        = get_field( 'll_brand_message', $post->ID );
-$feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' );
+// $feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' );
+$feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnail_id(), ['675', '220'] );
 ?>
 
 <div class="card-<?php echo $icon; ?>">
     <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
         <div class="card | group relative inline-block float-left w-[180px] h-[180px] [perspective:600px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
-            <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]">
+            <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
                 <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
                     <?php if ( $icon ) : ?>
                     <div class="card-icon | text-[--card-front-icon]">
                         <span class="fa-stack fa-2x">
-                            <i class="text-white fa-solid fa-circle fa-stack-2x"></i>
+                            <i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
                             <i class="fa-duotone <?php echo $icon; ?> fa-stack-1x "></i>
                         </span>
                     </div>

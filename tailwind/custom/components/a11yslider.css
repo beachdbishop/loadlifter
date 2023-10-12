@@ -14,7 +14,7 @@
 } */
 
 .a11y-slider-container > button {
-	@apply font-head font-bold border rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-800/50 border-neutral-800/50 shadow-neutral-800 hover:text-brand-blue hover:border-brand-blue hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg;
+	@apply font-head font-bold border rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-800/50 border-neutral-800/50 shadow-neutral-800 hover:text-brand-blue hover:border-brand-blue hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg dark:border-neutral-400 dark:text-neutral-400;
 }
 
 .on-darkbg .a11y-slider-container > button {
@@ -45,12 +45,12 @@
 	@apply mx-1 my-2 block h-4 w-4 p-0;
 }
 .a11y-slider-dots button {
-	@apply block h-full w-full rounded-full border border-solid border-brand-gray bg-transparent -indent-[9999px] text-[0px] text-current;
+	@apply block h-full w-full rounded-full border border-solid border-brand-gray bg-transparent -indent-[9999px] text-[0px] text-current dark:border-neutral-500;
 }
 .a11y-slider-dots li button.active,
 .a11y-slider-dots li button:focus,
 .a11y-slider-dots li button:hover {
-	@apply bg-brand-gray;
+	@apply bg-brand-gray dark:bg-brand-gray-pale;
 }
 
 .on-darkbg .a11y-slider-dots button {
@@ -67,10 +67,10 @@
 }
 
 .slider-quotes > * {
-	@apply bg-white/80;
+	@apply bg-white/80 dark:bg-neutral-900/80;
 }
 .slider-quotes .a11y-slider-active {
-	@apply bg-white;
+	@apply bg-white dark:bg-neutral-900;
 }
 
 .slide .quote {
