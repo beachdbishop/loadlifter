@@ -25,7 +25,7 @@ if ( $post_featimg == true ) {
 }
 ?>
 
-<main id="primary" class="bg-white">
+<main id="primary" class="">
 
 	<?php
 	while ( have_posts() ) :
