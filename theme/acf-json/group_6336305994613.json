@@ -65,7 +65,7 @@
             "name": "ll_postpage_css",
             "aria-label": "",
             "type": "textarea",
-            "instructions": "Note: this gets appended to the &lt;head&gt; of the document. Pay attention to what you're adding!",
+            "instructions": "Note: this gets appended to the main stylesheet of the document with <code>wp_add_inline_style<\/code>. Pay attention to what you're adding!",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -76,7 +76,7 @@
             "default_value": "",
             "maxlength": "",
             "rows": "",
-            "placeholder": "<style>.table230823 { border: 1px solid hotpink; }<\/style>",
+            "placeholder": ".table230823 { border: 1px solid hotpink; }",
             "new_lines": ""
         }
     ],
@@ -105,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695236325
+    "modified": 1697388965
 }
