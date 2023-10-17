@@ -134,7 +134,7 @@ if ( $peepauthor ) {
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php if ( $peeppostcount > 0 ) : ?>
-	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-gradient-to-b from-neutral-300 via-neutral-100 to-white py-4 md:py-6 lg:py-8 dark:from-neutral-700 dark:via-neutral-900 dark:to-black' ); ?>>
+	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 md:py-6 lg:py-8 dark:bg-neutral-black' ); ?>>
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold dark:text-neutral-300">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
 			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="dps-grid-4max" layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>

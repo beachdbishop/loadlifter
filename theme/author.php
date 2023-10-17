@@ -133,33 +133,38 @@ if ( $author_org === 'BeachFleischman' ) {
                 <aside class="peepgrid-c | md:mt-0 md:order-3">
                     <?php /* Featured industry experience */ ?>
                     <?php if ($author_industries) : ?>
-                        <h6 class="mt-4 mb-1 text-base font-bold text-brand-blue"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h6>
-                        <p class="inline-flex flex-wrap items-start gap-1">
-                        <?php foreach ($author_industries as $industry) :
-                            $permalink 	= get_permalink( $industry->ID );
-                            $title 		= get_the_title( $industry->ID );
-                            $icon 		= get_field( 'll_page_icon', $industry->ID );
+                        <h3 class="font-normal text-brand-blue"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h3>
+                        <ul class="mt-4 mb-8 list-none fa-ul" style="--fa-li-margin: 2em">
+                        <?php foreach ($author_industries as $ind ) :
+                            $ind_permalink = get_permalink( $ind->ID );
+                            $ind_title = get_the_title( $ind->ID );
+                            $ind_icon = get_field( 'll_page_icon', $ind->ID );
                         ?>
-                            <a class="inline-flex items-center gap-2 px-4 py-2 rounded-full group bg-neutral-100 hover:bg-brand-blue-dark" href="<?php echo esc_url($permalink); ?>">
-                                <i class="fa-regular <?php echo $icon; ?> text-neutral-500 group-hover:text-brand-red-pale"></i>
-                                <span class="text-sm text-neutral-900 group-hover:text-brand-gray-pale"> <?php echo esc_html($title); ?> </span>
-                            </a>
+                            <li class="mb-2">
+                                <span class="!mt-0 fa-li text-brand-red">
+                                    <i class="fa-regular <?php echo $ind_icon; ?>"></i>
+                                </span>
+                                <a class="underline decoration-neutral-400 hover:underline hover:decoration-brand-red" href="<?php echo esc_url( $ind_permalink ); ?>"><?php echo esc_html( $ind_title ); ?></a>
+                            </li>
                         <?php endforeach; ?>
-                        </p>
+                        </ul>
                     <?php endif; ?>
                     <?php /* Featured services */ ?>
                     <?php if ($author_services) : ?>
-                        <h6 class="mt-4 mb-1 text-base font-bold text-brand-blue"><?php esc_html_e('Related Services', 'rttheme18'); ?></h6>
-                        <p class="inline-flex flex-wrap items-start gap-1">
-                        <?php foreach ($author_services as $service) :
-                            $permalink 	= get_permalink($service->ID);
-                            $title 		= get_the_title($service->ID);
+                        <h3 class="font-normal text-brand-blue"><?php esc_html_e('Related Services', 'rttheme18'); ?></h3>
+                        <ul class="mt-4 mb-8 list-none fa-ul" style="--fa-li-margin: 2em">
+                        <?php foreach ($author_services as $svc) :
+                            $svc_permalink = get_permalink( $svc->ID );
+                            $svc_title = get_the_title( $svc->ID );
                         ?>
-                            <a class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-neutral-100 text-neutral-900 hover:bg-brand-blue-faint hover:text-brand-blue-dark" href="<?php echo esc_url($permalink); ?>">
-                                <span class="text-sm "> <?php echo esc_html($title); ?> </span>
-                            </a>
+                            <li class="mb-2">
+                                <span class="!mt-0 fa-li text-neutral-500">
+                                    <i class="fa-regular fa-memo-circle-info"></i>
+                                </span>
+                                <a class="underline decoration-neutral-400 hover:underline hover:decoration-brand-blue" href="<?php echo esc_url( $svc_permalink ); ?>"><?php echo esc_html( $svc_title ); ?></a>
+                            </li>
                         <?php endforeach; ?>
-                        </p>
+                        </ul>
                     <?php endif; ?>
                 </aside>
 			</div>
