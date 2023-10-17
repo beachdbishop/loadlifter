@@ -7,6 +7,7 @@
  * @package Load_Lifter
  */
 
+$page_id_industries             = ( wp_get_environment_type() == 'local' ) ? '3196' : '31923';
 $featimg                        = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 $featvideo                      = get_field( 'll_page_hero_video' );
 $brand_message                  = get_field( 'll_brand_message' );
@@ -91,7 +92,7 @@ $video_subheading               = 'Work with our advisors and experience the pow
                 <?php echo do_shortcode(
                     '[display-posts
                     post_type="page"
-                    post_parent="3196"
+                    post_parent="' . $page_id_industries . '"
                     orderby="title"
                     order="ASC"
                     posts_per_page="-1"
