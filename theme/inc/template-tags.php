@@ -74,20 +74,6 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 endif;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if ( ! function_exists( 'll_posted_by' ) ) :
 	/**
 	 * Prints HTML with meta information for the current author.
@@ -225,11 +211,12 @@ if ( ! function_exists( 'll_page_title' ) ) :
 endif;
 
 
+/* Used on Pages */
 if ( ! function_exists( 'll_page_hero' ) ) :
     function ll_page_hero( $h1, $h2 ) {
         $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
 
-        $hero_html = '<style>.page-hero { background-color: #282828; background-image: linear-gradient(to right, hsl(0 0% 16% / 1) 5%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.2) 95%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
+        $hero_html = '<style>.page-hero { background-color: #282828; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
 
         $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
         $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
@@ -246,10 +233,86 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 endif;
 
 
-if ( ! function_exists( 'll_people_headshot' ) ) :
+/* Used on Posts */
+if ( ! function_exists( 'll_featured_image' ) ) :
 	/**
-	 * Displays headshot set for person.
+	 * Renders a post's featured image above the title and breadcrumbs
+	 * This should ONLY be used on blog post... does not contain support for brand images.
 	 */
+	function ll_featured_image( $options = array() ) {
+		$defaults = array(
+			'size' => 'full',
+		);
+		$config = array_merge( $defaults, $options );
+
+		$post_date = strtotime( the_date( 'Y-m-d', '', '', false ) );
+		$cutoff_date = strtotime( '2022-03-02' ); // via: https://wordpress.stackexchange.com/questions/110185/if-posted-after-date
+		// After 2022-03-02, we started uploading larger featured images. This compensates for that.
+
+		if ( $config['size'] === 'full' ) {
+			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+
+			if ( $post_date > $cutoff_date ) {
+				$feat_aspect_ratio = '3.75 / 1';
+				$bg_size = 'bg-center bg-cover bg-no-repeat';
+			} else {
+				$feat_aspect_ratio = '4.3 / 1';
+				$bg_size = 'bg-center bg-no-repeat';
+			}
+		} else {
+			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+			$feat_aspect_ratio = '1.91';
+			$bg_size = 'bg-center bg-cover bg-no-repeat';
+		}
+
+		if ( !$feat_image_url ) {
+			$thumb_id = $thumb_url_array = $thumb_url = null;
+			// $featmarkup = '';
+			if ( is_singular( 'post' ) ) {
+				$featmarkup = '';
+			} else {
+				$featmarkup = sprintf(
+					'<div class="image__featured--outer | overflow-hidden empty-feat-img print:hidden">
+                        <div
+                            class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+                            style="background-image: url(%1$s); aspect-ratio: %2$s"
+                            aria-label="%3$s"
+                            role="img"
+                        ></div>
+                    </div>',
+					esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' ),
+					esc_attr( $feat_aspect_ratio ),
+					esc_attr( get_the_title() ),
+					esc_attr( $bg_size ),
+				);
+			}
+		} else {
+			$thumb_id = get_post_thumbnail_id();
+			$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'large' );
+			$thumb_url = $thumb_url_array[0];
+			$featmarkup = sprintf(
+				'<div class="overflow-hidden image__featured--outer print:hidden">
+                    <div
+                        class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+                        style="background-image: url(%1$s); aspect-ratio: %2$s"
+                        aria-label="%3$s"
+                        role="img"
+                    ></div>
+                </div>',
+				esc_url( $feat_image_url[0] ),
+				esc_attr( $feat_aspect_ratio ),
+				esc_attr( get_the_title() ),
+				esc_attr( $bg_size ),
+			);
+		}
+
+		echo $featmarkup;
+	}
+endif;
+
+
+/* Used on People */
+if ( ! function_exists( 'll_people_headshot' ) ) :
 	function ll_people_headshot() {
 		$person_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
@@ -293,69 +356,6 @@ if ( ! function_exists( 'll_people_headshot' ) ) :
 				<?php
 			endif; // End is_singular().
 		}
-	}
-endif;
-
-
-if ( ! function_exists( 'll_featured_image' ) ) :
-	/**
-	 * Renders a post's featured image above the title and breadcrumbs
-	 * This should ONLY be used on blog post... does not contain support for brand images.
-	 */
-	function ll_featured_image( $options = array() ) {
-		$defaults = array(
-			'size' => 'full',
-		);
-		$config = array_merge( $defaults, $options );
-
-		$post_date = strtotime( the_date( 'Y-m-d', '', '', false ) );
-		$cutoff_date = strtotime( '2022-03-02' ); // via: https://wordpress.stackexchange.com/questions/110185/if-posted-after-date
-		// After 2022-03-02, we started uploading larger featured images. This compensates for that.
-
-		if ( $config['size'] === 'full' ) {
-			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-
-			if ( $post_date > $cutoff_date ) {
-				$feat_aspect_ratio = '3.75 / 1';
-				$bg_size = 'bg-center bg-cover bg-no-repeat';
-			} else {
-				$feat_aspect_ratio = '4.3 / 1';
-				$bg_size = 'bg-center bg-no-repeat';
-			}
-		} else {
-			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
-			$feat_aspect_ratio = '1.91';
-			$bg_size = 'bg-center bg-cover bg-no-repeat';
-		}
-
-		if ( !$feat_image_url ) {
-			$thumb_id = $thumb_url_array = $thumb_url = null;
-			// $featmarkup = '';
-			if ( is_singular( 'post' ) ) {
-				$featmarkup = '';
-			} else {
-				$featmarkup = sprintf(
-					'<div class="image__featured--outer | overflow-hidden empty-feat-img  print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s"  aria-label="%3$s" role="img"></div></div>',
-					esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' ),
-					esc_attr( $feat_aspect_ratio ),
-					esc_attr( get_the_title() ),
-					esc_attr( $bg_size ),
-				);
-			}
-		} else {
-			$thumb_id = get_post_thumbnail_id();
-			$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'large' );
-			$thumb_url = $thumb_url_array[0];
-			$featmarkup = sprintf(
-				'<div class="overflow-hidden image__featured--outer print:hidden"><div class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110" style="background-image: url(%1$s); aspect-ratio: %2$s" aria-label="%3$s" role="img"></div></div>',
-				esc_url( $feat_image_url[0] ),
-				esc_attr( $feat_aspect_ratio ),
-				esc_attr( get_the_title() ),
-				esc_attr( $bg_size ),
-			);
-		}
-
-		echo $featmarkup;
 	}
 endif;
 
