@@ -289,6 +289,11 @@ p[class*="is-style-note-"] {
 }
 
 
+#colophon {
+  @apply bg-fixed bg-[center_top_5rem] bg-no-repeat bg-cover bg-neutral-500 text-white bg-phoenix-desert3 bg-blend-multiply print:bg-none print:text-neutral-700;
+}
+
+
 /* Scrollbar */
 /* via: https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/ */
 .styled-scrollbars {

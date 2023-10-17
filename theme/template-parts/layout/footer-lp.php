@@ -20,9 +20,9 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
     //   P R E F O O T E R   A R E A
     get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
-    <footer id="colophon" class="site-footer | print:bg-white">
+    <footer id="colophon" class="site-footer">
 
-        <div class="bg-fixed bg-center lg:bg-[center_top_10rem] bg-no-repeat bg-cover border-t-4 border-solid on-darkbg bg-neutral-400 text-neutral-200 bg-phoenix-desert3 border-brand-blue bg-blend-multiply print:bg-white print:bg-none print:text-neutral-700">
+        <div class="border-t-4 border-solid on-darkbg text-neutral-200 border-brand-blue print:text-neutral-700">
             <div class="px-2 py-16 md:px-0 md:container md:mx-auto">
                 <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3 lg:gap-x-8">
                     <div class="">

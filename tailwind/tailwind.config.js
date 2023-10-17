@@ -24,6 +24,7 @@ module.exports = {
 		extend: {
       aspectRatio: {
         'headshot': '95 / 127',
+        'featured-image': '384 / 125',
       },
       backgroundImage: {
         'featured-image': "var(--ll--page-feat-img)",
