@@ -23,7 +23,8 @@
             "return_format": "object",
             "field_type": "select",
             "allow_null": 0,
-            "multiple": 0
+            "multiple": 0,
+            "bidirectional_target": []
         },
         {
             "key": "field_6442d3a946bd3",
@@ -173,7 +174,8 @@
             "return_format": "id",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": []
         },
         {
             "key": "field_6424b870635c9",
@@ -227,13 +229,6 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "tpl-industry-page.php"
-            }
-        ],
-        [
-            {
-                "param": "post_template",
-                "operator": "==",
                 "value": "tpl-service-page.php"
             }
         ]
@@ -247,5 +242,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682101614
+    "modified": 1697657994
 }
