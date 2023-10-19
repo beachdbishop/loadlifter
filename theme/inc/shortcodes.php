@@ -110,15 +110,28 @@ function ll_svgpart_shortcode( $atts ) {
 add_shortcode( 'svg', 'll_svgpart_shortcode' );
 
 
+function ll_awardlogos_shortcode() {
+    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center lg:place-content-evenly md:flex-row lg:gap-16 print:hidden">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="2023 Best of Accounting - Client Satisfaction - ClearlyRated" width="100" height="100">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787197/IPA_-_Award_Logos_-_Top_200_Firms_nfmdem.png" alt="2023 Top 200 Firms - Inside Public Accounting" width="100" height="100">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group" width="100" height="100">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1697750375/2023_Accounting_MOVE_Project_Best_Firm_for_Equity_Leadership_Badge_agsiwg.jpg" alt="2023 Best Firm for Equity Leadership - Accounting MOVE Project" width="156" height="100">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1697750375/2023_Accounting_MOVE_Project_Best_Firm_for_Women_Badge_mcbjm3.jpg" alt="2023 Best Firm for Women - Accounting MOVE Project" width="156" height="100">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="2022 Best Firm for Young Accountants - Accounting Today" width="170" height="100">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="All Star Firms - Inside Public Accounting" width="100" height="100">
+    </div>';
+}
+add_shortcode( 'awardlogos', 'll_awardlogos_shortcode' );
+
 function ll_cybercertlogos_shortcode() {
 
     return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 lg:my-12 place-content-center md:place-content-start md:flex-row lg:gap-x-16 print:hidden">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="180" height="70">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="157" height="70">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="96" height="70">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="70" height="70">
-    <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="227" height="70">
-</div>';
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="180" height="70">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="157" height="70">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="96" height="70">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="70" height="70">
+        <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="227" height="70">
+    </div>';
 
 }
 add_shortcode( 'cybercertlogos', 'll_cybercertlogos_shortcode' );
