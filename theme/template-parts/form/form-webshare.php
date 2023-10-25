@@ -56,10 +56,10 @@ const share = ({title, url}) => {
 createApp({share}).mount();
 </script>
 
-<div id="share" tabindex="-1" class="my-8" v-scope="share({ url:'<?php get_permalink(); ?>', title: '<?php the_title(); ?>' })">
+<div id="share" tabindex="-1" class="my-8 lg:my-12" v-scope="share({ url:'<?php get_permalink(); ?>', title: '<?php the_title(); ?>' })">
     <h3 class="mb-2">Share with your network</h3>
     <div v-if="!clipboardSupported && !webShareSupported">
-        <p>Copy this link and send it to your friends 🙂</p>
+        <p>Copy this link</p>
         <p><code><?php get_permalink(); ?></code></p>
     </div>
     <div :class="!noOptionsAvailable() ? 'flex gap-2' : null" hidden :hidden="noOptionsAvailable()">
