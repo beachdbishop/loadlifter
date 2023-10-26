@@ -105,7 +105,7 @@ $menuItemsSecondary = [
 		</div>
 
 		<nav class="menus-container | md:flex md:flex-col md:grow md:order-1  print:hidden" id="primary-navigation" aria-label="Main Navigation">
-			<ul class="disclosure-nav | list-none font-head font-bold order-first md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-6 ">
+			<ul class="disclosure-nav | list-none font-head font-semibold order-first md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-6 ">
 				<?php
                 foreach ( $menuItemsPrimary as $primary ) {
                     if ( $primary['hasChildren'] === true ) {

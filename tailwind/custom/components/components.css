@@ -234,7 +234,7 @@ aside .timestamp {
 }
 /* via: https://mtekk.us/archives/guides/trimming-breadcrumb-title-lengths-with-css/ */
 .breadcrumbs > span:last-child span {
-	font-weight: bold;
+	@apply font-semibold;
 }
 
 .catlist a {
