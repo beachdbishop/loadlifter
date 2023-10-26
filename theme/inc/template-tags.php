@@ -215,7 +215,7 @@ endif;
 if ( ! function_exists( 'll_page_hero' ) ) :
     function ll_page_hero( $h1, $h2 ) {
         $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
-        $moreA11yGradient = 'linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 60%, hsl(0 0% 16% / 0.2) 100% )';
+        $moreA11yGradient = 'linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 50%, hsl(0 0% 16% / 0.2) 80%, hsl(0 0% 16% / 0) 100% )';
 
         $hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } }</style>';
 
@@ -226,7 +226,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">' . $h2 . '</h2>
                 </div>
 		    </div>';
-        $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
+        $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-neutral-50" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
         $hero_html .= '</div>';
 
         return $hero_html;
@@ -577,7 +577,7 @@ endif;
 
 if ( ! function_exists( 'll_render_hover_card' ) ) :
     function ll_render_hover_card( $card ) {
-        echo '<a href="#" class="relative block bg-brand-blue-dark group">
+        echo '<div href="#" class="relative block bg-brand-blue-dark group">
             <img alt="' . $card['imgAlt'] . '" src="' . $card['img'] . '" class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75 group-hover:opacity-25" />
 
             <div class="relative p-4 sm:p-6 lg:p-8">
@@ -587,6 +587,6 @@ if ( ! function_exists( 'll_render_hover_card' ) ) :
                     <div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-brand-blue-dark group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>
                 </div>
             </div>
-        </a>';
+        </div>';
     }
 endif;
