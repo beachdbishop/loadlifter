@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-	<main id="primary">
+	<main id="primary" class="bg-mahogany-50 dark:bg-mahogany-900">
 
 		<?php
 		if ( have_posts() ) :

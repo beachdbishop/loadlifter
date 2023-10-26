@@ -44,9 +44,7 @@
 			?>
 
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'loadlifter' ); ?></p>
-			<?php
-			get_search_form();
-			?>
+			<div class="max-w-prose "><?php get_search_form(); ?></div>
 
 			<p class="todo">Perhaps we add suggested content here? But what to suggest?</p>
 			<div class="w-[10px] bg-transparent h-[300px]">&nbsp;</div>
@@ -56,8 +54,7 @@
 			?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'loadlifter' ); ?></p>
-			<?php
-			get_search_form();
+			<div class="max-w-prose "><?php get_search_form(); ?></div><?php
 
 		endif;
 		?>

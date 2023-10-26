@@ -49,7 +49,7 @@ if ( $author_org === 'BeachFleischman' ) {
 }
 ?>
 
-<main id="primary" class="">
+<main id="primary" class="bg-white dark:bg-neutral-900">
 	<div class="py-4 md:py-6 lg:py-8 print:py-8">
 		<div class="container md:mx-auto">
 			<?php if (function_exists('bcn_display') && !is_front_page()) { ?>

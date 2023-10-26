@@ -20,7 +20,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 	 *
 	 * This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 	 */
-	define( 'LL_VERSION', '2.2.3' );
+	define( 'LL_VERSION', '2.2.4' );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
@@ -93,6 +93,8 @@ if ( ! function_exists( 'll_setup' ) ) :
 
 		add_post_type_support( 'page', 'excerpt' );
 
+        add_filter( 'feed_links_show_comments_feed', '__return_false' );
+
 		remove_theme_support( 'block-templates' ); // <-- FSE?
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wp_generator' );
@@ -141,9 +143,9 @@ function ll_scripts() {
     }
 
 	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
-    wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], wp_get_theme()->get('Version'), true );
+    wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
     wp_register_script( 'apixibot-csc', get_template_directory_uri() . '/js/apixibot-csc-loader.min.js', [ 'gcharts' ], LL_VERSION, true );
-    wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], '', false );
+    wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
 
 	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
 
@@ -157,6 +159,13 @@ function ll_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
+
+
+function ll_preload_assets() {
+    // echo '<link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop-small.jpg" media="(max-width: 767px)" />
+    // <link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop.jpg" media="(min-width: 768px)" />';
+    // echo '<link rel="preload" as="script" href="https://js.hsforms.net/forms/v2.js?ver=' . wp_get_theme()->get('Version') . '" />';
+}
 
 
 function ll_guten_scripts() {
@@ -191,16 +200,19 @@ switch( wp_get_environment_type() ) {
 		// add_action( 'wp_enqueue_scripts', 'll_checka11y_style' );
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
         add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+        // add_action( 'wp_head', 'll_preload_assets' );
 		break;
 
 	case 'staging':
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
         add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+        // add_action( 'wp_head', 'll_preload_assets' );
 		break;
 
 	default:
         add_action( 'admin_menu', 'll_disable_wp_links_menu' );
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+        // add_action( 'wp_head', 'll_preload_assets' );
 		/* Hide Jetpack upsell ads */
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;

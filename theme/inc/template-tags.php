@@ -215,14 +215,15 @@ endif;
 if ( ! function_exists( 'll_page_hero' ) ) :
     function ll_page_hero( $h1, $h2 ) {
         $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
+        $moreA11yGradient = 'linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 60%, hsl(0 0% 16% / 0.2) 100% )';
 
-        $hero_html = '<style>.page-hero { background-color: #282828; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $easedGradient . ', var(--ll--page-feat-img); } }</style>';
+        $hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } }</style>';
 
         $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
         $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
                 <div class="">
-                    <h1 class="leading-none text-white tracking-light text-shadow-lg shadow-neutral-900 lg:text-6xl">' . $h1 . '</h1>
-					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow-lg shadow-neutral-900 lg:text-4xl">' . $h2 . '</h2>
+                    <h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl">' . $h1 . '</h1>
+					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">' . $h2 . '</h2>
                 </div>
 		    </div>';
         $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-brand-gray-faint" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
@@ -551,7 +552,7 @@ if ( ! function_exists( 'll_no_link_card' ) ) :
     function ll_no_link_card( $card ) {
         echo '<div>
             <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
-                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-brand-blue-dark">
+                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
                     <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
                         <div class="card-icon | text-[--card-front-icon]">
                             <span class="fa-stack fa-2x">

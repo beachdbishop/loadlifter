@@ -1,4 +1,6 @@
 /* Styles for Forms and HubSpot Form Embeds */
+
+// TODO: Double-check that all these are needed since I have enabled the Tailwind Forms plugin
 form {
   @apply grid grid-flow-row auto-rows-max gap-2 md:gap-4 print:hidden;
 }
@@ -10,7 +12,7 @@ form {
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 select,
 textarea {
-  @apply w-full border border-neutral-400 bg-neutral-50 focus:border-brand-blue/80 focus:bg-white dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:focus:bg-neutral-950;
+  @apply w-full border border-neutral-400 bg-white focus:border-brand-blue/80 dark:bg-neutral-700 dark:border-neutral-600 dark:text-neutral-200 dark:focus:bg-neutral-950;
 }
 
 select {
@@ -32,19 +34,16 @@ button.ab-button {
 
 .hbspt-form {
 	span.hs-form-required {
-		@apply font-bold text-orange-500;
+		@apply font-bold text-orange-600 dark:text-orange-400;
 	}
 
 	.hs-error-msg {
-		@apply font-bold italic text-red-500 text-base;
+		@apply font-bold italic text-red-600 text-base dark:text-red-400;
 	}
 
   .invalid {
-    @apply border-2 !border-red-500;
+    @apply border-2 !border-red-600 dark:!border-red-400;
   }
-}
-
-.form-columns-1 {
 }
 
 .form-columns-2 {

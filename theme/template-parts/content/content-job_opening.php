@@ -55,10 +55,6 @@ $f_applylink                    = get_field( 'apply_link' );
 
 				<div <?php ll_content_class( 'entry-content' ); ?>>
 					<?php
-					// Don't include the normal sharing display right after content
-					// This lets us place it exactly where we want it later
-					if ( function_exists( 'sharing_display') ) remove_filter( 'the_content', 'sharing_display', 19 );
-
 					// Render the content
 					the_content(); ?>
 
@@ -66,15 +62,20 @@ $f_applylink                    = get_field( 'apply_link' );
 
 					<?php if ( ( $f_openclosed == '1' ) && ( $f_applylink ) ) { ?>
 
-						<p class="text-center"><a href="<?php echo $f_applylink; ?>" class="text-brand-red hover:text-brand-red-pale"><i class="far fa-edit"></i> Apply today</a></p>
+						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                            <div class="wp-block-button is-style-default"><a href="<?php echo $f_applylink; ?>" target="_blank" class="wp-block-button__link has-brand-red-background-color wp-element-button"><i class="mr-1 fa-solid fa-edit"></i> Apply today</a></div>
+                            <div class="wp-block-button is-style-outline"><a href="/career-opportunities/" class="wp-block-button__link has-brand-blue-color has-text-color wp-element-button"><i class="mr-1 fa-regular fa-angle-left"></i> Back to Careers</a></div>
+                        </div>
 
 					<?php } else { ?>
 
 						<p class="text-brand-red-dark"><em>Thank you for your interest but we are not accepting applications for this opening at this time.</em></p>
 
-					<?php } ?>
+                        <div class="mt-8 wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                            <div class="wp-block-button is-style-outline"><a href="/career-opportunities/" class="wp-block-button__link has-brand-blue-color has-text-color wp-element-button"><i class="mr-1 fa-regular fa-angle-left"></i> Back to Careers</a></div>
+                        </div>
 
-					<p class="my-8 text-center"><a href="/career-opportunities/">Back to Career Opportunities</a></p>
+					<?php } ?>
 
 					<div class="clear-both">&nbsp;</div>
 
@@ -84,7 +85,7 @@ $f_applylink                    = get_field( 'apply_link' );
 			<aside class="grid__jobopening-c | md:mt-0 ">
 				<?php
 					// Now, include the sharing display
-					if ( function_exists( 'sharing_display' ) ) echo sharing_display();
+                    get_template_part( 'template-parts/form/form', 'webshare' );
 				?>
 			</aside>
 		</div>

@@ -295,7 +295,7 @@ function ll_dps_include_locations( $output, $original_atts, $image, $title, $dat
 	$locations = implode( ', ', $locations );
 
 	// Add span around it for styling
-	$locations = '<span class="job-opening-location">(' . $locations . ')</span>';
+	$locations = '<span class="job-opening-location | text-neutral-500 font-bold text-sm ml-2 uppercase">' . $locations . '</span>';
 
 	// Insert it into the output wherever you'd like it
 	$output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' . $image . $title . $locations . $date . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';

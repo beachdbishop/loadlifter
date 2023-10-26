@@ -43,7 +43,7 @@ $peopleQuery = new WP_Query( $args );
 
 ?>
 
-	<main id="primary" class="page-people | ">
+	<main id="primary" class="page-people | bg-white dark:bg-neutral-900">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 lg:pt-8 lg:pb-12' ); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">

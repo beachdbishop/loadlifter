@@ -74,7 +74,7 @@ get_header();
 
     <?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4 lg:py-8'); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
 
                 <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
@@ -89,22 +89,31 @@ get_header();
 							<div class="p-2 md:p-0">
                                 <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918473/BF_Dashboard_yzwir1.png" alt="logo: BeachFleischman Dashboard" width="348" height="100">
                                 <p class="my-8 lg:my-12 lg:text-xl">BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling everyone to collaborate on one dynamic request list.</p>
-                                <a href="https://beachfleischman.auditdashboard.com/" class="px-5 py-3 font-bold no-underline border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-brand-blue-faint dark:hover:border-brand-blue-faint shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" target="_blank"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard</a>
+                                <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                                    <div class="wp-block-button is-style-outline"><a href="https://beachfleischman.auditdashboard.com/" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard</a></div>
+                                </div>
                             </div>
 							<div class="p-2 md:p-0">
                                 <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png" alt="logo: ShareFile" width="279" height="90">
                                 <p class="my-8 lg:my-12 lg:text-xl">ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.</p>
-                                <a class="px-5 py-3 font-bold no-underline border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-brand-blue-faint dark:hover:border-brand-blue-faint shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" href="https://beachfleischman.sharefile.com/" target="_blank"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> ShareFile</a>
+                                <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                                    <div class="wp-block-button is-style-outline"><a href="https://beachfleischman.sharefile.com/" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> ShareFile</a></div>
+                                </div>
                             </div>
 							<div class="p-2 md:p-0">
                                 <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695862452/TaxCaddyLogo_emmblh.png" alt="logo: TaxCaddy, part of Thomson Reuters" width="348" height="90">
                                 <p class="my-8 lg:my-12 lg:text-xl">TaxCaddy is a secure, cloud-based platform that makes gathering and sharing your tax documents a breeze.</p>
-                                <a class="px-5 py-3 font-bold no-underline border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-brand-blue-faint dark:hover:border-brand-blue-faint shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" href="https://taxcaddy.com/" target="_blank"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> TaxCaddy</a> <a class="px-5 py-3 font-bold no-underline border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-brand-blue-faint dark:hover:border-brand-blue-faint shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" href="/client-center/taxcaddy-guide/"><i class="mr-1 fa-solid fa-map"></i> TaxCaddy User Guide</a>
+                                <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                                    <div class="wp-block-button is-style-outline"><a href="https://taxcaddy.com/" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> TaxCaddy</a></div>
+                                    <div class="wp-block-button is-style-outline"><a href="/client-center/taxcaddy-guide/" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-map"></i> TaxCaddy User Guide</a></div>
+                                </div>
                             </div>
 							<div class="p-2 md:p-0">
                                 <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png" alt="logo: SafeSend Returns" width="340" height="90">
                                 <p class="my-8 lg:my-12 lg:text-xl">SafeSend Returns is a digital platform that facilitates the delivering and signing of a tax return.</p>
-                                <a class="px-5 py-3 font-bold no-underline border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-brand-blue-faint dark:hover:border-brand-blue-faint shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" href="/client-center/safesend-returns-guide"><i class="mr-1 fa-solid fa-map"></i> SafeSend User Guide</a>
+                                <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                                    <div class="wp-block-button is-style-outline"><a href="/client-center/safesend-returns-guide/" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-map"></i> SafeSend User Guide</a></div>
+                                </div>
                             </div>
 						</div>
                     </div>
@@ -114,15 +123,20 @@ get_header();
                     </div>
 
                     <div class="ll-page-grid-area-c">
-                        <div class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-100 border-neutral-400 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400 not-prose lg:text-xl">
+                        <div class="p-4 mt-8 border md:mt-0 lg:p-8 bg-neutral-50 border-neutral-400 not-prose animate-fade-in-from-bottom print:hidden dark:border-neutral-600 dark:bg-neutral-800">
                             <h2 class="text-brand-blue dark:text-brand-blue-pale" id="paymentopts">Payment Options</h2>
                             <p class="my-4">Use the options below to pay an invoice or a deposit.</p>
-                            <a class="px-5 py-3 font-bold text-white no-underline border-2 rounded-lg font-head bg-brand-red border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" href="#"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoices</a> <a class="px-5 py-3 font-bold text-white no-underline border-2 rounded-lg font-head bg-brand-red border-brand-red hover:bg-brand-red-dark hover:border-brand-red-dark shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto" href="#"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a>
+                            <div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+                                <div class="wp-block-button is-style-default"><a href="https://secure.cpacharge.com/pages/beachfleischman/payments" target="_blank" class="wp-block-button__link has-brand-red-dark-background-color wp-element-button"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoices</a></div>
+                                <div class="wp-block-button is-style-default"><a href="https://secure.cpacharge.com/pages/beachfleischman/retainer" class="wp-block-button__link has-brand-red-dark-background-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a></div>
+                            </div>
                             <h3 class="my-8">Need Help?</h3>
                             <p class="my-4">Contact our internal accounting team for assistance.<br />
                             <i class="mr-1 fa-solid fa-phone-office"></i><a class="underline hover:no-underline" href="tel://5203214600">520.321.4600</a><br />
                             <i class="mr-1 fa-solid fa-envelope"></i><a class="underline hover:no-underline" href="mailto:ccs@beachfleischman.com">Internal Accounting</a></p>
 						</div>
+
+                        <div>&nbsp;</div>
                     </div>
 
                 </div>

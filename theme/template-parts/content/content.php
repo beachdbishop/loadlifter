@@ -31,7 +31,7 @@ endif; ?>
 		</header>
 
 		<div class="md:flex md:gap-8 lg:gap-16">
-			<div class="md:order-first md:w-2/3 lg:w-3/4">
+			<div class="md:order-first md:w-2/3">
 				<div <?php ll_content_class( 'entry-content' ) ?>>
 					<?php
 					the_content(
@@ -48,6 +48,8 @@ endif; ?>
 							wp_kses_post( get_the_title() )
 						)
 					);
+
+                    get_template_part( 'template-parts/form/form', 'webshare' );
 					?>
 					<div class="clear-both">&nbsp;</div>
 					<?php
@@ -76,7 +78,7 @@ endif; ?>
 				?>
 			</div>
 
-			<aside class="mt-8 md:mt-0 md:order-last md:w-1/3 lg:w-1/4">
+			<aside class="mt-8 md:mt-0 md:order-last md:w-1/3">
 				<?php
 				if ( 'post' === get_post_type() ) :
 				?>
@@ -89,8 +91,6 @@ endif; ?>
                     ll_posted_on();
 
 					ll_entry_footer();
-
-					get_template_part( 'template-parts/form/form', 'webshare' );
                     ?>
 
 				</div>
@@ -99,7 +99,7 @@ endif; ?>
 				<!--   A R E A   S I D E   -->
 				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 
-				<div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-200 border-neutral-400 not-prose print:hidden dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-400">
+				<div id="contact" class="container-contact-form not-prose">
                     <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
                 </div>
 			</aside>

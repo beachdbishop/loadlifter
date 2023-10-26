@@ -141,6 +141,11 @@
           "name": "Brand Blue"
         },
         {
+          "slug": "orient-900",
+          "color": "#075273",
+          "name": "Orient 900"
+        },
+        {
           "slug": "brand-blue-dark",
           "color": "#092f42",
           "name": "Brand Blue Dark"

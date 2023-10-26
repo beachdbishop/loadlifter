@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-4 md:py-6 lg:py-8">
+	<main id="primary" class="py-4 bg-white dark:bg-neutral-900 md:py-6 lg:py-8">
 
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 

@@ -12,7 +12,7 @@
 get_template_part( 'template-parts/layout/footer', 'content' );
 ?>
 
-</div><!-- #page -->
+</div>
 
 <?php wp_footer(); ?>
 

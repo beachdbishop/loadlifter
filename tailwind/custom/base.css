@@ -12,15 +12,15 @@
  * editor.
 */
 :root {
-  --nav-height: 114px;
+  --nav-height: 124px;
 }
 
 html {
-	@apply scroll-pt-[52px] scroll-smooth md:scroll-pt-[76px];
+	@apply scroll-pt-[52px] scroll-smooth md:scroll-pt-[76px] lg:scroll-pt-[100px];
 }
 
 body {
-	@apply font-body bg-white text-neutral-800 print:bg-transparent print:text-neutral-900 dark:bg-neutral-900 dark:text-neutral-300;
+	@apply font-body text-neutral-800 print:bg-transparent print:text-neutral-900 dark:text-neutral-300;
 }
 
 /* [id] {

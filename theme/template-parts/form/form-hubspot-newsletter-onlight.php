@@ -3,7 +3,7 @@
 ?>
 <div class="p-4 md:p-8 bg-neutral-50 text-neutral-800 sticky z-10 top-[104px] print:hidden">
 
-    <?php echo ( wp_get_environment_type() == 'local' ) ? '<p class="todo">form-hubspot-newsletter-onlight.php</p>' : ''; ?>
+    <?php // echo ( wp_get_environment_type() == 'local' ) ? '<p class="italic">form-hubspot-newsletter-onlight.php</p>' : ''; ?>
 
     <h3 class="mb-4 text-brand-red">Stay up-to-date</h3>
 	<p class="mb-8">Get a collection of our latest blog posts in your inbox every 3-4 weeks.</p>

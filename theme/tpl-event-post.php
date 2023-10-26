@@ -13,8 +13,6 @@
 
 get_header();
 
-$gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 70%, rgba(0,0,0,0.2) 100%)';
-$gradientmd = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)';
 $post_id = get_the_ID();
 $post_excerpt = get_the_excerpt();
 $post_featimg = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );

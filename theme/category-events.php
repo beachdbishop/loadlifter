@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="pt-4 md:pt-6 lg:pt-8">
+	<main id="primary" class="pt-4 bg-white dark:bg-neutral-900 md:pt-6 lg:pt-8">
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<?php if ( function_exists( 'bcn_display' ) ) { ?>
 				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>

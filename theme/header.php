@@ -16,7 +16,6 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="profile" href="https://gmpg.org/xfn/11"> -->
     <?php if ( $featured_image ) {
         echo '<style>:root { --ll--page-feat-img: url(\'' . $featured_image[0] . '\'); }</style>';
     } ?>
@@ -38,5 +37,5 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )
 	<?php if ( is_page_template( LL_LP_TEMPLATES ) ) {
         get_template_part( 'template-parts/layout/header', 'lp');
 	} else {
-		get_template_part( 'template-parts/layout/header', 'content' );
+		get_template_part( 'template-parts/layout/header', 'simple' );
 	} ?>

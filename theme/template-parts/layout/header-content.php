@@ -105,7 +105,7 @@ $menuItemsSecondary = [
 						<i class="fa-solid fa-magnifying-glass"></i>
                         <span class="sr-only">Search</span>
 					</label>
-					<div role="toggle" class="z-40 py-2 mb-16 border-t border-solid shadow-xl md:py-4 border-brand-blue mega-menu lg:py-6 sm:mb-0 bg-neutral-800/80 backdrop-blur-sm">
+					<div role="toggle" class="z-40 py-2 mb-16 border-t border-solid shadow-xl md:py-4 border-brand-blue mega-menu lg:py-6 sm:mb-0 bg-neutral-800">
 						<div class="container px-2 mx-auto text-white md:px-0">
 							<?php get_search_form(); ?>
 						</div>
@@ -114,7 +114,6 @@ $menuItemsSecondary = [
 			</ul>
 
 			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-brand-blue-faint" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
-				<!-- <svg class="w-8 h-8" aria-hidden="true"><use xlink:href="#bars" /></svg> -->
 				<span class="">Menu</span>
 			</button>
 

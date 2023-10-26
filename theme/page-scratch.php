@@ -14,16 +14,15 @@
  */
 get_header();
 ?>
-<!-- <main id="primary" class="bg-gradient-to-r from-white via-amber-50 to-amber-100"> -->
-<main id="primary" class="bg-fixed bg-no-repeat bg-cover bg-mesh-blue">
+
+<main id="primary" class="bg-amber-50 dark:bg-amber-900">
 	<?php
 	while (have_posts()) :
 		the_post();
-		$gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)';
-	?>
-		<article id="post-<?php the_ID(); ?>" <?php if (!is_front_page()) {
-													post_class('py-4 md:py-6 lg:py-8');
-												} ?>>
+		// $gradient = 'linear-gradient(to right, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.1) 70%, rgba(0,0,0,0) 100%)';
+	    ?>
+
+		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4 md:py-6 lg:py-8'); ?>>
 			<div class="px-1 md:container md:mx-auto md:px-0">
 				<?php if (function_exists('bcn_display')) { ?>
 					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
@@ -97,10 +96,10 @@ get_header();
 				<?php // get_template_part( 'template-parts/form/form', 'hubspot' );
 				?>
 			</div>
-		</article><!-- #post-<?php the_ID(); ?> -->
-	<?php
-	endwhile; // End of the loop.
-	?>
+		</article>
+
+    <?php endwhile; ?>
+
 </main><!-- #main -->
 <?php
 get_footer();

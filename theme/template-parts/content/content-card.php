@@ -9,7 +9,7 @@
 
 ?>
 
-<article <?php post_class( 'post-card | p-4 mb-4' ); ?>>
+<article <?php post_class( 'post-card | p-4 mb-4 animate-fade-in' ); ?>>
 
 	<div class="group dark:text-neutral-300">
 		<a class="" href="<?php echo esc_url( get_permalink( get_the_ID() ) ); ?>" rel="bookmark"><?php ll_featured_image( array( 'size' => 'card' ) ); ?></a>

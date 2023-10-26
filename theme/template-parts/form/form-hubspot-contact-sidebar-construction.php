@@ -2,8 +2,8 @@
 // Contact us form w/ added option to subscribe to Construction newsletter
 ?>
 
-<?php echo ( wp_get_environment_type() == 'local' ) ? '<p class="todo">form-hubspot-contact-sidebar-construction.php</p>' : ''; ?>
-<h3 class="mb-4 text-brand-blue">Contact us</h3>
+<?php // echo ( wp_get_environment_type() == 'local' ) ? '<p class="italic">form-hubspot-contact-sidebar-construction.php</p>' : ''; ?>
+<h3 class="mb-4 text-brand-blue-dark dark:text-brand-blue-pale">Contact us</h3>
 <script>
   hbspt.forms.create({
     region: "na1",

@@ -29,8 +29,7 @@ module.exports = {
       backgroundImage: {
         'featured-image': "var(--ll--page-feat-img)",
         'hero-gradient': "linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)",
-        'phoenix-desert1': "url('img/phx-desert.jpg')",
-        'phoenix-desert2': "url('img/phx-desert-no-crop.jpg')",
+        'phoenix-desert-small': "url('img/phx-desert-color-no-crop-small.jpg')",
         'phoenix-desert3': "url('img/phx-desert-color-no-crop.jpg')",
       },
       backgroundSize: {
@@ -160,7 +159,9 @@ module.exports = {
     'table-oldtab',
     'text-base',
     'text-brand-gray-dark',
+    'text-shadow-sm',
     'text-shadow',
+    'text-shadow-lg',
     'to-brand-gray',
     'to-brand-red',
     'to-brand-blue',
@@ -202,16 +203,15 @@ module.exports = {
 	plugins: [
     // Extract colors and widths from `theme.json`.
 		require('@_tw/themejson')(require('../theme/theme.json')),
-
     // Add Tailwind Typography.
 		require('@tailwindcss/typography' ),
-
 		// Uncomment below to add additional first-party Tailwind plugins.
 		// require( '@tailwindcss/aspect-ratio' ),
-		// require( '@tailwindcss/forms' ),
+		require( '@tailwindcss/forms' ),
     // require( '@tailwindcss/container-queries' ),
     require('@shrutibalasa/tailwind-grid-auto-fit'),
 
+    // via: https://www.hyperui.dev/blog/text-shadow-with-tailwindcss
     plugin(function ({ matchUtilities, theme }) {
       matchUtilities(
         {
@@ -222,7 +222,6 @@ module.exports = {
         { values: theme('textShadow') }
       )
     }),
-
     function ({ addVariant }) {
       addVariant('children', '&>*')
     },
