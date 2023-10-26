@@ -131,7 +131,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                         </div>
 
                         <div class="ll-page-grid-area-c">
-                            <div id="contact" class="p-4 mb-4 border lg:mb-0 lg:p-8 bg-neutral-50 border-neutral-400 not-prose animate-fade-in-from-bottom print:hidden dark:border-neutral-600 dark:bg-neutral-800">
+                            <div id="contact" class="container-contact-form not-prose">
                                 <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
                             </div>
 
