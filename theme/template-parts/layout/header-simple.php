@@ -128,7 +128,7 @@ $menuItemsSecondary = [
                 ?>
 			</ul>
 
-            <ul class="secondary-nav | font-head md:text-sm md:text-lg text-neutral-700 md:order-first md:justify-end flex flex-col md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
+            <ul class="secondary-nav | font-head md:text-lg text-neutral-700 md:order-first md:justify-end flex flex-col md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
                 <?php
                 foreach ( $menuItemsSecondary as $secondary ) {
                     echo '<li class="p-2 md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font hover:underline hover:text-brand-blue hover:decoration-neutral-400 dark:hover:text-neutral-100" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
