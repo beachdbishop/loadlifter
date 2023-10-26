@@ -16,10 +16,10 @@
                 class="w-full border-neutral-100 py-2.5 pe-10 shadow-sm sm:text-base"
                 value="<?php the_search_query(); ?>"
             />
-            <span class="absolute inset-y-0 grid w-10 end-0 place-content-center">
+            <span class="absolute inset-y-0 grid w-10 end-0 place-content-center ">
                 <button type="submit" class="text-neutral-700 hover:text-brand-red dark:text-neutral-300">
                     <span class="sr-only">Search</span>
-                    <svg class="icon"><use xlink:href="#magnifying-glass"></use></svg>
+                    <i class="fa-regular fa-magnifying-glass"></i>
                 </button>
             </span>
         </div>
