@@ -61,10 +61,12 @@ $page_state                     = get_field( 'll_page_state' );
 
                         <div class="ll-page-grid-area-c">
                             <?php if ( $page_form ) :
-                                echo '<div id="contact" class="p-4 border lg:p-8 border-neutral-400 dark:border-neutral-600 not-prose animate-fade-in-from-bottom print:hidden">';
+                                echo '<div id="contact" class="container-contact-form not-prose">';
                                 echo do_shortcode( $page_form );
                                 echo '</div>';
                             endif; ?>
+
+                            <div>&nbsp;</div>
                         </div>
 
                     </div>
