@@ -5,9 +5,8 @@
  * see: https://fontawesome.com/docs/web/add-icons/svg-symbols
  */
 ?>
-
 <?php // Name symbols with the value of data-fa-symbol ?>
-<i data-fa-symbol="bars" class="fa-regular fa-bars"></i>
+<i data-fa-symbol="magnifying-glass" class="fa-regular fa-magnifying-glass"></i>
 <i data-fa-symbol="caret-up" class="fa-regular fa-caret-up"></i>
 <i data-fa-symbol="caret-right" class="fa-regular fa-caret-right"></i>
 <i data-fa-symbol="caret-down" class="fa-regular fa-caret-down"></i>
@@ -20,8 +19,8 @@
 <i data-fa-symbol="arrow-right" class="fa-regular fa-arrow-right"></i>
 <i data-fa-symbol="arrow-down" class="fa-regular fa-arrow-down"></i>
 <i data-fa-symbol="arrow-left" class="fa-regular fa-arrow-left"></i>
-<i data-fa-symbol="people-group" class="fa-solid fa-people-group"></i>
-<i data-fa-symbol="location-dot" class="fa-solid fa-location-dot"></i>
+<i data-fa-symbol="people-group" class="fa-regular fa-people-group"></i>
+<i data-fa-symbol="location-dot" class="fa-regular fa-location-dot"></i>
 <i data-fa-symbol="linkedin" class="fa-brands fa-linkedin"></i>
 <i data-fa-symbol="twitter" class="fa-brands fa-square-x-twitter"></i>
 <i data-fa-symbol="facebook" class="fa-brands fa-square-facebook"></i>

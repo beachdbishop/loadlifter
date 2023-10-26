@@ -28,7 +28,7 @@ $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' )
 
 <?php wp_body_open(); ?>
 
-<?php get_template_part( 'template-parts/svg/fa', 'symbols' ); ?>
+<?php // get_template_part( 'template-parts/svg/fa', 'symbols' ); ?>
 
 <?php // get_sidebar( 'prehead' ); ?>
 
