@@ -1,0 +1,6 @@
+exclude:
+  - 'node_modules/**/*' # Skip files
+tags: # Disallow all rules other than WCAG 2.1 A, WCAG 2.1 AA, and best practices.
+  - wcag21a
+  - wcag21aa
+  - best-practices
