@@ -38,18 +38,18 @@ const share = ({title, url}) => {
         })
         .catch((error) => console.error('Error sharing', error));
     },
-    copyLink() {
-      navigator.clipboard
-        .writeText(url)
-        .then(() => {
-          this.copyFeedback = 'Link copied!';
+    // copyLink() {
+    //   navigator.clipboard
+    //     .writeText(url)
+    //     .then(() => {
+    //       this.copyFeedback = 'Link copied!';
 
-          setTimeout(() => {
-            this.copyFeedback = '';
-          }, 3000);
-        })
-        .catch((error) => console.error(error));
-    },
+    //       setTimeout(() => {
+    //         this.copyFeedback = '';
+    //       }, 3000);
+    //     })
+    //     .catch((error) => console.error(error));
+    // },
   };
 };
 
@@ -69,11 +69,11 @@ createApp({share}).mount();
             </button>
             <p role="alert" aria-live="polite" id="shareFeedback" class="context-alert" data-state="empty" :data-state="shareFeedback.length ? null : 'empty'">{{ shareFeedback }}</p>
         </div>
-        <div class="relative" v-if="clipboardSupported">
+        <?php /* <div class="relative" v-if="clipboardSupported">
             <button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 rounded-lg text-brand-blue font-head shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg border-brand-blue hover:border-brand-red hover:bg-brand-red hover:text-white dark:border-brand-blue-pale dark:text-brand-blue-pale" data-theme="ghost" @click="copyLink">
                 <span><i class="fa-solid fa-copy"></i> Copy link</span>
             </button>
             <p role="alert" aria-live="polite" id="copyFeedback" class="context-alert" data-state="empty" :data-state="copyFeedback.length ? null : 'empty'">{{ copyFeedback }}</p>
-        </div>
+        </div> */ ?>
     </div>
 </div>
