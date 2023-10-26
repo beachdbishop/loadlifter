@@ -1,6 +1,6 @@
 /* Styles for Forms and HubSpot Form Embeds */
 
-// TODO: Double-check that all these are needed since I have enabled the Tailwind Forms plugin
+/* TODO: Double-check that all these are needed since I have enabled the Tailwind Forms plugin */
 form {
   @apply grid grid-flow-row auto-rows-max gap-2 md:gap-4 print:hidden;
 }

@@ -169,7 +169,7 @@ aside .timestamp {
 	transition: filter 0.3s ease-in-out;
 }
 
-// TODO: Turn this into a component?
+/* TODO: Turn this into a component? */
 .logogrid {
 	@apply mx-auto my-16 grid max-w-max grid-cols-1 place-content-center gap-y-8 gap-x-32 sm:grid-cols-3 md:gap-x-16 lg:gap-x-32;
 }
@@ -215,7 +215,7 @@ aside .timestamp {
 }
 
 
-// TODO: May be able to remove this rule.
+/* TODO: May be able to remove this rule. */
 .image__featured--outer {
 	/* background-color: rgb(189,175,177); */
 	background-image: linear-gradient(
