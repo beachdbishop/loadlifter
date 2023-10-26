@@ -31,7 +31,7 @@ details[open] summary::-webkit-details-marker {
   }
 
   summary {
-    @apply font-head text-3xl px-4 pt-1 pb-2 before:content-['+']  before:font-mono before:mr-1;
+    @apply font-head text-3xl px-4 pt-1 pb-2 before:content-['+']  before:font-mono before:mr-1 hover:before:animate-pulse;
   }
 
   .details-inner {
@@ -86,15 +86,5 @@ details[open] summary::-webkit-details-marker {
 
 
 details[open] summary ~ * {
-	animation: sweep 0.4s ease-in-out;
-}
-@keyframes sweep {
-	0% {
-		opacity: 0;
-		margin-top: -10px;
-	}
-	100% {
-		opacity: 1;
-		margin-top: 0px;
-	}
+  @apply animate-fade-in-from-top;
 }
