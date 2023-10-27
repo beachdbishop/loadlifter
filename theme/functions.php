@@ -200,19 +200,16 @@ switch( wp_get_environment_type() ) {
 		// add_action( 'wp_enqueue_scripts', 'll_checka11y_style' );
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
         add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-        // add_action( 'wp_head', 'll_preload_assets' );
 		break;
 
 	case 'staging':
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
         add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-        // add_action( 'wp_head', 'll_preload_assets' );
 		break;
 
 	default:
         add_action( 'admin_menu', 'll_disable_wp_links_menu' );
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-        // add_action( 'wp_head', 'll_preload_assets' );
 		/* Hide Jetpack upsell ads */
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;
