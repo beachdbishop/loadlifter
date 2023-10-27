@@ -128,7 +128,8 @@
                 "realestate9": "Partners who help you make an impact.",
                 "realestate10": "Own the way you do business.",
                 "realestate11": "Partners in your development.",
-                "soar1": "Strategic Operations & Advisory Resources"
+                "soar1": "Strategic Operations & Advisory Resources",
+                "soar2": "Expertise you can trust."
             },
             "default_value": false,
             "return_format": "array",
@@ -177,5 +178,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1680134334
+    "modified": 1698364838
 }
