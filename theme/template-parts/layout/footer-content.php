@@ -131,7 +131,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
                                 <?php get_template_part( 'template-parts/svg/svg', 'logomono' ); ?>
                             </a>
                         </div>
-                        <?php ll_show_social_links( $out = 'echo' ); ?>
+                        <?php echo ll_show_social_links(); ?>
                     </div>
                     <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-auto-fit lg:col-span-2">
                         <?php foreach( $offices as $office ) {

@@ -278,15 +278,15 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 
 			if ( $post_date > $cutoff_date ) {
 				$feat_aspect_ratio = '3.75 / 1';
-				$bg_size = 'bg-center bg-cover bg-no-repeat';
+				$bg_size = ' bg-cover bg-no-repeat';
 			} else {
 				$feat_aspect_ratio = '4.3 / 1';
-				$bg_size = 'bg-center bg-no-repeat';
+				$bg_size = ' bg-no-repeat';
 			}
 		} else {
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 			$feat_aspect_ratio = '1.91';
-			$bg_size = 'bg-center bg-cover bg-no-repeat';
+			$bg_size = ' bg-cover bg-no-repeat';
 		}
 
 		if ( !$feat_image_url ) {
@@ -358,7 +358,7 @@ if ( ! function_exists( 'll_people_headshot' ) ) :
 								'echo' => false,
 							)
 						),
-						'class' => 'mx-auto md:mx-0',
+						'class' => 'relative mx-auto md:mx-0',
 					)
 				);
 			else : ?>
@@ -390,7 +390,7 @@ if ( ! function_exists( 'll_people_dept_list' ) ) :
 	 */
 	function ll_people_show_dept_list( $departments ) {
 		// echo '<span class="inline-pipe-sep | "><svg class="inline llicon"><use xlink:href="#people-group" title="Department(s)"></use></svg> ';
-		echo '<span class="inline-pipe-sep | "><i class="fa-solid fa-people-group" title="Department(s)"></i> ';
+		echo '<span class="inline-pipe-sep | "><i class="fa-solid fa-people-group text-neutral-500" title="Department(s)"></i> ';
 		foreach( $departments as $dept ) {
 			echo '<span class="">' . $dept['label'] . '</span>';
 		}
@@ -404,7 +404,7 @@ if ( ! function_exists( 'll_people_show_location' ) ) :
 	 */
 	function ll_people_show_location( $location ) {
 		// echo '<span class=""><svg class="inline llicon"><use xlink:href="#location-dot" title="Location"></use></svg> <span class="">' . esc_html( $location ) . '</span></span>';
-		echo '<span class=""><i class="fa-solid fa-location-dot" title="Location"></i> <span class="">' . esc_html( $location ) . '</span></span>';
+		echo '<span class=""><i class="fa-solid fa-location-dot text-neutral-500" title="Location"></i> <span class="">' . esc_html( $location ) . '</span></span>';
 	}
 endif;
 
@@ -556,6 +556,16 @@ if ( ! function_exists( 'll_content_class' ) ) :
 		// post content wrapper.
 		echo 'class="' . esc_attr( implode( ' ', $combined_classes ) ) . '"';
 	}
+endif;
+
+
+if ( ! function_exists( 'll_a11y_icon_link' ) ) :
+    function ll_a11y_icon_link( $link ) {
+        echo '<a href="'. $link['url'] .'" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-%2$s">
+            <i class="'. $link['icon'] .'"></i>
+            <span class="screen-reader-text">'. $link['label'] .'</span>
+        </a>';
+    }
 endif;
 
 

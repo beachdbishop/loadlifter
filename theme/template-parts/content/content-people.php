@@ -48,7 +48,9 @@ if ( $peepauthor ) {
 		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
 			<div class="peepgrid-a |  pb-8 md:pt-2 md:pb-0 md:order-2">
-				<?php ll_people_headshot(); ?>
+				<div class="headshot-wrapper">
+                    <?php ll_people_headshot(); ?>
+                </div>
 			</div>
 
 			<div class="peepgrid-b |  md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
@@ -66,7 +68,7 @@ if ( $peepauthor ) {
 						}
 
 						if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid text-neutral-400 border-neutral-200 children:inline-block">';
+							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid border-neutral-200 text-neutral-700 dark:text-neutral-400 dark:border-neutral-700 children:inline-block">';
 								$peep_department = get_field_object( 'll_people_department' );
 								$peep_dept_value = $peep_department['value'];
 								if ( $peep_dept_value ) {

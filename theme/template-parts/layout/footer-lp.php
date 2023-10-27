@@ -31,7 +31,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
                                 <?php get_template_part( 'template-parts/svg/svg', 'logomono' ); ?>
                             </a>
                         </div>
-                        <?php ll_show_social_links( $out = 'echo' ); ?>
+                        <?php echo ll_show_social_links(); ?>
                     </div>
                     <?php foreach( $offices as $office ) {
                         ( $office['open'] == true ) ? ll_footer_address( $office ) : 'nope';

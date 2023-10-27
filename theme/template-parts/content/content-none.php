@@ -46,7 +46,6 @@
 			<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'loadlifter' ); ?></p>
 			<div class="max-w-prose "><?php get_search_form(); ?></div>
 
-			<p class="todo">Perhaps we add suggested content here? But what to suggest?</p>
 			<div class="w-[10px] bg-transparent h-[300px]">&nbsp;</div>
 
 			<?php

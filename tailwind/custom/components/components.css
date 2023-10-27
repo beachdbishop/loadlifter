@@ -242,6 +242,16 @@ aside .timestamp {
 	}
 }
 
+.headshot-wrapper {
+  @apply relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-transparent before:bg-repeat before:bg-[bottom_right] before:bg-headshot;
+}
+.headshot-wrapper img {
+  @apply z-[2];
+}
+
+.type-people .image__featured--inner {
+  background-position: center -3rem;
+}
 
 /* Pagination */
 ul.page-numbers {

@@ -5,6 +5,13 @@
  * @package Load_Lifter
  */
 
+
+function r( $var ) {
+    echo '<pre>';
+    print_r( $var );
+    echo '</pre>';
+}
+
 /**
  * Add a pingback url auto-discovery header for single posts, pages, or attachments.
  */
@@ -213,9 +220,9 @@ add_shortcode( 'a11yslider', 'll_a11y_slider_shortcode' );
 
 /**
  * Social Links
- * Uses Social URLs specified in Yoast SEO. See SEO > Social
+ * Uses Social URLs specified in Site Meta
  *
- * via: https://www.billerickson.net/code/displaying-social-links-from-yoast-seo/
+ * based on: https://www.billerickson.net/code/displaying-social-links-from-yoast-seo/
  */
 add_shortcode( 'social_links', 'll_show_social_links' );
 
