@@ -20,26 +20,49 @@ if ( ! function_exists( 'll_show_social_links' ) ) :
 	/**
 	 *
 	 */
-	function ll_show_social_links( $out = '' ) {
-		$socials = [
-			'linkedin' => get_field( 'll_social_linkedin', 'option' ),
-			'twitter' => get_field( 'll_social_twitter', 'option' ),
-			'facebook' => get_field( 'll_social_facebook', 'option' ),
-			'instagram' => get_field( 'll_social_instagram', 'option' ),
-			'youtube' => get_field( 'll_social_youtube', 'option' ),
-		];
+	function ll_show_social_links() {
 
-		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
-		foreach( $socials as $key=>$value ) {
-			$social_html .= sprintf( '<a href="%1$s" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-%2$s"><svg class="llicon-2x" aria-hidden="true"><use xlink:href="#%2$s" /></svg><span id="soclink-%2$s" class="screen-reader-text">%2$s</span></a>', esc_url( $value ), esc_attr( $key ) );
-		}
-		$social_html .= '</div>';
+        $social_html = '<div class="inline-flex items-center justify-start gap-4">';
 
-		if ( $out === 'echo' ) {
-			echo $social_html;
-		} else {
-			return $social_html;
-		}
+        $social_html .= '
+            <a href="https://www.linkedin.com/company/beachfleischman/" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-linkedin">
+                <i class="w-8 h-8 fa-brands fa-linkedin-in"></i>
+                <span id="soclink-linkedin" class="screen-reader-text">LinkedIn</span>
+            </a>
+            <a href="https://twitter.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-twitter">
+                <i class="w-8 h-8 fa-brands fa-x-twitter"></i>
+                <span id="soclink-twitter" class="screen-reader-text">Twitter</span>
+            </a>
+            <a href="https://www.facebook.com/BeachFleischmanCPAs" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-facebook">
+                <i class="w-8 h-8 fa-brands fa-facebook"></i>
+                <span id="soclink-facebook" class="screen-reader-text">Facebook</span>
+            </a>
+            <a href="https://instagram.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-instagram">
+                <i class="w-8 h-8 fa-brands fa-instagram"></i>
+                <span id="soclink-instagram" class="screen-reader-text">Instagram</span>
+            </a>
+            ';
+
+        // $social_html .= '<a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-youtube">
+        //         <i class="w-8 h-8 fa-brands fa-youtube"></i>
+        //         <span id="soclink-youtube" class="screen-reader-text">Youtube</span>
+        //     </a>
+        //     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-vimeo">
+        //         <i class="w-8 h-8 fa-brands fa-vimeo-v"></i>
+        //         <span id="soclink-vimeo" class="screen-reader-text">Vimeo</span>
+        //     </a>
+        //     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-tiktok">
+        //         <i class="w-8 h-8 fa-brands fa-tiktok"></i>
+        //         <span id="soclink-tiktok" class="screen-reader-text">TikTok</span>
+        //     </a>
+        //     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-mastodon">
+        //         <i class="w-8 h-8 fa-brands fa-mastodon"></i>
+        //         <span id="soclink-mastodon" class="screen-reader-text">Mastodon</span>
+        //     </a>';
+
+        $social_html .= '</div>';
+
+	    return $social_html;
 	}
 endif;
 
