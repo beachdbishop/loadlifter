@@ -332,6 +332,83 @@ function ll_dps_filter_people_query( $args, $atts ) {
 }
 add_filter( 'display_posts_shortcode_args', 'll_dps_filter_people_query', 10, 2 );
 
+
+/**
+ * Customizations to Display Posts
+ *
+ * @author     Bill Erickson <bill@billerickson.net>
+ * @copyright  Copyright (c) 2018, Bill Erickson
+ * @license    GPL-2.0+
+ *
+ * Adapted for loadlifter
+ * To use w/ date queries to generate a table of URLs when culling old content.
+ */
+
+class LL_DPS_Customizations {
+
+	public function __construct() {
+
+		// Layout = editors-choice
+		add_filter( 'display_posts_shortcode_wrapper_open', array( $this, 'layout_editors_choice_open' ), 10, 2 );
+		add_filter( 'display_posts_shortcode_output', array( $this, 'layout_editors_choice_item' ), 10, 2 );
+		add_filter( 'display_posts_shortcode_wrapper_close', array( $this, 'layout_editors_choice_close' ), 10, 2 );
+
+	}
+
+	/**
+	 * Layout = editors choice, open
+	 * @author Bill Erickson
+	 */
+	function layout_editors_choice_open( $output, $atts ) {
+		if( empty( $atts['layout'] ) || 'table-urls' !== $atts['layout'] )
+			return $output;
+
+		$classes = array( 'display-posts-listing', 'min-w-full', 'divide-y-2', 'divide-neutral-200', 'bg-white', 'text-sm' );
+		if( !empty( $atts['wrapper_class'] ) )
+			$classes[] = $atts['wrapper_class'];
+
+		$output = '<table class="' . join( ' ', $classes ) . '">';
+		$output .= '<thead><tr role="row" class="text-left row-1">';
+        $output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">Title</th>';
+        $output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">URL</th>';
+        $output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">Date</th>';
+        $output .= '</tr></thead>';
+		$output .= '<tbody class="divide-y divide-neutral-200">';
+		return $output;
+	}
+	/**
+	 * Layout = editors chocie, single item
+	 * @author Bill Erickson
+	 */
+	function layout_editors_choice_item( $output, $atts ) {
+		if( empty( $atts['layout'] ) || 'table-urls' !== $atts['layout'] )
+			return $output;
+
+			$output = '<tr class="odd:bg-neutral-50">';
+			$output .= '<td class="px-4 py-2 text-neutral-800">' . get_the_title() . '</td>';
+			$output .= '<td class="px-4 py-2 font-mono text-neutral-700">' . get_permalink() . '</td>';
+			$output .= '<td class="px-4 py-2 text-neutral-800">' . get_the_date('c') . '</td>';
+			$output .= '</tr>';
+
+		return $output;
+	}
+
+	/**
+	 * Layout = editors choice, close
+	 * @author Bill Erickson
+	 */
+	function layout_editors_choice_close( $output, $atts ) {
+		if( empty( $atts['layout'] ) || 'table-urls' !== $atts['layout'] )
+			return $output;
+
+		$output = '</tbody></table>';
+		return $output;
+	}
+
+}
+new LL_DPS_Customizations();
+
+
 /**
  * Display Reusable Blocks in Menu
  */
