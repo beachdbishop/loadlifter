@@ -123,7 +123,7 @@ if ('local' === wp_get_environment_type()) {
             <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
                 <div class="px-2 md:container md:mx-auto md:px-0">
 
-                    <?php if (is_page('career-opportunities')) : ?>
+                    <?php if (is_page('career-opps')) : ?>
                         <section class="full-bleed ">
                             <div class="container flex flex-wrap justify-start gap-2 px-2 py-4 mx-auto text-sm md:px-0 lg:gap-4">
                                 <span>On this page:</span>
