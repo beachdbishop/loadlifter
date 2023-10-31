@@ -614,7 +614,7 @@ if ( ! function_exists( 'll_render_hover_card' ) ) :
             <img alt="' . $card['imgAlt'] . '" src="' . $card['img'] . '" class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75 group-hover:opacity-25" />
 
             <div class="relative p-4 sm:p-6 lg:p-8">
-                <p class="text-xl font-bold text-white font-head text-shadow shadow-neutral-700 hover:shadow-brand-blue-dark sm:text-2xl ">' . $card['label'] . '</p>
+                <p class="text-xl font-semibold text-white font-head text-shadow shadow-neutral-700 hover:shadow-brand-blue-dark sm:text-2xl ">' . $card['label'] . '</p>
 
                 <div class="mt-8 sm:mt-4 lg:mt-8">
                     <div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-brand-blue-dark group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>

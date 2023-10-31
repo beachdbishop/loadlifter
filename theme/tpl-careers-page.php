@@ -79,25 +79,25 @@ $cards_future = [
 $cards_benefits = [
     "career_dev" => [
         "label" => 'Career Development',
-        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1675698306/feat__buddy-mentor_g81otc.jpg',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--career-dev_jyfgjn.jpg',
         "imgAlt" => 'A mentor and mentee smile while having a discussion',
         "onHoverContent" => '<ul><li>CPA Certification Bonus</li><li>Certification Reimbursement</li><li>Continuing Professional Education</li><li>Leadership Development</li><li>Mentor Program</li><li>Employee Referral Program</li></ul>',
     ],
     "health" => [
         "label" => 'Health',
-        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-health-wellness_am649w.jpg',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--health_dhdaqh.jpg',
         "imgAlt" => 'A patient has a discussion with a medical professional',
         "onHoverContent" => '<ul><li>Medical Insurance</li><li>Dental Insurance</li><li>Vision Insurance</li><li>Life Insurance</li><li>Short and Long-Term Disability Insurance</li><li>Accident Insurance</li><li>Critical Illness Insurance</li><li>Hospital Indemnity Insurance</li><li>Flexible Spending Account</li><li>Dependent Care Account</li></ul>',
     ],
     "wellbeing" => [
         "label" => 'Well-Being',
-        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-perks_qwhc1n.jpg',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--well-being_qrung2.jpg',
         "imgAlt" => 'A man looks out a window with his arms raised in celebration',
         "onHoverContent" => '<ul><li>Paid Time Off</li><li>Flextime Options</li><li>Hybrid/Remote Work Options</li><li>Employee Assistance Program</li><li>Wellness Campaigns</li><li>Busy Season Meals and Snacks</li></ul>',
     ],
     "financial" => [
         "label" => 'Financial',
-        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_600/v1677875018/feat__careers-financial-wellness_ugapx0.jpg',
+        "img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--financial_dgfqh5.jpg',
         "imgAlt" => 'Five stacks of coins increasing in height from one to the next',
         "onHoverContent" => '<ul><li>401(k) Retirement Plan</li><li>Employer Match</li><li>Profit Sharing Plan</li><li>Cash Balance Plan</li><li>Access to Financial Advisors</li><li>Performance-Based Bonuses</li></ul>',
     ],
