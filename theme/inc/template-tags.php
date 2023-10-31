@@ -281,7 +281,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				$bg_size = ' bg-cover bg-no-repeat';
 			} else {
 				$feat_aspect_ratio = '4.3 / 1';
-				$bg_size = ' bg-no-repeat';
+				$bg_size = ' bg-center bg-no-repeat';
 			}
 		} else {
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
