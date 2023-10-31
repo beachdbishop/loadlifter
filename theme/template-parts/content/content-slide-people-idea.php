@@ -15,6 +15,7 @@ if ( $peep_thumbnail ) {
 	$headshot                   = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
 }
 $peep_idea_quote                = get_field( 'll_people_idea_quote' );
+$peep_level = get_field( 'll_people_level' );
 ?>
 
 <div <?php post_class( 'p-6 transition-colors ease-in-out rounded-lg slide' ); ?> tabindex="0">
@@ -23,10 +24,20 @@ $peep_idea_quote                = get_field( 'll_people_idea_quote' );
     </div>
     <div class="text-lg text-center cite text-brand-gray">
         <div class="w-40 mx-auto mb-2 bg-top bg-cover border-2 border-white md:mb-4 bg-brand-red-faint group-hover:border-brand-red dark:border-neutral-500" style="background-image: url('<?php echo $headshot; ?>');">
-            <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>"><div class="w-40 aspect-square">&nbsp;</div></a>
+            <?php if ($peep_level['value'] !== '900') { ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" aria-label="<?php echo get_the_title(); ?>">
+                    <div class="w-40 aspect-square">&nbsp;</div>
+                </a>
+            <?php } else { ?>
+                <div class="w-40 aspect-square" aria-label="<?php echo get_the_title(); ?>">&nbsp;</div>
+            <?php } ?>
         </div>
         <h4 class="mt-2 text-brand-blue dark:text-brand-blue-pale">
-            <a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></a>
+            <?php if ($peep_level['value'] !== '900') { ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>" aria-label="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></a>
+            <?php } else { ?>
+                <?php echo get_the_title(); ?>
+            <?php } ?>
         </h4>
         <p class="text-base text-brand-blue-dark dark:text-neutral-400"><?php echo get_field( 'll_people_title' ); ?></p>
     </div>
