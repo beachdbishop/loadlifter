@@ -30,14 +30,19 @@ get_header();
 				<header>
 					<?php the_title('<h1 class="entry-title | dark:text-neutral-200">', '</h1>'); ?>
 				</header>
-				<div class="entry-content">
+				<div class="prose entry-content lg:prose-xl">
 					<?php the_content(); ?>
 					<div class="clear-both">&nbsp;</div>
 
 					<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
+                    <h2>Testing deprecated shortcode</h2>
+                    <p><?php echo do_shortcode( '[rwdad link=”https://beachfleischman.com/employee-retention-credit-consulting/” image=”https://beachfleischman.com/wp-content/uploads/2021/06/2021-0624-ERC-Feature-Image.jpg” text=”Employee Retention Credit Consulting” button=”We can help” color=”gray” width=”full” /]' ); ?></p>
+
+                    <p>The above shortcode should not show up at all.</p>
+
 					<div class="not-prose">
-						<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <svg class="inline llicon"><use xlink:href="#arrow-right"></use></svg></p>
+						<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
 						<section class="group bg-gray-500 md:rounded-lg bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply lg:mx-auto lg:max-w-5xl">
 							<a href="#" class="decoration-none">

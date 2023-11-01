@@ -150,3 +150,11 @@ function ll_tptdisclaimer_shortcode() {
 
 }
 // add_shortcode( 'tptdisclaimer', 'll_tptdisclaimer_shortcode');
+
+
+// Deprecated shortcode compensation
+function ll_rwdad_shortcode() {
+    // return blank
+    return '';
+}
+add_shortcode( 'rwdad', 'll_rwdad_shortcode' );
