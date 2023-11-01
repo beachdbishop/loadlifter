@@ -9,7 +9,7 @@
 
 ?>
 
-<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
+<?php if ( get_field( 'll_hide_featured_image' ) != true ) :
 	ll_featured_image();
 endif; ?>
 
