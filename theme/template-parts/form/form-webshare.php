@@ -71,13 +71,13 @@ createApp({share}).mount();
     </div>
     <div :class="!noOptionsAvailable() ? 'flex gap-2' : null" hidden :hidden="noOptionsAvailable()">
         <div class="relative" v-if="webShareSupported">
-            <button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 rounded-lg text-brand-blue font-head shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg border-brand-blue hover:bg-brand-blue hover:text-white dark:border-brand-blue-pale dark:text-brand-blue-pale" data-theme="ghost" @click="share">
+            <button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 rounded-lg text-orient-900 font-head shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg border-orient-900 hover:bg-orient-900 hover:text-white dark:border-brand-blue-pale dark:text-brand-blue-pale" data-theme="ghost" @click="share">
                 <span><i class="fa-solid fa-share"></i> Share</span>
             </button>
             <p role="alert" aria-live="polite" id="shareFeedback" class="context-alert" data-state="empty" :data-state="shareFeedback.length ? null : 'empty'">{{ shareFeedback }}</p>
         </div>
         <div class="relative" v-if="clipboardSupported">
-            <button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 rounded-lg text-brand-blue font-head shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg border-brand-blue hover:bg-brand-blue hover:text-white dark:border-brand-blue-pale dark:text-brand-blue-pale" data-theme="ghost" @click="copyLink">
+            <button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 rounded-lg text-orient-900 font-head shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 sm:w-auto lg:text-lg border-orient-900 hover:bg-orient-900 hover:text-white dark:border-brand-blue-pale dark:text-brand-blue-pale" data-theme="ghost" @click="copyLink">
                 <span><i class="fa-solid fa-copy"></i> Copy link</span>
             </button>
             <p role="alert" aria-live="polite" id="copyFeedback" class="context-alert" data-state="empty" :data-state="copyFeedback.length ? null : 'empty'">{{ copyFeedback }}</p>
