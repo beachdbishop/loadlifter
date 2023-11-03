@@ -19,7 +19,9 @@
             "post_type": [
                 "page"
             ],
-            "post_status": "",
+            "post_status": [
+                "publish"
+            ],
             "taxonomy": "",
             "filters": [
                 "search"
@@ -48,7 +50,9 @@
             "post_type": [
                 "page"
             ],
-            "post_status": "",
+            "post_status": [
+                "publish"
+            ],
             "taxonomy": "",
             "filters": [
                 "search"
@@ -79,5 +83,5 @@
     "active": true,
     "description": "Show featured industries and services on Category archives",
     "show_in_rest": 0,
-    "modified": 1695750170
+    "modified": 1698873846
 }
