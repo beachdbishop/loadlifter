@@ -257,10 +257,10 @@ aside .timestamp {
 
 /* Pagination */
 ul.page-numbers {
-	@apply my-4 mx-auto flex max-w-content list-none flex-wrap justify-center gap-4 font-head text-brand-blue md:my-8 lg:my-16;
+	@apply my-4 mx-auto flex max-w-content list-none flex-wrap justify-center gap-4 font-head text-orient-900 md:my-8 lg:my-16;
 }
 a.page-numbers {
-	@apply text-brand-blue hover:text-brand-blue-dark;
+	@apply text-orient-900 hover:text-brand-blue-dark;
 }
 span.current {
 	@apply opacity-50;
