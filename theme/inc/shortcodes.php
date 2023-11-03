@@ -111,7 +111,7 @@ add_shortcode( 'svg', 'll_svgpart_shortcode' );
 
 
 function ll_awardlogos_shortcode() {
-    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16 print:hidden">
+    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16">
         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="2023 Best of Accounting - Client Satisfaction - ClearlyRated" width="100" height="100">
         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787197/IPA_-_Award_Logos_-_Top_200_Firms_nfmdem.png" alt="2023 Top 200 Firms - Inside Public Accounting" width="100" height="100">
         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group" width="100" height="100">
@@ -123,9 +123,24 @@ function ll_awardlogos_shortcode() {
 }
 add_shortcode( 'awardlogos', 'll_awardlogos_shortcode' );
 
+function ll_constrassoclogos_shortcode() {
+
+    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16">
+        <a href="https://actaz.net/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1679441728/ACT_sfb9d9.png" alt="logo: Alliance of Construction Trades (ACT)" title="Alliance of Construction Trades (ACT)" width="166" height="70"></a>
+        <a href="https://asa-az.org/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1697479496/ASAA_cboctk.png" alt="logo: American Subcontractors Association of Arizona (ASA)" title="American Subcontractors Association of Arizona (ASA)" width="112" height="70"></a>
+        <a href="https://www.azbuilders.org/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1679440947/ABA_fuftwq.png" alt="logo: Arizona Builders Alliance (ABA)" title="Arizona Builders Alliance (ABA)" width="88" height="70"></a>
+        <a href="https://www.azagc.org/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1679609834/assclogo--azagc_seoaiv.png" alt="logo: Arizona Chapter of the Associated General Contractors of America (AZAGC)" title="Arizona Chapter of the Associated General Contractors of America (AZAGC)" width="188" height="70"></a>
+        <a href="https://www.abc.org/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1679441643/ABC_sxlwvt.png" alt="logo: Associated Builders and Contractors, Inc. (ABC)" title="Associated Builders and Contractors, Inc. (ABC)" width="123" height="70"></a>
+        <a href="https://cicpac.com/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1679450546/CICPAC_irfutw.png" alt="logo: Construction Industry CPAs/Consultants Association (CICPAC)" title="Construction Industry CPAs/Consultants Association (CICPAC)" width="246" height="70"></a>
+        <a href="https://cfma.org/" rel="noopener noreferrer"><img src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1679450494/CFMA_ixqdim.png" alt="logo: Construction Financial Management Association (CFMA)" title="Construction Financial Management Association (CFMA)" width="184" height="70"></a>
+        <a href="https://www.nawic.org/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1679450575/NAWIC_zktjka.png" alt="logo: National Association of Women In Construction (NAWIC)" title="National Association of Women In Construction (NAWIC)" width="169" height="70"></a>
+    </div>';
+}
+add_shortcode( 'constrlogos', 'll_constrassoclogos_shortcode' );
+
 function ll_cybercertlogos_shortcode() {
 
-    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16 print:hidden">
+    return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16">
         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="180" height="70">
         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="157" height="70">
         <img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="96" height="70">
