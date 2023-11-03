@@ -105,7 +105,7 @@ $menuItemsSecondary = [
 			</a>
 		</div>
 
-        <div class="nav-ctrls | flex flex-row justify-end order-last">
+        <div class="nav-ctrls | flex flex-row justify-end order-last print:hidden">
 
 			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-brand-blue-faint dark:focus:bg-neutral-800 dark:focus:text-brand-blue-pale" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>

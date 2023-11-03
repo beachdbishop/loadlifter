@@ -53,12 +53,12 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 
     <footer id="colophon" class="site-footer bg-neutral-900/80 ">
 
-        <div class="text-white border-t-4 border-solid on-darkbg border-brand-blue print:text-neutral-700">
+        <div class="text-white border-t-4 border-solid on-darkbg border-brand-blue print:border-none print:text-neutral-700">
         <?php /* <div class="border-t-4 border-solid on-darkbg border-brand-blue bg-neutral-500 bg-phoenix-desert-small md:bg-phoenix-desert3 bg-fixed bg-no-repeat bg-cover text-white bg-blend-multiply lg:bg-[center_top_5rem] print:bg-none print:text-neutral-700"> */ ?>
 
             <?php if ( !is_page_template( LL_LP_TEMPLATES ) ) { ?>
-            <div class="px-2 pt-16 md:px-0 md:container md:mx-auto">
-                <div class="grid grid-cols-1 gap-x-4 gap-y-8 text-shadow shadow-neutral-900 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6 print:hidden">
+            <div class="px-2 pt-16 md:px-0 md:container md:mx-auto print:hidden">
+                <div class="grid grid-cols-1 gap-x-4 gap-y-8 text-shadow shadow-neutral-900 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6">
                     <nav aria-label="Accounting and Assurance submenu">
                         <p class="text-lg font-head"><a href="/assurance/">Accounting &amp; Assurance</a></p>
                         <?php

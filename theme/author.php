@@ -119,9 +119,15 @@ if ( $author_org === 'BeachFleischman' ) {
 							endwhile;
 							?>
 						</div>
-						<?php
-						// the_posts_navigation();
-						ll_paging_nav();
+
+                        <div class="mt-8">
+                            <?php // ll_paging_nav();
+                            if ( function_exists( 'wpgb_render_facet' ) ) {
+                                wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
+                            } ?>
+                        </div>
+
+                        <?php
 
 					else :
 

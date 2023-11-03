@@ -59,7 +59,7 @@ createApp({share}).mount();
 <div
     id="share"
     tabindex="-1"
-    class="my-8 lg:my-12"
+    class="my-8 lg:my-12 print:hidden"
     v-scope="share({ url:'<?php echo get_permalink(); ?>', title: '<?php the_title(); ?>' })"
     data-share-url="<?php echo get_permalink(); ?>"
     data-share-title="<?php the_title(); ?>"

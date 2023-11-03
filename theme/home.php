@@ -27,7 +27,7 @@ get_header();
 					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
 				</div>
 
-                <div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16">
+                <div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16 print:hidden">
                     <div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
                         wpgb_render_facet( ['id' => 9, 'grid' => 'wpgb-content', ] );
                     } ?></div>

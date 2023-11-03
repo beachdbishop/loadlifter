@@ -111,8 +111,8 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 			if( $config['show_thumb']) {
 				$coauthors = get_coauthors();
 				echo <<<EOT
-				<h3>Authored by:</h3>
-				<div class="flex items-center justify-center w-full py-4 ">
+				<div class="print:break-inside-avoid"><h3>Authored by:</h3>
+				<div class="flex items-center justify-center w-full py-4 print:justify-start">
 					<div class="flex -space-x-3">
 				EOT;
 				foreach( $coauthors as $coauthor ) {
@@ -129,7 +129,7 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 				}
 				echo <<<EOT
 					</div>
-				</div>
+				</div></div>
 				EOT;
 			} else {
 				coauthors_posts_links(); // plain jane list
@@ -240,16 +240,16 @@ if ( ! function_exists( 'll_page_hero' ) ) :
         $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
         $moreA11yGradient = 'linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 50%, hsl(0 0% 16% / 0.2) 80%, hsl(0 0% 16% / 0) 100% )';
 
-        $hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } }</style>';
+        $hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } } @media print { .page-hero { background-color: transparent; background-image: none; } }</style>';
 
         $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
-        $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero">
+        $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero print:min-h-fit">
                 <div class="">
-                    <h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl">' . $h1 . '</h1>
-					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">' . $h2 . '</h2>
+                    <h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>
+					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>
                 </div>
 		    </div>';
-        $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-neutral-50" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
+        $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-neutral-50 print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
         $hero_html .= '</div>';
 
         return $hero_html;
@@ -278,15 +278,15 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 
 			if ( $post_date > $cutoff_date ) {
 				$feat_aspect_ratio = '3.75 / 1';
-				$bg_size = ' bg-cover bg-no-repeat';
+				$bg_size = 'bg-center bg-cover bg-no-repeat';
 			} else {
 				$feat_aspect_ratio = '4.3 / 1';
-				$bg_size = ' bg-center bg-no-repeat';
+				$bg_size = 'bg-center bg-no-repeat';
 			}
 		} else {
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 			$feat_aspect_ratio = '1.91';
-			$bg_size = ' bg-cover bg-no-repeat';
+			$bg_size = 'bg-center bg-cover bg-no-repeat';
 		}
 
 		if ( !$feat_image_url ) {
@@ -572,11 +572,11 @@ endif;
 if ( ! function_exists( 'll_footer_address' ) ) :
     function ll_footer_address( $addr ) {
         echo '<div class=" md:pt-2">
-            <address class="space-y-2 not-italic text-shadow shadow-neutral-900" property="address" typeof="PostalAddress">
+            <address class="space-y-2 not-italic text-shadow shadow-neutral-900 print:text-shadow-none" property="address" typeof="PostalAddress">
                 <p class="street-address | font-head leading-none " property="streetAddress">' . $addr['street1'] . '</p>
                 <p class="locality | font-head leading-none "><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
-                <p class="font-bold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>
-                <p class="font-bold leading-none font-head " property="faxNumber">F: ' . ll_format_phone_number( $addr['fax'], 'beach' ) . '</p>
+                <p class="font-semibold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>
+                <p class="font-semibold leading-none font-head" property="faxNumber">F: ' . ll_format_phone_number( $addr['fax'], 'beach' ) . '</p>
             </address>
         </div>';
     }

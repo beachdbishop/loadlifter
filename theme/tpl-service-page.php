@@ -54,11 +54,11 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                         <div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
 
                             <?php if ( $page_post_category ) : ?>
-                                <section class="full-bleed not-prose bg-neutral-800 text-neutral-100 ll-equal-vert-padding">
+                                <section class="full-bleed not-prose bg-neutral-800 text-neutral-100 ll-equal-vert-padding print:bg-transparent">
                                     <div class="post-grid | px-2 md:container md:mx-auto md:px-0 ">
                                         <div class="flex items-center justify-between mb-4">
                                             <h2>Insights</h2>
-                                            <div class="wp-block-buttons is-content-justification-right is-layout-flex wp-container-3 wp-block-buttons-is-layout-flex">
+                                            <div class="wp-block-buttons is-content-justification-right is-layout-flex wp-container-3 wp-block-buttons-is-layout-flex print:hidden">
                                                 <div class="wp-block-button is-style-outline"><a href="/blog/" class="wp-block-button__link has-white-color has-text-color wp-element-button">View All</a></div>
                                             </div>
                                         </div>
@@ -71,15 +71,16 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                             * TODO: Should this get maybe turned into a template part?
                             */
                             if ( $page_cta_standard ) :
-                                echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>';
-                                echo '<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
+                                echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md print:hidden"></div>';
+                                echo '<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100 break-inside-avoid print:animate-none print:bg-transparent">
                                     <div class="px-2 md:container md:mx-auto md:px-0">
                                         <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
                                             <div class="prose lg:prose-xl ">
-                                                <h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark">' . $page_cta_heading . '</h2>
-                                                <p class="text-neutral-100 text-shadow shadow-brand-blue-dark">' . $page_cta_body . '</p>
+                                                <h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark print:text-shadow-none">' . $page_cta_heading . '</h2>
+                                                <p class="text-neutral-100 text-shadow shadow-brand-blue-dark print:text-shadow-none">' . $page_cta_body . '</p>
+                                                <p class="hidden print:mt-8 print:block">Email info@beachfleischman.com</p>
                                             </div>
-                                            <div class="w-full md:max-w-fit">
+                                            <div class="w-full md:max-w-fit print:hidden">
                                                 <div class="wp-block-button"><a class="border-2 wp-block-button__link wp-element-button has-brand-blue-dark-background-color has-background-color border-brand-blue-dark hover:border-brand-blue-faint hover:text-brand-blue-faint" href="#contact">' . $page_cta_button_text . '</a></div>
                                             </div>
                                         </div>
@@ -115,7 +116,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                                         if ( $page_people_display === 'grid' ) :
                                             $grid_class = (count( $page_people ) == 1) ? 'grid-cols-4' : 'grid-auto-fit';
 
-                                            echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $page_people ) . '" posts_per_page="-1" meta_key="ll_people_last_name" orderby="meta_value" order="ASC" wrapper="div" wrapper_class="grid ' . $grid_class . ' gap-8" layout="card-people-md" /]' );
+                                            echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $page_people ) . '" posts_per_page="-1" meta_key="ll_people_last_name" orderby="meta_value" order="ASC" wrapper="div" wrapper_class="grid ' . $grid_class . ' gap-8 " layout="card-people-md" /]' );
                                         endif; ?>
 
                                     <?php endif; ?>

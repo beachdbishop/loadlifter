@@ -35,7 +35,7 @@ details[open] summary::-webkit-details-marker {
   }
 
   .details-inner {
-    @apply bg-neutral-100 px-2 pb-4 lg:pt-4 lg:px-4 lg:pb-6 dark:bg-neutral-800 dark:text-neutral-300;
+    @apply bg-neutral-100 px-2 pb-4 will-change-transform lg:pt-4 lg:px-4 lg:pb-6 dark:bg-neutral-800 dark:text-neutral-300;
   }
 }
 
