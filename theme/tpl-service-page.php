@@ -137,6 +137,8 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                             </div>
 
                             <?php get_template_part( 'template-parts/form/form', 'webshare' ); ?>
+
+                            <div class="h-1">&nbsp;</div>
                         </div>
 
                     </div>
