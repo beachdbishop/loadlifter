@@ -15,15 +15,24 @@ $menuItemsPrimary = [
 		"hasChildren" => true,
         "submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
             <li class="lg:py-4">
-                <p class="font-bold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale"><a href="/assurance/">Accounting &amp; Assurance</a></p>
+                <p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+                    <a href="/assurance/">Accounting &amp; Assurance</a>
+                </p>
                 [listmenu menu="submenu Assurance" container_class="hidden submenu mb-2 md:block" /]
             </li>
             <li class="lg:py-4">
-                <p class="font-bold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale"><a href="/tax/">Tax</a></p>
+                <p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+                    <a href="/tax/">Tax</a>
+                </p>
                 [listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
             </li>
             <li class="lg:py-4">
-                <p class="font-bold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
+                <p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+                    <a href="/soar/" title="Strategic Operations &amp; Advisory Resources">
+                        <span class="hidden md:inline">SOAR</span>
+                        <span class="inline tracking-tight md:hidden">Strategic Operations &amp; Advisory Resources</span>
+                    </a>
+                </p>
                 [listmenu menu="submenu SOAR" container_class="hidden submenu mb-2 md:block" /]
             </li>
         </ul>',
