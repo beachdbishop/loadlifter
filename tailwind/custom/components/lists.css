@@ -31,6 +31,14 @@ ul.is-style-default {
 	@apply list-square;
 }
 
+.is-style-list-columns-2 {
+  @apply columns-1 lg:columns-2;
+}
+
+.is-style-list-columns-2 li {
+  @apply break-inside-avoid-column;
+}
+
 /* inspiration: https://codepen.io/joshwcomeau/pen/VwxwYbG */
 [class*="is-style-list-divide-"],
 .prose [class*="is-style-list-divide-"] {

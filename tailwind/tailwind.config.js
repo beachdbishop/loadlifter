@@ -137,6 +137,8 @@ module.exports = {
     'inline',
     'leading-tight',
     'lg:collapse',
+    'lg:columns-2',
+    'lg:columns-3',
     'lg:gap-16',
     'lg:gap-x-16',
     'lg:gap-y-12',

@@ -56,6 +56,11 @@ add_action( 'init', function() {
 		'label'	=> __( 'Square bullets', 'loadlifter' ),
 	] );
 
+    register_block_style( 'core/list', [
+		'name'	=> 'list-columns-2',
+		'label'	=> __( '2 Columns', 'loadlifter' ),
+	] );
+
 	register_block_style( 'core/list', [
 		'name' => 'list-divide-light',
 		'label' => __( 'Light Border Between Items' ),
