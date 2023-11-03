@@ -149,29 +149,3 @@ ul.is-style-default {
 .is-style-boxed li > strong {
 	@apply mb-4;
 }
-
-/* Timeline pattern */
-.list-timeline {
-	@apply ml-4 list-none border-l-2;
-}
-.list-timeline-brand-red {
-	@apply border-brand-red;
-	.fa-stack {
-		@apply text-brand-red;
-	}
-}
-.list-timeline-brand-blue {
-	@apply border-brand-blue;
-	.fa-stack {
-		@apply text-brand-blue;
-	}
-}
-.list-timeline-brand-gray {
-	@apply border-brand-gray;
-	.fa-stack {
-		@apply text-brand-gray;
-	}
-}
-.list-timeline-node {
-	margin-left: -1.25em;
-}
