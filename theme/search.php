@@ -44,7 +44,11 @@ get_header();
 					endwhile;
 					?>
 				</div>
-				<?php ll_paging_nav(); ?>
+
+                <?php // ll_paging_nav();
+                if ( function_exists( 'wpgb_render_facet' ) ) {
+                    wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
+                } ?>
 
 			<?php
 			else :
