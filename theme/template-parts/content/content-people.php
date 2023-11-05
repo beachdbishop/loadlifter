@@ -42,7 +42,7 @@ if ( $peepauthor ) {
 	<div class="px-1 md:container md:mx-auto md:px-0 ">
 
 		<?php if ( function_exists( 'bcn_display' ) ) { ?>
-			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
 		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
@@ -57,7 +57,7 @@ if ( $peepauthor ) {
 				<header class="mb-4">
 					<?php
 					if ( $peep_class === 'internal' ) {
-						the_title( '<h1 class="entry-title | mb-0 text-brand-blue">', '</h1>' );
+						the_title( '<h1 class="entry-title | mb-0 text-brand-blue dark:text-brand-blue-pale">', '</h1>' );
 
 						if( get_field( 'll_people_designations' ) ) {
 							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', get_field( 'll_people_designations' ) );
@@ -136,7 +136,7 @@ if ( $peepauthor ) {
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php if ( $peeppostcount > 0 ) : ?>
-	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 md:py-6 lg:py-8 dark:bg-neutral-black' ); ?>>
+	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 md:py-6 lg:py-8 dark:bg-neutral-950' ); ?>>
 		<div class="px-1 md:container md:mx-auto md:px-0 ">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold dark:text-neutral-300">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
 			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="dps-grid-4max" layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
