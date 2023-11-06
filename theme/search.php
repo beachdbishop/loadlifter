@@ -25,7 +25,7 @@ get_header();
 						<?php
 						/* translators: %s: search query. */
 						// printf( esc_html__( 'Search Results for: %s', 'loadlifter' ), '<span class="px-2 text-black rounded bg-yellow-400/75">' . get_search_query() . '</span>' );
-                        printf( esc_html__( 'Search results for: %s', 'loadlifter' ), '<span class="relative inline-block before:block before:absolute before:-inset-1 before:-skew-y-2 before:bg-green-200 before:rounded dark:before:bg-green-600"><span class="relative px-2 font-bold text-neutral-950 dark:text-white">' . get_search_query() . '</span></span>' );
+                        printf( esc_html__( 'Search results for: %s', 'loadlifter' ), '<span class="relative inline-block before:block before:absolute before:-inset-1 before:bg-orient-200 before:rounded dark:before:bg-orient-600"><span class="relative px-2 font-bold text-neutral-950 dark:text-white">' . get_search_query() . '</span></span>' );
 						?>
 					</h1>
 				</header>
