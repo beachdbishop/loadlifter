@@ -17,13 +17,23 @@
                 "id": ""
             },
             "choices": {
-                "intl_tax": "Int'l Tax",
+                "not_service": "Not Service or Industry",
+                "intl_tax": "International Tax",
                 "cyber_pen": "Cyber - Pen. Testing",
                 "cyber_vciso": "Cyber - vCISO",
                 "cyber_soc2": "Cyber - SOC2",
                 "ca-us-tax": "Can-U.S. Tax",
                 "cost_seg": "Cost Segregation",
-                "constr": "Construction"
+                "pppassist": "PPP Loan Forgiveness Assistance",
+                "cannabis": "Cannabis",
+                "constr": "Construction",
+                "finprof": "Financial & Professional Services",
+                "healthcare": "Healthcare",
+                "manufacturing": "Manufacturing",
+                "nonprofit": "Nonprofit",
+                "realestate": "Real Estate",
+                "resthosp": "Restaurant & Hospitality",
+                "technology": "Technology"
             },
             "default_value": false,
             "return_format": "array",
@@ -217,5 +227,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1695425181
+    "modified": 1699396777
 }
