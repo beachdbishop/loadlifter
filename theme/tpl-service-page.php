@@ -114,9 +114,8 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                                         endif;
 
                                         if ( $page_people_display === 'grid' ) :
-                                            $grid_class = (count( $page_people ) == 1) ? 'grid-cols-4' : 'grid-auto-fit';
-
-                                            echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $page_people ) . '" posts_per_page="-1" meta_key="ll_people_last_name" orderby="meta_value" order="ASC" wrapper="div" wrapper_class="grid ' . $grid_class . ' gap-8 " layout="card-people-md" /]' );
+                                            $grid_class = (count( $page_people ) == 3) ? 'dps-grid-3max' : 'dps-grid-4max';
+                                            echo do_shortcode( '[display-posts post_type="people" id="' . implode( ', ', $page_people ) . '" posts_per_page="-1" meta_key="ll_people_last_name" orderby="meta_value" order="ASC" wrapper="div" wrapper_class="mt-4 ' . $grid_class . ' " layout="card-people-md" /]' );
                                         endif; ?>
 
                                     <?php endif; ?>
