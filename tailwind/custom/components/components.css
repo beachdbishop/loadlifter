@@ -227,7 +227,8 @@ aside .timestamp {
 }
 
 .breadcrumbs {
-	font-size: 1rem;
+  @apply text-base truncate;
+	/* font-size: 1rem; */
 }
 /* via: https://mtekk.us/archives/guides/trimming-breadcrumb-title-lengths-with-css/ */
 .breadcrumbs > span:last-child span {
