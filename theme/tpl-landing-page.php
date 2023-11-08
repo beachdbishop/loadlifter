@@ -39,7 +39,7 @@ $page_state                     = get_field( 'll_page_state' );
             endif; ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
-                <div class="px-2 md:container md:mx-auto md:px-0">
+                <div class="px-2 md:container xl:px-4">
                     <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
                         <div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>

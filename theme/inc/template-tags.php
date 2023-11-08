@@ -221,13 +221,13 @@ endif;
 
 if ( ! function_exists( 'll_page_title' ) ) :
     function ll_page_title( $h1, $h2 ) {
-        echo '<div class="px-2 md:container md:mx-auto md:px-0">
+        echo '<div class="px-2 md:container xl:px-4">
             <h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
             <h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale lg:text-4xl">'.$h2.'</h2>
         </div>';
 
         if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
-            echo '<div class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
+            echo '<div class="breadcrumbs | px-2 md:container xl:px-4 font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
             </div>';
         }
     }
@@ -243,13 +243,13 @@ if ( ! function_exists( 'll_page_hero' ) ) :
         $hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } } @media print { .page-hero { background-color: transparent; background-image: none; } }</style>';
 
         $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
-        $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container md:mx-auto md:px-0 md:min-h-hero print:min-h-fit">
+        $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-hero print:min-h-fit">
                 <div class="">
                     <h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>
 					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>
                 </div>
 		    </div>';
-        $hero_html .= '<nav class="breadcrumbs | container mx-auto px-2 md:px-0 font-head text-neutral-50 print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
+        $hero_html .= '<nav class="breadcrumbs | md:container px-2 xl:px-4 font-head text-neutral-50 print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
         $hero_html .= '</div>';
 
         return $hero_html;

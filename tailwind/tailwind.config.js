@@ -14,6 +14,9 @@ module.exports = {
 		'./theme/theme.json',
 	],
 	theme: {
+    container: {
+      center: true,
+    },
     fontFamily: {
       head: ['serenity', 'sans-serif'],
       body: ['Work Sans', 'sans-serif'],

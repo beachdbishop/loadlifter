@@ -12,7 +12,7 @@ get_header();
 
 	<main id="primary" class="py-4 bg-amber-50 md:py-6 lg:py-8 dark:bg-neutral-700">
 
-		<section class="px-1 md:container md:mx-auto md:px-0">
+		<section class="px-2 md:container xl:px-4">
 			<header>
 				<h1 class="entry-title | text-amber-800 dark:text-amber-300"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'loadlifter' ); ?></h1>
 			</header>
@@ -23,7 +23,7 @@ get_header();
                 <?php get_search_form(); ?>
 
 
-                <div class="grid md:grid-cols-2 gap-4">
+                <div class="grid gap-4 md:grid-cols-2">
                     <div>
                         <?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
                     </div>

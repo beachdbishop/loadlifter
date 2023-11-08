@@ -46,7 +46,7 @@ $peopleQuery = new WP_Query( $args );
 	<main id="primary" class="page-people | bg-white dark:bg-neutral-900">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 lg:pt-8 lg:pb-12' ); ?>>
-			<div class="px-1 md:container md:mx-auto md:px-0">
+			<div class="px-2 md:container xl:px-4">
 				<?php if ( function_exists( 'bcn_display' ) ) { ?>
 					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 				<?php } ?>

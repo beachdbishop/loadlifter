@@ -44,7 +44,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
             <?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <div class="px-2 md:container md:mx-auto md:px-0">
+                <div class="px-2 md:container xl:px-4">
                     <div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
                         <div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
@@ -55,7 +55,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
 
                             <?php if ( $page_post_category ) : ?>
                                 <section class="full-bleed not-prose bg-neutral-800 text-neutral-100 ll-equal-vert-padding print:bg-transparent">
-                                    <div class="post-grid | px-2 md:container md:mx-auto md:px-0 ">
+                                    <div class="post-grid | px-2 md:container xl:px-4">
                                         <div class="flex items-center justify-between mb-4">
                                             <h2>Insights</h2>
                                             <div class="wp-block-buttons is-content-justification-right is-layout-flex wp-container-3 wp-block-buttons-is-layout-flex print:hidden">
@@ -73,7 +73,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                             if ( $page_cta_standard ) :
                                 echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md print:hidden"></div>';
                                 echo '<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100 break-inside-avoid print:animate-none print:bg-transparent">
-                                    <div class="px-2 md:container md:mx-auto md:px-0">
+                                    <div class="px-2 md:container xl:px-4">
                                         <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
                                             <div class="prose lg:prose-xl ">
                                                 <h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark print:text-shadow-none">' . $page_cta_heading . '</h2>
@@ -95,7 +95,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                             <?php // SERVICE PROFESSIONALS AND INVOLVEMENT   ?>
                             <?php if ( ( $page_people_display != 'hide' ) || ( !empty( $page_groups_html ) ) ) : ?>
                             <section class="full-bleed not-prose ll-equal-vert-padding">
-                                <div class="px-2 md:container md:mx-auto md:px-0">
+                                <div class="px-2 md:container xl:px-4">
                                     <?php if ( ( $page_people ) && ( $page_people_display != 'hide' ) ) : ?>
 
                                         <h2>

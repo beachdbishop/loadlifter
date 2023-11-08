@@ -23,7 +23,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
     <footer id="colophon" class="site-footer">
 
         <div class="border-t-4 border-solid on-darkbg text-neutral-200 border-brand-blue print:text-neutral-700">
-            <div class="px-2 py-16 md:px-0 md:container md:mx-auto">
+            <div class="px-2 py-16 md:container">
                 <div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-3 lg:gap-x-8">
                     <div class="">
                         <div class="max-w-xs mb-4 fill-current">
