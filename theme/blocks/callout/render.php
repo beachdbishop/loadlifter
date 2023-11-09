@@ -38,10 +38,10 @@ $inner_template = [
 ?>
 
 
-<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose bg-white shadow-md dark:bg-neutral-800">
-    <p class="llcallout-title">
+<div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose bg-white border-2 rounded-br-2xl shadow-md dark:bg-neutral-800">
+    <p class="p-2 font-semibold llcallout-title ">
         <?php if( !empty( $callout_icon ) ): ?>
-            <i class="<?php echo esc_attr( $callout_icon ); ?>"></i>
+            <i class="<?php echo esc_attr( $callout_icon ); ?> mr-1"></i>
         <?php endif; ?>
         <?php echo esc_html( $callout_title ); ?>
     </p>

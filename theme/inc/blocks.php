@@ -9,7 +9,9 @@ function load_blocks() {
 	foreach( $blocks as $block ) {
 		if ( file_exists( get_template_directory() . '/blocks/' . $block . '/block.json' ) ) {
 			register_block_type( get_template_directory() . '/blocks/' . $block . '/block.json' );
-			wp_register_style( 'block-' . $block, get_template_directory_uri() . '/blocks/' . $block . '/style.css', null, $theme->get( 'Version' ) );
+			/* Do not register and enqueue style.css files */
+            /* Instead put their classes in the global tailwind components.css file */
+            // wp_register_style( 'block-' . $block, get_template_directory_uri() . '/blocks/' . $block . '/style.css', null, $theme->get( 'Version' ) );
 
 			if ( file_exists( get_template_directory() . '/blocks/' . $block . '/init.php' ) ) {
 				include_once get_template_directory() . '/blocks/' . $block . '/init.php';

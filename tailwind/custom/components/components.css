@@ -323,3 +323,104 @@ p[class*="is-style-note-"] {
 	/* Background */
 	background-color: var(--scrollbar-background);
 }
+
+
+/* Block: Ad */
+.llad:not([class*="is-style-"]) { /* Default = Clear */
+	@apply bg-transparent;
+}
+.llad.is-style-brand-red {
+  @apply bg-brand-red;
+}
+.llad.is-style-brand-blue {
+  @apply bg-brand-blue;
+}
+.llad.is-style-brand-gray {
+  @apply bg-brand-gray;
+}
+
+
+/* Block: Callout */
+.llcallout {
+  --title-bg: #e5e5e5; /* neutral-200 */
+  --title-color: #171717; /* neutral-900 */
+  border-color: var(--title-bg);
+}
+.llcallout .acf-innerblocks-container {
+  @apply p-2;
+}
+.llcallout-title {
+  background-color: var(--title-bg);
+  color: var(--title-color);
+}
+.llcallout.is-style-note {
+  --title-bg: #bfdbfe; /* blue-200 */
+  --title-color: #1e3a8a; /* blue-900 */
+}
+.llcallout.is-style-info {
+  --title-bg: #a5f3fc; /* cyan-200 */
+  --title-color: #164e63; /* cyan-900 */
+}
+.llcallout.is-style-tip {
+  --title-bg: #99f6e4; /* teal-200 */
+  --title-color: #134e4a; /* teal-900 */
+}
+.llcallout.is-style-success {
+  --title-bg: #bbf7d0; /* green-200 */
+  --title-color: #14532d; /* green-900 */
+}
+.llcallout.is-style-warning {
+  --title-bg: #fed7aa; /* orange-200 */
+  --title-color: #7c2d12; /* orange-900 */
+}
+.llcallout.is-style-danger {
+  --title-bg: #fecaca; /* red-200 */
+  --title-color: #7f1d1d; /* red-900 */
+}
+.llcallout.is-style-example {
+  --title-bg: #e9d5ff; /* purple-200 */
+  --title-color: #581c87; /* purple-900 */
+}
+.llcallout.is-style-quote {
+  --title-bg: #e5e5e5; /* neutral-200 */
+  --title-color: #171717; /* neutral-900 */
+}
+
+@media (prefers-color-scheme: dark) {
+  .llcallout {
+    --title-bg: #404040; /* neutral-700 */
+    --title-color: #fafafa; /* neutral-50 */
+  }
+  .llcallout.is-style-note {
+    --title-bg: #1d4ed8; /* blue-700 */
+    --title-color: #eff6ff; /* blue-50 */
+  }
+  .llcallout.is-style-info {
+    --title-bg: #0e7490; /* cyan-700 */
+    --title-color: #ecfeff; /* cyan-50 */
+  }
+  .llcallout.is-style-tip {
+    --title-bg: #0f766e; /* teal-700 */
+    --title-color: #f0fdfa; /* teal-50 */
+  }
+  .llcallout.is-style-success {
+    --title-bg: #15803d; /* green-700 */
+    --title-color: #f0fdf4; /* green-50 */
+  }
+  .llcallout.is-style-warning {
+    --title-bg: #c2410c; /* orange-700 */
+    --title-color: #fff7ed; /* orange-50 */
+  }
+  .llcallout.is-style-danger {
+    --title-bg: #b91c1c; /* red-700 */
+    --title-color: #fef2f2; /* red-50 */
+  }
+  .llcallout.is-style-example {
+    --title-bg: #7e22ce; /* purple-700 */
+    --title-color: #faf5ff; /* purple-50 */
+  }
+  .llcallout.is-style-quote {
+    --title-bg: #404040; /* neutral-700 */
+    --title-color: #fafafa; /* neutral-50 */
+  }
+}
