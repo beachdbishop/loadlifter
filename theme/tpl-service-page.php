@@ -65,13 +65,14 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                                         <?php echo do_shortcode( '[display-posts taxonomy="category" tax_term="' . $page_post_category->slug . '" tax_operator="IN" taxonomy_2="category" tax_2_term="archived-events" tax_2_operator="NOT IN" orderby="date" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="dps-grid-3max" layout="card-simple" /]' ); ?>
                                     </div>
                                 </section>
+                                <?php /* The visual gap Eric requested between Insights and the CTA section */ ?>
+                                <div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>
                             <?php endif; ?>
 
                             <?php /* CTA
                             * TODO: Should this get maybe turned into a template part?
                             */
                             if ( $page_cta_standard ) :
-                                echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md print:hidden"></div>';
                                 echo '<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100 break-inside-avoid print:animate-none print:bg-transparent">
                                     <div class="px-2 md:container xl:px-4">
                                         <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
@@ -87,7 +88,6 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
                                     </div>
                                 </section>';
                             elseif ( ( $page_cta_standard == false ) && ( !empty( $page_cta_html ) ) ) :
-                                echo '<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>';
                                 echo do_shortcode( $page_cta_html );
                             endif;
                             ?>
