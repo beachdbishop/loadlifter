@@ -7,62 +7,62 @@
  * @package Load_Lifter
  */
 
-if ( ! function_exists( 'll_menu_det_summary' ) ) :
-	function ll_menu_det_summary( $name, $link = '', $summaryclasses ='', $linkclasses = '' ) {
-		$html = sprintf( '<summary class="flex items-center px-3 py-2 md:py-1 rounded-lg lg:gap-2 %3$s"><span class=""><a href="%1$s" class="%4$s">%2$s</a></span><span class="ml-auto transition duration-300 shrink-0"><svg class="icon"><use xlink:href="#angle-down" /></svg></span></summary>', $name, $link, $summaryclasses, $linkclasses );
+// 20231110 -- this function might not be needed anymore
+// ... might have only been used while developing an earlier version of the primary nav
+// if ( ! function_exists( 'll_menu_det_summary' ) ) :
+// 	function ll_menu_det_summary( $name, $link = '', $summaryclasses ='', $linkclasses = '' ) {
+// 		$html = sprintf( '<summary class="flex items-center px-3 py-2 md:py-1 rounded-lg lg:gap-2 %3$s"><span class=""><a href="%1$s" class="%4$s">%2$s</a></span><span class="ml-auto transition duration-300 shrink-0"><svg class="icon"><use xlink:href="#angle-down" /></svg></span></summary>', $name, $link, $summaryclasses, $linkclasses );
 
-		return $html;
-	}
-endif;
+// 		return $html;
+// 	}
+// endif;
 
 
 if ( ! function_exists( 'll_show_social_links' ) ) :
 	/**
-	 *
+	 * Outputs linked social icons (from FA)
 	 */
 	function ll_show_social_links() {
 
-        $social_html = '<div class="inline-flex items-center justify-start gap-4">';
+		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
 
-        $social_html .= '
-            <a href="https://www.linkedin.com/company/beachfleischman/" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-linkedin">
-                <i class="w-8 h-8 fa-brands fa-linkedin-in"></i>
-                <span id="soclink-linkedin" class="screen-reader-text">LinkedIn</span>
-            </a>
-            <a href="https://twitter.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-twitter">
-                <i class="w-8 h-8 fa-brands fa-x-twitter"></i>
-                <span id="soclink-twitter" class="screen-reader-text">Twitter</span>
-            </a>
-            <a href="https://www.facebook.com/BeachFleischmanCPAs" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-facebook">
-                <i class="w-8 h-8 fa-brands fa-facebook"></i>
-                <span id="soclink-facebook" class="screen-reader-text">Facebook</span>
-            </a>
-            <a href="https://instagram.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-instagram">
-                <i class="w-8 h-8 fa-brands fa-instagram"></i>
-                <span id="soclink-instagram" class="screen-reader-text">Instagram</span>
-            </a>
-            ';
+			$social_html .= '<a href="https://www.linkedin.com/company/beachfleischman/" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-linkedin">
+					<i class="w-8 h-8 fa-brands fa-linkedin-in"></i>
+					<span id="soclink-linkedin" class="screen-reader-text">LinkedIn</span>
+			</a>
+			<a href="https://twitter.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-twitter">
+					<i class="w-8 h-8 fa-brands fa-x-twitter"></i>
+					<span id="soclink-twitter" class="screen-reader-text">Twitter</span>
+			</a>
+			<a href="https://www.facebook.com/BeachFleischmanCPAs" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-facebook">
+					<i class="w-8 h-8 fa-brands fa-facebook"></i>
+					<span id="soclink-facebook" class="screen-reader-text">Facebook</span>
+			</a>
+			<a href="https://instagram.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-instagram">
+					<i class="w-8 h-8 fa-brands fa-instagram"></i>
+					<span id="soclink-instagram" class="screen-reader-text">Instagram</span>
+			</a>';
 
-        // $social_html .= '<a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-youtube">
-        //         <i class="w-8 h-8 fa-brands fa-youtube"></i>
-        //         <span id="soclink-youtube" class="screen-reader-text">Youtube</span>
-        //     </a>
-        //     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-vimeo">
-        //         <i class="w-8 h-8 fa-brands fa-vimeo-v"></i>
-        //         <span id="soclink-vimeo" class="screen-reader-text">Vimeo</span>
-        //     </a>
-        //     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-tiktok">
-        //         <i class="w-8 h-8 fa-brands fa-tiktok"></i>
-        //         <span id="soclink-tiktok" class="screen-reader-text">TikTok</span>
-        //     </a>
-        //     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-mastodon">
-        //         <i class="w-8 h-8 fa-brands fa-mastodon"></i>
-        //         <span id="soclink-mastodon" class="screen-reader-text">Mastodon</span>
-        //     </a>';
+			// $social_html .= '<a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-youtube">
+			//         <i class="w-8 h-8 fa-brands fa-youtube"></i>
+			//         <span id="soclink-youtube" class="screen-reader-text">Youtube</span>
+			//     </a>
+			//     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-vimeo">
+			//         <i class="w-8 h-8 fa-brands fa-vimeo-v"></i>
+			//         <span id="soclink-vimeo" class="screen-reader-text">Vimeo</span>
+			//     </a>
+			//     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-tiktok">
+			//         <i class="w-8 h-8 fa-brands fa-tiktok"></i>
+			//         <span id="soclink-tiktok" class="screen-reader-text">TikTok</span>
+			//     </a>
+			//     <a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-mastodon">
+			//         <i class="w-8 h-8 fa-brands fa-mastodon"></i>
+			//         <span id="soclink-mastodon" class="screen-reader-text">Mastodon</span>
+			//     </a>';
 
-        $social_html .= '</div>';
+			$social_html .= '</div>';
 
-	    return $social_html;
+		return $social_html;
 	}
 endif;
 
@@ -74,7 +74,7 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 	function ll_posted_on() {
 		$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'YY "/" mm "/" dd' ) !== get_the_modified_time( 'YY "/" mm "/" dd' ) ) {
-			$time_string = '<time class="entry-date | date-published" datetime="%1$s">%2$s</time> <time class="date-updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date date-published" datetime="%1$s">%2$s</time> <time class="date-updated" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -86,7 +86,6 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 		);
 
 		$posted_on = sprintf(
-			/* translators: %s: post date. */
 			esc_html_x( '%s', 'post date', 'loadlifter' ),
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
@@ -148,16 +147,12 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 	function ll_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
 			$categories_list = get_the_category_list( esc_html__( ', ', 'loadlifter' ) );
-			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'loadlifter' ) );
 
-            echo '<div class="my-8"><h3 class="mb-2">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
-
+			echo '<div class="my-8"><h3 class="mb-2">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
 
 			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
 				printf( '<span class="catlist lg:mb-2">' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
@@ -166,11 +161,10 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 			}
 
 			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
 				printf( '<span class="list--tags | ">' . esc_html__( 'Tagged: %1$s', 'loadlifter' ) . '</span>', $tags_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 
-            echo '</div>';
+			echo '</div>';
 		}
 	}
 endif;
@@ -220,40 +214,40 @@ endif;
 
 
 if ( ! function_exists( 'll_page_title' ) ) :
-    function ll_page_title( $h1, $h2 ) {
-        echo '<div class="px-2 md:container xl:px-4">
-            <h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
-            <h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale lg:text-4xl">'.$h2.'</h2>
-        </div>';
+	function ll_page_title( $h1, $h2 ) {
+		echo '<div class="px-2 md:container xl:px-4">
+			<h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
+			<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale lg:text-4xl">'.$h2.'</h2>
+		</div>';
 
-        if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
-            echo '<div class="breadcrumbs | px-2 md:container xl:px-4 font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
-            </div>';
-        }
-    }
+		if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
+			echo '<div class="breadcrumbs | px-2 md:container xl:px-4 font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
+			</div>';
+		}
+	}
 endif;
 
 
 /* Used on Pages */
 if ( ! function_exists( 'll_page_hero' ) ) :
-    function ll_page_hero( $h1, $h2 ) {
-        $easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
-        $moreA11yGradient = 'linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 50%, hsl(0 0% 16% / 0.2) 80%, hsl(0 0% 16% / 0) 100% )';
+	function ll_page_hero( $h1, $h2 ) {
+		$easedGradient = 'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)';
+		$moreA11yGradient = 'linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 50%, hsl(0 0% 16% / 0.2) 80%, hsl(0 0% 16% / 0) 100% )';
 
-        $hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } } @media print { .page-hero { background-color: transparent; background-image: none; } }</style>';
+		$hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } } @media print { .page-hero { background-color: transparent; background-image: none; } }</style>';
 
-        $hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
-        $hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-hero print:min-h-fit">
-                <div class="">
-                    <h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>
-					<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>
-                </div>
-		    </div>';
-        $hero_html .= '<nav class="breadcrumbs | md:container px-2 xl:px-4 font-head text-neutral-50 print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
-        $hero_html .= '</div>';
+		$hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
+		$hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-hero print:min-h-fit">
+			<div class="">
+				<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>
+				<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>
+			</div>
+		</div>';
+		$hero_html .= '<nav class="breadcrumbs | md:container px-2 xl:px-4 font-head text-neutral-50 print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</nav>';
+		$hero_html .= '</div>';
 
-        return $hero_html;
-    }
+		return $hero_html;
+	}
 endif;
 
 
@@ -297,13 +291,13 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			} else {
 				$featmarkup = sprintf(
 					'<div class="image__featured--outer | overflow-hidden empty-feat-img print:hidden">
-                        <div
-                            class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
-                            style="background-image: url(%1$s); aspect-ratio: %2$s"
-                            aria-label="%3$s"
-                            role="img"
-                        ></div>
-                    </div>',
+						<div
+							class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+							style="background-image: url(%1$s); aspect-ratio: %2$s"
+							aria-label="%3$s"
+							role="img"
+						></div>
+					</div>',
 					esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' ),
 					esc_attr( $feat_aspect_ratio ),
 					esc_attr( get_the_title() ),
@@ -316,13 +310,13 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$thumb_url = $thumb_url_array[0];
 			$featmarkup = sprintf(
 				'<div class="overflow-hidden image__featured--outer print:hidden">
-                    <div
-                        class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
-                        style="background-image: url(%1$s); aspect-ratio: %2$s"
-                        aria-label="%3$s"
-                        role="img"
-                    ></div>
-                </div>',
+					<div
+						class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+						style="background-image: url(%1$s); aspect-ratio: %2$s"
+						aria-label="%3$s"
+						role="img"
+					></div>
+				</div>',
 				esc_url( $feat_image_url[0] ),
 				esc_attr( $feat_aspect_ratio ),
 				esc_attr( get_the_title() ),
@@ -389,7 +383,6 @@ if ( ! function_exists( 'll_people_dept_list' ) ) :
 	 * Display People/Author department(s)
 	 */
 	function ll_people_show_dept_list( $departments ) {
-		// echo '<span class="inline-pipe-sep | "><svg class="inline llicon"><use xlink:href="#people-group" title="Department(s)"></use></svg> ';
 		echo '<span class="inline-pipe-sep | "><i class="fa-solid fa-people-group text-neutral-500" title="Department(s)"></i> ';
 		foreach( $departments as $dept ) {
 			echo '<span class="">' . $dept['label'] . '</span>';
@@ -403,7 +396,6 @@ if ( ! function_exists( 'll_people_show_location' ) ) :
 	 * Display People/Author location
 	 */
 	function ll_people_show_location( $location ) {
-		// echo '<span class=""><svg class="inline llicon"><use xlink:href="#location-dot" title="Location"></use></svg> <span class="">' . esc_html( $location ) . '</span></span>';
 		echo '<span class=""><i class="fa-solid fa-location-dot text-neutral-500" title="Location"></i> <span class="">' . esc_html( $location ) . '</span></span>';
 	}
 endif;
@@ -464,63 +456,6 @@ if ( ! function_exists( 'll_paging_nav' ) ) :
 endif;
 
 
-// if ( ! function_exists( 'll_people_paging_nav' ) ) :
-// 	/**
-// 	 * Display navigation to next/previous set of people when applicable.
-// 	 *
-// 	 * via:
-// 	 */
-
-// 	function ll_people_paging_nav( $pages = '', $range = 4) {
-// 		$showitems = ( $range * 2 ) + 1;
-//         global $paged;
-//         if( empty( $paged ) ) $paged = 1;
-//         if( $pages == '' )
-//         {
-//             global $wp_query;
-//             $pages = $wp_query->max_num_pages;
-//             if( !$pages ) {
-//                 $pages = 1;
-//             }
-//         }
-//         if( 1 != $pages ) {
-//             echo "<nav aria-label='Page navigation'><ul class='pagination'><li>Page ".$paged." of ".$pages."</li>";
-//             if( $paged > 2 && $paged > $range+1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( 1 ) . "'>&laquo; First</a>";
-//             if( $paged > 1 && $showitems < $pages ) echo "<a href='" . get_pagenum_link( $paged - 1 ) . "'>&lsaquo; Previous</a>";
-//             for ( $i=1; $i <= $pages; $i++ )
-//             {
-//                 if ( 1 != $pages &&( !( $i >= $paged+$range+1 || $i <= $paged-$range-1 ) || $pages <= $showitems ) ) {
-//                     echo ( $paged == $i )? "<li class=\"page-item active\"><a class='page-link'>" . $i . "</a></li>" : "<li class='page-item'> <a href='" . get_pagenum_link( $i ) . "' class=\"page-link\">" . $i . "</a></li>";
-//                 }
-//             }
-//             if ( $paged < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href=\"".get_pagenum_link( $paged + 1 ) . "\">i class='fa-regular fa-back'></i></a></li>";
-//             if ( $paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages ) echo " <li class='page-item'><a class='page-link' href='" . get_pagenum_link( $pages ) . "'><i class='fa-regular fa-forward'></i></a></li>";
-//             echo "</ul></nav>\n";
-//         }
-// 	}
-// endif;
-
-
-/**
- * Change the label of the footnotes section below the content.
- */
-function ll_efn_change_label_markup( $output, $label ) {
-	return '<h6 class="mt-16 text-brand-red-pale">' . $label . '</h6>';
-}
-add_filter( 'efn_footnote_label', 'll_efn_change_label_markup', 10, 2 );
-
-/**
- * Disable the js 'qTip' functionality for better performance
- */
-function ll_efn_deregister_scripts() {
-	wp_deregister_style( 'qtipstyles' );
-	wp_deregister_script( 'imagesloaded' );
-	wp_deregister_script( 'qtip' );
-	wp_deregister_script( 'qtipcall' );
-}
-add_action( 'wp_enqueue_scripts', 'll_efn_deregister_scripts' );
-
-
 if ( ! function_exists( 'll_content_class' ) ) :
 	/**
 	 * Displays the class names for the post content wrapper.
@@ -560,66 +495,66 @@ endif;
 
 
 if ( ! function_exists( 'll_a11y_icon_link' ) ) :
-    function ll_a11y_icon_link( $link ) {
-        echo '<a href="'. $link['url'] .'" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-%2$s">
-            <i class="'. $link['icon'] .'"></i>
-            <span class="screen-reader-text">'. $link['label'] .'</span>
-        </a>';
-    }
+	function ll_a11y_icon_link( $link ) {
+		echo '<a href="'. $link['url'] .'" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-%2$s">
+			<i class="'. $link['icon'] .'"></i>
+			<span class="screen-reader-text">'. $link['label'] .'</span>
+		</a>';
+	}
 endif;
 
 
 if ( ! function_exists( 'll_footer_address' ) ) :
-    function ll_footer_address( $addr ) {
-        echo '<div class=" md:pt-2">
-            <address class="space-y-2 not-italic text-shadow shadow-neutral-900 print:text-shadow-none" property="address" typeof="PostalAddress">
-                <p class="street-address | font-head leading-none " property="streetAddress">' . $addr['street1'] . '</p>
-                <p class="locality | font-head leading-none "><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
-                <p class="font-semibold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>
-                <p class="font-semibold leading-none font-head" property="faxNumber">F: ' . ll_format_phone_number( $addr['fax'], 'beach' ) . '</p>
-            </address>
-        </div>';
-    }
+	function ll_footer_address( $addr ) {
+		echo '<div class=" md:pt-2">
+			<address class="space-y-2 not-italic text-shadow shadow-neutral-900 print:text-shadow-none" property="address" typeof="PostalAddress">
+				<p class="street-address | font-head leading-none " property="streetAddress">' . $addr['street1'] . '</p>
+				<p class="locality | font-head leading-none "><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
+				<p class="font-semibold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>
+				<p class="font-semibold leading-none font-head" property="faxNumber">F: ' . ll_format_phone_number( $addr['fax'], 'beach' ) . '</p>
+			</address>
+		</div>';
+	}
 endif;
 
 
 if ( ! function_exists( 'll_no_link_card' ) ) :
-    function ll_no_link_card( $card ) {
-        echo '<div>
-            <div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
-                <div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
-                    <div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-                        <div class="card-icon | text-[--card-front-icon]">
-                            <span class="fa-stack fa-2x">
-                                <i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-700"></i>
-                                <i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
-                            </span>
-                        </div>
-                        <h3 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h3>
-                    </div>
-                    <div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
-                        <h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $card['label'] . '</h6>
-                        <p class="text-center text-shadow">' . $card['backContent'] . '</p>
-                    </div>
-                </div>
-            </div>
-        </div>';
-    }
+	function ll_no_link_card( $card ) {
+		echo '<div>
+			<div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
+				<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
+					<div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+						<div class="card-icon | text-[--card-front-icon]">
+							<span class="fa-stack fa-2x">
+								<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-700"></i>
+								<i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
+							</span>
+						</div>
+						<h3 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h3>
+					</div>
+					<div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
+							<h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $card['label'] . '</h6>
+							<p class="text-center text-shadow">' . $card['backContent'] . '</p>
+					</div>
+				</div>
+			</div>
+		</div>';
+	}
 endif;
 
 
 if ( ! function_exists( 'll_render_hover_card' ) ) :
-    function ll_render_hover_card( $card ) {
-        echo '<div href="#" class="relative block bg-brand-blue-dark group">
-            <img alt="' . $card['imgAlt'] . '" src="' . $card['img'] . '" class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75 group-hover:opacity-25" />
+	function ll_render_hover_card( $card ) {
+		echo '<div href="#" class="relative block bg-brand-blue-dark group">
+			<img alt="' . $card['imgAlt'] . '" src="' . $card['img'] . '" class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75 group-hover:opacity-25" />
 
-            <div class="relative p-4 sm:p-6 lg:p-8">
-                <p class="text-xl font-semibold text-white font-head text-shadow shadow-neutral-700 hover:shadow-brand-blue-dark sm:text-2xl ">' . $card['label'] . '</p>
+			<div class="relative p-4 sm:p-6 lg:p-8">
+				<p class="text-xl font-semibold text-white font-head text-shadow shadow-neutral-700 hover:shadow-brand-blue-dark sm:text-2xl ">' . $card['label'] . '</p>
 
-                <div class="mt-8 sm:mt-4 lg:mt-8">
-                    <div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-brand-blue-dark group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>
-                </div>
-            </div>
-        </div>';
-    }
+				<div class="mt-8 sm:mt-4 lg:mt-8">
+					<div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-brand-blue-dark group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>
+				</div>
+			</div>
+		</div>';
+	}
 endif;

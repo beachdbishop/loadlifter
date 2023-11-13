@@ -20,11 +20,11 @@
 			<?php the_excerpt(); ?>
 		</div>
 		<footer class="mt-2 text-xs">
-        <?php if ( 'post' === get_post_type() ) {
-            ll_posted_on();
-            echo " | ";
-            ll_posted_by();
-        } ?>
+			<?php if ( 'post' === get_post_type() ) {
+				ll_posted_on();
+				echo " | ";
+				ll_posted_by();
+			} ?>
 		</footer>
 	</div>
 </article>

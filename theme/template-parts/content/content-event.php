@@ -14,7 +14,5 @@
 endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php ll_content_class( 'event px-2 md:container xl:px-4' ); ?>>
-
 	<?php the_content(); ?>
-
 </article>

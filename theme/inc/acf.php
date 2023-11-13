@@ -1,17 +1,17 @@
 <?php
 
-add_filter('acf/settings/save_json', 'll_json_save_point');
 function ll_json_save_point( $path ) {
-    $path = get_stylesheet_directory() . '/acf-json';
-    return $path;
+	$path = get_stylesheet_directory() . '/acf-json';
+	return $path;
 }
+add_filter('acf/settings/save_json', 'll_json_save_point');
 
-add_filter('acf/settings/load_json', 'll_json_load_point');
 function ll_json_load_point( $paths ) {
-    unset($paths[0]);
-    $paths[] = get_stylesheet_directory() . '/acf-json';
-    return $paths;
+	unset($paths[0]);
+	$paths[] = get_stylesheet_directory() . '/acf-json';
+	return $paths;
 }
+add_filter('acf/settings/load_json', 'll_json_load_point');
 
 /**
  * Site Meta Options Page

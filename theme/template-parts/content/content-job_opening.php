@@ -85,7 +85,7 @@ $f_applylink                    = get_field( 'apply_link' );
 			<aside class="grid__jobopening-c | md:mt-0 ">
 				<?php
 					// Now, include the sharing display
-                    get_template_part( 'template-parts/form/form', 'webshare' );
+          // get_template_part( 'template-parts/form/form', 'webshare' );
 				?>
 			</aside>
 		</div>

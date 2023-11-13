@@ -33,20 +33,18 @@ $callout_icon			= get_field( 'll_callout_icon' );
 $callout_body			= get_field( 'll_callout_body' ); // inner blocks?
 
 $inner_template = [
-    [ 'core/paragraph', [ 'content' => 'Elaborate on your callout' ] ],
+  [ 'core/paragraph', [ 'content' => 'Elaborate on your callout' ] ],
 ];
 ?>
 
 
 <div <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?> | not-prose bg-white border-2 rounded-br-2xl shadow-md dark:bg-neutral-800">
-    <p class="p-2 font-semibold llcallout-title ">
-        <?php if( !empty( $callout_icon ) ): ?>
-            <i class="<?php echo esc_attr( $callout_icon ); ?> mr-1"></i>
-        <?php endif; ?>
-        <?php echo esc_html( $callout_title ); ?>
-    </p>
-    <InnerBlocks
-        template="<?php echo esc_attr( wp_json_encode( $inner_template ) ); ?>"
-    />
+	<p class="p-2 font-semibold llcallout-title ">
+		<?php if( !empty( $callout_icon ) ): ?>
+			<i class="<?php echo esc_attr( $callout_icon ); ?> mr-1"></i>
+		<?php endif; ?>
+		<?php echo esc_html( $callout_title ); ?>
+	</p>
+	<InnerBlocks template="<?php echo esc_attr( wp_json_encode( $inner_template ) ); ?>" />
 </div>
 

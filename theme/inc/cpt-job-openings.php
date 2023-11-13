@@ -101,7 +101,7 @@ function ll_edit_job_opening_columns( $columns ) {
 		'cb' => '<input type="checkbox" />',
 		'title' => __( 'Opening' ),
 		'opening_status' => __( 'Status' ),
-        'apply_link' => __( 'Apply Link' ),
+		'apply_link' => __( 'Apply Link' ),
 		'time_status' => __( 'Time/Status' ),
 		'location' => __( 'Location(s)' ),
 		'date' => __( 'Date' )
@@ -205,33 +205,33 @@ function ll_pop_job_opening_column( $column, $post_id ) {
 			$status = get_post_meta( $post_id, 'opening_status', true );
 
 			if ( $status === '1' )
-			echo '<span style="color: #15803d"><span class="dashicons dashicons-visibility"></span> ' . __( 'Open', 'loadlifter' ) . '</span>';
+				echo '<span style="color: #15803d"><span class="dashicons dashicons-visibility"></span> ' . __( 'Open', 'loadlifter' ) . '</span>';
 
 			if ( $status === '0' )
-			echo '<span style="color: #737373"><span class="dashicons dashicons-hidden"></span><em> ' . __( 'Closed', 'loadlifter' ) . '</em></span>';
+				echo '<span style="color: #737373"><span class="dashicons dashicons-hidden"></span><em> ' . __( 'Closed', 'loadlifter' ) . '</em></span>';
 
 			break;
 
-        case 'apply_link' :
-            $link = get_post_meta( $post_id, 'apply_link', true );
-            $truncatedlink = substr( $link, -18 );
+		case 'apply_link' :
+			$link = get_post_meta( $post_id, 'apply_link', true );
+			$truncatedlink = substr( $link, -18 );
 
-            if ( empty( $link ) )
-            echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
+			if ( empty( $link ) )
+				echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
 
-            if ( !empty( $link ) )
-            echo '<a href="' . $link . '" target="_blank"><span class="dashicons dashicons-external"></span> &hellip;' . $truncatedlink . '</a>';
+			if ( !empty( $link ) )
+				echo '<a href="' . $link . '" target="_blank"><span class="dashicons dashicons-external"></span> &hellip;' . $truncatedlink . '</a>';
 
-            break;
+			break;
 
 		case 'location' :
 			$locations = get_post_meta( $post_id, 'location', true );
 
 			if ( empty( $locations ) )
-			echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
+				echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
 
 			if ( !empty( $locations ) )
-			echo '<span style="text-transform: capitalize">' . implode( ', ', $locations ) . '</span>';
+				echo '<span style="text-transform: capitalize">' . implode( ', ', $locations ) . '</span>';
 
 			break;
 
@@ -239,13 +239,13 @@ function ll_pop_job_opening_column( $column, $post_id ) {
 			$time_status = get_post_meta( $post_id, 'time_status', true );
 
 			if ( empty( $time_status ) )
-			echo '<em>' . __( 'Unknown', 'loadlifter' ) . '</em>';
+				echo '<em>' . __( 'Unknown', 'loadlifter' ) . '</em>';
 
 			if ( $time_status === 'fulltime' )
-			echo '<span>Full-Time</span>';
+				echo '<span>Full-Time</span>';
 
 			if ( $time_status === 'parttime' )
-			echo '<span>Part-Time</span>';
+				echo '<span>Part-Time</span>';
 
 			break;
 
@@ -295,7 +295,7 @@ function ll_dps_include_locations( $output, $original_atts, $image, $title, $dat
 	$locations = implode( ', ', $locations );
 
 	// Add span around it for styling
-	$locations = '<span class="job-opening-location | text-neutral-500 font-bold text-sm ml-2 uppercase">' . $locations . '</span>';
+	$locations = '<span class="job-opening-location | text-neutral-600 font-bold text-sm ml-2 uppercase dark:text-neutral-400">' . $locations . '</span>';
 
 	// Insert it into the output wherever you'd like it
 	$output = '<' . $inner_wrapper . ' class="' . implode( ' ', $class ) . '">' . $image . $title . $locations . $date . $author . $category_display_text . $excerpt . $content . '</' . $inner_wrapper . '>';

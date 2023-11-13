@@ -36,10 +36,10 @@ get_header();
 
 					<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
-                    <h2>Testing deprecated shortcode</h2>
-                    <p><?php echo do_shortcode( '[rwdad link=”https://beachfleischman.com/employee-retention-credit-consulting/” image=”https://beachfleischman.com/wp-content/uploads/2021/06/2021-0624-ERC-Feature-Image.jpg” text=”Employee Retention Credit Consulting” button=”We can help” color=”gray” width=”full” /]' ); ?></p>
+					<h2>Testing deprecated shortcode</h2>
+					<p><?php echo do_shortcode( '[rwdad link=”https://beachfleischman.com/employee-retention-credit-consulting/” image=”https://beachfleischman.com/wp-content/uploads/2021/06/2021-0624-ERC-Feature-Image.jpg” text=”Employee Retention Credit Consulting” button=”We can help” color=”gray” width=”full” /]' ); ?></p>
 
-                    <p>The above shortcode should not show up at all.</p>
+					<p>The above shortcode should not show up at all.</p>
 
 					<div class="not-prose">
 						<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>

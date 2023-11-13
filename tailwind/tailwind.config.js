@@ -199,6 +199,8 @@ module.exports = {
     }
   ],
 	corePlugins: {
+    // Disable default tailwind aspect-* classes
+    aspectRatio: false,
 		// Disable Preflight base styles in CSS targeting the editor.
 		preflight: includePreflight,
 	},
@@ -214,7 +216,7 @@ module.exports = {
     require('@shrutibalasa/tailwind-grid-auto-fit'),
 
     // via: https://www.hyperui.dev/blog/text-shadow-with-tailwindcss
-    plugin(function ({ matchUtilities, theme }) {
+    ({ matchUtilities, theme }) => {
       matchUtilities(
         {
           'text-shadow': (value) => ({
@@ -223,7 +225,34 @@ module.exports = {
         },
         { values: theme('textShadow') }
       )
-    }),
+    },
+
+    // via: https://www.viget.com/articles/adding-safari-14-support-to-tailwinds-aspect-ratio/
+    ({ matchUtilities, theme }) => {
+      matchUtilities(
+        {
+          'aspect': (value) => ({
+            '@supports (aspect-ratio: 1 / 1)': {
+              aspectRatio: value,
+            },
+            '@supports not (aspect-ratio: 1 / 1)': {
+              '&::before': {
+                content: '""',
+                float: 'left',
+                paddingTop: `calc(100% / (${value}))`,
+              },
+              '&::after': {
+                clear: 'left',
+                content: '""',
+                display: 'block',
+              }
+            },
+          }),
+        },
+        { values: theme('aspectRatio') }
+      )
+    },
+
     function ({ addVariant }) {
       addVariant('children', '&>*')
     },

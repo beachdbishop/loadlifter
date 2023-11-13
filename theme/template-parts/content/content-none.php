@@ -12,15 +12,15 @@
 <section>
 	<header>
 		<h1 class="page-title">
-            <?php
-                printf(
+						<?php
+								printf(
 					/* translators: 1: search result title. 2: search term. */
 					'<h1 class="page-title">%1$s <span>%2$s</span></h1>',
 					esc_html__( 'Search results for:', '_tw' ),
 					get_search_query()
 				);
-            ?>
-        </h1>
+						?>
+				</h1>
 	</header>
 
 	<div <?php ll_content_class( 'page-content' ); ?>>

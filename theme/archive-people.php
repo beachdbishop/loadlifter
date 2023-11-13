@@ -15,26 +15,26 @@
 get_header();
 
 $args = [
-	'post_type' 				=> 'people',
-	'meta_query'				=> [
-        'relation' => 'AND',
+	'post_type' => 'people',
+	'meta_query' => [
+		'relation' => 'AND',
 		'level_clause' => [
-			'key'		=> 'll_people_level',
-			'value'		=> '400',
+			'key'	=> 'll_people_level',
+			'value'	=> '400',
 			'compare'	=> '<=',
 		],
-        'lastname_clause' => [
-            'key'       => 'll_people_last_name',
-            'compare'   => 'EXISTS',
-        ],
+		'lastname_clause' => [
+			'key' => 'll_people_last_name',
+			'compare' => 'EXISTS',
+		],
 	],
-	'meta_key'					=> 'll_people_last_name',
-	'post_status' 				=> 'publish',
-	'posts_per_page'			=> -1,
-	'posts_per_archive_page'	=> -1,
-	'order' 					=> 'ASC',
-	'orderby' 					=> 'meta_value',
-	'wp_grid_builder'			=> 'wpgb-content-1',
+	'meta_key' => 'll_people_last_name',
+	'post_status' => 'publish',
+	'posts_per_page' => -1,
+	'posts_per_archive_page'=> -1,
+	'order' => 'ASC',
+	'orderby' => 'meta_value',
+	'wp_grid_builder'	=> 'wpgb-content-1',
 ];
 /* Sort a query by multiple custom fields */
 /* via: https://wordpress.stackexchange.com/a/305930 */
@@ -46,7 +46,7 @@ $peopleQuery = new WP_Query( $args );
 	<main id="primary" class="page-people | bg-white dark:bg-neutral-900">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 lg:pt-8 lg:pb-12' ); ?>>
-			<div class="px-2 md:container xl:px-4">
+			<div class="px-2 md:container lg:px-[16px]">
 				<?php if ( function_exists( 'bcn_display' ) ) { ?>
 					<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 				<?php } ?>

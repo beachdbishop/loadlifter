@@ -2,7 +2,6 @@
 
 namespace Loadlifter\Blocks;
 
-add_action( 'init', __NAMESPACE__ . '\load_blocks', 5 );
 function load_blocks() {
 	$theme  = wp_get_theme();
 	$blocks = get_blocks();
@@ -10,8 +9,8 @@ function load_blocks() {
 		if ( file_exists( get_template_directory() . '/blocks/' . $block . '/block.json' ) ) {
 			register_block_type( get_template_directory() . '/blocks/' . $block . '/block.json' );
 			/* Do not register and enqueue style.css files */
-            /* Instead put their classes in the global tailwind components.css file */
-            // wp_register_style( 'block-' . $block, get_template_directory_uri() . '/blocks/' . $block . '/style.css', null, $theme->get( 'Version' ) );
+			/* Instead put their classes in the global tailwind components.css file */
+			// wp_register_style( 'block-' . $block, get_template_directory_uri() . '/blocks/' . $block . '/style.css', null, $theme->get( 'Version' ) );
 
 			if ( file_exists( get_template_directory() . '/blocks/' . $block . '/init.php' ) ) {
 				include_once get_template_directory() . '/blocks/' . $block . '/init.php';
@@ -19,6 +18,7 @@ function load_blocks() {
 		}
 	}
 }
+add_action( 'init', __NAMESPACE__ . '\load_blocks', 5 );
 
 
 

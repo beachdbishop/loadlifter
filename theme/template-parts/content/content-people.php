@@ -39,7 +39,7 @@ if ( $peepauthor ) {
 ?>
 
 <article <?php post_class( 'py-4 md:py-6 lg:py-8' ); ?>>
-	<div class="px-2 md:container xl:px-4">
+	<div class="px-2 md:container lg:px-[16px]">
 
 		<?php if ( function_exists( 'bcn_display' ) ) { ?>
 			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
@@ -49,8 +49,8 @@ if ( $peepauthor ) {
 
 			<div class="peepgrid-a |  pb-8 md:pt-2 md:pb-0 md:order-2">
 				<div class="headshot-wrapper">
-                    <?php ll_people_headshot(); ?>
-                </div>
+										<?php ll_people_headshot(); ?>
+								</div>
 			</div>
 
 			<div class="peepgrid-b |  md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
@@ -137,7 +137,7 @@ if ( $peepauthor ) {
 
 <?php if ( $peeppostcount > 0 ) : ?>
 	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 md:py-6 lg:py-8 dark:bg-neutral-950' ); ?>>
-		<div class="px-2 md:container xl:px-4">
+		<div class="px-2 md:container lg:px-[16px]">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold dark:text-neutral-300">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
 			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="dps-grid-4max" layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
 		</div>

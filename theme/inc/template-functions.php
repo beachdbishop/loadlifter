@@ -7,9 +7,9 @@
 
 
 function r( $var ) {
-    echo '<pre>';
-    print_r( $var );
-    echo '</pre>';
+	echo '<pre>';
+	print_r( $var );
+	echo '</pre>';
 }
 
 /**
@@ -30,7 +30,7 @@ add_action( 'wp_head', 'll_pingback_header' );
  * @return int (Maybe) modified excerpt length.
  */
 function wpdocs_custom_excerpt_length( $length ) {
-    return 20;
+	return 20;
 }
 add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
@@ -43,9 +43,9 @@ add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 function ll_is_tree( $pid ) { // $pid = The ID of the page we're looking for pages underneath
 	global $post; // load details about this page
 	if ( is_page() && ( $post->post_parent==$pid || is_page( $pid ) ) )
-        return true; // we're at the page or at a sub page
+		return true; // we're at the page or at a sub page
 	else
-        return false; // we're elsewhere
+		return false; // we're elsewhere
 }
 
 
@@ -106,16 +106,16 @@ function ll_add_post_source_column( $columns ) {
 add_filter( 'manage_posts_columns', 'll_add_post_source_column' );
 
 function ll_posts_columns_custom_order( $columns ) {
-    $custom_col_order = [
-        'cb' => $columns['cb'],
-        'title' => $columns['title'],
-        'll_id' => $columns['ll_id'],
-        'll_source' => $columns['ll_source'],
-        'categories' => $columns['categories'],
-        'date' => $columns['date'],
-    ];
+	$custom_col_order = [
+		'cb' => $columns['cb'],
+		'title' => $columns['title'],
+		'll_id' => $columns['ll_id'],
+		'll_source' => $columns['ll_source'],
+		'categories' => $columns['categories'],
+		'date' => $columns['date'],
+	];
 
-    return $custom_col_order;
+	return $custom_col_order;
 }
 add_filter( 'manage_post_posts_columns', 'll_posts_columns_custom_order', 10 );
 
@@ -169,51 +169,10 @@ add_filter( 'body_class', 'll_body_class' );
 
 
 /**
- * Get taxonomies terms links.
- *
- * @see get_object_taxonomies()
- *
- * via: https://developer.wordpress.org/reference/functions/get_the_terms/#comment-405
- */
-// function wpdocs_custom_taxonomies_terms_links() {
-// 	// Get post by post ID.
-// 	if ( ! $post = get_post() ) {
-// 		return '';
-// 	}
-
-// 	// Get post type by post.
-// 	$post_type = $post->post_type;
-
-// 	// Get post type taxonomies.
-// 	$taxonomies = get_object_taxonomies( $post_type, 'objects' );
-
-// 	$out = array();
-
-// 	foreach ( $taxonomies as $taxonomy_slug => $taxonomy ){
-
-// 		// Get the terms related to post.
-// 		$terms = get_the_terms( $post->ID, $taxonomy_slug );
-
-// 		if ( ! empty( $terms ) ) {
-// 			$out[] = "<h2>" . $taxonomy->label . "</h2>\n<ul>";
-// 			foreach ( $terms as $term ) {
-// 				$out[] = sprintf( '<li><a href="%1$s">%2$s</a></li>',
-// 					esc_url( get_term_link( $term->slug, $taxonomy_slug ) ),
-// 					esc_html( $term->name )
-// 				);
-// 			}
-// 			$out[] = "\n</ul>\n";
-// 		}
-// 	}
-// 	return implode( '', $out );
-// }
-
-
-/**
  * Using a shortcode to conditionally enqueue the a11y-slider js
  */
 function ll_a11y_slider_shortcode() {
-    return '';
+	return '';
 }
 add_shortcode( 'a11yslider', 'll_a11y_slider_shortcode' );
 
@@ -301,9 +260,9 @@ function ll_dps_exclude_displayed_posts( $args ) {
  * @see https://displayposts.com/2019/01/03/exclude-posts-already-displayed/
  */
 function ll_dps_add_posts_to_exclusion_list( $output ) {
-  global $dps_excluded_posts;
-  $dps_excluded_posts[] = get_the_ID();
-  return $output;
+	global $dps_excluded_posts;
+	$dps_excluded_posts[] = get_the_ID();
+	return $output;
 }
 // add_filter( 'display_posts_shortcode_output', 'll_dps_add_posts_to_exclusion_list' );
 
@@ -369,10 +328,10 @@ class LL_DPS_Customizations {
 
 		$output = '<table class="' . join( ' ', $classes ) . '">';
 		$output .= '<thead><tr role="row" class="text-left row-1">';
-        $output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">Title</th>';
-        $output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">URL</th>';
-        $output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">Date</th>';
-        $output .= '</tr></thead>';
+			$output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">Title</th>';
+			$output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">URL</th>';
+			$output .= '<th class="px-4 py-2 whitespace-nowrap text-neutral-900">Date</th>';
+			$output .= '</tr></thead>';
 		$output .= '<tbody class="divide-y divide-neutral-200">';
 		return $output;
 	}
@@ -444,9 +403,9 @@ function ll_no_widows( $text, $minWords = 3) {
 
 
 function ll_is_plural( $target ) {
-    if ( count( $target ) > 1) {
-        return true;
-    }
+	if ( count( $target ) > 1) {
+		return true;
+	}
 }
 
 
@@ -456,27 +415,27 @@ function ll_is_plural( $target ) {
  * https://stackoverflow.com/questions/18612872/get-the-last-word-of-a-string
  */
 function ll_wrap_last_word( $string ) {
-    // Breaks string to pieces
-    $pieces = explode(" ", $string);
-    // Modifies the last word
-    $pieces[count($pieces)-1] = '<span class="font-bold">' . $pieces[count($pieces)-1] . '</span>';
-    // Returns the glued pieces
-    return implode(" ", $pieces);
+	// Breaks string to pieces
+	$pieces = explode(" ", $string);
+	// Modifies the last word
+	$pieces[count($pieces)-1] = '<span class="font-bold">' . $pieces[count($pieces)-1] . '</span>';
+	// Returns the glued pieces
+	return implode(" ", $pieces);
 }
 
 
 function ll_format_phone_number( $number, $output = null ) {
-    $number = preg_replace( "/[^0-9]/", "", $number );
+	$number = preg_replace( "/[^0-9]/", "", $number );
 
-    switch( $output ) {
-        case 'us':
-            return preg_replace( "/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{4})/", "$1 ($2) $3-$4", $number );
-            break;
-        case 'beach':
-            return preg_replace( "/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{4})/", "$2.$3.$4", $number );
-            break;
-        default:
-            return $number;
-            break;
-    }
+	switch( $output ) {
+		case 'us':
+			return preg_replace( "/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{4})/", "$1 ($2) $3-$4", $number );
+			break;
+		case 'beach':
+			return preg_replace( "/([0-9]{1})([0-9]{3})([0-9]{3})([0-9]{4})/", "$2.$3.$4", $number );
+			break;
+		default:
+			return $number;
+			break;
+	}
 }

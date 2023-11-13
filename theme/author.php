@@ -51,7 +51,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 <main id="primary" class="py-4 bg-white dark:bg-neutral-900 md:py-6 lg:py-8 print:py-8">
 
-    <div class="px-2 md:container xl:px-4">
+    <div class="px-2 md:container lg:px-[16px]">
         <?php if (function_exists('bcn_display') && !is_front_page()) { ?>
             <div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
         <?php } ?>

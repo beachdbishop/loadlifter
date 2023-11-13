@@ -14,7 +14,7 @@
 endif; ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 md:py-6 lg:py-8' ); ?>>
-	<div class="px-2 md:container xl:px-4">
+	<div class="px-2 md:container lg:px-[16px]">
 
 		<?php if ( function_exists( 'bcn_display' ) ) { ?>
 			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
@@ -49,7 +49,7 @@ endif; ?>
 						)
 					);
 
-                    get_template_part( 'template-parts/form/form', 'webshare' );
+					// get_template_part( 'template-parts/form/form', 'webshare' );
 					?>
 					<div class="clear-both">&nbsp;</div>
 					<?php
@@ -70,8 +70,8 @@ endif; ?>
 						[
 							'limit'                         => 3,
 							'extra_css_class'               => 'container mx-0 print:hidden',
-                            'generate_missing_thumbnails'   => false,
-                            'recent'                        => '18 month',
+														'generate_missing_thumbnails'   => false,
+														'recent'                        => '18 month',
 						]
 					);
 				}
@@ -88,10 +88,10 @@ endif; ?>
 						'show_thumb' => true,
 					) );
 
-                    ll_posted_on();
+										ll_posted_on();
 
 					ll_entry_footer();
-                    ?>
+										?>
 
 				</div>
 				<?php endif; ?>
@@ -100,8 +100,8 @@ endif; ?>
 				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 
 				<div id="contact" class="container-contact-form not-prose">
-                    <?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
-                </div>
+										<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+								</div>
 			</aside>
 		</div>
 

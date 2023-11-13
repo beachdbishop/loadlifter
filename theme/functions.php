@@ -7,109 +7,109 @@
  * @package Load_Lifter
  */
 
-if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
-    define( 'LL_COMPANY_LEGAL_NAME', 'BeachFleischman PLLC' );
-}
-if ( ! defined( 'LL_COMPANY_NICE_NAME' ) ) {
-    define( 'LL_COMPANY_NICE_NAME', 'BeachFleischman' );
+if ( ! defined( 'LL_VERSION' ) ) {
+	/*
+		* Set the theme’s version number.
+		*
+		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
+		*/
+	define( 'LL_VERSION', '2.4.3' );
 }
 
-if ( ! defined( 'LL_VERSION' ) ) {
-    /*
-     * Set the theme’s version number.
-     *
-     * This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
-     */
-    define( 'LL_VERSION', '2.4.2' );
+if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
+	define( 'LL_COMPANY_LEGAL_NAME', 'BeachFleischman PLLC' );
+}
+if ( ! defined( 'LL_COMPANY_NICE_NAME' ) ) {
+	define( 'LL_COMPANY_NICE_NAME', 'BeachFleischman' );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
-    /*
-     * Set Tailwind Typography classes for the front end, block editor and classic editor using the constant below.
-     *
-     * For the front end, these classes are added by the `_tw_content_class` function. You will see that function used everywhere an `entry-content` or `page-content` class has been added to a wrapper element.
-     *
-     * For the block editor, these classes are converted to a JavaScript array and then used by the `./javascript/block-editor.js` file, which adds them to the appropriate elements in the block editor (and adds them again when they’re removed.)
-     *
-     * For the classic editor (and anything using TinyMCE, like Advanced Custom Fields), these classes are added to TinyMCE’s body class when it initializes.
-     */
-    define(
-        'LL_TYPOGRAPHY_CLASSES',
-        'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-primary lg:prose-xl dark:prose-invert'
-    );
+	/*
+		* Set Tailwind Typography classes for the front end, block editor and classic editor using the constant below.
+		*
+		* For the front end, these classes are added by the `_tw_content_class` function. You will see that function used everywhere an `entry-content` or `page-content` class has been added to a wrapper element.
+		*
+		* For the block editor, these classes are converted to a JavaScript array and then used by the `./javascript/block-editor.js` file, which adds them to the appropriate elements in the block editor (and adds them again when they’re removed.)
+		*
+		* For the classic editor (and anything using TinyMCE, like Advanced Custom Fields), these classes are added to TinyMCE’s body class when it initializes.
+		*/
+	define(
+		'LL_TYPOGRAPHY_CLASSES',
+		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-primary lg:prose-xl dark:prose-invert'
+	);
 }
 
 if ( ! defined( 'LL_LP_TEMPLATES' ) ) {
-    define(
-        'LL_LP_TEMPLATES',
-        [ 'tpl-landing-page-bare.php', 'tpl-landing-page-cyber.php', 'tpl-landing-page.php' ]
-    );
+	define(
+		'LL_LP_TEMPLATES',
+		[ 'tpl-landing-page-bare.php', 'tpl-landing-page-cyber.php', 'tpl-landing-page.php' ]
+	);
 }
 
 if ( ! function_exists( 'll_setup' ) ) :
-    /**
-     * Sets up theme defaults and registers support for various WordPress features.
-     *
-     * Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support for post thumbnails.
-     */
-    function ll_setup() {
-        /*
-         * Make theme available for translation.
-         * Translations can be filed in the /languages/ directory. If you're building a theme based on Load Lifter, use a find and replace to change 'loadlifter' to the name of your theme in all the template files.
-         */
-        load_theme_textdomain( 'loadlifter', get_template_directory() . '/languages' );
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which runs before the init hook. The init hook is too late for some features, such as indicating support for post thumbnails.
+	 */
+	function ll_setup() {
+		/*
+			* Make theme available for translation.
+			* Translations can be filed in the /languages/ directory. If you're building a theme based on Load Lifter, use a find and replace to change 'loadlifter' to the name of your theme in all the template files.
+			*/
+		load_theme_textdomain( 'loadlifter', get_template_directory() . '/languages' );
 
-        add_theme_support( 'automatic-feed-links' );
-        add_theme_support( 'title-tag' );
-        add_theme_support( 'post-thumbnails' );
-        add_theme_support(
-            'html5',
-            array(
-                'search-form',
-                'gallery',
-                'caption',
-                'style',
-                'script',
-            )
-        );
+		add_theme_support( 'automatic-feed-links' );
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'post-thumbnails' );
+		add_theme_support(
+			'html5',
+			array(
+				'search-form',
+				'gallery',
+				'caption',
+				'style',
+				'script',
+			)
+		);
 
-        register_nav_menus(
-            array(
-                'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
-                'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
-                'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
-                'll_submenu_industries' => __( 'Industries submenu', 'loadlifter' ),
-                'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
-                'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
-            )
-        );
+		register_nav_menus(
+			array(
+				'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
+				'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
+				'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
+				'll_submenu_industries' => __( 'Industries submenu', 'loadlifter' ),
+				'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
+				'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
+			)
+		);
 
-        add_theme_support( 'responsive-embeds' );
-        add_theme_support( 'disable-custom-font-sizes' );
-        // Add theme support for selective refresh for widgets.
-        // add_theme_support( 'customize-selective-refresh-widgets' );
-        add_theme_support( 'editor-styles' );
-        add_editor_style( 'style-editor.css' );
+		add_theme_support( 'responsive-embeds' );
+		add_theme_support( 'disable-custom-font-sizes' );
+		// Add theme support for selective refresh for widgets.
+		// add_theme_support( 'customize-selective-refresh-widgets' );
+		add_theme_support( 'editor-styles' );
+		add_editor_style( 'style-editor.css' );
 
-        add_post_type_support( 'page', 'excerpt' );
+		add_post_type_support( 'page', 'excerpt' );
 
-        add_filter( 'feed_links_show_comments_feed', '__return_false' );
+		add_filter( 'feed_links_show_comments_feed', '__return_false' );
 
-        remove_theme_support( 'block-templates' ); // <-- FSE?
-        remove_action( 'wp_head', 'rsd_link' );
-        remove_action( 'wp_head', 'wp_generator' );
-        remove_action( 'wp_head', 'index_rel_link' );
-        remove_action( 'wp_head', 'wlwmanifest_link' );
-        remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-        remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-        remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
-        remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-        remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-        remove_action( 'wp_head', 'print_emoji_detection_script', 7);
-        remove_action( 'wp_print_styles', 'print_emoji_styles');
-        remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-        remove_action( 'admin_print_styles', 'print_emoji_styles' );
-    }
+		remove_theme_support( 'block-templates' ); // <-- FSE?
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'wp_head', 'index_rel_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7);
+		remove_action( 'wp_print_styles', 'print_emoji_styles');
+		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+		remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	}
 endif;
 add_action( 'after_setup_theme', 'll_setup' );
 
@@ -122,9 +122,9 @@ add_action( 'after_setup_theme', 'll_setup' );
  * @global int $content_width
  */
 function ll_content_width() {
-    $GLOBALS['content_width'] = apply_filters( 'll_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'll_content_width', 960 );
 }
-add_action( 'after_setup_theme', 'll_content_width', 0 );
+// add_action( 'after_setup_theme', 'll_content_width', 0 );
 
 /**
  * Enqueue scripts and styles.
@@ -135,55 +135,55 @@ add_action( 'after_setup_theme', 'll_content_width', 0 );
 // add_action( 'admin_init', 'll_remove_default_block_styles' );
 
 function ll_scripts() {
-    wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
-    wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
-    if ( get_field( 'll_postpage_css' ) ) {
-        $inline_css = get_field( 'll_postpage_css' );
-        wp_add_inline_style( 'loadlifter-style', $inline_css );
-    }
+	wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
+	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
+	if ( get_field( 'll_postpage_css' ) ) {
+		$inline_css = get_field( 'll_postpage_css' );
+		wp_add_inline_style( 'loadlifter-style', $inline_css );
+	}
 
-    wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
-    wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
-    wp_register_script( 'apixibot-csc', get_template_directory_uri() . '/js/apixibot-csc-loader.min.js', [ 'gcharts' ], LL_VERSION, true );
-    wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
+	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
+	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
+	wp_register_script( 'apixibot-csc', get_template_directory_uri() . '/js/apixibot-csc-loader.min.js', [ 'gcharts' ], LL_VERSION, true );
+	wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
 
-    wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
+	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
 
-    if ( !is_page_template( LL_LP_TEMPLATES ) ) {
-        wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
-    }
+	if ( !is_page_template( LL_LP_TEMPLATES ) ) {
+		wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
+	}
 
-    if ( is_page( array( 'calc-test', 'cost-segregation-calculator' ) ) ) {
-        wp_enqueue_script( 'gcharts' );
-        wp_enqueue_script( 'apixibot-csc' );
-    }
+	if ( is_page( array( 'calc-test', 'cost-segregation-calculator' ) ) ) {
+		wp_enqueue_script( 'gcharts' );
+		wp_enqueue_script( 'apixibot-csc' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
 
 
 function ll_preload_assets() {
-    // echo '<link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop-small.jpg" media="(max-width: 767px)" />
-    // <link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop.jpg" media="(min-width: 768px)" />';
-    // echo '<link rel="preload" as="script" href="https://js.hsforms.net/forms/v2.js?ver=' . wp_get_theme()->get('Version') . '" />';
+	// echo '<link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop-small.jpg" media="(max-width: 767px)" />
+	// <link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop.jpg" media="(min-width: 768px)" />';
+	// echo '<link rel="preload" as="script" href="https://js.hsforms.net/forms/v2.js?ver=' . wp_get_theme()->get('Version') . '" />';
 }
 
 
 function ll_guten_scripts() {
-    // wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
+	// wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
 }
 // add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
 
 
 function ll_disable_wp_links_menu() {
-    remove_menu_page( 'link-manager.php' );
+	remove_menu_page( 'link-manager.php' );
 }
 
 function ll_disable_wp57_menu_hover() {
-    echo '<style>#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover { box-shadow: none !important; }</style>';
+	echo '<style>#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover { box-shadow: none !important; }</style>';
 }
 
 function ll_enable_monospace_acf_textarea() {
-    echo '<style>.acf-input textarea { font-family: "Fira Code", monospace; background-color: #171717; color: #a3e635; line-height: 1.2; }</style>';
+	echo '<style>.acf-input textarea { font-family: "Fira Code", monospace; background-color: #171717; color: #a3e635; line-height: 1.2; }</style>';
 }
 
 /**
@@ -196,23 +196,23 @@ add_filter( 'yarpp_enqueue_thumbnails_style', '__return_false' );
 
 
 switch( wp_get_environment_type() ) {
-    case 'local':
-        add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-        add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-        break;
+	case 'local':
+		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+		break;
 
-    case 'staging':
-        add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-        add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-        break;
+	case 'staging':
+		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+		break;
 
-    default:
-        add_action( 'admin_menu', 'll_disable_wp_links_menu' );
-        add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-        add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-        /* Hide Jetpack upsell ads */
-        add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
-        break;
+	default:
+		add_action( 'admin_menu', 'll_disable_wp_links_menu' );
+		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
+		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+		/* Hide Jetpack upsell ads */
+		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
+		break;
 }
 
 
@@ -220,11 +220,11 @@ switch( wp_get_environment_type() ) {
  * Enqueue CSS and JS for A11y Slider when shortcode is present
  */
 function ll_enq_a11y_slider_assets() {
-    global $post;
-    if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'a11yslider' ) ) {
-        wp_enqueue_style( 'a11y-slider-base' );
-        wp_enqueue_script( 'a11y-slider' );
-    }
+	global $post;
+	if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'a11yslider' ) ) {
+		wp_enqueue_style( 'a11y-slider-base' );
+		wp_enqueue_script( 'a11y-slider' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
 
@@ -232,16 +232,16 @@ add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
  * Enqueue the block editor script.
  */
 function ll_enqueue_block_editor_script() {
-    wp_enqueue_script(
-        'll-editor',
-        get_template_directory_uri() . '/js/block-editor.min.js',
-        array(
-            'wp-blocks',
-            'wp-edit-post',
-        ),
-        LL_VERSION,
-        true
-    );
+	wp_enqueue_script(
+		'll-editor',
+		get_template_directory_uri() . '/js/block-editor.min.js',
+		array(
+			'wp-blocks',
+			'wp-edit-post',
+		),
+		LL_VERSION,
+		true
+	);
 }
 add_action( 'enqueue_block_editor_assets', 'll_enqueue_block_editor_script' );
 
@@ -251,19 +251,19 @@ add_action( 'enqueue_block_editor_assets', 'll_enqueue_block_editor_script' );
  * Tailwind Typography classes from _S_TYPOGRAPHY_CLASSES.
  */
 function ll_enqueue_typography_script() {
-    if ( is_admin() ) {
-        wp_enqueue_script(
-            'll-typography',
-            get_template_directory_uri() . '/js/tailwind-typography-classes.min.js',
-            array(
-                'wp-blocks',
-                'wp-edit-post',
-            ),
-            LL_VERSION,
-            true
-        );
-        wp_add_inline_script( 'll-typography', "tailwindTypographyClasses = '" . esc_attr( LL_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
-    }
+	if ( is_admin() ) {
+		wp_enqueue_script(
+			'll-typography',
+			get_template_directory_uri() . '/js/tailwind-typography-classes.min.js',
+			array(
+					'wp-blocks',
+					'wp-edit-post',
+			),
+			LL_VERSION,
+			true
+		);
+		wp_add_inline_script( 'll-typography', "tailwindTypographyClasses = '" . esc_attr( LL_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
+	}
 }
 add_action( 'enqueue_block_assets', 'll_enqueue_typography_script' );
 
@@ -274,8 +274,8 @@ add_action( 'enqueue_block_assets', 'll_enqueue_typography_script' );
  * @return array
  */
 function ll_tinymce_add_class( $settings ) {
-    $settings['body_class'] = LL_TYPOGRAPHY_CLASSES;
-    return $settings;
+	$settings['body_class'] = LL_TYPOGRAPHY_CLASSES;
+	return $settings;
 }
 add_filter( 'tiny_mce_before_init', 'll_tinymce_add_class' );
 

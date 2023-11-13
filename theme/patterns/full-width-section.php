@@ -12,8 +12,8 @@
  */
 ?>
 <!-- wp:group {"align":"full","backgroundColor":"brand-gray-faint","className":"full-bleed ll-equal-vert-padding","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull full-bleed ll-equal-vert-padding has-brand-gray-faint-background-color has-background"><!-- wp:group {"className":"container mx-auto px-1 md:px-0","layout":{"type":"default"}} -->
-<div class="container px-1 mx-auto wp-block-group md:px-0"><!-- wp:heading -->
+<div class="wp-block-group alignfull full-bleed ll-equal-vert-padding has-brand-gray-faint-background-color has-background"><!-- wp:group {"className":"px-2  lg:px-[16px]","layout":{"type":"default"}} -->
+<div class="px-2 wp-block-group lg:px-[16px]"><!-- wp:heading -->
 <h2><?php echo 'Section Title'; ?></h2>
 <!-- /wp:heading -->
 

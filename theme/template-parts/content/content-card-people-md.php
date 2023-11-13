@@ -42,7 +42,7 @@ $peep_level = get_field( 'll_people_level' );
 		echo sprintf( '<p class="text-lg leading-tight text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
 	}
 
-    if ( $peep_level['value'] != 800 ) {
+	if ( $peep_level['value'] != 800 ) {
 		if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
 			echo '<footer class="mt-2 text-sm text-center text-neutral-600 children:block children:px-2 dark:text-neutral-400">';
 				$peep_department = get_field_object( 'll_people_department' );
