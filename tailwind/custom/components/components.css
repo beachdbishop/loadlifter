@@ -302,6 +302,12 @@ p[class*="is-style-note-"] {
 }
 
 
+/* Openings */
+.container-openings-list {
+	@apply rounded-lg p-8 mt-8 border-2 border-solid border-neutral-500 bg-white dark:bg-neutral-900;
+}
+
+
 /* Scrollbar */
 /* via: https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/ */
 .styled-scrollbars {

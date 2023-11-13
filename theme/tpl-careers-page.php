@@ -121,11 +121,11 @@ if ('local' === wp_get_environment_type()) {
             <?php echo ll_page_hero( $page_title, $page_excerpt ); ?>
 
             <article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-                <div class="px-2 md:container xl:px-4">
+                <div class="px-2 md:container lg:px-[16px]">
 
                     <?php if (is_page('career-opps')) : ?>
                         <section class="full-bleed ">
-                            <div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm lg:gap-4 md:container xl:px-4">
+                            <div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm lg:gap-4 md:container lg:px-[16px]">
                                 <span>On this page:</span>
                                 <a class="underline hover:decoration-brand-blue-pale" href="#why">Why BeachFleischman?</a>
                                 <a class="underline hover:decoration-brand-blue-pale" href="#opportunities">Opportunities</a>
@@ -147,7 +147,7 @@ if ('local' === wp_get_environment_type()) {
                     <?php if (is_page('career-opportunities')) : ?>
                     <!--   O P P O R T U N I T I E S   -->
                         <section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-gray-pale via-neutral-100 to-white dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
-                            <div class="px-2 md:container xl:px-4">
+                            <div class="px-2 md:container lg:px-[16px]">
                                 <h2 class="mb-4 font-head">Opportunities</h2>
                                 <div class="grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
                                     <div class="px-4 pb-4 bg-white shadow-md lg:px-8 group dark:bg-neutral-900">
@@ -179,7 +179,7 @@ if ('local' === wp_get_environment_type()) {
                     <?php if ( is_page('internships') ) { ?>
                     <!--   Expect & Future   -->
                         <section class="full-bleed ll-equal-vert-spacing not-prose ">
-                            <div class="px-2 md:container xl:px-4">
+                            <div class="px-2 md:container lg:px-[16px]">
                                 <h2>What you can expect</h2>
                                 <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
                                 <?php foreach( $cards_expect as $card ) {
@@ -190,7 +190,7 @@ if ('local' === wp_get_environment_type()) {
                         </section>
                     <?php } else { ?>
                         <section class="full-bleed ll-equal-vert-spacing not-prose">
-                            <div class="px-2 md:container xl:px-4">
+                            <div class="px-2 md:container lg:px-[16px]">
                                 <h2>What you can expect</h2>
                                 <div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
                                 <?php foreach( $cards_expect as $card ) {
@@ -211,9 +211,9 @@ if ('local' === wp_get_environment_type()) {
 
                     <?php // C U L T U R E ... ?>
                     <section id="culture" class="full-bleed not-prose ll-equal-vert-spacing">
-                        <div class="px-2 md:container xl:px-4">
-                            <h2 class="mb-4">Culture</h2>
-                            <div class="mb-6 overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1678295483/feat__careers--women-rise2_ed405i.jpg')]">
+                        <div class="flex flex-col px-2 space-y-4 md:container lg:px-[16px]">
+                            <h2 class="">Culture</h2>
+                            <div class=" overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1678295483/feat__careers--women-rise2_ed405i.jpg')]">
                                 <div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-26 lg:py-24">
                                     <div class="text-center sm:text-left">
                                         <h4 class="font-light text-brand-blue-pale"><a href="/about/women-rise/" class="no-underline hover:underline">Women RISE</a></h4>
@@ -223,7 +223,7 @@ if ('local' === wp_get_environment_type()) {
                                 </div>
                             </div>
 
-                            <div class="overflow-hidden bg-cover bg-center bg-no-repeat bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1677875018/feat__careers--idea_ifhenr.jpg')]">
+                            <div class="overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1677875018/feat__careers--idea_ifhenr.jpg')]">
                                 <div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-26 lg:py-24">
                                     <div class="text-center sm:text-left">
                                         <h4 class="font-light text-brand-blue-pale"><a href="/about/idea-committee/" class="no-underline hover:underline">IDEA Committee</a></h4>
@@ -239,7 +239,7 @@ if ('local' === wp_get_environment_type()) {
                     <?php // B E N E F I T S ... ?>
                     <?php if ( !is_page('internships') ) : ?>
                         <section id="benefits" class="full-bleed">
-                            <div class="px-2 md:container xl:px-4">
+                            <div class="px-2 md:container lg:px-[16px]">
                                 <h2 class="mb-4">Benefits</h2>
                                 <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
                                     <?php foreach( $cards_benefits as $card ) {
@@ -252,19 +252,19 @@ if ('local' === wp_get_environment_type()) {
 
                     <?php // A W A R D S ... ?>
                     <section id="awards" class="bg-white full-bleed ll-equal-vert-padding dark:bg-neutral-800">
-                        <div class="px-2 md:container xl:px-4">
+                        <div class="px-2 md:container lg:px-[16px]">
                             <h2 class="mb-4">Awards and recognition</h2>
                             <?php echo do_shortcode( '[awardlogos /]' ); ?>
                         </div>
 
-                        <div class="px-2 md:container xl:px-4">
+                        <div class="px-2 md:container lg:px-[16px]">
                             <h2 class="mb-4">Our Team</h2>
-                            <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="ASC" posts_per_page="4" wrapper="div" wrapper_class="grid grid-auto-fit gap-2" layout="card-people-small-desigs" /]'); ?>
+                            <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="ASC" posts_per_page="4" wrapper="ul" wrapper_class="list-none grid grid-auto-fit gap-2" layout="card-people-small-desigs" /]'); ?>
                         </div>
                     </section>
 
-                    <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
-                        <div class="px-2 md:container xl:px-4">
+                    <section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
+                        <div class="px-2 md:container lg:px-[16px]">
                             <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
                                 <div class="prose lg:prose-xl grow">
                                     <h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark">View our current openings and apply today!</h2>
