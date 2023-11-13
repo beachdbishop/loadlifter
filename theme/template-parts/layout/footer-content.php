@@ -9,7 +9,7 @@
  */
 
 $disclaimer_cyber = sprintf( 'Disclaimer: %1$s and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither %1$s nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.', LL_COMPANY_LEGAL_NAME );
-$footer_para_cyber = sprintf( 'Cybersecurity Consultants | IT Consultants | Virtual CISO :: %1$s is a public accounting and cybersecurity consulting firm with offices in Phoenix and Tucson (AZ) serving the IT security needs of businesses and organizations across the United States. Our firm provides enterprise cyber risk assessments, penetration testing, compliance gap assessments, SOC 2 reports, CMMC/NIST SP 800-171 compliance and virtual CISO consulting services. The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %1$s. &copy;%2$s %1$s. All rights reserved.', LL_COMPANY_LEGAL_NAME, date('Y') );
+$footer_para_cyber = sprintf( 'Cybersecurity Consultants | IT Consultants | Virtual CISO :: %1$s is a public accounting and cybersecurity consulting firm with offices in Phoenix, Tucson, and Nogales (AZ) serving the IT security needs of businesses and organizations across the United States. Our firm provides enterprise cyber risk assessments, penetration testing, compliance gap assessments, SOC 2 reports, CMMC/NIST SP 800-171 compliance and virtual CISO consulting services. The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %1$s. &copy;%2$s %1$s. All rights reserved.', LL_COMPANY_LEGAL_NAME, date('Y') );
 $page_seo_footer = get_field( 'll_seo_footer', get_queried_object_id(), false );
 $site_seo_footer = get_field( 'seo_footer_text', 'option' );
 
@@ -34,16 +34,16 @@ $offices = [
         'phone' => '15203214600',
         'fax' => '15203214040'
     ],
-    // 'office-nog' => [
-    //     'open' => true,
-    //     'street1' => '825 N. Grand Avenue, Suite 204',
-    //     'street2' => '',
-    //     'city' => 'Nogales',
-    //     'state' => 'AZ',
-    //     'zip' => '85621',
-    //     'phone' => '15202874174',
-    //     'fax' => '15202872336'
-    // ],
+    'office-nog' => [
+        'open' => true,
+        'street1' => '825 N. Grand Avenue, Suite 204',
+        'street2' => '',
+        'city' => 'Nogales',
+        'state' => 'AZ',
+        'zip' => '85621',
+        'phone' => '15202874174',
+        'fax' => '15202872336'
+    ],
 ];
 
 if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
