@@ -41,6 +41,8 @@ get_header();
 
 					<p>The above shortcode should not show up at all.</p>
 
+					<?php echo do_shortcode( '[cyberdisclaimer /]' ); ?>
+
 					<div class="not-prose">
 						<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 

@@ -150,13 +150,13 @@ function ll_cybercertlogos_shortcode() {
 add_shortcode( 'cybercertlogos', 'll_cybercertlogos_shortcode' );
 
 function ll_cyberdisclaimer_shortcode() {
-	return '<p class="my-8 text-sm italic text-neutal-600">Disclaimer: BeachFleischman PLLC and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither BeachFleischman PLLC nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.</p>';
+	return '<p class="my-8 text-sm italic text-neutal-600">Disclaimer: ' . LL_COMPANY_LEGAL_NAME . ' and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither ' . LL_COMPANY_LEGAL_NAME . ' nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.</p>';
 }
 add_shortcode( 'cyberdisclaimer', 'll_cyberdisclaimer_shortcode' );
 
 // AZ TPT Disclaimer text
 function ll_tptdisclaimer_shortcode() {
-	return '<p class="">Any accounting, business or tax advice contained in this communication, including attachments and enclosures, is not intended as a thorough, in-depth analysis of specific issues, nor a substitute for a formal opinion, nor is it sufficient to avoid tax-related penalties. If desired, BeachFleischman PLLC would be pleased to perform the requisite research and provide you with a detailed written analysis. Such an engagement may be the subject of a separate engagement letter that would define the scope and limits of the desired consultation services.</p>';
+	return '<p class="">Any accounting, business or tax advice contained in this communication, including attachments and enclosures, is not intended as a thorough, in-depth analysis of specific issues, nor a substitute for a formal opinion, nor is it sufficient to avoid tax-related penalties. If desired, ' . LL_COMPANY_LEGAL_NAME . ' would be pleased to perform the requisite research and provide you with a detailed written analysis. Such an engagement may be the subject of a separate engagement letter that would define the scope and limits of the desired consultation services.</p>';
 }
 // add_shortcode( 'tptdisclaimer', 'll_tptdisclaimer_shortcode');
 
