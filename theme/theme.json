@@ -1,422 +1,422 @@
 {
-  "$schema": "https://schemas.wp.org/trunk/theme.json",
-  "version": 2,
-  "settings": {
-    "color": {
-      "duotone": [
-        {
-          "slug": "gray",
-          "colors": [ "#262626", "#fafafa" ],
-          "name": "Gray"
-        },
-        {
-          "slug": "red",
-          "colors": [ "#940418", "#fef2f2" ],
-          "name": "Red"
-        },
-        {
-          "slug": "blue",
-          "colors": [ "#092f42", "#ecfeff" ],
-          "name": "Blue"
-        }
-      ],
-      "defaultDuotone": false,
-      "gradients": [
-        {
-          "slug": "gray",
-          "gradient": "linear-gradient(135deg, #525252, #525252 40%, #262626 95%, #262626)",
-          "name": "Gray"
-        },
-        {
-          "slug": "red",
-          "gradient": "linear-gradient(135deg, #ce182d, #ce182d 40%, #940418 95%, #940418)",
-          "name": "Red"
-        },
-        {
-          "slug": "blue",
-          "gradient": "linear-gradient(135deg, #00668e, #00668e 40%, #092f42 95%, #092f42)",
-          "name": "Blue"
-        },
-        {
-          "slug": "blue-faint",
-          "gradient": "linear-gradient(135deg, #ecfeff, #ecfeff 40%, #00668e 95%, #00668e)",
-          "name": "Blue Faint"
-        },
-        {
-          "slug": "gray-split",
-          "gradient": "linear-gradient(135deg, #525252, #525252 50%, #262626 50%, #262626)",
-          "name": "Gray Split"
-        },
-        {
-          "slug": "red-split",
-          "gradient": "linear-gradient(135deg, #ce182d, #ce182d 50%, #940418 50%, #940418)",
-          "name": "Red Split"
-        },
-        {
-          "slug": "blue-split",
-          "gradient": "linear-gradient(135deg, #00668e, #00668e 50%, #092f42 50%, #092f42)",
-          "name": "Blue Split"
-        },
-        {
-          "slug": "faint-red",
-          "gradient": "linear-gradient(0deg, #fef2f2, #ffffff 40%, #ffffff)",
-          "name": "Faint Red"
-        },
-        {
-          "slug": "faint-blue",
-          "gradient": "linear-gradient(0deg, #ecfeff, #ffffff 40%, #ffffff)",
-          "name": "Faint Blue"
-        },
-        {
-          "slug": "faint-gray",
-          "gradient": "linear-gradient(0deg, #fafafa, #ffffff 40%, #ffffff)",
-          "name": "Faint Gray"
-        }
-      ],
-      "defaultGradients": false,
-      "palette": [
-        {
-          "slug": "white",
-          "color": "#ffffff",
-          "name": "White"
-        },
-        {
-          "slug": "black",
-          "color": "#000000",
-          "name": "Black"
-        },
-        {
-          "slug": "brand-gray-faint",
-          "color": "#fafafa",
-          "name": "Brand Gray Faint"
-        },
-        {
-          "slug": "brand-gray-pale",
-          "color": "#d4d4d4",
-          "name": "Brand Gray Pale"
-        },
-        {
-          "slug": "brand-gray",
-          "color": "#525252",
-          "name": "Brand Gray"
-        },
-        {
-          "slug": "brand-gray-dark",
-          "color": "#262626",
-          "name": "Brand Gray Dark"
-        },
-        {
-          "slug": "brand-red-faint",
-          "color": "#fef2f2",
-          "name": "Brand Red Faint"
-        },
-        {
-          "slug": "brand-red-pale",
-          "color": "#f87171",
-          "name": "Brand Red Pale"
-        },
-        {
-          "slug": "brand-red",
-          "color": "#ce182d",
-          "name": "Brand Red"
-        },
-        {
-          "slug": "brand-red-dark",
-          "color": "#940418",
-          "name": "Brand Red Dark"
-        },
-        {
-          "slug": "brand-blue-faint",
-          "color": "#ecfeff",
-          "name": "Brand Blue Faint"
-        },
-        {
-          "slug": "brand-blue-pale",
-          "color": "#67e8f9",
-          "name": "Brand Blue Pale"
-        },
-        {
-          "slug": "brand-blue",
-          "color": "#00668e",
-          "name": "Brand Blue"
-        },
-        {
-          "slug": "orient-900",
-          "color": "#075273",
-          "name": "Orient 900"
-        },
-        {
-          "slug": "brand-blue-dark",
-          "color": "#092f42",
-          "name": "Brand Blue Dark"
-        }
-      ],
-      "defaultPalette": false
-    },
-    "typography": {
-      "dropCap": false,
-      "fluid": true,
-      "textDecoration": false,
-      "fontFamilies": [
-        {
-          "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
-          "name": "System Font",
-          "slug": "system-font"
-        },
-        {
-          "fontFamily": "\"Serenity\", sans-serif",
-          "name": "Serenity",
-          "slug": "serenity",
-          "fontFace": [
-            {
-              "fontFamily": "Serenity",
-              "fontWeight": "300",
-              "fontStyle": "normal",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/serenity-light-webfont.woff2" ]
-            },
-            {
-              "fontFamily": "Serenity",
-              "fontWeight": "300",
-              "fontStyle": "italic",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/serenity-lightitalic-webfont.woff2" ]
-            },
-            {
-              "fontFamily": "Serenity",
-              "fontWeight": "700",
-              "fontStyle": "normal",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/serenity-bold-webfont.woff2" ]
-            },
-            {
-              "fontFamily": "Serenity",
-              "fontWeight": "700",
-              "fontStyle": "italic",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/serenity-bolditalic-webfont.woff2" ]
-            }
-          ]
-        },
-        {
-          "fontFamily": "\"Work Sans\", sans-serif",
-          "name": "Work Sans",
-          "slug": "work-sans",
-          "fontFace": [
-            {
-              "fontFamily": "Work Sans",
-              "fontWeight": "400",
-              "fontStyle": "normal",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/worksans-regular-webfont.woff2" ]
-            },
-            {
-              "fontFamily": "Work Sans",
-              "fontWeight": "400",
-              "fontStyle": "italic",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/worksans-italic-webfont.woff2" ]
-            },
-            {
-              "fontFamily": "Work Sans",
-              "fontWeight": "700",
-              "fontStyle": "normal",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/worksans-bold-webfont.woff2" ]
-            },
-            {
-              "fontFamily": "Work Sans",
-              "fontWeight": "700",
-              "fontStyle": "italic",
-              "fontStretch": "normal",
-              "src": [ "file:./fonts/worksans-bolditalic-webfont.woff2" ]
-            }
-          ]
-        },
-        {
-          "fontFamily": "serif",
-          "name": "System Serif",
-          "slug": "system-serif"
-        }
-      ],
-      "fontSizes": [
-        {
-          "name": "Extra Small",
-          "size": "0.75rem",
-          "fluid": {
-            "min": "0.75rem",
-            "max": "0.875rem"
-          },
-          "slug": "xs"
-        },
-        {
-          "name": "Small",
-          "size": "0.875rem",
-          "fluid": {
-            "min": "0.875rem",
-            "max": "1rem"
-          },
-          "slug": "sm"
-        },
-        {
-          "name": "Base",
-          "size": "1rem",
-          "fluid": {
-            "min": "1rem",
-            "max": "1.125rem"
-          },
-          "slug": "base"
-        },
-        {
-          "name": "Large",
-          "size": "1.125rem",
-          "fluid": {
-            "min": "1.125rem",
-            "max": "1.25rem"
-          },
-          "slug": "lg"
-        },
-        {
-          "name": "Extra Large",
-          "size": "1.25rem",
-          "fluid": {
-            "min": "1.25rem",
-            "max": "1.5rem"
-          },
-          "slug": "xl"
-        },
-        {
-          "name": "2 XL",
-          "size": "1.5rem",
-          "fluid": {
-            "min": "1.5rem",
-            "max": "1.875rem"
-          },
-          "slug": "2xl"
-        },
-        {
-          "name": "3 XL",
-          "size": "1.875rem",
-          "fluid": {
-            "min": "1.875rem",
-            "max": "2.25rem"
-          },
-          "slug": "3xl"
-        },
-        {
-          "name": "4 XL",
-          "size": "2.25rem",
-          "fluid": {
-            "min": "2.25rem",
-            "max": "2.875rem"
-          },
-          "slug": "4xl"
-        }
-      ]
-    },
-    "layout": {
-      "contentSize": "60rem",
-      "wideSize": "80rem"
-    }
-  },
-  "styles": {
-    "blocks": {
-      "core/button": {
-        "border": {
-          "radius": "8px"
-        },
-        "color": {
-          "background": "var(--wp--preset--color--brand-blue)",
-          "text": "var(--wp--preset--color--brand-blue-faint)"
-        },
-        "typography": {
-          "fontSize": "var(--wp--preset--font-size--base)",
-          "textDecoration": "none"
-        }
-      },
-      "core/post-title": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--3xl)"
-        }
-      },
-      "core/pullquote": {
-        "border": {
-          "width": "1px 0"
-        }
-      },
-      "core/query-title": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--2xl)"
-        }
-      },
-      "core/quote": {
-        "border": {
-          "width": "1px"
-        }
-      },
-      "core/site-title": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontSize": "var(--wp--preset--font-size--4xl)",
-          "fontWeight": "normal"
-        }
-      }
-    },
-    "elements": {
-      "h1": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--4xl)"
-        }
-      },
-      "h2": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--3xl)"
-        }
-      },
-      "h3": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--2xl)"
-        }
-      },
-      "h4": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--xl)"
-        }
-      },
-      "h5": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "fontSize": "var(--wp--preset--font-size--lg)"
-        }
-      },
-      "h6": {
-        "typography": {
-          "fontFamily": "var(--wp--preset--font-family--serenity)",
-          "fontWeight": "300",
-          "textTransform": "uppercase",
-          "fontSize": "var(--wp--preset--font-size--base)"
-        }
-      }
-    },
-    "spacing": {
-      "blockGap": "1.5rem"
-    },
-    "typography": {
-      "fontFamily": "var(--wp--preset--font-family--work-sans)",
-      "fontSize": "var(--wp--preset--font-size--base)"
-    }
-  }
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"duotone": [
+				{
+					"slug": "gray",
+					"colors": [ "#262626", "#fafafa" ],
+					"name": "Gray"
+				},
+				{
+					"slug": "red",
+					"colors": [ "#940418", "#fef2f2" ],
+					"name": "Red"
+				},
+				{
+					"slug": "blue",
+					"colors": [ "#092f42", "#ecfeff" ],
+					"name": "Blue"
+				}
+			],
+			"defaultDuotone": false,
+			"gradients": [
+				{
+					"slug": "gray",
+					"gradient": "linear-gradient(135deg, #525252, #525252 40%, #262626 95%, #262626)",
+					"name": "Gray"
+				},
+				{
+					"slug": "red",
+					"gradient": "linear-gradient(135deg, #ce182d, #ce182d 40%, #940418 95%, #940418)",
+					"name": "Red"
+				},
+				{
+					"slug": "blue",
+					"gradient": "linear-gradient(135deg, #00668e, #00668e 40%, #092f42 95%, #092f42)",
+					"name": "Blue"
+				},
+				{
+					"slug": "blue-faint",
+					"gradient": "linear-gradient(135deg, #ecfeff, #ecfeff 40%, #00668e 95%, #00668e)",
+					"name": "Blue Faint"
+				},
+				{
+					"slug": "gray-split",
+					"gradient": "linear-gradient(135deg, #525252, #525252 50%, #262626 50%, #262626)",
+					"name": "Gray Split"
+				},
+				{
+					"slug": "red-split",
+					"gradient": "linear-gradient(135deg, #ce182d, #ce182d 50%, #940418 50%, #940418)",
+					"name": "Red Split"
+				},
+				{
+					"slug": "blue-split",
+					"gradient": "linear-gradient(135deg, #00668e, #00668e 50%, #092f42 50%, #092f42)",
+					"name": "Blue Split"
+				},
+				{
+					"slug": "faint-red",
+					"gradient": "linear-gradient(0deg, #fef2f2, #ffffff 40%, #ffffff)",
+					"name": "Faint Red"
+				},
+				{
+					"slug": "faint-blue",
+					"gradient": "linear-gradient(0deg, #ecfeff, #ffffff 40%, #ffffff)",
+					"name": "Faint Blue"
+				},
+				{
+					"slug": "faint-gray",
+					"gradient": "linear-gradient(0deg, #fafafa, #ffffff 40%, #ffffff)",
+					"name": "Faint Gray"
+				}
+			],
+			"defaultGradients": false,
+			"palette": [
+				{
+					"slug": "white",
+					"color": "#ffffff",
+					"name": "White"
+				},
+				{
+					"slug": "black",
+					"color": "#000000",
+					"name": "Black"
+				},
+				{
+					"slug": "brand-gray-faint",
+					"color": "#fafafa",
+					"name": "Brand Gray Faint"
+				},
+				{
+					"slug": "brand-gray-pale",
+					"color": "#d4d4d4",
+					"name": "Brand Gray Pale"
+				},
+				{
+					"slug": "brand-gray",
+					"color": "#525252",
+					"name": "Brand Gray"
+				},
+				{
+					"slug": "brand-gray-dark",
+					"color": "#262626",
+					"name": "Brand Gray Dark"
+				},
+				{
+					"slug": "brand-red-faint",
+					"color": "#fef2f2",
+					"name": "Brand Red Faint"
+				},
+				{
+					"slug": "brand-red-pale",
+					"color": "#f87171",
+					"name": "Brand Red Pale"
+				},
+				{
+					"slug": "brand-red",
+					"color": "#ce182d",
+					"name": "Brand Red"
+				},
+				{
+					"slug": "brand-red-dark",
+					"color": "#940418",
+					"name": "Brand Red Dark"
+				},
+				{
+					"slug": "brand-blue-faint",
+					"color": "#ecfeff",
+					"name": "Brand Blue Faint"
+				},
+				{
+					"slug": "brand-blue-pale",
+					"color": "#67e8f9",
+					"name": "Brand Blue Pale"
+				},
+				{
+					"slug": "brand-blue",
+					"color": "#00668e",
+					"name": "Brand Blue"
+				},
+				{
+					"slug": "orient-900",
+					"color": "#075273",
+					"name": "Orient 900"
+				},
+				{
+					"slug": "brand-blue-dark",
+					"color": "#092f42",
+					"name": "Brand Blue Dark"
+				}
+			],
+			"defaultPalette": false
+		},
+		"typography": {
+			"dropCap": false,
+			"fluid": true,
+			"textDecoration": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				},
+				{
+					"fontFamily": "\"Serenity\", sans-serif",
+					"name": "Serenity",
+					"slug": "serenity",
+					"fontFace": [
+						{
+							"fontFamily": "Serenity",
+							"fontWeight": "300",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/serenity-light-webfont.woff2" ]
+						},
+						{
+							"fontFamily": "Serenity",
+							"fontWeight": "300",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/serenity-lightitalic-webfont.woff2" ]
+						},
+						{
+							"fontFamily": "Serenity",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/serenity-bold-webfont.woff2" ]
+						},
+						{
+							"fontFamily": "Serenity",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/serenity-bolditalic-webfont.woff2" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "\"Work Sans\", sans-serif",
+					"name": "Work Sans",
+					"slug": "work-sans",
+					"fontFace": [
+						{
+							"fontFamily": "Work Sans",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/worksans-regular-webfont.woff2" ]
+						},
+						{
+							"fontFamily": "Work Sans",
+							"fontWeight": "400",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/worksans-italic-webfont.woff2" ]
+						},
+						{
+							"fontFamily": "Work Sans",
+							"fontWeight": "700",
+							"fontStyle": "normal",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/worksans-bold-webfont.woff2" ]
+						},
+						{
+							"fontFamily": "Work Sans",
+							"fontWeight": "700",
+							"fontStyle": "italic",
+							"fontStretch": "normal",
+							"src": [ "file:./fonts/worksans-bolditalic-webfont.woff2" ]
+						}
+					]
+				},
+				{
+					"fontFamily": "serif",
+					"name": "System Serif",
+					"slug": "system-serif"
+				}
+			],
+			"fontSizes": [
+				{
+					"name": "Extra Small",
+					"size": "0.75rem",
+					"fluid": {
+						"min": "0.75rem",
+						"max": "0.875rem"
+					},
+					"slug": "xs"
+				},
+				{
+					"name": "Small",
+					"size": "0.875rem",
+					"fluid": {
+						"min": "0.875rem",
+						"max": "1rem"
+					},
+					"slug": "sm"
+				},
+				{
+					"name": "Base",
+					"size": "1rem",
+					"fluid": {
+						"min": "1rem",
+						"max": "1.125rem"
+					},
+					"slug": "base"
+				},
+				{
+					"name": "Large",
+					"size": "1.125rem",
+					"fluid": {
+						"min": "1.125rem",
+						"max": "1.25rem"
+					},
+					"slug": "lg"
+				},
+				{
+					"name": "Extra Large",
+					"size": "1.25rem",
+					"fluid": {
+						"min": "1.25rem",
+						"max": "1.5rem"
+					},
+					"slug": "xl"
+				},
+				{
+					"name": "2 XL",
+					"size": "1.5rem",
+					"fluid": {
+						"min": "1.5rem",
+						"max": "1.875rem"
+					},
+					"slug": "2xl"
+				},
+				{
+					"name": "3 XL",
+					"size": "1.875rem",
+					"fluid": {
+						"min": "1.875rem",
+						"max": "2.25rem"
+					},
+					"slug": "3xl"
+				},
+				{
+					"name": "4 XL",
+					"size": "2.25rem",
+					"fluid": {
+						"min": "2.25rem",
+						"max": "2.875rem"
+					},
+					"slug": "4xl"
+				}
+			]
+		},
+		"layout": {
+			"contentSize": "60rem",
+			"wideSize": "80rem"
+		}
+	},
+	"styles": {
+		"blocks": {
+			"core/button": {
+				"border": {
+					"radius": "8px"
+				},
+				"color": {
+					"background": "var(--wp--preset--color--brand-blue)",
+					"text": "var(--wp--preset--color--brand-blue-faint)"
+				},
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--base)",
+					"textDecoration": "none"
+				}
+			},
+			"core/post-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--3xl)"
+				}
+			},
+			"core/pullquote": {
+				"border": {
+					"width": "1px 0"
+				}
+			},
+			"core/query-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--2xl)"
+				}
+			},
+			"core/quote": {
+				"border": {
+					"width": "1px"
+				}
+			},
+			"core/site-title": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontSize": "var(--wp--preset--font-size--4xl)",
+					"fontWeight": "normal"
+				}
+			}
+		},
+		"elements": {
+			"h1": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--4xl)"
+				}
+			},
+			"h2": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--3xl)"
+				}
+			},
+			"h3": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--2xl)"
+				}
+			},
+			"h4": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--xl)"
+				}
+			},
+			"h5": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"fontSize": "var(--wp--preset--font-size--lg)"
+				}
+			},
+			"h6": {
+				"typography": {
+					"fontFamily": "var(--wp--preset--font-family--serenity)",
+					"fontWeight": "300",
+					"textTransform": "uppercase",
+					"fontSize": "var(--wp--preset--font-size--base)"
+				}
+			}
+		},
+		"spacing": {
+			"blockGap": "1.5rem"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--work-sans)",
+			"fontSize": "var(--wp--preset--font-size--base)"
+		}
+	}
 }
