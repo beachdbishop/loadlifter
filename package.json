@@ -4,8 +4,6 @@
 		"@_tw/themejson": "^0.1.2",
 		"@angular-eslint/template-parser": "^15.2.1",
 		"@shrutibalasa/tailwind-grid-auto-fit": "^1.1.0",
-		"@tailwindcss/aspect-ratio": "^0.4.2",
-		"@tailwindcss/container-queries": "^0.1.1",
 		"@tailwindcss/forms": "^0.5.3",
 		"@tailwindcss/typography": "^0.5.9",
 		"@types/tailwindcss": "^3.0.10",
@@ -26,8 +24,7 @@
 		"postcss-simple-vars": "^7.0.1",
 		"prettier": "^2.8.7",
 		"prettier-plugin-tailwindcss": "^0.2.7",
-		"tailwindcss": "^3.3.1",
-		"vanilla-tilt": "^1.7.2"
+		"tailwindcss": "^3.3.1"
 	},
 	"scripts": {
 		"development:tailwind:frontend": "npx tailwindcss --postcss -i ./tailwind/tailwind.css -c ./tailwind/tailwind.config.js -o ./theme/style.css",
