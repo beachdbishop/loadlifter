@@ -49,7 +49,7 @@ endif; ?>
 						)
 					);
 
-					// get_template_part( 'template-parts/form/form', 'webshare' );
+					get_template_part( 'template-parts/form/form', 'webshare' );
 					?>
 					<div class="clear-both">&nbsp;</div>
 					<?php
@@ -79,29 +79,24 @@ endif; ?>
 			</div>
 
 			<aside class="mt-8 md:mt-0 md:order-last md:w-1/3">
-				<?php
-				if ( 'post' === get_post_type() ) :
-				?>
-				<div class="post-meta | text-sm text-neutral-600 dark:text-neutral-400">
-					<?php
-					ll_posted_by( array(
-						'show_thumb' => true,
-					) );
+				<?php if ( 'post' === get_post_type() ) : ?>
+					<div class="post-meta | text-sm text-neutral-600 dark:text-neutral-400">
+						<?php
+						ll_posted_by( array( 'show_thumb' => true	) );
 
-										ll_posted_on();
+						ll_posted_on();
 
-					ll_entry_footer();
-										?>
-
-				</div>
+						ll_entry_footer();
+					?>
+					</div>
 				<?php endif; ?>
 
 				<!--   A R E A   S I D E   -->
 				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 
 				<div id="contact" class="container-contact-form not-prose">
-										<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
-								</div>
+					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+				</div>
 			</aside>
 		</div>
 
