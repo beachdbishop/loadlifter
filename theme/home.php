@@ -27,14 +27,14 @@ get_header();
 					<p class="my-4 font-light lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
 				</div>
 
-                <div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16 print:hidden">
-                    <div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
-                        wpgb_render_facet( ['id' => 9, 'grid' => 'wpgb-content', ] );
-                    } ?></div>
-                    <div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
-                        wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] );
-                    } ?></div>
-                </div>
+				<div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16 print:hidden">
+					<div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
+						wpgb_render_facet( ['id' => 9, 'grid' => 'wpgb-content', ] );
+					} ?></div>
+					<div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
+						wpgb_render_facet( ['id' => 5, 'grid' => 'wpgb-content', ] );
+					} ?></div>
+				</div>
 			</header>
 
 			<?php if ( have_posts() ) : ?>
@@ -49,9 +49,9 @@ get_header();
 
 				<div class="mt-8">
 					<?php // ll_paging_nav();
-                    if ( function_exists( 'wpgb_render_facet' ) ) {
-                        wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
-                    } ?>
+					if ( function_exists( 'wpgb_render_facet' ) ) {
+						wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
+					} ?>
 				</div>
 			<?php else : ?>
 

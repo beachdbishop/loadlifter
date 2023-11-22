@@ -33,10 +33,10 @@ $peep_level                     = get_field( 'll_people_level' );
 			<?php
 			if ($peep_level['value'] !== '900') {
 				$title_classes = 'group-hover:text-brand-red';
-				echo sprintf( '<h4 class="leading-none text-brand-gray-dark %1$s"><a href="%3$s" rel="bookmark">%2$s </a></h4>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
+				echo sprintf( '<h3 class="leading-none text-brand-gray-dark %1$s"><a href="%3$s" rel="bookmark">%2$s </a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
 			} else {
 				$title_classes = 'group-hover:text-brand-gray-dark';
-				echo sprintf( '<h4 class="leading-none text-brand-gray-dark %1$s">%2$s</h4>', $title_classes, get_the_title() );
+				echo sprintf( '<h3 class="leading-none text-brand-gray-dark %1$s">%2$s</h3>', $title_classes, get_the_title() );
 			}
 
 			if( get_field( 'll_people_title' ) ) {
