@@ -58,7 +58,7 @@ $video_subheading               = 'Work with our advisors and experience the pow
                 </div>
             </article>
 
-            <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway">
+            <section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
                 <div class="px-2 wp-block-group post-grid lg:px-[16px] has-brand-blue-faint-color">
                     <h2 class="mb-4 lg:mb-8">Trending now</h2>
                     <?php echo do_shortcode(

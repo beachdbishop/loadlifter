@@ -263,7 +263,7 @@ if ('local' === wp_get_environment_type()) {
                         </div>
                     </section>
 
-                    <section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue from-30% via-brand-blue-dark via-50% to-brand-blue to-90% bg-180pct animate-sway not-prose text-neutral-100">
+                    <section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct not-prose text-neutral-100">
                         <div class="px-2 md:container lg:px-[16px]">
                             <div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
                                 <div class="prose lg:prose-xl grow">
