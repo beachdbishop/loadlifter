@@ -271,15 +271,15 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 			if ( $post_date > $cutoff_date ) {
-				$feat_aspect_ratio = '3.75 / 1';
+				$feat_aspect_ratio = 'feat-3.75';
 				$bg_size = 'bg-center bg-cover bg-no-repeat';
 			} else {
-				$feat_aspect_ratio = '4.3 / 1';
+				$feat_aspect_ratio = 'feat-4.3';
 				$bg_size = 'bg-center bg-no-repeat';
 			}
 		} else {
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
-			$feat_aspect_ratio = '1.91';
+			$feat_aspect_ratio = 'feat-card';
 			$bg_size = 'bg-center bg-cover bg-no-repeat';
 		}
 
@@ -292,8 +292,8 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				$featmarkup = sprintf(
 					'<div class="image__featured--outer | overflow-hidden empty-feat-img print:hidden">
 						<div
-							class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
-							style="background-image: url(%1$s); aspect-ratio: %2$s"
+							class="image__featured--inner | %4$s aspect-%2$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+							style="background-image: url(%1$s);"
 							aria-label="%3$s"
 							role="img"
 						></div>
@@ -309,10 +309,10 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$thumb_url_array = wp_get_attachment_image_src( $thumb_id, 'large' );
 			$thumb_url = $thumb_url_array[0];
 			$featmarkup = sprintf(
-				'<div class="overflow-hidden image__featured--outer print:hidden">
+				'<div class="image__featured--outer | overflow-hidden print:hidden">
 					<div
-						class="image__featured--inner | %4$s transition-transform duration-300 ease-in-out group-hover:scale-110"
-						style="background-image: url(%1$s); aspect-ratio: %2$s"
+						class="image__featured--inner | %4$s aspect-%2$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+						style="background-image: url(%1$s);"
 						aria-label="%3$s"
 						role="img"
 					></div>

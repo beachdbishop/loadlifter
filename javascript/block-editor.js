@@ -15,9 +15,7 @@ wp.domReady(() => {
 	/**
 	 * Block editor modifications
 	 */
-
 	/* Add any custom modifications between this line and the "stop editing" line. */
-
 	// Add your own block editor modifications here. For example, you could
 	// register a block style:
 	//
@@ -25,6 +23,5 @@ wp.domReady(() => {
 	// 	name: 'indent',
 	// 	label: 'Indent',
 	// } );
-
 	/* That's all, stop editing! */
 });

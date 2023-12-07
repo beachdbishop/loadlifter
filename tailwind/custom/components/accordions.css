@@ -18,73 +18,68 @@ details[open] summary::-webkit-details-marker {
 	display: none;
 }
 
-
 .accordions {
-  @apply mb-8;
+	@apply mb-8;
 
-  details {
-    @apply mb-[2px];
-  }
+	details {
+		@apply mb-[2px];
+	}
 
-  details[open] summary {
-    @apply before:content-['-'];
-  }
+	details[open] summary {
+		@apply before:content-['-'];
+	}
 
-  summary {
-    @apply font-head text-3xl px-4 pt-1 pb-2 before:content-['+']  before:font-mono before:mr-1 hover:before:animate-pulse;
-  }
+	summary {
+		@apply font-head px-4 pb-2 pt-1 text-3xl before:mr-1  before:font-mono before:content-['+'] hover:before:animate-pulse;
+	}
 
-  .details-inner {
-    @apply bg-neutral-100 px-2 pb-4 will-change-transform lg:pt-4 lg:px-4 lg:pb-6 dark:bg-neutral-800 dark:text-neutral-300;
-  }
+	.details-inner {
+		@apply bg-neutral-100 px-2 pb-4 will-change-transform dark:bg-neutral-800 dark:text-neutral-300 lg:px-4 lg:pb-6 lg:pt-4;
+	}
 }
-
 
 .accordions.is-style-default {
-  details[open] summary {
-    @apply text-neutral-900;
-  }
+	details[open] summary {
+		@apply text-neutral-900;
+	}
 
-  summary {
-    @apply bg-neutral-200 text-neutral-700;
+	summary {
+		@apply bg-neutral-200 text-neutral-700;
 
-    &::before {
-      color: #a3a3a3;
-    }
-  }
+		&::before {
+			color: #a3a3a3;
+		}
+	}
 }
-
 
 .accordions.is-style-blue {
-  details[] summary {
-    @apply text-white;
-  }
+	details[] summary {
+		@apply text-white;
+	}
 
-  summary {
-    @apply bg-brand-blue text-brand-blue-faint;
+	summary {
+		@apply bg-brand-blue text-brand-blue-faint;
 
-    &::before {
-      @apply text-brand-blue-pale;
-    }
-  }
+		&::before {
+			@apply text-brand-blue-pale;
+		}
+	}
 }
-
 
 .accordions.is-style-red {
-  details[] summary {
-    @apply text-white;
-  }
+	details[] summary {
+		@apply text-white;
+	}
 
-  summary {
-    @apply bg-brand-red text-brand-red-faint;
+	summary {
+		@apply bg-brand-red text-brand-red-faint;
 
-    &::before {
-      @apply text-brand-red-pale;
-    }
-  }
+		&::before {
+			@apply text-brand-red-pale;
+		}
+	}
 }
 
-
 details[open] summary ~ * {
-  @apply animate-fade-in-from-top;
+	@apply animate-fade-in-from-top;
 }

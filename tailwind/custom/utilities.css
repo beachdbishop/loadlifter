@@ -11,9 +11,7 @@
 div:not(.block-editor-block-list__layout) .full-bleed {
 	width: 100vw;
 	max-width: unset;
-	/* margin-left: calc(50% - 50vw); */
 	margin-left: 50%;
-	/* transform: translate3d(-50%, 0, 0); */
 	transform: translateX(-50%);
 
 	> div {
@@ -27,29 +25,24 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	transform: none;
 }
 
-
 .ll-equal-vert-padding {
-  @apply py-12 lg:py-16;
+	@apply py-12 lg:py-16;
 }
 
 .ll-equal-vert-spacing {
-  @apply my-8 md:my-12 lg:my-16;
+	@apply my-8 md:my-12 lg:my-16;
 }
 
 .bg-gradient-70 {
-  background-image: linear-gradient(70deg, var(--tw-gradient-stops));
+	background-image: linear-gradient(70deg, var(--tw-gradient-stops));
 }
-.bg-gradient-110 {
-  background-image: linear-gradient(110deg, var(--tw-gradient-stops));
-}
-
 
 .icon {
-	@apply w-4 h-4;
+	@apply h-4 w-4;
 }
 /* FontAwesome svg-js method ...
 via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
-.llicon {
+/* .llicon {
 	width: 1em;
 	height: 1em;
 	vertical-align: -0.125em;
@@ -58,19 +51,16 @@ via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
 	width: 2em;
 	height: 2em;
 	vertical-align: -0.25em;
-}
+} */
 
 .papercorners-4 {
-	@apply rounded-tl rounded-br;
-	/* border-radius: 4px 0 4px; */
+	border-radius: 4px 0 4px;
 }
 .papercorners-6 {
-	@apply rounded-tl-md rounded-br-md;
-	/* border-radius: 6px 0 6px; */
+	border-radius: 6px 0 6px;
 }
 .papercorners-8 {
-	@apply rounded-tl-lg rounded-br-lg;
-	/* border-radius: 8px 0 8px; */
+	border-radius: 8px 0 8px;
 }
 .papercorners-12 {
 	border-radius: 12px 0 12px;
@@ -100,7 +90,6 @@ via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
 	border-radius: 144px 0 144px;
 }
 
-
 .inline-comma-sep {
 	span:not(:last-of-type)::after {
 		content: ", ";
@@ -112,11 +101,21 @@ via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
 	}
 }
 
-
 .context-alert {
-  @apply absolute p-2 bg-yellow-100 text-neutral-800 font-bold text-center transition-opacity animate-bounce;
-  inset: auto 0 calc(100% + 0.5em) 0;
+	animation: bounce 1s infinite;
+	background-color: rgb(254 249 195 / 1);
+	color: rgb(38 38 38 / 1);
+	font-weight: 700;
+	inset: auto 0 calc(100% + 0.5em) 0;
+	padding: 0.25rem;
+	position: absolute;
+	text-align: center;
+	transition-duration: 200ms;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.context-alert[data-state='empty'] {
-  @apply opacity-0 translate-y-1 transition-none;
+.context-alert[data-state="empty"] {
+	opacity: 0;
+	transform: translateY(0.25em);
+	transition-property: none;
 }

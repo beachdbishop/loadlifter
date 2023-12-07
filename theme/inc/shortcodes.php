@@ -58,6 +58,14 @@ function ll_listmenu_shortcode($atts, $content = null) {
 add_shortcode( 'listmenu', 'll_listmenu_shortcode' );
 
 
+/**
+ * Using a shortcode to conditionally enqueue the a11y-slider js
+ */
+function ll_a11y_slider_shortcode() {
+	return '';
+}
+add_shortcode( 'a11yslider', 'll_a11y_slider_shortcode' );
+
 /* * * * C O U N T S * * * */
 
 // Client count shortcode

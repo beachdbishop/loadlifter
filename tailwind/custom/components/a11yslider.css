@@ -6,11 +6,11 @@
 }
 
 .a11y-slider-container > button {
-	@apply font-head font-semibold border rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-600 shadow-neutral-800 hover:text-brand-blue hover:border-brand-blue hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:bg-brand-red-dark active:shadow-sm sm:w-auto lg:text-lg dark:border-neutral-400 dark:text-neutral-400;
+	@apply font-head hover:text-brand-blue hover:border-brand-blue focus:ring-brand-blue-pale/80 active:bg-brand-red-dark mb-2 rounded-lg border bg-transparent px-5 py-3 font-semibold text-neutral-600 shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring active:shadow-sm dark:border-neutral-400 dark:text-neutral-400 sm:w-auto lg:text-lg;
 }
 
 .on-darkbg .a11y-slider-container > button {
-	@apply font-head font-semibold border rounded-lg bg-transparent px-5 py-3 mb-2 text-neutral-400 border-neutral-400 shadow-neutral-800 hover:text-white hover:border-white hover:shadow-xl focus:outline-none focus:ring focus:ring-brand-blue-pale/80 active:shadow-sm sm:w-auto lg:text-lg;
+	@apply font-head focus:ring-brand-blue-pale/80 mb-2 rounded-lg border border-neutral-400 bg-transparent px-5 py-3 font-semibold text-neutral-400 shadow-neutral-800 hover:border-white hover:text-white hover:shadow-xl focus:outline-none focus:ring active:shadow-sm sm:w-auto lg:text-lg;
 }
 
 .a11y-slider-next {
@@ -37,7 +37,7 @@
 	@apply mx-1 my-2 block h-4 w-4 p-0;
 }
 .a11y-slider-dots button {
-	@apply block h-full w-full rounded-full border border-solid border-brand-gray bg-transparent -indent-[9999px] text-[0px] text-current dark:border-neutral-500;
+	@apply border-brand-gray block h-full w-full rounded-full border border-solid bg-transparent -indent-[9999px] text-[0px] text-current dark:border-neutral-500;
 }
 .a11y-slider-dots li button.active,
 .a11y-slider-dots li button:focus,
@@ -70,20 +70,19 @@
 }
 
 .slider-people {
-	@apply flex pt-2 pb-4 lg:pb-8 gap-2;
+	@apply flex gap-2 pb-4 pt-2 lg:pb-8;
 }
 .slider-people > * {
-	@apply w-52 grow-0 shrink-0 basis-auto md:w-64;
+	@apply w-52 shrink-0 grow-0 basis-auto md:w-64;
 }
 
-
 @media screen and (max-width: 743px) {
-  .a11y-slider-autoplay,
-  .a11y-slider-next,
-  .a11y-slider-prev {
-    display: block;
-    float: none;
-    width: 100%;
-    margin: 0 0 10px;
-  }
+	.a11y-slider-autoplay,
+	.a11y-slider-next,
+	.a11y-slider-prev {
+		display: block;
+		float: none;
+		width: 100%;
+		margin: 0 0 10px;
+	}
 }

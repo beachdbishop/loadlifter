@@ -7,5 +7,5 @@ ol.wp-block-footnotes {
 }
 
 sup.fn a {
-  @apply text-brand-red no-underline hover:text-current;
+	@apply text-brand-red no-underline hover:text-current;
 }

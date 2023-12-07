@@ -24,15 +24,15 @@ add_action( 'wp_head', 'll_pingback_header' );
 
 
 /**
- * Filter the except length to 20 words.
+ * Filter the except length to 16 words.
  *
  * @param int $length Excerpt length.
  * @return int (Maybe) modified excerpt length.
  */
-function wpdocs_custom_excerpt_length( $length ) {
-	return 20;
+function ll_custom_excerpt_length( $length ) {
+	return 16;
 }
-add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+add_filter( 'excerpt_length', 'll_custom_excerpt_length', 999 );
 
 
 /**
@@ -54,15 +54,15 @@ function ll_is_tree( $pid ) { // $pid = The ID of the page we're looking for pag
  */
 function ll_exclude_categories( $wp_query ) {
 	if ( wp_get_environment_type() == 'production' ) {
-		$catid = '1733';
+		$catid = '1732';
 	}
 
 	if ( wp_get_environment_type() == 'staging' ) {
-		$catid = '1733';
+		$catid = '1732';
 	}
 
 	if ( wp_get_environment_type() == 'local' ) {
-		$catid = '258';
+		$catid = '257';
 	}
 
 	if( is_home() || is_feed() || ( is_archive() && !is_category() ) ) {
@@ -166,15 +166,6 @@ function ll_body_class( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', 'll_body_class' );
-
-
-/**
- * Using a shortcode to conditionally enqueue the a11y-slider js
- */
-function ll_a11y_slider_shortcode() {
-	return '';
-}
-add_shortcode( 'a11yslider', 'll_a11y_slider_shortcode' );
 
 
 /**

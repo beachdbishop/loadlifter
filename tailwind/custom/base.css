@@ -12,7 +12,8 @@
  * editor.
 */
 :root {
-  --nav-height: 124px;
+	--nav-height: 124px;
+	overscroll-behavior-x: contain;
 }
 
 html {
@@ -20,47 +21,63 @@ html {
 }
 
 body {
-	@apply font-body text-neutral-800 print:bg-transparent print:text-neutral-900 dark:text-neutral-300;
+	@apply font-body text-neutral-800 dark:text-neutral-300 print:bg-transparent print:text-neutral-900;
 }
-
-/* [id] {
-  scroll-margin-top: var(--nav-height);
-} */
 
 h1,
 h2,
 h3,
 h4,
 h5 {
-	@apply font-head font-light;
+	font-family: var(--wp--preset--font-family--serenity);
+	font-weight: 300;
+}
+
+@supports (text-wrap: balance) {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		text-wrap: balance;
+	}
 }
 
 h1 {
-	@apply text-5xl;
+	font-size: 3rem;
+	line-height: 1;
 }
 h2 {
-	@apply text-4xl;
+	font-size: 2.25rem;
+	line-height: 2.5rem;
 }
 h3 {
-	@apply text-3xl;
+	font-size: 1.875rem;
+	line-height: 2.25rem;
 }
 h4 {
-	@apply text-2xl;
+	font-size: 1.5rem;
+	line-height: 2rem;
 }
 h5 {
-	@apply text-xl;
+	font-size: 1.25rem;
+	line-height: 1.75rem;
 }
 
 h6 {
-	@apply font-body text-lg uppercase tracking-wide;
+	font-family: var(--wp--preset--font-family--work-sans);
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	text-transform: uppercase;
+	letter-spacing: 0.025em;
 }
 
 a:not([class]) {
-	@apply text-current;
+	color: currentColor;
 }
 :focus {
 	outline: 2px dashed;
-	outline-offset: 0.25rem;
+	/* outline-offset: 0.25rem; */
 }
 main:focus {
 	outline: none;
@@ -70,15 +87,22 @@ main:focus {
 }
 
 dl {
-	@apply m-0 p-0;
+	margin: 0;
+	padding: 0;
 }
 
 dt {
-	@apply mt-2 font-bold;
+	margin-top: 0.5rem;
+	font-weight: 700;
 }
 
 dd {
-	@apply list-square ml-8 list-item border-b border-neutral-100 pb-2;
+	border-bottom-width: 1px;
+	border-color: rgb(245 245 245 / 1);
+	display: list-item;
+	list-style-type: square;
+	margin-left: 2rem;
+	padding-bottom: 0.5rem;
 }
 
 dd::marker {
@@ -89,10 +113,9 @@ table caption {
 	caption-side: bottom;
 }
 
-
 /* Custom Animations */
 @keyframes fade-in {
-  0% {
+	0% {
 		opacity: 0;
 	}
 	100% {
@@ -100,11 +123,11 @@ table caption {
 	}
 }
 .animate-fade-in {
-  animation: fade-in 500ms ease-in-out;
+	animation: fade-in 500ms ease-in-out;
 }
 
 @keyframes fade-in-from-bottom {
-  0% {
+	0% {
 		opacity: 0;
 		transform: translateY(64px);
 	}
@@ -114,11 +137,11 @@ table caption {
 	}
 }
 .animate-fade-in-from-bottom {
-  animation: fade-in-from-bottom 700ms ease-in-out;
+	animation: fade-in-from-bottom 700ms ease-in-out;
 }
 
 @keyframes fade-in-from-top {
-  0% {
+	0% {
 		opacity: 0;
 		transform: translateY(-32px);
 	}
@@ -128,21 +151,35 @@ table caption {
 	}
 }
 .animate-fade-in-from-top {
-  animation: fade-in-from-top 700ms ease-in-out;
+	animation: fade-in-from-top 700ms ease-in-out;
 }
 
 @keyframes sway {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 .animate-sway {
-  animation: sway 21s ease infinite;
+	animation: sway 21s ease infinite;
 }
 
+@keyframes move-bg {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-680px);
+	}
+}
+.animate-move-bg {
+	animation-name: move-bg;
+	animation-duration: 8s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}

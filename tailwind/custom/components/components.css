@@ -40,12 +40,10 @@
 	@apply prose prose-neutral max-w-none prose-headings:font-normal prose-th:border-purple-500 prose-td:border-purple-500 prose-th:px-0 prose-th:text-center prose-th:text-sm prose-th:font-bold prose-th:uppercase prose-th:tracking-wide md:prose-lg lg:prose-xl;
 } */
 
-
 #page {
-  /* @apply relative text-neutral-100 before:content-[''] before:-z-10 before:block before:fixed before:inset-x-0 before:inset-y-0 before:bg-no-repeat before:bg-fixed before:bg-blend-multiply before:bg-neutral-600 before:bg-phoenix-desert-small before:bg-center before:bg-cover md:before:bg-phoenix-desert3 lg:before:bg-[center_top_5rem]; */
-  @apply relative before:content-[''] before:-z-10 before:block before:fixed before:inset-x-0 before:inset-y-0 before:bg-no-repeat before:bg-fixed before:bg-phoenix-desert-small before:bg-center before:bg-cover md:before:bg-phoenix-desert3 lg:before:bg-[center_top_5rem];
+	/* @apply relative text-neutral-100 before:content-[''] before:-z-10 before:block before:fixed before:inset-x-0 before:inset-y-0 before:bg-no-repeat before:bg-fixed before:bg-blend-multiply before:bg-neutral-600 before:bg-phoenix-desert-small before:bg-center before:bg-cover md:before:bg-phoenix-desert3 lg:before:bg-[center_top_5rem]; */
+	@apply before:bg-phoenix-desert-small md:before:bg-phoenix-desert3 relative before:fixed before:inset-x-0 before:inset-y-0 before:-z-10 before:block before:bg-cover before:bg-fixed before:bg-center before:bg-no-repeat before:content-[''] lg:before:bg-[center_top_5rem];
 }
-
 
 /**
  * Layout styles for centered content areas
@@ -77,19 +75,21 @@
 }
 
 @media screen {
-  .single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
-    @apply border-b border-neutral-200 pb-4 text-xl lg:text-2xl;
-  }
+	.single-post
+		.entry-content
+		> p:first-of-type:not([class*="is-style-note-"]) {
+		@apply border-b border-neutral-200 pb-4 text-xl lg:text-2xl;
+	}
 }
 
 .entry-content .aligncenter {
 	@apply mx-auto;
 }
 .entry-content .alignleft {
-	@apply float-left mr-4 mb-4 lg:mr-8 lg:mb-8;
+	@apply float-left mb-4 mr-4 lg:mb-8 lg:mr-8;
 }
 .entry-content .alignright {
-	@apply float-right ml-4 mb-4 lg:ml-8 lg:mb-8;
+	@apply float-right mb-4 ml-4 lg:mb-8 lg:ml-8;
 }
 
 /* .entry-content a.wp-block-button__link {
@@ -97,24 +97,22 @@
 } */
 
 @media (min-width: 768px) {
-  .ll-page-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    grid-template-areas:
-      "aaa aaa ccc"
-      "bbb bbb bbb";
-  }
-  .ll-page-grid-area-a {
-    grid-area: aaa; /* Main content */
-
-  }
-  .ll-page-grid-area-b {
-    grid-area: bbb; /* Secondary content */
-  }
-  .ll-page-grid-area-c {
-    grid-area: ccc; /* FORM */
-  }
+	.ll-page-grid {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-areas:
+			"aaa aaa ccc"
+			"bbb bbb bbb";
+	}
+	.ll-page-grid-area-a {
+		grid-area: aaa; /* Main content */
+	}
+	.ll-page-grid-area-b {
+		grid-area: bbb; /* Secondary content */
+	}
+	.ll-page-grid-area-c {
+		grid-area: ccc; /* FORM */
+	}
 }
-
 
 @supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {
 	.mask-logo {
@@ -126,14 +124,13 @@
 }
 
 .bg-brandmarkmono {
-  --mark-mono-size: 320px;
-  background-image: url("/wp-content/themes/loadlifter/theme/img/brandmarkmono.svg");
-  background-position: -140px 32px;
-  background-size: var(--mark-mono-size);
-  background-repeat: no-repeat;
-  min-height: calc(var(--mark-mono-size) + 2em);
+	--mark-mono-size: 320px;
+	background-image: url("/wp-content/themes/loadlifter/theme/img/brandmarkmono.svg");
+	background-position: -140px 32px;
+	background-size: var(--mark-mono-size);
+	background-repeat: no-repeat;
+	min-height: calc(var(--mark-mono-size) + 2em);
 }
-
 
 .single-post .empty-feat-img {
 	@apply hidden;
@@ -144,7 +141,7 @@
 }
 
 aside .timestamp {
-	@apply my-4 block w-full border-t border-b border-neutral-200 py-4;
+	@apply my-4 block w-full border-b border-t border-neutral-200 py-4;
 }
 .date-updated::before {
 	content: "(Updated: ";
@@ -157,77 +154,65 @@ aside .timestamp {
 	@apply leading-relaxed;
 }
 .list--tags a {
-	@apply papercorners-6 whitespace-nowrap bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600 hover:bg-brand-blue-pale hover:text-brand-blue-dark;
-}
-
-.card-headshot {
-	--s: 200px; /* size of the image */
-	--b: 4px; /* border thickness */
-	--g: 8px; /* gap */
-	--c: #00668e; /* color */
-
-	width: var(--s);
-	aspect-ratio: 1;
-	transition: filter 0.3s ease-in-out;
+	@apply papercorners-6 hover:bg-brand-blue-pale hover:text-brand-blue-dark whitespace-nowrap bg-neutral-100 px-2 py-1 text-[12px] text-neutral-600;
 }
 
 /* TODO: Turn this into a component? */
 .logogrid {
-	@apply mx-auto my-16 grid max-w-max grid-cols-1 place-content-center gap-y-8 gap-x-32 sm:grid-cols-3 md:gap-x-16 lg:gap-x-32;
+	@apply mx-auto my-16 grid max-w-max grid-cols-1 place-content-center gap-x-32 gap-y-8 sm:grid-cols-3 md:gap-x-16 lg:gap-x-32;
 }
 .logogrid > div {
 	@apply flex items-center justify-center;
 }
 .logogrid > div img {
-  @apply max-h-[55px];
+	@apply max-h-[55px];
 }
-
 
 .has-upperright-corner-gradient-amber-300 {
-  background-image: linear-gradient(225deg, #fcd34d 0%, #fcd34d 36px, transparent 36px);
-}
-
-
-.social-links a {
-	@apply bg-brand-blue text-inherit hover:bg-transparent hover:text-brand-blue;
-}
-.footer-social .social-links a {
-	@apply bg-neutral-700 text-neutral-300 hover:bg-transparent hover:text-brand-blue-pale;
-}
-.on-darkbg .social-links a {
-	@apply bg-transparent text-neutral-300 hover:bg-neutral-700 hover:text-brand-blue-pale;
-}
-
-
-/* Quotes */
-.wp-block-quote p {
-  @apply my-4 text-xl lg:text-2xl;
-}
-.wp-block-quote cite {
-  @apply font-head text-base not-italic lg:text-lg before:content-['—'];
-}
-
-.wp-block-quote.is-style-default {
-  @apply relative p-4 lg:px-8 rounded-lg border-t-4 border-r-0 border-b-4 border-l-0 text-brand-blue-dark border-brand-blue quote dark:text-brand-blue-pale;
-}
-
-
-/* TODO: May be able to remove this rule. */
-.image__featured--outer {
-	/* background-color: rgb(189,175,177); */
 	background-image: linear-gradient(
-		0deg,
-		hsla(218, 11%, 65%, 0) 40%,
-		hsla(218, 11%, 65%, 1) 95%
+		225deg,
+		#fcd34d 0%,
+		#fcd34d 36px,
+		transparent 36px
 	);
 }
 
-.post-grid .image__featured--outer {
-  @apply papercorners-16 border-2 border-neutral-200 group-hover:border-white;
+.social-links a {
+	@apply bg-brand-blue hover:text-brand-blue text-inherit hover:bg-transparent;
+}
+.footer-social .social-links a {
+	@apply hover:text-brand-blue-pale bg-neutral-700 text-neutral-300 hover:bg-transparent;
+}
+.on-darkbg .social-links a {
+	@apply hover:text-brand-blue-pale bg-transparent text-neutral-300 hover:bg-neutral-700;
 }
 
+/* Quotes */
+.wp-block-quote p {
+	@apply my-4 text-xl lg:text-2xl;
+}
+.wp-block-quote cite {
+	@apply font-head text-base not-italic before:content-['—'] lg:text-lg;
+}
+
+.wp-block-quote.is-style-default {
+	@apply text-brand-blue-dark border-brand-blue quote dark:text-brand-blue-pale relative rounded-lg border-b-4 border-l-0 border-r-0 border-t-4 p-4 lg:px-8;
+}
+
+.image__featured--outer {
+	background-image: linear-gradient(
+		0deg,
+		hsla(0, 0%, 64%, 0) 40%,
+		hsla(0, 0%, 64%, 1) 95%
+	);
+}
+
+/* .post-grid .image__featured--outer {
+  @apply border-2 border-neutral-200 group-hover:border-white;
+} */
+
 .breadcrumbs {
-  @apply text-base truncate;
+	@apply truncate text-base;
 	/* font-size: 1rem; */
 }
 /* via: https://mtekk.us/archives/guides/trimming-breadcrumb-title-lengths-with-css/ */
@@ -245,20 +230,13 @@ aside .timestamp {
 	}
 }
 
-.headshot-wrapper {
-  @apply relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-transparent before:bg-repeat before:bg-[bottom_right] before:bg-headshot print:w-[2in] print:h-auto print:before:bg-none;
-}
 .headshot-wrapper img {
-  @apply z-[2];
-}
-
-.post-card.type-people .image__featured--inner {
-  background-position: center -5rem;
+	@apply z-[2];
 }
 
 /* Pagination */
 ul.page-numbers {
-	@apply my-4 mx-auto flex max-w-content list-none flex-wrap justify-center gap-4 font-head text-orient-900 md:my-8 lg:my-16;
+	@apply max-w-content font-head text-orient-900 mx-auto my-4 flex list-none flex-wrap justify-center gap-4 md:my-8 lg:my-16;
 }
 a.page-numbers {
 	@apply text-orient-900 hover:text-brand-blue-dark;
@@ -266,7 +244,6 @@ a.page-numbers {
 span.current {
 	@apply opacity-50;
 }
-
 
 /* Paragraphs / Callouts / Notes */
 p[class*="is-style-note-"] {
@@ -301,12 +278,10 @@ p[class*="is-style-note-"] {
 	}
 }
 
-
 /* Openings */
 .container-openings-list {
-	@apply rounded-lg p-8 mt-8 border-2 border-solid border-neutral-500 bg-white dark:bg-neutral-900;
+	@apply mt-8 rounded-lg border-2 border-solid border-neutral-500 bg-white p-8 dark:bg-neutral-900;
 }
-
 
 /* Scrollbar */
 /* via: https://css-tricks.com/the-current-state-of-styling-scrollbars-in-css/ */
@@ -330,103 +305,142 @@ p[class*="is-style-note-"] {
 	background-color: var(--scrollbar-background);
 }
 
-
 /* Block: Ad */
-.llad:not([class*="is-style-"]) { /* Default = Clear */
+.llad:not([class*="is-style-"]) {
+	/* Default = Clear */
 	@apply bg-transparent;
+	background-color: transparent;
 }
 .llad.is-style-brand-red {
-  @apply bg-brand-red;
+	background-color: var(--wp--preset--color--brand-red);
 }
 .llad.is-style-brand-blue {
-  @apply bg-brand-blue;
+	background-color: var(--wp--preset--color--brand-blue);
 }
 .llad.is-style-brand-gray {
-  @apply bg-brand-gray;
+	background-color: var(--wp--preset--color--brand-gray);
 }
-
 
 /* Block: Callout */
 .llcallout {
-  --title-bg: #e5e5e5; /* neutral-200 */
-  --title-color: #171717; /* neutral-900 */
-  border-color: var(--title-bg);
+	--title-bg: #e5e5e5; /* neutral-200 */
+	--title-color: #171717; /* neutral-900 */
+	border-color: var(--title-bg);
 }
 .llcallout .acf-innerblocks-container {
-  @apply p-2;
+	padding: 0.5rem;
 }
 .llcallout-title {
-  background-color: var(--title-bg);
-  color: var(--title-color);
+	background-color: var(--title-bg);
+	color: var(--title-color);
 }
 .llcallout.is-style-note {
-  --title-bg: #bfdbfe; /* blue-200 */
-  --title-color: #1e3a8a; /* blue-900 */
+	--title-bg: #bfdbfe; /* blue-200 */
+	--title-color: #1e3a8a; /* blue-900 */
 }
 .llcallout.is-style-info {
-  --title-bg: #a5f3fc; /* cyan-200 */
-  --title-color: #164e63; /* cyan-900 */
+	--title-bg: #a5f3fc; /* cyan-200 */
+	--title-color: #164e63; /* cyan-900 */
 }
 .llcallout.is-style-tip {
-  --title-bg: #99f6e4; /* teal-200 */
-  --title-color: #134e4a; /* teal-900 */
+	--title-bg: #99f6e4; /* teal-200 */
+	--title-color: #134e4a; /* teal-900 */
 }
 .llcallout.is-style-success {
-  --title-bg: #bbf7d0; /* green-200 */
-  --title-color: #14532d; /* green-900 */
+	--title-bg: #bbf7d0; /* green-200 */
+	--title-color: #14532d; /* green-900 */
 }
 .llcallout.is-style-warning {
-  --title-bg: #fed7aa; /* orange-200 */
-  --title-color: #7c2d12; /* orange-900 */
+	--title-bg: #fed7aa; /* orange-200 */
+	--title-color: #7c2d12; /* orange-900 */
 }
 .llcallout.is-style-danger {
-  --title-bg: #fecaca; /* red-200 */
-  --title-color: #7f1d1d; /* red-900 */
+	--title-bg: #fecaca; /* red-200 */
+	--title-color: #7f1d1d; /* red-900 */
 }
 .llcallout.is-style-example {
-  --title-bg: #e9d5ff; /* purple-200 */
-  --title-color: #581c87; /* purple-900 */
+	--title-bg: #e9d5ff; /* purple-200 */
+	--title-color: #581c87; /* purple-900 */
 }
 .llcallout.is-style-quote {
-  --title-bg: #e5e5e5; /* neutral-200 */
-  --title-color: #171717; /* neutral-900 */
+	--title-bg: #e5e5e5; /* neutral-200 */
+	--title-color: #171717; /* neutral-900 */
 }
 
 @media (prefers-color-scheme: dark) {
-  .llcallout {
-    --title-bg: #404040; /* neutral-700 */
-    --title-color: #fafafa; /* neutral-50 */
-  }
-  .llcallout.is-style-note {
-    --title-bg: #1d4ed8; /* blue-700 */
-    --title-color: #eff6ff; /* blue-50 */
-  }
-  .llcallout.is-style-info {
-    --title-bg: #0e7490; /* cyan-700 */
-    --title-color: #ecfeff; /* cyan-50 */
-  }
-  .llcallout.is-style-tip {
-    --title-bg: #0f766e; /* teal-700 */
-    --title-color: #f0fdfa; /* teal-50 */
-  }
-  .llcallout.is-style-success {
-    --title-bg: #15803d; /* green-700 */
-    --title-color: #f0fdf4; /* green-50 */
-  }
-  .llcallout.is-style-warning {
-    --title-bg: #c2410c; /* orange-700 */
-    --title-color: #fff7ed; /* orange-50 */
-  }
-  .llcallout.is-style-danger {
-    --title-bg: #b91c1c; /* red-700 */
-    --title-color: #fef2f2; /* red-50 */
-  }
-  .llcallout.is-style-example {
-    --title-bg: #7e22ce; /* purple-700 */
-    --title-color: #faf5ff; /* purple-50 */
-  }
-  .llcallout.is-style-quote {
-    --title-bg: #404040; /* neutral-700 */
-    --title-color: #fafafa; /* neutral-50 */
-  }
+	.llcallout {
+		--title-bg: #404040; /* neutral-700 */
+		--title-color: #fafafa; /* neutral-50 */
+	}
+	.llcallout.is-style-note {
+		--title-bg: #1d4ed8; /* blue-700 */
+		--title-color: #eff6ff; /* blue-50 */
+	}
+	.llcallout.is-style-info {
+		--title-bg: #0e7490; /* cyan-700 */
+		--title-color: #ecfeff; /* cyan-50 */
+	}
+	.llcallout.is-style-tip {
+		--title-bg: #0f766e; /* teal-700 */
+		--title-color: #f0fdfa; /* teal-50 */
+	}
+	.llcallout.is-style-success {
+		--title-bg: #15803d; /* green-700 */
+		--title-color: #f0fdf4; /* green-50 */
+	}
+	.llcallout.is-style-warning {
+		--title-bg: #c2410c; /* orange-700 */
+		--title-color: #fff7ed; /* orange-50 */
+	}
+	.llcallout.is-style-danger {
+		--title-bg: #b91c1c; /* red-700 */
+		--title-color: #fef2f2; /* red-50 */
+	}
+	.llcallout.is-style-example {
+		--title-bg: #7e22ce; /* purple-700 */
+		--title-color: #faf5ff; /* purple-50 */
+	}
+	.llcallout.is-style-quote {
+		--title-bg: #404040; /* neutral-700 */
+		--title-color: #fafafa; /* neutral-50 */
+	}
+}
+
+.card-headshot {
+	--s: 200px; /* size of the image */
+	--b: 4px; /* border thickness */
+	--g: 8px; /* gap */
+	--c: #00668e; /* color */
+
+	width: var(--s);
+	aspect-ratio: 1;
+	transition: filter 0.3s ease-in-out;
+}
+
+.post-card.type-people .image__featured--inner {
+	background-position: center -5rem;
+}
+
+.cards-ic {
+	list-style-type: none;
+	margin-top: 1rem;
+}
+.card-ic:focus-within a:focus {
+	text-decoration-line: none;
+}
+.card-ic .card-meta a {
+	position: relative;
+	padding: 0.5rem 0;
+}
+.card-ic .card-text {
+	max-width: 60ch;
+	padding-inline: 0.5rem;
+}
+.card-ic + .card-ic {
+	margin-top: 1.5rem;
+}
+@supports (display: grid) {
+	.card-ic + .card-ic {
+		margin-top: 0;
+	}
 }

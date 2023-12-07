@@ -70,8 +70,8 @@ endif; ?>
 						[
 							'limit'                         => 3,
 							'extra_css_class'               => 'container mx-0 print:hidden',
-														'generate_missing_thumbnails'   => false,
-														'recent'                        => '18 month',
+							'generate_missing_thumbnails'   => false,
+							'recent'                        => '18 month',
 						]
 					);
 				}

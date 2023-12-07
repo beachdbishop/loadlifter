@@ -38,14 +38,14 @@ get_header();
 			</header>
 
 			<?php if ( have_posts() ) : ?>
-				<div class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				<ul class="cards-ic | grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					<?php
 					while ( have_posts() ) :
 						the_post();
-						get_template_part( 'template-parts/content/content', 'card' );
+						get_template_part( 'template-parts/content/content', 'card-ic' );
 					endwhile; // End of the loop.
 					?>
-				</div>
+				</ul>
 
 				<div class="mt-8">
 					<?php // ll_paging_nav();

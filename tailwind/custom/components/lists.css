@@ -32,11 +32,11 @@ ul.is-style-default {
 }
 
 .is-style-list-columns-2 {
-  @apply columns-1 lg:columns-2;
+	@apply columns-1 lg:columns-2;
 }
 
 .is-style-list-columns-2 li {
-  @apply break-inside-avoid-column;
+	@apply break-inside-avoid-column;
 }
 
 /* inspiration: https://codepen.io/joshwcomeau/pen/VwxwYbG */
@@ -91,7 +91,7 @@ ul.is-style-default {
 .is-style-circle > *,
 .is-style-circle-red > *,
 .is-style-circle-blue > * {
-	@apply flex aspect-square w-[128px] items-center justify-center rounded-full text-center font-body text-lg font-bold leading-snug text-white/80;
+	@apply font-body flex aspect-square w-[128px] items-center justify-center rounded-full text-center text-lg font-bold leading-snug text-white/80;
 }
 .is-style-circle a,
 .is-style-circle-red a,
@@ -129,7 +129,7 @@ ul.is-style-default {
 .is-style-split-circle > *,
 .is-style-split-circle-red > *,
 .is-style-split-circle-blue > * {
-	@apply flex aspect-square w-[200px] items-center justify-center rounded-full text-center font-body text-xl font-bold leading-snug text-neutral-200;
+	@apply font-body flex aspect-square w-[200px] items-center justify-center rounded-full text-center text-xl font-bold leading-snug text-neutral-200;
 }
 .split-circle a,
 .is-style-split-circle a,
@@ -147,12 +147,11 @@ ul.is-style-default {
 	background: var(--wp--preset--gradient--blue-split) !important;
 }
 
-
 .is-style-boxed {
-	@apply md:grid md:grid-cols-2 md:gap-4 md:mb-4 lg:grid-cols-3 lg:gap-8 lg:mb-8 -mx-2 list-none !pl-0;
+	@apply -mx-2 list-none !pl-0 md:mb-4 md:grid md:grid-cols-2 md:gap-4 lg:mb-8 lg:grid-cols-3 lg:gap-8;
 }
 .is-style-boxed > li {
-	@apply text-base border rounded-lg border-solid border-neutral-900/10 p-4 !my-0 lg:p-8;
+	@apply !my-0 rounded-lg border border-solid border-neutral-900/10 p-4 text-base lg:p-8;
 }
 .is-style-boxed li > strong {
 	@apply mb-4;

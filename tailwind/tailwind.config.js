@@ -1,4 +1,4 @@
-const plugin = require('tailwindcss/plugin')
+// const plugin = require('tailwindcss/plugin')
 
 // Set the Preflight flag based on the build target.
 const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
@@ -6,7 +6,7 @@ const includePreflight = 'editor' === process.env._TW_TARGET ? false : true;
 module.exports = {
 	presets: [
 		// Manage Tailwind Typography's configuration in a separate file.
-		require( './tailwind-typography.config.js' ),
+		require('./tailwind-typography.config.js'),
 	],
 	content: [
 		// Ensure changes to PHP files and `theme.json` trigger a rebuild.
@@ -26,14 +26,19 @@ module.exports = {
 		// Extend the default Tailwind theme.
 		extend: {
 			aspectRatio: {
-				'headshot': '95 / 127',
+				headshot: '95 / 127',
 				'featured-image': '384 / 125',
+				'feat-3.75': '3.75 / 1',
+				'feat-4.3': '4.3 / 1',
+				'feat-card': '1.91',
 			},
 			backgroundImage: {
-				'featured-image': "var(--ll--page-feat-img)",
-				'headshot': "url('img/dots-neutral-500.svg')",
-				'hero-gradient': "linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)",
-				'phoenix-desert-small': "url('img/phx-desert-color-no-crop-small.jpg')",
+				'featured-image': 'var(--ll--page-feat-img)',
+				headshot: "url('img/dots-neutral-500.svg')",
+				'hero-gradient':
+					'linear-gradient(to right, hsla(0, 0%, 16%, 0.9) 0%, hsla(0, 0%, 16%, 0.891) 8.1%, hsla(0, 0%, 16%, 0.866) 15.5%, hsla(0, 0%, 16%, 0.827) 22.5%, hsla(0, 0%, 16%, 0.777) 29%, hsla(0, 0%, 16%, 0.719) 35.3%, hsla(0, 0%, 16%, 0.654) 41.2%, hsla(0, 0%, 16%, 0.585) 47.1%, hsla(0, 0%, 16%, 0.515) 52.9%, hsla(0, 0%, 16%, 0.446) 58.8%, hsla(0, 0%, 16%, 0.381) 64.7%, hsla(0, 0%, 16%, 0.323) 71%, hsla(0, 0%, 16%, 0.273) 77.5%, hsla(0, 0%, 16%, 0.234) 84.5%, hsla(0, 0%, 16%, 0.209) 91.9%, hsla(0, 0%, 16%, 0.2) 100%)',
+				'phoenix-desert-small':
+					"url('img/phx-desert-color-no-crop-small.jpg')",
 				'phoenix-desert3': "url('img/phx-desert-color-no-crop.jpg')",
 			},
 			backgroundSize: {
@@ -70,10 +75,10 @@ module.exports = {
 			maxWidth: {
 				'46char': '46ch',
 				'65char': '65ch',
-				'socimg': '736px',
+				socimg: '736px',
 			},
 			minHeight: {
-				'hero': '360px',
+				hero: '360px',
 			},
 			textShadow: {
 				none: 'none',
@@ -91,6 +96,9 @@ module.exports = {
 		'a11y-slider-dots',
 		'a11y-slider-next',
 		'a11y-slider',
+		'aspect-feat-3.75',
+		'aspect-feat-4.3',
+		'aspect-feat-card',
 		'bg-180pct',
 		'bg-current',
 		'bg-brand-gray-dark',
@@ -142,6 +150,7 @@ module.exports = {
 		'lg:gap-x-16',
 		'lg:gap-y-12',
 		'lg:grid-cols-2',
+		'lg:max-w-lg',
 		'lg:visible',
 		'list-square',
 		'max-w-2xl',
@@ -149,8 +158,11 @@ module.exports = {
 		'max-w-4xl',
 		'max-w-5xl',
 		'max-w-6xl',
+		'max-w-lg',
 		'max-w-md',
+		'max-w-xs',
 		'max-w-prose',
+		'md:max-w-md',
 		'md:place-content-start',
 		'rounded-md',
 		'shadow-brand-blue-dark/50',
@@ -177,7 +189,8 @@ module.exports = {
 		'w-8',
 		'w-fit',
 		{
-			pattern: /bg-(amber|neutral|green)-(50|100|200|300|400|500|600|700|800|900)/,
+			pattern:
+				/bg-(amber|neutral|green)-(50|100|200|300|400|500|600|700|800|900)/,
 		},
 		{
 			pattern: /border-(t|l|b|r|x|y)-(1|2|3|4)/,
@@ -196,7 +209,7 @@ module.exports = {
 		},
 		{
 			pattern: /p-(0|1|2|4|6|8|10|12|16)/,
-		}
+		},
 	],
 	corePlugins: {
 		// Disable default tailwind aspect-* classes
@@ -208,7 +221,7 @@ module.exports = {
 		// Extract colors and widths from `theme.json`.
 		require('@_tw/themejson')(require('../theme/theme.json')),
 		// Add Tailwind Typography.
-		require('@tailwindcss/typography' ),
+		require('@tailwindcss/typography'),
 		// Uncomment below to add additional first-party Tailwind plugins.
 		require('@tailwindcss/forms'),
 		require('@shrutibalasa/tailwind-grid-auto-fit'),
@@ -222,14 +235,14 @@ module.exports = {
 					}),
 				},
 				{ values: theme('textShadow') }
-			)
+			);
 		},
 
 		// via: https://www.viget.com/articles/adding-safari-14-support-to-tailwinds-aspect-ratio/
 		({ matchUtilities, theme }) => {
 			matchUtilities(
 				{
-					'aspect': (value) => ({
+					aspect: (value) => ({
 						'@supports (aspect-ratio: 1 / 1)': {
 							aspectRatio: value,
 						},
@@ -243,16 +256,16 @@ module.exports = {
 								clear: 'left',
 								content: '""',
 								display: 'block',
-							}
+							},
 						},
 					}),
 				},
 				{ values: theme('aspectRatio') }
-			)
+			);
 		},
 
 		function ({ addVariant }) {
-			addVariant('children', '&>*')
+			addVariant('children', '&>*');
 		},
 	],
 };
