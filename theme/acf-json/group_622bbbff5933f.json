@@ -197,7 +197,8 @@
             },
             "choices": {
                 "phoenix": "Phoenix, AZ",
-                "tucson": "Tucson, AZ"
+                "tucson": "Tucson, AZ",
+                "nogales": "Nogales, AZ"
             },
             "default_value": "tucson",
             "return_format": "array",
@@ -350,5 +351,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1693501832
+    "modified": 1701803532
 }
