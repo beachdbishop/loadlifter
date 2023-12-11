@@ -72,6 +72,9 @@ module.exports = {
 					950: '#092f42',
 				},
 			},
+			containers: {
+				'2xs': '16rem',
+			},
 			maxWidth: {
 				'46char': '46ch',
 				'65char': '65ch',
@@ -222,6 +225,7 @@ module.exports = {
 		require('@_tw/themejson')(require('../theme/theme.json')),
 		// Add Tailwind Typography.
 		require('@tailwindcss/typography'),
+		require('@tailwindcss/container-queries'),
 		// Uncomment below to add additional first-party Tailwind plugins.
 		require('@tailwindcss/forms'),
 		require('@shrutibalasa/tailwind-grid-auto-fit'),

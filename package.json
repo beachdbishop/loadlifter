@@ -57,5 +57,8 @@
 	"browserslist": [
 		"defaults",
 		"maintained node versions"
-	]
+	],
+	"dependencies": {
+		"@tailwindcss/container-queries": "^0.1.1"
+	}
 }
