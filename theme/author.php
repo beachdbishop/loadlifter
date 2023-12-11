@@ -104,7 +104,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
                 <?php if (have_posts()) : ?>
 
-                    <div class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3">
+                    <ul class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3">
                         <?php /* Start the Loop */
                         while (have_posts()) :
                             the_post();
@@ -114,11 +114,11 @@ if ( $author_org === 'BeachFleischman' ) {
                                 * If you want to override this in a child theme, then include a file
                                 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
                                 */
-                            get_template_part('template-parts/content/content', 'card');
+                            get_template_part('template-parts/content/content', 'card-ic');
 
                         endwhile;
                         ?>
-                    </div>
+                    </ul>
 
                     <div class="mt-8">
                         <?php // ll_paging_nav();

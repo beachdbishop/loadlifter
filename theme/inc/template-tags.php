@@ -74,7 +74,7 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 	function ll_posted_on() {
 		$time_string = '<time class="entry-date" datetime="%1$s">%2$s</time>';
 		if ( get_the_time( 'YY "/" mm "/" dd' ) !== get_the_modified_time( 'YY "/" mm "/" dd' ) ) {
-			$time_string = '<time class="entry-date date-published" datetime="%1$s">%2$s</time> <time class="date-updated" datetime="%3$s">%4$s</time>';
+			$time_string = '<time class="entry-date date-published" datetime="%1$s">%2$s</time> <time class="date-updated font-bold" datetime="%3$s">%4$s</time>';
 		}
 
 		$time_string = sprintf(
@@ -129,6 +129,71 @@ if ( ! function_exists( 'll_posted_by' ) ) :
 				echo <<<EOT
 					</div>
 				</div></div>
+				EOT;
+			} else {
+				coauthors_posts_links(); // plain jane list
+			}
+		} else {
+			the_author_posts_link();
+		}
+	}
+endif;
+
+if ( ! function_exists( 'll_posted_by_cards' ) ) :
+	/**
+	 * Prints HTML with meta information for the current author.
+	 */
+	function ll_posted_by_cards( $options = array() ) {
+		$defaults = array(
+			'show_thumb' => false,
+		);
+		$config = array_merge( $defaults, $options );
+
+		if( function_exists( 'coauthors_posts_links' ) ) {
+			if( $config['show_thumb']) {
+				$coauthors = get_coauthors();
+				echo <<<EOT
+					<div class="print:break-inside-avoid"><h3>Authored by:</h3>
+					<ul class="my-4 list-none grid grid-cols-1 gap-2 lg:gap-4">
+					EOT;
+					foreach( $coauthors as $coauthor ) {
+
+						$avatar = get_field( 'll_user_headshot', 'user_' . $coauthor->ID );
+						$title = get_field( 'll_user_title', 'user_' . $coauthor->ID );
+						$desigs = get_field( 'll_user_designations', 'user_' . $coauthor->ID );
+
+						if( !empty( $avatar ) ) {
+							// $avatar_markup = sprintf( '<a href="/author/%3$s" class="relative inline-flex items-center justify-center text-white w-30 rounded-2xl" aria-label="Visit %2$s\'s author page"><img src="%1$s" alt="%2$s" title="%2$s" width="120" height="159" class="max-w-full border-2 border-white rounded-2xl" /></a>', $avatar['url'], $coauthor->display_name, $coauthor->user_nicename );
+
+
+							$avatar_markup = '<li class="person-card | group @container">
+								<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg border-neutral-200 lg:flex-row dark:border-neutral-600">
+
+									<div class="card-text | flex-grow order-1 ">
+										<h3 class="font-semibold text-xl lg:text-2xl !leading-none text-brand-gray-dark group-hover:text-brand-red dark:text-neutral-400">
+											<a href="/author/' . $coauthor->user_nicename . '" rel="bookmark">' . $coauthor->display_name . '</a> <small class="font-normal text-ellipsis overflow-hidden">' . $desigs . '</small>
+										</h3>
+										<p class="text-lg leading-tight text-neutral-600 font-head dark:text-neutral-500">' . $title . '</p>
+									</div>
+
+									<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url(' . $avatar['url'] . '); background-size: 64px 86px; background-position: center top;">
+										<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
+											<div class="w-16 h-16 aspect-square">&nbsp;</div>
+										</a>
+									</div>
+
+								</div>
+							</li>';
+
+						} else {
+							$avatar_markup = sprintf( '<a href="/author/%2$s" class="relative border-2 border-white text-neutral-100 bg-neutral-400 rounded-2xl" aria-label="Visit %2$s\'s author page"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_nicename );
+						}
+
+						echo $avatar_markup;
+					}
+					echo <<<EOT
+					</ul>
+				</div>
 				EOT;
 			} else {
 				coauthors_posts_links(); // plain jane list

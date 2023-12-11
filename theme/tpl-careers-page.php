@@ -259,7 +259,16 @@ if ('local' === wp_get_environment_type()) {
 
                         <div class="px-2 md:container lg:px-[16px]">
                             <h2 class="mb-4">Our Team</h2>
-                            <?php echo do_shortcode('[display-posts post_type="people" id="' . $hr_ids . '" orderby="ll_people_level" order="ASC" posts_per_page="4" wrapper="ul" wrapper_class="list-none grid grid-auto-fit gap-2" layout="card-people-small-desigs" /]'); ?>
+                            <?php echo do_shortcode('[display-posts
+														post_type="people"
+														id="' . $hr_ids . '"
+														orderby="ll_people_level"
+														order="ASC"
+														posts_per_page="4"
+														wrapper="ul"
+														wrapper_class="list-none dps-grid-4max"
+														layout="card-people-small-desigs"
+														/]'); ?>
                         </div>
                     </section>
 

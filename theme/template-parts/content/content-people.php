@@ -139,7 +139,16 @@ if ( $peepauthor ) {
 	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 md:py-6 lg:py-8 dark:bg-neutral-950' ); ?>>
 		<div class="px-2 md:container lg:px-[16px]">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold dark:text-neutral-300">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
-			<?php echo do_shortcode( '[display-posts wrapper="div" wrapper_class="dps-grid-4max" layout="card" author="'.$peepnicename.'" date_query_after="' .$recent_year_barrier. '-01-01" posts_per_page="3" orderby="modified" no_posts_message="No recent posts found by this author."]' ); ?>
+			<?php echo do_shortcode( '[display-posts
+			wrapper="ul"
+			wrapper_class="dps-grid-4max cards-ic"
+			layout="card-ic"
+			author="'.$peepnicename.'"
+			date_query_after="' .$recent_year_barrier. '-01-01"
+			posts_per_page="3"
+			orderby="modified"
+			no_posts_message="No recent posts found by this author."
+			/]' ); ?>
 		</div>
 	</section>
 <?php endif; ?>

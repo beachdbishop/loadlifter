@@ -80,9 +80,9 @@ endif; ?>
 
 			<aside class="mt-8 md:mt-0 md:order-last md:w-1/3">
 				<?php if ( 'post' === get_post_type() ) : ?>
-					<div class="post-meta | text-sm text-neutral-600 dark:text-neutral-400">
+					<div class="post-meta | text-sm lg:text-base text-neutral-600 dark:text-neutral-400">
 						<?php
-						ll_posted_by( array( 'show_thumb' => true	) );
+						ll_posted_by_cards( array( 'show_thumb' => true	) );
 
 						ll_posted_on();
 

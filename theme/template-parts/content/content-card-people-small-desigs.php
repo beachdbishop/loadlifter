@@ -17,19 +17,10 @@ if ( $peep_thumbnail ) {
 $peep_level 										= get_field( 'll_people_level' );
 ?>
 
-<li <?php post_class( 'person-card | group p-2' ); ?>>
-	<div class="flex items-center h-full p-4 border rounded-lg border-neutral-200 dark:border-neutral-600">
-		<div class="flex-shrink-0 object-cover object-center mr-4 rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;">
-			<?php if ($peep_level['value'] !== '900') { ?>
-				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="View <?php echo esc_attr( get_the_title() ); ?>'s bio">
-					<div class="w-16 h-16 aspect-square">&nbsp;</div>
-				</a>
-			<?php } else { ?>
-				<div class="w-16 h-16 aspect-square">&nbsp;</div>
-			<?php } ?>
-		</div>
+<li class="person-card card-ic | group @container">
+	<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg bg-white border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800">
 
-		<div class="flex-grow">
+		<div class="card-text | flex-grow order-1">
 			<?php
 			if ($peep_level['value'] !== '900') {
 				$title_classes = 'group-hover:text-brand-red';
@@ -44,5 +35,16 @@ $peep_level 										= get_field( 'll_people_level' );
 			}
 			?>
 		</div>
+
+		<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;">
+			<?php if ($peep_level['value'] !== '900') { ?>
+				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="View <?php echo esc_attr( get_the_title() ); ?>'s bio">
+					<div class="w-16 h-16 aspect-square">&nbsp;</div>
+				</a>
+			<?php } else { ?>
+				<div class="w-16 h-16 aspect-square">&nbsp;</div>
+			<?php } ?>
+		</div>
+
 	</div>
 </li>
