@@ -154,7 +154,7 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 				$coauthors = get_coauthors();
 				echo <<<EOT
 					<div class="print:break-inside-avoid"><h3>Authored by:</h3>
-					<ul class="my-4 list-none grid grid-cols-1 gap-2 lg:gap-4">
+					<ul class="mt-4 mb-8 list-none grid grid-cols-1 gap-2 lg:gap-4">
 					EOT;
 					foreach( $coauthors as $coauthor ) {
 
@@ -167,7 +167,7 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 
 
 							$avatar_markup = '<li class="person-card | group @container">
-								<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg border-neutral-200 lg:flex-row dark:border-neutral-600">
+								<div class="flex flex-col @2xs:flex-row gap-3 items-center h-full p-4 border rounded-lg border-neutral-200 lg:flex-row dark:border-neutral-600">
 
 									<div class="card-text | flex-grow order-1 ">
 										<h3 class="font-semibold text-xl lg:text-2xl !leading-none text-brand-gray-dark group-hover:text-brand-red dark:text-neutral-400">
@@ -186,7 +186,25 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 							</li>';
 
 						} else {
-							$avatar_markup = sprintf( '<a href="/author/%2$s" class="relative border-2 border-white text-neutral-100 bg-neutral-400 rounded-2xl" aria-label="Visit %2$s\'s author page"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_nicename );
+							// $avatar_markup = sprintf( '<a href="/author/%2$s" class="relative border-2 border-white text-neutral-100 bg-neutral-400 rounded-2xl" aria-label="Visit %2$s\'s author page"><div class="inline-flex items-center justify-center px-4 w-[120px] aspect-headshot" title="%1$s"><i class="fa-regular fa-user fa-2x"></i></div></a>', $coauthor->display_name, $coauthor->user_nicename );
+							$avatar_markup = '<li class="person-card | group @container">
+								<div class="flex flex-col @2xs:flex-row gap-3 items-center h-full p-4 border rounded-lg border-neutral-200 lg:flex-row dark:border-neutral-600">
+
+									<div class="card-text | flex-grow order-1 ">
+										<h3 class="font-semibold text-xl lg:text-2xl !leading-none text-brand-gray-dark group-hover:text-brand-red dark:text-neutral-400">
+											<a href="/author/' . $coauthor->user_nicename . '" rel="bookmark">' . $coauthor->display_name . '</a> <small class="font-normal text-ellipsis overflow-hidden">' . $desigs . '</small>
+										</h3>
+										<p class="text-lg leading-tight text-neutral-600 font-head dark:text-neutral-500">' . $title . '</p>
+									</div>
+
+									<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-200 group-hover:border-brand-red dark:bg-neutral-600">
+										<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
+											<div class="w-16 h-16 aspect-square">&nbsp;</div>
+										</a>
+									</div>
+
+								</div>
+							</li>';
 						}
 
 						echo $avatar_markup;

@@ -74,7 +74,7 @@
             "aria-label": "",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -155,7 +155,8 @@
             "allow_custom": 0,
             "layout": "vertical",
             "toggle": 0,
-            "save_custom": 0
+            "save_custom": 0,
+            "custom_choice_button_text": "Add new choice"
         },
         {
             "key": "field_634b4dd8f97b8",
@@ -215,7 +216,8 @@
             "return_format": "object",
             "min": "",
             "max": "",
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": []
         },
         {
             "key": "field_634b4f5af97ba",
@@ -242,7 +244,8 @@
             "return_format": "object",
             "min": "",
             "max": 0,
-            "elements": ""
+            "elements": "",
+            "bidirectional_target": []
         }
     ],
     "location": [
@@ -263,5 +266,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1667487745
+    "modified": 1702501540
 }
