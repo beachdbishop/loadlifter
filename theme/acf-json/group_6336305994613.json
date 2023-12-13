@@ -16,7 +16,7 @@
                 "class": "",
                 "id": ""
             },
-            "message": "Automatically display the contact form at the bottom of the page along with a hovering button\/link in the bottom right corner.",
+            "message": "Automatically display the contact form in the default location",
             "default_value": 1,
             "ui_on_text": "",
             "ui_off_text": "",
@@ -45,7 +45,7 @@
             "name": "ll_hide_featured_image",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "",
+            "instructions": "Prevent display of the featured image.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -55,9 +55,9 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_on_text": "Hidden",
+            "ui_off_text": "Shown",
+            "ui": 1
         },
         {
             "key": "field_636a8f8c20eee",
@@ -105,5 +105,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1697388965
+    "modified": 1702505671
 }

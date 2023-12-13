@@ -8,7 +8,7 @@
             "name": "ll_hide_author",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Check to prevent the display of the author box at the bottom of this post. (The author box is hidden by default when the author is bfcotaxdept.)",
+            "instructions": "Prevent display of the author box for this specific post.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -18,9 +18,29 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
-            "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_on_text": "Hidden",
+            "ui_off_text": "Shown",
+            "ui": 1
+        },
+        {
+            "key": "field_657a2c649aab3",
+            "label": "Hide Social Share component",
+            "name": "ll_hide_socialshare",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Prevent display of the social share component.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "Hidden",
+            "ui_off_text": "Shown",
+            "ui": 1
         },
         {
             "key": "field_6005096f3d3f9",
@@ -28,7 +48,7 @@
             "name": "ll_hide_related",
             "aria-label": "",
             "type": "true_false",
-            "instructions": "Prevent display of the Jetpack Related Posts below the post content.",
+            "instructions": "Prevent display of the related posts below the post content.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -89,5 +109,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1693415162
+    "modified": 1702505643
 }

@@ -49,7 +49,9 @@ endif; ?>
 						)
 					);
 
-					get_template_part( 'template-parts/form/form', 'webshare' );
+					if ( get_field( 'll_hide_socialshare' ) != 1 ) {
+						get_template_part( 'template-parts/form/form', 'webshare' );
+					}
 					?>
 					<div class="clear-both">&nbsp;</div>
 					<?php
@@ -64,8 +66,8 @@ endif; ?>
 
 				<?php get_template_part( 'template-parts/siteblocks/area', 'after-post' ); ?>
 
-				<?php
-				if( yarpp_related_exist() ) {
+				<?php	// if( ( get_field( 'll_hide_related' ) !== 1 ) && ( yarpp_related_exist() ) ) {
+					if ( get_field( 'll_hide_related' ) != 1 ) {
 					yarpp_related(
 						[
 							'limit'                         => 3,
@@ -82,7 +84,9 @@ endif; ?>
 				<?php if ( 'post' === get_post_type() ) : ?>
 					<div class="post-meta | text-sm lg:text-base text-neutral-600 dark:text-neutral-400">
 						<?php
-						ll_posted_by_cards( array( 'show_thumb' => true	) );
+						if ( get_field( 'll_hide_author' ) != 1 ) {
+							ll_posted_by_cards( array( 'show_thumb' => true	) );
+						}
 
 						ll_posted_on();
 
@@ -94,12 +98,13 @@ endif; ?>
 				<!--   A R E A   S I D E   -->
 				<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 
-				<div id="contact" class="container-contact-form not-prose">
-					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
-				</div>
+				<?php if ( get_field( 'll_normal_contact_form_location' ) == 1 ) : ?>
+					<div id="contact" class="container-contact-form not-prose">
+						<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+					</div>
+				<?php endif; ?>
+
 			</aside>
 		</div>
-
 	</div>
-
 </article><!-- post-<?php the_ID(); ?> -->
