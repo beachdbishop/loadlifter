@@ -88,7 +88,7 @@
             "name": "ll_people_level",
             "aria-label": "",
             "type": "select",
-            "instructions": "(Primary sort on Leadership Team page)",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -121,7 +121,7 @@
             "name": "ll_people_last_name",
             "aria-label": "",
             "type": "text",
-            "instructions": "(Secondary sort on Leadership Team page)",
+            "instructions": "",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -351,5 +351,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1701803532
+    "modified": 1704323904
 }
