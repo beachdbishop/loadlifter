@@ -20,23 +20,27 @@ ul.is-style-default {
 .is-style-list-none,
 .prose .is-style-list-none {
 	@apply list-none pl-0;
+	list-style-type: none;
+	padding-left: 0;
 
 	li {
-		@apply pl-0;
+		padding-left: 0;
 	}
 }
 
 .is-style-list-square,
 .prose .is-style-list-square {
-	@apply list-square;
+	list-style-type: square;
 }
 
 .is-style-list-columns-2 {
 	@apply columns-1 lg:columns-2;
 }
-
 .is-style-list-columns-2 li {
 	@apply break-inside-avoid-column;
+}
+.is-style-list-columns-2 li:first-of-type {
+	@apply mt-0;
 }
 
 /* inspiration: https://codepen.io/joshwcomeau/pen/VwxwYbG */
@@ -67,7 +71,7 @@ ul.is-style-default {
 }
 
 .is-style-list-checked {
-	@apply list-none;
+	list-style-type: none;
 }
 .is-style-list-checked li {
 	list-style-type: none !important;

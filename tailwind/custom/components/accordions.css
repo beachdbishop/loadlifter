@@ -81,5 +81,5 @@ details[open] summary::-webkit-details-marker {
 }
 
 details[open] summary ~ * {
-	@apply animate-fade-in-from-top;
+	@apply animate-[fade-in-from-top_300ms];
 }
