@@ -80,40 +80,47 @@ get_header();
 				<div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 					<div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
-								<!-- <div class="prose lg:prose-xl"><?php // the_content(); ?></div> -->
+						<!-- <div class="prose lg:prose-xl"><?php // the_content(); ?></div> -->
 
 						<p class="visible mb-8 text-xl text-center text-brand-red md:mb-0 md:invisible md:h-0"><a href="#paymentopts" class="underline">Skip to <strong>Payment Options</strong></a></p>
+
+						<div class="llcallout is-style-success | mb-8 lg:mb-16 not-prose bg-white border-2 rounded-br-2xl shadow-md dark:bg-neutral-800">
+							<p class="p-2 font-semibold llcallout-title "><i class="fa-regular fa-envelope mr-1"></i> Note</p>
+							<div class="acf-innerblocks-container">
+								<p>For assistance with any of the technology platforms listed below, <a class="underline hover:no-underline" href="mailto:clientsupport@beachfleischman.com">email Client Support</a>.</p>
+							</div>
+						</div>
 
 						<div class="grid gap-16 mb-8 lg:mb-16 lg:grid-cols-2 lg:grid-rows-2">
 
 							<div class="p-2 md:p-0">
-									<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png" alt="logo: SafeSend Returns" width="340" height="90">
-									<p class="my-8 lg:my-12 lg:text-xl">SafeSend Returns is a digital platform that facilitates the delivering and signing of a tax return.</p>
-									<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-											<div class="wp-block-button is-style-outline"><a href="/client-center/safesend-returns-guide/" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-map"></i> SafeSend User Guide</a></div>
-									</div>
+								<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png" alt="logo: SafeSend Returns" width="340" height="90">
+								<p class="my-8 lg:my-12 lg:text-xl">SafeSend Returns is a digital platform that facilitates the delivering and signing of a tax return.</p>
+								<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+									<div class="wp-block-button is-style-outline"><a href="/client-center/safesend-returns-guide/" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-map"></i> SafeSend User Guide</a></div>
+								</div>
 							</div>
 							<div class="p-2 md:p-0">
-									<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png" alt="logo: ShareFile" width="279" height="90">
-									<p class="my-8 lg:my-12 lg:text-xl">ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.</p>
-									<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-											<div class="wp-block-button is-style-outline"><a href="https://beachfleischman.sharefile.com/" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> ShareFile</a></div>
-									</div>
+								<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png" alt="logo: ShareFile" width="279" height="90">
+								<p class="my-8 lg:my-12 lg:text-xl">ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.</p>
+								<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+									<div class="wp-block-button is-style-outline"><a href="https://beachfleischman.sharefile.com/" rel="noreferrer" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> ShareFile</a></div>
+								</div>
 							</div>
 							<div class="p-2 md:p-0">
-									<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695862452/TaxCaddyLogo_emmblh.png" alt="logo: TaxCaddy, part of Thomson Reuters" width="348" height="90">
-									<p class="my-8 lg:my-12 lg:text-xl">TaxCaddy is a secure, cloud-based platform that makes gathering and sharing your tax documents a breeze for 1040 (Individual) clients.</p>
-									<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-											<div class="wp-block-button is-style-outline"><a href="https://consumer.taxcaddy.com/#/login" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> TaxCaddy</a></div>
-											<div class="wp-block-button is-style-outline"><a href="/client-center/taxcaddy-guide/" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-map"></i> TaxCaddy User Guide</a></div>
-									</div>
+								<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695862452/TaxCaddyLogo_emmblh.png" alt="logo: TaxCaddy, part of Thomson Reuters" width="348" height="90">
+								<p class="my-8 lg:my-12 lg:text-xl">TaxCaddy is a secure, cloud-based platform that makes gathering and sharing your tax documents a breeze for 1040 (Individual) clients.</p>
+								<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+									<div class="wp-block-button is-style-outline"><a href="https://consumer.taxcaddy.com/#/login" rel="noreferrer" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> TaxCaddy</a></div>
+									<div class="wp-block-button is-style-outline"><a href="/client-center/taxcaddy-guide/" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-map"></i> TaxCaddy User Guide</a></div>
+								</div>
 							</div>
 							<div class="p-2 md:p-0">
-									<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918473/BF_Dashboard_yzwir1.png" alt="logo: BeachFleischman Dashboard" width="348" height="100">
-									<p class="my-8 lg:my-12 lg:text-xl">BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling assurance clients to collaborate on one dynamic request list.</p>
-									<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-											<div class="wp-block-button is-style-outline"><a href="https://beachfleischman.auditdashboard.com/" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard</a></div>
-									</div>
+								<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918473/BF_Dashboard_yzwir1.png" alt="logo: BeachFleischman Dashboard" width="348" height="100">
+								<p class="my-8 lg:my-12 lg:text-xl">BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling assurance clients to collaborate on one dynamic request list.</p>
+								<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+									<div class="wp-block-button is-style-outline"><a href="https://beachfleischman.auditdashboard.com/" rel="noreferrer" target="_blank" class="wp-block-button__link has-orient-900-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard</a></div>
+								</div>
 							</div>
 
 						</div>
@@ -135,8 +142,8 @@ get_header();
 							<h2 class="text-brand-blue dark:text-brand-blue-pale" id="paymentopts">Payment Options</h2>
 							<p class="my-4">Use the options below to pay an invoice or a deposit.</p>
 							<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-								<div class="wp-block-button is-style-default"><a href="https://secure.cpacharge.com/pages/beachfleischman/payments" target="_blank" class="wp-block-button__link has-brand-red-dark-background-color wp-element-button"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoices</a></div>
-									<div class="wp-block-button is-style-default"><a href="https://secure.cpacharge.com/pages/beachfleischman/retainer" class="wp-block-button__link has-brand-red-dark-background-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a></div>
+								<div class="wp-block-button is-style-default"><a href="https://secure.cpacharge.com/pages/beachfleischman/payments" rel="noreferrer" target="_blank" class="wp-block-button__link has-brand-red-dark-background-color wp-element-button"><i class="mr-1 fa-solid fa-file-invoice"></i> Pay Invoices</a></div>
+									<div class="wp-block-button is-style-default"><a href="https://secure.cpacharge.com/pages/beachfleischman/retainer" rel="noreferrer" target="_blank" class="wp-block-button__link has-brand-red-dark-background-color has-text-color wp-element-button"><i class="mr-1 fa-solid fa-file-invoice-dollar"></i> Pay Deposit</a></div>
 							</div>
 							<h3 class="my-8">Need help making a payment?</h3>
 							<p class="my-4">Contact our internal accounting team for assistance.<br />
