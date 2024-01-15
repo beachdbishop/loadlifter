@@ -22,6 +22,10 @@ $page_excerpt                   = get_the_excerpt();
 $trending                       = get_field( 'll_front_trending_items' );
 $video_heading                  = 'Partners who value your vision';
 $video_subheading               = 'Work with our advisors and experience the power of collaboration and what it can accomplish.';
+$hero_cta1_text									= get_field( 'll_hero_cta1_text' );
+$hero_cta1_url									= get_field( 'll_hero_cta1_url' );
+$hero_cta2_text									= get_field( 'll_hero_cta2_text' );
+$hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 ?>
 
 	<main id="primary" class="front-page | bg-white dark:bg-neutral-900">
@@ -44,9 +48,28 @@ $video_subheading               = 'Work with our advisors and experience the pow
 					<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl">
 						<?php echo $video_heading; ?>
 					</h1>
-					<p class="mt-4 text-2xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">
+
+					<p class="my-6 text-2xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">
 						<?php echo $video_subheading; ?>
 					</p>
+
+					<?php if ( ( !empty( $hero_cta1_text ) ) && ( !empty( $hero_cta1_url ) ) ) : ?>
+					<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
+						<div class="inline-block m-0">
+							<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg text-neutral-100 !bg-brand-red-dark border-brand-red-dark shadow-md shadow-neutral-950 hover:border-white hover:text-white" href="<?php echo $hero_cta1_url; ?>">
+								<?php echo $hero_cta1_text; ?>
+							</a>
+						</div>
+						<?php if ( ( !empty( $hero_cta2_text ) ) && ( !empty( $hero_cta2_url ) ) ) { ?>
+							<div class="inline-block m-0">
+								<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-brand-blue-pale hover:text-brand-blue-pale" href="<?php echo $hero_cta2_url; ?>">
+									<?php echo $hero_cta2_text; ?>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
+					<?php endif; ?>
+
 				</div>
 			</div>
 

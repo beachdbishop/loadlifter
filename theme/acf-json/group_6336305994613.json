@@ -60,6 +60,86 @@
             "ui": 1
         },
         {
+            "key": "field_657b78086b1ca",
+            "label": "Hero CTA1 Text",
+            "name": "ll_hero_cta1_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_657b78526b1cc",
+            "label": "Hero CTA1 URL",
+            "name": "ll_hero_cta1_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Provide the desired URL or anchor name to link to.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_657b78416b1cb",
+            "label": "Hero CTA2 Text",
+            "name": "ll_hero_cta2_text",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_657b78786b1cd",
+            "label": "Hero CTA2 URL",
+            "name": "ll_hero_cta2_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Provide the desired URL or anchor name to link to.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_636a8f8c20eee",
             "label": "Post-specific CSS",
             "name": "ll_postpage_css",
@@ -105,5 +185,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702505671
+    "modified": 1702592950
 }

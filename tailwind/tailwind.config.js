@@ -13,6 +13,9 @@ module.exports = {
 		'./theme/**/*.php',
 		'./theme/theme.json',
 	],
+	future: {
+		hoverOnlyWhenSupported: true
+	},
 	theme: {
 		container: {
 			center: true,
@@ -127,6 +130,7 @@ module.exports = {
 		'divide-y',
 		'ease-in-out',
 		'flex-start',
+		'float-right',
 		'group-open:bg-neutral-300',
 		'group-open:bg-neutral-400',
 		'grow',
@@ -154,7 +158,10 @@ module.exports = {
 		'lg:gap-y-12',
 		'lg:grid-cols-2',
 		'lg:max-w-lg',
+		'lg:mb-4',
+		'lg:ml-4',
 		'lg:visible',
+		'lg:w-96',
 		'list-square',
 		'max-w-2xl',
 		'max-w-3xl',
@@ -165,7 +172,10 @@ module.exports = {
 		'max-w-md',
 		'max-w-xs',
 		'max-w-prose',
+		'md:float-right',
 		'md:max-w-md',
+		'md:mb-2',
+		'md:ml-2',
 		'md:place-content-start',
 		'rounded-md',
 		'shadow-brand-blue-dark/50',
@@ -189,6 +199,7 @@ module.exports = {
 		'via-brand-blue',
 		'visible',
 		'w-40',
+		'w-72',
 		'w-8',
 		'w-fit',
 		{

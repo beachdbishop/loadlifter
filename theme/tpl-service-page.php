@@ -31,6 +31,11 @@ $page_cta_html                  = get_field( 'll_ind_cta_html' );
 $page_groups_html               = get_field( 'll_ind_groups_html' );
 $page_people                    = get_field( 'll_ind_people' );
 $page_people_display            = get_field( 'll_ind_people_display_style' );
+
+$hero_cta1_text									= get_field( 'll_hero_cta1_text' );
+$hero_cta1_url									= get_field( 'll_hero_cta1_url' );
+$hero_cta2_text									= get_field( 'll_hero_cta2_text' );
+$hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 ?>
 
 	<main id="primary" class="bg-white dark:bg-neutral-900">
@@ -40,7 +45,7 @@ $page_people_display            = get_field( 'll_ind_people_display_style' );
 			the_post();
 			?>
 
-			<?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
+			<?php echo ll_page_hero( $page_title, $page_message['label'], $hero_cta1_text, $hero_cta1_url, $hero_cta2_text, $hero_cta2_url ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="px-2 md:container lg:px-[16px]">
