@@ -11,7 +11,7 @@
 
 ?>
 
-<li <?php post_class( 'card-ic | group flex flex-col relative border-neutral-100 border-2 shadow-orient-700 focus-within:shadow-lg focus-within:border-neutral-500 dark:shadow-orient-500' ); ?>>
+<li <?php post_class( 'card-ic | group flex flex-col relative border-neutral-100 border-2 shadow-orient-700 focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500' ); ?>>
 
 	<div class="card-text | flex flex-col text grow order-1 bg-white dark:bg-neutral-800 dark:text-neutral-300">
 		<?php the_title( '<h3 class="my-2 overflow-hidden tracking-wide text-brand-blue dark:text-brand-blue-pale text-ellipsis"><a href="' . esc_url( get_permalink() ) . '" class="group-hover:decoration-brand-blue-pale focus:underline group-hover:underline">', '</a></h3>' ); ?>
