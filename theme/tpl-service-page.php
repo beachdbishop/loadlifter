@@ -19,23 +19,23 @@ if ( get_field( 'll_page_title_override' ) ) {
 	$page_title                 = get_the_title();
 }
 
-$page_icon                      = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
-$page_message                   = get_field( 'll_brand_message' );
-$page_excerpt                   = get_the_excerpt();
-$page_post_category             = get_field( 'll_ind_category' );
-$page_cta_standard              = get_field( 'll_ind_show_standard_cta' );
-$page_cta_heading               = get_field( 'll_ind_cta_heading' );
-$page_cta_body                  = get_field( 'll_ind_cta_body' );
-$page_cta_button_text           = get_field( 'll_ind_cta_button_text' );
-$page_cta_html                  = get_field( 'll_ind_cta_html' );
-$page_groups_html               = get_field( 'll_ind_groups_html' );
-$page_people                    = get_field( 'll_ind_people' );
-$page_people_display            = get_field( 'll_ind_people_display_style' );
-
-$hero_cta1_text									= get_field( 'll_hero_cta1_text' );
-$hero_cta1_url									= get_field( 'll_hero_cta1_url' );
+$page_icon											= ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
+$page_message 									= get_field( 'll_brand_message' );
+$page_excerpt 									= get_the_excerpt();
+$page_post_category							= get_field( 'll_ind_category' );
+$page_cta_standard 							= get_field( 'll_ind_show_standard_cta' );
+$page_cta_heading 							= get_field( 'll_ind_cta_heading' );
+$page_cta_body 									= get_field( 'll_ind_cta_body' );
+$page_cta_button_text 					= get_field( 'll_ind_cta_button_text' );
+$page_cta_html 									= get_field( 'll_ind_cta_html' );
+$page_groups_html 							= get_field( 'll_ind_groups_html' );
+$page_people 										= get_field( 'll_ind_people' );
+$page_people_display 						= get_field( 'll_ind_people_display_style' );
+$page_form 											= get_field( 'ls_hs_form_html' );
+$hero_cta1_text 								= get_field( 'll_hero_cta1_text' );
+$hero_cta1_url 									= get_field( 'll_hero_cta1_url' );
 $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
-$hero_cta2_url									= get_field( 'll_hero_cta2_url' );
+$hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 ?>
 
 	<main id="primary" class="bg-white dark:bg-neutral-900">
@@ -142,6 +142,12 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 									<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 								</div>
 							<?php endif; ?>
+
+							<?php if ( $page_form ) :
+								echo '<div id="contact" class="container-contact-form not-prose">';
+								echo do_shortcode( $page_form );
+								echo '</div>';
+							endif; ?>
 
 							<?php // get_template_part( 'template-parts/form/form', 'webshare' ); ?>
 

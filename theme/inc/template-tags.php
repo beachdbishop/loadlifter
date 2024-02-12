@@ -558,24 +558,24 @@ if ( ! function_exists( 'll_content_class' ) ) :
 	 * This allows us to add Tailwind Typography’s modifier classes throughout
 	 * the theme without repeating them in multiple files. (They can be edited
 	 * at the top of the `../functions.php` file via the
-	 * _TW_TYPOGRAPHY_CLASSES constant.)
+	 * LL_TYPOGRAPHY_CLASSES constant.)
 	 *
 	 * Based on WordPress core’s `body_class` and `get_body_class` functions.
 	 *
-	 * @param array $class Space-separated string or array of class names to
+	 * @param array $classes Space-separated string or array of class names to
 	 *                     add to the class list.
 	 */
-	function ll_content_class( $class = '' ) {
-		$all_classes = array( $class, LL_TYPOGRAPHY_CLASSES );
+	function ll_content_class( $classes = '' ) {
+		$all_classes = array( $classes, LL_TYPOGRAPHY_CLASSES );
 
-		foreach ( $all_classes as &$classes ) {
-			if ( ! empty( $classes ) ) {
-				if ( ! is_array( $classes ) ) {
-					$classes = preg_split( '#\s+#', $classes );
+		foreach ( $all_classes as &$class_groups ) {
+			if ( ! empty( $class_groups ) ) {
+				if ( ! is_array( $class_groups ) ) {
+					$class_groups = preg_split( '#\s+#', $class_groups );
 				}
 			} else {
 				// Ensure that we always coerce class to being an array.
-				$classes = array();
+				$class_groups = array();
 			}
 		}
 

@@ -23,6 +23,34 @@
             "ui": 1
         },
         {
+            "key": "field_65aa9282f23aa",
+            "label": "HubSpot Form HTML",
+            "name": "ls_hs_form_html",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6336305aa87d8",
+                        "operator": "!=",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 12,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_650b40583c3f5",
             "label": "Page Hero Video",
             "name": "ll_page_hero_video",
@@ -185,5 +213,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702592950
+    "modified": 1705677492
 }

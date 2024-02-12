@@ -111,7 +111,7 @@ function ll_people_columns( $column, $post_id ) {
 		}
 	}
 
-	// Department column
+	// Location column
 	if ( ( 'location' === $column ) && ( get_field_object( 'll_people_location' ) ) ){
 		$location_obj = get_field_object( 'll_people_location');
 		$location_val = $location_obj['value'];
