@@ -121,7 +121,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				<div class="post-grid | px-2 lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
 						<h2>Recent Posts</h2>
-						<a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-500 dark:border-orient-500 dark:hover:text-orient-300 dark:hover:border-orient-300">View All</a>
+						<a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
 					</div>
 					<?php
 
