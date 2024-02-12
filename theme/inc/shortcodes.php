@@ -127,6 +127,7 @@ function ll_awardlogos_shortcode() {
 		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1697750375/2023_Accounting_MOVE_Project_Best_Firm_for_Women_Badge_mcbjm3.jpg" alt="2023 Best Firm for Women - Accounting MOVE Project" width="156" height="100">
 		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1673468396/2022_AccountingToday_Best_Firms_for_Young_Accountants_Badge_prekkv.png" alt="2022 Best Firm for Young Accountants - Accounting Today" width="170" height="100">
 		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1634657713/award__ipa-all-star-firms_ium0vb.png" alt="All Star Firms - Inside Public Accounting" width="100" height="100">
+		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1707756234/cigna-healthy-workforce-desigation-2023_oo3u47.png" alt="Cigna Healthy Workforce Designation 2023 - Silver" width="91" height="100">
 	</div>';
 }
 add_shortcode( 'awardlogos', 'll_awardlogos_shortcode' );
