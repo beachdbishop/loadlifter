@@ -38,15 +38,15 @@ button.ab-button {
 
 .hbspt-form {
 	span.hs-form-required {
-		@apply font-bold text-orange-600 dark:text-orange-400;
+		@apply font-bold text-orange-700 dark:text-orange-300;
 	}
 
 	.hs-error-msg {
-		@apply text-base font-bold italic text-red-600 dark:text-red-400;
+		@apply text-base font-bold italic text-red-700 dark:text-red-300;
 	}
 
 	.invalid {
-		@apply border-2 !border-red-600 dark:!border-red-400;
+		@apply border-2 !border-red-700 dark:!border-red-300;
 	}
 }
 
