@@ -81,9 +81,9 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</article>
 
-			<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
+			<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct" aria-labelledby="trending">
 				<div class="px-2 wp-block-group post-grid lg:px-[16px] has-brand-blue-faint-color">
-					<h2 class="mb-4 lg:mb-8">Trending now</h2>
+					<h2 id="trending" class="mb-4 lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
 						'[display-posts
 						post_type="post,page,industries"
@@ -100,9 +100,9 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 
 			<?php // the_content(); ?>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
 				<div class="ind-grid | px-2 lg:px-[16px]">
-					<h2 class="mb-4 lg:mb-8">Industry Knowledge</h2>
+					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php echo do_shortcode(
 						'[display-posts
 						post_type="page"
@@ -117,10 +117,10 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</section>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose dark:bg-neutral-800 dark:text-neutral-300">
+			<section class="full-bleed ll-equal-vert-padding not-prose dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
 				<div class="post-grid | px-2 lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
-						<h2>Recent Posts</h2>
+						<h2 id="recent">Recent Posts</h2>
 						<a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
 					</div>
 					<?php
