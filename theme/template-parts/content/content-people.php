@@ -30,11 +30,21 @@ if ( $peepauthor ) {
 	$peepnicename               = $peepauthor['user_nicename'];
 	// $peepfirstname           = $peepauthor['user_firstname'];
 	$person_archivelink         = sprintf( '<a href="/author/%1$s/">%2$s</a>', $peepnicename, $peepname );
-	$peeppostcount              = ( $peepauthor ) ? count_user_posts( $peepid, 'post', true ) : 0;
-	$recent_year_barrier        = date( "Y", strtotime( "-1 year" ) );
+
+	$args = [
+		'author' => $peepid,
+		'post_type' => 'post',
+		'post_status' => 'publish',
+		'posts_per_page' => 4,
+		// 'suppress_filters' => true,
+		'date_query' => ['after' => '-12 months']
+	];
+
+	$peepRecentPosts = new WP_Query( $args );
+	$peepRecentPostsCount = $peepRecentPosts->found_posts; // how many posts match the query args
+
 } else {
-	// $peepfirstname           = '';
-	$peeppostcount              = 0;
+	$peepRecentPostsCount = 0;
 }
 ?>
 
@@ -120,7 +130,7 @@ if ( $peepauthor ) {
 				</div>
 			</div>
 
-			<aside class="peepgrid-c |  md:mt-0 md:order-3">
+			<aside class="peepgrid-c | md:mt-0 md:order-3">
 				<?php get_template_part( 'template-parts/form/form-hubspot-contact', 'sidebar' ); ?>
 
 				<?php if ( get_field( 'll_people_quote' ) ) { ?>
@@ -135,20 +145,23 @@ if ( $peepauthor ) {
 
 </article>
 
-<?php if ( $peeppostcount > 0 ) : ?>
-	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 md:py-6 lg:py-8 dark:bg-neutral-950' ); ?>>
+
+
+<?php if ( $peepRecentPostsCount > 0 ) : ?>
+	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 ll-equal-vert-padding dark:bg-neutral-950' ); ?> aria-labelledby="posts">
 		<div class="px-2 md:container lg:px-[16px]">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold dark:text-neutral-300">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
-			<?php echo do_shortcode( '[display-posts
-			wrapper="ul"
-			wrapper_class="dps-grid-4max cards-ic"
-			layout="card-ic"
-			author="'.$peepnicename.'"
-			date_query_after="' .$recent_year_barrier. '-01-01"
-			posts_per_page="3"
-			orderby="modified"
-			no_posts_message="No recent posts found by this author."
-			/]' ); ?>
+			<ul class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+				<?php /* Start the Loop */
+				while ( $peepRecentPosts->have_posts() ) :
+					$peepRecentPosts->the_post();
+					global $post;
+
+					get_template_part('template-parts/content/content', 'card-ic');
+				endwhile;
+				?>
+			</ul>
+
 		</div>
 	</section>
 <?php endif; ?>
