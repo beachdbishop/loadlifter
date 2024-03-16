@@ -1,4 +1,9 @@
 <?php
+/**
+ * Blocks
+ *
+ * inspired by Bill Erickson
+ */
 
 namespace Loadlifter\Blocks;
 
@@ -20,19 +25,17 @@ function load_blocks() {
 }
 add_action( 'init', __NAMESPACE__ . '\load_blocks', 5 );
 
-
-
 /**
  * Load ACF field groups for blocks
  */
-// add_filter( 'acf/settings/load_json', __NAMESPACE__ . '\load_acf_field_group' );
-// function load_acf_field_group( $paths ) {
-// 	$blocks = get_blocks();
-// 	foreach( $blocks as $block ) {
-// 		$paths[] = get_template_directory() . '/blocks/' . $block;
-// 	}
-// 	return $paths;
-// }
+function load_acf_field_group( $paths ) {
+	$blocks = get_blocks();
+	foreach( $blocks as $block ) {
+		$paths[] = get_template_directory() . '/blocks/' . $block;
+	}
+	return $paths;
+}
+add_filter( 'acf/settings/load_json', __NAMESPACE__ . '\load_acf_field_group' );
 
 /**
  * Get Blocks
