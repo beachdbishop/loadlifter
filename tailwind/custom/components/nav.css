@@ -93,9 +93,9 @@
 /* .submenu a {
 	@apply text-current border-b-2 border-transparent hover:text-brand-blue hover:border-brand-blue-pale;
 } */
-.submenu .ll-we-are-hiring a {
+/* .submenu .ll-we-are-hiring a {
 	@apply -m-1 rounded-sm border-b-0 bg-amber-300 p-1 font-bold hover:bg-amber-100 hover:text-neutral-800;
-}
+} */
 
 /* Footer Nav */
 .footermenu .menu {
