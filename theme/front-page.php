@@ -36,9 +36,10 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			// get_template_part( 'template-parts/content/content', 'page-front' );
 			?>
 
-			<div class="page-hero | ll-equal-vert-padding bg-no-repeat overflow-hidden flex items-center justify-center print:py-8">
+			<div class="page-hero | ll-equal-vert-padding bg-orient-900 bg-no-repeat overflow-hidden flex items-center justify-center print:py-8">
 				<video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="absolute top-[-200px] left-0 object-cover w-full h-[1080px] print:hidden">
 					<source src="<?php echo $featvideo; ?>">
+					<track src="<?php echo get_stylesheet_directory_uri(); ?>/img/beachfleischman-arizona-silent.vtt" kind="captions" srclang="en" label="english_captions">
 					Your browser does not support the video tag.
 				</video>
 
