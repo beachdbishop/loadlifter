@@ -82,7 +82,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</article>
 
-			<section class="full-bleed ll-equal-vert-padding bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct" aria-labelledby="trending">
+			<section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct" aria-labelledby="trending">
 				<div class="px-2 wp-block-group post-grid lg:px-[16px] has-brand-blue-faint-color">
 					<h2 id="trending" class="mb-4 lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
@@ -92,9 +92,9 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						ignore_sticky_posts="true"
 						orderby="modified"
 						order="DESC"
-						wrapper="div"
-						wrapper_class="dps-grid-3max text-brand-blue-faint"
-						layout="card-simple" /]'
+						wrapper="ul"
+						wrapper_class="dps-grid-3max cards-ic text-brand-blue-faint"
+						layout="card-ic-min" /]'
 					); ?>
 				</div>
 			</section>
