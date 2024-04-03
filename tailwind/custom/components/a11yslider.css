@@ -81,12 +81,12 @@
 	@apply mx-1 my-2 block h-4 w-4 p-0;
 }
 .a11y-slider-dots button {
-	@apply border-brand-gray block h-full w-full rounded-full border border-solid bg-transparent -indent-[9999px] text-[0px] text-current dark:border-neutral-500;
+	@apply border-neutral-400 block h-full w-full rounded-full border-2 border-solid bg-white -indent-[9999px] text-[0px] text-current dark:border-neutral-500 dark:bg-neutral-800;
 }
 .a11y-slider-dots li button.active,
 .a11y-slider-dots li button:focus,
 .a11y-slider-dots li button:hover {
-	@apply bg-brand-gray dark:bg-brand-gray-pale;
+	@apply border-orient-700 dark:border-orient-300;
 }
 
 /* .on-darkbg .a11y-slider-dots button {
