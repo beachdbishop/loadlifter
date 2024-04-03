@@ -96,7 +96,12 @@ $menuItemsSecondary = [
 	<div role="navigation" class="flex items-center justify-between px-2 py-3 md:container lg:px-[16px]">
 
 		<div class="w-[240px] lg:w-[320px] order-first">
-			<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>" title="Go to BeachFleischman's front page">
+			<a
+				class="focus:outline-brand-blue/75 dark:focus:outline-brand-blue-pale/75 focus:outline focus:outline-offset-4"
+				href="<?php bloginfo('url'); ?>"
+				aria-label="<?php echo bloginfo('name'); ?>"
+				title="Go to BeachFleischman's front page"
+			>
 				<?php if ( is_front_page() ) {
 					get_template_part('template-parts/svg/svg', 'logoserviceline');
 				} else {
