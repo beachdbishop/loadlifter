@@ -37,29 +37,14 @@ if ( isset( $_wp_additional_image_sizes['yarpp-thumbnail'] ) ) {
 
 <h3 class="mb-4 text-lg lg:text-2xl">Related</h3>
 <?php if ( have_posts() ) : ?>
-<div class="md:grid md:gap-4 md:grid-cols-3 lg:gap-8">
+<ul class="cards-ic md:grid md:gap-4 md:grid-cols-3 lg:gap-8">
 	<?php
 	while ( have_posts() ) :
 		the_post();
-
-        if ( has_post_thumbnail() ) : ?>
-		<div>
-            <a href="<?php the_permalink(); ?>" rel="bookmark norewrite" title="<?php the_title_attribute(); ?>">
-                <?php the_post_thumbnail(
-                    $dimensions['size'],
-                    [
-                        'class' => 'border border-solid border-neutral-100',
-                        'data-pin-nopin' => 'true',
-                    ]
-                ); ?>
-            </a>
-            <p class="my-2 text-lg font-head lg:text-2xl"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a><!-- (<?php the_score(); ?>)--></p>
-        </div>
-		<?php endif; ?>
-	<?php endwhile; ?>
-</div>
-<style>.yarpp-related {margin-block: 1rem;}</style>
+		get_template_part( 'template-parts/content/content', 'card-ic-min' );
+	endwhile; ?>
+</ul>
 
 <?php else : ?>
-<p>No related photos.</p>
+<p>No related posts.</p>
 <?php endif; ?>
