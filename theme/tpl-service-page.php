@@ -66,7 +66,21 @@ $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 												<div class="wp-block-button is-style-outline"><a href="/blog/" class="wp-block-button__link has-white-color has-text-color wp-element-button">View All</a></div>
 											</div>
 										</div>
-										<?php echo do_shortcode( '[display-posts taxonomy="category" tax_term="' . $page_post_category->slug . '" tax_operator="IN" taxonomy_2="category" tax_2_term="archived-events" tax_2_operator="NOT IN" orderby="date" order="DESC" posts_per_page="3" wrapper="div" wrapper_class="dps-grid-3max" layout="card-ic-min" /]' ); ?>
+										<?php echo do_shortcode( '
+											[display-posts
+											taxonomy="category"
+											tax_term="' . $page_post_category->slug . '"
+											tax_operator="IN"
+											taxonomy_2="category"
+											tax_2_term="archived-events"
+											tax_2_operator="NOT IN"
+											orderby="date"
+											order="DESC"
+											posts_per_page="3"
+											wrapper="ul"
+											wrapper_class="dps-grid-3max cards-ic"
+											layout="card-ic-min" /]
+										' ); ?>
 									</div>
 								</section>
 								<?php /* The visual gap Eric requested between Insights and the CTA section */ ?>
