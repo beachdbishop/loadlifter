@@ -119,7 +119,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
-						<a href="/career-opportunties/?ref=footer" class="-m-1 rounded-sm text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold | md:-m-2 md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
+						<a href="/career-opportunities/?ref=footer" class="-m-1 rounded-sm text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold | md:-m-2 md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
 					</nav>
 				</div>
 			</div>
