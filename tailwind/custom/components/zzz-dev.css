@@ -1,15 +1,14 @@
 /* DEV */
 
 :not(img).todo {
-	@apply italic text-pink-500;
+	--tw-text-opacity: 1;
+  color: rgb(236 72 153 / var(--tw-text-opacity));
+	font-style: italic;
 }
 img.todo {
-	@apply bg-pink-500;
+	--tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 div.todo {
-	@apply bg-pink-500/20;
+	background-color: rgb(236 72 153 / 0.2);
 }
-
-/* .env-dev .ll__widget-area {
-	@apply border-2 border-dashed border-pink-500;
-} */

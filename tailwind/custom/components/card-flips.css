@@ -1,12 +1,16 @@
 /* Cards that flip */
 .ind-card-flips {
-	--card-size: 288px;
-	--card-front-bg: #f5f5f5;
-	--card-front-icon: #262626;
-	--card-back-bg: #262626;
-	--card-front-text: #e5e5e5;
-	--card-back-text: #f5f5f5;
-	@apply flex flex-wrap place-content-center gap-4 lg:gap-8;
+	--_card-size: 288px;
+	--_card-front-bg: theme(colors.neutral.100);
+	--_card-front-icon: theme(colors.neutral.800);
+	--_card-back-bg: theme(colors.neutral.800);
+	--_card-front-text: theme(colors.neutral.200);
+	--_card-back-text: theme(colors.neutral.100);
+	display: flex;
+	flex-wrap: wrap;
+	place-content: center;
+	gap: 1rem;
+
 
 	.card:hover .card-content,
 	.card:active .card-content,
@@ -16,50 +20,57 @@
 
 	.card-back p,
 	.card-back li {
-		@apply text-sm;
+		font-size: 0.875rem;
+  	line-height: 1.25rem;
 	}
 }
 
 .ind-card-flips.is-style-default {
-	--card-front-bg: #f5f5f5;
-	--card-front-text: #262626;
-	--card-front-icon: #00668e;
-	--card-back-bg: #404040;
+	--_card-front-bg: theme(colors.neutral.100);
+	--_card-front-text: theme(colors.neutral.800);
+	--_card-front-icon: theme(colors.brand-blue);
+	--_card-back-bg: theme(colors.neutral.700);
 }
 
 .ind-card-flips.is-style-blue {
-	--card-front-bg: #00668e;
-	--card-front-text: #f5f5f5;
-	--card-front-icon: #092f42;
-	--card-back-bg: #092f42;
+	--_card-front-bg: theme(colors.brand-blue);
+	--_card-front-text: theme(colors.neutral.100);
+	--_card-front-icon: theme(colors.brand-blue-dark);
+	--_card-back-bg: theme(colors.brand-blue-dark);
 }
 
 .ind-card-flips.is-style-red {
-	--card-front-bg: #ce182d;
-	--card-front-text: #f5f5f5;
-	--card-front-icon: #940418;
-	--card-back-bg: #940418;
+	--_card-front-bg: theme(colors.brand-red-dark);
+	--_card-front-text: theme(colors.neutral.100);
+	--_card-front-icon: theme(colors.brand-red);
+	--_card-back-bg: theme(colors.red.950);
 }
 
 @media (prefers-color-scheme: dark) {
 	.ind-card-flips.is-style-default {
-		--card-front-bg: #262626;
-		--card-front-text: #f5f5f5;
-		--card-front-icon: #67e8f9;
-		--card-back-bg: #404040;
+		--_card-front-bg: theme(colors.neutral.800);
+		--_card-front-text: theme(colors.neutral.100);
+		--_card-front-icon: theme(colors.brand-blue-pale);
+		--_card-back-bg: theme(colors.neutral.700);
 	}
 
 	.ind-card-flips.is-style-blue {
-		--card-front-bg: #092f42;
-		--card-front-text: #d4d4d4;
-		--card-front-icon: #00668e;
-		--card-back-bg: #404040;
+		--_card-front-bg: theme(colors.brand-blue-dark);
+		--_card-front-text: theme(colors.neutral.300);
+		--_card-front-icon: theme(colors.brand-blue-pale);
+		--_card-back-bg: theme(colors.neutral.700);
 	}
 
 	.ind-card-flips.is-style-red {
-		--card-front-bg: #940418;
-		--card-front-text: #d4d4d4;
-		--card-front-icon: #ce182d;
-		--card-back-bg: #404040;
+		--_card-front-bg: theme(colors.red.950);
+		--_card-front-text: theme(colors.neutral.300);
+		--_card-front-icon: theme(colors.brand-red-pale);
+		--_card-back-bg: theme(colors.neutral.700);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.ind-card-flips {
+		gap: 2rem;
 	}
 }

@@ -17,11 +17,40 @@
 }
 
 html {
-	@apply scroll-pt-[52px] scroll-smooth md:scroll-pt-[76px] lg:scroll-pt-[100px];
+	--_scroll-padding: 52px;
+	scroll-padding-top: var(--_scroll-padding);
+	scroll-behavior: smooth;
 }
 
+@media screen and (min-width: 768px) {
+	html {
+		--_scroll-padding: 76px;
+	}
+}
+@media screen and (min-width: 1024px) {
+	html {
+		--_scroll-padding: 100px;
+	}
+}
+
+
 body {
-	@apply font-body text-neutral-800 dark:text-neutral-300 print:bg-transparent print:text-neutral-900;
+	--tw-text-opacity: 1;
+	font-family: Work Sans, sans-serif;
+  color: rgb(38 38 38 / var(--tw-text-opacity));
+
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: rgb(212 212 212 / var(--tw-text-opacity));
+  }
+}
+@media print {
+  body {
+    background-color: transparent;
+    color: rgb(23 23 23 / var(--tw-text-opacity));
+  }
 }
 
 h1,
@@ -79,9 +108,9 @@ a:not([class]) {
 	outline: 2px dashed;
 	/* outline-offset: 0.25rem; */
 }
-main:focus {
+/* main:focus {
 	outline: none;
-}
+} */
 [href]:hover {
 	text-decoration: none;
 }
@@ -170,16 +199,19 @@ table caption {
 }
 
 @keyframes move-bg {
-	from {
+	0% {
 		transform: translateX(0);
 	}
-	to {
-		transform: translateX(-680px);
+	50% {
+		transform: translateX(-50vw);
+	}
+	100% {
+		transform: translateX(0);
 	}
 }
 .animate-move-bg {
 	animation-name: move-bg;
-	animation-duration: 8s;
-	animation-timing-function: linear;
+	animation-duration: 16s;
+	animation-timing-function: ease;
 	animation-iteration-count: infinite;
 }

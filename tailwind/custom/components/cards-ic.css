@@ -1,0 +1,25 @@
+/* Group of card-ic parts */
+
+.cards-ic {
+	list-style-type: none;
+	margin-top: 1rem;
+}
+.card-ic:focus-within a:focus {
+	text-decoration-line: none;
+}
+.card-ic .card-meta a {
+	position: relative;
+	padding: 0.5rem 0;
+}
+.card-ic .card-text {
+	max-width: 60ch;
+	padding-inline: 0.5rem;
+}
+.card-ic + .card-ic {
+	margin-top: 1.5rem;
+}
+@supports (display: grid) {
+	.card-ic + .card-ic {
+		margin-top: 0;
+	}
+}

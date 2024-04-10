@@ -1,19 +1,23 @@
 .prose table th {
-	@apply border-b-2 border-solid border-neutral-300;
+	--tw-border-opacity: 1;
+	border-bottom-width: 2px;
+  border-color: rgb(212 212 212 / var(--tw-border-opacity));
+	border-style: solid;
 }
 .prose table td {
-	@apply border-y border-solid border-neutral-200;
+	--tw-border-opacity: 1;
+  border-bottom-width: 1px;
+  border-color: rgb(229 229 229 / var(--tw-border-opacity));
+	border-style: solid;
+	border-top-width: 1px;
 }
 .prose table:has(> colgroup) {
-	@apply table-fixed;
+	table-layout: fixed;
 }
 .table-oldtab {
-	@apply oldstyle-nums tabular-nums;
+  font-variant-numeric: oldstyle-nums tabular-nums;
 }
 .num {
-	@apply text-right tabular-nums;
+	text-align: right;
+	font-variant-numeric: tabular-nums;
 }
-
-/* .wp-block-table table {
-	@apply border border-solid border-neutral-600;
-} */

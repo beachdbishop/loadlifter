@@ -1,15 +1,5 @@
 /* Style a parent element based on its number of children using CSS :has()
 via: https://www.bram.us/2022/11/17/style-a-parent-element-based-on-its-number-of-children-using-css-has/ */
-/* DANGER! Firefox doesn't support :has() yet! */
-/* .dps-grid {
-	@apply !max-w-md mx-auto md:!max-w-none md:-m-4 md:grid md:gap-4 lg:gap-8;
-}
-.dps-grid:has(> :nth-child(-n+2):last-child) {
-	@apply md:grid-cols-2;
-}
-.dps-grid:has(> :nth-child(3):last-child) {
-	@apply md:grid-cols-3;
-} */
 
 [class*="dps-grid-"] {
 	display: grid;
@@ -17,14 +7,25 @@ via: https://www.bram.us/2022/11/17/style-a-parent-element-based-on-its-number-o
 	max-width: 28rem !important;
 	margin-inline: auto;
 }
+
+.dps-inline > *:not(:last-child)::after {
+	content: ", ";
+}
+.dps-inline > *:last-child::before {
+	content: "and ";
+}
+
+
 @media (min-width: 768px) {
 	.dps-grid-4max,
 	.dps-grid-3max {
 		max-width: none !important;
 	}
+
 	.dps-grid-4max {
 		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
+
 	.dps-grid-3max {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 	}
@@ -33,12 +34,4 @@ via: https://www.bram.us/2022/11/17/style-a-parent-element-based-on-its-number-o
 	.dps-grid-4max {
 		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
-}
-
-
-.dps-inline > *:not(:last-child)::after {
-	content: ", ";
-}
-.dps-inline > *:last-child::before {
-	content: "and ";
 }

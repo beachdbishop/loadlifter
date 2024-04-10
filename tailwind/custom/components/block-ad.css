@@ -1,0 +1,14 @@
+/* Block: Ad */
+.llad:not([class*="is-style-"]) {
+	/* Default = Clear */
+	background-color: transparent;
+}
+.llad.is-style-brand-red {
+	background-color: var(--wp--preset--color--brand-red);
+}
+.llad.is-style-brand-blue {
+	background-color: var(--wp--preset--color--brand-blue);
+}
+.llad.is-style-brand-gray {
+	background-color: var(--wp--preset--color--brand-gray);
+}

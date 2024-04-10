@@ -131,6 +131,7 @@ module.exports = {
 		'ease-in-out',
 		'flex-start',
 		'float-right',
+		'grid-auto-fit',
 		'group-open:bg-neutral-300',
 		'group-open:bg-neutral-400',
 		'grow',

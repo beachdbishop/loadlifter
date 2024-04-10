@@ -19,67 +19,92 @@ details[open] summary::-webkit-details-marker {
 }
 
 .accordions {
-	@apply mb-8;
-
-	details {
-		@apply mb-[2px];
-	}
-
-	details[open] summary {
-		@apply before:content-['-'];
-	}
-
-	summary {
-		@apply font-head px-4 pb-2 pt-1 text-3xl before:mr-1  before:font-mono before:content-['+'] hover:before:animate-pulse;
-	}
-
-	.details-inner {
-		@apply bg-neutral-100 px-2 pb-4 will-change-transform dark:bg-neutral-800 dark:text-neutral-300 lg:px-4 lg:pb-6 lg:pt-4;
-	}
+	margin-bottom: 2rem;
 }
 
-.accordions.is-style-default {
-	details[open] summary {
-		@apply text-neutral-900;
-	}
-
-	summary {
-		@apply bg-neutral-200 text-neutral-700;
-
-		&::before {
-			color: #a3a3a3;
-		}
-	}
+.accordions	details {
+	margin-bottom: 2px;
 }
 
-.accordions.is-style-blue {
-	details[] summary {
-		@apply text-white;
-	}
-
-	summary {
-		@apply bg-brand-blue text-brand-blue-faint;
-
-		&::before {
-			@apply text-brand-blue-pale;
-		}
-	}
+.accordions details[open] summary::before {
+	content: '-';
 }
 
-.accordions.is-style-red {
-	details[] summary {
-		@apply text-white;
-	}
+.accordions summary {
+	font-family: theme(fontFamily.head);
+	padding-inline: 1rem;
+	padding-bottom: 0.5rem;
+	padding-top: 0.25rem;
+	font-size: 1.875rem/* 30px */;
+	line-height: 2.25rem;
 
-	summary {
-		@apply bg-brand-red text-brand-red-faint;
+}
+.accordions summary::before {
+	content: '+';
+	font-family: theme(fontFamily.mono);
+	margin-right: 0.25rem;
+}
+.accordions summary:hover::before {
+	@apply animate-pulse;
+}
 
-		&::before {
-			@apply text-brand-red-pale;
-		}
-	}
+.accordions .details-inner {
+	background-color: theme(colors.neutral.100);
+	padding-inline: 0.5rem;
+	padding-bottom: 1rem;
+	will-change: transform;
+}
+
+
+.accordions.is-style-default details[open] summary {
+	color: theme(colors.neutral.900);
+}
+.accordions.is-style-default summary {
+	background-color: theme(colors.neutral.200);
+	color: theme(colors.neutral.700);
+}
+.accordions.is-style-default summary::before {
+	color: theme(colors.neutral.400);
+}
+
+.accordions.is-style-blue details[open] summary {
+	color: white;
+}
+.accordions.is-style-blue summary {
+	background-color: theme(colors.brand-blue);
+	color: theme(colors.brand-blue-faint);
+}
+.accordions.is-style-blue summary::before {
+	color: theme(colors.brand-blue-pale);
+}
+
+.accordions.is-style-red details[open] summary {
+	color: white;
+}
+.accordions.is-style-red summary {
+	background-color: theme(colors.brand-red);
+	color: theme(colors.brand-red-faint);
+}
+.accordions.is-style-red summary::before {
+	color: theme(colors.brand-red-pale);
 }
 
 details[open] summary ~ * {
 	@apply animate-[fade-in-from-top_300ms];
+}
+
+
+@media (prefers-color-scheme: dark) {
+	.details-inner {
+		background-color: theme(colors.neutral.800);
+		color: theme(colors.neutral.300);
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.details-inner {
+		padding-top: 1rem;
+		padding-inline: 1rem;
+		padding-bottom: 1.5rem;
+	}
 }

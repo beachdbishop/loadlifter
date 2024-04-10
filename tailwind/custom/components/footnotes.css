@@ -1,11 +1,26 @@
-/* Footnotes
+ /* Footnotes
  * Converted from Easy Footnotes plugin to work w/ WP 6.3 native Footnote block.
  */
 
 ol.wp-block-footnotes {
-	@apply max-w-prose text-sm lg:text-base;
+	max-width: 65ch;
+	font-size: 0.875rem;
+  line-height: 1.25rem
 }
 
 sup.fn a {
-	@apply text-brand-red no-underline hover:text-current;
+	color: theme(colors.brand-red);
+	font-weight: 700;
+	text-decoration-line: none;
+
+	&:hover {
+		color: currentColor;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	ol.wp-block-footnotes {
+		font-size: 1rem;
+    line-height: 1.5rem;
+	}
 }

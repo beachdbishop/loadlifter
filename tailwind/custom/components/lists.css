@@ -19,7 +19,6 @@ ul.is-style-default {
 
 .is-style-list-none,
 .prose .is-style-list-none {
-	@apply list-none pl-0;
 	list-style-type: none;
 	padding-left: 0;
 
@@ -34,40 +33,42 @@ ul.is-style-default {
 }
 
 .is-style-list-columns-2 {
-	@apply columns-1 lg:columns-2;
+	columns: 1;
 }
 .is-style-list-columns-2 li {
-	@apply break-inside-avoid-column;
+	break-inside: avoid-column;
 }
 .is-style-list-columns-2 li:first-of-type {
-	@apply mt-0;
+	margin-top: 0;
 }
 
 /* inspiration: https://codepen.io/joshwcomeau/pen/VwxwYbG */
 [class*="is-style-list-divide-"],
 .prose [class*="is-style-list-divide-"] {
-	@apply list-none p-0;
+	list-style-type: none;
+	padding: 0;
 
 	li {
-		@apply pl-0;
+		padding-left: 0;
 
 		&:not(:last-of-type) {
-			@apply border-b-2 border-dotted;
+			border-bottom-width: 2px;
+			border-style: dotted;
 		}
 	}
 }
 
 .is-style-list-divide-light li:not(:last-of-type) {
-	@apply border-neutral-400;
+	border-color: theme(colors.neutral.400);
 }
 .is-style-list-divide-gray li:not(:last-of-type) {
-	@apply border-brand-gray;
+	border-color: theme(colors.brand-gray);
 }
 .is-style-list-divide-red li:not(:last-of-type) {
-	@apply border-brand-red-pale;
+	border-color: theme(colors.brand-red-pale);
 }
 .is-style-list-divide-blue li:not(:last-of-type) {
-	@apply border-brand-blue;
+	border-color: theme(colors.brand-blue);
 }
 
 .is-style-list-checked {
@@ -90,56 +91,105 @@ ul.is-style-default {
 .is-style-circle,
 .is-style-circle-red,
 .is-style-circle-blue {
-	@apply my-4 flex w-full flex-wrap justify-center gap-2 md:gap-8 lg:my-8 lg:gap-14;
+	margin-block: 1rem;
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
 }
 .is-style-circle > *,
 .is-style-circle-red > *,
 .is-style-circle-blue > * {
-	@apply font-body flex aspect-square w-[128px] items-center justify-center rounded-full text-center text-lg font-bold leading-snug text-white/80;
+	@apply aspect-square;
+	font-family: theme(fontFamily.body);
+	font-size: 1.125rem;
+	font-weight: 700;
+  line-height: 1.375;
+	text-align: center;
+	color: rgb(255 255 255 / 0.8);
+	width: 128px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
 }
 .is-style-circle a,
 .is-style-circle-red a,
 .is-style-circle-blue a {
-	@apply text-white/80 hover:text-white;
+	color: rgb(255 255 255 / 0.8);
+}
+.is-style-circle a:hover,
+.is-style-circle-red a:hover,
+.is-style-circle-blue a:hover {
+	color: rgb(255 255 255 / 1);
 }
 
 .is-style-circle li {
-	@apply bg-neutral-600;
+	background-color: theme(colors.neutral.600);
 }
 .is-style-circle h5 {
-	@apply text-neutral-600;
+	color: theme(colors.neutral.600);
 }
 .is-style-circle-red li {
-	@apply bg-brand-red;
+	background-color: theme(colors.brand-red);
 }
 .is-style-circle-red h5 {
-	@apply text-brand-red;
+	color: theme(colors.brand-red);
 }
 .is-style-circle-blue li {
-	@apply bg-brand-blue;
+	background-color: theme(colors.brand-blue);
 }
 .is-style-circle-blue h5 {
-	@apply text-brand-blue;
+	color: theme(colors.brand-blue);
 }
-/* Split Ball Lists
-*/
+
+/* Split Ball Lists */
 .split-circle,
 .is-style-split-circle,
 .is-style-split-circle-red,
 .is-style-split-circle-blue {
-	@apply my-4 flex w-full flex-wrap justify-center gap-2 lg:my-8 lg:gap-4;
+	margin-block: 1rem;
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0.5rem;
 }
 .split-circle > *,
 .is-style-split-circle > *,
 .is-style-split-circle-red > *,
 .is-style-split-circle-blue > * {
-	@apply font-body flex aspect-square w-[200px] items-center justify-center rounded-full text-center text-xl font-bold leading-snug text-neutral-200;
+	@apply aspect-square;
+	font-family: theme(fontFamily.body);
+	font-weight: 700;
+	font-size: 1.25rem/* 20px */;
+	line-height: 1.375;
+	text-align: center;
+	color: theme(colors.neutral.200);
+	display: flex;
+	width: 200px;
+	align-items: center;
+	justify-content: center;
+	border-radius: 9999px;
 }
 .split-circle a,
 .is-style-split-circle a,
 .is-style-split-circle-red a,
 .is-style-split-circle-blue a {
-	@apply text-neutral-200 underline decoration-neutral-100/60 decoration-dotted decoration-1 hover:text-white hover:decoration-white hover:decoration-solid;
+	color: theme(colors.neutral.200);
+	text-decoration-line: underline;
+	text-decoration-color: rgb(245 245 245 / 0.6);
+	text-decoration-style: dotted;
+	text-decoration-thickness: 1px;
+}
+.split-circle a:hover,
+.is-style-split-circle a:hover,
+.is-style-split-circle-red a:hover,
+.is-style-split-circle-blue a:hover {
+	color: white;
+	text-decoration-color: white;
+	text-decoration-style: solid;
 }
 .is-style-split-circle > li {
 	background: var(--wp--preset--gradient--gray-split) !important;
@@ -152,11 +202,61 @@ ul.is-style-default {
 }
 
 .is-style-boxed {
-	@apply -mx-2 list-none !pl-0 md:mb-4 md:grid md:grid-cols-2 md:gap-4 lg:mb-8 lg:grid-cols-3 lg:gap-8;
+	margin-inline: -0.5rem;
+	list-style-type: none;
+	padding-left: 0px !important;
 }
 .is-style-boxed > li {
-	@apply !my-0 rounded-lg border border-solid border-neutral-900/10 p-4 text-base lg:p-8;
+	margin-block: 0 !important;
+	border-radius: 0.5rem;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(23 23 23 / 0.1);
+	padding: 1rem;
+	font-size: 1rem/* 16px */;
+  line-height: 1.5rem/* 24px */;
 }
 .is-style-boxed li > strong {
-	@apply mb-4;
+	margin-bottom: 1rem;
+}
+
+
+@media screen and (min-width: 768px) {
+	.is-style-circle,
+	.is-style-circle-red,
+	.is-style-circle-blue {
+		gap: 2rem;
+	}
+	.is-style-boxed {
+		margin-bottom: 1rem;
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 1rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.is-style-list-columns-2 {
+		columns: 2;
+	}
+	.is-style-circle,
+	.is-style-circle-red,
+	.is-style-circle-blue {
+		margin-block: 2rem;
+		gap: 3.5rem;
+	}
+	.split-circle,
+	.is-style-split-circle,
+	.is-style-split-circle-red,
+	.is-style-split-circle-blue {
+		margin-block: 2rem;
+		gap: 1rem;
+	}
+	.is-style-boxed {
+		margin-bottom: 2rem;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+	}
+	.is-style-boxed > li {
+		padding: 2rem;
+	}
 }

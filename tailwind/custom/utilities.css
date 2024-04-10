@@ -13,11 +13,11 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 	max-width: unset;
 	margin-left: 50%;
 	transform: translateX(-50%);
-
-	> div {
-		@apply md:container;
-	}
 }
+div:not(.block-editor-block-list__layout) .full-bleed > div {
+	@apply container;
+}
+
 
 .block-editor-block-list__layout .full-bleed {
 	width: 100%;
@@ -26,11 +26,27 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 }
 
 .ll-equal-vert-padding {
-	@apply py-12 lg:py-16;
+	--_padding: 3rem;
+	padding-block: var(--_padding);
 }
 
 .ll-equal-vert-spacing {
-	@apply my-8 md:my-12 lg:my-16;
+	--_spacing: 2rem;
+	margin-block: var(--_spacing);
+}
+
+@media screen and (min-width: 768px) {
+	.ll-equal-vert-spacing {
+		--_spacing: 3rem;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.ll-equal-vert-spacing {
+		--_spacing: 4rem;
+	}
+	.ll-equal-vert-padding {
+		--_padding: 4rem;
+	}
 }
 
 .bg-gradient-70 {
@@ -38,20 +54,9 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 }
 
 .icon {
-	@apply h-4 w-4;
-}
-/* FontAwesome svg-js method ...
-via: https://fontawesome.com/docs/web/add-icons/svg-symbols */
-/* .llicon {
-	width: 1em;
 	height: 1em;
-	vertical-align: -0.125em;
+	width: 1em;
 }
-.llicon-2x {
-	width: 2em;
-	height: 2em;
-	vertical-align: -0.25em;
-} */
 
 .papercorners-4 {
 	border-radius: 4px 0 4px;
