@@ -11,7 +11,6 @@ module.exports = {
 	content: [
 		// Ensure changes to PHP files and `theme.json` trigger a rebuild.
 		'./theme/**/*.php',
-		'./theme/theme.json',
 	],
 	future: {
 		hoverOnlyWhenSupported: true
@@ -28,6 +27,12 @@ module.exports = {
 		},
 		// Extend the default Tailwind theme.
 		extend: {
+			animation: {
+				'fade-in': 'fade-in 500ms ease-in-out',
+				'fade-in-from-top': 'fade-in-from-top 700ms ease-in-out',
+				'fade-in-from-bottom': 'fade-in-from-bottom 700ms ease-in-out',
+				'move-bg': 'move-bg 16s ease infinite',
+			},
 			aspectRatio: {
 				headshot: '95 / 127',
 				'featured-image': '384 / 125',
@@ -43,9 +48,6 @@ module.exports = {
 				'phoenix-desert-small':
 					"url('img/phx-desert-color-no-crop-small.jpg')",
 				'phoenix-desert3': "url('img/phx-desert-color-no-crop.jpg')",
-			},
-			backgroundSize: {
-				'180pct': '180% 180%',
 			},
 			colors: {
 				mahogany: {
@@ -78,6 +80,36 @@ module.exports = {
 			containers: {
 				'2xs': '16rem',
 			},
+			keyframes: {
+				'fade-in': {
+					'0%': { opacity: 0 },
+					'100%': { opacity: 1 },
+				},
+				'fade-in-from-top': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(-32px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+				},
+				'fade-in-from-bottom': {
+					'0%': {
+						opacity: '0',
+						transform: 'translateY(64px)'
+					},
+					'100%': {
+						opacity: '1',
+						transform: 'translateY(0)'
+					},
+				},
+				'move-bg': {
+					'0%, 100%': { transform: 'translateX(0)' },
+					'50%': { transform: 'translateX(-40vw)'	},
+				},
+			},
 			maxWidth: {
 				'46char': '46ch',
 				'65char': '65ch',
@@ -95,138 +127,34 @@ module.exports = {
 		},
 	},
 	safelist: [
-		'-ml-4',
-		'-ml-8',
-		'alignright',
-		'a11y-slider-container',
-		'a11y-slider-dots',
-		'a11y-slider-next',
-		'a11y-slider',
 		'aspect-feat-3.75',
 		'aspect-feat-4.3',
 		'aspect-feat-card',
-		'bg-180pct',
-		'bg-current',
-		'bg-brand-gray-dark',
-		'bg-brand-red-dark',
-		'bg-brand-blue-dark',
-		'border-brand-blue-dark',
-		'border-brand-gray-dark',
-		'border-brand-red-dark',
-		'border-brand-red-pale',
-		'border-amber-300',
-		'border-current',
-		'border-transparent',
-		'collapse',
-		'columns-2',
-		'columns-3',
-		'delay-150',
-		'divide-brand-blue-faint',
-		'divide-brand-blue',
-		'divide-brand-red',
-		'divide-current',
-		'divide-solid',
-		'divide-x',
-		'divide-y',
-		'ease-in-out',
-		'flex-start',
-		'float-right',
-		'grid-auto-fit',
-		'group-open:bg-neutral-300',
-		'group-open:bg-neutral-400',
-		'grow',
-		'h-8',
-		'hidden',
-		'hover:bg-neutral-100',
-		'hover:bg-neutral-200',
-		'hover:bg-orange',
-		'hover:bg-brand-red-dark',
-		'hover:border-brand-blue-faint',
-		'hover:border-brand-red-faint',
-		'hover:border-brand-red-pale',
-		'hover:border-transparent',
-		'hover:border-neutral-600',
-		'hover:text-brand-blue-faint',
-		'hover:text-brand-red-faint',
-		'hover:text-white',
-		'inline',
-		'leading-tight',
-		'lg:collapse',
-		'lg:columns-2',
-		'lg:columns-3',
+		'max-w-md',
+		'max-w-xl',
+		'max-w-2xl',
+		'mb-3',
+		'-ml-12',
+		'pb-2',
+		'pt-3',
+		'px-2',
+		'px-12',
+		'py-8',
+		'w-72',
+		'w-fit',
+		'md:float-right',
+		'md:mb-2',
+		'md:ml-2',
+		'md:-ml-16',
+		'md:px-16',
+		'md:py-12',
 		'lg:gap-16',
-		'lg:gap-x-16',
-		'lg:gap-y-12',
-		'lg:grid-cols-2',
 		'lg:max-w-lg',
 		'lg:mb-4',
 		'lg:ml-4',
-		'lg:visible',
+		'lg:-ml-20',
+		'lg:py-20',
 		'lg:w-96',
-		'list-square',
-		'max-w-xl',
-		'max-w-2xl',
-		'max-w-3xl',
-		'max-w-4xl',
-		'max-w-5xl',
-		'max-w-6xl',
-		'max-w-lg',
-		'max-w-md',
-		'max-w-sm',
-		'max-w-xs',
-		'max-w-prose',
-		'md:float-right',
-		'md:max-w-md',
-		'md:mb-2',
-		'md:ml-2',
-		'md:place-content-start',
-		'rounded-md',
-		'shadow-brand-blue-dark/50',
-		'shadow-brand-blue-dark',
-		'shadow-sm',
-		'slider-quotes',
-		'slider',
-		'table-oldtab',
-		'text-base',
-		'text-brand-gray-dark',
-		'text-shadow-sm',
-		'text-shadow',
-		'text-shadow-lg',
-		'to-brand-gray',
-		'to-brand-red',
-		'to-brand-blue',
-		'transition-colors',
-		'truncate',
-		'via-brand-gray',
-		'via-brand-red',
-		'via-brand-blue',
-		'visible',
-		'w-40',
-		'w-72',
-		'w-8',
-		'w-fit',
-		{
-			pattern:
-				/bg-(amber|neutral|green)-(50|100|200|300|400|500|600|700|800|900)/,
-		},
-		{
-			pattern: /border-(t|l|b|r|x|y)-(1|2|3|4)/,
-		},
-		{
-			pattern: /border-(1|2|3|4)/,
-		},
-		{
-			pattern: /m(t|l|b|r|x|y)-(0|1|2|4|6|8|10|12|16)/,
-		},
-		{
-			pattern: /m-(0|1|2|4|6|8|10|12|16)/,
-		},
-		{
-			pattern: /p(t|l|b|r|x|y)-(0|1|2|4|6|8|10|12|16)/,
-		},
-		{
-			pattern: /p-(0|1|2|4|6|8|10|12|16)/,
-		},
 	],
 	corePlugins: {
 		// Disable default tailwind aspect-* classes
@@ -235,12 +163,16 @@ module.exports = {
 		preflight: includePreflight,
 	},
 	plugins: [
+		// Add Tailwind Typography (via _tw fork).
+		require('@_tw/typography'),
+
 		// Extract colors and widths from `theme.json`.
-		require('@_tw/themejson')(require('../theme/theme.json')),
+		require('@_tw/themejson'),
+
 		// Add Tailwind Typography.
-		require('@tailwindcss/typography'),
+		// require('@tailwindcss/typography'),
+
 		require('@tailwindcss/container-queries'),
-		// Uncomment below to add additional first-party Tailwind plugins.
 		require('@tailwindcss/forms'),
 		require('@shrutibalasa/tailwind-grid-auto-fit'),
 

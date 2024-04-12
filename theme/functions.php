@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.7.0' );
+	define( 'LL_VERSION', '2.8.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -233,40 +233,23 @@ add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
  * Enqueue the block editor script.
  */
 function ll_enqueue_block_editor_script() {
-	wp_enqueue_script(
-		'll-editor',
-		get_template_directory_uri() . '/js/block-editor.min.js',
-		array(
-			'wp-blocks',
-			'wp-edit-post',
-		),
-		LL_VERSION,
-		true
-	);
-}
-add_action( 'enqueue_block_editor_assets', 'll_enqueue_block_editor_script' );
 
-/**
- * Enqueue the script necessary to support Tailwind Typography in the block
- * editor, using an inline script to create a JavaScript array containing the
- * Tailwind Typography classes from _S_TYPOGRAPHY_CLASSES.
- */
-function ll_enqueue_typography_script() {
 	if ( is_admin() ) {
 		wp_enqueue_script(
-			'll-typography',
-			get_template_directory_uri() . '/js/tailwind-typography-classes.min.js',
+			'll-editor',
+			get_template_directory_uri() . '/js/block-editor.min.js',
 			array(
-					'wp-blocks',
-					'wp-edit-post',
+				'wp-blocks',
+				'wp-edit-post',
 			),
 			LL_VERSION,
 			true
 		);
-		wp_add_inline_script( 'll-typography', "tailwindTypographyClasses = '" . esc_attr( LL_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
+		wp_add_inline_script( 'll-editor', "tailwindTypographyClasses = '" . esc_attr( LL_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
 	}
+
 }
-add_action( 'enqueue_block_assets', 'll_enqueue_typography_script' );
+add_action( 'enqueue_block_assets', 'll_enqueue_block_editor_script' );
 
 /**
  * Add the Tailwind Typography classes to TinyMCE.
