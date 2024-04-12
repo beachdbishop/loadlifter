@@ -1,0 +1,11 @@
+<svg viewBox="0 0 160 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+	<defs>
+		<linearGradient id="blue" gradientTransform="rotate(20)">
+      <stop offset="20%" stop-color="rgb(9 47 66 / 1)" />
+			<stop offset="45%" stop-color="rgb(0 102 142 / 1)" />
+			<stop offset="55%" stop-color="rgb(0 102 142 / 1)" />
+			<stop offset="80%" stop-color="rgb(9 47 66 / 1)" />
+    </linearGradient>
+	</defs>
+	<rect x="0" y="0" width="160" height="90" fill="url('#blue')" />
+</svg>
