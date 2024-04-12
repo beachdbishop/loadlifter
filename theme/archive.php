@@ -26,7 +26,8 @@ get_header();
 				</header>
 
 
-				<div class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				<?php // <ul class="grid grid-cols-1 gap-8 -mx-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> ?>
+				<ul class="cards-ic grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
 					<?php /* Start the Loop */
 					while ( have_posts() ) :
 						the_post();
@@ -36,20 +37,19 @@ get_header();
 						* If you want to override this in a child theme, then include a file
 						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
 						*/
-						get_template_part( 'template-parts/content/content', 'card' );
+						get_template_part( 'template-parts/content/content', 'card-ic' );
 
 					endwhile;
 					?>
-				</div>
+				</ul>
 
-                <div class="mt-8">
+				<div class="mt-8">
 					<?php // ll_paging_nav();
-                    if ( function_exists( 'wpgb_render_facet' ) ) {
-                        wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
-                    } ?>
+					if ( function_exists( 'wpgb_render_facet' ) ) {
+							wpgb_render_facet( ['id' => 11, 'grid' => 'wpgb-content' ] );
+					} ?>
 				</div>
-
-                <?php
+				<?php
 
 			else :
 

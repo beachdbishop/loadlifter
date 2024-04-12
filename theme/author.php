@@ -104,7 +104,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 				<?php if (have_posts()) : ?>
 
-					<ul class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+					<ul class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
 						<?php /* Start the Loop */
 						while (have_posts()) :
 							the_post();
