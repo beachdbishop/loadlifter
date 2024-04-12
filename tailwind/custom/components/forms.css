@@ -111,7 +111,7 @@ button.ab-button:active {
 .hbspt-form {
 	span.hs-form-required {
 		font-weight: 700;
-		color: theme(colors.orange.700);
+		color: theme(colors.orange.800);
 	}
 
 	.hs-error-msg {
