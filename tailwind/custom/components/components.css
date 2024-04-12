@@ -345,7 +345,7 @@ p[class*="is-style-note-"] {
 	background-position: 50%;
 	display: flex;
 	justify-content: center;
-	min-height: 240px;
+	min-height: 180px;
 	overflow: clip;
 	padding: 0;
 	position: relative;

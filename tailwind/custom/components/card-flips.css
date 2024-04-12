@@ -34,7 +34,7 @@
 
 .ind-card-flips.is-style-blue {
 	--_card-front-bg: theme(colors.brand-blue);
-	--_card-front-text: theme(colors.neutral.100);
+	--_card-front-text: theme(colors.neutral.50);
 	--_card-front-icon: theme(colors.brand-blue-dark);
 	--_card-back-bg: theme(colors.brand-blue-dark);
 }

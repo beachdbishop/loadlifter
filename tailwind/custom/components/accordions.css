@@ -3,6 +3,8 @@
 summary {
 	list-style: none;
 	cursor: pointer;
+	position: relative;
+	z-index: 10;
 
 	> * {
 		display: inline;
@@ -49,10 +51,16 @@ details[open] summary::-webkit-details-marker {
 }
 
 .accordions .details-inner {
-	background-color: theme(colors.neutral.100);
+	background-color: theme(colors.neutral.50);
 	padding-inline: 0.5rem;
-	padding-bottom: 1rem;
+	padding-block: 1rem;
+	position: relative;
 	will-change: transform;
+	z-index: 5;
+}
+
+.accordions .details-inner > ul {
+	margin-block: 0 !important;
 }
 
 

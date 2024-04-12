@@ -27,7 +27,7 @@
   outline-offset: 2px;
 }
 
-.wp-block-button__link:not(.has-background):hover {
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):hover {
 	background-color: theme(colors.brand-blue-dark);
 	color: white;
 }

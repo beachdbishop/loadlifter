@@ -143,47 +143,9 @@ table caption {
 }
 
 /* Custom Animations */
-@keyframes fade-in {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
-.animate-fade-in {
-	animation: fade-in 500ms ease-in-out;
-}
 
-@keyframes fade-in-from-bottom {
-	0% {
-		opacity: 0;
-		transform: translateY(64px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-.animate-fade-in-from-bottom {
-	animation: fade-in-from-bottom 700ms ease-in-out;
-}
 
-@keyframes fade-in-from-top {
-	0% {
-		opacity: 0;
-		transform: translateY(-32px);
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-.animate-fade-in-from-top {
-	animation: fade-in-from-top 700ms ease-in-out;
-}
-
-@keyframes sway {
+/* @keyframes sway {
 	0% {
 		background-position: 0% 50%;
 	}
@@ -196,22 +158,6 @@ table caption {
 }
 .animate-sway {
 	animation: sway 21s ease infinite;
-}
+} */
 
-@keyframes move-bg {
-	0% {
-		transform: translateX(0);
-	}
-	50% {
-		transform: translateX(-50vw);
-	}
-	100% {
-		transform: translateX(0);
-	}
-}
-.animate-move-bg {
-	animation-name: move-bg;
-	animation-duration: 16s;
-	animation-timing-function: ease;
-	animation-iteration-count: infinite;
-}
+
