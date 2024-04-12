@@ -616,10 +616,10 @@ endif;
 if ( ! function_exists( 'll_no_link_card' ) ) :
 	function ll_no_link_card( $card ) {
 		echo '<div>
-			<div class="card | relative inline-block float-left w-[--card-size] h-[--card-size] [perspective:600px]" style="--card-back-bg: #092f42">
+			<div class="card | relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-back-bg: #092f42">
 				<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
-					<div class="card-front | text-center bg-[--card-front-bg] text-[--card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-						<div class="card-icon | text-[--card-front-icon]">
+					<div class="card-front | text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+						<div class="card-icon | text-[--_card-front-icon]">
 							<span class="fa-stack fa-2x">
 								<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-700"></i>
 								<i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
@@ -627,7 +627,7 @@ if ( ! function_exists( 'll_no_link_card' ) ) :
 						</div>
 						<h3 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h3>
 					</div>
-					<div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--card-back-bg] text-[--card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
+					<div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
 							<h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $card['label'] . '</h6>
 							<p class="text-center text-shadow">' . $card['backContent'] . '</p>
 					</div>
