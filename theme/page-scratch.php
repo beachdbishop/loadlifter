@@ -46,7 +46,7 @@ get_header();
 					<div class="not-prose">
 						<p class="mb-4 lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
-						<section class="group bg-gray-500 md:rounded-lg bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply lg:mx-auto lg:max-w-5xl">
+						<section class="group bg-gray-500 md:rounded-lg text-white bg-blend-multiply lg:mx-auto lg:max-w-5xl" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">
 							<a href="#" class="decoration-none">
 								<div class="container px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
@@ -59,7 +59,7 @@ get_header();
 
 						<div class="wp-block-spacer">&nbsp;</div>
 
-						<section class="group full-bleed bg-gray-500 bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply">
+						<section class="group full-bleed bg-gray-500 text-white bg-blend-multiply" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">
 							<a href="#">
 								<div class="container px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
@@ -72,7 +72,7 @@ get_header();
 
 						<div class="wp-block-spacer">&nbsp;</div>
 
-						<section class="group full-bleed bg-brand-red bg-center bg-cover bg-[url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')] text-white bg-blend-multiply is-style-brand-red">
+						<section class="group full-bleed bg-brand-red bg-center bg-cover text-white bg-blend-multiply is-style-brand-red" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">
 							<a href="#">
 								<div class="container px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto sm:flex-row sm:items-center lg:w-2/3">
