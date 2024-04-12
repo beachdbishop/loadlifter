@@ -37,7 +37,7 @@ if ( isset( $_wp_additional_image_sizes['yarpp-thumbnail'] ) ) {
 
 <h3 class="mb-4 text-lg lg:text-2xl">Related</h3>
 <?php if ( have_posts() ) : ?>
-<ul class="cards-ic md:grid md:gap-4 md:grid-cols-3 lg:gap-8">
+<ul class="cards-ic md:max-w-sm md:grid md:gap-4 lg:max-w-none lg:grid-cols-3 lg:gap-8">
 	<?php
 	while ( have_posts() ) :
 		the_post();
