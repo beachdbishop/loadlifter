@@ -36,21 +36,26 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			// get_template_part( 'template-parts/content/content', 'page-front' );
 			?>
 
-			<div class="page-hero | ll-equal-vert-padding bg-orient-900 bg-no-repeat overflow-hidden flex items-center justify-center print:py-8">
-				<video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="absolute top-[-200px] left-0 object-cover w-full h-[1080px] print:hidden">
+			<!-- <div class="page-hero | ll-equal-vert-padding bg-orient-900 bg-no-repeat overflow-hidden flex items-center justify-center print:py-8"> -->
+			<div class="page-hero | wp-block-cover ll-equal-vert-padding !px-0">
+				<span class="page-hero-overlay | z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
+
+				<!-- <video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="absolute top-[-200px] left-0 object-cover w-full h-[1080px] print:hidden"> -->
+				<video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="wp-block-cover__video-background intrinsic-ignore print:hidden" data-object-fit="cover">
 					<source src="<?php echo $featvideo; ?>">
 					<track src="<?php echo get_stylesheet_directory_uri(); ?>/img/beachfleischman-arizona-silent.vtt" kind="captions" srclang="en" label="english_captions">
 					Your browser does not support the video tag.
 				</video>
 
-				<div class="overlay | absolute top-0 left-0 w-full h-[1080px] bg-neutral-800/70 lg:bg-transparent lg:bg-hero-gradient"></div>
+				<!-- <div class="overlay | absolute top-0 left-0 w-full h-[1080px] bg-neutral-800/70 lg:bg-transparent lg:bg-hero-gradient"></div> -->
 
-				<div class="relative flex flex-col justify-center px-2 min-h-[240px] md:container lg:px-[16px] md:min-h-hero text-left">
+				<!-- <div class="relative flex flex-col justify-center px-2 min-h-[240px] md:container lg:px-[16px] md:min-h-hero text-left"> -->
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px] lg:px-[16px] md:min-h-hero">
 					<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl">
 						<?php echo $video_heading; ?>
 					</h1>
 
-					<p class="my-6 text-2xl leading-normal font-head max-w-[44ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">
+					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">
 						<?php echo $video_subheading; ?>
 					</p>
 

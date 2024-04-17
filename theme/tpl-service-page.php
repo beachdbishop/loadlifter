@@ -45,7 +45,7 @@ $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 			the_post();
 			?>
 
-			<?php echo ll_page_hero( $page_title, $page_message['label'], $hero_cta1_text, $hero_cta1_url, $hero_cta2_text, $hero_cta2_url ); ?>
+			<?php echo ll_better_page_hero( $page_title, $page_message['label'], $hero_cta1_text, $hero_cta1_url, $hero_cta2_text, $hero_cta2_url ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="px-2 md:container lg:px-[16px]">

@@ -35,7 +35,7 @@ $page_state                     = get_field( 'll_page_state' );
 			?>
 
 			<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-					echo ll_page_hero( $page_title, $page_message['label'] );
+					echo ll_better_page_hero( $page_title, $page_message['label'] );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>

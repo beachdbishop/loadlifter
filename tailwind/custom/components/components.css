@@ -75,6 +75,21 @@
 	@apply container;
 }
 
+/*   P A G E   H E R O   */
+.page-hero-overlay {
+	background-color: hsl(0 0% 16% / 0.5);
+	background-image: none;
+}
+
+@media (min-width: 1024px) {
+	.page-hero-overlay {
+		background-color: unset;
+		/* background-image: linear-gradient(to right, rgb(255 255 255 / 0.95) 0%, rgb(255 255 255 / 0.8) 40%, rgb(255 255 255 / 0.2) 60%, rgb(255 255 255 / 0) 100%); */
+		background-image: linear-gradient(to right, hsl(0 0% 16% / 0.95) 0%, hsl(0 0% 16% / 0.8) 40%, hsl(0 0% 16% / 0.6) 50%, hsl(0 0% 16% / 0.2) 80%, hsl(0 0% 16% / 0) 100% );
+	}
+}
+
+
 .single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
 	border-bottom-width: 1px;
 	border-color: theme(colors.neutral.200);

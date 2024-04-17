@@ -346,6 +346,43 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 endif;
 
 
+if ( ! function_exists( 'll_better_page_hero' ) ) :
+	function ll_better_page_hero( $h1, $h2, $cta1_text = null, $cta1_url = null, $cta2_text = null, $cta2_url = null ) {
+		?>
+
+		<div class="page-hero | wp-block-cover ll-equal-vert-padding !px-0 print:py-8">
+			<span aria-hidden="true" class="page-hero-overlay | z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
+			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image'] ); ?>
+
+			<div class="wp-block-cover__inner-container | px-2 lg:px-4">
+				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero">
+					<h1 class="has-text-color leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none"><?php echo $h1; ?></h1>
+					<h2 class="text-2xl leading-normal max-w-[42ch] !text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none"><?php echo $h2; ?></h2>
+					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
+						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">
+							<div class="">
+								<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg text-neutral-100 !bg-brand-red-dark border-brand-red-dark shadow-md shadow-neutral-950 hover:border-white hover:text-white" href="<?php echo $cta1_url; ?>"><?php echo $cta1_text; ?></a>
+							</div>
+							<?php if ( ( !empty( $cta2_text ) ) && ( !empty( $cta2_url ) ) ) { ?>
+								<div class="">
+									<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-brand-blue-pale hover:text-brand-blue-pale" href="<?php echo $cta2_url; ?>"><?php echo $cta2_text; ?></a>
+								</div>
+							<?php } ?>
+						</div>
+					<?php } ?>
+				</div>
+
+				<?php if ( ( !is_front_page() ) && ( !is_page_template( LL_LP_TEMPLATES ) ) ) { ?>
+					<nav class="breadcrumbs | font-head text-neutral-50 | print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org"><?php echo bcn_display( true ); ?></nav>
+				<?php } ?>
+			</div>
+		</div>
+
+		<?php
+	}
+endif;
+
+
 /* Used on Posts */
 if ( ! function_exists( 'll_featured_image' ) ) :
 	/**

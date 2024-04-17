@@ -43,80 +43,80 @@ $cards_opps = [
 	],
 ];
 $cards_expect = [
-		"personal" => [
-				"label" => 'Personal success',
-				"icon" => 'fa-handshake',
-				"backContent" => '<p>You will have a challenging and rewarding career with many options for growth. You are unique, so your goals and dreams are unique; we help you pursue your success.</p>',
-		],
-		"easy" => [
-				"label" => 'Easy interactions',
-				"icon" => 'fa-comments',
-				"backContent" => '<p>Clear communication and accessible management provide you with a supportive environment. When serving clients, we integrate our service teams to provide a collaborative experience for our staff and clients alike.</p>',
-		],
-		"ability" => [
-				"label" => 'Enhanced ability',
-				"icon" => 'fa-gauge-high',
-				"backContent" => '<p>You will have continuous opportunities to learn and grow in our learning culture including:</p>
-				<ul class="mt-2 ml-3 list-disc">
-						<li>Mentoring program</li>
-						<li>CPA exam bonus and reimbursement</li>
-						<li>Paid continuing professional education, membership dues, and licenses</li>
-						<li>Leadership development</li>
-				</ul>',
-		],
-		"community" => [
-				"label" => 'Community impact',
-				"icon" => 'fa-house-building',
-				"backContent" => '<p>Are you passionate about supporting the community? BeachFleischman encourages and financially supports your involvement in local organizations.</p>',
-		],
+	"personal" => [
+		"label" => 'Personal success',
+		"icon" => 'fa-handshake',
+		"backContent" => '<p>You will have a challenging and rewarding career with many options for growth. You are unique, so your goals and dreams are unique; we help you pursue your success.</p>',
+	],
+	"easy" => [
+		"label" => 'Easy interactions',
+		"icon" => 'fa-comments',
+		"backContent" => '<p>Clear communication and accessible management provide you with a supportive environment. When serving clients, we integrate our service teams to provide a collaborative experience for our staff and clients alike.</p>',
+	],
+	"ability" => [
+		"label" => 'Enhanced ability',
+		"icon" => 'fa-gauge-high',
+		"backContent" => '<p>You will have continuous opportunities to learn and grow in our learning culture including:</p>
+		<ul class="mt-2 ml-3 list-disc">
+			<li>Mentoring program</li>
+			<li>CPA exam bonus and reimbursement</li>
+			<li>Paid continuing professional education, membership dues, and licenses</li>
+			<li>Leadership development</li>
+		</ul>',
+	],
+	"community" => [
+		"label" => 'Community impact',
+		"icon" => 'fa-house-building',
+		"backContent" => '<p>Are you passionate about supporting the community? BeachFleischman encourages and financially supports your involvement in local organizations.</p>',
+	],
 ];
 $cards_future = [
-		"advancement" => [
-				"label" => 'Career advancement',
-				"icon" => 'fa-rocket',
-				"backContent" => '<p>You will have many avenues to advance your career. You choose your area of specialization and we\'ll provide challenging work that empowers you to be your best.</p>',
-		],
-		"easy" => [
-				"label" => 'Be heard',
-				"icon" => 'fa-microphone',
-				"backContent" => '<p>Your feedback and ideas are important to us. Through our collaborative work style, your voice will be heard.</p>',
-		],
-		"ability" => [
-				"label" => 'Embrace technology',
-				"icon" => 'fa-laptop-mobile',
-				"backContent" => '<p>Be part of our continuous drive to innovate through technology. We automate many processes and use cloud-based solutions to create a seamless experience for our clients and staff alike.</p>',
-		],
-		"community" => [
-				"label" => 'Seek success',
-				"icon" => 'fa-thumbs-up',
-				"backContent" => '<p>Our success depends on you, your career, your development, and your growth. Here, you will follow your passions, including working with growth-oriented clients and taking ownership of your projects. Seek success and the future is yours!</p>',
-		],
+	"advancement" => [
+		"label" => 'Career advancement',
+		"icon" => 'fa-rocket',
+		"backContent" => '<p>You will have many avenues to advance your career. You choose your area of specialization and we\'ll provide challenging work that empowers you to be your best.</p>',
+	],
+	"easy" => [
+		"label" => 'Be heard',
+		"icon" => 'fa-microphone',
+		"backContent" => '<p>Your feedback and ideas are important to us. Through our collaborative work style, your voice will be heard.</p>',
+	],
+	"ability" => [
+		"label" => 'Embrace technology',
+		"icon" => 'fa-laptop-mobile',
+		"backContent" => '<p>Be part of our continuous drive to innovate through technology. We automate many processes and use cloud-based solutions to create a seamless experience for our clients and staff alike.</p>',
+	],
+	"community" => [
+		"label" => 'Seek success',
+		"icon" => 'fa-thumbs-up',
+		"backContent" => '<p>Our success depends on you, your career, your development, and your growth. Here, you will follow your passions, including working with growth-oriented clients and taking ownership of your projects. Seek success and the future is yours!</p>',
+	],
 ];
 $cards_benefits = [
-		"career_dev" => [
-				"label" => 'Career Development',
-				"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--career-dev_jyfgjn.jpg',
-				"imgAlt" => 'A mentor and mentee smile while having a discussion',
-				"onHoverContent" => '<ul><li>CPA Certification Bonus</li><li>Certification Reimbursement</li><li>Continuing Professional Education</li><li>Leadership Development</li><li>Mentor Program</li><li>Employee Referral Program</li></ul>',
-		],
-		"health" => [
-				"label" => 'Health',
-				"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--health_dhdaqh.jpg',
-				"imgAlt" => 'A patient has a discussion with a medical professional',
-				"onHoverContent" => '<ul><li>Medical Insurance</li><li>Dental Insurance</li><li>Vision Insurance</li><li>Life Insurance</li><li>Short and Long-Term Disability Insurance</li><li>Accident Insurance</li><li>Critical Illness Insurance</li><li>Hospital Indemnity Insurance</li><li>Flexible Spending Account</li><li>Dependent Care Account</li></ul>',
-		],
-		"wellbeing" => [
-				"label" => 'Well-Being',
-				"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--well-being_qrung2.jpg',
-				"imgAlt" => 'A man looks out a window with his arms raised in celebration',
-				"onHoverContent" => '<ul><li>Paid Time Off</li><li>Flextime Options</li><li>Hybrid/Remote Work Options</li><li>Employee Assistance Program</li><li>Wellness Campaigns</li><li>Busy Season Meals and Snacks</li></ul>',
-		],
-		"financial" => [
-				"label" => 'Financial',
-				"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--financial_dgfqh5.jpg',
-				"imgAlt" => 'Five stacks of coins increasing in height from one to the next',
-				"onHoverContent" => '<ul><li>401(k) Retirement Plan</li><li>Employer Match</li><li>Profit Sharing Plan</li><li>Cash Balance Plan</li><li>Access to Financial Advisors</li><li>Performance-Based Bonuses</li></ul>',
-		],
+	"career_dev" => [
+		"label" => 'Career Development',
+		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--career-dev_jyfgjn.jpg',
+		"imgAlt" => 'A mentor and mentee smile while having a discussion',
+		"onHoverContent" => '<ul><li>CPA Certification Bonus</li><li>Certification Reimbursement</li><li>Continuing Professional Education</li><li>Leadership Development</li><li>Mentor Program</li><li>Employee Referral Program</li></ul>',
+	],
+	"health" => [
+		"label" => 'Health',
+		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--health_dhdaqh.jpg',
+		"imgAlt" => 'A patient has a discussion with a medical professional',
+		"onHoverContent" => '<ul><li>Medical Insurance</li><li>Dental Insurance</li><li>Vision Insurance</li><li>Life Insurance</li><li>Short and Long-Term Disability Insurance</li><li>Accident Insurance</li><li>Critical Illness Insurance</li><li>Hospital Indemnity Insurance</li><li>Flexible Spending Account</li><li>Dependent Care Account</li></ul>',
+	],
+	"wellbeing" => [
+		"label" => 'Well-Being',
+		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--well-being_qrung2.jpg',
+		"imgAlt" => 'A man looks out a window with his arms raised in celebration',
+		"onHoverContent" => '<ul><li>Paid Time Off</li><li>Flextime Options</li><li>Hybrid/Remote Work Options</li><li>Employee Assistance Program</li><li>Wellness Campaigns</li><li>Busy Season Meals and Snacks</li></ul>',
+	],
+	"financial" => [
+		"label" => 'Financial',
+		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/f_auto/v1698769889/feat__careers--financial_dgfqh5.jpg',
+		"imgAlt" => 'Five stacks of coins increasing in height from one to the next',
+		"onHoverContent" => '<ul><li>401(k) Retirement Plan</li><li>Employer Match</li><li>Profit Sharing Plan</li><li>Cash Balance Plan</li><li>Access to Financial Advisors</li><li>Performance-Based Bonuses</li></ul>',
+	],
 ];
 
 if ('local' === wp_get_environment_type()) {
@@ -133,7 +133,7 @@ if ('local' === wp_get_environment_type()) {
 			// get_template_part( 'template-parts/content/content', 'page-careers' );
 			?>
 
-			<?php echo ll_page_hero( $page_title, $page_excerpt ); ?>
+			<?php echo ll_better_page_hero( $page_title, $page_excerpt ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 				<div class="px-2 md:container lg:px-[16px]">

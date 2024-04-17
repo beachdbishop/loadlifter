@@ -72,7 +72,7 @@ get_header();
 		the_post();
 	?>
 
-		<?php echo ll_page_hero( $page_title, $page_message['label'] ); ?>
+		<?php echo ll_better_page_hero( $page_title, $page_message['label'] ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 			<div class="px-2 md:container lg:px-[16px]">
