@@ -53,19 +53,20 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 	get_template_part( 'template-parts/siteblocks/pre', 'footer' );
 	?>
 
-	<footer id="colophon" class="site-footer bg-neutral-900/80 ">
-
-		<div class="text-white border-t-4 border-solid on-darkbg border-brand-blue print:border-none print:text-neutral-700">
+	<footer id="colophon" class="site-footer wp-block-cover alignfull is-light has-parallax text-white border-t-4 border-solid border-brand-blue ll-equal-vert-padding !px-0 bg-neutral-950 | print:border-none print:text-neutral-700">
+		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim"></span>
+		<div role="img" aria-label="The Arizona desert at sunrise" class="wp-block-cover__image-background has-parallax" style="background-position:50% 0;background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
+		<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-[16px] lg:space-y-16">
 
 			<?php if ( ( !is_page_template( LL_LP_TEMPLATES ) ) && ( $show_expanded_menus ) ) { ?>
-			<div class="px-2 pt-16 md:container lg:px-[16px] print:hidden">
+			<div class="print:hidden">
 				<div class="grid grid-cols-1 gap-x-4 gap-y-8 text-shadow shadow-neutral-900 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6">
 					<nav aria-label="Accounting and Assurance submenu">
 						<p class="text-lg font-head"><a href="/assurance/">Accounting &amp; Assurance</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_assurance',
-							'container_class' => 'footermenu mt-4 text-sm',
+							'container_class' => 'footermenu mt-4 text-base',
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
@@ -75,7 +76,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_tax',
-							'container_class' => 'footermenu mt-4 text-sm',
+							'container_class' => 'footermenu mt-4 text-base',
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
@@ -85,7 +86,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_soar',
-							'container_class' => 'footermenu mt-4 text-sm',
+							'container_class' => 'footermenu mt-4 text-base',
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
@@ -95,7 +96,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_industries',
-							'container_class' => 'footermenu mt-4 text-sm',
+							'container_class' => 'footermenu mt-4 text-base',
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
@@ -105,7 +106,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_about',
-							'container_class' => 'footermenu mt-4 text-sm',
+							'container_class' => 'footermenu mt-4 text-base',
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
@@ -115,7 +116,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_careers',
-							'container_class' => 'footermenu my-4 text-sm',
+							'container_class' => 'footermenu my-4 text-base',
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
@@ -125,7 +126,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 			</div>
 			<?php } ?>
 
-			<div class="px-2 py-16 md:container lg:px-[16px]">
+			<div class="">
 				<div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-8">
 					<div class="">
 						<div class="max-w-xs mb-4 fill-current">
@@ -169,7 +170,18 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 					<a class="hover:text-brand-blue-faint" href="#page" title="Back to top"><i class="fa-regular fa-arrow-up-to-dotted-line"></i></a>
 				</p>
 			</div>
+
 		</div>
 	</footer>
+
+	<!-- <footer id="colophon" class="site-footer bg-neutral-900/80 ">
+
+		<div class="text-white border-t-4 border-solid on-darkbg border-brand-blue print:border-none print:text-neutral-700">
+
+
+
+
+		</div>
+	</footer> -->
 
 <?php } ?>
