@@ -37,7 +37,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			?>
 
 			<!-- <div class="page-hero | ll-equal-vert-padding bg-orient-900 bg-no-repeat overflow-hidden flex items-center justify-center print:py-8"> -->
-			<div class="page-hero | wp-block-cover ll-equal-vert-padding !px-0">
+			<div class="page-hero | wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0">
 				<span class="page-hero-overlay | z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
 
 				<!-- <video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="absolute top-[-200px] left-0 object-cover w-full h-[1080px] print:hidden"> -->

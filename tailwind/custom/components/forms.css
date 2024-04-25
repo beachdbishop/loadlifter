@@ -6,7 +6,8 @@
 	min-height: 590px;
 	border-width: 1px;
 	border-color: theme(colors.neutral.400);
-	background-color: theme(colors.neutral.50);
+	/* background-color: theme(colors.neutral.50); */
+	background-image: linear-gradient(to bottom, theme(colors.neutral.100) 0, rgb(255 255 255 / 1) 30%);
 }
 
 /* TODO: Double-check that all these are needed since I have enabled the Tailwind Forms plugin */

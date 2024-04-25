@@ -350,7 +350,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 	function ll_better_page_hero( $h1, $h2, $cta1_text = null, $cta1_url = null, $cta2_text = null, $cta2_url = null ) {
 		?>
 
-		<div class="page-hero | wp-block-cover ll-equal-vert-padding !px-0 print:py-8">
+		<div class="page-hero | wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0 print:py-8">
 			<span aria-hidden="true" class="page-hero-overlay | z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
 			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image'] ); ?>
 

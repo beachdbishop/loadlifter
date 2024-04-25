@@ -138,7 +138,7 @@ get_header();
 					</div>
 
 					<div class="ll-page-grid-area-c">
-						<div class="p-4 mt-8 border md:mt-0 lg:p-8 bg-neutral-50 border-neutral-400 not-prose animate-fade-in-from-bottom print:hidden dark:border-neutral-600 dark:bg-neutral-800">
+						<div class="p-4 mt-8 border md:mt-0 lg:p-8 bg-gradient-to-b from-neutral-100 from-10% via-white via-40% border-neutral-400 not-prose animate-fade-in-from-bottom print:hidden dark:border-neutral-600 dark:bg-neutral-800">
 							<h2 class="text-brand-blue dark:text-brand-blue-pale" id="paymentopts">Payment Options</h2>
 							<p class="my-4">Use the options below to pay an invoice or a deposit.</p>
 							<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">

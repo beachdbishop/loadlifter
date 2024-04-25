@@ -78,7 +78,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 				<?php if ( $peep_class === 'internal' ) { ?>
 					<?php if ( $author_dept_value ) {
-						echo '<div class="py-4 my-4 text-neutral-400">';
+						echo '<div class="py-4 my-4 text-neutral-500">';
 						ll_people_show_dept_list( $author_dept_value );
 						echo '</div>';
 					} ?>
