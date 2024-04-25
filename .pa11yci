@@ -1,0 +1,22 @@
+{
+	"defaults": {
+		"ignore": [ "notice" ],
+		"standard": "WCAG2AA",
+		"reporters": [
+			"cli",
+			["pa11y-ci-reporter-html", { "destination": "./_pa11y/" }]
+		]
+	},
+	"urls": [
+		"https://peoplecptauthortest.local/",
+		"https://peoplecptauthortest.local/accessibility-statement/",
+		"https://peoplecptauthortest.local/tax/business-tax-services-phoenix-tucson-arizona-accountants-cpas/",
+		"https://peoplecptauthortest.local/career-opportunities/",
+		"https://peoplecptauthortest.local/about/",
+		"https://peoplecptauthortest.local/style/reading-the-tea-leaves-potential-tax-legislation-in-the-new-congress/",
+		"https://peoplecptauthortest.local/category/block/",
+		"https://peoplecptauthortest.local/author/jgiordano/",
+		"https://peoplecptauthortest.local/people/josephine-giordano/",
+		"https://peoplecptauthortest.local/client-center/"
+	]
+}
