@@ -175,7 +175,7 @@ if ('local' === wp_get_environment_type()) {
 													</a>
 												</p>
 												<p class="inline text-2xl">
-													<a class="group-hover:text-brand-blue" href="' . $card['link'] . '">
+													<a class="group-hover:text-brand-blue" href="' . $card['link'] . '" aria-label="Read more about ' . $card['label'] . '">
 														<i class="fa-regular fa-angle-right"></i>
 													</a>
 												</p>
