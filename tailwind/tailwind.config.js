@@ -19,12 +19,6 @@ module.exports = {
 		container: {
 			center: true,
 		},
-		fontFamily: {
-			head: ['serenity', 'sans-serif'],
-			body: ['Work Sans', 'sans-serif'],
-			mono: ['Fira Code', 'Consolas', 'monospace'],
-			serif: ['Georgia', 'serif'],
-		},
 		// Extend the default Tailwind theme.
 		extend: {
 			animation: {
@@ -79,6 +73,11 @@ module.exports = {
 			},
 			containers: {
 				'2xs': '16rem',
+			},
+			fontFamily: {
+				head: ['serenity', 'sans-serif'],
+				mono: ['Fira Code', 'Consolas', 'monospace'],
+				serif: ['Georgia', 'serif'],
 			},
 			keyframes: {
 				'fade-in': {

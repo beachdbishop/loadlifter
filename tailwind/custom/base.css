@@ -36,7 +36,8 @@ html {
 
 body {
 	--tw-text-opacity: 1;
-	font-family: Work Sans, sans-serif;
+	/* font-family: Work Sans, sans-serif; */
+	font-family: theme(fontFamily.sans);
   color: rgb(38 38 38 / var(--tw-text-opacity));
 
 }

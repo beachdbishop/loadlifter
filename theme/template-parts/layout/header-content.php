@@ -143,7 +143,7 @@ $menuItemsSecondary = [
                 ?>
 			</ul>
 
-            <ul class="secondary-nav | font-bold font-head md:text-sm md:font-body md:uppercase text-neutral-600 dark:text-neutral-400 md:order-first md:justify-end flex flex-col md:gap-x-2 md:flex-row md:py-2 lg:gap-x-4 print:hidden">
+            <ul class="secondary-nav | font-bold font-head md:text-sm md:font-sans md:uppercase text-neutral-600 dark:text-neutral-400 md:order-first md:justify-end flex flex-col md:gap-x-2 md:flex-row md:py-2 lg:gap-x-4 print:hidden">
                 <?php
                 foreach ( $menuItemsSecondary as $secondary ) {
                     echo '<li class="p-2 md:py-0"><a class="hover:text-brand-blue" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';

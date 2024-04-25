@@ -1,14 +1,12 @@
 /* DEV */
 
 :not(img).todo {
-	--tw-text-opacity: 1;
-  color: rgb(236 72 153 / var(--tw-text-opacity));
 	font-style: italic;
+	color: theme(colors.pink.500);
 }
 img.todo {
-	--tw-bg-opacity: 1;
-  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
+	background-color: theme(colors.pink.500);
 }
 div.todo {
-	background-color: rgb(236 72 153 / 0.2);
+	background-color: theme(colors.pink.100);
 }

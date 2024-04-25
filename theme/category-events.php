@@ -23,7 +23,7 @@ get_header();
 			</header>
 
 			<div class="">
-				<h2 class="mb-4 font-bold font-body text-neutral-600 dark:text-neutral-400">Upcoming</h2>
+				<h2 class="mb-4 font-bold font-sans text-neutral-600 dark:text-neutral-400">Upcoming</h2>
 				<?php echo do_shortcode( '[display-posts
 					category="events"
 					tag="upcoming"
@@ -37,7 +37,7 @@ get_header();
 
 				<div class="mt-8 ll-equal-vert-padding full-bleed not-prose bg-gradient-to-br from-neutral-100 to-neutral-300 dark:bg-gradient-to-br dark:from-neutral-800 dark:to-neutral-600">
 					<div class="px-2 md:container lg:px-[16px]">
-						<h3 class="mb-4 tracking-wide uppercase font-body">Archived Events</h3>
+						<h3 class="mb-4 tracking-wide uppercase font-sans">Archived Events</h3>
 						<?php // echo do_shortcode( '[display-posts category="archived-events" orderby="date" order="DESC" wrapper="div" wrapper_class="dps-grid-4max" layout="card-simple" /]' );
 						echo do_shortcode('[display-posts
 						taxonomy="category"

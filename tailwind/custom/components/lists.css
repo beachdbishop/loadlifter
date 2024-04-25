@@ -102,7 +102,6 @@ ul.is-style-default {
 .is-style-circle-red > *,
 .is-style-circle-blue > * {
 	@apply aspect-square;
-	font-family: theme(fontFamily.body);
 	font-size: 1.125rem;
 	font-weight: 700;
   line-height: 1.375;
@@ -161,7 +160,6 @@ ul.is-style-default {
 .is-style-split-circle-red > *,
 .is-style-split-circle-blue > * {
 	@apply aspect-square;
-	font-family: theme(fontFamily.body);
 	font-weight: 700;
 	font-size: 1.25rem/* 20px */;
 	line-height: 1.375;
