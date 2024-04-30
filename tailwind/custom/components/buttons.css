@@ -48,19 +48,19 @@
 }
 
 /* on dark bg color? */
-.on-darkbg .wp-block-button__link:not(.has-background) {
+.on-darkbg :not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
 	background-color: theme(colors.brand-blue-pale);
 	color: theme(colors.brand-gray-dark);
 }
-.on-darkbg .wp-block-button__link:not(.has-background):hover {
+.on-darkbg :not(.is-style-outline) > .wp-block-button__link:not(.has-background):hover {
 	background-color: theme(colors.brand-blue);
 	color: theme(colors.brand-blue-faint);
 }
 
 .on-darkbg .is-style-outline > .wp-block-button__link:not(.has-text-color):hover {
+	background-color: transparent;
 	border-color: theme(colors.brand-blue-pale);
 	color: theme(colors.brand-blue-pale);
-	background-color: transparent;
 }
 
 
