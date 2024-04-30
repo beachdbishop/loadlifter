@@ -357,7 +357,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 			<div class="wp-block-cover__inner-container | px-2 lg:px-4">
 				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero">
 					<h1 class="has-text-color leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none"><?php echo $h1; ?></h1>
-					<h2 class="text-2xl leading-normal max-w-[42ch] !text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none"><?php echo $h2; ?></h2>
+					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-normal max-w-[42ch] !text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none"><?php echo $h2; ?></h2><?php } ?>
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
 						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">
 							<div class="">
