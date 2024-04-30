@@ -42,7 +42,7 @@
 		"watch": "run-p watch:**",
 		"start": "run-p watch:**",
 		"lint:eslint": "npx eslint theme/",
-		"lint:pa11y": "pa11y-ci",
+		"lint:pa11yci": "pa11y-ci --sitemap http://peoplecptauthortest.local/sitemap.xml --sitemap-exclude \"scratch\"",
 		"lint:prettier": "npx prettier --check .",
 		"lint": "run-p lint:*",
 		"lint-fix:eslint": "npx eslint theme/ --fix",

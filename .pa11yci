@@ -5,7 +5,8 @@
 		"reporters": [
 			"cli",
 			["pa11y-ci-reporter-html", { "destination": "./_pa11y/" }]
-		]
+		],
+		"hideElements": "form[id*='hsForm_'] > iframe"
 	},
 	"urls": [
 		"https://peoplecptauthortest.local/",
