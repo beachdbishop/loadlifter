@@ -62,7 +62,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 			<div class="print:hidden">
 				<div class="grid grid-cols-1 gap-x-4 gap-y-8 text-shadow shadow-neutral-900 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6">
 					<nav aria-label="Accounting and Assurance submenu">
-						<p class="text-lg font-head"><a href="/assurance/">Accounting &amp; Assurance</a></p>
+						<p class="text-2xl leading-5 font-head"><a href="/assurance/">Accounting &amp; Assurance</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_assurance',
@@ -72,7 +72,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						?>
 					</nav>
 					<nav aria-label="Tax submenu">
-						<p class="text-lg font-head"><a href="/tax/">Tax</a></p>
+						<p class="text-2xl leading-5 font-head"><a href="/tax/">Tax</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_tax',
@@ -82,7 +82,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						?>
 					</nav>
 					<nav aria-label="SOAR submenu">
-						<p class="text-lg leading-5 font-head"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
+						<p class="text-2xl leading-5 font-head"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_soar',
@@ -92,7 +92,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						?>
 					</nav>
 					<nav aria-label="Industry Knowledge submenu">
-						<p class="text-lg font-head"><a href="/industries/">Industry Knowledge</a></p>
+						<p class="text-2xl leading-5 font-head"><a href="/industries/">Industry Knowledge</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_industries',
@@ -102,7 +102,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						?>
 					</nav>
 					<nav aria-label="About Us submenu">
-						<p class="text-lg font-head"><a href="/about/">Our Firm</a></p>
+						<p class="text-2xl leading-5 font-head"><a href="/about/">Our Firm</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_about',
@@ -112,7 +112,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						?>
 					</nav>
 					<nav aria-label="Careers submenu">
-						<p class="text-lg font-head"><a href="/career-opportunities/">Careers</a></p>
+						<p class="text-2xl leading-5 font-head"><a href="/career-opportunities/">Careers</a></p>
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'll_submenu_careers',

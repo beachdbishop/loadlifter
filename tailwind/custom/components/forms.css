@@ -135,6 +135,7 @@ button.ab-button:active {
 	.container-contact-form {
 		border-color: theme(colors.neutral.700);
 		background-color: theme(colors.neutral.800);
+		background-image: none;
 		color: theme(colors.neutral.400);
 	}
 	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),

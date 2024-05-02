@@ -53,7 +53,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 	<div class="px-2 md:container lg:px-[16px]">
 		<?php if (function_exists('bcn_display') && !is_front_page()) { ?>
-			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
 		<div class="peepgrid peep-<?php echo $peep_class; ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
@@ -68,7 +68,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 			<div class="peepgrid-b | md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
 				<header class="mb-4">
-					<h1 class="entry-title | mb-0 text-brand-blue">Articles by <span class="text-brand-red"><?php echo $author_name; ?></span></h1>
+					<h1 class="entry-title | mb-0 text-brand-blue dark:text-orient-600">Articles by <span class="text-brand-red"><?php echo $author_name; ?></span></h1>
 					<?php if (!empty($author_desigs)) {
 						echo sprintf('<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', $author_desigs);
 					} ?>
@@ -134,7 +134,7 @@ if ( $author_org === 'BeachFleischman' ) {
 			<aside class="peepgrid-c | md:mt-0 md:order-3">
 				<?php /* Featured industry experience */ ?>
 				<?php if ($author_industries) : ?>
-					<h3 class="font-normal text-brand-blue"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h3>
+					<h3 class="font-normal text-brand-blue dark:text-orient-600"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h3>
 					<ul class="mt-4 mb-8 list-none fa-ul" style="--fa-li-margin: 2em">
 					<?php foreach ($author_industries as $ind ) :
 						$ind_permalink = get_permalink( $ind->ID );

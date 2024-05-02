@@ -161,16 +161,28 @@ aside .timestamp {
 .list--tags a {
 	white-space: nowrap;
 	background-color: theme(colors.neutral.100);
-	border-radius: 6px 0 6px;
+	border-radius: 8px 0 8px;
 	padding-inline: 0.5rem;
 	padding-block: 0.25rem;
-	font-size: 12px;
+	font-size: 14px;
 	color: theme(colors.neutral.600);
 }
 .list--tags a:hover {
 	background-color: theme(colors.brand-blue-pale);
 	color: theme(colors.brand-blue-dark);
 }
+@media (prefers-color-scheme: dark) {
+	.list--tags a {
+		background-color: theme(colors.neutral.800);
+		color: theme(colors.neutral.100);
+	}
+	.list--tags a:hover {
+		background-color: theme(colors.brand-blue-dark);
+		color: theme(colors.brand-blue-pale);
+	}
+}
+
+
 
 .logogrid {
 	margin-inline: auto;

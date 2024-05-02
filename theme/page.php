@@ -47,7 +47,7 @@ $page_excerpt                   = get_the_excerpt();
 
                     <?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
                         <?php if ( function_exists( 'bcn_display' ) ) { ?>
-                            <div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+                            <div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
                         <?php } ?>
 
                         <header class="mb-4">
