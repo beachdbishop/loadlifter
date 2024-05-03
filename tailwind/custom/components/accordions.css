@@ -47,7 +47,7 @@ details[open] summary::-webkit-details-marker {
 	margin-right: 0.25rem;
 }
 .accordions summary:hover::before {
-	@apply animate-pulse;
+	@apply motion-safe:animate-pulse;
 }
 
 .accordions .details-inner {
@@ -98,7 +98,7 @@ details[open] summary::-webkit-details-marker {
 }
 
 details[open] summary ~ * {
-	@apply animate-[fade-in-from-top_300ms];
+	@apply motion-safe:animate-[fade-in-from-top_300ms];
 }
 
 

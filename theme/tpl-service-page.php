@@ -93,7 +93,7 @@ $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 							if ( $page_cta_standard ) :
 								// echo '<section class="full-bleed ll-equal-vert-padding not-prose text-neutral-100 bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct break-inside-avoid print:animate-none print:bg-transparent">
 								echo '<section class="cta | full-bleed ll-equal-vert-padding not-prose bg-brand-blue text-neutral-50 break-inside-avoid print:bg-transparent">
-									<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-[100vh] border-0 shadow-none max-w-none max-h-none object-cover absolute top-0 right-0 bottom-0 left-0 z-0 | md:block md:animate-move-bg print:hidden">
+									<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-[100vh] border-0 shadow-none max-w-none max-h-none object-cover absolute top-0 right-0 bottom-0 left-0 z-0 | md:block motion-safe:md:animate-move-bg print:hidden">
 										<defs>
 											<linearGradient id="blue" gradientTransform="rotate(10)">
 												<stop offset="50%" stop-color="rgb(9 47 66 / 1)" />
