@@ -1,0 +1,7 @@
+.inline-comma-sep span:not(:last-of-type)::after {
+	content: ", ";
+}
+
+.inline-pipe-sep span:not(:last-of-type)::after {
+	content: " | ";
+}

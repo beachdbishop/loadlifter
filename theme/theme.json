@@ -278,7 +278,8 @@
 		"blocks": {
 			"core/button": {
 				"border": {
-					"radius": "8px"
+					"radius": "8px",
+					"color": "transparent"
 				},
 				"color": {
 					"background": "var(--wp--preset--color--brand-blue)",
@@ -370,7 +371,6 @@
 			"blockGap": "1.5rem"
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--work-sans)",
 			"fontSize": "var(--wp--preset--font-size--base)"
 		}
 	}
