@@ -119,7 +119,9 @@ add_shortcode( 'svg', 'll_svgpart_shortcode' );
 
 
 function ll_awardlogos_shortcode() {
-	return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16">
+	// return '<div class="flex flex-col flex-wrap justify-between items-center my-8 place-content-center md:place-content-start md:flex-row">
+	return '<div class="flex flex-wrap justify-evenly items-center gap-4 my-8 place-content-center md:gap-8 md:place-content-start">
+	<a href="https://www.bizjournals.com/phoenix/subscriber-only/2024/05/17/largest-phoenix-area-accounting-firms.html"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200,q_auto/v1717027280/2024_pbj_largest-phx-acct-firms_nyik4u.png" alt="2024 4th Largest Phoenix-Area Accounting Firms - Phoenix Business Journal" width="102" height="100"></a>
 		<a href="https://www.clearlyrated.com/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691606679/Best_of_Accounting_2023_RGB_fagpmr.png" alt="2023 Best of Accounting - Client Satisfaction - ClearlyRated" width="100" height="100"></a>
 		<a href="https://insidepublicaccounting.com/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787197/IPA_-_Award_Logos_-_Top_200_Firms_nfmdem.png" alt="2023 Top 200 Firms - Inside Public Accounting" width="100" height="100"></a>
 		<a href="https://bestcompaniesgroup.com/programs/inclusive-workplace-program/"><img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group" width="100" height="100"></a>
