@@ -8,4 +8,4 @@
  * @license GPL-2.0+
  */
 
-require get_template_directory() . '/template-parts/content/content-card-bw.php';
+require get_template_directory() . '/template-parts/content/content-card-people-small-popover.php';

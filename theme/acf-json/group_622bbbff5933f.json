@@ -198,7 +198,8 @@
             "choices": {
                 "phoenix": "Phoenix, AZ",
                 "tucson": "Tucson, AZ",
-                "nogales": "Nogales, AZ"
+                "nogales": "Nogales, AZ",
+                "remote": "Remote"
             },
             "default_value": "tucson",
             "return_format": "array",
@@ -329,6 +330,26 @@
             "ui_on_text": "",
             "ui_off_text": "",
             "ui": 1
+        },
+        {
+            "key": "field_6668c82a12b28",
+            "label": "Short Bio",
+            "name": "ll_people_short_bio",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "Include short HTML snippet that will display in a popover in specific areas of the site.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": "",
+            "placeholder": "<p>John Doe is a ...<\/p>",
+            "new_lines": ""
         }
     ],
     "location": [
@@ -351,5 +372,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1704323904
+    "modified": 1718924978
 }

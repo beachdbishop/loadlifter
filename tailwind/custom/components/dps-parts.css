@@ -18,7 +18,8 @@ via: https://www.bram.us/2022/11/17/style-a-parent-element-based-on-its-number-o
 
 @media (min-width: 768px) {
 	.dps-grid-4max,
-	.dps-grid-3max {
+	.dps-grid-3max,
+	.dps-grid-2max {
 		max-width: none !important;
 	}
 
@@ -28,6 +29,10 @@ via: https://www.bram.us/2022/11/17/style-a-parent-element-based-on-its-number-o
 
 	.dps-grid-3max {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.dps-grid-2max {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 	}
 }
 @media (min-width: 1024px) {

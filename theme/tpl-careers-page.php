@@ -21,6 +21,7 @@ $page_excerpt                   = get_the_excerpt();
 
 $cards_opps = [
 	"internships" => [
+		"slug" => 'intern',
 		"label" => 'Internships',
 		"link" => '/career-opportunities/internships/',
 		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,w_480/v1676492725/feat__careers-internships--social_q07na1.jpg',
@@ -28,6 +29,7 @@ $cards_opps = [
 		"img-alt" => "Man and young man having a converstion at a table"
 	],
 	"grads" => [
+		"slug" => 'grad',
 		"label" => 'Recent College Graduates',
 		"link" => '/career-opportunities/recent-college-graduates/',
 		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,w_480/v1676492725/feat__careers-college-grads--social_jlh5qx.jpg',
@@ -35,6 +37,7 @@ $cards_opps = [
 		"img-alt" => "Group of happy college students walking down a street"
 	],
 	"pros" => [
+		"slug" => 'pro',
 		"label" => 'Experienced Professionals',
 		"link" => '/career-opportunities/experienced-professionals/',
 		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,w_480/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg',
@@ -167,7 +170,7 @@ if ('local' === wp_get_environment_type()) {
 								<ul class="list-none grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
 
 									<?php foreach( $cards_opps as $card ) {
-										echo '<li class="card-' . $card . ' | group flex flex-col relative border-transparent border-2 shadow-orient-700 focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
+										echo '<li class="card-' . $card['slug'] . ' | group flex flex-col relative border-transparent border-2 shadow-orient-700 focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
 											<div class="card-text | p-4 order-1 bg-white flex justify-between | dark:bg-neutral-800 dark:text-neutral-300">
 												<p class="inline font-head font-semibold leading-none text-2xl">
 													<a class="group-hover:text-brand-blue" href="' . $card['link'] . '">
