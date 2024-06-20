@@ -46,7 +46,12 @@ $page_state                     = get_field( 'll_page_state' );
 						</div>
 
 						<div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
+							<h3>Certified Experts</h3>
 							<?php echo do_shortcode( '[cybercertlogos /]' ); ?>
+
+							<!-- wp:spacer {"className":"is-style-xs"} -->
+							<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-xs"></div>
+							<!-- /wp:spacer -->
 
 							<?php
 							if ( $page_gmap ) :
