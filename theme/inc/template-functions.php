@@ -126,16 +126,16 @@ function ll_show_post_source( $column, $post_id ) {
 		$source = get_post_meta( $post_id, 'll_content_source', true );
 
 		if ( $source != true )
-			echo '<span style="background-color: #ececec; color: #333; border-radius: 4px; padding: 2px 8px;"><em>Unknown</em></span>';
+			echo '<span class="ll_adm-tag  ll_adm-tag--unknown">Unknown</span>';
 
 		if ( $source === 'original' )
-			echo '<span style="background-color: #ce182d; color: #fff1f2; border-radius: 8px 0 8px 0; padding: 2px 8px; font-weight: bold">Original Content</span>';
+			echo '<span class="ll_adm-tag ll_adm-tag--original" style="">Original Content</span>';
 
 		if ( $source === 'checkpoint' )
-			echo '<span style="color: #047cba; border: 1px solid #047cba; border-radius: 4px; padding: 2px 8px; font-weight: bold">TopLine (Checkpoint)</span>';
+			echo '<span class="ll_adm-tag ll_adm-tag--topline">TopLine (Checkpoint)</span>';
 
 		if ( $source === 'other' )
-			echo '<span style="background-color: #f3e8ff; color: #7e22ce; border-radius: 4px; padding: 2px 8px; font-weight: bold">Other</span>';
+			echo '<span class="ll_adm-tag ll_adm-tag--other">Other</span>';
 	}
 }
 add_action( 'manage_posts_custom_column', 'll_show_post_source', 10, 2 );

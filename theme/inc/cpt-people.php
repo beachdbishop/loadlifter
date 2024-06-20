@@ -95,7 +95,7 @@ function ll_people_columns( $column, $post_id ) {
 		$level_obj = get_field_object( 'll_people_level');
 		$level_val = $level_obj['value'];
 		$level_display = $level_val['label'];
-		echo $level_display;
+		echo '<span class="ll_adm-peeplvl--' . $level_val['value'] . '">' . $level_display . '</span>';
 	}
 
 	// Department column
