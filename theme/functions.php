@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.9.6' );
+	define( 'LL_VERSION', '2.10.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -187,6 +187,37 @@ function ll_enable_monospace_acf_textarea() {
 	echo '<style>.acf-input textarea { font-family: "Fira Code", monospace; background-color: #171717; color: #a3e635; line-height: 1.2; }</style>';
 }
 
+function ll_post_table_styles() {
+	echo '<style>
+		.ll_adm-tag {
+			--_c: #78716c;
+			white-space: nowrap;
+			background-color: unset;
+			border-radius: 9999px;
+			border: 1px solid var(--_c);
+			color: var(--_c);
+			font-size: 0.75rem;
+			line-height: 1rem;
+			padding-inline: 0.625rem;
+			padding-block: 0.125rem;
+		}
+		.ll_adm-tag--original {	--_c: #16a34a; }
+		.ll_adm-tag--topline {	--_c: #047cba; }
+		.ll_adm-tag--other { --_c: #4f46e5;	}
+		.ll_adm-tag--unknown { --_c: #d97706;	}
+
+		.ll_adm-peeplvl--100,
+		.ll_adm-peeplvl--200 { color: #ec4899; }
+		.ll_adm-peeplvl--300 { color: #db2777; }
+		.ll_adm-peeplvl--400 { color: #be185d; }
+		.ll_adm-peeplvl--500 { color: #9d174d; }
+		.ll_adm-peeplvl--600 { color: #831843; }
+		.ll_adm-peeplvl--700 { color: #500724; }
+		.ll_adm-peeplvl--800,
+		.ll_adm-peeplvl--900 { color: #737373; }
+	</style>';
+}
+
 /**
  * Disable automatic creation of YARPP thumbnail sizes
  * ... and disable yarpp stylesheets
@@ -200,17 +231,20 @@ switch( wp_get_environment_type() ) {
 	case 'local':
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+		add_action( 'admin_head', 'll_post_table_styles' );
 		break;
 
 	case 'staging':
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+		add_action( 'admin_head', 'll_post_table_styles' );
 		break;
 
 	default:
 		add_action( 'admin_menu', 'll_disable_wp_links_menu' );
 		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
 		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
+		add_action( 'admin_head', 'll_post_table_styles' );
 		/* Hide Jetpack upsell ads */
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;
