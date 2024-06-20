@@ -28,7 +28,7 @@ get_header();
 					</h1>
 				</header>
 
-				<div class="search-results | prose lg:prose-xl max-w-none grid md:grid-cols-3 lg:grid-cols-4">
+				<div class="search-results | prose lg:prose-xl max-w-none grid gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :
@@ -38,7 +38,7 @@ get_header();
 						 * If you want to overload this in a child theme then include a file
 						 * called content-search.php and that will be used instead.
 						 */
-						get_template_part( 'template-parts/content/content', 'card' );
+						get_template_part( 'template-parts/content/content', 'card-ic' );
 					endwhile;
 					?>
 				</div>
