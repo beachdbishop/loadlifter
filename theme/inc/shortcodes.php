@@ -149,12 +149,23 @@ function ll_constrassoclogos_shortcode() {
 add_shortcode( 'constrlogos', 'll_constrassoclogos_shortcode' );
 
 function ll_cybercertlogos_shortcode() {
-	return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16">
-		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="180" height="70">
-		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="157" height="70">
-		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="96" height="70">
-		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="70" height="70">
-		<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="227" height="70">
+	// return '<div class="flex flex-col flex-wrap items-center gap-8 my-8 place-content-center md:place-content-start md:flex-row lg:gap-x-16">
+	return '<div class="not-prose flex flex-col flex-wrap items-center gap-4 justify-start md:flex-row md:gap-6 lg:justify-between">
+		<a href="https://www.isc2.org/certifications/cissp">
+			<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--cissp_odnxgv.png" alt="Certified Information Systems Security Professional" width="180" height="70" />
+		</a>
+		<a href="https://www.isaca.org/credentialing/crisc">
+			<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--crisc_fxg4pl.png" alt="Certified in Risk and Information Systems Control" width="157" height="70" />
+		</a>
+		<a href="https://www.eccouncil.org/train-certify/certified-ethical-hacker-ceh-v12/">
+			<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725460/logo__cert--ceh_reqsoo.png" alt="Certified Ethical Hacker" width="96" height="70" />
+		</a>
+		<a href="https://learn.offsec.com/cybersecurity-certification-paths">
+			<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__cert--oscp_jr43g9.png" alt="Offensive Security Certified Professional" width="70" height="70" />
+		</a>
+		<a href="http://pcisecuritystandards.org/">
+			<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_70/v1694725461/logo__pci-ssc_ksjxzu.png" alt="Payment Card Industry Security Standards Council" width="227" height="70" />
+		</a>
 	</div>';
 
 }
