@@ -17,7 +17,14 @@ if (get_field('ll_page_title_override')) {
 		$page_title                 = get_the_title();
 }
 // $page_icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : false;
-$page_message                   = get_field( 'll_brand_message' );
+
+if ( get_field( 'll_custom_subheader' ) ) {
+	$page_message 								= get_field( 'll_custom_subheader' );
+} else {
+	$brand_message								= get_field( 'll_brand_message' );
+	$page_message									= $brand_message['label'];
+}
+
 $page_excerpt                   = get_the_excerpt();
 $page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 if ( $page_featimg == true ) {
@@ -62,7 +69,7 @@ $cards_about = [
 			// get_template_part( 'template-parts/content/content', 'page-about' );
 			?>
 
-			<?php echo ll_better_page_hero( $page_title, $page_message['label'] ); ?>
+			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<div class="px-2 md:container lg:px-[16px]">

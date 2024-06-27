@@ -17,7 +17,14 @@ if (get_field('ll_page_title_override')) {
 } else {
 		$page_title                 = get_the_title();
 }
-$page_message                   = get_field( 'll_brand_message' );
+
+if ( get_field( 'll_custom_subheader' ) ) {
+	$page_message 								= get_field( 'll_custom_subheader' );
+} else {
+	$brand_message								= get_field( 'll_brand_message' );
+	$page_message									= $brand_message['label'];
+}
+
 $page_excerpt                   = get_the_excerpt();
 $page_form                      = get_field( 'll_hs_form_html' );
 $page_gmap                      = get_field( 'll_page_gmap_url' );
@@ -34,7 +41,7 @@ $page_state                     = get_field( 'll_page_state' );
 			?>
 
 			<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-					echo ll_better_page_hero( $page_title, $page_message['label'] );
+					echo ll_better_page_hero( $page_title, $page_message );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp lp-cyber' ); ?>>

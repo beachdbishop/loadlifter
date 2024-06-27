@@ -20,7 +20,14 @@ if (get_field('ll_page_title_override')) {
 } else {
      $page_title                = get_the_title();
 }
-$page_message                   = get_field( 'll_brand_message' );
+
+if ( get_field( 'll_custom_subheader' ) ) {
+	$page_message 								= get_field( 'll_custom_subheader' );
+} else {
+	$brand_message								= get_field( 'll_brand_message' );
+	$page_message									= $brand_message['label'];
+}
+
 $page_excerpt                   = get_the_excerpt();
 // $page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 // if ( $page_featimg == true ) {
@@ -39,7 +46,7 @@ $page_excerpt                   = get_the_excerpt();
 			?>
 
             <?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-                echo ll_better_page_hero( $page_title, $page_message['label'] );
+                echo ll_better_page_hero( $page_title, $page_message );
             endif; ?>
 
             <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
