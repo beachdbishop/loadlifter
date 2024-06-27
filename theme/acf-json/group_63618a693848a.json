@@ -43,6 +43,26 @@
             "append": ""
         },
         {
+            "key": "field_667cdcac458e2",
+            "label": "Non 'Brand message' subheader",
+            "name": "ll_custom_subheader",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 128,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_63618e32d05d6",
             "label": "Brand Message",
             "name": "ll_brand_message",
@@ -50,7 +70,14 @@
             "type": "select",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_667cdcac458e2",
+                        "operator": "==empty"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -178,5 +205,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698364838
+    "modified": 1719459239
 }

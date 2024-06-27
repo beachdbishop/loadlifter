@@ -16,6 +16,14 @@ if (get_field('ll_page_title_override')) {
 } else {
 		$page_title                 = get_the_title();
 }
+
+if ( get_field( 'll_custom_subheader' ) ) {
+	$page_message 								= get_field( 'll_custom_subheader' );
+} else {
+	$brand_message								= get_field( 'll_brand_message' );
+	$page_message									= $brand_message['label'];
+}
+
 $page_icon                      = (get_field('ll_page_icon')) ? get_field('ll_page_icon') : false;
 $page_excerpt                   = get_the_excerpt();
 
@@ -136,7 +144,7 @@ if ('local' === wp_get_environment_type()) {
 			// get_template_part( 'template-parts/content/content', 'page-careers' );
 			?>
 
-			<?php echo ll_better_page_hero( $page_title, $page_excerpt ); ?>
+			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 				<div class="px-2 md:container lg:px-[16px]">
