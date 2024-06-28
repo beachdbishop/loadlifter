@@ -50,7 +50,7 @@ get_header();
 						order="DESC"
 						wrapper="ul"
 						wrapper_class="dps-grid-4max cards-ic"
-						layout="card-ic"
+						layout="card-ic-min"
 						/]'); ?>
 					</div>
 				</div>

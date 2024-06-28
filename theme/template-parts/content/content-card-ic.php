@@ -26,7 +26,7 @@ if ( get_field( 'll_page_title_override' ) ) {
 		<?php } ?>
 
 		<p class="card-meta | mt-auto mb-3 text-sm lg:text-base">
-			<?php if ( 'post' === get_post_type() ) {
+			<?php if ( ( 'post' === get_post_type() ) && ( !in_category( 'events' ) ) ) {
 				echo '<span>' . esc_html( get_the_date() ) . '</span>';
 				echo " | ";
 				ll_posted_by();
