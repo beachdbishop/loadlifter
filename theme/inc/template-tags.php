@@ -298,13 +298,13 @@ endif;
 
 if ( ! function_exists( 'll_page_title' ) ) :
 	function ll_page_title( $h1, $h2 ) {
-		echo '<div class="px-2 md:container xl:px-4">
+		echo '<div class="px-2 md:container lg:px-[16px]">
 			<h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
 			<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale lg:text-4xl">'.$h2.'</h2>
 		</div>';
 
 		if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
-			echo '<div class="breadcrumbs | px-2 md:container xl:px-4 font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
+			echo '<div class="breadcrumbs | px-2 md:container lg:px-[16px] font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
 			</div>';
 		}
 	}
