@@ -73,7 +73,7 @@ add_action( 'pre_get_posts', 'll_exclude_categories' );
 
 
 /**
- * Display post id column in posts list
+ * Display post id column in Posts list table
  */
 function ll_add_id_column( $columns ) {
 	$columns['ll_id'] = 'ID';
@@ -93,13 +93,45 @@ add_action( 'manage_pages_custom_column', 'll_id_column_content', 5, 2 );
 
 
 /**
- * Show Content Source in Post List Table
+ * Display featured image thumbnail in Posts list table
+ */
+function ll_add_feat_img_column( $columns ) {
+	$columns['ll_post_thumb'] = __( 'Featured Image', 'loadlifter' );
+	return $columns;
+}
+add_filter( 'manage_posts_columns', 'll_add_feat_img_column', 5 );
+add_filter( 'manage_pages_columns', 'll_add_feat_img_column', 5 );
+
+function ll_display_thumbnail_column( $column_name, $post_id ) {
+  switch( $column_name ){
+    case 'll_post_thumb':
+      $post_thumbnail_id = get_post_thumbnail_id( $post_id );
+      if ( $post_thumbnail_id ) {
+				echo wp_get_attachment_image(
+					$post_thumbnail_id,
+					'medium',
+					"",
+					array(
+						"style" => "max-width: 150px; height: auto"
+					)
+				);
+      }
+      break;
+  }
+}
+add_action( 'manage_posts_custom_column', 'll_display_thumbnail_column', 5, 2 );
+add_action( 'manage_pages_custom_column', 'll_display_thumbnail_column', 5, 2 );
+
+/**
+ * Show Content Source in Posts list table
  */
 function ll_add_post_source_column( $columns ) {
-	unset( $columns['tags'] );
-	unset( $columns['comments'] );
+	unset(
+		$columns['tags'],
+		$columns['comments'],
+	);
 
-	$columns['ll_source'] = 'Source';
+	$columns['ll_source'] = __( 'Source', 'loadlifter' );
 
 	return $columns;
 }
@@ -107,12 +139,14 @@ add_filter( 'manage_posts_columns', 'll_add_post_source_column' );
 
 function ll_posts_columns_custom_order( $columns ) {
 	$custom_col_order = [
-		'cb' => $columns['cb'],
-		'title' => $columns['title'],
-		'll_id' => $columns['ll_id'],
-		'll_source' => $columns['ll_source'],
-		'categories' => $columns['categories'],
-		'date' => $columns['date'],
+		'cb' 						=> $columns['cb'],
+		'title' 				=> $columns['title'],
+		'll_id' 				=> $columns['ll_id'],
+		'coauthors' 		=> $columns['coauthors'],
+		'll_source' 		=> $columns['ll_source'],
+		'categories' 		=> $columns['categories'],
+		'll_post_thumb' => $columns['ll_post_thumb'],
+		'date' 					=> $columns['date'],
 	];
 
 	return $custom_col_order;
@@ -120,7 +154,6 @@ function ll_posts_columns_custom_order( $columns ) {
 add_filter( 'manage_post_posts_columns', 'll_posts_columns_custom_order', 10 );
 
 function ll_show_post_source( $column, $post_id ) {
-
 	// Source column
 	if ( 'll_source' === $column ) {
 		$source = get_post_meta( $post_id, 'll_content_source', true );
@@ -141,7 +174,30 @@ function ll_show_post_source( $column, $post_id ) {
 add_action( 'manage_posts_custom_column', 'll_show_post_source', 10, 2 );
 
 
+/**
+ * Hide Author/Coauthors in Pages list table
+ */
+function ll_hide_authors_column( $columns ) {
+	unset(
+		$columns['author'],
+	);
 
+	return $columns;
+}
+add_filter( 'manage_page_posts_columns', 'll_hide_authors_column' );
+
+function ll_pages_columns_custom_order( $columns ) {
+	$custom_col_order = [
+		'cb' 						=> $columns['cb'],
+		'title' 				=> $columns['title'],
+		'll_id' 				=> $columns['ll_id'],
+		'll_post_thumb' => $columns['ll_post_thumb'],
+		'date' 					=> $columns['date'],
+	];
+
+	return $custom_col_order;
+}
+add_filter( 'manage_page_posts_columns', 'll_pages_columns_custom_order', 10 );
 
 
 
