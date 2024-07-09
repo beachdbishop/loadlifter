@@ -42,6 +42,7 @@ module.exports = {
 				'phoenix-desert-small':
 					"url('img/phx-desert-color-no-crop-small.jpg')",
 				'phoenix-desert3': "url('img/phx-desert-color-no-crop.jpg')",
+				'squares-45': "url('img/bg-squares-on-45.png')",
 			},
 			colors: {
 				mahogany: {
@@ -154,6 +155,10 @@ module.exports = {
 		'lg:-ml-20',
 		'lg:py-20',
 		'lg:w-96',
+		{
+			pattern: /text-(2|3|4|5|6|7|8|9)xl/,
+			variants: ['sm', 'md', 'lg'],
+		},
 	],
 	corePlugins: {
 		// Disable default tailwind aspect-* classes
