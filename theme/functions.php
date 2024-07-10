@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.10.4' );
+	define( 'LL_VERSION', '2.10.5' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -203,6 +203,7 @@ function ll_post_table_styles() {
 		}
 		.ll_adm-tag--original {	--_c: #16a34a; }
 		.ll_adm-tag--topline {	--_c: #047cba; }
+		.ll_adm-tag--strategic7 { --_c: #0398a7; }
 		.ll_adm-tag--other { --_c: #4f46e5;	}
 		.ll_adm-tag--unknown { --_c: #d97706;	}
 

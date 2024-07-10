@@ -79,6 +79,7 @@
             "choices": {
                 "--": "Unknown",
                 "original": "Original Content",
+                "strategic7": "Strategic 7",
                 "checkpoint": "TopLine (Checkpoint)",
                 "other": "Other"
             },
@@ -109,5 +110,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1702505643
+    "modified": 1720569965
 }

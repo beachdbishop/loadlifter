@@ -164,6 +164,9 @@ function ll_show_post_source( $column, $post_id ) {
 		if ( $source === 'original' )
 			echo '<span class="ll_adm-tag ll_adm-tag--original" style="">Original Content</span>';
 
+		if ( $source === 'strategic7' )
+			echo '<span class="ll_adm-tag ll_adm-tag--strategic7">Strategic 7 Marketing</span>';
+
 		if ( $source === 'checkpoint' )
 			echo '<span class="ll_adm-tag ll_adm-tag--topline">TopLine (Checkpoint)</span>';
 
