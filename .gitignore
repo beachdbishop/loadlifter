@@ -9,6 +9,7 @@
 *.min.js
 
 # Ignore generated CSS files:
+a11yslider.css
 style.css
 style-editor.css
 style-editor-extra.css

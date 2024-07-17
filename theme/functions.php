@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.10.5' );
+	define( 'LL_VERSION', '2.11.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -135,14 +135,16 @@ function ll_content_width() {
 // add_action( 'admin_init', 'll_remove_default_block_styles' );
 
 function ll_scripts() {
-	wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' );
+	// wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' ); /* 20240712 - rolled these into the local a11yslider.css file. Do not need this third-party file */
+	wp_register_style( 'a11y-slider-styles', get_template_directory_uri() . '/a11yslider.css', [], LL_VERSION );
 	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
 	if ( get_field( 'll_postpage_css' ) ) {
 		$inline_css = get_field( 'll_postpage_css' );
 		wp_add_inline_style( 'loadlifter-style', $inline_css );
 	}
 
-	wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
+	// wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
+	wp_register_script( 'a11y-slider', get_template_directory_uri() . '/js/a11y-slider.min.js', [], '', false );
 	wp_register_script( 'block-litevimeoembed', 'https://cdn.jsdelivr.net/npm/lite-vimeo-embed/+esm', [], false, false );
 	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
 	wp_register_script( 'apixibot-csc', get_template_directory_uri() . '/js/apixibot-csc-loader.min.js', [ 'gcharts' ], LL_VERSION, true );
@@ -258,7 +260,7 @@ switch( wp_get_environment_type() ) {
 function ll_enq_a11y_slider_assets() {
 	global $post;
 	if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'a11yslider' ) ) {
-		wp_enqueue_style( 'a11y-slider-base' );
+		wp_enqueue_style( 'a11y-slider-styles' );
 		wp_enqueue_script( 'a11y-slider' );
 	}
 }
