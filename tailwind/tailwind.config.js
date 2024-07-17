@@ -42,7 +42,6 @@ module.exports = {
 				'phoenix-desert-small':
 					"url('img/phx-desert-color-no-crop-small.jpg')",
 				'phoenix-desert3': "url('img/phx-desert-color-no-crop.jpg')",
-				'squares-45': "url('img/bg-squares-on-45.png')",
 			},
 			colors: {
 				mahogany: {
