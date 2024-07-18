@@ -177,7 +177,7 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 									</div>
 
 									<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url(' . $avatar['url'] . '); background-size: 64px 86px; background-position: center top;">
-										<a href="/author/' . $coauthor->user_nicename . '/" rel="bookmark" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
+										<a href="/author/' . $coauthor->user_nicename . '/" rel="bookmark" class="no-underline" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
 											<div class="w-16 h-16 aspect-square">&nbsp;</div>
 										</a>
 									</div>
@@ -198,7 +198,7 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 									</div>
 
 									<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-200 group-hover:border-brand-red dark:bg-neutral-600">
-										<a href="/author/' . $coauthor->user_nicename . '/" rel="bookmark" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
+										<a href="/author/' . $coauthor->user_nicename . '/" rel="bookmark" class="no-underline" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
 											<div class="w-16 h-16 aspect-square">&nbsp;</div>
 										</a>
 									</div>
