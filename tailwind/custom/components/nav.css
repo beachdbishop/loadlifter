@@ -6,6 +6,7 @@ body.admin-bar .nav-header { top: var(--wp-admin--admin-bar--height, 0px); }
 .menu-item-has-children > ul { margin-left: 1rem; }
 
 .disclosure-nav .dropmenu:not(.mega) {
+	filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
 	background-color: white;
 	--tw-border-opacity: 1;
   border-color: rgb(0 102 142 / var(--tw-border-opacity));
