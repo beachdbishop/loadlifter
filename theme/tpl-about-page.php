@@ -146,8 +146,8 @@ $cards_about = [
 								</section>
 
 								<h3>Commitment to inclusivity and belonging</h3>
-								<p><?php echo LL_COMPANY_NICE_NAME; ?> has been recognized as an <strong>Inclusive Workplace for 2023</strong> by the <em>Best Companies Group</em> and <em>COLOR Magazine</em>.</p>
-								<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_100/v1691787498/2023_-_2024_Inclusive_Workplace_Badge_scmnqj.png" alt="July 2023-July 2024 Inclusive Workplace - Best Companies Group" width="100" height="100">
+								<p><?php echo LL_COMPANY_NICE_NAME; ?> has been recognized as an <strong>Inclusive Workplace for 2024</strong> by the <em>Best Companies Group</em> and <em>COLOR Magazine</em>.</p>
+								<img src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1722882083/Inclusive_Workplace_July_24-July_25-c_pmft9t.png" alt="July 2024-July 2025 Inclusive Workplace - Best Companies Group" width="100" height="100">
 							<?php endif; ?>
 
 						</div>
