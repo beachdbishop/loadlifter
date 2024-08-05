@@ -23,6 +23,10 @@ if ( $post_featimg == true ) {
 }
 ?>
 
+<style>
+	[popover]::backdrop {background-color: rgb(0 51 102 / 0.5); backdrop-filter: blur(4px);}
+</style>
+
 <main id="primary" class="bg-white dark:bg-neutral-900">
 
 	<?php
@@ -50,10 +54,10 @@ if ( $post_featimg == true ) {
 							<p class="leading-none text-xl md:text-3xl -mb-4">BeachFleischman's complimentary</p>
 							<h1 class="uppercase leading-none font-semibold text-5xl md:text-8xl lg:text-9xl"><small class="text-brand-blue-pale">Family Law</small><br />
 								Lunch <br />&amp; Learn</h1>
-							<h2 class="font-semibold text-4xl leading-none lg:text-5xl">Calculating Community Equitable Liens on Sole and Separate Property, Factors to Consider, and Challenges that May Arise</h2>
-							<p class="">A review of methods for calculating community liens on separate property such as a home, challenges that arise, and a discussion on what method may be most appropriate for your client’s complex divorce.</p>
+							<h2 class="font-semibold text-4xl leading-none lg:text-5xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque iusto, omnis recusandae vero libero aliquam quasi.</h2>
+							<p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quia, aut debitis enim nam inventore tenetur! Accusamus aperiam eum facilis nam, dolorem assumenda obcaecati nemo quod, ad culpa, amet possimus.</p>
 
-							<p class="text-3xl text-brand-blue-pale font-semibold">Friday, August 9, 2024<br />
+							<p class="text-3xl text-brand-blue-pale font-semibold">Thursday, November 21, 2024<br />
 							11:30am - 1:00pm</p>
 
 							<p class="text-3xl"><span class="font-semibold">BeachFleischman</span><br />
@@ -71,10 +75,10 @@ if ( $post_featimg == true ) {
 							<div class="md:grid md:grid-cols-2">
 
 								<div class="mx-auto" style="max-width:316px">
-									<img class="rounded-full object-cover object-top ring-8 ring-neutral-50 " src="https://beachfleischman.com/wp-content/uploads/2022/10/bio_rect-abyma.jpg" style="width:316px;height:316px" alt="photo of Ashley Byma" />
+									<img class="rounded-full object-cover object-top ring-8 ring-neutral-50 " src="https://beachfleischman.com/wp-content/uploads/2023/06/elizabeth-willson.jpg" style="width:316px;height:316px" alt="photo of Elizabeth Willson" />
 									<div class="-mt-1 px-4 py-2 mb-8 rounded-full bg-neutral-50 text-center z-20">
-										<h3 class="text-brand-red font-semibold leading-none">Ashley T. Byma<br /><small>CPA</small></h3>
-										<p class="italic text-brand-blue leading-none">Director, Financial Forensics &amp; Valuation Services</p>
+										<h3 class="text-brand-red font-semibold leading-none">Elizabeth A. Willson<br /><small>CFE</small></h3>
+										<p class="italic text-brand-blue leading-none">Financial Forensics &amp; Valuation Senior Analyst</p>
 									</div>
 								</div>
 
@@ -88,15 +92,33 @@ if ( $post_featimg == true ) {
 
 							</div>
 
-							<div id="contact" class="container-contact-form not-prose mt-12 border-4 border-brand-blue-pale bg-neutral-50 text-neutral-800">
-								<h3 class="text-brand-red text-center font-semibold mb-4">Register by August 7<sup>th</sup> to secure your spot.</h3>
-								<script>
-									hbspt.forms.create({
-										region: "na1",
-										portalId: "5578910",
-										formId: "b3cbb13a-ca57-4dbe-9d62-335927a0b66d"
-									});
-								</script>
+							<div id="contact" class="container-contact-for not-prose p-8 mt-12 border-2 border-brand-blue-pale bg-neutral-50 text-neutral-800 ">
+								<h3 class="text-brand-red text-center font-semibold mb-6">Register by August 7<sup>th</sup> to secure your spot.</h3>
+
+								<p class="text-center">
+									<button class="font-head rounded-md text-2xl font-semibold text-neutral-100 px-4 py-2 bg-brand-red-dark hover:bg-brand-red hover:text-white  dark:text-brand-blue-pale dark:border-brand-blue-pale" aria-label="Reserve your spot at our table" aria-expanded="false" popovertarget="popform202411ffvs"
+									>Register today</button>
+								</p>
+
+								<div id="popform202411ffvs" popover class="prose p-4 border-2 border-brand-blue max-h-[90vh] md:max-w-2xl md:p-8 dark:bg-neutral-800 dark:text-neutral-100 dark:border-neutral-500" role="tooltip">
+
+									<div class="absolute top-0 right-0 size-8 text-center">
+										<button popovertarget="popform202411ffvs" popovertargetaction="hide" class="text-brand-blue dark:text-neutral-300">
+											<span><i class="fa-regular fa-circle-xmark"></i></span>
+											<span class="sr-only">Close</span>
+										</button>
+									</div>
+
+									<script>
+										hbspt.forms.create({
+											region: "na1",
+											portalId: "5578910",
+											formId: "b3cbb13a-ca57-4dbe-9d62-335927a0b66d"
+										});
+									</script>
+								</div>
+
+
 							</div>
 						</div>
 					</div>
