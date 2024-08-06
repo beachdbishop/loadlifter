@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.11.3' );
+	define( 'LL_VERSION', '2.11.4' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -314,7 +314,9 @@ require get_template_directory() . '/inc/template-functions.php';
  * Custom Post Types
  */
 require get_template_directory() . '/inc/cpt-people.php';
-require get_template_directory() . '/inc/cpt-job-openings.php';
+if ( 'production' !== wp_get_environment_type() ) {
+	require get_template_directory() . '/inc/cpt-job-openings.php';
+}
 
 /**
  * Register block categories, patterns, and styles
