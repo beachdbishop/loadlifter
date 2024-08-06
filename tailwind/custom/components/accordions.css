@@ -1,5 +1,12 @@
 /* Details */
 
+/* this is a fix post WP 6.6 that introduced a weird gap above almost everything. */
+.is-layout-flow > details,
+.is-layout-flow > .details-inner {
+	margin-block-start: 0;
+}
+
+
 summary {
 	list-style: none;
 	cursor: pointer;
@@ -23,6 +30,8 @@ details[open] summary::-webkit-details-marker {
 .accordions {
 	margin-bottom: 2rem;
 }
+
+
 
 .accordions	details {
 	margin-bottom: 2px;
