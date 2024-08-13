@@ -136,7 +136,8 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						</div>
 						<?php echo ll_show_social_links(); ?>
 					</div>
-					<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-auto-fit lg:col-span-2">
+					<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-auto-fit lg:col-span-2" vocab="https://schema.org/" typeof="LocalBusiness">
+						<?php // schema in RDFa -- https://schema.org/LocalBusiness ?>
 						<?php foreach( $offices as $office ) {
 							( $office['open'] == true ) ? ll_footer_address( $office ) : 'nope';
 						} ?>
