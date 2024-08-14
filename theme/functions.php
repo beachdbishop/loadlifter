@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.11.4' );
+	define( 'LL_VERSION', '2.12.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -147,7 +147,7 @@ function ll_scripts() {
 	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
 	wp_register_script( 'apixibot-csc', get_template_directory_uri() . '/js/apixibot-csc-loader.min.js', [ 'gcharts' ], LL_VERSION, true );
 
-	wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
+	// wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
 	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
 
 	if ( !is_page_template( LL_LP_TEMPLATES ) ) {
@@ -186,6 +186,7 @@ function ll_load_admin_styles() {
 
 	wp_enqueue_style( 'll-admin', get_template_directory_uri().'/admin.css' );
 }
+
 
 /**
  * Disable automatic creation of YARPP thumbnail sizes
