@@ -179,44 +179,12 @@ function ll_disable_wp_links_menu() {
 	remove_menu_page( 'link-manager.php' );
 }
 
-function ll_disable_wp57_menu_hover() {
-	echo '<style>#adminmenu a:focus, #adminmenu a:hover, .folded #adminmenu .wp-submenu-head:hover { box-shadow: none !important; }</style>';
-}
 
-function ll_enable_monospace_acf_textarea() {
-	echo '<style>.acf-input textarea { font-family: "Fira Code", monospace; background-color: #171717; color: #a3e635; line-height: 1.2; }</style>';
-}
+function ll_load_admin_styles() {
+	wp_register_style( 'rsms-inter', 'https://rsms.me/inter/inter.css' );
+	wp_enqueue_style( 'rsms-inter' );
 
-function ll_post_table_styles() {
-	echo '<style>
-		.ll_adm-tag {
-			--_c: #78716c;
-			white-space: nowrap;
-			background-color: unset;
-			border-radius: 9999px;
-			border: 1px solid var(--_c);
-			color: var(--_c);
-			font-size: 0.75rem;
-			line-height: 1rem;
-			padding-inline: 0.625rem;
-			padding-block: 0.125rem;
-		}
-		.ll_adm-tag--original {	--_c: #16a34a; }
-		.ll_adm-tag--topline {	--_c: #047cba; }
-		.ll_adm-tag--strategic7 { --_c: #0398a7; }
-		.ll_adm-tag--other { --_c: #4f46e5;	}
-		.ll_adm-tag--unknown { --_c: #d97706;	}
-
-		.ll_adm-peeplvl--100,
-		.ll_adm-peeplvl--200 { color: #ec4899; }
-		.ll_adm-peeplvl--300 { color: #db2777; }
-		.ll_adm-peeplvl--400 { color: #be185d; }
-		.ll_adm-peeplvl--500 { color: #9d174d; }
-		.ll_adm-peeplvl--600 { color: #831843; }
-		.ll_adm-peeplvl--700 { color: #500724; }
-		.ll_adm-peeplvl--800,
-		.ll_adm-peeplvl--900 { color: #737373; }
-	</style>';
+	wp_enqueue_style( 'll-admin', get_template_directory_uri().'/admin.css' );
 }
 
 /**
@@ -230,22 +198,16 @@ add_filter( 'yarpp_enqueue_thumbnails_style', '__return_false' );
 
 switch( wp_get_environment_type() ) {
 	case 'local':
-		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-		add_action( 'admin_head', 'll_post_table_styles' );
+		add_action( 'admin_enqueue_scripts', 'll_load_admin_styles' );
 		break;
 
 	case 'staging':
-		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-		add_action( 'admin_head', 'll_post_table_styles' );
+		add_action( 'admin_enqueue_scripts', 'll_load_admin_styles' );
 		break;
 
 	default:
 		add_action( 'admin_menu', 'll_disable_wp_links_menu' );
-		add_action( 'admin_head', 'll_disable_wp57_menu_hover' );
-		add_action( 'admin_head', 'll_enable_monospace_acf_textarea' );
-		add_action( 'admin_head', 'll_post_table_styles' );
+		add_action( 'admin_enqueue_scripts', 'll_load_admin_styles' );
 		/* Hide Jetpack upsell ads */
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;
