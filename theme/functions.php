@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.12.0' );
+	define( 'LL_VERSION', '2.12.1' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -162,17 +162,10 @@ function ll_scripts() {
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
 
 
-function ll_preload_assets() {
-	// echo '<link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop-small.jpg" media="(max-width: 767px)" />
-	// <link rel="preload" as="image" href="/wp-content/themes/loadlifter/img/phx-desert-color-no-crop.jpg" media="(min-width: 768px)" />';
-	// echo '<link rel="preload" as="script" href="https://js.hsforms.net/forms/v2.js?ver=' . wp_get_theme()->get('Version') . '" />';
-}
-
-
-function ll_guten_scripts() {
-	// wp_enqueue_script( 'loadlifter-guten', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
-}
-// add_action( 'enqueue_block_editor_assets', 'll_guten_scripts' );
+add_filter( 'flying_press_exclude_from_minify:css' , function ($exclude_keywords) {
+	$exclude_keywords = ['loadlifter'];
+	return $exclude_keywords;
+});
 
 
 function ll_disable_wp_links_menu() {
