@@ -10,6 +10,7 @@
 
 # Ignore generated CSS files:
 a11yslider.css
+ab-csc.css
 style.css
 style-editor.css
 style-editor-extra.css

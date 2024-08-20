@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.12.1' );
+	define( 'LL_VERSION', '2.12.2' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -135,6 +135,7 @@ function ll_content_width() {
 function ll_scripts() {
 	// wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' ); /* 20240712 - rolled these into the local a11yslider.css file. Do not need this third-party file */
 	wp_register_style( 'a11y-slider-styles', get_template_directory_uri() . '/a11yslider.css', [], LL_VERSION );
+	wp_register_style( 'csc-styles', get_template_directory_uri() . '/ab-csc.css', [], LL_VERSION );
 	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
 	if ( get_field( 'll_postpage_css' ) ) {
 		$inline_css = get_field( 'll_postpage_css' );
@@ -155,6 +156,7 @@ function ll_scripts() {
 	}
 
 	if ( is_page( array( 'calc-test', 'cost-segregation-calculator' ) ) ) {
+		wp_enqueue_style( 'csc-styles' );
 		wp_enqueue_script( 'gcharts' );
 		wp_enqueue_script( 'apixibot-csc' );
 	}

@@ -3,7 +3,8 @@ function load_js() {
 	var head = document.getElementsByTagName('head')[0];
 	var script = document.createElement('script');
 	script.src =
-		'https://apixibot.s3.amazonaws.com/main_v3_nocss.js?v=' + d.getTime();
+		// 'https://apixibot.s3.amazonaws.com/main_v3_nocss.js?v=' + d.getTime();
+		'https://apixibot.s3.amazonaws.com/mainv3_53.js?=' + d.getTime();
 	head.appendChild(script);
 }
 

@@ -1,0 +1,129 @@
+.ab-hide { display: none !important; }
+.ab-row {
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 2rem;
+}
+.ab-row:not(:last-of-type) { margin-bottom: 1rem; }
+.ab-col-1,
+.ab-col-10,
+.ab-col-11,
+.ab-col-12,
+.ab-col-2,
+.ab-col-3,
+.ab-col-4,
+.ab-col-5,
+.ab-col-6,
+.ab-col-7,
+.ab-col-8,
+.ab-col-9 {
+	grid-column: span 12 / span 12;
+}
+.ab-input-group { display: flex; }
+.ab-input-group-prepend {
+	background-color: #a3a3a3;
+	color: #171717;
+	border-top-left-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+	border-width: 0;
+	margin-right: -2px;
+}
+.ab-input-group-text {
+	display: flex;
+	padding: 0.5rem 0.75rem;
+	margin-bottom: 0;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	white-space: nowrap;
+	align-items: center;
+}
+.ab-input-group input.ab-textbox {
+	display: block;
+	flex: 1 1 auto;
+	width: 1%;
+}
+.invalid {
+	border-width: 2px;
+	border-style: solid;
+	border-color: #b45309;
+}
+#ab-numericImprovementField,
+#ab-numericOrigialCostField,
+#ab-numericOriginalCostField,
+#ab-numericValidationMsg,
+#ab-renoDateMsg,
+#ab-validationMsg {
+		color: #b45309;
+		font-style: italic;
+	}
+/* .ab-label.small {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+} */
+span.value {
+	font-weight: 700;
+}
+#piechart > div {
+	max-width: max-content;
+}
+#ab-projected_after_studay,
+#ab-projected_after_study {
+	color: #047857;
+	font-weight: 700;
+}
+#ab-csc-container table.noborder tr {
+	border-color: transparent;
+}
+#ab-csc-container table.noborder td {
+	border-color: transparent;
+	border-width: 0;
+	padding: 0 0.5rem 0 0;
+}
+
+.ab-col-12-sm:has(button) {
+	text-align: right !important;
+}
+
+#ab-result > .ab-row:first-child .ab-label {
+	color: var(--wp--preset--color--brand-blue);
+	font-family: var(--wp--preset--font-family--serenity);
+	font-size: var(--wp--preset--font-size--2-xl);
+}
+#ab-result .contactForm.ab-pt-30 .ab-col-12:first-child {
+	color: var(--wp--preset--color--brand-red);
+	font-family: var(--wp--preset--font-family--serenity);
+	font-size: var(--wp--preset--font-size--xl);
+}
+
+
+@media (min-width: 768px) {
+	.ab-col-1{grid-column:span 1 / span 1}
+	.ab-col-2{grid-column:span 2 / span 2}
+	.ab-col-3{grid-column:span 3 / span 3}
+	.ab-col-4{grid-column:span 4 / span 4}
+	.ab-col-5{grid-column:span 5 / span 5}
+	.ab-col-6{grid-column:span 6 / span 6}
+	.ab-col-7{grid-column:span 7 / span 7}
+	.ab-col-8{grid-column:span 8 / span 8}
+	.ab-col-9{grid-column:span 9 / span 9}
+	.ab-col-10{grid-column:span 10 / span 10}
+	.ab-col-11{grid-column:span 11 / span 11}
+	.ab-col-12{grid-column:span 12 / span 12}
+	#piechart > div {
+		margin-inline: auto;
+	}
+}
+
+@media (min-width: 1024px) {
+	.ab-row:not(:last-of-type) {
+		margin-bottom: 2rem;
+	}
+}
+
+@media print {
+	.ab-row.contactForm {
+		display: none;
+	}
+}
