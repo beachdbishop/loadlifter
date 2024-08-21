@@ -58,7 +58,7 @@ if ( $peepauthor ) {
 		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
 			<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0 md:order-2">
-				<div class="headshot-wrapper | relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-transparent before:bg-repeat before:bg-[bottom_right] before:bg-headshot print:w-[2in] print:h-auto print:before:bg-none">
+				<div class="headshot-wrapper | relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-transparent before:bg-repeat before:bg-[bottom_right] before:bg-headshot print:before:bg-none">
 					<?php ll_people_headshot(); ?>
 				</div>
 			</div>
@@ -67,18 +67,18 @@ if ( $peepauthor ) {
 				<header class="mb-4">
 					<?php
 					if ( $peep_class === 'internal' ) {
-						the_title( '<h1 class="entry-title | mb-0 text-brand-blue dark:text-brand-blue-pale">', '</h1>' );
+						the_title( '<h1 class="entry-title | mb-0 text-brand-blue dark:text-brand-blue-pale print:text-xl">', '</h1>' );
 
 						if( get_field( 'll_people_designations' ) ) {
-							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', get_field( 'll_people_designations' ) );
+							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500 print:text-base">%1$s</h2>', get_field( 'll_people_designations' ) );
 						}
 
 						if( get_field( 'll_people_title' ) ) {
-							echo sprintf( '<h2 class="text-neutral-700 dark:text-neutral-400">%1$s</h2>', get_field( 'll_people_title' ) );
+							echo sprintf( '<h2 class="text-neutral-700 dark:text-neutral-400 print:text-base">%1$s</h2>', get_field( 'll_people_title' ) );
 						}
 
 						if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid border-neutral-200 text-neutral-700 dark:text-neutral-400 dark:border-neutral-700 children:inline-block">';
+							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid border-neutral-200 text-neutral-700 dark:text-neutral-400 dark:border-neutral-700 children:inline-block print:my-1 print:text-sm">';
 								$peep_department = get_field_object( 'll_people_department' );
 								$peep_dept_value = $peep_department['value'];
 								if ( $peep_dept_value ) {

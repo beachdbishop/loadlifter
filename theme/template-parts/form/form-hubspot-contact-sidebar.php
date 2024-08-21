@@ -8,7 +8,7 @@ if ( ( in_category( 'construction' ) ) || ( is_page( 'Construction' ) ) ) {
 // echo ( wp_get_environment_type() == 'local' ) ? '<p class="font-mono">partial: ' . __FILE__ . '</p>' : '';
 ?>
 <h3 class="mb-4 text-brand-blue-dark dark:text-brand-blue-pale print:hidden">Contact us</h3>
-<div id="llhsform"></div>
+<div class="not-prose hbspt-form max-w-prose" id="llhsform"></div>
 <script>
 	// Function to load the HubSpot form
 	// via: https://community.hubspot.com/t5/CRM/Hubspot-web-form-integration-scripts-slowing-WordPress-website/m-p/332393
@@ -18,23 +18,22 @@ if ( ( in_category( 'construction' ) ) || ( is_page( 'Construction' ) ) ) {
 
 		// Check if the form is within the viewport
 		if(rect.top < window.innerHeight && rect.bottom >= 0) {
-				// Create and append the HubSpot script
-				var hsScript = document.createElement('script');
-				hsScript.async = true; // Load script asynchronously
-				hsScript.src='//js.hsforms.net/forms/v2.js';
-				hsScript.onload = function() {
-						hbspt.forms.create({
-								region: "na1",
-								portalId: "5578910",
-								target: '#llhsform',
-								formId: "<?php echo $hs_form_id; ?>"
+			// Create and append the HubSpot script
+			var hsScript = document.createElement('script');
+			hsScript.async = true; // Load script asynchronously
+			hsScript.src='//js.hsforms.net/forms/v2.js';
+			hsScript.onload = function() {
+				hbspt.forms.create({
+					region: "na1",
+					portalId: "5578910",
+					target: '#llhsform',
+					formId: "<?php echo $hs_form_id; ?>"
+				});
+			};
+			document.body.appendChild(hsScript);
 
-						});
-				};
-				document.body.appendChild(hsScript);
-
-				// Remove the event listener once the script is loaded
-				window.removeEventListener('scroll', loadHubSpotForm);
+			// Remove the event listener once the script is loaded
+			window.removeEventListener('scroll', loadHubSpotForm);
 		}
 	}
 

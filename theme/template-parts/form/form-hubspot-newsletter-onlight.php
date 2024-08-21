@@ -6,7 +6,7 @@ $hs_form_id = 'e9f9a025-96c0-4a18-b642-17a605422edf';
 	<?php // echo ( wp_get_environment_type() == 'local' ) ? '<p class="italic">form-hubspot-newsletter-onlight.php</p>' : ''; ?>
 	<h3 class="mb-4 text-brand-red">Stay up-to-date</h3>
 	<p class="mb-8">Get a collection of our latest blog posts in your inbox every 3-4 weeks.</p>
-	<div id="llhsform"></div>
+	<div class="not-prose hbspt-form max-w-prose" id="llhsform"></div>
 	<script>
 		// Function to load the HubSpot form
 		function loadHubSpotForm() {

@@ -132,6 +132,7 @@ module.exports = {
 		'max-w-md',
 		'max-w-xl',
 		'max-w-2xl',
+		'max-w-screen-lg',
 		'mb-3',
 		'-ml-12',
 		'pb-2',

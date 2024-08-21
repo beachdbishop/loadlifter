@@ -27,19 +27,19 @@ if ( ! function_exists( 'll_show_social_links' ) ) :
 		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
 
 			$social_html .= '<a href="https://www.linkedin.com/company/beachfleischman/" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-linkedin">
-					<i class="w-8 h-8 fa-brands fa-linkedin-in"></i>
+					<i class="w-8 h-8 fa-brands fa-linkedin-in print:w-4 print:h-4"></i>
 					<span id="soclink-linkedin" class="screen-reader-text">LinkedIn</span>
 			</a>
 			<a href="https://twitter.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-twitter">
-					<i class="w-8 h-8 fa-brands fa-x-twitter"></i>
+					<i class="w-8 h-8 fa-brands fa-x-twitter print:w-4 print:h-4"></i>
 					<span id="soclink-twitter" class="screen-reader-text">Twitter</span>
 			</a>
 			<a href="https://www.facebook.com/BeachFleischmanCPAs" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-facebook">
-					<i class="w-8 h-8 fa-brands fa-facebook"></i>
+					<i class="w-8 h-8 fa-brands fa-facebook print:w-4 print:h-4"></i>
 					<span id="soclink-facebook" class="screen-reader-text">Facebook</span>
 			</a>
 			<a href="https://instagram.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-instagram">
-					<i class="w-8 h-8 fa-brands fa-instagram"></i>
+					<i class="w-8 h-8 fa-brands fa-instagram print:w-4 print:h-4"></i>
 					<span id="soclink-instagram" class="screen-reader-text">Instagram</span>
 			</a>';
 
@@ -350,21 +350,21 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 	function ll_better_page_hero( $h1, $h2, $cta1_text = null, $cta1_url = null, $cta2_text = null, $cta2_url = null ) {
 		?>
 
-		<div class="page-hero | wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0 print:py-8">
-			<span aria-hidden="true" class="page-hero-overlay | z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
-			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image'] ); ?>
+		<div class="page-hero | wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0 print:py-4 print:bg-white print:text-black">
+			<span aria-hidden="true" class="page-hero-overlay | z-[1] absolute top-0 right-0 bottom-0 left-0 print:hidden"></span>
+			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image print:hidden'] ); ?>
 
-			<div class="wp-block-cover__inner-container | px-2 lg:px-4">
-				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero">
-					<h1 class="has-text-color leading-none text-white tracking-light text-pretty text-shadow shadow-neutral-950 md:max-w-5xl lg:text-6xl print:text-shadow-none"><?php echo $h1; ?></h1>
-					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-brand-blue-pale text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl print:text-shadow-none"><?php echo $h2; ?></h2><?php } ?>
+			<div class="wp-block-cover__inner-container | px-2 lg:px-4 print:!px-0">
+				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero print:min-h-min">
+					<h1 class="has-text-color leading-none text-white tracking-light text-pretty text-shadow shadow-neutral-950 md:max-w-5xl lg:text-6xl lg:print:!text-xl print:text-black print:text-shadow-none"><?php echo $h1; ?></h1>
+					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-brand-blue-pale text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:text-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
 						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">
-							<div class="">
+							<div class="print:hidden">
 								<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg text-neutral-100 !bg-brand-red-dark border-brand-red-dark shadow-md shadow-neutral-950 hover:border-white hover:text-white" href="<?php echo $cta1_url; ?>"><?php echo $cta1_text; ?></a>
 							</div>
 							<?php if ( ( !empty( $cta2_text ) ) && ( !empty( $cta2_url ) ) ) { ?>
-								<div class="">
+								<div class="print:hidden">
 									<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-brand-blue-pale hover:text-brand-blue-pale" href="<?php echo $cta2_url; ?>"><?php echo $cta2_text; ?></a>
 								</div>
 							<?php } ?>
@@ -373,7 +373,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 				</div>
 
 				<?php if ( ( !is_front_page() ) && ( !is_page_template( LL_LP_TEMPLATES ) ) ) { ?>
-					<nav class="breadcrumbs | mt-4 font-head text-neutral-50 | sm:mt-0 print:mt-8" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org"><?php echo bcn_display( true ); ?></nav>
+					<nav class="breadcrumbs | mt-4 font-head text-neutral-50 | sm:mt-0 print:mt-8 print:text-black" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org"><?php echo bcn_display( true ); ?></nav>
 				<?php } ?>
 			</div>
 		</div>
@@ -484,7 +484,7 @@ if ( ! function_exists( 'll_people_headshot' ) ) :
 								'echo' => false,
 							)
 						),
-						'class' => 'relative mx-auto md:mx-0',
+						'class' => 'relative mx-auto md:mx-0 print:!h-[2in] print:w-auto',
 					)
 				);
 			else : ?>
@@ -639,7 +639,7 @@ endif;
 if ( ! function_exists( 'll_footer_address' ) ) :
 	function ll_footer_address( $addr ) {
 		echo '<div class=" md:pt-2">
-			<div class="space-y-2 not-italic text-shadow shadow-neutral-900 print:text-shadow-none" property="address" typeof="PostalAddress">
+			<div class="space-y-2 not-italic text-shadow shadow-neutral-900 print:text-shadow-none print:space-y-1" property="address" typeof="PostalAddress">
 				<p class="street-address | font-head leading-none " property="streetAddress">' . $addr['street1'] . '</p>
 				<p class="locality | font-head leading-none "><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
 				<p class="font-semibold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>

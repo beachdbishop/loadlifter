@@ -71,6 +71,8 @@
 	max-width: none;
 }
 
+
+
 .wp-block-cover__inner-container {
 	@apply container;
 }
@@ -89,6 +91,19 @@
 	}
 }
 
+
+@media print {
+	.wp-block-cover,
+	.wp-block-cover-image {
+		min-height: unset !important;
+	}
+
+	.wp-block-cover__inner-container {
+		max-width: unset !important;
+	}
+}
+
+
 /* Front Page Industry Knowledge section */
 .section__indgrid--front {
 	/* might not use, but keeping for future ref. */
@@ -97,14 +112,16 @@
 }
 
 
-
-.single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
-	border-bottom-width: 1px;
-	border-color: theme(colors.neutral.200);
-	padding-bottom: 1rem;
-	font-size: 1.25rem;
-  line-height: 1.75rem;
+@media screen {
+	.single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
+		border-bottom-width: 1px;
+		border-color: theme(colors.neutral.200);
+		padding-bottom: 1rem;
+		font-size: 1.25rem;
+		line-height: 1.75rem;
+	}
 }
+
 
 .entry-content .aligncenter {
 	margin-inline: auto;

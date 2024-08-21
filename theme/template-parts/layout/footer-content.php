@@ -53,9 +53,9 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 	get_template_part( 'template-parts/siteblocks/pre', 'footer' );
 	?>
 
-	<footer id="colophon" class="site-footer wp-block-cover alignfull is-light has-parallax text-white border-t-4 border-solid border-brand-blue ll-equal-vert-padding !px-0 bg-neutral-950 | print:border-none print:text-neutral-700">
-		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim"></span>
-		<div role="img" aria-label="The Arizona desert at sunrise" class="wp-block-cover__image-background has-parallax" style="background-position:50% 0;background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
+	<footer id="colophon" class="site-footer wp-block-cover alignfull is-light has-parallax text-white border-t-4 border-solid border-brand-blue ll-equal-vert-padding !px-0 bg-neutral-950 | print:border-none print:text-neutral-700 print:bg-white">
+		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim print:hidden"></span>
+		<div role="img" aria-label="The Arizona desert at sunrise" class="wp-block-cover__image-background has-parallax print:hidden" style="background-position:50% 0;background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
 		<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-[16px] lg:space-y-16">
 
 			<?php if ( ( !is_page_template( LL_LP_TEMPLATES ) ) && ( $show_expanded_menus ) ) { ?>
@@ -126,10 +126,10 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 			</div>
 			<?php } ?>
 
-			<div class="">
-				<div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-8">
+			<div class="print:!mt-0">
+				<div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-8 print:gap-y-2">
 					<div class="">
-						<div class="max-w-xs mb-4 fill-current">
+						<div class="max-w-xs mb-4 fill-current print:max-w-60 print:mb-1">
 							<a href="<?php bloginfo( 'url' ); ?>" aria-label="<?php echo bloginfo( 'name' );?>">
 								<?php get_template_part( 'template-parts/svg/svg', 'logomono' ); ?>
 							</a>
@@ -144,8 +144,8 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 					</div>
 				</div>
 				<?php if ( is_page_template( 'tpl-landing-page-cyber.php' ) ) { ?>
-					<p class="mt-8 text-xs"><?php echo $disclaimer_cyber; ?></p>
-					<p class="mt-4 text-xs"><?php
+					<p class="mt-8 text-xs print:break-inside-avoid-page print:mt-2"><?php echo $disclaimer_cyber; ?></p>
+					<p class="mt-4 text-xs print:break-inside-avoid-page print:mt-2"><?php
 					if ( $page_seo_footer ) {
 						echo $page_seo_footer;
 						sprintf( 'The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %1$s. &copy;%2$s %1$s. All rights reserved.', LL_COMPANY_LEGAL_NAME, date('Y') );
@@ -153,7 +153,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						echo $footer_para_cyber;
 					} ?></p>
 				<?php } else { ?>
-					<p class="mt-8 text-xs">
+					<p class="mt-8 text-xs print:break-inside-avoid-page print:mt-2">
 						<?php
 						if ( ( is_page() ) && ( get_field( 'll_seo_footer' ) ) ) {
 							// if this is a page and special footer text is set...
@@ -174,15 +174,5 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 
 		</div>
 	</footer>
-
-	<!-- <footer id="colophon" class="site-footer bg-neutral-900/80 ">
-
-		<div class="text-white border-t-4 border-solid on-darkbg border-brand-blue print:border-none print:text-neutral-700">
-
-
-
-
-		</div>
-	</footer> -->
 
 <?php } ?>

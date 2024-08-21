@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.12.2' );
+	define( 'LL_VERSION', '2.12.3' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -33,7 +33,7 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 		*
 		* For the classic editor (and anything using TinyMCE, like Advanced Custom Fields), these classes are added to TinyMCE’s body class when it initializes.
 		*/
-	define( 'LL_TYPOGRAPHY_CLASSES', 'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-brand-gray lg:prose-xl dark:prose-invert' );
+	define( 'LL_TYPOGRAPHY_CLASSES', 'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-brand-gray lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm' );
 
 }
 

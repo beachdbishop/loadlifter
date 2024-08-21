@@ -52,6 +52,10 @@ body {
     background-color: transparent;
     color: rgb(23 23 23 / var(--tw-text-opacity));
   }
+
+	.iub__us-widget {
+		display: none;
+	}
 }
 
 h1,

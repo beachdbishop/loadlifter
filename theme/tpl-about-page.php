@@ -72,9 +72,9 @@ $cards_about = [
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="px-2 md:container lg:px-[16px]">
+				<div class="px-2 md:container lg:px-[16px] print:px-0">
 
-					<div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
+					<div class="mt-4 ll-page-grid | md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16 print:mt-0 print:gap-4">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
 
@@ -123,7 +123,7 @@ $cards_about = [
 
 								$peopleQuery = new WP_Query( $args ); ?>
 
-								<section class="mb-0 rounded-lg ll-equal-vert-padding lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white dark:lg:from-neutral-600 dark:lg:to-80% dark:to-neutral-900">
+								<section class="mb-0 rounded-lg ll-equal-vert-padding | lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white dark:lg:from-neutral-600 dark:lg:to-80% dark:to-neutral-900 print:hidden">
 									<div class="max-w-3xl md:mx-auto not-prose">
 										<h2 class="text-brand-blue dark:text-brand-blue-pale">Voices of diversity, equity, and inclusion</h2>
 										<div class="slider slider-quotes">
