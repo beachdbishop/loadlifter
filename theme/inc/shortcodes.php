@@ -186,18 +186,18 @@ function ll_tptdisclaimer_shortcode() {
 function ll_careers_openings_cta_shortcode() {
 	return '<div
 		id="openings"
-		class="not-prose px-2 py-4 mt-8 space-y-4 border-2 border-solid border-brand-red bg-gradient-to-r from-neutral-50 to-neutral-200 text-brand-red-dark | md:p-4 lg:p-8 dark:border-brand-blue-pale dark:from-neutral-800 dark:to-neutral-950"
+		class="not-prose px-2 py-4 mt-8 space-y-4 border-2 border-solid border-brand-red bg-gradient-to-r from-white to-neutral-100 text-brand-red-dark | md:p-4 lg:p-8 dark:border-brand-blue-pale dark:from-neutral-800 dark:to-neutral-950"
 	>
 	<h2 class="wp-block-heading text-brand-red-dark | dark:text-brand-blue-pale">
 		<i class="fa-solid fa-users hidden lg:inline"></i>
-		Explore current openings
+		Join our team!
 	</h2>
 	<div class="flex mb-2 w-full">
 		<a
 			class="inline-block w-full px-4 py-2 rounded-md border-2 border-solid border-brand-red-dark text-center text-white bg-brand-red-dark font-head font-semibold | hover:border-brand-red hover:bg-brand-red dark:border-brand-blue-pale dark:text-neutral-800 dark:bg-brand-blue-pale dark:hover:border-brand-blue dark:hover:bg-brand-blue dark:hover:text-white"
 			href="https://beachfleischman.isolvedhire.com/jobs/"
 		>
-			Apply today
+			Explore current openings and apply today
 		</a>
 	</div>
 </div>';
