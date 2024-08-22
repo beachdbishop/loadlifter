@@ -30,6 +30,7 @@ $page_form                      = get_field( 'll_hs_form_html' );
 $page_gmap                      = get_field( 'll_page_gmap_url' );
 $page_city                      = get_field( 'll_page_city' );
 $page_state                     = get_field( 'll_page_state' );
+$page_below_fold								= get_field( 'll_below_fold' );
 ?>
 
 	<main id="primary" class="landing-page lp-cyber | bg-white dark:bg-neutral-900">
@@ -67,6 +68,12 @@ $page_state                     = get_field( 'll_page_state' );
 										echo '<iframe src="' . $page_gmap . '" width="100%" height="600px" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of ' . $page_city . ', ' . $page_state . '"></iframe>';
 									echo '</div>';
 								echo '</section>';
+							endif;
+							?>
+
+							<?php
+							if ( $page_below_fold ) :
+								echo do_shortcode( $page_below_fold );
 							endif;
 							?>
 						</div>
