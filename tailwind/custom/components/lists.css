@@ -235,6 +235,7 @@ ul.is-style-default {
 @media screen and (min-width: 1024px) {
 	.is-style-list-columns-2 {
 		columns: 2;
+		column-gap: 2rem;
 	}
 	.is-style-circle,
 	.is-style-circle-red,
