@@ -32,7 +32,7 @@ module.exports = {
 				'featured-image': '384 / 125',
 				'feat-3.75': '3.75 / 1',
 				'feat-4.3': '4.3 / 1',
-				'feat-card': '1.91',
+				'feat-card': '16 / 8',
 			},
 			backgroundImage: {
 				'featured-image': 'var(--ll--page-feat-img)',
