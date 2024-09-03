@@ -54,7 +54,7 @@ $page_below_fold								= get_field( 'll_below_fold' );
 						</div>
 
 						<div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
-							<h3>Certified Experts</h3>
+							<h3 class="mb-4">Certified Experts</h3>
 							<?php echo do_shortcode( '[cybercertlogos /]' ); ?>
 
 							<!-- wp:spacer {"className":"is-style-xs"} -->
