@@ -1,4 +1,4 @@
-.ab-hide { display: none !important; }
+.ab-csc-container .ab-hide.ab-hide { display: none; }
 .ab-row {
 	display: grid;
 	grid-template-columns: repeat(12, minmax(0, 1fr));
