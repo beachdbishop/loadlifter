@@ -71,6 +71,7 @@ $menuItemsPrimary = [
 		"hasChildren" => false,
 	],
 ];
+
 $menuItemsSecondary = [
 	"clients" => [
 		"label" => 'Client Center',
