@@ -347,7 +347,7 @@ endif;
 
 
 if ( ! function_exists( 'll_better_page_hero' ) ) :
-	function ll_better_page_hero( $h1, $h2, $cta1_text = null, $cta1_url = null, $cta2_text = null, $cta2_url = null ) {
+	function ll_better_page_hero( $h1, $h2, $cta1_text = null, $cta1_url = null, $cta2_text = null, $cta2_url = null, $maxw = null ) {
 		?>
 
 		<div class="page-hero | wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0 print:py-4 print:bg-white print:text-black">
@@ -356,7 +356,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 
 			<div class="wp-block-cover__inner-container | px-2 lg:px-4 print:!px-0">
 				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero print:min-h-min">
-					<h1 class="has-text-color leading-none text-white tracking-light text-pretty text-shadow shadow-neutral-950 md:max-w-5xl lg:text-6xl lg:print:!text-xl print:text-black print:text-shadow-none"><?php echo $h1; ?></h1>
+					<h1 class="has-text-color leading-none text-white tracking-light text-prett text-shadow shadow-neutral-950 <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black print:text-shadow-none" style="text-wrap: unset"><?php echo $h1; ?></h1>
 					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-brand-blue-pale text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:text-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
 						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">

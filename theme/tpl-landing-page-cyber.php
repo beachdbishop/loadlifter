@@ -42,7 +42,7 @@ $page_below_fold								= get_field( 'll_below_fold' );
 			?>
 
 			<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-					echo ll_better_page_hero( $page_title, $page_message );
+				echo ll_better_page_hero( $page_title, $page_message, $maxw = 0 );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp lp-cyber' ); ?>>
