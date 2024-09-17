@@ -114,7 +114,7 @@ get_header();
 							<p>We've always been a champion of high-quality client service &mdash; and convenience is a big part of that standard. That's why we offer multiple easy online payment options via our secure payment portal powered by Aiwyn.</p>
 						</div>
 						<div class="shrink-0 ">
-							<a class="inline-block px-6 py-3 rounded-lg border-2 border-solid border-brand-red-dark text-center text-white bg-brand-red-dark font-head font-semibold text-3xl | hover:border-brand-red hover:bg-brand-red dark:border-brand-blue-pale dark:text-neutral-800 dark:bg-brand-blue-pale dark:hover:border-brand-blue dark:hover:bg-brand-blue dark:hover:text-white" href="#">Make a payment</a>
+							<a class="inline-block px-6 py-3 rounded-lg border-2 border-solid border-brand-red-dark text-center text-white bg-brand-red-dark font-head font-semibold text-3xl | hover:border-brand-red hover:bg-brand-red dark:border-brand-blue-pale dark:text-neutral-800 dark:bg-brand-blue-pale dark:hover:border-brand-blue dark:hover:bg-brand-blue dark:hover:text-white" href="https://beachfleischman.aiwyn.ai/client-portal">Make a payment</a>
 						</div>
 					</div>
 
