@@ -18,13 +18,13 @@ $featured_image_full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'fu
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <?php if ( $featured_image ) {
-        echo '<style>:root { --ll--page-feat-img: url(\'' . $featured_image[0] . '\'); } @media screen and (min-width: 768px) { :root { --ll--page-feat-img: url(\'' . $featured_image_full[0] . '\'); } }</style>';
+        // echo '<style>:root { --ll--page-feat-img: url(\'' . $featured_image[0] . '\'); } @media screen and (min-width: 768px) { :root { --ll--page-feat-img: url(\'' . $featured_image_full[0] . '\'); } }</style>';
     } ?>
 
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( ' overflow-x-hidden' ); ?>>
+<body <?php body_class( ' overflow-x-hidde' ); ?>>
 
 <?php wp_body_open(); ?>
 
