@@ -52,7 +52,7 @@ if ( $peepauthor ) {
 	<div class="px-2 md:container lg:px-[16px]">
 
 		<?php if ( function_exists( 'bcn_display' ) ) { ?>
-			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+			<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 		<?php } ?>
 
 		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
