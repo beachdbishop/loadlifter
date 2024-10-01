@@ -6,7 +6,6 @@
 	margin-block-start: 0;
 }
 
-
 summary {
 	list-style: none;
 	cursor: pointer;
@@ -64,7 +63,7 @@ details[open] summary::-webkit-details-marker {
 	padding-inline: 0.5rem;
 	padding-block: 1rem;
 	position: relative;
-	will-change: transform;
+	/* will-change: transform; */
 	z-index: 5;
 }
 
@@ -106,9 +105,9 @@ details[open] summary::-webkit-details-marker {
 	color: theme(colors.brand-red-pale);
 }
 
-details[open] summary ~ * {
+/* details[open] summary ~ * {
 	@apply motion-safe:animate-[fade-in-from-top_300ms];
-}
+} */
 
 
 @media (prefers-color-scheme: dark) {

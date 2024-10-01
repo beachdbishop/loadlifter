@@ -24,7 +24,7 @@ $featured_image_full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'fu
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( ' overflow-x-hidde' ); ?>>
+<body <?php body_class( ' overflow-x-hidden' ); ?>>
 
 <?php wp_body_open(); ?>
 

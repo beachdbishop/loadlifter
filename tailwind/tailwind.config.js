@@ -172,9 +172,6 @@ module.exports = {
 		// Extract colors and widths from `theme.json`.
 		require('@_tw/themejson'),
 
-		// Add Tailwind Typography.
-		// require('@tailwindcss/typography'),
-
 		require('@tailwindcss/container-queries'),
 		require('@tailwindcss/forms'),
 		require('@shrutibalasa/tailwind-grid-auto-fit'),
