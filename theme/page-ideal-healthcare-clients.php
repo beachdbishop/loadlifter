@@ -1,12 +1,7 @@
 <?php
 
 /**
- * The template for displaying all pages
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * The template for displaying the Healthcare > Who We Serve page
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -45,7 +40,6 @@ $hero_cta1_text = get_field( 'll_hero_cta1_text' );
 $hero_cta1_url = get_field( 'll_hero_cta1_url' );
 $hero_cta2_text = get_field( 'll_hero_cta2_text' );
 $hero_cta2_url = get_field( 'll_hero_cta2_url' );
-
 
 
 // function ll_render_betsy_slide_posi( $type, $show_icon = false ) {
@@ -166,7 +160,6 @@ $shared_values = [
 ];
 
 
-
 get_header();
 ?>
 
@@ -261,7 +254,7 @@ get_header();
 
 					<section class="ca | ll-equal-vert-padding not-prose break-inside-avoid print:hidden">
 						<h2 class="mb-2 text-brand-red">Partner with BeachFleischman today</h2>
-						<p class="mb-2 max-w-5xl">Discover how BeachFleischman’s healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
+						<p class="mb-2 max-w-5xl">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
 						<p class="hidden print:mt-8 print:block">Email info@beachfleischman.com</p>
 
 						<div id="contact" class="container-contact-for not-prose">
