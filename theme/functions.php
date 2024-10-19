@@ -44,6 +44,10 @@ if ( ! defined( 'LL_LP_TEMPLATES' ) ) {
 	);
 }
 
+add_filter( 'be_media_from_production_url', function() {
+	return 'https://beachfleischman.com';
+});
+
 if ( ! function_exists( 'll_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
