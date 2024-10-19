@@ -57,8 +57,8 @@ $page_below_fold								= get_field( 'll_below_fold' );
 							<h3 class="mb-4">Certified Experts</h3>
 							<?php echo do_shortcode( '[cybercertlogos /]' ); ?>
 
-							<!-- wp:spacer {"className":"is-style-xs"} -->
-							<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-xs"></div>
+							<!-- wp:spacer {"className":"is-style-md"} -->
+							<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>
 							<!-- /wp:spacer -->
 
 							<?php
