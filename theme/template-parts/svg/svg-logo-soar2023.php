@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 455 455">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 455 455" role="img">
 	<defs>
 		<style>
 			:root {
