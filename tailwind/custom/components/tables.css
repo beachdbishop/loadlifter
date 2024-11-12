@@ -1,3 +1,16 @@
+table caption {
+	caption-side: bottom;
+	padding-block: theme(spacing.2);
+	text-align: left;
+}
+
+table caption,
+figcaption {
+	font-family: theme(fontFamily.head);
+	font-weight: 600;
+}
+
+
 .prose table th {
 	--tw-border-opacity: 1;
 	border-bottom-width: 2px;
@@ -20,4 +33,33 @@
 .num {
 	text-align: right;
 	font-variant-numeric: tabular-nums;
+}
+
+.table-tax-brackets td:not(:first-of-type) {
+	font-variant-numeric: tabular-nums;
+	min-width: 12em;
+	max-width: 50vw;
+	text-align: right;
+}
+
+@media screen and (min-width: 1280px) {
+	table caption,
+	.table-tax-brackets td {
+		text-align: center;
+	}
+}
+
+[role="region"][aria-labelledby][tabindex] {
+  overflow: auto;
+  border: 0.1em solid theme(colors.neutral.300);
+}
+
+[role="region"][aria-labelledby][tabindex]:focus {
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.5);
+  outline: 0.1em solid rgba(0, 0, 0, 0.1);
+}
+
+[role="region"][aria-labelledby][tabindex] table {
+  margin: 0;
+  border: none;
 }
