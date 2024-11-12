@@ -147,6 +147,12 @@ table caption {
 	caption-side: bottom;
 }
 
+figcaption {
+	font-family: theme(fontFamily.head);
+	font-weight: 600;
+	text-align: center;
+}
+
 /* Custom Animations */
 
 
