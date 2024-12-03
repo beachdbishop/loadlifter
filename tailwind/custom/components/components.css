@@ -112,7 +112,7 @@
 }
 
 
-@media screen {
+/* @media screen {
 	.single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
 		border-bottom-width: 1px;
 		border-color: theme(colors.neutral.200);
@@ -120,7 +120,7 @@
 		font-size: 1.25rem;
 		line-height: 1.75rem;
 	}
-}
+} */
 
 
 .entry-content .aligncenter {
@@ -530,10 +530,10 @@ p[class*="is-style-note-"] {
 		margin-left: 2rem;
 	}
 
-	.single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
+	/* .single-post .entry-content > p:first-of-type:not([class*="is-style-note-"]) {
 		font-size: 1.5rem;
     line-height: 2rem;
-	}
+	} */
 
 	.logogrid {
 		column-gap: 8rem;
