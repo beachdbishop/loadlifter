@@ -470,25 +470,20 @@ if ( ! function_exists( 'll_post_social_image' ) ) :
 
 		$feat_image_url = $post->_social_image_url;
 
-
 		if ( !has_post_thumbnail() ) {
 			// no featured image set
 			$imgthumb = esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' );
-
 		} elseif ( ( has_post_thumbnail() ) && ( empty( $feat_image_url ) ) ) {
 			// feat img set but no social
 			$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
 			$imgthumb = esc_url( $img[0] );
-
 		} elseif ( !empty( $feat_image_url ) ) {
 			// here's the social image url
 			$imgthumb = esc_url( $feat_image_url );
-
 		}
 
-
 		$featmarkup = sprintf(
-			'<div class="image__featured--outer | overflow-hidden empty-feat-img print:hidden">
+			'<div class="image__featured--outer | overflow-hidden print:hidden">
 				<div
 					class="image__featured--inner | bg-center bg-cover bg-no-repeat aspect-feat-card transition-transform duration-300 ease-in-out group-hover:scale-110"
 					style="background-image: url(%1$s);"
