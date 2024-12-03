@@ -199,12 +199,14 @@
                 "phoenix": "Phoenix, AZ",
                 "tucson": "Tucson, AZ",
                 "nogales": "Nogales, AZ",
+                "lasvegas": "Las Vegas, NV",
                 "remote": "Remote"
             },
             "default_value": "tucson",
             "return_format": "array",
             "allow_null": 0,
             "other_choice": 0,
+            "allow_in_bindings": 1,
             "layout": "horizontal",
             "save_other_choice": 0
         },
@@ -372,5 +374,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1718924978
+    "modified": 1733244332
 }
