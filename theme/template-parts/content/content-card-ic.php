@@ -37,7 +37,8 @@ if ( get_field( 'll_page_title_override' ) ) {
 	<div class="card-img | ">
 		<?php
 		// echo wp_get_attachment_image( get_post_thumbnail_id(), 'medium' );
-		ll_featured_image( array( 'size' => 'card' ) );
+		// ll_featured_image( array( 'size' => 'card' ) );
+		ll_post_social_image();
 		?>
 	</div>
 

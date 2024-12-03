@@ -90,7 +90,7 @@ if ( ! function_exists( 'll_posted_on' ) ) :
 			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 		);
 
-		echo '<span class="timestamp">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo '<span class="timestamp lg:my-16">' . $posted_on . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 	}
 endif;
@@ -233,7 +233,7 @@ if ( ! function_exists( 'll_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'loadlifter' ) );
 			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'loadlifter' ) );
 
-			echo '<div class="my-8"><h3 class="mb-2">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
+			echo '<div class="my-8 lg:my-16"><h3 class="mb-2">' . __( 'Related topics', 'loadlifter' ) . '</h3>';
 
 			if ( $categories_list ) {
 				printf( '<span class="catlist lg:mb-2">' . esc_html__( 'Posted in: %1$s', 'loadlifter' ) . '</span>', $categories_list ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -455,6 +455,50 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				esc_attr( $bg_size ),
 			);
 		}
+
+		echo $featmarkup;
+	}
+endif;
+
+
+if ( ! function_exists( 'll_post_social_image' ) ) :
+	/**
+	 * Renders a post's social image set in The SEO Framework
+	 */
+	function ll_post_social_image() {
+		global $post;
+
+		$feat_image_url = $post->_social_image_url;
+
+
+		if ( !has_post_thumbnail() ) {
+			// no featured image set
+			$imgthumb = esc_url( get_template_directory_uri() . '/img/feat__empty--blog.svg' );
+
+		} elseif ( ( has_post_thumbnail() ) && ( empty( $feat_image_url ) ) ) {
+			// feat img set but no social
+			$img = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
+			$imgthumb = esc_url( $img[0] );
+
+		} elseif ( !empty( $feat_image_url ) ) {
+			// here's the social image url
+			$imgthumb = esc_url( $feat_image_url );
+
+		}
+
+
+		$featmarkup = sprintf(
+			'<div class="image__featured--outer | overflow-hidden empty-feat-img print:hidden">
+				<div
+					class="image__featured--inner | bg-center bg-cover bg-no-repeat aspect-feat-card transition-transform duration-300 ease-in-out group-hover:scale-110"
+					style="background-image: url(%1$s);"
+					aria-label="%2$s"
+					role="img"
+				></div>
+			</div>',
+			$imgthumb,
+			esc_attr( get_the_title() ),
+		);
 
 		echo $featmarkup;
 	}
