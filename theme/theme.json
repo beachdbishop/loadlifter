@@ -71,6 +71,11 @@
 					"slug": "faint-gray",
 					"gradient": "linear-gradient(0deg, #fafafa, #ffffff 40%, #ffffff)",
 					"name": "Faint Gray"
+				},
+				{
+					"slug": "eased-from-brand-blue-dark-to-brand-blue",
+					"gradient": "linear-gradient(180deg, hsl(200deg 76% 15%) 0%, hsl(200deg 77% 16%) 8%, hsl(199deg 79% 17%) 17%, hsl(199deg 80% 18%) 25%, hsl(199deg 82% 19%) 33%, hsl(199deg 84% 21%) 42%, hsl(198deg 86% 22%) 50%, hsl(198deg 88% 23%) 58%, hsl(198deg 90% 24%) 67%, hsl(198deg 92% 25%) 75%, hsl(197deg 95% 26%) 83%, hsl(197deg 97% 27%) 92%, hsl(197deg 100% 28%) 100%)",
+					"name": "Eased from Brand Blue Dark to Brand Blue"
 				}
 			],
 			"defaultGradients": false,

@@ -36,7 +36,9 @@ $featured_image_full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'fu
 	<a href="#primary" class="sr-only"><?php esc_html_e( 'Skip to content', 'loadlifter' ); ?></a>
 
 	<?php if ( is_page_template( LL_LP_TEMPLATES ) ) {
-        get_template_part( 'template-parts/layout/header', 'lp');
+    get_template_part( 'template-parts/layout/header', 'lp');
+	} elseif ( is_page_template( 'tpl-press-release-post.php' ) ) {
+		get_template_part( 'template-parts/layout/header', 'permadark' );
 	} else {
 		get_template_part( 'template-parts/layout/header', 'simple' );
 	} ?>

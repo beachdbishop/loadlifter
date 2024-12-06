@@ -207,12 +207,24 @@ body.admin-bar .nav-header { top: var(--wp-admin--admin-bar--height, 0px); }
 		--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
 		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 	}
+	.permadark .menus-container[data-visible] {
+		background-color: theme(colors.brand-blue-dark);
+		color: theme(colors.neutral.200);
+	}
 
 	.menus-container .icon {
 		fill: theme(colors.neutral.200);
 	}
 }
 
+
+.permadark .disclosure-nav button::after {
+	border-color: theme(colors.neutral.200);
+}
+.permadark .disclosure-nav button:hover,
+.permadark .disclosure-nav .main-link:hover {
+	color: theme(colors.orient.400);
+}
 
 
 @media screen and (min-width: 768px) {
