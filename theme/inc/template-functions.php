@@ -33,19 +33,21 @@ add_filter( 'get_post_metadata', 'll_add_dynamic_post_meta', 10, 4 );
  *      Any non-null value will be returned as if it were pulled from the database
  */
 function ll_add_dynamic_post_meta( $value, $post_id, $meta_key, $single ) {
-	$post = get_post( $post_id );
+	if( is_singular() ) {
+		$post = get_post( $post_id );
 
-	if ( 'page' != $post->post_type ) {
+		if ( 'page' != $post->post_type ) {
+			return $value;
+		}
+
+		switch ( $meta_key ) {
+			case 'verbose_page_template':
+				$value = "The page template is " . ( $post->_wp_page_template ?: 'not assigned' );
+				break;
+		}
+
 		return $value;
 	}
-
-	switch ( $meta_key ) {
-		case 'verbose_page_template':
-			$value = "The page template is " . ( $post->_wp_page_template ?: 'not assigned' );
-			break;
-	}
-
-	return $value;
 }
 
 
