@@ -367,7 +367,7 @@
 					"color": "transparent"
 				},
 				"color": {
-					"background": "var(--wp--preset--color--brand-blue)",
+					"background": "var(--wp--preset--color--brand-blue-dark)",
 					"text": "var(--wp--preset--color--brand-blue-faint)"
 				},
 				"typography": {
