@@ -257,7 +257,7 @@ get_header();
 						<p class="mb-2 max-w-5xl">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
 						<p class="hidden print:mt-8 print:block">Email info@beachfleischman.com</p>
 
-						<div id="contact" class="container-contact-for not-prose">
+						<div id="contact" class="container-contact-for not-prose motion-preset-slide-up mb-8 lg:mb-16">
 							<div class="hbspt-form max-w-5xl" id="llhsform"></div>
 							<script>
 								function loadHubSpotForm() {

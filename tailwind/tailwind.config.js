@@ -167,7 +167,7 @@ module.exports = {
 	},
 	plugins: [
 		// Add Tailwind Typography (via _tw fork).
-		require('@_tw/typography'),
+		// require('@_tw/typography'),
 
 		// Extract colors and widths from `theme.json`.
 		require('@_tw/themejson'),
@@ -175,6 +175,7 @@ module.exports = {
 		require('@tailwindcss/container-queries'),
 		require('@tailwindcss/forms'),
 		require('@shrutibalasa/tailwind-grid-auto-fit'),
+		require('tailwindcss-motion'),
 
 		// via: https://www.hyperui.dev/blog/text-shadow-with-tailwindcss
 		({ matchUtilities, theme }) => {

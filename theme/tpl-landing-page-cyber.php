@@ -80,7 +80,7 @@ $page_below_fold								= get_field( 'll_below_fold' );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-form not-prose">';
+								echo '<div id="contact" class="container-contact-for not-prose motion-preset-slide-up mb-8 lg:mb-16">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>

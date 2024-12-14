@@ -71,17 +71,14 @@ module.exports = {
 						'--tw-prose-quote-borders': theme('colors.primary'),
 						'--tw-prose-captions': theme('colors.foreground'),
 						'--tw-prose-kbd': theme('colors.foreground'),
-						'--tw-prose-kbd-shadows': hexToRgb(
-							theme('colors.foreground')
-						),
+						'--tw-prose-kbd-shadows': hexToRgb(theme('colors.foreground')),
 						'--tw-prose-code': theme('colors.foreground'),
 						'--tw-prose-pre-code': theme('colors.background'),
 						'--tw-prose-pre-bg': theme('colors.foreground'),
 						'--tw-prose-th-borders': theme('colors.foreground'),
 						'--tw-prose-td-borders': theme('colors.foreground'),
 						'--tw-prose-invert-body': theme('colors.background'),
-						'--tw-prose-invert-headings':
-							theme('colors.background'),
+						'--tw-prose-invert-headings':	theme('colors.background'),
 						'--tw-prose-invert-lead': theme('colors.background'),
 						'--tw-prose-invert-links': theme('colors.primary'),
 						'--tw-prose-invert-bold': theme('colors.background'),
@@ -89,22 +86,15 @@ module.exports = {
 						'--tw-prose-invert-bullets': theme('colors.primary'),
 						'--tw-prose-invert-hr': theme('colors.background'),
 						'--tw-prose-invert-quotes': theme('colors.background'),
-						'--tw-prose-invert-quote-borders':
-							theme('colors.primary'),
-						'--tw-prose-invert-captions':
-							theme('colors.background'),
+						'--tw-prose-invert-quote-borders': theme('colors.primary'),
+						'--tw-prose-invert-captions':	theme('colors.background'),
 						'--tw-prose-invert-kbd': theme('colors.background'),
-						'--tw-prose-invert-kbd-shadows': hexToRgb(
-							theme('colors.background')
-						),
+						'--tw-prose-invert-kbd-shadows': hexToRgb(theme('colors.background')),
 						'--tw-prose-invert-code': theme('colors.foreground'),
-						'--tw-prose-invert-pre-code':
-							theme('colors.background'),
+						'--tw-prose-invert-pre-code': theme('colors.background'),
 						'--tw-prose-invert-pre-bg': 'rgb(0 0 0 / 50%)',
-						'--tw-prose-invert-th-borders':
-							theme('colors.background'),
-						'--tw-prose-invert-td-borders':
-							theme('colors.background'),
+						'--tw-prose-invert-th-borders':	theme('colors.background'),
+						'--tw-prose-invert-td-borders': theme('colors.background'),
 					},
 				},
 			}),

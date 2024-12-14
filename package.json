@@ -64,5 +64,8 @@
 	"browserslist": [
 		"defaults",
 		"maintained node versions"
-	]
+	],
+	"dependencies": {
+		"tailwindcss-motion": "^1.0.0"
+	}
 }
