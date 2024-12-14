@@ -10,12 +10,18 @@ figcaption {
 	font-weight: 600;
 }
 
-
+.prose thead,
+.prose tfoot {
+	background-color: theme(colors.neutral.200);
+}
 .prose table th {
 	--tw-border-opacity: 1;
 	border-bottom-width: 2px;
   border-color: rgb(212 212 212 / var(--tw-border-opacity));
 	border-style: solid;
+}
+.prose tbody tr:nth-child(even) {
+	background: color-mix(in srgb, theme(colors.neutral.200), transparent 60%);
 }
 .prose table td {
 	--tw-border-opacity: 1;
@@ -43,8 +49,7 @@ figcaption {
 }
 
 @media screen and (min-width: 1280px) {
-	table caption,
-	.table-tax-brackets td {
+	table caption {
 		text-align: center;
 	}
 }

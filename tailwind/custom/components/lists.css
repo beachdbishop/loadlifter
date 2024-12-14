@@ -1,12 +1,30 @@
 /* Lists */
 
-ol.is-style-default {
+ol.is-style-default,
+ol:not([class]),
+ol.wp-block-list {
 	list-style: decimal;
 	/* list-style-position: inside; */
+	padding-inline-start: 1.5rem;
+
+	li::marker {
+		color: theme(colors.neutral.500);
+	}
 }
-ul.is-style-default {
+ul.is-style-default,
+ul:not([class]),
+ul.wp-block-list {
 	list-style: disc;
 	/* list-style-position: inside; */
+	padding-inline-start: 1.5rem;
+
+	li::marker {
+		color: theme(colors.neutral.300);
+	}
+}
+
+.prose li:not(:last-child) {
+	margin-bottom: var(--wp--preset--spacing--20, 0.5rem);
 }
 
 .list-square {

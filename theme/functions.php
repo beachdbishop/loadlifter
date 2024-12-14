@@ -33,7 +33,11 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 		*
 		* For the classic editor (and anything using TinyMCE, like Advanced Custom Fields), these classes are added to TinyMCE’s body class when it initializes.
 		*/
-	define( 'LL_TYPOGRAPHY_CLASSES', 'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif prose-a:text-brand-gray lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm' );
+	define(
+		'LL_TYPOGRAPHY_CLASSES',
+		'prose'
+		// 'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm'
+	);
 
 }
 

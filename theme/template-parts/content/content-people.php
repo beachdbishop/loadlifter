@@ -151,7 +151,7 @@ if ( $peepauthor ) {
 
 
 <?php if ( $peepRecentPostsCount > 0 ) : ?>
-	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 ll-equal-vert-padding dark:bg-neutral-950' ); ?> aria-labelledby="posts">
+	<section id="posts-by-<?php the_ID(); ?>" <?php post_class( 'bg-neutral-100 ll-equal-vert-padding dark:bg-neutral-950' ); ?>>
 		<div class="px-2 md:container lg:px-[16px]">
 			<h3 id="posts" class="mt-2 mb-4 text-4xl md:mb-8 text-brand-blue head-last-bold dark:text-neutral-300">Recent Insights by <strong><?php echo $person_archivelink; ?></strong></h3>
 			<ul class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

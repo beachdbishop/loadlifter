@@ -3,6 +3,12 @@
 .cards-ic {
 	list-style-type: none;
 	margin-top: 1rem;
+	transition-property: opacity;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 300ms;
+}
+.cards-ic:has(:hover) .card-ic:not(:hover) {
+	opacity: 70%;
 }
 .card-ic:focus-within a:focus {
 	text-decoration-line: none;

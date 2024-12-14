@@ -170,13 +170,13 @@ $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( get_field( 'll_normal_contact_form_location' ) == 1 ) : ?>
-								<div id="contact" class="container-contact-form not-prose">
+								<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">
 									<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 								</div>
 							<?php endif; ?>
 
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-form not-prose">';
+								echo '<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>
