@@ -4,7 +4,10 @@
 		"standard": "WCAG2AA",
 		"reporters": [
 			"cli",
-			["pa11y-ci-reporter-html", { "destination": "./_pa11y/" }]
+			[
+				"pa11y-ci-reporter-html",
+				{ "destination": "./_pa11y/" }
+			]
 		],
 		"hideElements": "form[id*='hsForm_'] > iframe"
 	},
@@ -18,6 +21,7 @@
 		"https://peoplecptauthortest.local/category/block/",
 		"https://peoplecptauthortest.local/author/jgiordano/",
 		"https://peoplecptauthortest.local/people/josephine-giordano/",
-		"https://peoplecptauthortest.local/client-center/"
+		"https://peoplecptauthortest.local/client-center/",
+		"https://peoplecptauthortest.local/locations/"
 	]
 }
