@@ -25,10 +25,10 @@ wp.domReady(() => {
 	/**
 	 * Add support for Tailwind Typography’s `lead` class via a block style.
 	 */
-	wp.blocks.registerBlockStyle('core/paragraph', {
-		name: 'lead',
-		label: 'Lead',
-	});
+	// wp.blocks.registerBlockStyle('core/paragraph', {
+	// 	name: 'lead',
+	// 	label: 'Lead',
+	// });
 
 	// Add additional block editor modifications here. For example, you could
 	// register another block style:
