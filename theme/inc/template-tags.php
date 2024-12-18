@@ -686,6 +686,21 @@ if ( ! function_exists( 'll_footer_address' ) ) :
 			</div>
 		</div>';
 	}
+	function ll_footer_address_clean( $addr ) {
+		if ( !is_array( $addr ) || empty( $addr['street1'] ) || empty( $addr['city'] ) || empty( $addr['state'] ) || empty( $addr['zip'] ) || empty( $addr['phone'] ) ) {
+			echo '<p class="is-style-note-error">Invalid address data provided.</p>';
+			return;
+		}
+
+		echo '<div class="not-italic print:space-y-1" property="address" typeof="PostalAddress">
+			<p class="street-address | leading-snug " property="streetAddress">' . $addr['street1'] . '</p>
+			<p class="locality | leading-snug mb-2"><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
+			<p class="leading-snug " property="telephone">P: ' . ll_format_phone_number( $addr['phone'], 'beach') . '</p>';
+			if ( !empty( $addr['fax'] ) ) {
+				echo '<p class="leading-snug" property="faxNumber">F: ' . ll_format_phone_number( $addr['fax'], 'beach' ) . '</p>';
+			}
+			echo '</div>';
+	}
 endif;
 
 

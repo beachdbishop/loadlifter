@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.15.2' );
+	define( 'LL_VERSION', '2.16.1' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -21,6 +21,76 @@ if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
 }
 if ( ! defined( 'LL_COMPANY_NICE_NAME' ) ) {
 	define( 'LL_COMPANY_NICE_NAME', 'BeachFleischman' );
+}
+
+if ( ! defined( 'LL_COMPANY_LOCATIONS' ) ) {
+	define( 'LL_COMPANY_LOCATIONS', [
+		'office-tuc' => [
+			'open' => true,
+			'street1' => '1985 E. River Road, Suite 201',
+			'street2' => '',
+			'city' => 'Tucson',
+			'state' => 'AZ',
+			'zip' => '85718',
+			'phone' => '15203214600',
+			'fax' => '15203214040',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733867448/feat__map--tucson_vbr2sy.png',
+			'link' => '/tucson-az-office/',
+		],
+		'office-phx' => [
+			'open' => true,
+			'street1' => '2201 E. Camelback Road, Suite 200',
+			'street2' => '',
+			'city' => 'Phoenix',
+			'state' => 'AZ',
+			'zip' => '85016',
+			'phone' => '16022657011',
+			'fax' => '16022657060',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733866994/feat__map--phoenix_ximvjn.png',
+			'link' => '/phoenix-az-office/',
+		],
+		'office-nog' => [
+			'open' => true,
+			'street1' => '825 N. Grand Avenue, Suite 204',
+			'street2' => '',
+			'city' => 'Nogales',
+			'state' => 'AZ',
+			'zip' => '85621',
+			'phone' => '15202874174',
+			'fax' => '15202872336',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733867448/feat__map--nogales_xmb5tr.png',
+			'link' => '/nogales-az-office/',
+		],
+		'office-veg' => [
+			'open' => true,
+			'street1' => '3571 E. Sunset Road, Suite 108',
+			'street2' => '',
+			'city' => 'Las Vegas',
+			'state' => 'NV',
+			'zip' => '89120',
+			'phone' => '18338800420',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733866994/feat__map--vegas_fxrvm2.png',
+			'link' => '/las-vegas-nv-office/',
+		],
+	] );
+}
+
+if ( ! defined( 'LL_MENU_ABOUT1' ) ) {
+	define( 'LL_MENU_ABOUT1', [
+		'About Us' => '/about/',
+		'Leadership Team' => '/people/',
+		'Locations' => '/locations/',
+		'Women RISE' => '/about/women-rise/',
+		'IDEA Committee' => '/about/idea-committee/',
+		'LEA Global' => '/about/lea-global/',
+	] );
+	define( 'LL_MENU_ABOUT2', [
+		'Accessibility Statement' => '/accessibility-statement/',
+		'Privacy Policy' => 'https://www.iubenda.com/privacy-policy/8039818',
+		'Cookie Policy' => 'https://www.iubenda.com/privacy-policy/8039818/cookie-policy',
+		'Disclaimers' => '/disclaimer/',
+		'Transparency of Coverage' => '/transparency-of-coverage/',
+	] );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
@@ -42,9 +112,24 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 }
 
 if ( ! defined( 'LL_LP_TEMPLATES' ) ) {
+	/*   Landing Page templates   */
 	define(
 		'LL_LP_TEMPLATES',
 		[ 'tpl-landing-page-bare.php', 'tpl-landing-page-cyber.php', 'tpl-landing-page.php' ]
+	);
+}
+
+if ( ! defined( 'LL_DISCLAIMER_CYBER' ) ) {
+	define(
+		'LL_DISCLAIMER_CYBER',
+		sprintf( 'Disclaimer: %1$s and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither %1$s nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.', LL_COMPANY_LEGAL_NAME )
+	);
+}
+
+if ( ! defined( 'LL_FOOTER_PARAGRAPH_CYBER' ) ) {
+	define(
+		'LL_FOOTER_PARAGRAPH_CYBER',
+		sprintf( 'Cybersecurity Consultants | IT Consultants | Virtual CISO :: %1$s is a public accounting and cybersecurity consulting firm with offices in Phoenix, Tucson, Nogales (AZ), and Las Vegas (NV) serving the IT security needs of businesses and organizations across the United States. Our firm provides enterprise cyber risk assessments, penetration testing, compliance gap assessments, SOC 2 reports, CMMC/NIST SP 800-171 compliance and virtual CISO consulting services. The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %1$s. &copy;%2$s %1$s. All rights reserved.', LL_COMPANY_LEGAL_NAME, date('Y') )
 	);
 }
 
@@ -275,6 +360,7 @@ require get_template_directory() . '/inc/template-functions.php';
  * Custom Post Types
  */
 require get_template_directory() . '/inc/cpt-people.php';
+require get_template_directory() . '/inc/cpt-locations.php';
 if ( 'production' !== wp_get_environment_type() ) {
 	require get_template_directory() . '/inc/cpt-job-openings.php';
 }

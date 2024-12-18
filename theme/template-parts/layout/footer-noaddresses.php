@@ -13,39 +13,6 @@ $show_expanded_menus = true;
 $page_seo_footer = get_field( 'll_seo_footer', get_queried_object_id(), false );
 $site_seo_footer = get_field( 'seo_footer_text', 'option' );
 
-$offices = [
-	'office-phx' => [
-		'open' => true,
-		'street1' => '2201 E. Camelback Road, Suite 200',
-		'street2' => '',
-		'city' => 'Phoenix',
-		'state' => 'AZ',
-		'zip' => '85016',
-		'phone' => '16022657011',
-		'fax' => '16022657060'
-	],
-	'office-tuc' => [
-		'open' => true,
-		'street1' => '1985 E. River Road, Suite 201',
-		'street2' => '',
-		'city' => 'Tucson',
-		'state' => 'AZ',
-		'zip' => '85718',
-		'phone' => '15203214600',
-		'fax' => '15203214040'
-	],
-	'office-nog' => [
-		'open' => true,
-		'street1' => '825 N. Grand Avenue, Suite 204',
-		'street2' => '',
-		'city' => 'Nogales',
-		'state' => 'AZ',
-		'zip' => '85621',
-		'phone' => '15202874174',
-		'fax' => '15202872336'
-	],
-];
-
 
 if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 	//   P R E F O O T E R   A R E A
@@ -126,7 +93,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 			<?php } ?>
 
 			<div class="print:!mt-0">
-				<div class="grid grid-cols-1 gap-y-8 lg:grid-cols-3 lg:gap-x-8 print:gap-y-2">
+				<div class="grid grid-cols-1 gap-y-8 md:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 print:gap-y-2">
 					<div class="">
 						<div class="max-w-xs mb-4 fill-current print:max-w-60 print:mb-1">
 							<a href="<?php bloginfo( 'url' ); ?>" aria-label="<?php echo bloginfo( 'name' );?>">
@@ -137,11 +104,18 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						</div>
 						<?php echo ll_show_social_links(); ?>
 					</div>
-					<div class="grid grid-cols-1 gap-x-4 gap-y-8 md:grid-auto-fit lg:col-span-2" vocab="https://schema.org/" typeof="LocalBusiness">
-						<?php // schema in RDFa -- https://schema.org/LocalBusiness ?>
-						<?php foreach( $offices as $office ) {
-							( $office['open'] == true ) ? ll_footer_address( $office ) : 'nope';
-						} ?>
+					<div class="grid grid-cols-1 gap-x-4 gap-y-8 items-center md:grid-auto-fit lg:col-span-2">
+
+						<?php
+						// foreach( $offices as $office ) {
+						// 	( $office['open'] == true ) ? ll_footer_address( $office ) : 'nope';
+						// }
+						?>
+
+						<p class="font-head text-center lg:text-2xl"><a href="/locations/">Locations</a></p>
+
+						<p class="font-head text-center lg:text-2xl lg:text-right"><a href="tel:<?php echo ll_format_phone_number( 15203214600 ); ?>" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '<?php echo ll_format_phone_number( 15203214600, 'us'); ?>', 0);"><?php echo  ll_format_phone_number( 15203214600, 'beach'); ?></a></p>
+
 					</div>
 				</div>
 				<?php if ( is_page_template( 'tpl-landing-page-cyber.php' ) ) { ?>
@@ -151,6 +125,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						echo $page_seo_footer;
 						sprintf( 'The BeachFleischman logo, BEACHFLEISCHMAN, and COLLABORATE FORWARD are all registered U.S. trademarks of %1$s. &copy;%2$s %1$s. All rights reserved.', LL_COMPANY_LEGAL_NAME, date('Y') );
 					} else {
+						// echo $footer_para_cyber;
 						echo LL_FOOTER_PARAGRAPH_CYBER;
 					} ?></p>
 				<?php } else { ?>

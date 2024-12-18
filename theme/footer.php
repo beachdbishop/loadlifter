@@ -9,7 +9,19 @@
  * @package Load_Lifter
  */
 
-get_template_part( 'template-parts/layout/footer', 'content' );
+if ( is_page_template( LL_LP_TEMPLATES ) ) {
+	get_template_part( 'template-parts/layout/footer', 'lp');
+} else {
+
+	if ( wp_get_environment_type() == 'local' ) {
+		// get_template_part( 'template-parts/layout/footer', 'content' );
+		// get_template_part( 'template-parts/layout/footer', 'noaddresses' );
+		get_template_part( 'template-parts/layout/footer', 'noaddress2' );
+	} else {
+		get_template_part( 'template-parts/layout/footer', 'content' );
+	}
+
+}
 ?>
 
 </div>
