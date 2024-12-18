@@ -4,7 +4,7 @@
  *
  * This module relies on ACF PRO and integrates with Display Posts Shortcode.
  *
- * @package sitefunx-bfco
+ * @package loadlifter
  */
 
 

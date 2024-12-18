@@ -87,7 +87,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</article>
 
-			<section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct" aria-labelledby="trending">
+			<section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
 				<div class="px-2 z-10 wp-block-group post-grid lg:px-[16px] has-brand-blue-faint-color">
 					<h2 id="trending" class="mb-4 lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
@@ -106,7 +106,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 
 			<?php // the_content(); ?>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300">
 				<div class="ind-grid | px-2 lg:px-[16px]">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php echo do_shortcode(
@@ -123,7 +123,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</section>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
+			<section class="full-bleed ll-equal-vert-padding not-prose dark:bg-neutral-800 dark:text-neutral-300">
 				<div class="post-grid | px-2 lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
 						<h2 id="recent">Recent Posts</h2>

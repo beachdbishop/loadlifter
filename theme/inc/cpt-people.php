@@ -1,4 +1,11 @@
 <?php
+/**
+ * CPT People
+ *
+ * This module relies on ACF PRO and integrates with Display Posts Shortcode.
+ *
+ * @package loadlifter
+ */
 
 // Register Custom Post Type > People
 function ll_register_people_cpt() {

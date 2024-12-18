@@ -13,7 +13,7 @@ get_header();
 	<main id="primary" class="pt-4 bg-white dark:bg-neutral-900 md:pt-6 lg:pt-8">
 		<div class="px-2 md:container lg:px-[16px] ">
 			<?php if ( function_exists( 'bcn_display' ) ) { ?>
-				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
+				<div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
 			<?php } ?>
 
 			<header class="flex gap-4 mb-4">
