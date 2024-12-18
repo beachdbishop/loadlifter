@@ -8,6 +8,8 @@
  * @package Load_Lifter
  */
 
+get_header();
+
 $page_id = get_the_ID();
 $page_id_industries = ( wp_get_environment_type() == 'local' ) ? '3196' : '31923';
 
@@ -158,9 +160,6 @@ $shared_values = [
 		"icon" => "hand-holding-medical",
 	]
 ];
-
-
-get_header();
 ?>
 
 <main id="primary" class="bg-white dark:bg-neutral-900">

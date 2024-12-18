@@ -42,8 +42,6 @@ $hero_cta1_text 								= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url 									= get_field( 'll_hero_cta1_url' );
 $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
 $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
-
-
 ?>
 
 	<main id="primary" class="bg-white dark:bg-neutral-900">
