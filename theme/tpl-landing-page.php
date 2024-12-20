@@ -73,7 +73,7 @@ $page_state                     = get_field( 'll_page_state' );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-for not-prose motion-preset-slide-up mb-8 lg:mb-16">';
+								echo '<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>

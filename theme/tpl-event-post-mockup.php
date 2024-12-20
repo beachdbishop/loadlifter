@@ -92,7 +92,7 @@ if ( $post_featimg == true ) {
 
 							</div>
 
-							<div id="contact" class="container-contact-for not-prose p-8 mt-12 border-2 border-brand-blue-pale bg-neutral-50 text-neutral-800 ">
+							<div id="contact" class="container-contact-form not-prose p-8 mt-12 border-2 border-brand-blue-pale bg-neutral-50 text-neutral-800 ">
 								<h3 class="text-brand-red text-center font-semibold mb-6">Register by August 7<sup>th</sup> to secure your spot.</h3>
 
 								<p class="text-center">
