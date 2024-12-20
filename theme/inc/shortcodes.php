@@ -119,7 +119,7 @@ add_shortcode( 'svg', 'll_svgpart_shortcode' );
 
 
 function ll_awardlogos_shortcode() {
-	return '<div class="flex flex-wrap items-center gap-8 my-8 justify-center md:justify-start lg:justify-evenly lg:gap-x-16">
+	return '<div class="awards-wrap  |  not-prose flex flex-wrap items-center gap-8 my-8 justify-center md:justify-start lg:justify-evenly lg:gap-x-16">
 		<a href="https://www.bizjournals.com/phoenix/subscriber-only/2024/05/17/largest-phoenix-area-accounting-firms.html" target="_blank" rel="noreferrer noopener"><img loading="lazy" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200,q_auto/v1717027280/2024_pbj_largest-phx-acct-firms_nyik4u.png" alt="2024 4th Largest Phoenix-Area Accounting Firms - Phoenix Business Journal" width="102" height="100"></a>
 		<a href="https://insidepublicaccounting.com/" target="_blank" rel="noreferrer noopener"><img loading="lazy" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1691787197/IPA_-_Award_Logos_-_Top_200_Firms_nfmdem.png" alt="2023 Top 200 Firms - Inside Public Accounting" width="100" height="100"></a>
 		<a href="https://bestcompaniesgroup.com/programs/inclusive-workplace-program/" target="_blank" rel="noreferrer noopener"><img loading="lazy" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_200/v1722882083/Inclusive_Workplace_July_24-July_25-c_pmft9t.png" alt="July 2024-July 2025 Inclusive Workplace - Best Companies Group" width="100" height="100"></a>
