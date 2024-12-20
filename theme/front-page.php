@@ -79,15 +79,24 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</div>
 
-			<article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
-				<div class="px-2 md:container lg:px-[16px]">
-					<header>
-						<?php the_title( '<h1 class="entry-title | hidden ">', '</h1>' ); ?>
-					</header>
-				</div>
-			</article>
+			<?php if ( get_the_content() ) : ?>
+				<?php // Only display the content if it exists ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white dark:bg-neutral-800' ); ?>>
+					<div class="px-2 md:container lg:px-[16px]">
+						<header>
+							<?php the_title( '<h1 class="entry-title | hidden ">', '</h1>' ); ?>
+						</header>
 
-			<section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
+						<div <?php ll_content_class( 'entry-content' ); ?>>
+							<?php the_content(); ?>
+						</div>
+
+					</div>
+				</article>
+			<?php endif; ?>
+
+
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark fro			m-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
 				<div class="px-2 z-10 wp-block-group post-grid lg:px-[16px] has-brand-blue-faint-color">
 					<h2 id="trending" class="mb-4 lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
@@ -104,7 +113,6 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</section>
 
-			<?php // the_content(); ?>
 
 			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300">
 				<div class="ind-grid | px-2 lg:px-[16px]">
@@ -118,7 +126,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						posts_per_page="-1"
 						wrapper="div"
 						wrapper_class="ind-card-flips is-style-default mx-auto max-w-6xl"
-						layout="card-flip-sm" /]'
+						layout="card-ic-flip-sm" /]'
 					); ?>
 				</div>
 			</section>
@@ -127,7 +135,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				<div class="post-grid | px-2 lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
 						<h2 id="recent">Recent Posts</h2>
-						<a href="/blog/" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-blue text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
+						<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
 					</div>
 					<?php
 

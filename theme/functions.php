@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.16.1' );
+	define( 'LL_VERSION', '2.16.2' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -21,76 +21,6 @@ if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
 }
 if ( ! defined( 'LL_COMPANY_NICE_NAME' ) ) {
 	define( 'LL_COMPANY_NICE_NAME', 'BeachFleischman' );
-}
-
-if ( ! defined( 'LL_COMPANY_LOCATIONS' ) ) {
-	define( 'LL_COMPANY_LOCATIONS', [
-		'office-tuc' => [
-			'open' => true,
-			'street1' => '1985 E. River Road, Suite 201',
-			'street2' => '',
-			'city' => 'Tucson',
-			'state' => 'AZ',
-			'zip' => '85718',
-			'phone' => '15203214600',
-			'fax' => '15203214040',
-			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733867448/feat__map--tucson_vbr2sy.png',
-			'link' => '/tucson-az-office/',
-		],
-		'office-phx' => [
-			'open' => true,
-			'street1' => '2201 E. Camelback Road, Suite 200',
-			'street2' => '',
-			'city' => 'Phoenix',
-			'state' => 'AZ',
-			'zip' => '85016',
-			'phone' => '16022657011',
-			'fax' => '16022657060',
-			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733866994/feat__map--phoenix_ximvjn.png',
-			'link' => '/phoenix-az-office/',
-		],
-		'office-nog' => [
-			'open' => true,
-			'street1' => '825 N. Grand Avenue, Suite 204',
-			'street2' => '',
-			'city' => 'Nogales',
-			'state' => 'AZ',
-			'zip' => '85621',
-			'phone' => '15202874174',
-			'fax' => '15202872336',
-			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733867448/feat__map--nogales_xmb5tr.png',
-			'link' => '/nogales-az-office/',
-		],
-		'office-veg' => [
-			'open' => true,
-			'street1' => '3571 E. Sunset Road, Suite 108',
-			'street2' => '',
-			'city' => 'Las Vegas',
-			'state' => 'NV',
-			'zip' => '89120',
-			'phone' => '18338800420',
-			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733866994/feat__map--vegas_fxrvm2.png',
-			'link' => '/las-vegas-nv-office/',
-		],
-	] );
-}
-
-if ( ! defined( 'LL_MENU_ABOUT1' ) ) {
-	define( 'LL_MENU_ABOUT1', [
-		'About Us' => '/about/',
-		'Leadership Team' => '/people/',
-		'Locations' => '/locations/',
-		'Women RISE' => '/about/women-rise/',
-		'IDEA Committee' => '/about/idea-committee/',
-		'LEA Global' => '/about/lea-global/',
-	] );
-	define( 'LL_MENU_ABOUT2', [
-		'Accessibility Statement' => '/accessibility-statement/',
-		'Privacy Policy' => 'https://www.iubenda.com/privacy-policy/8039818',
-		'Cookie Policy' => 'https://www.iubenda.com/privacy-policy/8039818/cookie-policy',
-		'Disclaimers' => '/disclaimer/',
-		'Transparency of Coverage' => '/transparency-of-coverage/',
-	] );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
@@ -161,14 +91,22 @@ if ( ! function_exists( 'll_setup' ) ) :
 			)
 		);
 
+		unregister_nav_menu( 'll_submenu_assurance' );
+		unregister_nav_menu( 'll_submenu_tax' );
+		unregister_nav_menu( 'll_submenu_soar' );
+		unregister_nav_menu( 'll_submenu_industries' );
+		unregister_nav_menu( 'll_submenu_services_short' );
+		unregister_nav_menu( 'll_submenu_about' );
+		unregister_nav_menu( 'll_submenu_careers' );
+		unregister_nav_menu( 'll_submenu_legal'	);
+
 		register_nav_menus(
 			array(
-				'll_submenu_assurance' => __( 'Assurance submenu', 'loadlifter' ),
-				'll_submenu_tax' => __( 'Tax submenu', 'loadlifter' ),
-				'll_submenu_soar' => __( 'SOAR submenu', 'loadlifter' ),
-				'll_submenu_industries' => __( 'Industries submenu', 'loadlifter' ),
-				'll_submenu_about' => __( 'About submenu', 'loadlifter' ),
-				'll_submenu_careers' => __( 'Careers submenu', 'loadlifter' ),
+				'll_menu_col_1' => __( 'Footer Column 1', 'loadlifter' ),
+				'll_menu_col_2' => __( 'Footer Column 2', 'loadlifter' ),
+				'll_menu_col_3' => __( 'Footer Column 3', 'loadlifter' ),
+				'll_menu_col_4' => __( 'Footer Column 4', 'loadlifter' ),
+				'll_menu_below_disclaimers' => __( 'Footer Below Disclaimers', 'loadlifter' ),
 			)
 		);
 

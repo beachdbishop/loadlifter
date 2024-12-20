@@ -539,6 +539,10 @@ p[class*="is-style-note-"] {
 		column-gap: 8rem;
 	}
 
+	.home .awards-wrap img:not(:hover) {
+		filter: grayscale(100%);
+	}
+
 	.wp-block-quote p {
 		font-size: 1.5rem;
     line-height: 2rem;

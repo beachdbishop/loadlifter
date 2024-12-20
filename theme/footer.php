@@ -15,10 +15,10 @@ if ( is_page_template( LL_LP_TEMPLATES ) ) {
 
 	if ( wp_get_environment_type() == 'local' ) {
 		// get_template_part( 'template-parts/layout/footer', 'content' );
-		// get_template_part( 'template-parts/layout/footer', 'noaddresses' );
-		get_template_part( 'template-parts/layout/footer', 'noaddress2' );
+		// get_template_part( 'template-parts/layout/footer', 'noaddress2' );
+		get_template_part( 'template-parts/layout/footer', 'simple' );
 	} else {
-		get_template_part( 'template-parts/layout/footer', 'content' );
+		get_template_part( 'template-parts/layout/footer', 'simple' );
 	}
 
 }

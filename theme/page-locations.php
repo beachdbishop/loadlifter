@@ -12,6 +12,58 @@
  * @package Load_Lifter
  */
 
+ if ( ! defined( 'LL_COMPANY_LOCATIONS' ) ) {
+	define( 'LL_COMPANY_LOCATIONS', [
+		'office-tuc' => [
+			'open' => true,
+			'street1' => '1985 E. River Road, Suite 201',
+			'street2' => '',
+			'city' => 'Tucson',
+			'state' => 'AZ',
+			'zip' => '85718',
+			'phone' => '15203214600',
+			'fax' => '15203214040',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733867448/feat__map--tucson_vbr2sy.png',
+			'link' => '/tucson-az-office/',
+		],
+		'office-phx' => [
+			'open' => true,
+			'street1' => '2201 E. Camelback Road, Suite 200',
+			'street2' => '',
+			'city' => 'Phoenix',
+			'state' => 'AZ',
+			'zip' => '85016',
+			'phone' => '16022657011',
+			'fax' => '16022657060',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733866994/feat__map--phoenix_ximvjn.png',
+			'link' => '/phoenix-az-office/',
+		],
+		'office-nog' => [
+			'open' => true,
+			'street1' => '825 N. Grand Avenue, Suite 204',
+			'street2' => '',
+			'city' => 'Nogales',
+			'state' => 'AZ',
+			'zip' => '85621',
+			'phone' => '15202874174',
+			'fax' => '15202872336',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733867448/feat__map--nogales_xmb5tr.png',
+			'link' => '/nogales-az-office/',
+		],
+		'office-veg' => [
+			'open' => true,
+			'street1' => '3571 E. Sunset Road, Suite 108',
+			'street2' => '',
+			'city' => 'Las Vegas',
+			'state' => 'NV',
+			'zip' => '89120',
+			'phone' => '18338800420',
+			'mapshot' => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_240/v1733866994/feat__map--vegas_fxrvm2.png',
+			'link' => '/las-vegas-nv-office/',
+		],
+	] );
+}
+
 get_header();
 
 $page_id = get_the_ID();
