@@ -27,7 +27,7 @@ if ( $post_featimg == true ) {
 	[popover]::backdrop {background-color: rgb(0 51 102 / 0.5); backdrop-filter: blur(4px);}
 </style>
 
-<main id="primary" class="bg-white dark:bg-neutral-900">
+<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 	<?php
 	while ( have_posts() ) :
@@ -52,12 +52,12 @@ if ( $post_featimg == true ) {
 					<div class="grid gap-24 lg:gap-16 lg:grid-cols-2">
 						<div class="text-neutral-50 space-y-8 md:text-2xl"><!-- Column 1 -->
 							<p class="leading-none text-xl md:text-3xl -mb-4">BeachFleischman's complimentary</p>
-							<h1 class="uppercase leading-none font-semibold text-5xl md:text-8xl lg:text-9xl"><small class="text-brand-blue-pale">Family Law</small><br />
+							<h1 class="uppercase leading-none font-semibold text-5xl md:text-8xl lg:text-9xl"><small class="text-orient-400">Family Law</small><br />
 								Lunch <br />&amp; Learn</h1>
 							<h2 class="font-semibold text-4xl leading-none lg:text-5xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Atque iusto, omnis recusandae vero libero aliquam quasi.</h2>
 							<p class="">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quia, aut debitis enim nam inventore tenetur! Accusamus aperiam eum facilis nam, dolorem assumenda obcaecati nemo quod, ad culpa, amet possimus.</p>
 
-							<p class="text-3xl text-brand-blue-pale font-semibold">Thursday, November 21, 2024<br />
+							<p class="text-3xl text-orient-400 font-semibold">Thursday, November 21, 2024<br />
 							11:30am - 1:00pm</p>
 
 							<p class="text-3xl"><span class="font-semibold">BeachFleischman</span><br />
@@ -65,7 +65,7 @@ if ( $post_featimg == true ) {
 							Tucson, AZ 85718</p>
 
 							<p class="font-semibold text-pretty">Lunch will be provided, and attendees can earn one hour of *CLE credit.</p>
-							<p class="">Contact <a class="underline decoration-2 decoration-brand-blue-pale hover:decoration-white" href="mailto:hmurray@beachfleischman.com">Heather Murray</a> with any questions.</p>
+							<p class="">Contact <a class="underline decoration-2 decoration-orient-400 hover:decoration-white" href="mailto:hmurray@beachfleischman.com">Heather Murray</a> with any questions.</p>
 							<p class="text-base text-neutral-200 leading-tight">* The State Bar of Arizona does not approve or accredit CLE activities for the Mandatory Continuing Legal Education requirement. This activity may qualify for up to 1 hour toward your annual CLE requirement for the State Bar of Arizona.</p>
 
 						</div>
@@ -92,11 +92,11 @@ if ( $post_featimg == true ) {
 
 							</div>
 
-							<div id="contact" class="container-contact-form not-prose p-8 mt-12 border-2 border-brand-blue-pale bg-neutral-50 text-neutral-800 ">
+							<div id="contact" class="container-contact-form not-prose p-8 mt-12 border-2 border-orient-400 bg-neutral-50 text-neutral-800 ">
 								<h3 class="text-brand-red text-center font-semibold mb-6">Register by August 7<sup>th</sup> to secure your spot.</h3>
 
 								<p class="text-center">
-									<button class="font-head rounded-md text-2xl font-semibold text-neutral-100 px-4 py-2 bg-brand-red-dark hover:bg-brand-red hover:text-white  dark:text-brand-blue-pale dark:border-brand-blue-pale" aria-label="Reserve your spot at our table" aria-expanded="false" popovertarget="popform202411ffvs"
+									<button class="font-head rounded-md text-2xl font-semibold text-neutral-100 px-4 py-2 bg-brand-red-dark hover:bg-brand-red hover:text-white  dark:text-orient-400 dark:border-orient-400" aria-label="Reserve your spot at our table" aria-expanded="false" popovertarget="popform202411ffvs"
 									>Register today</button>
 								</p>
 

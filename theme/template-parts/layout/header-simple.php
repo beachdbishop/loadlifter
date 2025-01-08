@@ -15,19 +15,19 @@ $menuItemsPrimary = [
 		"hasChildren" => true,
 			"submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
 				<li class="lg:py-4">
-					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+					<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
 						<a href="/assurance/">Accounting &amp; Assurance</a>
 					</p>
-					[listmenu menu="submenu Assurance" container_class="hidden submenu mb-2 md:block" /]
+					[listmenu menu="submenu Assurance" container_class="hidden submenu mb-2  |  md:block" /]
 				</li>
 				<li class="lg:py-4">
-					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+					<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
 						<a href="/tax/">Tax</a>
 					</p>
 					[listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
 				</li>
 				<li class="lg:py-4">
-					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+					<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
 						<a href="/soar/" title="Strategic Operations &amp; Advisory Resources">
 							<span class="hidden md:inline">SOAR</span>
 							<span class="inline tracking-tight md:hidden">Strategic Operations &amp; Advisory Resources</span>
@@ -98,7 +98,7 @@ $menuItemsSecondary = [
 
 		<div class="w-[240px] lg:w-[320px] order-first">
 			<a
-				class="focus:outline-brand-blue/75 dark:focus:outline-brand-blue-pale/75 focus:outline focus:outline-offset-4"
+				class="focus:outline-brand-blue/75 dark:focus:outline-orient-400/75 focus:outline focus:outline-offset-4"
 				href="<?php bloginfo('url'); ?>"
 				aria-label="<?php echo bloginfo('name'); ?>"
 				title="Go to BeachFleischman's front page"

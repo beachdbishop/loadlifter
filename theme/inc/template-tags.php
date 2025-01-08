@@ -296,19 +296,19 @@ if ( ! function_exists( 'll_post_thumbnail' ) ) :
 endif;
 
 
-if ( ! function_exists( 'll_page_title' ) ) :
-	function ll_page_title( $h1, $h2 ) {
-		echo '<div class="px-2 md:container lg:px-[16px]">
-			<h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
-			<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale lg:text-4xl">'.$h2.'</h2>
-		</div>';
+// if ( ! function_exists( 'll_page_title' ) ) :
+// 	function ll_page_title( $h1, $h2 ) {
+// 		echo '<div class="px-2 md:container lg:px-[16px]">
+// 			<h1 class="leading-none tracking-light lg:text-6xl">'.$h1.'</h1>
+// 			<h2 class="mt-4 text-2xl leading-normal max-w-[42ch] text-orient-400 lg:text-4xl">'.$h2.'</h2>
+// 		</div>';
 
-		if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
-			echo '<div class="breadcrumbs | px-2 md:container lg:px-[16px] font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
-			</div>';
-		}
-	}
-endif;
+// 		if ( function_exists( 'bcn_display' ) && !is_front_page() ) {
+// 			echo '<div class="breadcrumbs | px-2 md:container lg:px-[16px] font-head text-neutral-600" typeof="BreadcrumbList" vocab="https://schema.org">' . bcn_display( true ) . '</div>
+// 			</div>';
+// 		}
+// 	}
+// endif;
 
 
 /* Used on Pages */
@@ -322,7 +322,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 		$hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
 		$hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-hero print:min-h-fit"><div class="">';
 		$hero_html .= '<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>';
-		$hero_html .= '<h2 class="my-6 text-2xl leading-normal max-w-[42ch] text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>';
+		$hero_html .= '<h2 class="my-6 text-2xl leading-normal max-w-[42ch] text-orient-400 text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>';
 
 		if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) {
 			$hero_html .= '<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex ">
@@ -331,7 +331,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 				</div>';
 				if ( ( !empty( $cta2_text ) ) && ( !empty( $cta2_url ) ) ) {
 					$hero_html .= '<div class="inline-block m-0">
-						<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-brand-blue-pale hover:text-brand-blue-pale" href="' . $cta2_url . '">' . $cta2_text . '</a>
+						<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-orient-400 hover:text-orient-400" href="' . $cta2_url . '">' . $cta2_text . '</a>
 					</div>';
 				}
 			$hero_html .= '</div>';
@@ -357,7 +357,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 			<div class="wp-block-cover__inner-container | px-2 lg:px-4 print:!px-0">
 				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero print:min-h-min">
 					<h1 class="has-text-color leading-none text-white tracking-light text-prett text-shadow shadow-neutral-950 <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black print:text-shadow-none" style="text-wrap: unset"><?php echo $h1; ?></h1>
-					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-brand-blue-pale text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:text-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
+					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-orient-400 text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:text-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
 						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">
 							<div class="print:hidden">
@@ -365,7 +365,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 							</div>
 							<?php if ( ( !empty( $cta2_text ) ) && ( !empty( $cta2_url ) ) ) { ?>
 								<div class="print:hidden">
-									<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-brand-blue-pale hover:text-brand-blue-pale" href="<?php echo $cta2_url; ?>"><?php echo $cta2_text; ?></a>
+									<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-orient-400 hover:text-orient-400" href="<?php echo $cta2_url; ?>"><?php echo $cta2_text; ?></a>
 								</div>
 							<?php } ?>
 						</div>

@@ -57,10 +57,10 @@ $page_excerpt                   = get_the_excerpt();
                             <div class="breadcrumbs | font-head text-neutral-600 pb-4 md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
                         <?php } ?>
 
-                        <header class="mb-4">
-                            <?php the_title( '<h1 class="entry-title | text-brand-blue">', '</h1>' ); ?>
-                        </header>
-                    <?php } ?>
+						<header class="mb-4">
+							<?php the_title( '<h1 class="entry-title  |  text-orient-800  |  dark:text-orient-400">', '</h1>' ); ?>
+						</header>
+					<?php } ?>
 
                     <div <?php ll_content_class( 'entry-content' ); ?>>
 

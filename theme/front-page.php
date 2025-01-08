@@ -55,7 +55,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						<?php echo $video_heading; ?>
 					</h1>
 
-					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-brand-blue-pale text-shadow shadow-neutral-950 lg:text-4xl">
+					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 text-shadow shadow-neutral-950 lg:text-4xl">
 						<?php echo $video_subheading; ?>
 					</p>
 
@@ -68,7 +68,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						</div>
 						<?php if ( ( !empty( $hero_cta2_text ) ) && ( !empty( $hero_cta2_url ) ) ) { ?>
 							<div class="inline-block m-0">
-								<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-brand-blue-pale hover:text-brand-blue-pale" href="<?php echo $hero_cta2_url; ?>">
+								<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950 hover:bg-transparent hover:border-orient-400 hover:text-orient-400" href="<?php echo $hero_cta2_url; ?>">
 									<?php echo $hero_cta2_text; ?>
 								</a>
 							</div>
@@ -96,9 +96,9 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			<?php endif; ?>
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark fro			m-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
-				<div class="px-2 z-10 wp-block-group post-grid lg:px-[16px] has-brand-blue-faint-color">
-					<h2 id="trending" class="mb-4 lg:mb-8">Trending now</h2>
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
+				<div class="px-2 z-10 wp-block-group post-grid lg:px-[16px] has-orient-200-color">
+					<h2 id="trending" class="mb-4  text-orient-200  |  lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
 						'[display-posts
 						post_type="post,page,industries"
@@ -107,7 +107,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						orderby="modified"
 						order="DESC"
 						wrapper="ul"
-						wrapper_class="dps-grid-3max cards-ic text-brand-blue-faint"
+						wrapper_class="dps-grid-3max cards-ic text-orient-200"
 						layout="card-ic-min" /]'
 					); ?>
 				</div>

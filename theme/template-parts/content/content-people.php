@@ -70,7 +70,7 @@ if ( $peepauthor ) {
 				<header class="mb-4">
 					<?php
 					if ( $peep_class === 'internal' ) {
-						the_title( '<h1 class="entry-title | mb-0 text-brand-blue dark:text-brand-blue-pale print:text-xl">', '</h1>' );
+						the_title( '<h1 class="entry-title | mb-0 text-orient-800  |  dark:text-orient-400 print:text-xl">', '</h1>' );
 
 						if( get_field( 'll_people_designations' ) ) {
 							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500 print:text-base">%1$s</h2>', get_field( 'll_people_designations' ) );

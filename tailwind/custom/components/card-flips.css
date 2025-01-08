@@ -40,9 +40,9 @@
 }
 
 .ind-card-flips.is-style-red {
-	--_card-front-bg: theme(colors.brand-red-dark);
+	--_card-front-bg: theme(colors.mahogany.700);
 	--_card-front-text: theme(colors.neutral.100);
-	--_card-front-icon: theme(colors.brand-red);
+	--_card-front-icon: theme(colors.mahogany.800);
 	--_card-back-bg: theme(colors.red.950);
 }
 
@@ -50,21 +50,21 @@
 	.ind-card-flips.is-style-default {
 		--_card-front-bg: theme(colors.neutral.800);
 		--_card-front-text: theme(colors.neutral.100);
-		--_card-front-icon: theme(colors.brand-blue-pale);
+		--_card-front-icon: theme(colors.orient.400);
 		--_card-back-bg: theme(colors.neutral.700);
 	}
 
 	.ind-card-flips.is-style-blue {
 		--_card-front-bg: theme(colors.brand-blue-dark);
 		--_card-front-text: theme(colors.neutral.300);
-		--_card-front-icon: theme(colors.brand-blue-pale);
+		--_card-front-icon: theme(colors.orient.400);
 		--_card-back-bg: theme(colors.neutral.700);
 	}
 
 	.ind-card-flips.is-style-red {
-		--_card-front-bg: theme(colors.red.950);
+		--_card-front-bg: theme(colors.mahogany.950);
 		--_card-front-text: theme(colors.neutral.300);
-		--_card-front-icon: theme(colors.brand-red-pale);
+		--_card-front-icon: theme(colors.mahogany.500);
 		--_card-back-bg: theme(colors.neutral.700);
 	}
 }

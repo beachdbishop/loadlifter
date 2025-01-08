@@ -88,10 +88,10 @@ details[open] summary::-webkit-details-marker {
 }
 .accordions.is-style-blue summary {
 	background-color: theme(colors.brand-blue);
-	color: theme(colors.brand-blue-faint);
+	color: theme(colors.orient.200);
 }
 .accordions.is-style-blue summary::before {
-	color: theme(colors.brand-blue-pale);
+	color: theme(colors.orient.400);
 }
 
 .accordions.is-style-red details[open] summary {

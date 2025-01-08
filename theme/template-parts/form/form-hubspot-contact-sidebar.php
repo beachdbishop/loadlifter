@@ -7,7 +7,7 @@ if ( ( in_category( 'construction' ) ) || ( is_page( 'Construction' ) ) ) {
 }
 // echo ( wp_get_environment_type() == 'local' ) ? '<p class="font-mono">partial: ' . __FILE__ . '</p>' : '';
 ?>
-<h3 class="mb-4 text-brand-blue-dark dark:text-brand-blue-pale print:hidden">Contact us</h3>
+<h3 class="mb-4 text-brand-blue-dark  |  dark:text-orient-400 print:hidden">Contact us</h3>
 <div class="not-prose hbspt-form max-w-prose" id="llhsform"></div>
 <script>
 	// Function to load the HubSpot form

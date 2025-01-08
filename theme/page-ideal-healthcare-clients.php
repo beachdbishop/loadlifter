@@ -165,7 +165,7 @@ $shared_values = [
 
 					<section class="betsy mt-4 mb-8 | print:hidden">
 						<div class="not-prose">
-							<h2 class="-mb-4 md:-mb-8 text-brand-blue dark:text-brand-blue-pale">Who we serve</h2>
+							<h2 class="-mb-4 text-orient-800  |  dark:text-orient-400 md:-mb-8">Who we serve</h2>
 
 							<div class="betsy-arrows">
 								<button type="button" id="betsy-gslider-prev" class="betsy-gslider-prev" aria-label="Previous Slide"><i class="fa-solid fa-angle-left fa-lg"></i></button>

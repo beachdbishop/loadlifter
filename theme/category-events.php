@@ -18,7 +18,7 @@ get_header();
 
 			<header class="flex gap-4 mb-4">
 				<div class="basis-2/3">
-					<h1 class="text-brand-blue">Events</h1>
+					<h1 class="text-orient-800  |  dark:text-orient-400">Events</h1>
 				</div>
 			</header>
 

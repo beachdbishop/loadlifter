@@ -54,7 +54,7 @@ $peopleQuery = new WP_Query( $args );
 				<?php if ( $peopleQuery->have_posts() ) : ?>
 
 					<header>
-						<h2 class="entry-title dark:text-neutral-200">Leadership Team</h2>
+						<h2 class="entry-title text-orient-800  |  dark:text-orient-400">Leadership Team</h2>
 					</header>
 
 					<div class="grid grid-cols-1 mt-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4">

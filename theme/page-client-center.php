@@ -110,7 +110,7 @@ get_header();
 
 					<div class="my-8 flex flex-col gap-4 md:flex-row md:flex-nowrap md:place-items-center md:gap-8 lg:gap-16">
 						<div class="grow space-y-4">
-							<h2 class="text-brand-blue dark:text-neutral-100">Make a payment</h2>
+							<h2 class="text-orient-800  |  dark:text-orient-400">Make a payment</h2>
 							<p>We've always been a champion of high-quality client service &mdash; and convenience is a big part of that standard. That's why we offer multiple easy online payment options via our secure payment portal powered by Aiwyn.</p>
 						</div>
 						<div class="shrink-0 ">
@@ -125,9 +125,9 @@ get_header();
 							echo '<div class="card-' . $link['icon'] . '">
 								<a href="' . esc_url( $link['link'] ) . '" rel="bookmark">
 									<div class="group relative inline-block w-[180px] h-[180px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
-										<div class="card-content | absolute w-full h-full rounded-lg shadow-md shadow-neutral-300 dark:shadow-none group-hover:shadow-lg">
-											<div class="card-front | text-center bg-neutral-50 border border-neutral-100 text-brand-blue absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 group-hover:bg-white">
-												<div class="card-icon | text-brand-blue">
+										<div class="card-content  |  absolute w-full h-full rounded-lg shadow-md shadow-neutral-300  |  dark:shadow-none group-hover:shadow-lg">
+											<div class="card-front  |  text-center bg-neutral-50 border border-neutral-100 text-brand-blue absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4  |  group-hover:bg-white dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:group-hover:bg-neutral-900">
+												<div class="card-icon  |  text-brand-blue  |  dark:text-orient-400">
 													<span class="fa-stack fa-2x">
 														<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
 														<i class="fa-solid ' . $link['icon'] . ' fa-stack-1x "></i>
@@ -144,9 +144,9 @@ get_header();
 					</div>
 					<p class="text-center italic mb-16">* Credit card payments will incur a 3% processing fee. This fee does not apply to ACH/bank transfers.<br /><strong>Please note that we do not accept debit card payments.</strong></p>
 
-					<div class="my-8 flex flex-col gap-4 md:flex-row md:flex-nowrap md:place-items-center md:gap-8 lg:gap-16">
-						<div class="space-y-4">
-							<h2 class="text-brand-blue dark:text-neutral-100">Aiwyn Client Intro Video</h2>
+					<div class="my-8 flex flex-col gap-4  |  md:flex-row md:flex-nowrap md:place-items-center md:gap-8 lg:gap-16">
+						<div class="prose space-y-4">
+							<h2 class="text-orient-800  |  dark:text-orient-400">Aiwyn Client Intro Video</h2>
 							<p>To create your account, you will need an email address, password, your client ID, and Invoice number, which can be found on any BeachFleischman invoice. Here's a step-by-step video to help you.</p>
 							<h4 class="text-brand-blue-dark font-semibold dark:text-neutral-100">Need more help?</h4>
 							<p>Reach out to our

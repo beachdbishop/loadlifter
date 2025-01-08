@@ -15,15 +15,15 @@ $menuItemsPrimary = [
 		"hasChildren" => true,
 		"submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
 			<li class="lg:py-4">
-				<p class="md:border-b-2 md:border-brand-blue-pale"><a href="/assurance/">Accounting &amp; Assurance</a></p>
+				<p class="md:border-b-2 md:border-orient-400"><a href="/assurance/">Accounting &amp; Assurance</a></p>
 				[listmenu menu="submenu Assurance" container_class="hidden submenu mb-2 md:block" /]
 			</li>
 			<li class="lg:py-4">
-				<p class=" md:border-b-2 md:border-brand-blue-pale"><a href="/tax/">Tax</a></p>
+				<p class=" md:border-b-2 md:border-orient-400"><a href="/tax/">Tax</a></p>
 				[listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
 			</li>
 			<li class="lg:py-4">
-				<p class=" md:border-b-2 md:border-brand-blue-pale"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
+				<p class=" md:border-b-2 md:border-orient-400"><a href="/soar/" title="Strategic Operations &amp; Advisory Resources">SOAR</a></p>
 				[listmenu menu="submenu SOAR" container_class="hidden submenu mb-2 md:block" /]
 			</li>
 		</ul>',
@@ -113,7 +113,7 @@ $menuItemsSecondary = [
 				</li>
 			</ul>
 
-			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-brand-blue-faint" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
+			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-orient-200" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>
 			</button>
 

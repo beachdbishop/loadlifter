@@ -15,19 +15,19 @@ $menuItemsPrimary = [
 		"hasChildren" => true,
 			"submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
 				<li class="lg:py-4">
-					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-orient-400">
 						<a href="/assurance/">Accounting &amp; Assurance</a>
 					</p>
 					[listmenu menu="submenu Assurance" container_class="hidden submenu mb-2 md:block" /]
 				</li>
 				<li class="lg:py-4">
-					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-orient-400">
 						<a href="/tax/">Tax</a>
 					</p>
 					[listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
 				</li>
 				<li class="lg:py-4">
-					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-brand-blue-pale">
+					<p class="font-semibold md:text-lg lg:text-2xl md:border-b-2 md:border-orient-400">
 						<a href="/soar/" title="Strategic Operations &amp; Advisory Resources">
 							<span class="hidden md:inline">SOAR</span>
 							<span class="inline tracking-tight md:hidden">Strategic Operations &amp; Advisory Resources</span>
@@ -98,7 +98,7 @@ $menuItemsSecondary = [
 
 		<div class="w-[240px] lg:w-[320px] order-first">
 			<a
-				class="focus:outline-brand-blue-pale/75 focus:outline focus:outline-offset-4"
+				class="focus:outline-orient-400/75 focus:outline focus:outline-offset-4"
 				href="<?php bloginfo('url'); ?>"
 				aria-label="<?php echo bloginfo('name'); ?>"
 				title="Go to BeachFleischman's front page"
@@ -108,7 +108,7 @@ $menuItemsSecondary = [
 		</div>
 
 		<div class="nav-ctrls | flex flex-row justify-end order-last print:hidden">
-			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden  focus:bg-neutral-800 focus:text-brand-blue-pale" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
+			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden  focus:bg-neutral-800 focus:text-orient-400" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>
 			</button>
 		</div>
@@ -140,7 +140,7 @@ $menuItemsSecondary = [
 			<ul class="secondary-nav | font-head md:text-lg text-neutral-200 md:order-first md:justify-end flex flex-col md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 print:hidden">
 				<?php
 				foreach ( $menuItemsSecondary as $secondary ) {
-					echo '<li class="p-2 md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font hover:underline hover:text-brand-blue-pale hover:decoration-neutral-200" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
+					echo '<li class="p-2 md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font hover:underline hover:text-orient-400 hover:decoration-neutral-200" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
 				}
 				?>
 				<li class="md:max-w-[200px] lg:max-w-fit"><?php get_search_form(); ?></li>

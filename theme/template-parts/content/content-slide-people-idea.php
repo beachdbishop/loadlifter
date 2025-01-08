@@ -32,7 +32,7 @@ $peep_level = get_field( 'll_people_level' );
                 <div class="w-40 aspect-square" aria-label="<?php echo get_the_title(); ?>">&nbsp;</div>
             <?php } ?>
         </div>
-        <p class="mt-1 text-2xl font-light lg:text-3xl font-head text-brand-blue dark:text-brand-blue-pale">
+        <p class="mt-1 text-2xl font-light lg:text-3xl font-head text-orient-800  |  dark:text-orient-400">
             <?php if ($peep_level['value'] !== '900') { ?>
                 <a href="<?php echo esc_url( get_permalink() ); ?>" aria-label="<?php echo get_the_title(); ?>"><?php echo get_the_title(); ?></a>
             <?php } else { ?>

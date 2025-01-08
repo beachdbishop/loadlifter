@@ -17,7 +17,7 @@ if ( get_field( 'll_normal_contact_form_location' ) !== false ) {
 
 		<?php // echo ( wp_get_environment_type() == 'local' ) ? '<p class="italic">form-hubspot.php</p>' : ''; ?>
 
-		<h4 class="mb-4 text-brand-blue-dark dark:text-brand-blue-pale">Contact us</h4>
+		<h4 class="mb-4 text-brand-blue-dark dark:text-orient-400">Contact us</h4>
 		<div class="not-prose hbspt-form max-w-prose" id="llhsform"></div>
 		<script>
 			// Function to load the HubSpot form

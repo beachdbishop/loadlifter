@@ -27,7 +27,7 @@
 
 .is-style-sep-blue {
 	--_start: theme(colors.brand-blue);
-	--_end: theme(colors.brand-blue-pale);
+	--_end: theme(colors.orient.400);
 }
 .is-style-sep-red {
 	--_start: theme(colors.brand-red);

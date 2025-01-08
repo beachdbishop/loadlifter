@@ -53,7 +53,7 @@ $hs_form_id 										= 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
 							<?php } ?>
 
 							<header class="mb-4">
-								<?php the_title( '<h1 class="entry-title | text-brand-blue">', '</h1>' ); ?>
+								<?php the_title( '<h1 class="entry-title  |  text-orient-800  |  dark:text-orient-400">', '</h1>' ); ?>
 							</header>
 						<?php } ?>
 

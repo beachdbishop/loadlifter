@@ -16,7 +16,7 @@
 				},
 				{
 					"slug": "blue",
-					"colors": [ "#092f42", "#ecfeff" ],
+					"colors": [ "#092f42", "#b6ecff" ],
 					"name": "Blue"
 				}
 			],
@@ -39,7 +39,7 @@
 				},
 				{
 					"slug": "blue-faint",
-					"gradient": "linear-gradient(135deg, #ecfeff, #ecfeff 40%, #00668e 95%, #00668e)",
+					"gradient": "linear-gradient(135deg, #b6ecff, #b6ecff 40%, #00668e 95%, #00668e)",
 					"name": "Blue Faint"
 				},
 				{
@@ -64,7 +64,7 @@
 				},
 				{
 					"slug": "faint-blue",
-					"gradient": "linear-gradient(0deg, #ecfeff, #ffffff 40%, #ffffff)",
+					"gradient": "linear-gradient(0deg, #b6ecff, #ffffff 40%, #ffffff)",
 					"name": "Faint Blue"
 				},
 				{
@@ -132,12 +132,12 @@
 				},
 				{
 					"slug": "brand-blue-faint",
-					"color": "#ecfeff",
+					"color": "#b6ecff",
 					"name": "Brand Blue Faint"
 				},
 				{
 					"slug": "brand-blue-pale",
-					"color": "#67e8f9",
+					"color": "#2dcfff",
 					"name": "Brand Blue Pale"
 				},
 				{

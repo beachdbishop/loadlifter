@@ -193,7 +193,7 @@ aside .timestamp {
 	color: theme(colors.neutral.600);
 }
 .list--tags a:hover {
-	background-color: theme(colors.brand-blue-pale);
+	background-color: theme(colors.orient.400);
 	color: theme(colors.brand-blue-dark);
 }
 @media (prefers-color-scheme: dark) {

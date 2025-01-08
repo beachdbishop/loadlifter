@@ -23,7 +23,7 @@ get_header();
 
 			<header class="mb-8 md:grid md:grid-cols-2 md:gap-16">
 				<div class="">
-					<h1 class="text-brand-blue head-last-bold"><?php echo ll_wrap_last_word( 'A-Z Blog' ); ?></h1>
+					<h1 class="text-orient-800  |  dark:text-orient-400"><?php echo ll_wrap_last_word( 'A-Z Blog' ); ?></h1>
 					<p class="my-4 lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
 				</div>
 

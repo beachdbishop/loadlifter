@@ -64,7 +64,7 @@ body.admin-bar .nav-header { top: var(--wp-admin--admin-bar--height, 0px); }
 	background-color: theme(colors.neutral.100);
 	color: black;
 	margin-bottom: 0;
-	text-decoration-color: theme(colors.brand-blue-pale);
+	text-decoration-color: theme(colors.orient.400);
 	text-decoration-line: underline;
 }
 
@@ -193,7 +193,7 @@ body.admin-bar .nav-header { top: var(--wp-admin--admin-bar--height, 0px); }
 		transition-timing-function: linear;
 	}
 	.menus-container a:hover,
-	.menus-container a:focus { color: theme(colors.brand-blue-pale);
+	.menus-container a:focus { color: theme(colors.orient.400);
 	}
 	.menus-container a:active { color: theme(colors.brand-red);
 	}

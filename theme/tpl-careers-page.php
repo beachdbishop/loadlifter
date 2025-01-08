@@ -154,11 +154,11 @@ if ('local' === wp_get_environment_type()) {
 						<section class="full-bleed ">
 							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm lg:gap-4 md:container lg:px-[16px]">
 								<span>On this page:</span>
-								<a class="underline hover:decoration-brand-blue-pale" href="#why">Why BeachFleischman?</a>
-								<a class="underline hover:decoration-brand-blue-pale" href="#opportunities">Opportunities</a>
-								<a class="underline hover:decoration-brand-blue-pale" href="#culture">Culture</a>
-								<a class="underline hover:decoration-brand-blue-pale" href="#benefits">Benefits</a>
-								<a class="underline hover:decoration-brand-blue-pale" href="#awards">Awards</a>
+								<a class="underline hover:decoration-orient-400" href="#why">Why BeachFleischman?</a>
+								<a class="underline hover:decoration-orient-400" href="#opportunities">Opportunities</a>
+								<a class="underline hover:decoration-orient-400" href="#culture">Culture</a>
+								<a class="underline hover:decoration-orient-400" href="#benefits">Benefits</a>
+								<a class="underline hover:decoration-orient-400" href="#awards">Awards</a>
 							</div>
 						</section>
 					<?php endif; ?>
