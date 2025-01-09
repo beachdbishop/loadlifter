@@ -8,4 +8,4 @@
  * @license GPL-2.0+
  */
 
-require get_template_directory() . '/template-parts/content/content-card-flip-sm.php';
+require get_template_directory() . '/template-parts/content/content-card-ic-flip-sm.php';

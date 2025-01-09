@@ -11,6 +11,8 @@
 	place-content: center;
 	gap: 1rem;
 
+	list-style: none;
+
 
 	.card:hover .card-content,
 	.card:active .card-content,
@@ -24,6 +26,11 @@
   	line-height: 1.25rem;
 	}
 }
+
+.ind-card-flips:has(.card-ic-flip) {
+	--_card-size: 180px;
+}
+
 
 .ind-card-flips.is-style-default {
 	--_card-front-bg: theme(colors.neutral.100);
@@ -69,8 +76,18 @@
 	}
 }
 
+@media screen and (min-width: 768px) {
+	.ind-card-flips:has(.card-ic-flip) {
+		--_card-size: 190px;
+	}
+}
+
 @media screen and (min-width: 1024px) {
 	.ind-card-flips {
 		gap: 2rem;
+	}
+
+	.ind-card-flips:has(.card-ic-flip) {
+		--_card-size: 200px;
 	}
 }
