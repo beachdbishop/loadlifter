@@ -17,7 +17,7 @@ figcaption {
 .prose table th {
 	--tw-border-opacity: 1;
 	border-bottom-width: 2px;
-  border-color: rgb(212 212 212 / var(--tw-border-opacity));
+  border-color: rgb(212 212 212 / var(--tw-border-opacity)) /* neutral-300 */;
 	border-style: solid;
 }
 .prose tbody tr:nth-child(even) {
@@ -26,7 +26,7 @@ figcaption {
 .prose table td {
 	--tw-border-opacity: 1;
   border-bottom-width: 1px;
-  border-color: rgb(229 229 229 / var(--tw-border-opacity));
+  border-color: rgb(229 229 229 / var(--tw-border-opacity)) /* neutral-200 */;
 	border-style: solid;
 	border-top-width: 1px;
 }
@@ -48,12 +48,6 @@ figcaption {
 	text-align: right;
 }
 
-@media screen and (min-width: 1280px) {
-	table caption {
-		text-align: center;
-	}
-}
-
 [role="region"][aria-labelledby][tabindex] {
   overflow: auto;
   border: 0.1em solid theme(colors.neutral.300);
@@ -68,3 +62,36 @@ figcaption {
   margin: 0;
   border: none;
 }
+
+
+@media (prefers-color-scheme: dark) {
+
+	.prose thead {
+		background-color: theme(colors.neutral.950);
+		border-color: theme(colors.neutral.600);
+	}
+	.prose tfoot {
+		background-color: theme(colors.neutral.950);
+	}
+
+	.prose table th,
+	.prose table td {
+		border-color: theme(colors.neutral.600);
+	}
+
+	.prose tbody tr:nth-child(even) {
+		background: color-mix(in srgb, theme(colors.neutral.600), transparent 60%);
+	}
+
+	[role="region"][aria-labelledby][tabindex] {
+		border: 0.1em solid theme(colors.neutral.600);
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	table caption {
+		text-align: center;
+	}
+}
+
+
