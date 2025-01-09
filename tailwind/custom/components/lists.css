@@ -1,10 +1,34 @@
 /* Lists */
 
+dl {
+	margin: 0;
+	padding: 0;
+}
+
+dt {
+	font-family: theme(fontFamily.head);
+	font-size: theme(fontSize.xl);
+	font-weight: 600;
+}
+
+dd {
+	border-bottom-width: 1px;
+	border-color: theme(colors.neutral.200);
+	display: list-item;
+	list-style-type: square;
+	margin-left: 2rem;
+	margin-bottom: var(--wp--preset--spacing--20, 0.5rem);
+	padding-bottom: var(--wp--preset--spacing--20, 0.5rem);
+}
+
+dd::marker {
+	color: var(--wp--preset--color--brand-red-pale);
+}
+
 ol.is-style-default,
 ol:not([class]),
 ol.wp-block-list {
 	list-style: decimal;
-	/* list-style-position: inside; */
 	padding-inline-start: 1.5rem;
 
 	li::marker {
@@ -15,7 +39,6 @@ ul.is-style-default,
 ul:not([class]),
 ul.wp-block-list {
 	list-style: disc;
-	/* list-style-position: inside; */
 	padding-inline-start: 1.5rem;
 
 	li::marker {
@@ -98,8 +121,6 @@ ul.wp-block-list {
 	position: relative;
 }
 .is-style-list-checked li::before {
-	/* background-color: currentColor; */
-	/* background-size: cover; */
 	content: "";
 	display: inline-block;
 	height: 20px;

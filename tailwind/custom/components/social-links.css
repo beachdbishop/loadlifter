@@ -1,0 +1,25 @@
+.social-links a {
+	background-color: theme(colors.brand-blue);
+	color: inherit;
+}
+.social-links a:hover {
+	background-color: transparent;
+	color: theme(colors.brand-blue);
+}
+
+.footer-social .social-links a {
+	background-color: theme(colors.neutral.700);
+	color: theme(colors.neutral.300);
+}
+.footer-social .social-links a:hover {
+	background-color: transparent;
+	color: theme(colors.orient.400);
+}
+.on-darkbg .social-links a {
+	background-color: transparent;
+	color: theme(colors.neutral.300);
+}
+.on-darkbg .social-links a:hover {
+	color: theme(colors.orient.400);
+	background-color: theme(colors.neutral.700);
+}

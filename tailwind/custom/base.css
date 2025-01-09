@@ -221,27 +221,7 @@ blockquote p {
 	font-style: italic;
 }
 
-dl {
-	margin: 0;
-	padding: 0;
-}
 
-dt {
-	margin-top: 0.5rem;
-	font-weight: 700;
-}
-
-dd {
-	border-bottom-width: 1px;
-	border-color: rgb(245 245 245 / 1);
-	display: list-item;
-	list-style-type: square;
-	margin-left: 2rem;
-	padding-bottom: 0.5rem;
-}
-
-dd::marker {
-	color: var(--wp--preset--color--brand-red-pale);
 }
 
 
