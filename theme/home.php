@@ -17,9 +17,8 @@ get_header();
 
 	<main id="primary" class="py-4 bg-white dark:bg-neutral-900 md:py-6 lg:py-8">
 		<div class="px-2 md:container lg:px-[16px] ">
-			<?php if ( function_exists( 'bcn_display' ) ) { ?>
-				<div class="breadcrumbs  |  font-head text-neutral-600 pb-4  |  md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
-			<?php } ?>
+
+			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 			<header class="mb-8 md:grid md:grid-cols-2 md:gap-16">
 				<div class="">

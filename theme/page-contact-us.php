@@ -48,9 +48,7 @@ $hs_form_id 										= 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
 					<div class="px-2 md:container lg:px-[16px]">
 
 						<?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
-							<?php if ( function_exists( 'bcn_display' ) ) { ?>
-								<div class="breadcrumbs  |  font-head text-neutral-600 pb-4  |  md:pb-6 lg:pb-8 dark:text-neutral-400" typeof="BreadcrumbList" vocab="https://schema.org"><?php bcn_display(); ?></div>
-							<?php } ?>
+							<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 							<header class="mb-4">
 								<?php the_title( '<h1 class="entry-title  |  text-orient-800  |  dark:text-orient-400">', '</h1>' ); ?>
