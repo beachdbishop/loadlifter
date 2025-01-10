@@ -201,7 +201,9 @@ get_header();
 							<p>Reach out to our <a href="mailto:invoices@beachfleischman.com?subject=Client%20Center%20Help">Administrative Team</a>.</p>
 						</div>
 						<div class="">
-							<a href="https://www.loom.com/share/c6c8853fcc4f44cb817320012d4986ed?sid=28b785c0-e4d8-4c90-86b7-ee79dd41db70" target="_blank"><img class="max-w-xs  |  lg:max-w-2xl" src="http://peoplecptauthortest.local/wp-content/uploads/2024/08/20240822-loom-aiwyn-welcome-vid-jpg.avif" alt="screenshot of Aiwyn payments welcome video"></a>
+							<a href="https://www.loom.com/share/c6c8853fcc4f44cb817320012d4986ed?sid=28b785c0-e4d8-4c90-86b7-ee79dd41db70" target="_blank">
+								<img class="max-w-xs  |  lg:max-w-2xl" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,w_672/v1736480385/20240822-loom-aiwyn-welcome-vid_vnvelw.jpg" alt="screenshot of Aiwyn payments welcome video" width="672" height="363">
+							</a>
 						</div>
 					</div>
 
