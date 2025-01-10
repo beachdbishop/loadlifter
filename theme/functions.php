@@ -91,15 +91,6 @@ if ( ! function_exists( 'll_setup' ) ) :
 			)
 		);
 
-		unregister_nav_menu( 'll_submenu_assurance' );
-		unregister_nav_menu( 'll_submenu_tax' );
-		unregister_nav_menu( 'll_submenu_soar' );
-		unregister_nav_menu( 'll_submenu_industries' );
-		unregister_nav_menu( 'll_submenu_services_short' );
-		unregister_nav_menu( 'll_submenu_about' );
-		unregister_nav_menu( 'll_submenu_careers' );
-		unregister_nav_menu( 'll_submenu_legal'	);
-
 		register_nav_menus(
 			array(
 				'll_menu_col_1' => __( 'Footer Column 1', 'loadlifter' ),
