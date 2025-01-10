@@ -9,18 +9,11 @@
  * @package Load_Lifter
  */
 
-// $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
-// $featured_image_full = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-
 ?><!doctype html>
 <html <?php language_attributes(); ?> class="scroll-container">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php // if ( $featured_image ) {
-        // echo '<style>:root { --ll--page-feat-img: url(\'' . $featured_image[0] . '\'); } @media screen and (min-width: 768px) { :root { --ll--page-feat-img: url(\'' . $featured_image_full[0] . '\'); } }</style>';
-    // } ?>
-
 	<?php wp_head(); ?>
 </head>
 

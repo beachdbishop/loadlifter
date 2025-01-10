@@ -373,7 +373,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 				</div>
 
 				<?php if ( ( !is_front_page() ) && ( !is_page_template( LL_LP_TEMPLATES ) ) ) { ?>
-					<nav class="breadcrumbs | mt-4 font-head text-neutral-50 | sm:mt-0 print:mt-8 print:text-black" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org"><?php echo bcn_display( true ); ?></nav>
+					<nav class="breadcrumbs  |  mt-4 font-head text-neutral-50  |  sm:mt-0 print:mt-8 print:text-black" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org"><?php echo bcn_display( true ); ?></nav>
 				<?php } ?>
 			</div>
 		</div>

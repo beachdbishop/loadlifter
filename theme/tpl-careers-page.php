@@ -137,7 +137,7 @@ if ('local' === wp_get_environment_type()) {
 }
 ?>
 
-	<main id="primary" class="careers-page | bg-white dark:bg-neutral-900">
+	<main id="primary" class="careers-page  |  bg-white  |  dark:bg-neutral-900">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -146,13 +146,13 @@ if ('local' === wp_get_environment_type()) {
 
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-				<div class="px-2 md:container lg:px-[16px]">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
+				<div class="px-2  |  md:container lg:px-[16px]">
 
 					<?php if (is_page('career-opps')) : ?>
 					<?php //   the page above is purposefully 'wrong' because we decided not to include this page nav. We may bring it back in the future, though. ?>
 						<section class="full-bleed ">
-							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm lg:gap-4 md:container lg:px-[16px]">
+							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm  |  lg:gap-4 md:container lg:px-[16px]">
 								<span>On this page:</span>
 								<a class="underline hover:decoration-orient-400" href="#why">Why BeachFleischman?</a>
 								<a class="underline hover:decoration-orient-400" href="#opportunities">Opportunities</a>
@@ -172,14 +172,14 @@ if ('local' === wp_get_environment_type()) {
 
 					<?php if (is_page('career-opportunities')) : ?>
 					<?php //   O P P O R T U N I T I E S   ?>
-						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-gray-pale via-neutral-100 to-white dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
-							<div class="px-2 md:container lg:px-[16px]">
+						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-gray-pale via-neutral-100 to-white  |  dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
+							<div class="px-2  |  md:container lg:px-[16px]">
 								<h2 class="mb-4 font-head">Opportunities</h2>
-								<ul class="list-none grid gap-4 text-neutral-600 md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
+								<ul class="list-none grid gap-4 text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
 
 									<?php foreach( $cards_opps as $card ) {
-										echo '<li class="card-' . $card['slug'] . ' | group flex flex-col relative border-transparent border-2 shadow-orient-700 focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
-											<div class="card-text | p-4 order-1 bg-white flex justify-between | dark:bg-neutral-800 dark:text-neutral-300">
+										echo '<li class="card-' . $card['slug'] . '  |  group flex flex-col relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
+											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300">
 												<p class="inline font-head font-semibold leading-none text-2xl">
 													<a class="group-hover:text-brand-blue" href="' . $card['link'] . '">
 														' . $card['label'] . '
@@ -191,12 +191,12 @@ if ('local' === wp_get_environment_type()) {
 													</a>
 												</p>
 											</div>
-											<div class="card-img | bg-neutral-500 relative overflow-hidden">
+											<div class="card-img  |  bg-neutral-500 relative overflow-hidden">
 												<a href="' . $card['link'] . '">
 													<img
 														alt="' . $card['img-alt'] . '"
 														src="' . $card['img-wide'] . '"
-														class="min-h-60 w-full object-cover transition duration-200 ease-in-out group-hover:scale-110"
+														class="min-h-60 w-full object-cover transition duration-200 ease-in-out  |  group-hover:scale-110"
 													/>
 												</a>
 											</div>
@@ -211,7 +211,7 @@ if ('local' === wp_get_environment_type()) {
 					<?php if ( is_page('internships') ) { ?>
 					<?php //   E X P E C T   &   F U T U R E   ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose ">
-							<div class="px-2 md:container lg:px-[16px]">
+							<div class="px-2  |  md:container lg:px-[16px]">
 								<h2>What you can expect</h2>
 								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
@@ -222,7 +222,7 @@ if ('local' === wp_get_environment_type()) {
 						</section>
 					<?php } else { ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose">
-							<div class="px-2 md:container lg:px-[16px]">
+							<div class="px-2  |  md:container lg:px-[16px]">
 								<h2>What you can expect</h2>
 								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
@@ -257,22 +257,22 @@ if ('local' === wp_get_environment_type()) {
 						<div class="flex flex-col px-2 space-y-4 md:container lg:px-[16px]">
 							<h2 class="">Culture</h2>
 
-							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark">
-								<div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-26 lg:py-24">
-									<div class="text-center sm:text-left">
-										<h4 class="font-light text-brand-blue-pale"><a href="/about/women-rise/" class="no-underline hover:underline">Women RISE</a></h4>
-										<p class="hidden max-w-lg md:my-4 md:block md:text-base md:leading-relaxed text-neutral-100">Women R.I.S.E. is a committee of employees dedicated to building and sustaining a collaborative and diverse workplace that strategically supports the development and advancement of women. We do this by creating and maintaining an environment that recognizes, cultivates and utilizes the talent of female employees.</p>
-										<p><a class="text-brand-blue-faint hover:text-brand-red-pale" href="/about/women-rise/">Learn more about Women RISE <i class="fa-regular fa-arrow-right"></i></a></p>
+							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark text-neutral-100">
+								<div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40  |  md:p-12 lg:px-26 lg:py-24">
+									<div class="text-center  |  sm:text-left">
+										<h4 class="text-orient-400">Women RISE</h4>
+										<p class="hidden max-w-lg  |  md:my-4 md:block md:text-base md:leading-relaxed">Women R.I.S.E. is a committee of employees dedicated to building and sustaining a collaborative and diverse workplace that strategically supports the development and advancement of women. We do this by creating and maintaining an environment that recognizes, cultivates and utilizes the talent of female employees.</p>
+										<p><a class="text-orient-400 hover:text-mahogany-300" href="/about/women-rise/">Learn more about Women RISE <i class="fa-regular fa-arrow-right"></i></a></p>
 									</div>
 								</div>
 							</div>
 
-							<div class="block-cover-idea overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark">
-								<div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40 md:p-12 lg:px-26 lg:py-24">
+							<div class="block-cover-idea overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark text-neutral-100">
+								<div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40  |  md:p-12 lg:px-26 lg:py-24">
 									<div class="text-center sm:text-left">
-										<h4 class="font-light text-brand-blue-pale"><a href="/about/idea-committee/" class="no-underline hover:underline">IDEA Committee</a></h4>
-										<p class="hidden max-w-lg md:my-4 md:block md:text-base md:leading-relaxed text-neutral-100">At BeachFleischman, we intentionally cultivate a diverse, equitable, and inclusive environment where each person feels welcomed, accepted, empowered, valued, respected, and safe. This not only allows each one of us to achieve personal and professional success, but also allows us to better know and serve our clients and communities.</p>
-										<p><a class="text-brand-blue-faint hover:text-brand-red-pale" href="/about/idea-committee/">Learn more about our IDEA committee <i class="fa-regular fa-arrow-right"></i></a></p>
+										<h4 class="text-orient-400">IDEA Committee</h4>
+										<p class="hidden max-w-lg  |  md:my-4 md:block md:text-base md:leading-relaxed">At BeachFleischman, we intentionally cultivate a diverse, equitable, and inclusive environment where each person feels welcomed, accepted, empowered, valued, respected, and safe. This not only allows each one of us to achieve personal and professional success, but also allows us to better know and serve our clients and communities.</p>
+										<p><a class="text-orient-400 hover:text-mahogany-300" href="/about/idea-committee/">Learn more about our IDEA committee <i class="fa-regular fa-arrow-right"></i></a></p>
 									</div>
 								</div>
 							</div>

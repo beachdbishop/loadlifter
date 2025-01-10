@@ -43,20 +43,20 @@ $peopleQuery = new WP_Query( $args );
 
 ?>
 
-	<main id="primary" class="page-people | bg-white dark:bg-neutral-900">
+	<main id="primary" class="page-people  |  bg-white  |  dark:bg-neutral-900">
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 lg:pt-8 lg:pb-12' ); ?>>
-			<div class="px-2 md:container lg:px-[16px]">
+		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-8' ); ?>>
+			<div class="px-2  |  md:container lg:px-[16px]">
 				<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 				<?php if ( $peopleQuery->have_posts() ) : ?>
 
 					<header>
-						<h2 class="entry-title text-orient-800  |  dark:text-orient-400">Leadership Team</h2>
+						<h1 class="entry-title text-orient-800  |  dark:text-orient-400">Leadership Team</h1>
 					</header>
 
-					<div class="grid grid-cols-1 mt-4 md:grid-cols-3 lg:mt-8 lg:grid-cols-4">
-						<div class="col-span-1 p-2 border-2 border-solid rounded-lg lg:rounded-xl border-brand-blue md:p-4">
+					<div class="grid grid-cols-1 mt-4  |  md:grid-cols-3 lg:mt-8 lg:grid-cols-4">
+						<div class="col-span-1 p-2 border-2 border-solid border-brand-blue rounded-lg  |  lg:rounded-xl md:p-4">
 							<?php
 							wpgb_render_facet( ['id' => 12, 'grid' => 'wpgb-content-1' ] ); // Autocomplete
 							// wpgb_render_facet( ['id' => 6, 'grid' => 'wpgb-content-1' ] ); // Search
@@ -69,8 +69,8 @@ $peopleQuery = new WP_Query( $args );
 							?>
 						</div>
 
-						<div class="col-span-1 md:col-span-2 lg:col-span-3">
-							<div class="wpgb-content-1 | grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 ">
+						<div class="col-span-1  |  md:col-span-2 lg:col-span-3">
+							<div class="wpgb-content-1  |  grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 ">
 								<?php /* Start the Loop */
 								while ( $peopleQuery->have_posts() ) :
 									$peopleQuery->the_post();

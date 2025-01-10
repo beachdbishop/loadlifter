@@ -33,7 +33,7 @@ $page_city                      = get_field( 'll_page_city' );
 $page_state                     = get_field( 'll_page_state' );
 ?>
 
-	<main id="primary" class="landing-page | bg-white dark:bg-neutral-900">
+	<main id="primary" class="landing-page  |  bg-white dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -46,14 +46,14 @@ $page_state                     = get_field( 'll_page_state' );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
-				<div class="px-2 md:container lg:px-[16px]">
-					<div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
+				<div class="px-2  |  md:container lg:px-[16px]">
+					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
-						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
+						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 							<?php the_content(); ?>
 						</div>
 
-						<div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
+						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
 							<?php
 							if ( $page_below_fold_content ) :
 								echo do_shortcode( $page_below_fold_content );
@@ -62,7 +62,7 @@ $page_state                     = get_field( 'll_page_state' );
 
 							<?php
 							if ( $page_gmap ) :
-								echo '<section class="w-screen ml-[50%] -translate-x-1/2 relative h-[600px] overflow-hidden bg-brand-neutral-200 print:hidden">';
+								echo '<section class="w-screen ml-[50%] -translate-x-1/2 relative h-[600px] overflow-hidden bg-brand-neutral-200  |  print:hidden">';
 									echo '<div class="absolute inset-0">';
 										echo '<iframe src="' . $page_gmap . '" width="100%" height="600px" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of ' . $page_city . ', ' . $page_state . '"></iframe>';
 									echo '</div>';
@@ -73,7 +73,7 @@ $page_state                     = get_field( 'll_page_state' );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">';
+								echo '<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8  |  lg:mb-16">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>

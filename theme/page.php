@@ -29,15 +29,9 @@ if ( get_field( 'll_custom_subheader' ) ) {
 }
 
 $page_excerpt                   = get_the_excerpt();
-// $page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-// if ( $page_featimg == true ) {
-// 	$page_featimg_url           = $page_featimg[0];
-// } else {
-// 	$page_featimg_url           = '';
-// }
 ?>
 
-	<main id="primary" class="bg-white dark:bg-neutral-900">
+	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -45,12 +39,12 @@ $page_excerpt                   = get_the_excerpt();
 			// get_template_part( 'template-parts/content/content', 'page' );
 			?>
 
-            <?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-                echo ll_better_page_hero( $page_title, $page_message );
-            endif; ?>
+			<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
+					echo ll_better_page_hero( $page_title, $page_message );
+			endif; ?>
 
-            <article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-4 md:py-6 lg:py-8' ); } ?>>
-                <div class="px-2 md:container lg:px-[16px]">
+			<article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-8' ); } ?>>
+				<div class="px-2  |  md:container lg:px-[16px]">
 
 					<?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
 						<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
@@ -60,28 +54,28 @@ $page_excerpt                   = get_the_excerpt();
 						</header>
 					<?php } ?>
 
-                    <div <?php ll_content_class( 'entry-content' ); ?>>
+					<div <?php ll_content_class( 'entry-content' ); ?>>
 
-                        <?php the_content(); ?>
+						<?php the_content(); ?>
 
-                        <div class="clear-both">&nbsp;</div>
+						<div class="clear-both">&nbsp;</div>
 
-                        <?php
-                        wp_link_pages(
-                            array(
-                                'before' => '<div>' . esc_html__( 'Pages:', 'loadlifter' ),
-                                'after'  => '</div>',
-                            )
-                        );
-                        ?>
-                    </div>
+						<?php
+						wp_link_pages(
+							array(
+								'before' => '<div>' . esc_html__( 'Pages:', 'loadlifter' ),
+								'after'  => '</div>',
+							)
+						);
+						?>
+					</div>
 
-                    <?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
+					<?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
 
-                </div>
-            </article>
+				</div>
+			</article>
 
-            <?php
+			<?php
 		endwhile; // End of the loop.
 		?>
 

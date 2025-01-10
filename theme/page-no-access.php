@@ -36,7 +36,7 @@ if ( $page_featimg == true ) {
 get_header();
 ?>
 
-<main id="primary" class="bg-white dark:bg-neutral-900">
+<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 	<?php
 	while (have_posts()) :
@@ -46,13 +46,13 @@ get_header();
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-			<div class="px-2 md:container lg:px-[16px]">
+			<div class="px-2  |  md:container lg:px-[16px]">
 
-				<div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
+				<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
-					<div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
+					<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 
-						<div class="prose lg:prose-xl">
+						<div class="prose  |  lg:prose-xl">
 							<?php the_content(); ?>
 						</div>
 

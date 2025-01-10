@@ -51,27 +51,27 @@ if ( $author_org === 'BeachFleischman' ) {
 
 <main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
-	<div class="px-2 md:container lg:px-[16px]">
+	<div class="px-2  |  md:container lg:px-[16px]">
 		<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
-		<div class="peepgrid peep-<?php echo $peep_class; ?> | md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
+		<div class="peepgrid peep-<?php echo $peep_class; ?>  |  md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
-			<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0 md:order-2">
-			<?php if ( $author_thumbnail ) { ?>
-					<div class="headshot | max-w-[380px] mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>" role="img">
-							<div class="aspect-headshot">&nbsp;</div>
+			<div class="peepgrid-a  |  pb-8 md:pt-2 md:pb-0 md:order-2">
+				<?php if ( $author_thumbnail ) { ?>
+					<div class="headshot  |  max-w-[380px] mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>" role="img">
+						<div class="aspect-headshot">&nbsp;</div>
 					</div>
-			<?php } ?>
+				<?php } ?>
 			</div>
 
-			<div class="peepgrid-b | md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
+			<div class="peepgrid-b  |  md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
 				<header class="mb-4">
-					<h1 class="entry-title | mb-0 text-brand-blue dark:text-orient-600">Articles by <span class="text-brand-red"><?php echo $author_name; ?></span></h1>
+					<h1 class="entry-title  |  mb-0 text-orient-800  |  dark:text-orient-400">Articles by <span class="text-brand-red font-semibold"><?php echo $author_name; ?></span></h1>
 					<?php if (!empty($author_desigs)) {
 						echo sprintf('<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', $author_desigs);
 					} ?>
 					<?php if (!empty($author_title)) {
-						echo sprintf('<h2 class="text-neutral-900 dark:text-neutral-200">%1$s</h2>', $author_title);
+						echo sprintf('<h2 class="text-neutral-900  |  dark:text-neutral-200">%1$s</h2>', $author_title);
 					} ?>
 
 				<?php if ( $peep_class === 'internal' ) { ?>
@@ -88,7 +88,7 @@ if ( $author_org === 'BeachFleischman' ) {
 				</header>
 
 				<?php /* User description or fallback */ ?>
-				<div class="mb-4 prose dark:text-neutral-300 lg:prose-xl lg:mb-8">
+				<div class="mb-4 prose  |  dark:text-neutral-300 lg:prose-xl lg:mb-8">
 				<?php if (!empty($author_desc)) {
 					echo '<p>' . $author_desc . '</p>';
 				} else {
@@ -96,13 +96,15 @@ if ( $author_org === 'BeachFleischman' ) {
 				}
 				?>
 				<?php if ( (!empty($author_url)) && ( $peep_class === 'internal' ) ) {
-					echo '<p class="text-right"><a class="inline-flex items-center text-brand-red-dark hover:text-brand-red" href="' . esc_attr($author_url) . '">Read more about ' . esc_html($author_name) . ' <i class="ml-1 fa-regular fa-arrow-right"></i></a></p>';
+					echo '<p class="text-right">
+						<a class="inline-flex items-center text-brand-red-dark  |  hover:text-brand-red dark:text-brand-red dark:hover:text-brand-pale" href="' . esc_attr($author_url) . '">Read more about ' . esc_html($author_name) . ' <i class="ml-1 fa-regular fa-arrow-right"></i></a>
+					</p>';
 				} ?>
 				</div>
 
 				<?php if (have_posts()) : ?>
 
-					<ul class="grid grid-cols-1 gap-4 lg:grid-cols-3 lg:gap-8">
+					<ul class="grid grid-cols-1 gap-4  |  lg:grid-cols-3 lg:gap-8">
 						<?php /* Start the Loop */
 						while (have_posts()) :
 							the_post();
@@ -129,7 +131,7 @@ if ( $author_org === 'BeachFleischman' ) {
 				endif; ?>
 			</div>
 
-			<aside class="peepgrid-c | md:mt-0 md:order-3">
+			<aside class="peepgrid-c  |  md:mt-0 md:order-3">
 				<?php /* Featured industry experience */ ?>
 				<?php if ($author_industries) : ?>
 					<h3 class="font-normal text-brand-blue dark:text-orient-600"><?php esc_html_e('Industry Experience', 'rttheme18'); ?></h3>
@@ -143,7 +145,7 @@ if ( $author_org === 'BeachFleischman' ) {
 							<span class="!mt-0 fa-li text-brand-red">
 								<i class="fa-regular <?php echo $ind_icon; ?>"></i>
 							</span>
-							<a class="underline decoration-neutral-400 hover:underline hover:decoration-brand-red" href="<?php echo esc_url( $ind_permalink ); ?>"><?php echo esc_html( $ind_title ); ?></a>
+							<a class="underline decoration-neutral-400  |  hover:underline hover:decoration-brand-red" href="<?php echo esc_url( $ind_permalink ); ?>"><?php echo esc_html( $ind_title ); ?></a>
 						</li>
 					<?php endforeach; ?>
 					</ul>
@@ -160,7 +162,7 @@ if ( $author_org === 'BeachFleischman' ) {
 							<span class="!mt-0 fa-li text-neutral-500">
 								<i class="fa-regular fa-memo-circle-info"></i>
 							</span>
-							<a class="underline decoration-neutral-400 hover:underline hover:decoration-brand-blue" href="<?php echo esc_url( $svc_permalink ); ?>"><?php echo esc_html( $svc_title ); ?></a>
+							<a class="underline decoration-neutral-400  |  hover:underline hover:decoration-brand-blue" href="<?php echo esc_url( $svc_permalink ); ?>"><?php echo esc_html( $svc_title ); ?></a>
 						</li>
 					<?php endforeach; ?>
 					</ul>

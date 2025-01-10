@@ -72,11 +72,11 @@ $cards_about = [
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="px-2 md:container lg:px-[16px] print:px-0">
+				<div class="px-2  |  md:container lg:px-[16px] print:px-0">
 
-					<div class="mt-4 ll-page-grid | md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16 print:mt-0 print:gap-4">
+					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16 print:mt-0 print:gap-4">
 
-						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>
+						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 
 							<?php if ( is_page('temporarilydisablingthischeck--about') ) : ?>
 								<?php // Just before launch, we decided to omit this display on the About Us page. Keeping the code just in case... ?>
@@ -152,20 +152,19 @@ $cards_about = [
 
 						</div>
 
-						<div class="my-16 ll-page-grid-area-b md:my-0 md:col-span-3">
+						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
 
 							<?php if ( is_page( 'about' ) ) : ?>
 								<h3 class="mb-6">Awards and recognition</h3>
 								<p>We are proud of our unique workplace culture.</p>
 								<?php echo do_shortcode( '[awardlogos /]' ); ?>
-
 								<p>&nbsp;</p>
 							<?php endif; ?>
 
 						</div>
 
 						<div class="ll-page-grid-area-c">
-							<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">
+							<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8  |  lg:mb-16">
 								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 							</div>
 						</div>

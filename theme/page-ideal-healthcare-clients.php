@@ -141,7 +141,7 @@ $shared_values = [
 ];
 ?>
 
-<main id="primary" class="bg-white dark:bg-neutral-900">
+<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 	<?php
 	while (have_posts()) :
@@ -150,8 +150,8 @@ $shared_values = [
 
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-			<div class="px-2 md:container lg:px-[16px]">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
+			<div class="px-2  |  md:container lg:px-[16px]">
 
 				<div <?php ll_content_class( 'entry-content ' ); ?>>
 					<?php the_content(); ?>
@@ -163,7 +163,7 @@ $shared_values = [
 						</details>
 					</div>
 
-					<section class="betsy mt-4 mb-8 | print:hidden">
+					<section class="betsy mt-4 mb-8  |  print:hidden">
 						<div class="not-prose">
 							<h2 class="-mb-4 text-orient-800  |  dark:text-orient-400 md:-mb-8">Who we serve</h2>
 
@@ -172,7 +172,7 @@ $shared_values = [
 								<button type="button" id="betsy-gslider-next" class="betsy-gslider-next" aria-label="Next Slide"><i class="fa-solid fa-angle-right fa-lg"></i></button>
 							</div>
 
-							<div class="betsy-gslider | lg:max-w-5xl lg:mx-auto">
+							<div class="betsy-gslider  |  lg:max-w-5xl lg:mx-auto">
 								<?php /* Start the Client Type slider loop */
 								foreach ( $client_types as $type ) {
 									// get_template_part( 'template-parts/content/content', 'slide-blah' );
@@ -199,7 +199,7 @@ $shared_values = [
 					</section>
 
 
-					<section class="full-bleed ll-equal-vert-padding not-prose bg-orient-50 | dark:bg-neutral-950">
+					<section class="full-bleed ll-equal-vert-padding not-prose bg-orient-50  |  dark:bg-neutral-950">
 						<div class="px-2 lg:px-[16px]">
 							<h2 class="mb-2 text-brand-blue-dark dark:text-neutral-200 ">Shared Values</h2>
 							<p class="max-w-5xl">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
@@ -207,10 +207,10 @@ $shared_values = [
 								<?php
 								foreach ( $shared_values as $value ) {
 									echo '<div class="card-' . $value['icon'] . '">
-										<div class="card | relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-size: 288px; --_card-back-bg: #092f42">
-											<div class="card-content | absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
-												<div class="card-front | text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-													<div class="card-icon | text-[--_card-front-icon]">
+										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-size: 288px; --_card-back-bg: #092f42">
+											<div class="card-content  |  absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
+												<div class="card-front  |  text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+													<div class="card-icon  |  text-[--_card-front-icon]">
 														<span class="fa-stack fa-2x">
 															<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
 															<i class="fa-duotone fa-' . $value['icon'] . ' fa-stack-1x "></i>
@@ -218,7 +218,7 @@ $shared_values = [
 													</div>
 													<h3 class="mt-2 font-light leading-none text-current ">' . $value['label'] . '</h3>
 												</div>
-												<div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+												<div class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]">
 													<h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $value['label'] . '</h6>
 													<p class="text-shadow">' . $value['desc'] . '</p>
 												</div>
@@ -234,11 +234,11 @@ $shared_values = [
 
 
 					<section class="full-bleed ll-equal-vert-padding not-prose break-inside-avoid print:hidden">
-						<div class="container px-2 lg:px-[16px]">
+						<div class="container px-2  |  lg:px-[16px]">
 							<div>
 								<h2 class="mb-2 text-brand-red"><a name="partner"></a>Partner with BeachFleischman today</h2>
 								<p class="mb-2 max-w-5xl">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
-								<p class="hidden print:mt-8 print:block">Email info@beachfleischman.com</p>
+								<p class="hidden  |  print:mt-8 print:block">Email info@beachfleischman.com</p>
 								<div id="contact" class="container-contact-form not-prose">
 									<div class="hbspt-form max-w-5xl" id="llhsform"></div>
 									<script>

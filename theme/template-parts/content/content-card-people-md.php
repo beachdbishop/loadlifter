@@ -28,7 +28,7 @@ $peep_level = get_field( 'll_people_level' );
 	<header>
 		<?php
 		$title_classes = ( $peep_level['value'] === '800' ) ? 'group-hover:text-brand-gray-dark' : 'group-hover:text-brand-red';
-		echo sprintf( '<h3 class="font-bold leading-none text-center %1$s"><a href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
+		echo sprintf( '<h3 class="font-bold leading-none text-center %1$s"><a class="" href="%3$s" rel="bookmark">%2$s</a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
 		?>
 	</header>
 

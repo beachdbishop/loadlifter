@@ -33,7 +33,7 @@ $page_state                     = get_field( 'll_page_state' );
 $page_below_fold								= get_field( 'll_below_fold' );
 ?>
 
-	<main id="primary" class="landing-page lp-cyber | bg-white dark:bg-neutral-900">
+	<main id="primary" class="landing-page lp-cyber  |  bg-white  |  dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -46,7 +46,7 @@ $page_below_fold								= get_field( 'll_below_fold' );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp lp-cyber' ); ?>>
-				<div class="px-2 md:container lg:px-[16px]">
+				<div class="px-2  |  md:container lg:px-[16px]">
 					<div class="mt-4 ll-page-grid md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a md:col-span-2' ); ?>>

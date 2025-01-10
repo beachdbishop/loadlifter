@@ -93,28 +93,28 @@ $doclinks = [
 get_header();
 ?>
 
-<main id="primary" class="bg-white dark:bg-neutral-900">
+<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 	<?php
 	while (have_posts()) :
 		the_post();
-	?>
+		?>
 
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-			<div class="px-2 md:container lg:px-[16px]">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
+			<div class="px-2  |  md:container lg:px-[16px]">
 
-				<div <?php ll_content_class( 'entry-conten  not-prose' ); ?>>
+				<div class="not-prose pb-8  |  lg:pb-16">
 					<?php the_content(); ?>
 
-					<div class="my-8 flex flex-col gap-4 md:flex-row md:flex-nowrap md:place-items-center md:gap-8 lg:gap-16">
+					<div class="my-8 flex flex-col gap-4  |  md:flex-row md:flex-nowrap md:place-items-center md:gap-8 lg:gap-16">
 						<div class="grow space-y-4">
 							<h2 class="text-orient-800  |  dark:text-orient-400">Make a payment</h2>
 							<p>We've always been a champion of high-quality client service &mdash; and convenience is a big part of that standard. That's why we offer multiple easy online payment options via our secure payment portal powered by Aiwyn.</p>
 						</div>
 						<div class="shrink-0 ">
-							<a class="inline-block px-6 py-3 rounded-lg border-2 border-solid border-brand-red-dark text-center text-white bg-brand-red-dark font-head font-semibold text-3xl | hover:border-brand-red hover:bg-brand-red dark:border-brand-blue-pale dark:text-neutral-800 dark:bg-brand-blue-pale dark:hover:border-brand-blue dark:hover:bg-brand-blue dark:hover:text-white" href="https://beachfleischman.aiwyn.ai/client-portal">Make a payment</a>
+							<a class="inline-block px-6 py-3 rounded-lg border-2 border-solid border-brand-red-dark text-center text-white bg-brand-red-dark font-head font-semibold text-3xl  |  hover:border-brand-red hover:bg-brand-red dark:border-orient-400 dark:text-neutral-800 dark:bg-orient-400 dark:hover:border-brand-blue dark:hover:bg-brand-blue dark:hover:text-white" href="https://beachfleischman.aiwyn.ai/client-portal">Make a payment</a>
 						</div>
 					</div>
 
@@ -129,7 +129,7 @@ get_header();
 											<div class="card-front  |  text-center bg-neutral-50 border border-neutral-100 text-brand-blue absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4  |  group-hover:bg-white dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:group-hover:bg-neutral-900">
 												<div class="card-icon  |  text-brand-blue  |  dark:text-orient-400">
 													<span class="fa-stack fa-2x">
-														<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
+														<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
 														<i class="fa-solid ' . $link['icon'] . ' fa-stack-1x "></i>
 													</span>
 												</div>
@@ -148,18 +148,17 @@ get_header();
 						<div class="prose space-y-4">
 							<h2 class="text-orient-800  |  dark:text-orient-400">Aiwyn Client Intro Video</h2>
 							<p>To create your account, you will need an email address, password, your client ID, and Invoice number, which can be found on any BeachFleischman invoice. Here's a step-by-step video to help you.</p>
-							<h4 class="text-brand-blue-dark font-semibold dark:text-neutral-100">Need more help?</h4>
-							<p>Reach out to our
-					<a class="underline decoration-brand-blue" href="mailto:invoices@beachfleischman.com?subject=Client%20Center%20Help">Administrative Team</a>.</p>
+							<h4 class="text-brand-blue-dark font-semibold  |  dark:text-neutral-100">Need more help?</h4>
+							<p>Reach out to our <a href="mailto:invoices@beachfleischman.com?subject=Client%20Center%20Help">Administrative Team</a>.</p>
 						</div>
 						<div class="">
-							<a href="https://www.loom.com/share/c6c8853fcc4f44cb817320012d4986ed?sid=28b785c0-e4d8-4c90-86b7-ee79dd41db70" target="_blank"><img class="max-w-xs lg:max-w-2xl" src="http://peoplecptauthortest.local/wp-content/uploads/2024/08/20240822-loom-aiwyn-welcome-vid-jpg.avif" alt="screenshot of Aiwyn payments welcome video"></a>
+							<a href="https://www.loom.com/share/c6c8853fcc4f44cb817320012d4986ed?sid=28b785c0-e4d8-4c90-86b7-ee79dd41db70" target="_blank"><img class="max-w-xs  |  lg:max-w-2xl" src="http://peoplecptauthortest.local/wp-content/uploads/2024/08/20240822-loom-aiwyn-welcome-vid-jpg.avif" alt="screenshot of Aiwyn payments welcome video"></a>
 						</div>
 					</div>
 
-					<div class="mt-16 border-t-4 border-solid border-neutral-300 h-16 lg:mt-20 lg:h-20">&nbsp;</div>
+					<div class="mt-16 border-t-4 border-solid border-neutral-300 h-16  |  lg:mt-20 lg:h-20">&nbsp;</div>
 
-					<div class="grid gap-16 mb-8 lg:mb-16 lg:grid-cols-2 lg:grid-rows-2">
+					<div class="grid gap-16 mb-12  |  lg:mb-24 lg:grid-cols-2 lg:grid-rows-2">
 
 						<div class="p-2 md:p-0">
 							<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png" alt="logo: SafeSend Returns" width="340" height="90">
@@ -209,10 +208,10 @@ get_header();
 
 					</div>
 
-					<div class="llcallout is-style-success | mb-8 lg:mb-16 not-prose bg-white border-2 rounded-br-2xl shadow-md dark:bg-neutral-800">
+					<div class="llcallout  |  is-style-success not-prose bg-white border-2 rounded-br-2xl shadow-md  |  dark:bg-neutral-800 ">
 						<p class="p-2 font-semibold llcallout-title "><i class="fa-regular fa-envelope mr-1"></i> Note</p>
-						<div class="acf-innerblocks-container">
-							<p>For assistance with any of the technology platforms listed above, <a class="underline hover:no-underline" href="mailto:clientsupport@beachfleischman.com">email Client Support</a>.</p>
+						<div class="acf-innerblocks-container prose">
+							<p>For assistance with any of the technology platforms listed above, <a href="mailto:clientsupport@beachfleischman.com">email Client Support</a>.</p>
 						</div>
 					</div>
 

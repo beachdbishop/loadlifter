@@ -24,7 +24,7 @@ $menuItemsPrimary = [
 					<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
 						<a href="/tax/">Tax</a>
 					</p>
-					[listmenu menu="submenu Tax" container_class="hidden submenu mb-2 md:block" /]
+					[listmenu menu="submenu Tax" container_class="hidden submenu mb-2  |  md:block" /]
 				</li>
 				<li class="lg:py-4">
 					<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
@@ -33,7 +33,7 @@ $menuItemsPrimary = [
 							<span class="inline tracking-tight md:hidden">Strategic Operations &amp; Advisory Resources</span>
 						</a>
 					</p>
-					[listmenu menu="submenu SOAR" container_class="hidden submenu mb-2 md:block" /]
+					[listmenu menu="submenu SOAR" container_class="hidden submenu mb-2  |  md:block" /]
 				</li>
 			</ul>',
 	],
@@ -41,7 +41,7 @@ $menuItemsPrimary = [
 		"label" => 'Industries',
 		"url" => '/industries/',
 		"hasChildren" => true,
-			"submenuContent" => '<ul>
+			"submenuContent" => '<ul class="pl-0">
 				<li><a href="/industries/cannabis-phoenix-tucson-arizona-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-cannabis"></i> Cannabis</a></li>
 				<li><a href="/industries/construction-phoenix-tucson-arizona-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-helmet-safety"></i> Construction</a></li>
 				<li><a href="/industries/financial-professional-services/"><i class="mr-1 fa-duotone fa-fw fa-briefcase"></i> Financial &amp; Professional Services</a></li>
@@ -93,10 +93,10 @@ $menuItemsSecondary = [
 <?php //   P R E H E A D E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
-<header id="masthead" class="nav-header | bg-white dark:bg-neutral-900 dark:text-neutral-100 print:bg-white print:shadow-none sticky top-0 z-[39] ">
-	<div role="navigation" class="flex items-center justify-between px-2 py-3 md:container lg:px-[16px]">
+<header id="masthead" class="nav-header  |  bg-white  |  dark:bg-neutral-900 dark:text-neutral-100 print:bg-white print:shadow-none sticky top-0 z-[39] ">
+	<div role="navigation" class="flex items-center justify-between px-2 py-3  |  md:container lg:px-[16px]">
 
-		<div class="w-[240px] lg:w-[320px] order-first">
+		<div class="w-[240px] order-first  |  lg:w-[320px]">
 			<a
 				class="focus:outline-brand-blue/75 dark:focus:outline-orient-400/75 focus:outline focus:outline-offset-4"
 				href="<?php bloginfo('url'); ?>"
@@ -111,20 +111,20 @@ $menuItemsSecondary = [
 			</a>
 		</div>
 
-		<div class="nav-ctrls | flex flex-row justify-end order-last print:hidden">
-			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-brand-blue-faint dark:focus:bg-neutral-800 dark:focus:text-brand-blue-pale" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
+		<div class="nav-ctrls  |  flex flex-row justify-end order-last  |  print:hidden">
+			<button class="toggle-mobile-nav  |  ml-2 p-2 border-2 border-neutral-500 rounded cursor-pointer  |  sm:rounded-lg md:hidden focus:bg-orient-200 dark:focus:bg-neutral-800 dark:focus:text-orient-400" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>
 			</button>
 		</div>
 
-		<nav class="menus-container | md:flex md:flex-col md:grow md:order-1  print:hidden" id="primary-navigation" aria-label="Main Navigation">
-			<ul class="disclosure-nav | list-none font-head font-semibold order-first md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-6 ">
+		<nav class="menus-container  |  md:flex md:flex-col md:grow md:order-1 print:hidden" id="primary-navigation" aria-label="Main Navigation">
+			<ul class="disclosure-nav  |  list-none font-head font-semibold order-first  |  md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-6 ">
 				<?php
 				foreach ( $menuItemsPrimary as $primary ) {
 					if ( $primary['hasChildren'] === true ) {
 						$isMega = ( $primary['label'] === 'Services' ) ? ' mega' : '';
 						echo sprintf( '<li>
-								<a class="main-link md:text-lg lg:text-2xl underline-offset-2" href="%1$s">%2$s</a>
+								<a class="main-link  |  underline-offset-2  |  md:text-lg lg:text-2xl" href="%1$s">%2$s</a>
 								<button type="button" aria-expanded="false" aria-controls="id_%3$s_menu" aria-label="%2$s"></button>
 								<div id="id_%3$s_menu" class="dropmenu %5$s" style="display:none">%4$s</div>
 							</li>',
@@ -135,16 +135,16 @@ $menuItemsSecondary = [
 							$isMega,
 						);
 					} else {
-						echo '<li><a class="main-link md:text-lg lg:text-2xl underline-offset-2" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
+						echo '<li><a class="main-link  |  underline-offset-2  |  md:text-lg lg:text-2xl" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
 					}
 				}
 				?>
 			</ul>
 
-			<ul class="secondary-nav | font-head md:text-lg text-neutral-700 md:order-first md:justify-end flex flex-col md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
+			<ul class="secondary-nav  |  font-head flex flex-col text-neutral-700  |  md:text-lg md:order-first md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
 				<?php
 				foreach ( $menuItemsSecondary as $secondary ) {
-					echo '<li class="p-2 md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font hover:underline hover:text-brand-blue hover:decoration-neutral-400 dark:hover:text-neutral-100" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
+					echo '<li class="p-2  |  md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font  |  hover:underline hover:text-brand-blue hover:decoration-neutral-400 dark:hover:text-neutral-100" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
 				}
 				?>
 				<li class="md:max-w-[200px] lg:max-w-fit"><?php get_search_form(); ?></li>

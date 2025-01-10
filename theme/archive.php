@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-4 bg-white dark:bg-neutral-800 md:py-6 lg:py-8">
-		<div class="px-2 md:container lg:px-[16px]">
+	<main id="primary" class="py-8 bg-white  |  dark:bg-neutral-800">
+		<div class="px-2  |  md:container lg:px-[16px]">
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 			<?php if ( have_posts() ) : ?>

@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-4 bg-white dark:bg-neutral-900 md:py-6 lg:py-8">
-		<div class="px-2 md:container lg:px-[16px] ">
+	<main id="primary" class="py-8 bg-white  |  dark:bg-neutral-900">
+		<div class="px-2  |  md:container lg:px-[16px]">
 
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
@@ -26,7 +26,7 @@ get_header();
 					<p class="my-4 lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
 				</div>
 
-				<div class="mt-8 lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16 print:hidden">
+				<div class="mt-8  |  lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16 print:hidden">
 					<div><?php if ( function_exists( 'wpgb_render_facet' ) ) {
 						wpgb_render_facet( ['id' => 9, 'grid' => 'wpgb-content', ] );
 					} ?></div>
@@ -37,7 +37,7 @@ get_header();
 			</header>
 
 			<?php if ( have_posts() ) : ?>
-				<ul class="cards-ic | grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+				<ul class="cards-ic  |  grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					<?php
 					while ( have_posts() ) :
 						the_post();

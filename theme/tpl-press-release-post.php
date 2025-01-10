@@ -23,7 +23,7 @@ if ( $post_featimg == true ) {
 }
 ?>
 
-<main id="primary" class="bg-white dark:bg-neutral-900">
+<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 	<?php
 	while ( have_posts() ) :

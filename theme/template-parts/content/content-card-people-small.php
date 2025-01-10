@@ -17,11 +17,11 @@ if ( $peep_thumbnail ) {
 $peep_level                     = get_field( 'll_people_level' );
 ?>
 
-<article <?php post_class( 'person-card | group p-2' ); ?>>
+<article <?php post_class( 'person-card  |  group p-2' ); ?>>
 	<div class="flex items-center h-full p-4 border rounded-lg border-neutral-200">
-		<div class="flex-shrink-0 object-cover object-center mr-4 rounded-full bg-neutral-100 bg-no-repeat group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;" aria-label="">
+		<div class="flex-shrink-0 object-cover object-center mr-4 rounded-full bg-neutral-100 bg-no-repeat  |  group-hover:border-brand-red" style="background-image: url('<?php echo $headshot; ?>'); background-size: 64px 86px; background-position: center top;">
 			<?php if ($peep_level['value'] !== '900') { ?>
-				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark">
+				<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" aria-label="View <?php echo esc_attr( get_the_title() ); ?>'s bio">
 					<div class="w-16 h-16 aspect-square">&nbsp;</div>
 				</a>
 			<?php } else { ?>
@@ -33,7 +33,7 @@ $peep_level                     = get_field( 'll_people_level' );
 			<?php
 			if ($peep_level['value'] !== '900') {
 				$title_classes = 'group-hover:text-brand-red';
-				echo sprintf( '<h3 class="leading-none text-brand-gray-dark %1$s"><a href="%3$s" rel="bookmark">%2$s </a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
+				echo sprintf( '<h3 class="leading-none text-brand-gray-dark %1$s"><a class="" href="%3$s" rel="bookmark">%2$s </a></h3>', $title_classes, get_the_title(), esc_url( get_permalink() ) );
 			} else {
 				$title_classes = 'group-hover:text-brand-gray-dark';
 				echo sprintf( '<h3 class="leading-none text-brand-gray-dark %1$s">%2$s</h3>', $title_classes, get_the_title() );

@@ -12,21 +12,21 @@ get_header();
 
 	<main id="primary" class="py-8 bg-white  |  dark:bg-neutral-900">
 
-		<div class="px-2 md:container lg:px-[16px]">
+		<div class="px-2  |  md:container lg:px-[16px]">
 
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 			<?php if ( have_posts() ) : ?>
 
 				<header>
-					<h1 class="entry-title | has-huge-font-size dark:text-neutral-200">
+					<h1 class="entry-title  |  has-huge-font-size dark:text-neutral-200">
 						<?php
 						printf( esc_html__( 'Search results for: %s', 'loadlifter' ), '<span class="relative inline-block before:block before:absolute before:-inset-1 before:bg-orient-200 before:rounded dark:before:bg-orient-600"><span class="relative px-2 font-bold text-neutral-950 dark:text-white">' . get_search_query() . '</span></span>' );
 						?>
 					</h1>
 				</header>
 
-				<div class="search-results | prose lg:prose-xl max-w-none grid gap-2 md:grid-cols-3 md:gap-4 lg:grid-cols-4">
+				<ul class="search-results | prose max-w-none grid gap-2  | md:grid-cols-3 md:gap-4 lg:prose-xl lg:grid-cols-4">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :
@@ -39,7 +39,7 @@ get_header();
 						get_template_part( 'template-parts/content/content', 'card-ic' );
 					endwhile;
 					?>
-				</div>
+				</ul>
 
 				<?php // ll_paging_nav();
 				if ( function_exists( 'wpgb_render_facet' ) ) {
