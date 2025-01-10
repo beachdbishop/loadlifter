@@ -131,6 +131,27 @@
             "append": ""
         },
         {
+            "key": "field_677c54fdde445",
+            "label": "CTA Button URL",
+            "name": "ll_ind_cta_button_url",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#contact",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6424b697635c7",
             "label": "Custom CTA HTML",
             "name": "ll_ind_cta_html",
@@ -250,5 +271,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1719459382
+    "modified": 1736201596
 }
