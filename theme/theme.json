@@ -184,14 +184,14 @@
 						},
 						{
 							"fontFamily": "Serenity",
-							"fontWeight": "700",
+							"fontWeight": "600",
 							"fontStyle": "normal",
 							"fontStretch": "normal",
 							"src": [ "file:./fonts/serenity-bold-webfont.woff2" ]
 						},
 						{
 							"fontFamily": "Serenity",
-							"fontWeight": "700",
+							"fontWeight": "600",
 							"fontStyle": "italic",
 							"fontStretch": "normal",
 							"src": [ "file:./fonts/serenity-bolditalic-webfont.woff2" ]
