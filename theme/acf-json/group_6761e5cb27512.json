@@ -3,6 +3,48 @@
     "title": "Location fields",
     "fields": [
         {
+            "key": "field_6769a667b87f7",
+            "label": "Title Override",
+            "name": "ll_loc_title_override",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 255,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6772dc561703b",
+            "label": "Hide Featured Image",
+            "name": "ll_loc_hide_featured_image",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Prevent display of the featured image.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "allow_in_bindings": 1,
+            "ui_on_text": "Hidden",
+            "ui_off_text": "Shown",
+            "ui": 1
+        },
+        {
             "key": "field_6761e5cb51e70",
             "label": "Street 1",
             "name": "ll_loc_street1",
@@ -195,13 +237,13 @@
             "new_lines": ""
         },
         {
-            "key": "field_6761e7c751e78",
-            "label": "Map Screenshot",
-            "name": "ll_loc_mapshot",
+            "key": "field_676af481cd05d",
+            "label": "Sort Order",
+            "name": "ll_loc_sort_order",
             "aria-label": "",
-            "type": "url",
-            "instructions": "Upload a 736x385px screenshot to Cloudinary, then provide the optimized URL here.",
-            "required": 1,
+            "type": "number",
+            "instructions": "",
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -209,8 +251,13 @@
                 "id": ""
             },
             "default_value": "",
+            "min": "",
+            "max": "",
             "allow_in_bindings": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -218,7 +265,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "location"
+                "value": "locations"
             }
         ]
     ],
@@ -231,5 +278,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1734483001
+    "modified": 1736362643
 }

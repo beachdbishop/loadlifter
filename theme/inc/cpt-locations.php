@@ -15,7 +15,7 @@
 
 
 // Set active ADMIN COLUMNS for Locations
-function ll_edit_location_columns( $columns ) {
+function ll_edit_locations_columns( $columns ) {
 
 	$columns = array(
 		'cb' => '<input type="checkbox" />',
@@ -28,25 +28,25 @@ function ll_edit_location_columns( $columns ) {
 
 	return $columns;
 }
-add_filter( 'manage_edit-location_columns', 'll_edit_location_columns' );
+add_filter( 'manage_edit-locations_columns', 'll_edit_locations_columns' );
 
 
 // Enable sorting on specific columns for Locations
-function ll_location_sortable_columns( $columns ) {
+function ll_locations_sortable_columns( $columns ) {
 
 	$columns['state'] = 'state';
 
 	return $columns;
 
 }
-add_filter( 'manage_edit-location_sortable_columns', 'll_location_sortable_columns' );
+add_filter( 'manage_edit-locations_sortable_columns', 'll_locations_sortable_columns' );
 
 
 /* Only run our customization on the 'edit.php' page in the admin. */
-function ll_edit_location_load() {
+function ll_edit_locations_load() {
 	add_filter( 'request', 'll_sort_locations' );
 }
-add_action( 'load-edit.php', 'll_edit_location_load' );
+add_action( 'load-edit.php', 'll_edit_locations_load' );
 
 function ll_sort_locations( $vars ) {
 	/* Check if we're viewing the 'location' post type. */
@@ -72,7 +72,7 @@ function ll_sort_locations( $vars ) {
 
 
 // Set data to display in admin columns
-function ll_pop_location_column( $column, $post_id ) {
+function ll_pop_locations_column( $column, $post_id ) {
 	global $post;
 
 	switch( $column ) {
@@ -92,7 +92,7 @@ function ll_pop_location_column( $column, $post_id ) {
 
 	}
 }
-add_action( 'manage_location_posts_custom_column', 'll_pop_location_column', 10, 2 );
+add_action( 'manage_locations_posts_custom_column', 'll_pop_locations_column', 10, 2 );
 
 
 
