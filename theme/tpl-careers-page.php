@@ -304,42 +304,33 @@ if ('local' === wp_get_environment_type()) {
 						<div class="px-2 md:container lg:px-[16px]">
 							<h2 class="mb-4">Our Team</h2>
 							<?php echo do_shortcode('[display-posts
-							post_type="people"
-							id="' . $hr_ids . '"
-							orderby="ll_people_level"
-							order="ASC"
-							posts_per_page="4"
-							wrapper="ul"
-							wrapper_class="list-none dps-grid-4max"
-							layout="card-people-small-desigs"
-							/]'); ?>
+								post_type="people"
+								id="' . $hr_ids . '"
+								orderby="ll_people_level"
+								order="ASC"
+								posts_per_page="4"
+								wrapper="ul"
+								wrapper_class="list-none dps-grid-4max"
+								layout="card-people-small-desigs"
+								/]');
+							?>
 						</div>
 					</section>
 
-
-					<?php /* <section class="full-bleed ll-equal-vert-padding bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct not-prose text-neutral-100"> */ ?>
-					<section class="cta | full-bleed ll-equal-vert-padding not-prose bg-brand-blue text-neutral-50 break-inside-avoid print:bg-hidden">
-						<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-[100vh] border-0 shadow-none max-w-none max-h-none object-cover absolute top-0 right-0 bottom-0 left-0 z-0 | md:block md:animate-move-bg print:hidden">
-							<defs>
-								<linearGradient id="blue" gradientTransform="rotate(10)">
-									<stop offset="50%" stop-color="rgb(9 47 66 / 1)" />
-									<stop offset="80%" stop-color="rgb(0 102 142 / 1)" />
-								</linearGradient>
-							</defs>
-							<rect x="0" y="0" width="400" height="400" fill="url(#blue)" />
-						</svg>
-
-						<div class="px-2 z-10 md:container lg:px-[16px]">
-							<div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
-								<div class="prose lg:prose-xl grow">
-									<h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark">View our current openings and apply today!</h2>
-								</div>
-								<div class="w-full md:max-w-fit">
-									<div class="wp-block-button"><a class="border-2 wp-block-button__link wp-element-button has-brand-blue-dark-background-color has-background-color border-brand-blue-dark hover:border-brand-blue-faint hover:text-brand-blue-faint" href="/career-opportunities/#openings"><i class="mr-1 fa-solid fa-users"></i> Join our team</a></div>
-								</div>
-							</div>
-						</div>
-					</section>
+					<?php
+					get_template_part(
+						'template-parts/layout/chunk', 'cta',
+						$args = [
+							'class' => 'cta-part',
+							'part_data' => [
+								'cta_heading' => 'View our current openings and apply today!',
+								'cta_body' => false,
+								'cta_button_text' => '<i class="mr-1 fa-solid fa-users"></i> Join our team',
+								'cta_button_url' => '/career-opportunities/#openings',
+							]
+						]
+					);
+					?>
 
 				</div>
 			</article>

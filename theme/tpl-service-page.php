@@ -112,42 +112,29 @@ $postsQuery = new WP_Query( $qargs );
 								<?php /* The visual gap Eric requested between Insights and the CTA section */ ?>
 								<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>
 
-							<?php /* CTA
-							* TODO: Should this get maybe turned into a template part?
-							*/
 							<?php
 							wp_reset_query();
 							endif;
 							?>
+
+							<?php
 							if ( $page_cta_standard ) :
-								// echo '<section class="full-bleed ll-equal-vert-padding not-prose text-neutral-100 bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct break-inside-avoid print:animate-none print:bg-transparent">
-								echo '<section class="cta | full-bleed ll-equal-vert-padding not-prose bg-brand-blue text-neutral-50 break-inside-avoid print:hidden">
-									<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" class="hidden h-[100vh] border-0 shadow-none max-w-none max-h-none object-cover absolute top-0 right-0 bottom-0 left-0 z-0 | md:block motion-safe:md:animate-move-bg print:hidden">
-										<defs>
-											<linearGradient id="blue" gradientTransform="rotate(10)">
-												<stop offset="50%" stop-color="rgb(9 47 66 / 1)" />
-												<stop offset="80%" stop-color="rgb(0 102 142 / 1)" />
-											</linearGradient>
-										</defs>
-										<rect x="0" y="0" width="400" height="400" fill="url(#blue)" />
-									</svg>
 
-									<div class="px-2 z-10 md:container lg:px-[16px]">
-										<div class="flex flex-col items-start gap-4 sm:flex-row sm:items-center lg:gap-8">
-											<div class="prose lg:prose-xl ">
-												<h2 class="mb-2 text-brand-blue-faint text-shadow shadow-brand-blue-dark print:text-shadow-none">' . $page_cta_heading . '</h2>
-												<p class="text-neutral-100 text-shadow shadow-brand-blue-dark print:text-shadow-none">' . $page_cta_body . '</p>
-												<p class="hidden print:mt-8 print:block">Email info@beachfleischman.com</p>
-											</div>
-											<div class="w-full md:max-w-fit print:hidden">
-												<div class="wp-block-button"><a class="border-2 wp-block-button__link wp-element-button has-brand-blue-dark-background-color has-background-color border-brand-blue-dark hover:border-brand-blue-faint hover:text-brand-blue-faint" href="#contact">' . $page_cta_button_text . '</a></div>
-											</div>
-										</div>
-									</div>
+								get_template_part(
+									'template-parts/layout/chunk', 'cta',
+									$args = [
+										'class' => 'cta-part',
+										'part_data' => [
+											'cta_heading' => $page_cta_heading,
+											'cta_body' => $page_cta_body,
+											'cta_button_text' => $page_cta_button_text,
+											'cta_button_url' => '#contact',
+										]
+									]
+								);
 
-								</section>';
 							elseif ( ( $page_cta_standard == false ) && ( !empty( $page_cta_html ) ) ) :
-									echo do_shortcode( $page_cta_html );
+								echo do_shortcode( $page_cta_html );
 							endif;
 							?>
 
