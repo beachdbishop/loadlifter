@@ -26,44 +26,93 @@ if ( get_field( 'll_custom_subheader' ) ) {
 	$page_message									= $brand_message['label'];
 }
 
-$page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
-if ( $page_featimg == true ) {
-	$page_featimg_url               = $page_featimg[0];
-} else {
-	$page_featimg_url               = '';
-}
+// $page_featimg                   = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+// if ( $page_featimg == true ) {
+// 	$page_featimg_url               = $page_featimg[0];
+// } else {
+// 	$page_featimg_url               = '';
+// }
 
 
 function ll_clientcenter_platform_card( $card ) {
+	$plat_html = '<div class="p-2  |  md:p-0">';
+	$plat_html .= '<img src="'.$card['image'].'" alt="'.$card['image_alt'].'" width="'.$card['image_width'].'" height="'.$card['image_height'].'">';
+	$plat_html .= '<p class="my-8  |  lg:my-12">' . $card['blurb'] . '</p>';
+	$plat_html .= '<div class="w-full flex gap-2">';
+	$plat_html .= '<a href="' . $card['button1_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" target="_blank"><i class="mr-1 ' . $card['button1_icon'] . '"></i> ' . $card['button1_text'] . '</a>';
+	if ( $card['button2_url'] ) {
+		$plat_html .= '<a href="' . $card['button2_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" target="_blank"><i class="mr-1 ' . $card['button2_icon'] . '"></i> ' . $card['button2_text'] . '</a>';
+	}
+	$plat_html .= '</div>';
+	$plat_html .= '</div>';
 
-		$plat_html = '<div class="p-2 md:p-0">';
-		$plat_html .= '<img src="'.$card['image'].'" alt="'.$card['image_alt'].'" width="'.$card['image_width'].'" height="'.$card['image_height'].'">';
-		$plat_html .= '<p class="my-8 lg:my-12 lg:text-xl">' . $card['blurb'] . '</p>';
-
-		$plat_html .= '<div class="mb-8 wp-block-buttons is-layout-flex">';
-		$plat_html .= '<div class="wp-block-button is-style-outline"><a class="wp-block-button__link text-brand-blue-dark dark:text-brand-blue has-text-color wp-element-button" href="'.$card['button1_url'].'" target="_blank""><i class="mr-1 '.$card['button1_icon'].'"></i> '.$card['button1_text'].'</a></div>';
-		if ( $card['button2_url'] ) {
-				$plat_html .= '<div class="wp-block-button is-style-outline"><a class="wp-block-button__link text-brand-blue-dark dark:text-brand-blue has-text-color wp-element-button" href="'.$card['button2_url'].'" target="_blank""><i class="mr-1 '.$card['button2_icon'].'"></i> '.$card['button2_text'].'</a></div>';
-		}
-		$plat_html .= '</div></div>';
-
-		return $plat_html;
+	return $plat_html;
 }
 
 $platforms = [
-		"dashboard" => [
-				"label"         => 'BeachFleischman Dashboard',
-				"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1695918473/BF_Dashboard_yzwir1.png',
-				"image_alt"     => 'logo: BeachFleischman Dashboard',
-				"image_width"   => '387',
-				"image_height"  => '100',
-				"blurb"         => 'BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling everyone to collaborate on one dynamic request list.',
-				"button1_url"   => 'https://beachfleischman.auditdashboard.com/',
-				"button1_text"  => 'Dashboard',
-				"button1_icon"  => 'fa-solid fa-arrow-up-right-from-square',
-		],
+	"safesend" => [
+		"label"         => 'SafeSend Returns',
+		"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png',
+		"image_alt"     => 'logo: SafeSend Returns',
+		"image_width"   => '340',
+		"image_height"  => '90',
+		"blurb"         => 'SafeSend Returns is a digital platform that facilitates the delivering and signing of a tax return.',
+		"button1_url"   => '/client-center/safesend-returns-guide/',
+		"button1_text"  => 'SafeSend User Guide',
+		"button1_icon"  => 'fa-solid fa-map',
+		"button2_url"		=> false,
+	],
+	"sharefile" => [
+		"label"         => 'ShareFile',
+		"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png',
+		"image_alt"     => 'logo: ShareFile',
+		"image_width"   => '279',
+		"image_height"  => '90',
+		"blurb"         => 'ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.',
+		"button1_url"   => 'https://beachfleischman.sharefile.com/',
+		"button1_text"  => 'ShareFile',
+		"button1_icon"  => 'fa-solid fa-arrow-up-right-from-square',
+		"button2_url"		=> false,
+	],
+	"taxcaddy" => [
+		"label"         => 'TaxCaddy',
+		"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695862452/TaxCaddyLogo_emmblh.png',
+		"image_alt"     => 'logo: TaxCaddy',
+		"image_width"   => '348',
+		"image_height"  => '90',
+		"blurb"         => 'TaxCaddy is a secure, cloud-based platform that makes gathering and sharing your tax documents a breeze for 1040 (Individual) clients.',
+		"button1_url"   => 'https://consumer.taxcaddy.com/#/login',
+		"button1_text"  => 'TaxCaddy',
+		"button1_icon"  => 'fa-solid fa-arrow-up-right-from-square',
+		"button2_url"		=> '/client-center/taxcaddy-guide/',
+		"button2_text"	=> 'TaxCaddy User Guide',
+		"button2_icon"	=> 'fa-solid fa-map',
+	],
+	"dashboard" => [
+		"label"         => 'BeachFleischman Dashboard',
+		"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1695918473/BF_Dashboard_yzwir1.png',
+		"image_alt"     => 'logo: BeachFleischman Dashboard',
+		"image_width"   => '348',
+		"image_height"  => '90',
+		"blurb"         => 'BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling everyone to collaborate on one dynamic request list.',
+		"button1_url"   => 'https://beachfleischman.auditdashboard.com/',
+		"button1_text"  => 'Dashboard',
+		"button1_icon"  => 'fa-solid fa-arrow-up-right-from-square',
+		"button2_url"		=> false,
+	],
+	// "wholenother" => [
+	// 	"label"         => 'Whole \'Nother Platform',
+	// 	"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_100/v1695918473/BF_Dashboard_yzwir1.png',
+	// 	"image_alt"     => 'logo: Whole \'Nother Platform',
+	// 	"image_width"   => '348',
+	// 	"image_height"  => '90',
+	// 	"blurb"         => 'Whole \'Nother Platform is a web-based platform that allows more organized and efficient communication, enabling everyone to collaborate on one dynamic request list.',
+	// 	"button1_url"   => 'https://beachfleischman.auditdashboard.com/',
+	// 	"button1_text"  => 'Dashboard',
+	// 	"button1_icon"  => 'fa-solid fa-arrow-up-right-from-square',
+	//	"button2_url"		=> false,
+	// ],
 ];
-
 
 
 $doclinks = [
@@ -160,51 +209,11 @@ get_header();
 
 					<div class="grid gap-16 mb-12  |  lg:mb-24 lg:grid-cols-2 lg:grid-rows-2">
 
-						<div class="p-2 md:p-0">
-							<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_safesend_wd9j9s.png" alt="logo: SafeSend Returns" width="340" height="90">
-							<p class="my-8 lg:my-12 lg:text-xl">SafeSend Returns is a digital platform that facilitates the delivering and signing of a tax return.</p>
-							<div class="-buttons flex">
-								<div class="-button">
-									<a href="/client-center/safesend-returns-guide/" class="font-head font-semibold text-base no-underline px-6 py-4 border-2 rounded-lg border-orient-900 text-orient-900 hover:border-orient-600 hover:text-orient-600 | lg:text-lg dark:text-orient-500 dark:border-orient-500 dark:hover:text-orient-200 dark:hover:border-orient-200">
-										<i class="mr-1 fa-solid fa-map"></i> SafeSend User Guide
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="p-2 md:p-0">
-							<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png" alt="logo: ShareFile" width="279" height="90">
-							<p class="my-8 lg:my-12 lg:text-xl">ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.</p>
-							<div class="-buttons flex">
-								<div class="-button"><a href="https://beachfleischman.sharefile.com/" rel="noreferrer" target="_blank" class="font-head font-semibold text-base no-underline px-6 py-4 border-2 rounded-lg border-orient-900 text-orient-900 hover:border-orient-600 hover:text-orient-600 | lg:text-lg dark:text-orient-500  dark:border-orient-500 dark:hover:text-orient-200 dark:hover:border-orient-200"><i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> ShareFile</a></div>
-							</div>
-						</div>
-						<div class="p-2 md:p-0">
-							<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695862452/TaxCaddyLogo_emmblh.png" alt="logo: TaxCaddy, part of Thomson Reuters" width="348" height="90">
-							<p class="my-8 lg:my-12 lg:text-xl">TaxCaddy is a secure, cloud-based platform that makes gathering and sharing your tax documents a breeze for 1040 (Individual) clients.</p>
-							<div class="-buttons flex gap-2">
-								<div class="-button">
-									<a href="https://consumer.taxcaddy.com/#/login" rel="noreferrer" target="_blank" class="font-head font-semibold text-base no-underline px-6 py-4 border-2 rounded-lg border-orient-900 text-orient-900 hover:border-orient-600 hover:text-orient-600 | lg:text-lg dark:text-orient-500  dark:border-orient-500 dark:hover:text-orient-200 dark:hover:border-orient-200">
-										<i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> TaxCaddy
-									</a>
-								</div>
-								<div class="-button">
-									<a href="/client-center/taxcaddy-guide/" class="font-head font-semibold text-base no-underline px-6 py-4 border-2 rounded-lg border-orient-900 text-orient-900 hover:border-orient-600 hover:text-orient-600 | lg:text-lg dark:text-orient-500  dark:border-orient-500 dark:hover:text-orient-200 dark:hover:border-orient-200">
-										<i class="mr-1 fa-solid fa-map"></i> TaxCaddy User Guide
-									</a>
-								</div>
-							</div>
-						</div>
-						<div class="p-2 md:p-0">
-							<img class="!mt-0" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918473/BF_Dashboard_yzwir1.png" alt="logo: BeachFleischman Dashboard" width="348" height="100">
-							<p class="my-8 lg:my-12 lg:text-xl">BeachFleischman Dashboard is a web-based platform that allows more organized and efficient communication, enabling assurance clients to collaborate on one dynamic request list.</p>
-							<div class="-buttons flex">
-								<div class="-button">
-									<a href="https://beachfleischman.auditdashboard.com/" rel="noreferrer" target="_blank" class="font-head font-semibold text-base no-underline px-6 py-4 border-2 rounded-lg border-orient-900 text-orient-900 hover:border-orient-600 hover:text-orient-600 | lg:text-lg dark:text-orient-500  dark:border-orient-500 dark:hover:text-orient-200 dark:hover:border-orient-200">
-										<i class="mr-1 fa-solid fa-arrow-up-right-from-square"></i> Dashboard
-									</a>
-								</div>
-							</div>
-						</div>
+						<?php
+						foreach ( $platforms as $platform ) {
+							echo ll_clientcenter_platform_card( $platform );
+						}
+						?>
 
 					</div>
 
