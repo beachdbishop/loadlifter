@@ -42,9 +42,34 @@ $hero_cta1_text 								= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url 									= get_field( 'll_hero_cta1_url' );
 $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
 $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
+
+
+
+$qargs = [
+	'post_type' => 'post',
+	'posts_per_page' => 3,
+	'post_status' => 'publish',
+	'tax_query' => [
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' =>  $page_post_category->slug,
+		],
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => 'archived-events',
+			'operator' => 'NOT IN',
+		],
+	],
+	'orderby' => 'date',
+	'order' => 'DESC',
+];
+
+$postsQuery = new WP_Query( $qargs );
 ?>
 
-	<main id="primary" class="bg-white dark:bg-neutral-900">
+	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -63,37 +88,37 @@ $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 
 						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
 
-							<?php if ( $page_post_category ) : ?>
+							<?php if ( ( $page_post_category ) && ( $postsQuery->have_posts() ) ) : ?>
+
 								<section class="full-bleed not-prose bg-neutral-800 text-neutral-100 ll-equal-vert-padding  |  print:hidden">
 									<div class="post-grid  |  px-2  |  md:container lg:px-[16px]">
 										<div class="flex items-center justify-between mb-4">
 											<h2>Insights</h2>
 											<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-400 rounded-lg text-orient-400  |  hover:text-neutral-100 hover:border-brand-blue">View All</a>
 										</div>
-										<?php echo do_shortcode( '
-											[display-posts
-											taxonomy="category"
-											tax_term="' . $page_post_category->slug . '"
-											tax_operator="IN"
-											taxonomy_2="category"
-											tax_2_term="archived-events"
-											tax_2_operator="NOT IN"
-											orderby="date"
-											order="DESC"
-											posts_per_page="3"
-											wrapper="ul"
-											wrapper_class="dps-grid-3max cards-ic"
-											layout="card-ic-min" /]
-										' ); ?>
+										<?php
+										echo '<ul class="dps-grid-3max cards-ic" data-cat="' . $page_post_category->slug . '">';
+										while ( $postsQuery->have_posts() ) :
+											$postsQuery->the_post();
+											global $post;
+
+											get_template_part( 'template-parts/content/content', 'card-ic-min' );
+										endwhile;
+										echo '</ul>';
+										?>
 									</div>
 								</section>
+
 								<?php /* The visual gap Eric requested between Insights and the CTA section */ ?>
 								<div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div>
-							<?php endif; ?>
 
 							<?php /* CTA
 							* TODO: Should this get maybe turned into a template part?
 							*/
+							<?php
+							wp_reset_query();
+							endif;
+							?>
 							if ( $page_cta_standard ) :
 								// echo '<section class="full-bleed ll-equal-vert-padding not-prose text-neutral-100 bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct break-inside-avoid print:animate-none print:bg-transparent">
 								echo '<section class="cta | full-bleed ll-equal-vert-padding not-prose bg-brand-blue text-neutral-50 break-inside-avoid print:hidden">
