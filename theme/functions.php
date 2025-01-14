@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.16.6' );
+	define( 'LL_VERSION', '2.16.7' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -319,4 +319,4 @@ require get_template_directory() . '/inc/menu-walker.php';
 /**
  * Include ACF field content in search results
  */
-require get_template_directory() . '/inc/search-mods.php';
+// require get_template_directory() . '/inc/search-mods.php';
