@@ -562,8 +562,18 @@ if ( ! function_exists( 'll_people_dept_list' ) ) :
 	/**
 	 * Display People/Author department(s)
 	 */
-	function ll_people_show_dept_list( $departments ) {
-		echo '<span class="inline-pipe-sep | "><i class="fa-solid fa-people-group text-neutral-500" title="Department(s)"></i> ';
+	function ll_people_show_dept_list( $departments, $options = array() ) {
+		$defaults = array(
+			'icons' => true,
+		);
+		$config = array_merge( $defaults, $options );
+
+		if ( $config['icons'] ) {
+			echo '<span class="inline-pipe-sep text-ellipsis overflow-hidden"><i class="fa-solid fa-people-group" title="Department(s)"></i> ';
+		} else {
+			echo '<span class="inline-pipe-sep">';
+		}
+
 		foreach( $departments as $dept ) {
 			echo '<span class="">' . $dept['label'] . '</span>';
 		}

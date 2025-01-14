@@ -16,6 +16,7 @@ if ( get_field( 'll_page_title_override' ) ) {
 }
 
 $order_class = 'order-' . get_field( 'll_loc_sort_order' );
+$peep_level = get_field( 'll_people_level' );
 ?>
 
 
@@ -49,6 +50,20 @@ $order_class = 'order-' . get_field( 'll_loc_sort_order' );
 				<?php echo $loc_fax_html; ?>
 			</div>
 			<?php
+		} elseif ( 'people' === get_post_type() ) {
+			?>
+			<div class="mb-2">
+				<?php
+				// if ( ( $peep_level['value'] != 800 ) && ( get_field( 'll_people_designations' ) ) ) {
+				// 	echo sprintf( '<p class="italic font-semibold leading-tight tracking-tighter font-head ">%1$s</p>', get_field( 'll_people_designations' ) );
+				// }
+
+				if( get_field( 'll_people_title' ) ) { /* Job Title */
+					echo sprintf( '<h4 class="leading-tight">%1$s</h4>', get_field( 'll_people_title' ) );
+				}
+				?>
+			</div>
+			<?php
 		} else {
 
 			if ( has_excerpt() ) {
@@ -56,22 +71,62 @@ $order_class = 'order-' . get_field( 'll_loc_sort_order' );
 				<p class="mt-2 mb-4 text-sm  |  lg:text-base"><?php echo get_the_excerpt(); ?></p>
 				<?php
 			}
-			?>
-
-			<p class="card-meta  |  mt-auto mb-3 text-sm lg:text-base">
-				<?php if ( ( 'post' === get_post_type() ) && ( !in_category( 'events' ) ) ) {
-					echo '<span>' . esc_html( get_the_date() ) . '</span>';
-					echo " | ";
-					ll_posted_by();
-				} ?>
-			</p>
-			<?php
 		}
 		?>
 
+		<p class="card-meta  |  mt-auto mb-3 text-sm  |  lg:text-base">
+			<?php
+			if ( 'people' === get_post_type() ) {
+				if ( $peep_level['value'] != 800 ) {
+					if ( get_field_object( 'll_people_department' ) ) {
+						$peep_department = get_field_object( 'll_people_department' );
+						$peep_dept_value = $peep_department['value'];
+						if ( $peep_dept_value ) {
+							ll_people_show_dept_list( $peep_dept_value, ['icons' => false] );
+						}
+					}
+				}
+			}
+			?>
+
+			<?php if ( ( 'post' === get_post_type() ) && ( !in_category( 'events' ) ) ) {
+				echo '<span>' . esc_html( get_the_date() ) . '</span>';
+				echo " | ";
+				ll_posted_by();
+			} ?>
+		</p>
 	</div>
 
 	<div class="card-img  |  ">
-		<?php ll_post_social_image();	?>
+		<?php
+		if ( 'people' === get_post_type() ) {
+		 	$peep_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+		 	if ( $peep_thumbnail ) {
+		 		$headshot = esc_url( $peep_thumbnail[0] );
+		 	} else {
+		 		$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+		 	}
+		 	?>
+		 	<div
+				class="bg-no-repeat bg-cover"
+				style="background-image: url('<?php echo $headshot; ?>'); background-position: center top -5rem;"
+			>
+		 		<a
+					class=""
+					href="<?php echo esc_url( get_permalink() ); ?>"
+					rel="bookmark"
+					aria-label="<?php echo get_the_title(); ?>"
+				>
+		 			<div class="aspect-feat-card">&nbsp;</div>
+		 		</a>
+		 	</div>
+			<?php
+		} else {
+
+			ll_post_social_image();
+
+		}
+		?>
 	</div>
+
 </li>

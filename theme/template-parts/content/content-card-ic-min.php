@@ -16,6 +16,7 @@ if ( get_field( 'll_page_title_override' ) ) {
 }
 
 $order_class = 'order-' . get_field( 'll_loc_sort_order' );
+$peep_level = get_field( 'll_people_level' );
 ?>
 
 
@@ -31,6 +32,34 @@ $order_class = 'order-' . get_field( 'll_loc_sort_order' );
 	</div>
 
 	<div class="card-img  |  ">
-		<?php ll_post_social_image();	?>
+		<?php
+		if ( 'people' === get_post_type() ) {
+		 	$peep_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
+		 	if ( $peep_thumbnail ) {
+		 		$headshot = esc_url( $peep_thumbnail[0] );
+		 	} else {
+		 		$headshot = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+		 	}
+		 	?>
+		 	<div
+				class="bg-no-repeat bg-cover"
+				style="background-image: url('<?php echo $headshot; ?>'); background-position: center top -5rem;"
+			>
+		 		<a
+					class=""
+					href="<?php echo esc_url( get_permalink() ); ?>"
+					rel="bookmark"
+					aria-label="<?php echo get_the_title(); ?>"
+				>
+		 			<div class="aspect-feat-card">&nbsp;</div>
+		 		</a>
+		 	</div>
+			<?php
+		} else {
+
+			ll_post_social_image();
+
+		}
+		?>
 	</div>
 </li>

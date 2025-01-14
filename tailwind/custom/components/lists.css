@@ -46,7 +46,8 @@ ul.wp-block-list {
 	}
 }
 
-.prose li:not(:last-child) {
+.prose:not(.grid) li:not(:last-child),
+.prose *:not(.grid) > li:not(:last-child) {
 	margin-bottom: var(--wp--preset--spacing--20, 0.5rem);
 }
 
