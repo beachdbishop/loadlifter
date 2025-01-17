@@ -21,6 +21,11 @@
 	max-width: 60ch;
 	padding-inline: 0.5rem;
 }
+
+.contact-page .card-img {
+	display: none;
+}
+
 .card-ic + .card-ic {
 	margin-top: 1.5rem;
 }

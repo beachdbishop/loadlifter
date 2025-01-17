@@ -15,13 +15,14 @@ if ( get_field( 'll_page_title_override' ) ) {
 	$page_title                 = get_the_title();
 }
 
+$type_class = 'posttype-' . get_post_type();
 $order_class = 'order-' . get_field( 'll_loc_sort_order' );
 $peep_level = get_field( 'll_people_level' );
 ?>
 
 
 
-<li <?php post_class( 'card-ic  |  group flex flex-col relative border-neutral-100 border-2 ' . $order_class . '  |  focus-within:border-neutral-500 dark:border-neutral-700' ); ?>>
+<li <?php post_class( 'card-ic  |  ' . $type_class . ' group flex flex-col relative border-neutral-100 border-2 ' . $order_class . '  |  focus-within:border-neutral-500 dark:border-neutral-700' ); ?>>
 
 	<div class="card-text  |  flex flex-col text grow order-1 bg-white  |  dark:bg-neutral-800 dark:text-neutral-300">
 		<h3 class="my-2 overflow-hidden tracking-wide text-brand-blue text-ellipsis  |  dark:text-orient-400">
@@ -40,7 +41,7 @@ $peep_level = get_field( 'll_people_level' );
 			}
 			?>
 			<div class="not-italic mb-2" property="address" typeof="PostalAddress">
-				<p class="street-address  |  leading-snug" property="streetAddress"><?php echo get_field( 'll_loc_street1' ) . ' ' . get_field( 'll_loc_street2' ); ?></p>
+				<p class="street-address  |  leading-snug" property="streetAddress"><?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
 				<p class="locality  |  leading-snug mb-2">
 					<span property="addressLocality"><?php echo get_field( 'll_loc_city' ); ?></span>,
 					<span class="state" property="addressRegion"><?php echo get_field( 'll_loc_state' ); ?></span>

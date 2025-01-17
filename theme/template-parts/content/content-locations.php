@@ -57,7 +57,7 @@ endif;
 				<h2><?php echo LL_COMPANY_NICE_NAME . ' ' . get_field( 'll_loc_city' ); ?></h2>
 
 				<div class="not-italic mb-8  |  lg:mb-12 print:space-y-1" property="address" typeof="PostalAddress">
-					<p class="street-address  |  leading-snug " property="streetAddress"><?php echo get_field( 'll_loc_street1' ); ?></p>
+					<p class="street-address  |  leading-snug " property="streetAddress"><?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
 					<p class="locality  |  leading-snug mb-2">
 						<span property="addressLocality"><?php echo get_field( 'll_loc_city' ); ?></span>,
 						<span class="state" property="addressRegion"><?php echo get_field( 'll_loc_state' ); ?></span>
@@ -89,7 +89,7 @@ endif;
 			<?php get_template_part( 'template-parts/siteblocks/area', 'after-post' ); ?>
 		</div>
 		<aside class="mt-8  |  md:mt-0 md:order-last md:w-1/3">
-			<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8  |  lg:mb-16">
+			<div id="contact" class="container-contact-form not-prose motion-preset-slide-u mb-8  |  lg:mb-16">
 				<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 			</div>
 			<!--   A R E A   S I D E   -->
