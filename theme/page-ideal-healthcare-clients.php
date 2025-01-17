@@ -69,50 +69,50 @@ $client_types = [
 	[
 		"label" => "Assisted Living and Skilled Nursing Facilities",
 		"desc" => "We help assisted living and skilled nursing facilities optimize financial performance and drive growth with customized solutions. Our services include financial reporting, tax planning, and operational efficiency strategies.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-1413581011-assisted-living_fkqohe.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737148786/feat__hc-serve--assisted3_kldoom.jpg",
+		"image_alt" => "A tech and resident smile at each other in the dining room of an assisted living facility",
 		"icon" => "user-nurse",
 	],
 	[
 		"label" => "Clinics",
 		"desc" => "We understand the distinct financial challenges faced by clinics. Our team offers specialized accounting services, such as financial planning, tax preparation, payroll, and cybersecurity assessments, to help clinics enhance profitability, streamline operations, and safeguard the business posture.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-681733372-clinics_udwkzr.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737068462/feat__hc-serve--clinics_oq84i8.jpg",
+		"image_alt" => "A doctor confirms good news to a patient while gently touching her back",
 		"icon" => "staff-snake",
 	],
 	[
 		"label" => "Dental, Physician, and Veterinary Practices",
 		"desc" => "We offer a full range of comprehensive accounting services to dental, physician, and veterinary practices. From tax preparation, bonus/incentive strategies, revenue cycle management, strategic growth, and succession planning, we help your practice thrive financially.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-951913538-dental_bili99.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737068462/feat__hc-serve--veterinary_cwbvrq.jpg",
+		"image_alt" => "A veterinarian measures a dog's heart rate while a vet tech holds the dog steady on the table",
 		"icon" => "tooth",
 	],
 	[
 		"label" => "Specialty Hospitals and Urgent Care Centers",
 		"desc" => "Partnering with management teams at critical access and rural hospitals, as well as regional medical and urgent care centers, we provide comprehensive financial statements, tax planning and preparation, and strategic operations advisory services.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-864573868-specialty-hosp_br3vyo.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737068462/feat__hc-serve--specialty-hosp_fpwirr.jpg",
+		"image_alt" => "A cheerful nurse smiles with a child patient holding a stuffed animal in a hospital bed",
 		"icon" => "truck-medical",
 	],
 	[
 		"label" => "Medical Groups",
 		"desc" => "For medical groups, we offer integrated accounting solutions that support group practices in managing their finances effectively. Our services include financial analysis, budgeting, tax preparation, and tax strategies tailored to meet the needs of complex healthcare organizations.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-1278383417-medical-groups_fxjni0.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737068463/feat__hc-serve--medical-groups_mvuhj1.jpg",
+		"image_alt" => "A group of doctors and nurses smile toward the camera in a hallway",
 		"icon" => "users-medical",
 	],
 	[
 		"label" => "Rehabilitation Facilities",
 		"desc" => "Rehabilitation facilities benefit from our dedicated team of accounting professionals, who focus on ensuring compliance and optimizing financial health through tailored tax planning and proactive advisory services.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-1359572495-rehab_b93m4t.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737068462/feat__hc-serve--rehab_dtvk5f.jpg",
+		"image_alt" => "A physical therapist works with a patient on balance exercises",
 		"icon" => "hospital",
 	],
 	[
 		"label" => "Surgical, Dialysis, and Imaging Centers",
 		"desc" => "We offer specialized accounting services for surgical, dialysis, and imaging centers, including efficient tax planning, financial reporting, and strategic insights to support operational success, allowing you to focus on delivering quality patient care.",
-		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/c_crop,f_auto,g_center,h_420,w_896/v1730824102/istock-1865119251-imaging_okqigp.jpg",
-		"image_alt" => "FIX this alt text when finalized image is chosen",
+		"image" => "https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1737068462/feat__hc-serve--imaging_eyw0ts.jpg",
+		"image_alt" => "A doctor and nurse review post-procedure care with a patient seated in a hospital bed",
 		"icon" => "x-ray",
 	],
 ];
@@ -154,7 +154,9 @@ $shared_values = [
 			<div class="px-2 container  |  lg:px-[16px]">
 
 				<div <?php ll_content_class( 'entry-content ' ); ?>>
-					<?php the_content(); ?>
+					<div class="lg:max-w-[900px]">
+						<?php the_content(); ?>
+					</div>
 
 					<div class="hidden accordions is-style-default">
 						<details>
@@ -185,7 +187,7 @@ $shared_values = [
 								slidesToShow: 1,
 								arrows: false,
 								autoplay: true,
-								autoplaySpeed: 9000,
+								autoplaySpeed: 12000,
 								nextArrow: document.querySelector('#betsy-gslider-next'),
 								prevArrow: document.querySelector('#betsy-gslider-prev'),
 								customPaging: function(index, a11YSlider) {
@@ -193,19 +195,17 @@ $shared_values = [
 								}
 							});</script>
 
-
-							<!-- p class="text-center mt-8 mb-12"><a href="#partner" class="px-5 py-3 font-bold border-2 rounded-lg font-head border-brand-red text-brand-red hover:text-brand-red-dark hover:border-brand-red-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">Contact us</a></p -->
 						</div>
 					</section>
 
 
-					<section class="full-bleed ll-equal-vert-padding not-prose bg-orient-50  |  dark:bg-neutral-950">
-						<div class="px-2 lg:px-[16px]">
-							<h2 class="mb-2 text-brand-blue-dark dark:text-neutral-200 ">Shared Values</h2>
-							<p class="max-w-5xl">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
+					<section class="full-bleed ll-equal-vert-padding not-prose bg-orient-50 mt-16  |  dark:bg-neutral-950">
+						<div class="px-2  |  lg:px-[16px]">
+							<h2 class="mb-2 text-brand-blue-dark  |  dark:text-neutral-200 ">Shared Values</h2>
+							<p class="">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
 							<div class="mt-4 ind-card-flips is-style-blue ">
 								<?php
-								foreach ( $shared_values as $value ) {
+								/* foreach ( $shared_values as $value ) {
 									echo '<div class="card-' . $value['icon'] . '">
 										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-size: 288px; --_card-back-bg: #092f42">
 											<div class="card-content  |  absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
@@ -226,6 +226,30 @@ $shared_values = [
 										</div>
 									</div>';
 									// echo '<div><p>' . $value['label'] . '</p></div>';
+								} */
+								?>
+								<?php
+								foreach ( $shared_values as $value ) {
+									echo '<div class="card-' . $value['icon'] . '">
+										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-size: 288px; --_card-front-bg: #fff; --_card-front-text: #092f42; --_card-front-icon: #fff; --_card-back-bg: #fff; --_card-back-text: #092f42;">
+											<div class="card-content  |  absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
+												<div class="card-front  |  text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+													<div class="card-icon  |  text-[--_card-front-icon]">
+														<span class="fa-stack fa-2x">
+															<i class="text-orient-700 fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
+															<i class="fa-duotone fa-' . $value['icon'] . ' fa-stack-1x "></i>
+														</span>
+													</div>
+													<h3 class="mt-2 font-light leading-none text-current ">' . $value['label'] . '</h3>
+												</div>
+												<div class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay [backface-visibility:hidden] [transform:rotateY(180deg)]">
+													<h6 class="my-2 leading-none tracking-wide text-center text-current">' . $value['label'] . '</h6>
+													<p class="">' . $value['desc'] . '</p>
+												</div>
+											</div>
+										</div>
+									</div>';
+									// echo '<div><p>' . $value['label'] . '</p></div>';
 								}
 								?>
 							</div>
@@ -237,10 +261,10 @@ $shared_values = [
 						<div class="px-2  |  lg:px-[16px]">
 							<div>
 								<h2 class="mb-2 text-brand-red"><a name="partner"></a>Partner with BeachFleischman today</h2>
-								<p class="mb-2 max-w-5xl">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
+								<p class="mb-2  |  lg:max-w-[900px]">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
 								<p class="hidden  |  print:mt-8 print:block">Email info@beachfleischman.com</p>
-								<div id="contact" class="container-contact-form not-prose">
-									<div class="hbspt-form max-w-5xl" id="llhsform"></div>
+								<div id="contact" class="container-contact-form not-prose  |  lg:max-w-[900px]">
+									<div class="hbspt-form" id="llhsform"></div>
 									<script>
 										function loadHubSpotForm() {
 											var formContainer = document.getElementById('llhsform');
