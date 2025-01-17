@@ -281,8 +281,4 @@ aside .timestamp {
 	.logogrid {
 		column-gap: 8rem;
 	}
-
-	.home .awards-wrap img:not(:hover) {
-		filter: grayscale(100%);
-	}
 }
