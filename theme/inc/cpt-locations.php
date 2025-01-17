@@ -21,7 +21,7 @@ function ll_edit_locations_columns( $columns ) {
 		'cb' => '<input type="checkbox" />',
 		'title' => __( 'Title' ),
 		'll_id' => __( 'ID' ),
-		'state' => __( 'State' ),
+		'll_loc_state' => __( 'State' ),
 		'll_post_thumb' => __( 'Featured Image' ),
 		'date' => __( 'Date' )
 	);
@@ -34,7 +34,7 @@ add_filter( 'manage_edit-locations_columns', 'll_edit_locations_columns' );
 // Enable sorting on specific columns for Locations
 function ll_locations_sortable_columns( $columns ) {
 
-	$columns['state'] = 'state';
+	$columns['ll_loc_state'] = 'll_loc_state';
 
 	return $columns;
 
@@ -50,16 +50,16 @@ add_action( 'load-edit.php', 'll_edit_locations_load' );
 
 function ll_sort_locations( $vars ) {
 	/* Check if we're viewing the 'location' post type. */
-	if ( isset( $vars['post_type'] ) && 'location' == $vars['post_type'] ) {
+	if ( isset( $vars['post_type'] ) && 'locations' == $vars['post_type'] ) {
 
-		/* Check if 'orderby' is set to 'state'. */
-		if ( isset( $vars['orderby'] ) && 'state' == $vars['orderby'] ) {
+		/* Check if 'orderby' is set to 'll_loc_state'. */
+		if ( isset( $vars['orderby'] ) && 'll_loc_state' == $vars['orderby'] ) {
 
 			/* Merge the query vars with our custom variables. */
 			$vars = array_merge(
 				$vars,
 				array(
-					'meta_key' => 'state',
+					'meta_key' => 'll_loc_state',
 					'orderby' => 'meta_value_num'
 				)
 			);
@@ -77,7 +77,7 @@ function ll_pop_locations_column( $column, $post_id ) {
 
 	switch( $column ) {
 
-		case 'state' :
+		case 'll_loc_state' :
 			$state = get_post_meta( $post_id, 'll_loc_state', true );
 			if ( empty( $state ) )
 				echo '<em>' . __( 'Not set', 'loadlifter' ) . '</em>';
