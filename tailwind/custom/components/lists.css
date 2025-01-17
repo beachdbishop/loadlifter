@@ -141,7 +141,7 @@ ul.wp-block-list {
 .is-style-circle > *,
 .is-style-circle-red > *,
 .is-style-circle-blue > * {
-	@apply aspect-square;
+	aspect-ratio: 1 / 1;
 	font-size: 1.125rem;
 	font-weight: 700;
   line-height: 1.375;
