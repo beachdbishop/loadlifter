@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<main id="primary" class="py-8 bg-white  |  dark:bg-neutral-800">
-		<div class="px-2  |  md:container lg:px-[16px]">
+		<div class="px-2 container  |  lg:px-[16px]">
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 			<?php if ( have_posts() ) : ?>

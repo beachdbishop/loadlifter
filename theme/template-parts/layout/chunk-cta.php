@@ -34,7 +34,7 @@ $args = wp_parse_args(
 		<rect x="0" y="0" width="400" height="400" fill="url(#blue)" />
 	</svg>
 
-	<div class="px-2 z-10  |  md:container lg:px-[16px]">
+	<div class="px-2 z-10  |  lg:px-[16px]">
 		<div class="flex flex-col items-start gap-8  |  sm:flex-row sm:items-center lg:gap-24">
 
 			<div class="prose grow  |  lg:prose-xl ">

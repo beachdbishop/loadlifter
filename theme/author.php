@@ -51,7 +51,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 <main id="primary" class="bg-white  |  dark:bg-neutral-900">
 
-	<div class="px-2  |  md:container lg:px-[16px]">
+	<div class="px-2 container  |  lg:px-[16px]">
 		<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 		<div class="peepgrid peep-<?php echo $peep_class; ?>  |  md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">

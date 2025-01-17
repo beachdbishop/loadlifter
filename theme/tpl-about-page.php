@@ -61,7 +61,7 @@ $cards_about = [
 ];
 ?>
 
-	<main id="primary" class="about-page | bg-white dark:bg-neutral-900">
+	<main id="primary" class="about-page  |  bg-white  |  dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -72,7 +72,7 @@ $cards_about = [
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="px-2  |  md:container lg:px-[16px] print:px-0">
+				<div class="px-2 container  |  lg:px-[16px] print:px-0">
 
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16 print:mt-0 print:gap-4">
 

@@ -151,7 +151,7 @@ $shared_values = [
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
-			<div class="px-2  |  md:container lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-[16px]">
 
 				<div <?php ll_content_class( 'entry-content ' ); ?>>
 					<?php the_content(); ?>
@@ -234,7 +234,7 @@ $shared_values = [
 
 
 					<section class="full-bleed ll-equal-vert-padding not-prose break-inside-avoid print:hidden">
-						<div class="container px-2  |  lg:px-[16px]">
+						<div class="px-2  |  lg:px-[16px]">
 							<div>
 								<h2 class="mb-2 text-brand-red"><a name="partner"></a>Partner with BeachFleischman today</h2>
 								<p class="mb-2 max-w-5xl">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>

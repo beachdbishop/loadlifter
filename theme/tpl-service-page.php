@@ -79,7 +79,7 @@ $postsQuery = new WP_Query( $qargs );
 			<?php echo ll_better_page_hero( $page_title, $page_message, $hero_cta1_text, $hero_cta1_url, $hero_cta2_text, $hero_cta2_url ); ?>
 
 			<article id="post-<?php the_ID(); ?>"	<?php post_class(); ?>>
-				<div class="px-2  |  md:container lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-[16px]">
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
@@ -91,7 +91,7 @@ $postsQuery = new WP_Query( $qargs );
 							<?php if ( ( $page_post_category ) && ( $postsQuery->have_posts() ) ) : ?>
 
 								<section class="full-bleed not-prose bg-neutral-800 text-neutral-100 ll-equal-vert-padding  |  print:hidden">
-									<div class="post-grid  |  px-2  |  md:container lg:px-[16px]">
+									<div class="post-grid  |  px-2  |  lg:px-[16px]">
 										<div class="flex items-center justify-between mb-4">
 											<h2>Insights</h2>
 											<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-400 rounded-lg text-orient-400  |  hover:text-neutral-100 hover:border-brand-blue">View All</a>
@@ -141,7 +141,7 @@ $postsQuery = new WP_Query( $qargs );
 							<?php // SERVICE PROFESSIONALS AND INVOLVEMENT   ?>
 							<?php if ( ( $page_people_display != 'hide' ) || ( !empty( $page_groups_html ) ) ) : ?>
 							<section class="full-bleed not-prose ll-equal-vert-padding  |  print:hidden">
-								<div class="px-2  |  md:container lg:px-[16px]">
+								<div class="px-2  |  lg:px-[16px]">
 									<?php if ( ( $page_people ) && ( $page_people_display != 'hide' ) ) : ?>
 
 										<h2>

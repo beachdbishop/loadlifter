@@ -46,7 +46,7 @@ get_header();
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-			<div class="px-2  |  md:container lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-[16px]">
 
 				<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 

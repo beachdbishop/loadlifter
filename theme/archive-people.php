@@ -46,7 +46,7 @@ $peopleQuery = new WP_Query( $args );
 	<main id="primary" class="page-people  |  bg-white  |  dark:bg-neutral-900">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-8' ); ?>>
-			<div class="px-2  |  md:container lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-[16px]">
 				<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 				<?php if ( $peopleQuery->have_posts() ) : ?>

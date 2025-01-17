@@ -44,7 +44,7 @@ $page_excerpt                   = get_the_excerpt();
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php if ( !is_front_page() ) { post_class( 'py-8' ); } ?>>
-				<div class="px-2  |  md:container lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-[16px]">
 
 					<?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
 						<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>

@@ -33,29 +33,23 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			// get_template_part( 'template-parts/content/content', 'page-front' );
 			?>
 
-			<!-- <div class="page-hero | ll-equal-vert-padding bg-orient-900 bg-no-repeat overflow-hidden flex items-center justify-center print:py-8"> -->
 			<div class="page-hero  |  wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0">
 				<span class="page-hero-overlay  |  z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
 
-				<!-- <video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="absolute top-[-200px] left-0 object-cover w-full h-[1080px] print:hidden"> -->
 				<video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="wp-block-cover__video-background intrinsic-ignore print:hidden" data-object-fit="cover">
 					<source src="<?php echo $featvideo; ?>">
 					<track src="<?php echo get_stylesheet_directory_uri(); ?>/img/beachfleischman-arizona-silent.vtt" kind="captions" srclang="en" label="english_captions">
 					Your browser does not support the video tag.
 				</video>
 
-				<!-- <div class="overlay | absolute top-0 left-0 w-full h-[1080px] bg-neutral-800/70 lg:bg-transparent lg:bg-hero-gradient"></div> -->
-
-				<!-- <div class="relative flex flex-col justify-center px-2 min-h-[240px] md:container lg:px-[16px] md:min-h-hero text-left"> -->
-				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px] lg:px-[16px] md:min-h-hero">
-					<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl">
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px]  |  lg:px-[16px] md:min-h-hero">
+					<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950  |  lg:text-6xl">
 						<?php echo $video_heading; ?>
 					</h1>
 
-					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 text-shadow shadow-neutral-950 lg:text-4xl">
+					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 text-shadow shadow-neutral-950  |  lg:text-4xl">
 						<?php echo $video_subheading; ?>
 					</p>
 
@@ -81,8 +75,8 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 
 			<?php if ( get_the_content() ) : ?>
 				<?php // Only display the content if it exists ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white dark:bg-neutral-800' ); ?>>
-					<div class="px-2 md:container lg:px-[16px]">
+				<article id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white  |  dark:bg-neutral-800' ); ?>>
+					<div class="px-2 container  |  lg:px-[16px]">
 						<header>
 							<?php the_title( '<h1 class="entry-title | hidden ">', '</h1>' ); ?>
 						</header>
@@ -97,7 +91,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 
 
 			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
-				<div class="px-2 z-10 wp-block-group post-grid lg:px-[16px] has-orient-200-color">
+				<div class="px-2 z-10 wp-block-group post-grid has-orient-200-color  |  lg:px-[16px]">
 					<h2 id="trending" class="mb-4  text-orient-200  |  lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
 						'[display-posts
@@ -114,8 +108,8 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			</section>
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale dark:bg-neutral-900 dark:text-neutral-300">
-				<div class="ind-grid | px-2 lg:px-[16px]">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale  |  dark:bg-neutral-900 dark:text-neutral-300">
+				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php echo do_shortcode(
 						'[display-posts
@@ -131,11 +125,11 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</section>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose dark:bg-neutral-800 dark:text-neutral-300">
-				<div class="post-grid | px-2 lg:px-[16px]">
+			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300">
+				<div class="post-grid  |  px-2  |  lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
 						<h2 id="recent">Recent Posts</h2>
-						<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
+						<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
 					</div>
 					<?php
 

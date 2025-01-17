@@ -152,7 +152,7 @@ get_header();
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
-			<div class="px-2  |  md:container lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-[16px]">
 
 				<div class="not-prose pb-8  |  lg:pb-16">
 					<?php the_content(); ?>

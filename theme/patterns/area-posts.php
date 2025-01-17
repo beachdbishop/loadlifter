@@ -12,8 +12,8 @@
  */
 ?>
 <!-- wp:group {"align":"full","className":"full-bleed","layout":{"type":"default"}} -->
-<div class="wp-block-group alignfull full-bleed"><!-- wp:group {"className":"container mx-auto","layout":{"type":"default"}} -->
-<div class="container mx-auto wp-block-group"><!-- wp:heading {"textAlign":"center","level":3,"textColor":"brand-blue"} -->
+<div class="wp-block-group alignfull full-bleed"><!-- wp:group {"className":"mx-auto","layout":{"type":"default"}} -->
+<div class="mx-auto wp-block-group"><!-- wp:heading {"textAlign":"center","level":3,"textColor":"brand-blue"} -->
 <h3 class="has-brand-blue-color has-text-color"><?php echo 'Area Insights &amp; Updates'; ?></h3>
 <!-- /wp:heading -->
 

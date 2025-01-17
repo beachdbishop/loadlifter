@@ -13,6 +13,6 @@
 	ll_featured_image();
 endif; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php ll_content_class( 'event px-2  |  md:container lg:px-[16px]' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php ll_content_class( 'event px-2 container  |  lg:px-[16px]' ); ?>>
 	<?php the_content(); ?>
 </article>

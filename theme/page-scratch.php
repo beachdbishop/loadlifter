@@ -23,7 +23,7 @@ get_header();
 	    ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4  |  md:py-6 lg:py-8'); ?>>
-			<div class="px-2  |  md:container lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-[16px]">
 
 				<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
@@ -62,7 +62,7 @@ get_header();
 
 						<section class="group full-bleed bg-gray-500 text-white bg-blend-multiply" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">
 							<a href="#">
-								<div class="container px-5 py-16 mx-auto">
+								<div class="px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
 										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
 										<div class="flex-shrink-0 px-8 py-2 mt-10 text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-mustache"></i> Details</div>
@@ -75,7 +75,7 @@ get_header();
 
 						<section class="group full-bleed bg-brand-red bg-center bg-cover text-white bg-blend-multiply is-style-brand-red" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">
 							<a href="#">
-								<div class="container px-5 py-16 mx-auto">
+								<div class="px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
 										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
 										<div class="flex-shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase bg-transparent border border-white border-solid papercorners-16  |  focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
