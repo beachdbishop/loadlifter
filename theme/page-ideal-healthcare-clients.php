@@ -203,48 +203,24 @@ $shared_values = [
 						<div class="px-2  |  lg:px-[16px]">
 							<h2 class="mb-2 text-brand-blue-dark  |  dark:text-neutral-200 ">Shared Values</h2>
 							<p class="">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
-							<div class="mt-4 ind-card-flips is-style-blue ">
-								<?php
-								/* foreach ( $shared_values as $value ) {
-									echo '<div class="card-' . $value['icon'] . '">
-										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-size: 288px; --_card-back-bg: #092f42">
-											<div class="card-content  |  absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
-												<div class="card-front  |  text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-													<div class="card-icon  |  text-[--_card-front-icon]">
-														<span class="fa-stack fa-2x">
-															<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
-															<i class="fa-duotone fa-' . $value['icon'] . ' fa-stack-1x "></i>
-														</span>
-													</div>
-													<h3 class="mt-2 font-light leading-none text-current ">' . $value['label'] . '</h3>
-												</div>
-												<div class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-													<h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $value['label'] . '</h6>
-													<p class="text-shadow">' . $value['desc'] . '</p>
-												</div>
-											</div>
-										</div>
-									</div>';
-									// echo '<div><p>' . $value['label'] . '</p></div>';
-								} */
-								?>
+							<div class="mt-4 ind-card-flips is-style-white ">
 								<?php
 								foreach ( $shared_values as $value ) {
 									echo '<div class="card-' . $value['icon'] . '">
-										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-size: 288px; --_card-front-bg: #fff; --_card-front-text: #092f42; --_card-front-icon: #fff; --_card-back-bg: #fff; --_card-back-text: #092f42;">
+										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]">
 											<div class="card-content  |  absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
 												<div class="card-front  |  text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
 													<div class="card-icon  |  text-[--_card-front-icon]">
 														<span class="fa-stack fa-2x">
-															<i class="text-orient-700 fa-solid fa-circle fa-stack-2x dark:text-neutral-900"></i>
+															<i class="text-orient-700 fa-solid fa-circle fa-stack-2x dark:text-orient-900"></i>
 															<i class="fa-duotone fa-' . $value['icon'] . ' fa-stack-1x "></i>
 														</span>
 													</div>
 													<h3 class="mt-2 font-light leading-none text-current ">' . $value['label'] . '</h3>
 												</div>
 												<div class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay [backface-visibility:hidden] [transform:rotateY(180deg)]">
-													<h6 class="my-2 leading-none tracking-wide text-center text-current">' . $value['label'] . '</h6>
-													<p class="">' . $value['desc'] . '</p>
+													<h6 class="my-2 leading-none tracking-wide text-center text-current font-medium">' . $value['label'] . '</h6>
+													<p class=" font-medium"> ' . $value['desc'] . '</p>
 												</div>
 											</div>
 										</div>

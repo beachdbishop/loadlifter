@@ -52,6 +52,39 @@
 	--_card-front-icon: theme(colors.mahogany.800);
 	--_card-back-bg: theme(colors.red.950);
 }
+.ind-card-flips.is-style-white {
+	--_card-front-bg: theme(colors.white);
+	--_card-front-text: theme(colors.orient.950);
+	--_card-front-icon: theme(colors.white);
+	--_card-back-bg: theme(colors.white);
+	--_card-back-text: theme(colors.orient.950);
+}
+
+.card-ic-flip {
+	width: var(--_card-size);
+	height: var(--_card-size);
+	perspective: 600px;
+
+	.card-content {
+		transform-style: preserve-3d;
+	}
+
+	.card-front {
+		background-color: var(--_card-front-bg);
+		color: var(--_card-front-text);
+	}
+
+	.card-icon {
+		color: var(--_card-front-icon);
+	}
+
+	.card-back {
+		background-color: var(--_card-back-bg);
+		color: var(--_card-back-text);
+		backface-visibility: hidden;
+		transform: rotateY(180deg);
+	}
+}
 
 @media (prefers-color-scheme: dark) {
 	.ind-card-flips.is-style-default {
@@ -73,6 +106,13 @@
 		--_card-front-text: theme(colors.neutral.300);
 		--_card-front-icon: theme(colors.mahogany.500);
 		--_card-back-bg: theme(colors.neutral.700);
+	}
+	.ind-card-flips.is-style-white {
+		--_card-front-bg: theme(colors.neutral.800);
+		--_card-front-text: theme(colors.orient.600);
+		--_card-front-icon: theme(colors.white);
+		--_card-back-bg: theme(colors.neutral.800);
+		--_card-back-text: theme(colors.neutral.300);
 	}
 }
 

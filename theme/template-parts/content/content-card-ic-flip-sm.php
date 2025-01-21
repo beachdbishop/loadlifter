@@ -16,13 +16,13 @@ $feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnai
 ?>
 
 <li class="card-<?php echo $icon; ?>">
-	<div class="card card-ic card-ic-flip  |  group relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]">
-		<div class="card-content  |  absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
+	<div class="card card-ic card-ic-flip  |  group relative inline-block float-left">
+		<div class="card-content  |  absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700  |  dark:shadow-none">
 
-			<div class="card-front  |  text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+			<div class="card-front  |  text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
 
 				<?php if ( $icon ) : ?>
-					<div class="card-icon  |  text-[--_card-front-icon]">
+					<div class="card-icon">
 						<span class="fa-stack fa-2x">
 							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
 							<i class="fa-duotone <?php echo $icon; ?> fa-stack-1x "></i>
@@ -36,7 +36,7 @@ $feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnai
 			</div>
 
 			<div
-				class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50 [backface-visibility:hidden] [transform:rotateY(180deg)]"
+				class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50"
 				style="background-image: url('<?php echo $feat_image_url[0]; ?>')"
 			>
 				<h3 class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
