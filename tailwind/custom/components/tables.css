@@ -14,11 +14,17 @@ figcaption {
 .prose tfoot {
 	background-color: theme(colors.neutral.200);
 }
-.prose table th {
+.prose th {
 	--tw-border-opacity: 1;
-	border-bottom-width: 2px;
-  border-color: rgb(212 212 212 / var(--tw-border-opacity)) /* neutral-300 */;
+	border-color: rgb(212 212 212 / var(--tw-border-opacity)) /* neutral-300 */;
 	border-style: solid;
+}
+.prose thead th {
+	border-bottom-width: 2px;
+}
+.prose tbody th {
+	border-bottom-width: 1px;
+	vertical-align: top;
 }
 .prose tbody tr:nth-child(even) {
 	background: color-mix(in srgb, theme(colors.neutral.200), transparent 60%);
