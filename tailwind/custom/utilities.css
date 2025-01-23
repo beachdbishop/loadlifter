@@ -4,7 +4,7 @@
  * Add your own utility classes to this theme. Complex utility classes should
  * be added using Tailwind’s plugin system:
  *
- * https://tailwindcss.com/docs/plugins#adding-utilities
+ * https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities
  */
 
 /* via: https://piccalil.li/tutorial/creating-a-full-bleed-css-utility/ */
@@ -40,25 +40,6 @@ div:not(.block-editor-block-list__layout) .full-bleed > div {
 		margin-block: var(--_spacing);
 	}
 }
-
-/* Following lines might be replaced by the clamp statements above. */
-/* @media screen and (min-width: 768px) {
-	body {
-		--_spacing: 3rem;
-	}
-}
-@media screen and (min-width: 1024px) {
-	body {
-		--_spacing: 4rem;
-		--_padding: 4rem;
-	}
-}
-@media screen and (min-width: 1400px) {
-	body {
-		--_spacing: 5rem;
-		--_padding: 5rem;
-	}
-} */
 
 
 .bg-gradient-70 {
