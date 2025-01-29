@@ -38,11 +38,11 @@ $args = wp_parse_args(
 		<div class="flex flex-col items-start gap-8  |  sm:flex-row sm:items-center lg:gap-24">
 
 			<div class="prose grow  |  lg:prose-xl ">
-				<h2 class="mb-2 text-orient-200 text-shadow shadow-orient-950  |  print:text-shadow-none">
+				<h2 class="mb-2 text-orient-200  |  print:drop-shadow-none">
 					<?php echo esc_html( $args['part_data']['cta_heading'] ); ?>
 				</h2>
 				<?php if ( $args['part_data']['cta_body'] ) :
-					echo '<p class="text-neutral-100 text-shadow shadow-orient-950  |  print:text-shadow-none">' . esc_html( $args['part_data']['cta_body'] ) . '</p>';
+					echo '<p class="text-neutral-100  |  print:drop-shadow-none">' . esc_html( $args['part_data']['cta_body'] ) . '</p>';
 				endif; ?>
 				<p class="hidden  |  print:mt-8 print:block">Email info@beachfleischman.com</p>
 			</div>

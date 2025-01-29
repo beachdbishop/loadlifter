@@ -59,7 +59,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 
 			<?php if ( ( !is_page_template( LL_LP_TEMPLATES ) ) && ( $show_expanded_menus ) ) { ?>
 			<div class="print:hidden">
-				<div class="grid grid-cols-1 gap-x-4 gap-y-8 text-shadow shadow-neutral-900 sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6">
+				<div class="grid grid-cols-1 gap-x-4 gap-y-8  |  sm:grid-cols-2 md:grid-cols-3 md:gap-x-8 lg:grid-cols-6">
 					<nav aria-label="Accounting and Assurance submenu">
 						<p class="text-2xl leading-5 font-head"><a href="/assurance/">Accounting &amp; Assurance</a></p>
 						<?php
@@ -119,7 +119,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
-						<a href="/career-opportunities/?ref=footer" class=" rounded-xs text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold |  md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
+						<a href="/career-opportunities/?ref=footer" class=" rounded-xs text-neutral-900 drop-shadow-none border-b-0 bg-amber-300 p-1 font-bold |  md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
 					</nav>
 				</div>
 			</div>

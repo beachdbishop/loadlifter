@@ -319,10 +319,10 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 
 		$hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } } @media print { .page-hero { background-color: transparent; background-image: none; } }</style>';
 
-		$hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
-		$hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-(--height-hero) print:min-h-fit"><div class="">';
-		$hero_html .= '<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>';
-		$hero_html .= '<h2 class="my-6 text-2xl leading-normal max-w-[42ch] text-orient-400 text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>';
+		$hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover  |  lg:bg-center print:py-8">';
+		$hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px]  |  md:container xl:px-4 md:min-h-(--height-hero) print:min-h-fit"><div class="">';
+		$hero_html .= '<h1 class="leading-none text-white tracking-light  |  lg:text-6xl print:drop-shadow-none">' . $h1 . '</h1>';
+		$hero_html .= '<h2 class="my-6 text-2xl leading-normal max-w-[42ch] text-orient-400  |  lg:text-4xl print:drop-shadow-none">' . $h2 . '</h2>';
 
 		if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) {
 			$hero_html .= '<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex ">
@@ -356,8 +356,8 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 
 			<div class="wp-block-cover__inner-container | px-2 lg:px-4 print:!px-0">
 				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-(--height-hero) print:min-h-min">
-					<h1 class="has-text-color leading-none text-white tracking-light text-prett text-shadow shadow-neutral-950 <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black print:text-shadow-none" style="text-wrap: unset"><?php echo $h1; ?></h1>
-					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-orient-400 text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:text-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
+					<h1 class="has-text-color leading-none text-white tracking-light text-pretty drop-shadow-xl shadow-neutral-950 <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black print:drop-shadow-none" style="text-wrap: unset"><?php echo $h1; ?></h1>
+					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-orient-400 drop-shadow-xl shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:drop-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
 						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">
 							<div class="print:hidden">
@@ -697,7 +697,7 @@ endif;
 if ( ! function_exists( 'll_footer_address' ) ) :
 	function ll_footer_address( $addr ) {
 		echo '<div class=" md:pt-2">
-			<div class="space-y-2 not-italic text-shadow shadow-neutral-900 print:text-shadow-none print:space-y-1" property="address" typeof="PostalAddress">
+			<div class="space-y-2 not-italic text-shadow shadow-neutral-900 print:drop-shadow-none print:space-y-1" property="address" typeof="PostalAddress">
 				<p class="street-address | font-head leading-none " property="streetAddress">' . $addr['street1'] . '</p>
 				<p class="locality | font-head leading-none "><span property="addressLocality">' . $addr['city'] . '</span>, <span class="state" property="addressRegion">' . $addr['state'] . '</span> <span class="zip" property="postalCode">' . $addr['zip'] . '</span></p>
 				<p class="font-semibold leading-none font-head " property="telephone">P: <a href="tel:'. ll_format_phone_number( $addr['phone'] ) .'" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', \'' . ll_format_phone_number( $addr['phone'], 'us') . '\', 0);">' . ll_format_phone_number( $addr['phone'], 'beach') . '</a></p>

@@ -45,11 +45,11 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</video>
 
 				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
-					<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950  |  lg:text-6xl">
+					<h1 class="leading-none text-white tracking-light  |  lg:text-6xl">
 						<?php echo $video_heading; ?>
 					</h1>
 
-					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 text-shadow shadow-neutral-950  |  lg:text-4xl">
+					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400  |  lg:text-4xl">
 						<?php echo $video_subheading; ?>
 					</p>
 
