@@ -9,14 +9,12 @@
 	background-image: linear-gradient(to bottom, var(--color-neutral-100) 0, rgb(255 255 255 / 1) 30%);
 }
 
-/* TODO: Double-check that all these are needed since I have enabled the Tailwind Forms plugin */
 form {
 	display: grid;
 	grid-auto-flow: row;
 	grid-auto-rows: max-content;
 	gap: 0.5rem;
 }
-
 
 [multiple], [type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], input:where(:not([type])), select, textarea {
 	appearance: none;
@@ -26,7 +24,6 @@ form {
 	line-height: 1.5rem;
 	--tw-shadow: 0 0 #0000;
 }
-
 
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 select,
@@ -75,7 +72,6 @@ input[type="radio"]:focus {
 }
 
 
-
 input[type="submit"] {
 	--tw-shadow-color: var(--color-neutral-800);
   --tw-shadow: var(--tw-shadow-colored);
@@ -111,11 +107,9 @@ input[type="submit"]:active {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hbspt-form {
-	span.hs-form-required {
-		font-weight: 700;
-		color: var(--color-orange-800);
-	}
+.hbspt-form span.hs-form-required {
+	font-weight: 700;
+	color: var(--color-orange-800);
 }
 .hbspt-form .hs-error-msg {
 	font-size: 1rem;
@@ -124,7 +118,6 @@ input[type="submit"]:active {
 	font-style: italic;
 	color: var(--color-red-700);
 }
-
 .hbspt-form .invalid {
 	border-width: 2px;
 	border-color: var(--color-red-700) !important;
@@ -167,11 +160,13 @@ input[type="submit"]:active {
 		border-color: var(--color-red-300) !important;
 	}
 }
+
 @media screen and (min-width: 640px) {
 	input[type="submit"] {
 		width: auto;
 	}
 }
+
 @media screen and (min-width: 768px) {
 	form {
 		gap: 1rem;
@@ -186,6 +181,7 @@ input[type="submit"]:active {
 		gap: 0.5rem;
 	}
 }
+
 @media screen and (min-width: 1024px) {
 	.container-contact-form {
 		margin-bottom: 0;
@@ -199,6 +195,7 @@ input[type="submit"]:active {
 		gap: 2rem;
 	}
 }
+
 @media print {
 	.container-contact-form,
 	form {
