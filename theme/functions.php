@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '2.16.11' );
+	define( 'LL_VERSION', '3.0.1' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -35,8 +35,8 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 		*/
 	define(
 		'LL_TYPOGRAPHY_CLASSES',
-		'prose'
-		// 'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm'
+		// 'prose'
+		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm'
 	);
 
 }
@@ -107,6 +107,7 @@ if ( ! function_exists( 'll_setup' ) ) :
 		// add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'editor-styles' );
 		add_editor_style( 'style-editor.css' );
+		add_editor_style( 'style-editor-extra.css' );
 
 		add_post_type_support( 'page', 'excerpt' );
 

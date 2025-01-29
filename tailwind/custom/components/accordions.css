@@ -41,7 +41,7 @@ details[open] summary::-webkit-details-marker {
 }
 
 .accordions summary {
-	font-family: theme(fontFamily.head);
+	font-family: var(--font-head);
 	padding-inline: 1rem;
 	padding-bottom: 0.5rem;
 	padding-top: 0.25rem;
@@ -51,7 +51,7 @@ details[open] summary::-webkit-details-marker {
 }
 .accordions summary::before {
 	content: '+';
-	font-family: theme(fontFamily.mono);
+	font-family: var(--font-mono);
 	margin-right: 0.25rem;
 }
 .accordions summary:hover::before {
@@ -59,7 +59,7 @@ details[open] summary::-webkit-details-marker {
 }
 
 .accordions .details-inner {
-	background-color: theme(colors.neutral.50);
+	background-color: var(--color-neutral-50);
 	padding-inline: 0.5rem;
 	padding-block: 1rem;
 	position: relative;
@@ -73,36 +73,36 @@ details[open] summary::-webkit-details-marker {
 
 
 .accordions.is-style-default details[open] summary {
-	color: theme(colors.neutral.900);
+	color: var(--color-neutral-900);
 }
 .accordions.is-style-default summary {
-	background-color: theme(colors.neutral.200);
-	color: theme(colors.neutral.700);
+	background-color: var(--color-neutral-200);
+	color: var(--color-neutral-700);
 }
 .accordions.is-style-default summary::before {
-	color: theme(colors.neutral.400);
+	color: var(--color-neutral-400);
 }
 
 .accordions.is-style-blue details[open] summary {
 	color: white;
 }
 .accordions.is-style-blue summary {
-	background-color: theme(colors.brand-blue);
-	color: theme(colors.orient.200);
+	background-color: var(--wp--preset--color--brand-blue);
+	color: var(--color-orient-200);
 }
 .accordions.is-style-blue summary::before {
-	color: theme(colors.orient.400);
+	color: var(--color-orient-400);
 }
 
 .accordions.is-style-red details[open] summary {
 	color: white;
 }
 .accordions.is-style-red summary {
-	background-color: theme(colors.brand-red);
-	color: theme(colors.brand-red-faint);
+	background-color: var(--wp--preset--color--brand-red);
+	color: var(--wp--preset--color--brand-red-faint);
 }
 .accordions.is-style-red summary::before {
-	color: theme(colors.brand-red-pale);
+	color: var(--wp--preset--color--brand-red-pale);
 }
 
 /* details[open] summary ~ * {
@@ -112,8 +112,8 @@ details[open] summary::-webkit-details-marker {
 
 @media (prefers-color-scheme: dark) {
 	.accordions .details-inner {
-		background-color: theme(colors.neutral.800);
-		color: theme(colors.neutral.300);
+		background-color: var(--color-neutral-800);
+		color: var(--color-neutral-300);
 	}
 }
 

@@ -52,7 +52,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 	get_template_part( 'template-parts/siteblocks/pre', 'footer' );
 	?>
 
-	<footer id="colophon" class="site-footer wp-block-cover alignfull is-light has-parallax text-white border-t-4 border-solid border-brand-blue ll-equal-vert-padding !px-0 bg-neutral-950 | print:border-none print:text-neutral-700 print:bg-white">
+	<footer id="colophon" class="site-footer wp-block-cover alignfull is-light has-parallax text-white border-t-4 border-solid border-orient-800 ll-equal-vert-padding !px-0 bg-neutral-950 | print:border-none print:text-neutral-700 print:bg-white">
 		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim print:hidden"></span>
 		<div role="img" aria-label="The Arizona desert at sunrise" class="wp-block-cover__image-background has-parallax print:hidden" style="background-position:50% 0;background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
 		<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-[16px] lg:space-y-16">
@@ -119,7 +119,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 							'walker' => new LL_Menu_Walker()
 						) );
 						?>
-						<a href="/career-opportunities/?ref=footer" class=" rounded-sm text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold |  md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
+						<a href="/career-opportunities/?ref=footer" class=" rounded-xs text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold |  md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
 					</nav>
 				</div>
 			</div>

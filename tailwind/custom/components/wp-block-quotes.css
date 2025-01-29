@@ -5,7 +5,7 @@
   line-height: 1.75rem;
 }
 .wp-block-quote cite {
-	font-family: theme(fontFamily.head);
+	font-family: var(--font-head);
 	font-size: 1rem;
   line-height: 1.5rem;
 	font-style: normal;
@@ -15,8 +15,8 @@
 }
 
 .wp-block-quote.is-style-default {
-	color: theme(colors.brand-blue-dark);
-	border-color: theme(colors.brand-blue);
+	color: var(--color-orient-950);
+	border-color: var(--color-orient-800);
 	position: relative;
 	border-radius: 0.5rem;
 	border-top-width: 4px;
@@ -28,7 +28,7 @@
 
 @media (prefers-color-scheme: dark) {
 	.wp-block-quote.is-style-default {
-		color: theme(colors.orient.400);
+		color: var(--color-orient-400);
 	}
 }
 

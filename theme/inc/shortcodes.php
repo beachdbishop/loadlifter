@@ -297,7 +297,7 @@ function ll_tptdisclaimer_shortcode() {
 function ll_careers_openings_cta_shortcode() {
 	return '<div
 		id="openings"
-		class="not-prose px-2 py-4 mt-8 space-y-4 border-2 border-solid border-brand-red bg-gradient-to-r from-white to-neutral-100 text-brand-red-dark  |  md:p-4 lg:p-8 dark:border-orient-400 dark:from-neutral-800 dark:to-neutral-950"
+		class="not-prose px-2 py-4 mt-8 space-y-4 border-2 border-solid border-brand-red bg-linear-to-r from-white to-neutral-100 text-brand-red-dark  |  md:p-4 lg:p-8 dark:border-orient-400 dark:from-neutral-800 dark:to-neutral-950"
 	>
 	<h2 class="wp-block-heading text-brand-red-dark  |  dark:text-orient-400">
 		<i class="fa-solid fa-users hidden  |  lg:inline"></i>

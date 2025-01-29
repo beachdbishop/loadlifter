@@ -1,30 +1,29 @@
 /* Cards that flip */
 .ind-card-flips {
 	--_card-size: 288px;
-	--_card-front-bg: theme(colors.neutral.100);
-	--_card-front-icon: theme(colors.neutral.800);
-	--_card-back-bg: theme(colors.neutral.800);
-	--_card-front-text: theme(colors.neutral.200);
-	--_card-back-text: theme(colors.neutral.100);
+	--_card-front-bg: var(--color-neutral-100);
+	--_card-front-icon: var(--color-neutral-800);
+	--_card-back-bg: var(--color-neutral-800);
+	--_card-front-text: var(--color-neutral-200);
+	--_card-back-text: var(--color-neutral-100);
 	display: flex;
 	flex-wrap: wrap;
 	place-content: center;
 	gap: 1rem;
 
 	list-style: none;
+}
 
+.ind-card-flips	.card:hover .card-content,
+.ind-card-flips	.card:active .card-content,
+.ind-card-flips	.card:focus .card-content {
+	transform: rotateY(180deg);
+}
 
-	.card:hover .card-content,
-	.card:active .card-content,
-	.card:focus .card-content {
-		transform: rotateY(180deg);
-	}
-
-	.card-back p,
-	.card-back li {
-		font-size: 0.875rem;
-  	line-height: 1.25rem;
-	}
+.ind-card-flips	.card-back p,
+.ind-card-flips	.card-back li {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
 }
 
 .ind-card-flips:has(.card-ic-flip) {
@@ -33,86 +32,86 @@
 
 
 .ind-card-flips.is-style-default {
-	--_card-front-bg: theme(colors.neutral.100);
-	--_card-front-text: theme(colors.neutral.800);
-	--_card-front-icon: theme(colors.brand-blue);
-	--_card-back-bg: theme(colors.neutral.700);
+	--_card-front-bg: var(--color-neutral-100);
+	--_card-front-text: var(--color-neutral-800);
+	--_card-front-icon: var(--color-orient-800);
+	--_card-back-bg: var(--color-neutral-700);
 }
 
 .ind-card-flips.is-style-blue {
-	--_card-front-bg: theme(colors.brand-blue);
-	--_card-front-text: theme(colors.neutral.50);
-	--_card-front-icon: theme(colors.brand-blue-dark);
-	--_card-back-bg: theme(colors.brand-blue-dark);
+	--_card-front-bg: var(--color-orient-800);
+	--_card-front-text: var(--color-neutral-50);
+	--_card-front-icon: var(--color-orient-950);
+	--_card-back-bg: var(--color-orient-950);
 }
 
 .ind-card-flips.is-style-red {
-	--_card-front-bg: theme(colors.mahogany.700);
-	--_card-front-text: theme(colors.neutral.100);
-	--_card-front-icon: theme(colors.mahogany.800);
-	--_card-back-bg: theme(colors.red.950);
+	--_card-front-bg: var(--color-mahogany-700);
+	--_card-front-text: var(--color-neutral-100);
+	--_card-front-icon: var(--color-mahogany-800);
+	--_card-back-bg: var(--color-red-950);
 }
 .ind-card-flips.is-style-white {
-	--_card-front-bg: theme(colors.white);
-	--_card-front-text: theme(colors.orient.950);
-	--_card-front-icon: theme(colors.white);
-	--_card-back-bg: theme(colors.white);
-	--_card-back-text: theme(colors.orient.950);
+	--_card-front-bg: var(--color-white);
+	--_card-front-text: var(--color-orient-950);
+	--_card-front-icon: var(--color-white);
+	--_card-back-bg: var(--color-white);
+	--_card-back-text: var(--color-orient-950);
 }
 
 .card-ic-flip {
 	width: var(--_card-size);
 	height: var(--_card-size);
 	perspective: 600px;
+}
 
-	.card-content {
-		transform-style: preserve-3d;
-	}
+.card-ic-flip .card-content {
+	transform-style: preserve-3d;
+}
 
-	.card-front {
-		background-color: var(--_card-front-bg);
-		color: var(--_card-front-text);
-	}
+.card-ic-flip .card-front {
+	background-color: var(--_card-front-bg);
+	color: var(--_card-front-text);
+}
 
-	.card-icon {
-		color: var(--_card-front-icon);
-	}
+.card-ic-flip .card-icon {
+	color: var(--_card-front-icon);
+}
 
-	.card-back {
-		background-color: var(--_card-back-bg);
-		color: var(--_card-back-text);
-		backface-visibility: hidden;
-		transform: rotateY(180deg);
-	}
+.card-ic-flip .card-back {
+	background-color: var(--_card-back-bg);
+	color: var(--_card-back-text);
+	backface-visibility: hidden;
+	transform: rotateY(180deg);
 }
 
 @media (prefers-color-scheme: dark) {
 	.ind-card-flips.is-style-default {
-		--_card-front-bg: theme(colors.neutral.800);
-		--_card-front-text: theme(colors.neutral.100);
-		--_card-front-icon: theme(colors.orient.400);
-		--_card-back-bg: theme(colors.neutral.700);
+		--_card-front-bg: var(--color-neutral-800);
+		--_card-front-text: var(--color-neutral-100);
+		--_card-front-icon: var(--color-orient-400);
+		--_card-back-bg: var(--color-neutral-700);
 	}
 
 	.ind-card-flips.is-style-blue {
-		--_card-front-bg: theme(colors.brand-blue-dark);
-		--_card-front-text: theme(colors.neutral.300);
-		--_card-front-icon: theme(colors.orient.400);
-		--_card-back-bg: theme(colors.neutral.700);
+		--_card-front-bg: var(--color-orient-950);
+		--_card-front-text: var(--color-neutral-300);
+		--_card-front-icon: var(--color-orient-400);
+		--_card-back-bg: var(--color-neutral-700);
 	}
 
 	.ind-card-flips.is-style-red {
-		--_card-front-bg: theme(colors.mahogany.950);
-		--_card-front-text: theme(colors.neutral.300);
-		--_card-front-icon: theme(colors.mahogany.500);
-		--_card-back-bg: theme(colors.neutral.700);
+		--_card-front-bg: var(--color-mahogany-950);
+		--_card-front-text: var(--color-neutral-300);
+		--_card-front-icon: var(--color-mahogany-500);
+		--_card-back-bg: var(--color-neutral-700);
 	}
 	.ind-card-flips.is-style-white {
-		--_card-front-bg: theme(colors.neutral.800);
-		--_card-front-text: theme(colors.orient.600);
-		--_card-front-icon: theme(colors.white);
-		--_card-back-bg: theme(colors.neutral.800);
-		--_card-back-text: theme(colors.neutral.300);
+		--_card-front-bg: var(--color-neutral-800);
+		--_card-front-text: var(--color-orient-600);
+		--_card-front-icon: var(--color-white);
+		--_card-back-bg: var(--color-neutral-800);
+		--_card-back-text: var(--color-neutral-300);
 	}
 }
 

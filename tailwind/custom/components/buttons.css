@@ -1,9 +1,10 @@
 /*   B u t t o n s   */
 
-.wp-block-button__link {
-	--tw-shadow-color: theme(colors.neutral.800);
+.wp-block-button__link,
+.wp-block-file__button {
+	--tw-shadow-color: var(--color-neutral-800);
 	--tw-shadow: var(--tw-shadow-colored);
-	font-family: theme(fontFamily.head);
+	font-family: var(--font-head);
 	font-weight: 600;
 	display: inline-flex;
 	align-items: center;
@@ -13,12 +14,14 @@
 	padding-block: 0.75rem;
 	text-decoration-line: none;
 }
-.wp-block-button__link:hover {
+.wp-block-button__link:hover,
+.wp-block-file__button:hover {
 	--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 	--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-.wp-block-button__link:focus {
+.wp-block-button__link:focus,
+.wp-block-file__button:focus {
 	--tw-ring-color: rgb(103 232 249 / 0.8);
 	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -28,7 +31,7 @@
 }
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link:not(.has-background):hover {
-	background-color: theme(colors.brand-blue-dark);
+	background-color: var(--color-orient-950);
 	color: white;
 }
 
@@ -43,24 +46,24 @@
 	--tw-shadow: 0 0 #0000;
 	--tw-shadow-colored: 0 0 #0000;
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
-	border-color: theme(colors.brand-blue);
-	color: theme(colors.brand-blue);
+	border-color: var(--color-orient-800);
+	color: var(--color-orient-800);
 }
 
 /* on dark bg color? */
 .on-darkbg :not(.is-style-outline) > .wp-block-button__link:not(.has-background) {
-	background-color: theme(colors.orient.400);
-	color: theme(colors.brand-gray-dark);
+	background-color: var(--color-orient-400);
+	color: var(--color-brand-gray-dark);
 }
 .on-darkbg :not(.is-style-outline) > .wp-block-button__link:not(.has-background):hover {
-	background-color: theme(colors.brand-blue);
-	color: theme(colors.orient.200);
+	background-color: var(--color-orient-800);
+	color: var(--color-orient-200);
 }
 
 .on-darkbg .is-style-outline > .wp-block-button__link:not(.has-text-color):hover {
 	background-color: transparent;
-	border-color: theme(colors.orient.400);
-	color: theme(colors.orient.400);
+	border-color: var(--color-orient-400);
+	color: var(--color-orient-400);
 }
 
 

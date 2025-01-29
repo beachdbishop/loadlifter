@@ -26,36 +26,35 @@
 
 
 .is-style-sep-blue {
-	--_start: theme(colors.brand-blue);
-	--_end: theme(colors.orient.400);
+	--_start: var(--color-orient-800);
+	--_end: var(--color-orient-400);
 }
 .is-style-sep-red {
-	--_start: theme(colors.brand-red);
-	--_end: theme(colors.brand-red-pale);
+	--_start: var(--color-mahogany-700);
+	--_end: var(--color-mahogany-300);
 }
 .is-style-sep-gray {
-	--_start: theme(colors.neutral.800);
-	--_end: theme(colors.neutral.500);
+	--_start: var(--color-neutral-800);
+	--_end: var(--color-neutral-500);
 }
 
 
 /* Spacers */
 .wp-block-spacer {
 	margin-block: 0;
-
-	&.is-style-xs {
-		height: clamp(8px, 2vw, 24px) !important;
-	}
-	&.is-style-sm {
-		height: clamp(12px, 3vw, 36px) !important;
-	}
-	&.is-style-md {
-		height: clamp(24px, 5vw, 48px) !important;
-	}
-	&.is-style-lg {
-		height: clamp(36px, 8vw, 72px) !important;
-	}
-	&.is-style-xl {
-		height: clamp(48px, 9vw, 96px) !important;
-	}
+}
+.wp-block-spacer.is-style-xs {
+	height: clamp(8px, 2vw, 24px) !important;
+}
+.wp-block-spacer.is-style-sm {
+	height: clamp(12px, 3vw, 36px) !important;
+}
+.wp-block-spacer.is-style-md {
+	height: clamp(24px, 5vw, 48px) !important;
+}
+.wp-block-spacer.is-style-lg {
+	height: clamp(36px, 8vw, 72px) !important;
+}
+.wp-block-spacer.is-style-xl {
+	height: clamp(48px, 9vw, 96px) !important;
 }

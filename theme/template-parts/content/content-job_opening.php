@@ -61,9 +61,9 @@ $f_applylink                    = get_field( 'apply_link' );
 					<?php if ( ( $f_openclosed == '1' ) && ( $f_applylink ) ) { ?>
 
 						<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-							<a href="<?php echo $f_applylink; ?>" class="px-5 py-3 font-bold text-base no-underline border-2 rounded-lg font-head border-brand-red bg-brand-red !text-neutral-100 hover:text-white dark:bg-brand-red dark:border-brand-red dark:hover:text-brand-red-faint dark:hover:border-brand-red-faint shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-orient-400/80 sm:w-auto lg:text-lg dark:shadow-brand-red-pale" target="_blank"><i class="mr-1 fa-solid fa-edit"></i>  Apply today</a>
+							<a href="<?php echo $f_applylink; ?>" class="px-5 py-3 font-bold text-base no-underline border-2 rounded-lg font-head border-brand-red bg-brand-red !text-neutral-100 hover:text-white dark:bg-brand-red dark:border-brand-red dark:hover:text-brand-red-faint dark:hover:border-brand-red-faint shadow-neutral-800 hover:shadow-xl focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 sm:w-auto lg:text-lg dark:shadow-brand-red-pale" target="_blank"><i class="mr-1 fa-solid fa-edit"></i>  Apply today</a>
 
-							<a href="/career-opportunities/" class="px-5 py-3 font-bold text-base no-underline border-2 rounded-lg font-head border-brand-blue !text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-orient-200 dark:hover:border-orient-200 shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-orient-400/80 sm:w-auto lg:text-lg dark:shadow-orient-400" target="_blank"><i class="mr-1 fa-regular fa-angle-left"></i> Back to Careers</a>
+							<a href="/career-opportunities/" class="px-5 py-3 font-bold text-base no-underline border-2 rounded-lg font-head border-brand-blue !text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-orient-200 dark:hover:border-orient-200 shadow-neutral-800 hover:shadow-xl focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 sm:w-auto lg:text-lg dark:shadow-orient-400" target="_blank"><i class="mr-1 fa-regular fa-angle-left"></i> Back to Careers</a>
 						</div>
 
 
@@ -73,7 +73,7 @@ $f_applylink                    = get_field( 'apply_link' );
 						<p class="text-brand-red-dark"><em>Thank you for your interest but we are not accepting applications for this opening at this time.</em></p>
 
 						<div class="mt-8 wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
-							<a href="/career-opportunities/" class="px-5 py-3 font-bold text-base no-underline border-2 rounded-lg font-head border-brand-blue !text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-orient-200 dark:hover:border-orient-200 shadow-neutral-800 hover:shadow-xl focus:outline-none focus:ring focus:ring-orient-400/80 sm:w-auto lg:text-lg dark:shadow-orient-400" target="_blank"><i class="mr-1 fa-regular fa-angle-left"></i> Back to Careers</a>
+							<a href="/career-opportunities/" class="px-5 py-3 font-bold text-base no-underline border-2 rounded-lg font-head border-brand-blue !text-brand-blue hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-brand-blue dark:border-brand-blue dark:hover:text-orient-200 dark:hover:border-orient-200 shadow-neutral-800 hover:shadow-xl focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 sm:w-auto lg:text-lg dark:shadow-orient-400" target="_blank"><i class="mr-1 fa-regular fa-angle-left"></i> Back to Careers</a>
 						</div>
 
 					<?php } ?>

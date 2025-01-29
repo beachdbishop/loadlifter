@@ -6,14 +6,14 @@ dl {
 }
 
 dt {
-	font-family: theme(fontFamily.head);
-	font-size: theme(fontSize.xl);
+	font-family: var(--font-head);
+	font-size: var(--text-xl);
 	font-weight: 600;
 }
 
 dd {
 	border-bottom-width: 1px;
-	border-color: theme(colors.neutral.200);
+	border-color: var(--color-neutral-200);
 	display: list-item;
 	list-style-type: square;
 	margin-left: 2rem;
@@ -32,7 +32,7 @@ ol.wp-block-list {
 	padding-inline-start: 1.5rem;
 
 	li::marker {
-		color: theme(colors.neutral.500);
+		color: var(--color-neutral-500);
 	}
 }
 ul.is-style-default,
@@ -42,7 +42,7 @@ ul.wp-block-list {
 	padding-inline-start: 1.5rem;
 
 	li::marker {
-		color: theme(colors.neutral.300);
+		color: var(--color-neutral-300);
 	}
 }
 
@@ -64,9 +64,11 @@ ul.wp-block-list {
 	list-style-type: none;
 	padding-left: 0;
 
-	li {
-		padding-left: 0;
-	}
+
+}
+.is-style-list-none li,
+.prose .is-style-list-none li {
+	padding-left: 0;
 }
 
 .is-style-list-square,
@@ -89,28 +91,28 @@ ul.wp-block-list {
 .prose [class*="is-style-list-divide-"] {
 	list-style-type: none;
 	padding: 0;
-
-	li {
-		padding-left: 0;
-
-		&:not(:last-of-type) {
-			border-bottom-width: 2px;
-			border-style: dotted;
-		}
-	}
+}
+[class*="is-style-list-divide-"] li,
+.prose [class*="is-style-list-divide-"] li {
+	padding-left: 0;
+}
+[class*="is-style-list-divide-"] li:not(:last-of-type),
+.prose [class*="is-style-list-divide-"] li:not(:last-of-type) {
+	border-bottom-width: 2px;
+	border-style: dotted;
 }
 
 .is-style-list-divide-light li:not(:last-of-type) {
-	border-color: theme(colors.neutral.400);
+	border-color: var(--color-neutral-400);
 }
 .is-style-list-divide-gray li:not(:last-of-type) {
-	border-color: theme(colors.brand-gray);
+	border-color: var(--color-brand-gray);
 }
 .is-style-list-divide-red li:not(:last-of-type) {
-	border-color: theme(colors.brand-red-pale);
+	border-color: var(--color-mahogany-300);
 }
 .is-style-list-divide-blue li:not(:last-of-type) {
-	border-color: theme(colors.brand-blue);
+	border-color: var(--color-orient-800);
 }
 
 .is-style-list-checked {
@@ -165,22 +167,22 @@ ul.wp-block-list {
 }
 
 .is-style-circle li {
-	background-color: theme(colors.neutral.600);
+	background-color: var(--color-neutral-600);
 }
 .is-style-circle h5 {
-	color: theme(colors.neutral.600);
+	color: var(--color-neutral-600);
 }
 .is-style-circle-red li {
-	background-color: theme(colors.brand-red);
+	background-color: var(--color-mahogany-700);
 }
 .is-style-circle-red h5 {
-	color: theme(colors.brand-red);
+	color: var(--color-mahogany-700);
 }
 .is-style-circle-blue li {
-	background-color: theme(colors.brand-blue);
+	background-color: var(--color-orient-800);
 }
 .is-style-circle-blue h5 {
-	color: theme(colors.brand-blue);
+	color: var(--color-orient-800);
 }
 
 /* Split Ball Lists */
@@ -199,12 +201,12 @@ ul.wp-block-list {
 .is-style-split-circle > *,
 .is-style-split-circle-red > *,
 .is-style-split-circle-blue > * {
-	@apply aspect-square;
+	aspect-ratio: 1 / 1;
 	font-weight: 700;
 	font-size: 1.25rem/* 20px */;
 	line-height: 1.375;
 	text-align: center;
-	color: theme(colors.neutral.200);
+	color: var(--color-neutral-200);
 	display: flex;
 	width: 200px;
 	align-items: center;
@@ -215,7 +217,7 @@ ul.wp-block-list {
 .is-style-split-circle a,
 .is-style-split-circle-red a,
 .is-style-split-circle-blue a {
-	color: theme(colors.neutral.200);
+	color: var(--color-neutral-200);
 	text-decoration-line: underline;
 	text-decoration-color: rgb(245 245 245 / 0.6);
 	text-decoration-style: dotted;

@@ -21,12 +21,12 @@ get_header();
 				<header>
 					<h1 class="entry-title  |  has-huge-font-size dark:text-neutral-200">
 						<?php
-						printf( esc_html__( 'Search results for: %s', 'loadlifter' ), '<span class="relative inline-block before:block before:absolute before:-inset-1 before:bg-orient-200 before:rounded dark:before:bg-orient-600"><span class="relative px-2 font-bold text-neutral-950 dark:text-white">' . get_search_query() . '</span></span>' );
+						printf( esc_html__( 'Search results for: %s', 'loadlifter' ), '<span class="relative inline-block before:block before:absolute before:-inset-1 before:bg-orient-200 before:rounded-sm dark:before:bg-orient-600"><span class="relative px-2 font-bold text-neutral-950 dark:text-white">' . get_search_query() . '</span></span>' );
 						?>
 					</h1>
 				</header>
 
-				<ul class="search-results | prose max-w-none grid gap-2  | md:grid-cols-3 md:gap-4 lg:prose-xl lg:grid-cols-4">
+				<ul class="search-results  |  prose max-w-none grid gap-8  |  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
 					<?php
 					/* Start the Loop */
 					while ( have_posts() ) :

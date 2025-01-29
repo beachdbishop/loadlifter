@@ -44,29 +44,30 @@ $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
 $hero_cta2_url 									= get_field( 'll_hero_cta2_url' );
 
 
-
-$qargs = [
-	'post_type' => 'post',
-	'posts_per_page' => 3,
-	'post_status' => 'publish',
-	'tax_query' => [
-		[
-			'taxonomy' => 'category',
-			'field' => 'slug',
-			'terms' =>  $page_post_category->slug,
+if ( $page_post_category ) {
+	$qargs = [
+		'post_type' => 'post',
+		'posts_per_page' => 3,
+		'post_status' => 'publish',
+		'tax_query' => [
+			[
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' =>  $page_post_category->slug,
+			],
+			[
+				'taxonomy' => 'category',
+				'field' => 'slug',
+				'terms' => 'archived-events',
+				'operator' => 'NOT IN',
+			],
 		],
-		[
-			'taxonomy' => 'category',
-			'field' => 'slug',
-			'terms' => 'archived-events',
-			'operator' => 'NOT IN',
-		],
-	],
-	'orderby' => 'date',
-	'order' => 'DESC',
-];
+		'orderby' => 'date',
+		'order' => 'DESC',
+	];
 
-$postsQuery = new WP_Query( $qargs );
+	$postsQuery = new WP_Query( $qargs );
+}
 ?>
 
 	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
@@ -178,13 +179,13 @@ $postsQuery = new WP_Query( $qargs );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( get_field( 'll_normal_contact_form_location' ) == 1 ) : ?>
-								<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8  |  lg:mb-16">
+								<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">
 									<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 								</div>
 							<?php endif; ?>
 
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8  |  lg:mb-16">';
+								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>

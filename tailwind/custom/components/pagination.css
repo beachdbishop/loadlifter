@@ -1,10 +1,10 @@
 /* Pagination */
 ul.page-numbers {
 	max-width: 60rem;
-	font-family: theme(fontFamily.head);
-	color: theme(colors.orient.900);
+	font-family: var(--font-head);
+	color: var(--color-orient-900);
 	margin-inline: auto;
-	margin-block: 1rem;
+	margin-block: clamp(1rem, -0.091rem + 5.45vw, 4rem);
 	display: flex;
 	list-style-type: none;
 	flex-wrap: wrap;
@@ -13,23 +13,11 @@ ul.page-numbers {
 
 }
 a.page-numbers {
-	color: theme(colors.orient.900);
+	color: var(--color-orient-900);
 }
 a.page-numbers:hover {
-	color: theme(colors.brand-blue-dark);
+	color: var(--color-orient-950);
 }
 span.current {
 	opacity: 0.5;
-}
-
-@media screen and (min-width: 768px) {
-	ul.page-numbers {
-		margin-block: 2rem;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	ul.page-numbers {
-		margin-block: 4rem;
-	}
 }

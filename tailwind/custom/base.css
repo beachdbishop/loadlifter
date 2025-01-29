@@ -1,21 +1,14 @@
 /**
  * Custom styles to immediately follow Tailwind’s `base` layer
- *
- * “Add things like base typography styles [or] opinionated global resets.”
- *
- * — from https://tailwindcss.com/docs/plugins#adding-base-styles
- */
+ * This uses the background and foreground colors declared in the
+ * `theme.json` file and is applied both to the frontend and in the
+ * block editor.
+*/
 
 @view-transition {
 	navigation: auto;
 }
 
-
-/**
- * This uses the background and foreground colors declared in the
- * `theme.json` file and is applied both to the frontend and in the block
- * editor.
-*/
 :root {
 	--nav-height: 124px;
 	overscroll-behavior-x: contain;
@@ -41,9 +34,8 @@ html {
 
 body {
 	--tw-text-opacity: 1;
-	font-family: theme(fontFamily.sans);
-  color: theme(colors.neutral.800);
-
+	font-family: var(--font-sans);
+  color: var(--color-neutral-800);
 }
 
 
@@ -153,7 +145,6 @@ td, math, time[datetime*=":"] {
 	}
 }
 
-
 .prose {
 	text-wrap: pretty;
 	font-variant-numeric: proportional-nums;
@@ -165,7 +156,6 @@ td, math, time[datetime*=":"] {
 	-webkit-hyphenate-limit-lines: 2;
 
 	hyphens: auto;
-	/* hyphenate-limit-chars: 7 4 3; */
 	hyphenate-limit-chars: 10;
 	hyphenate-limit-lines: 2;
 	hyphenate-limit-zone: 8%;
@@ -192,12 +182,12 @@ td, math, time[datetime*=":"] {
 [class~=not-prose],
 [class~=not-prose] *)) {
 	text-decoration: none;
-	border-bottom: 2px solid theme(colors.neutral.400);
+	border-bottom: 2px solid var(--color-neutral-400);
 }
 .prose :where([href]):not(:where([class~=wp-block-button__link],
 [class~=not-prose],
 [class~=not-prose] *)):hover {
-	border-bottom: 2px solid theme(colors.orient.600);
+	border-bottom: 2px solid var(--color-orient-600);
 } */
 
 :lang(en) > * { quotes: '“' '”' '‘' '’' ; } /* “Generic English ‘style’” */
@@ -210,14 +200,14 @@ q::after,
 blockquote p::after { content: close-quote }
 q p,
 blockquote p {
-	font-family: theme(fontFamily.serif);
+	font-family: var(--font-serif);
 	font-style: italic;
 }
 
 
 @media (prefers-color-scheme: dark) {
   body {
-    color: theme(colors.neutral.200);
+    color: var(--color-neutral-200);
   }
 }
 

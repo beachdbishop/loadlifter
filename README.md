@@ -16,7 +16,7 @@ Looking for live reloading? Learn how to [add Browsersync to your project](https
 4. Run `npm run watch`
 5. Add [Tailwind utility classes](https://tailwindcss.com/docs/utility-first) with abandon
 
-See the complete [development documentation](https://underscoretw.com/docs/tailwind-plugins-npm-commands/) for more details.
+See the complete [development documentation](https://underscoretw.com/docs/) for more details.
 
 ## Deployment
 
@@ -26,8 +26,3 @@ See the complete [development documentation](https://underscoretw.com/docs/tailw
 Or [deploy with the tool of your choice](https://underscoretw.com/docs/deployment/#h-other-deployment-options)!
 
 ==========
-
-[vanilla-tilt.js](https://micku7zu.github.io/vanilla-tilt.js/)
-
-
-

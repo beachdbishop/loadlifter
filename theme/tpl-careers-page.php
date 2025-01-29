@@ -172,7 +172,7 @@ if ('local' === wp_get_environment_type()) {
 
 					<?php if (is_page('career-opportunities')) : ?>
 					<?php //   O P P O R T U N I T I E S   ?>
-						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-gradient-to-t from-brand-gray-pale via-neutral-100 to-white  |  dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
+						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-linear-to-t from-neutral-300 via-neutral-100 to-white  |  dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
 							<div class="px-2  |  lg:px-[16px]">
 								<h2 class="mb-4 font-head">Opportunities</h2>
 								<ul class="list-none grid gap-4 text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
@@ -181,12 +181,12 @@ if ('local' === wp_get_environment_type()) {
 										echo '<li class="card-' . $card['slug'] . '  |  group flex flex-col relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
 											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300">
 												<p class="inline font-head font-semibold leading-none text-2xl">
-													<a class="group-hover:text-brand-blue" href="' . $card['link'] . '">
+													<a class="group-hover:text-brand-blue dark:group-hover:text-orient-300" href="' . $card['link'] . '">
 														' . $card['label'] . '
 													</a>
 												</p>
 												<p class="inline text-2xl">
-													<a class="group-hover:text-brand-blue" href="' . $card['link'] . '" aria-label="Read more about ' . $card['label'] . '">
+													<a class="group-hover:text-brand-blue dark:group-hover:text-orient-300" href="' . $card['link'] . '" aria-label="Read more about ' . $card['label'] . '">
 														<i class="fa-regular fa-angle-right"></i>
 													</a>
 												</p>
@@ -257,8 +257,8 @@ if ('local' === wp_get_environment_type()) {
 						<div class="flex flex-col px-2 space-y-4 lg:px-[16px]">
 							<h2 class="">Culture</h2>
 
-							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark text-neutral-100">
-								<div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40  |  md:p-12 lg:px-26 lg:py-24">
+							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-orient-950 text-neutral-100">
+								<div class="p-8 bg-linear-to-r from-orient-950 via-orient-950/80 to-orient-950/40  |  md:p-12 lg:px-26 lg:py-24">
 									<div class="text-center  |  sm:text-left">
 										<h4 class="text-orient-400">Women RISE</h4>
 										<p class="hidden max-w-lg  |  md:my-4 md:block md:text-base md:leading-relaxed">Women R.I.S.E. is a committee of employees dedicated to building and sustaining a collaborative and diverse workplace that strategically supports the development and advancement of women. We do this by creating and maintaining an environment that recognizes, cultivates and utilizes the talent of female employees.</p>
@@ -267,8 +267,8 @@ if ('local' === wp_get_environment_type()) {
 								</div>
 							</div>
 
-							<div class="block-cover-idea overflow-hidden bg-cover bg-center bg-no-repeat bg-brand-blue-dark text-neutral-100">
-								<div class="p-8 bg-gradient-to-r from-brand-blue-dark via-brand-blue-dark/80 to-brand-blue-dark/40  |  md:p-12 lg:px-26 lg:py-24">
+							<div class="block-cover-idea overflow-hidden bg-cover bg-center bg-no-repeat bg-orient-950 text-neutral-100">
+								<div class="p-8 bg-linear-to-r from-orient-950 via-orient-950/80 to-orient-950/40  |  md:p-12 lg:px-26 lg:py-24">
 									<div class="text-center sm:text-left">
 										<h4 class="text-orient-400">IDEA Committee</h4>
 										<p class="hidden max-w-lg  |  md:my-4 md:block md:text-base md:leading-relaxed">At BeachFleischman, we intentionally cultivate a diverse, equitable, and inclusive environment where each person feels welcomed, accepted, empowered, valued, respected, and safe. This not only allows each one of us to achieve personal and professional success, but also allows us to better know and serve our clients and communities.</p>
@@ -295,7 +295,7 @@ if ('local' === wp_get_environment_type()) {
 					<?php endif; ?>
 
 					<?php //   A W A R D S   ?>
-					<section id="awards" class="bg-white full-bleed ll-equal-vert-padding dark:bg-neutral-800">
+					<section id="awards" class="bg-white full-bleed ll-equal-vert-padding  |  dark:bg-neutral-900">
 						<div class="px-2  |  lg:px-[16px]">
 							<h2 class="mb-4">Awards and recognition</h2>
 							<?php echo do_shortcode( '[awardlogos /]' ); ?>

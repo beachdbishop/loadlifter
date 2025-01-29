@@ -113,7 +113,7 @@ $menuItemsSecondary = [
 				</li>
 			</ul>
 
-			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded sm:rounded-lg cursor-pointer md:hidden focus:bg-orient-200" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
+			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded-sm sm:rounded-lg cursor-pointer md:hidden focus:bg-orient-200" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>
 			</button>
 
