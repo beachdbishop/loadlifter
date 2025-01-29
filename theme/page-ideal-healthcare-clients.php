@@ -207,10 +207,10 @@ $shared_values = [
 								<?php
 								foreach ( $shared_values as $value ) {
 									echo '<div class="card-' . $value['icon'] . '">
-										<div class="card  |  relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]">
+										<div class="card  |  relative inline-block float-left w-(--_card-size) h-(--_card-size) [perspective:600px]">
 											<div class="card-content  |  absolute w-full h-full rounded-lg transition-transform ease-out duration-700 [transform-style:preserve-3d]  |  dark:shadow-none">
-												<div class="card-front  |  text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-													<div class="card-icon  |  text-[--_card-front-icon]">
+												<div class="card-front  |  text-center bg-(--_card-front-bg) text-(--_card-front-text) absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+													<div class="card-icon  |  text-(--_card-front-icon)">
 														<span class="fa-stack fa-2x">
 															<i class="text-orient-700 fa-solid fa-circle fa-stack-2x dark:text-orient-900"></i>
 															<i class="fa-duotone fa-' . $value['icon'] . ' fa-stack-1x "></i>
@@ -218,7 +218,7 @@ $shared_values = [
 													</div>
 													<h3 class="mt-2 font-light leading-none text-current ">' . $value['label'] . '</h3>
 												</div>
-												<div class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-overlay [backface-visibility:hidden] [transform:rotateY(180deg)]">
+												<div class="card-back  |  absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-(--_card-back-bg) text-(--_card-back-text) bg-no-repeat bg-cover bg-blend-overlay [backface-visibility:hidden] [transform:rotateY(180deg)]">
 													<h6 class="my-2 leading-none tracking-wide text-center text-current font-medium">' . $value['label'] . '</h6>
 													<p class=" font-medium"> ' . $value['desc'] . '</p>
 												</div>

@@ -27,20 +27,20 @@ if ( ! function_exists( 'll_show_social_links' ) ) :
 		$social_html = '<div class="inline-flex items-center justify-start gap-4">';
 
 			$social_html .= '<a href="https://www.linkedin.com/company/beachfleischman/" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-linkedin">
-					<i class="w-8 h-8 fa-brands fa-linkedin-in print:w-4 print:h-4"></i>
-					<span id="soclink-linkedin" class="screen-reader-text">LinkedIn</span>
+				<i class="size-8 fa-brands fa-linkedin-in  |  print:size-4"></i>
+				<span id="soclink-linkedin" class="screen-reader-text">LinkedIn</span>
 			</a>
 			<a href="https://twitter.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-twitter">
-					<i class="w-8 h-8 fa-brands fa-x-twitter print:w-4 print:h-4"></i>
-					<span id="soclink-twitter" class="screen-reader-text">Twitter</span>
+				<i class="size-8 fa-brands fa-x-twitter  |  print:size-4"></i>
+				<span id="soclink-twitter" class="screen-reader-text">Twitter</span>
 			</a>
 			<a href="https://www.facebook.com/BeachFleischmanCPAs" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-facebook">
-					<i class="w-8 h-8 fa-brands fa-facebook print:w-4 print:h-4"></i>
-					<span id="soclink-facebook" class="screen-reader-text">Facebook</span>
+				<i class="size-8 fa-brands fa-facebook  |  print:size-4"></i>
+				<span id="soclink-facebook" class="screen-reader-text">Facebook</span>
 			</a>
 			<a href="https://instagram.com/beachfleischman" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-instagram">
-					<i class="w-8 h-8 fa-brands fa-instagram print:w-4 print:h-4"></i>
-					<span id="soclink-instagram" class="screen-reader-text">Instagram</span>
+				<i class="size-8 fa-brands fa-instagram  |  print:size-4"></i>
+				<span id="soclink-instagram" class="screen-reader-text">Instagram</span>
 			</a>';
 
 			// $social_html .= '<a href="" class="duration-200 ease-in-out hover:scale-125" aria-labelledby="soclink-youtube">
@@ -176,7 +176,7 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 										<p class="text-lg leading-tight text-neutral-600 font-head dark:text-neutral-500">' . $title . '</p>
 									</div>
 
-									<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url(' . $avatar['url'] . '); background-size: 64px 86px; background-position: center top;">
+									<div class="card-img | shrink-0 object-cover object-center rounded-full bg-neutral-100 group-hover:border-brand-red" style="background-image: url(' . $avatar['url'] . '); background-size: 64px 86px; background-position: center top;">
 										<a href="/author/' . $coauthor->user_nicename . '/" rel="bookmark" class="no-underline" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
 											<div class="w-16 h-16 aspect-square">&nbsp;</div>
 										</a>
@@ -197,7 +197,7 @@ if ( ! function_exists( 'll_posted_by_cards' ) ) :
 										<p class="text-lg leading-tight text-neutral-600 font-head dark:text-neutral-500">' . $title . '</p>
 									</div>
 
-									<div class="card-img | flex-shrink-0 object-cover object-center rounded-full bg-neutral-200 group-hover:border-brand-red dark:bg-neutral-600">
+									<div class="card-img | shrink-0 object-cover object-center rounded-full bg-neutral-200 group-hover:border-brand-red dark:bg-neutral-600">
 										<a href="/author/' . $coauthor->user_nicename . '/" rel="bookmark" class="no-underline" aria-label="View ' . $coauthor->display_name . '&apos;s bio">
 											<div class="w-16 h-16 aspect-square">&nbsp;</div>
 										</a>
@@ -320,7 +320,7 @@ if ( ! function_exists( 'll_page_hero' ) ) :
 		$hero_html = '<style>.page-hero { background-color: #171717; background-image: linear-gradient(to right, hsl(0 0% 16% / 0.8) 0%, hsl(0 0% 16% / 0.8) 100%), var(--ll--page-feat-img); } @media (min-width: 768px) { .page-hero { background-image: ' . $moreA11yGradient . ', var(--ll--page-feat-img); } } @media print { .page-hero { background-color: transparent; background-image: none; } }</style>';
 
 		$hero_html .= '<div class="page-hero | ll-equal-vert-padding bg-no-repeat bg-[right_33%_center] bg-cover lg:bg-center print:py-8">';
-		$hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-hero print:min-h-fit"><div class="">';
+		$hero_html .= '<div class="flex flex-col justify-center px-2 min-h-[240px] md:container xl:px-4 md:min-h-(--height-hero) print:min-h-fit"><div class="">';
 		$hero_html .= '<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950 lg:text-6xl print:text-shadow-none">' . $h1 . '</h1>';
 		$hero_html .= '<h2 class="my-6 text-2xl leading-normal max-w-[42ch] text-orient-400 text-shadow shadow-neutral-950 lg:text-4xl print:text-shadow-none">' . $h2 . '</h2>';
 
@@ -355,7 +355,7 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image print:hidden'] ); ?>
 
 			<div class="wp-block-cover__inner-container | px-2 lg:px-4 print:!px-0">
-				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-hero print:min-h-min">
+				<div class="text-neutral-800 flex flex-col justify-center space-y-6 min-h-[240px] | md:min-h-(--height-hero) print:min-h-min">
 					<h1 class="has-text-color leading-none text-white tracking-light text-prett text-shadow shadow-neutral-950 <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black print:text-shadow-none" style="text-wrap: unset"><?php echo $h1; ?></h1>
 					<?php if ( !empty( $h2 ) ) { ?><h2 class="text-2xl leading-none text-pretty !text-orient-400 text-shadow shadow-neutral-950 md:max-w-5xl lg:text-4xl lg:print:!text-base print:text-shadow-none print:!text-black"><?php echo $h2; ?></h2><?php } ?>
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
@@ -403,15 +403,15 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
 
 			if ( $post_date > $cutoff_date ) {
-				$feat_aspect_ratio = 'feat-3.75';
+				$feat_aspect_ratio = 'aspect-feat-375';
 				$bg_size = 'bg-center bg-cover bg-no-repeat';
 			} else {
-				$feat_aspect_ratio = 'feat-4.3';
+				$feat_aspect_ratio = 'aspect-feat-43';
 				$bg_size = 'bg-center bg-no-repeat';
 			}
 		} else {
 			$feat_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'medium' );
-			$feat_aspect_ratio = 'feat-card';
+			$feat_aspect_ratio = 'aspect-card';
 			$bg_size = 'bg-center bg-cover bg-no-repeat';
 		}
 
@@ -424,7 +424,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 				$featmarkup = sprintf(
 					'<div class="image__featured--outer | overflow-hidden empty-feat-img print:hidden">
 						<div
-							class="image__featured--inner | %4$s aspect-%2$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+							class="image__featured--inner | %4$s %2$s transition-transform duration-300 ease-in-out group-hover:scale-110"
 							style="background-image: url(%1$s);"
 							aria-label="%3$s"
 							role="img"
@@ -443,7 +443,7 @@ if ( ! function_exists( 'll_featured_image' ) ) :
 			$featmarkup = sprintf(
 				'<div class="image__featured--outer | overflow-hidden print:hidden">
 					<div
-						class="image__featured--inner | %4$s aspect-%2$s transition-transform duration-300 ease-in-out group-hover:scale-110"
+						class="image__featured--inner | %4$s %2$s transition-transform duration-300 ease-in-out group-hover:scale-110"
 						style="background-image: url(%1$s);"
 						aria-label="%3$s"
 						role="img"
@@ -494,7 +494,7 @@ if ( ! function_exists( 'll_post_social_image' ) ) :
 		$featmarkup = sprintf(
 			'<div class="image__featured--outer  |  overflow-hidden  |  print:hidden">
 				<div
-					class="image__featured--inner  |  bg-center bg-cover bg-no-repeat aspect-feat-card transition-transform duration-300 ease-in-out  |  group-hover:scale-110"
+					class="image__featured--inner  |  bg-center bg-cover bg-no-repeat aspect-card transition-transform duration-300 ease-in-out  |  group-hover:scale-110"
 					style="background-image: url(%1$s);"
 					aria-label="%2$s"
 					role="img"
@@ -586,7 +586,7 @@ if ( ! function_exists( 'll_people_show_location' ) ) :
 	 * Display People/Author location
 	 */
 	function ll_people_show_location( $location ) {
-		echo '<span class=""><i class="fa-solid fa-location-dot text-neutral-500" title="Location"></i> <span class="">' . esc_html( $location ) . '</span></span>';
+		echo '<span class=""><i class="fa-solid fa-location-dot" title="Location"></i> <span class="">' . esc_html( $location ) . '</span></span>';
 	}
 endif;
 
@@ -726,10 +726,10 @@ endif;
 if ( ! function_exists( 'll_no_link_card' ) ) :
 	function ll_no_link_card( $card ) {
 		echo '<div>
-			<div class="card | relative inline-block float-left w-[--_card-size] h-[--_card-size] [perspective:600px]" style="--_card-back-bg: #092f42">
+			<div class="card | relative inline-block float-left w-(--_card-size) h-(--_card-size) [perspective:600px]" style="--_card-back-bg: #092f42">
 				<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
-					<div class="card-front | text-center bg-[--_card-front-bg] text-[--_card-front-text] absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
-						<div class="card-icon | text-[--_card-front-icon]">
+					<div class="card-front | text-center bg-(--_card-front-bg) text-(--_card-front-text) absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+						<div class="card-icon | text-(--_card-front-icon)">
 							<span class="fa-stack fa-2x">
 								<i class="text-white fa-solid fa-circle fa-stack-2x dark:text-neutral-700"></i>
 								<i class="fa-duotone ' . $card['icon'] . ' fa-stack-1x "></i>
@@ -737,7 +737,7 @@ if ( ! function_exists( 'll_no_link_card' ) ) :
 						</div>
 						<h3 class="mt-2 font-light leading-none text-current">' . $card['label'] . '</h3>
 					</div>
-					<div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-[--_card-back-bg] text-[--_card-back-text] bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
+					<div class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-(--_card-back-bg) text-(--_card-back-text) bg-no-repeat bg-cover bg-blend-multiply shadow-neutral-900/50 [backface-visibility:hidden]  [transform:rotateY(180deg)]">
 							<h6 class="my-2 leading-none tracking-wide text-center text-current text-shadow">' . $card['label'] . '</h6>
 							<p class="text-center text-shadow">' . $card['backContent'] . '</p>
 					</div>
@@ -750,14 +750,14 @@ endif;
 
 if ( ! function_exists( 'll_render_hover_card' ) ) :
 	function ll_render_hover_card( $card ) {
-		echo '<div href="#" class="relative block bg-brand-blue-dark group">
+		echo '<div href="#" class="relative block bg-orient-950 group">
 			<img alt="' . $card['imgAlt'] . '" src="' . $card['img'] . '" class="absolute inset-0 object-cover w-full h-full transition-opacity opacity-75 group-hover:opacity-25" />
 
 			<div class="relative p-4 sm:p-6 lg:p-8">
-				<p class="text-xl font-semibold text-white font-head text-shadow shadow-neutral-700 hover:shadow-brand-blue-dark sm:text-2xl ">' . $card['label'] . '</p>
+				<p class="text-xl font-semibold text-white font-head text-shadow shadow-neutral-700 hover:shadow-orient-950 sm:text-2xl ">' . $card['label'] . '</p>
 
 				<div class="mt-8 sm:mt-4 lg:mt-8">
-					<div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-brand-blue-dark group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>
+					<div class="prose text-white transition-all transform translate-y-8 opacity-0 text-shadow shadow-orient-950 group-hover:translate-y-0 group-hover:opacity-100">' . $card['onHoverContent'] . '</div>
 				</div>
 			</div>
 		</div>';

@@ -9,13 +9,12 @@ ol.wp-block-footnotes {
 }
 
 sup.fn a {
-	color: theme(colors.brand-red);
+	color: var(--color-mahogany-700);
 	font-weight: 700;
 	text-decoration-line: none;
-
-	&:hover {
-		color: currentColor;
-	}
+}
+sup.fn:hover {
+	color: currentColor;
 }
 
 @media screen and (min-width: 1024px) {

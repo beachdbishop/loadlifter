@@ -233,7 +233,6 @@ class DisclosureNav {
 }
 
 /* Initialize Disclosure Menus */
-
 window.addEventListener(
 	'load',
 	function () {
@@ -256,31 +255,31 @@ window.addEventListener(
 		}
 
 		// fake link behavior
-		disclosureMenus.forEach((disclosureNav, i) => {
-			var links = menus[i].querySelectorAll(
-				'[href="#mythical-page-content"]'
-			);
-			var examplePageHeading = document.getElementById(
-				'mythical-page-heading'
-			);
-			for (var k = 0; k < links.length; k++) {
-				// The codepen export script updates the internal link href with a full URL
-				// we're just manually fixing that behavior here
-				links[k].href = '#mythical-page-content';
+		// disclosureMenus.forEach((disclosureNav, i) => {
+		// 	var links = menus[i].querySelectorAll(
+		// 		'[href="#mythical-page-content"]'
+		// 	);
+		// 	var examplePageHeading = document.getElementById(
+		// 		'mythical-page-heading'
+		// 	);
+		// 	for (var k = 0; k < links.length; k++) {
+		// 		// The codepen export script updates the internal link href with a full URL
+		// 		// we're just manually fixing that behavior here
+		// 		links[k].href = '#mythical-page-content';
 
-				links[k].addEventListener('click', (event) => {
-					// change the heading text to fake a page change
-					var pageTitle = event.target.innerText;
-					examplePageHeading.innerText = pageTitle;
+		// 		links[k].addEventListener('click', (event) => {
+		// 			// change the heading text to fake a page change
+		// 			var pageTitle = event.target.innerText;
+		// 			examplePageHeading.innerText = pageTitle;
 
-					// handle aria-current
-					for (var n = 0; n < links.length; n++) {
-						links[n].removeAttribute('aria-current');
-					}
-					event.target.setAttribute('aria-current', 'page');
-				});
-			}
-		});
+		// 			// handle aria-current
+		// 			for (var n = 0; n < links.length; n++) {
+		// 				links[n].removeAttribute('aria-current');
+		// 			}
+		// 			event.target.setAttribute('aria-current', 'page');
+		// 		});
+		// 	}
+		// });
 	},
 	false
 );

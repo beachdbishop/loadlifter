@@ -174,7 +174,7 @@ get_header();
 							echo '<div class="card-' . $link['icon'] . '">
 								<a href="' . esc_url( $link['link'] ) . '" rel="bookmark">
 									<div class="group relative inline-block w-[180px] h-[180px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
-										<div class="card-content  |  absolute w-full h-full rounded-lg shadow-md shadow-neutral-300  |  dark:shadow-none group-hover:shadow-lg">
+										<div class="card-content  |  absolute w-full h-full rounded-lg shadow-md shadow-neutral-300  |  dark:shadow-none group-hover:shadow-lg dark:group-hover:shadow-none">
 											<div class="card-front  |  text-center bg-neutral-50 border border-neutral-100 text-brand-blue absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4  |  group-hover:bg-white dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:group-hover:bg-neutral-900">
 												<div class="card-icon  |  text-brand-blue  |  dark:text-orient-400">
 													<span class="fa-stack fa-2x">

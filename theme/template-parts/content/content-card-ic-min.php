@@ -51,7 +51,7 @@ $peep_level = get_field( 'll_people_level' );
 					rel="bookmark"
 					aria-label="<?php echo get_the_title(); ?>"
 				>
-		 			<div class="aspect-feat-card">&nbsp;</div>
+		 			<div class="aspect-card">&nbsp;</div>
 		 		</a>
 		 	</div>
 			<?php

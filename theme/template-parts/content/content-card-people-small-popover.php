@@ -48,7 +48,7 @@ $peep_level = get_field( 'll_people_level' );
 			</div>
 		<?php } ?>
 
-		<div class="card-img | flex-shrink-0 order-0 object-cover object-center rounded-full bg-neutral-100 bg-no-repeat bg-cover" style="background-image: url(<?php echo esc_attr( $headshot ); ?>); background-position: center top;">
+		<div class="card-img | shrink-0 order-0 object-cover object-center rounded-full bg-neutral-100 bg-no-repeat bg-cover" style="background-image: url(<?php echo esc_attr( $headshot ); ?>); background-position: center top;">
 			<div class="w-16 h-16 lg:w-32 lg:h-32 aspect-square">&nbsp;</div>
 		</div>
 

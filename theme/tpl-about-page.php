@@ -123,7 +123,7 @@ $cards_about = [
 
 								$peopleQuery = new WP_Query( $args ); ?>
 
-								<section class="mb-0 rounded-lg ll-equal-vert-padding  |  lg:bg-gradient-to-t lg:from-neutral-300 lg:to-80% lg:to-white dark:lg:from-neutral-600 dark:lg:to-80% dark:to-neutral-900 print:hidden">
+								<section class="mb-0 rounded-lg ll-equal-vert-padding  |  lg:bg-linear-to-t lg:from-neutral-300 lg:to-80% lg:to-white dark:lg:from-neutral-600 dark:lg:to-80% dark:to-neutral-900 print:hidden">
 									<div class="not-prose max-w-3xl  |  md:mx-auto">
 										<h2 class="text-orient-800  |  dark:text-orient-400">Voices of diversity, equity, and inclusion</h2>
 										<div class="slider slider-quotes">
@@ -164,7 +164,7 @@ $cards_about = [
 						</div>
 
 						<div class="ll-page-grid-area-c">
-							<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8  |  lg:mb-16">
+							<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">
 								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 							</div>
 						</div>

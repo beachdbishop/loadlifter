@@ -44,7 +44,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 					Your browser does not support the video tag.
 				</video>
 
-				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px]  |  lg:px-[16px] md:min-h-hero">
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
 					<h1 class="leading-none text-white tracking-light text-shadow shadow-neutral-950  |  lg:text-6xl">
 						<?php echo $video_heading; ?>
 					</h1>
@@ -90,7 +90,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			<?php endif; ?>
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-blue-dark bg-gradient-70 from-brand-blue-dark from-30% via-brand-blue via-50% to-brand-blue-dark to-90% bg-180pct">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-linear-70 from-orient-950 from-30% via-orient-800 via-50% to-orient-950 to-90% bg-180pct">
 				<div class="px-2 z-10 wp-block-group post-grid has-orient-200-color  |  lg:px-[16px]">
 					<h2 id="trending" class="mb-4  text-orient-200  |  lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
@@ -108,7 +108,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			</section>
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-brand-gray-pale  |  dark:bg-neutral-900 dark:text-neutral-300">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-neutral-300  |  dark:bg-neutral-900 dark:text-neutral-300">
 				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php echo do_shortcode(
@@ -129,7 +129,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				<div class="post-grid  |  px-2  |  lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
 						<h2 id="recent">Recent Posts</h2>
-						<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-brand-blue-dark dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
+						<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-800 rounded-lg text-orient-800  |  hover:text-orient-950 hover:border-orient-950 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
 					</div>
 					<?php
 

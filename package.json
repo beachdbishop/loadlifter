@@ -4,7 +4,6 @@
 		"@_tw/typography": "^0.5.17",
 		"@shrutibalasa/tailwind-grid-auto-fit": "^1.1.0",
 		"@tailwindcss/cli": "^4.0.0",
-		"@tailwindcss/forms": "^0.5.9",
 		"@wordpress/prettier-config": "^4.16.0",
 		"a11y-slider": "^0.4.22",
 		"adm-zip": "^0.5.16",
@@ -22,7 +21,6 @@
 		"prettier": "^3.4.2",
 		"prettier-plugin-tailwindcss": "^0.6.10",
 		"tailwindcss": "^4.0.0"
-
 	},
 	"scripts": {
 		"development:tailwind:frontend": "npx @tailwindcss/cli -i ./tailwind/tailwind.css -o ./theme/style.css",
@@ -60,8 +58,5 @@
 	"browserslist": [
 		"defaults",
 		"maintained node versions"
-	],
-	"dependencies": {
-		"tailwindcss-motion": "^1.0.0"
-	}
+	]
 }

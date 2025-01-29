@@ -52,7 +52,7 @@ get_header();
 								<div class="container px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
 										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
-										<div class="flex-shrink-0 px-8 py-2 mt-10 text-base text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-grill-hot"></i> Button</div>
+										<div class="shrink-0 px-8 py-2 mt-10 text-base text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-grill-hot"></i> Button</div>
 									</div>
 								</div>
 							</a>
@@ -65,7 +65,7 @@ get_header();
 								<div class="px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
 										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
-										<div class="flex-shrink-0 px-8 py-2 mt-10 text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-mustache"></i> Details</div>
+										<div class="shrink-0 px-8 py-2 mt-10 text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-mustache"></i> Details</div>
 									</div>
 								</div>
 							</a>
@@ -78,7 +78,7 @@ get_header();
 								<div class="px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
 										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
-										<div class="flex-shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase bg-transparent border border-white border-solid papercorners-16  |  focus:outline-none group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
+										<div class="shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase bg-transparent border border-white border-solid papercorners-16  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
 									</div>
 								</div>
 							</a>
@@ -88,15 +88,15 @@ get_header();
 					<div class="wp-block-spacer">&nbsp;</div>
 
 
-					<!-- <div class="callout callout-info | text-blue-900 bg-blue-100 px-8 py-4 mb-4 leading-5 rounded w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-blue-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Note</span><span class="desc">This is a callout box of the <em>info</em> type. It can blah blah really smooth.</span></div> -->
+					<!-- <div class="callout callout-info | text-blue-900 bg-blue-100 px-8 py-4 mb-4 leading-5 rounded-sm w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-blue-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Note</span><span class="desc">This is a callout box of the <em>info</em> type. It can blah blah really smooth.</span></div> -->
 
-					<!-- <div class="callout callout-warning | text-amber-900 bg-amber-100 px-8 py-4 mb-4 leading-5 rounded w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-amber-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Warning</span><span class="desc">This is a callout box of the <em>warning</em> type. It can blah blah really smooth.</span></div>
+					<!-- <div class="callout callout-warning | text-amber-900 bg-amber-100 px-8 py-4 mb-4 leading-5 rounded-sm w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-amber-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Warning</span><span class="desc">This is a callout box of the <em>warning</em> type. It can blah blah really smooth.</span></div>
 
-						<div class="callout callout-success | text-green-900 bg-green-100 px-8 py-4 mb-4 leading-5 rounded w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-green-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Success</span><span class="desc">This is a callout box of the <em>success</em> type. It can blah blah really smooth.</span></div>
+						<div class="callout callout-success | text-green-900 bg-green-100 px-8 py-4 mb-4 leading-5 rounded-sm w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-green-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Success</span><span class="desc">This is a callout box of the <em>success</em> type. It can blah blah really smooth.</span></div>
 
-						<div class="callout callout-danger | text-red-900 bg-red-100 px-8 py-4 mb-4 leading-5 rounded w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-red-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Danger</span><span class="desc">This is a callout box of the <em>danger</em> type. It can blah blah really smooth.</span></div>
+						<div class="callout callout-danger | text-red-900 bg-red-100 px-8 py-4 mb-4 leading-5 rounded-sm w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-red-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Danger</span><span class="desc">This is a callout box of the <em>danger</em> type. It can blah blah really smooth.</span></div>
 
-						<div class="callout callout-warning | text-amber-900 bg-amber-100 px-8 py-4 mb-4 leading-snug rounded w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-amber-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Sea Otters</span><span class="desc">This is a test for long length. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis minima obcaecati ab, odit ad fuga dignissimos sunt, qui, repellat esse eveniet temporibus sequi! Quas aperiam reiciendis sequi aliquid praesentium porro. </span></div> -->
+						<div class="callout callout-warning | text-amber-900 bg-amber-100 px-8 py-4 mb-4 leading-snug rounded-sm w-full md:max-w-xl lg:max-w-2xl xl:max-w-4xl"><span class="label | text-amber-800/70 mr-2 font-bold uppercase font-head after:content-['_//']">Sea Otters</span><span class="desc">This is a test for long length. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis minima obcaecati ab, odit ad fuga dignissimos sunt, qui, repellat esse eveniet temporibus sequi! Quas aperiam reiciendis sequi aliquid praesentium porro. </span></div> -->
 
 					<div class="p-4 rounded-tl rounded-br md:p-8 bg-brand-red-faint  |  md:rounded-tl-lg md:rounded-br-lg">Nothing. WP overriding safe classes experiment.</div>
 

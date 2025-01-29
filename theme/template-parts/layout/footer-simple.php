@@ -24,7 +24,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 	get_template_part( 'template-parts/siteblocks/pre', 'footer' );
 	?>
 
-	<footer id="colophon" class="site-footer  |  wp-block-cover alignfull has-parallax border-t-4 border-solid border-brand-blue ll-equal-vert-padding !px-0 bg-neutral-950  |  print:border-none print:bg-white">
+	<footer id="colophon" class="site-footer  |  wp-block-cover alignfull has-parallax border-t-4 border-solid border-orient-800 ll-equal-vert-padding !px-0 bg-neutral-950  |  print:border-none print:bg-white">
 		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim print:hidden"></span>
 		<div role="img" aria-label="The Arizona desert at sunrise" class="wp-block-cover__image-background has-parallax  |  print:hidden" style="background-position:50% 0;background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
 
@@ -73,18 +73,18 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 						'walker' => new LL_Menu_Walker()
 					) );
 					?>
-					<a href="/career-opportunities/?ref=footer" class=" rounded-sm text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold |  md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
+					<a href="/career-opportunities/?ref=footer" class="papercorners-12 text-neutral-900 text-shadow-none border-b-0 bg-amber-300 p-1 font-bold  |  md:p-2 hover:bg-amber-100 hover:text-neutral-800"><i class="fa-regular fa-chart-user"></i> We're hiring</a>
 				</nav>
 
-				<div class="space-y-6"><? // Logo, Social, and Phone number ?>
-					<div class="max-w-xs mb-4 fill-current print:max-w-60 print:mb-1">
+				<div class="flex flex-col space-y-6"><? // Logo, Social, and Phone number ?>
+					<div class="max-w-xs fill-current print:max-w-60">
 						<a href="<?php bloginfo( 'url' ); ?>" aria-label="<?php echo bloginfo( 'name' );?>">
 							<?php
 							get_template_part( 'template-parts/svg/svg', 'logomono' );
 							?>
 						</a>
 					</div>
-					<div class=""><?php echo ll_show_social_links(); ?></div>
+					<?php echo ll_show_social_links(); ?>
 					<p class="font-head text-2xl"><a href="tel:<?php echo ll_format_phone_number( 15203214600 ); ?>" rel="nofollow" onclick="ga('send', 'event', 'Phone Call Tracking', 'Click to Call', '<?php echo ll_format_phone_number( 15203214600, 'us'); ?>', 0);"><?php echo  ll_format_phone_number( 15203214600, 'beach'); ?></a></p>
 				</div>
 
@@ -103,7 +103,7 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 				?>
 			</p>
 
-			<nav aria-label="Legal submenu" class="menu-legal  |  "><? // Legal ?>
+			<nav aria-label="Legal submenu" class="menu-legal"><? // Legal ?>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'll_menu_below_disclaimers',

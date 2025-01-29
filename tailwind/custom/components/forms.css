@@ -5,9 +5,8 @@
 	padding: 1rem;
 	min-height: 590px;
 	border-width: 1px;
-	border-color: theme(colors.neutral.400);
-	/* background-color: theme(colors.neutral.50); */
-	background-image: linear-gradient(to bottom, theme(colors.neutral.100) 0, rgb(255 255 255 / 1) 30%);
+	border-color: var(--color-neutral-400);
+	background-image: linear-gradient(to bottom, var(--color-neutral-100) 0, rgb(255 255 255 / 1) 30%);
 }
 
 /* TODO: Double-check that all these are needed since I have enabled the Tailwind Forms plugin */
@@ -18,16 +17,23 @@ form {
 	gap: 0.5rem;
 }
 
-/* .field > label {
-	font-family: theme(fontFamily.head);
-} */
+
+[multiple], [type=date], [type=datetime-local], [type=email], [type=month], [type=number], [type=password], [type=search], [type=tel], [type=text], [type=time], [type=url], [type=week], input:where(:not([type])), select, textarea {
+	appearance: none;
+	border-radius: 0;
+	padding: .5rem .75rem;
+	font-size: 1rem;
+	line-height: 1.5rem;
+	--tw-shadow: 0 0 #0000;
+}
+
 
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 select,
 textarea {
 	width: 100%;
 	border-width: 1px;
-	border-color: theme(colors.neutral.400);
+	border-color: var(--color-neutral-400);
 	background-color: white;
 }
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus,
@@ -42,21 +48,21 @@ select {
 
 input[tupe="checkbox"],
 input[type="radio"] {
-	color: theme(colors.brand-blue);
+	color: var(--color-orient-800);
 	margin-top: -0.125rem;
 	margin-right: 0.25rem;
 	pointer-events: none;
 	flex-shrink: 0;
 	border-radius: 0.25rem;
 	border-width: 2px;
-	border-color: theme(colors.neutral.200);
+	border-color: var(--color-neutral-200);
 }
 input[type="checkbox"] {
 	border-radius: 0.25rem;
 }
 input[type="checkbox"]:checked,
 input[type="radio"]:checked {
-	border-color: theme(colors.brand-blue) ;
+	border-color: var(--color-orient-800) ;
 }
 input[type="checkbox"]:focus,
 input[type="radio"]:focus {
@@ -70,13 +76,12 @@ input[type="radio"]:focus {
 
 
 
-input[type="submit"],
-#ab-csc-container button {
-	--tw-shadow-color: theme(colors.neutral.800);
+input[type="submit"] {
+	--tw-shadow-color: var(--color-neutral-800);
   --tw-shadow: var(--tw-shadow-colored);
-	font-family: theme(fontFamily.head);
+	font-family: var(--font-head);
 	font-weight: 600;
-	background-color: theme(colors.brand-red-dark);
+	background-color: var(--color-mahogany-800);
 	color: white;
 	display: inline-flex;
 	align-items: center;
@@ -85,15 +90,13 @@ input[type="submit"],
 	padding-inline: 1.25rem;
 	padding-block: 0.75rem;
 }
-input[type="submit"]:hover,
-#ab-csc-container button:hover {
+input[type="submit"]:hover {
 	--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-	background-color: theme(colors.brand-red);
+	background-color: var(--color-mahogany-700);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
-input[type="submit"]:focus,
-#ab-csc-container button:focus {
+input[type="submit"]:focus {
 	--tw-ring-color: rgb(103 232 249 / 0.8);
 	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
   --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
@@ -101,76 +104,71 @@ input[type="submit"]:focus,
 	outline: 2px solid transparent;
   outline-offset: 2px;
 }
-input[type="submit"]:active,
-#ab-csc-container button:active {
+input[type="submit"]:active {
 	--tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
-	background-color: theme(colors.brand-red);
+	background-color: var(--color-mahogany-700);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .hbspt-form {
 	span.hs-form-required {
 		font-weight: 700;
-		color: theme(colors.orange.800);
+		color: var(--color-orange-800);
 	}
+}
+.hbspt-form .hs-error-msg {
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-weight: 700;
+	font-style: italic;
+	color: var(--color-red-700);
+}
 
-	.hs-error-msg {
-		font-size: 1rem;
-		line-height: 1.5rem;
-		font-weight: 700;
-		font-style: italic;
-		color: theme(colors.red.700);
-	}
-
-	.invalid {
-		border-width: 2px;
-		border-color: theme(colors.red.700) !important;
-	}
+.hbspt-form .invalid {
+	border-width: 2px;
+	border-color: var(--color-red-700) !important;
 }
 
 /* date fields might be a problem */
 
 @media (prefers-color-scheme: dark) {
 	.container-contact-form {
-		border-color: theme(colors.neutral.700);
-		background-color: theme(colors.neutral.800);
+		border-color: var(--color-neutral-700);
+		background-color: var(--color-neutral-800);
 		background-image: none;
-		color: theme(colors.neutral.400);
+		color: var(--color-neutral-400);
 	}
 	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 	select,
 	textarea {
-		color: theme(colors.neutral.200);
-		border-color: theme(colors.neutral.600);
-		background-color: theme(colors.neutral.700);
+		color: var(--color-neutral-200);
+		border-color: var(--color-neutral-600);
+		background-color: var(--color-neutral-700);
 	}
 	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):focus,
 	select:focus,
 	textarea:focus {
-		background-color: theme(colors.neutral.950);
+		background-color: var(--color-neutral-950);
 	}
 	input[type="checkbox"],
 	input[type="radio"] {
-		border-color: theme(colors.neutral.600);
-		background-color: theme(colors.neutral.700);
+		border-color: var(--color-neutral-600);
+		background-color: var(--color-neutral-700);
 	}
 
-	.hbspt-form {
-		span.hs-form-required {
-			color: theme(colors.orange.300);
-		}
-		.hs-error-msg {
-			color: theme(colors.red.300);
-		}
-		.invalid {
-			border-color: theme(colors.red.300) !important;
-		}
+	.hbspt-form span.hs-form-required {
+		color: var(--color-orange-300);
+	}
+	.hbspt-form .hs-error-msg {
+		color: var(--color-red-300);
+	}
+	.hbspt-form .invalid {
+		border-color: var(--color-red-300) !important;
 	}
 }
 @media screen and (min-width: 640px) {
-	input[type="submit"],
-	#ab-csc-container button {
+	input[type="submit"] {
 		width: auto;
 	}
 }
@@ -193,8 +191,7 @@ input[type="submit"]:active,
 		margin-bottom: 0;
 		padding: 2rem;
 	}
-	input[type="submit"],
-	#ab-csc-container button {
+	input[type="submit"] {
 		font-size: 1.125rem;
     line-height: 1.75rem;
 	}

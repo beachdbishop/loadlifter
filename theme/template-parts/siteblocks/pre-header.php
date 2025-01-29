@@ -4,7 +4,7 @@
  */
 ?>
 <?php /*
-<section class="bg-gradient-to-r from-indigo-600 from-10% via-sky-500 via-30% to-emerald-600 to-90% full-bleed">
+<section class="bg-linear-to-r from-indigo-600 from-10% via-sky-500 via-30% to-emerald-600 to-90% full-bleed">
 	<div class="py-2 mx-auto md:py-4">
 		<p class="text-lg text-center text-neutral-100 animate-fade-in">
             <i class="fa-duotone fa-megaphone"></i>
