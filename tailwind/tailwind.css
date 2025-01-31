@@ -11,6 +11,7 @@
  * shared code to avoid duplication.
  */
 @import "./partials/header.css";
+@source "./safelist.txt";
 
 /**
  * Add Tailwind’s Preflight styles followed by your custom base styles.

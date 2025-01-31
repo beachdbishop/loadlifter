@@ -10,6 +10,7 @@
  * to avoid duplication.
  */
  @import "./partials/header.css";
+ @source "./safelist.txt";
  /**
 	* Add your custom base styles.
 	*/
