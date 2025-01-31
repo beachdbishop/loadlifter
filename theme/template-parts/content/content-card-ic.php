@@ -34,11 +34,11 @@ $peep_level = get_field( 'll_people_level' );
 		<?php
 		if ( 'locations' === get_post_type() ) {
 			// Custom code for 'location' post type
-			if ( !empty( get_field( 'll_loc_fax' ) ) ) {
-				$loc_fax_html = '<p class="leading-snug" property="faxNumber">F: ' . ll_format_phone_number( get_field( 'll_loc_fax' ), 'beach' ) . '</p>';
-			} else {
-				$loc_fax_html = '';
-			}
+			// if ( !empty( get_field( 'll_loc_fax' ) ) ) {
+			// 	$loc_fax_html = '<p class="leading-snug" property="faxNumber">F: ' . ll_format_phone_number( get_field( 'll_loc_fax' ), 'beach' ) . '</p>';
+			// } else {
+			// 	$loc_fax_html = '';
+			// }
 			?>
 			<div class="not-italic mb-2" property="address" typeof="PostalAddress">
 				<p class="street-address  |  leading-snug" property="streetAddress"><?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
@@ -47,8 +47,8 @@ $peep_level = get_field( 'll_people_level' );
 					<span class="state" property="addressRegion"><?php echo get_field( 'll_loc_state' ); ?></span>
 					<span class="zip" property="postalCode"><?php echo get_field( 'll_loc_zip' ); ?></span>
 				</p>
-				<p class="leading-snug" property="telephone">P: <?php echo  ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach'); ?></p>
-				<?php echo $loc_fax_html; ?>
+				<p class="leading-snug" property="telephone"><?php echo ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach'); ?></p>
+				<?php // echo $loc_fax_html; ?>
 			</div>
 			<?php
 		} elseif ( 'people' === get_post_type() ) {

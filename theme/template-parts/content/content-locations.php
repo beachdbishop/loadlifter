@@ -16,12 +16,12 @@ if ( get_field( 'll_loc_title_override' ) ) {
 }
 
 $hidden_featured_image = get_field( 'll_loc_hide_featured_image' );
-$loc_phone_link_html = '<p class="leading-snug" property="telephone">P: <a href="tel:' . ll_format_phone_number( get_field( 'll_loc_phone' ) ) . '" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', ' . ll_format_phone_number( get_field( 'll_loc_phone' ), 'us') . ', 0);">' . ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach') . '</a></p>';
-if ( !empty( get_field( 'll_loc_fax' ) ) ) {
-	$loc_fax_html = '<p class="leading-snug" property="faxNumber">F: ' . ll_format_phone_number( get_field( 'll_loc_fax' ), 'beach' ) . '</p>';
-} else {
-	$loc_fax_html = '';
-}
+$loc_phone_link_html = '<p class="leading-snug" property="telephone"><a href="tel:' . ll_format_phone_number( get_field( 'll_loc_phone' ) ) . '" rel="nofollow" onclick="ga(\'send\', \'event\', \'Phone Call Tracking\', \'Click to Call\', ' . ll_format_phone_number( get_field( 'll_loc_phone' ), 'us') . ', 0);">' . ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach') . '</a></p>';
+// if ( !empty( get_field( 'll_loc_fax' ) ) ) {
+// 	$loc_fax_html = '<p class="leading-snug" property="faxNumber">F: ' . ll_format_phone_number( get_field( 'll_loc_fax' ), 'beach' ) . '</p>';
+// } else {
+// 	$loc_fax_html = '';
+// }
 ?>
 
 <?php
@@ -64,7 +64,7 @@ endif;
 						<span class="zip" property="postalCode"><?php echo get_field( 'll_loc_zip' ); ?></span>
 					</p>
 					<?php echo $loc_phone_link_html; ?>
-					<?php echo $loc_fax_html; ?>
+					<?php // echo $loc_fax_html; ?>
 				</div>
 
 				<?php
