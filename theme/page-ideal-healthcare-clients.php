@@ -201,7 +201,7 @@ $shared_values = [
 
 					<section class="full-bleed py-6 bg-orient-50  |  dark:bg-neutral-950 lg:py-12">
 						<div class="px-2  |  lg:px-[16px]">
-							<h2 class="text-brand-blue-dark  |  dark:text-neutral-200 ">Shared Values</h2>
+							<h2 class="text-brand-blue-dark  |  dark:text-neutral-200 ">Shared values</h2>
 							<p class="my-2">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
 							<div class="mt-4 ind-card-flips is-style-white ">
 								<?php
