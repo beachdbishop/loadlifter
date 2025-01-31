@@ -96,7 +96,7 @@ $menuItemsSecondary = [
 <header id="masthead" class="nav-header permadark | bg-brand-blue-dark text-neutral-100 print:bg-white print:shadow-none sticky top-0 z-[39] ">
 	<div role="navigation" class="flex items-center justify-between px-2 py-3 md:container lg:px-[16px]">
 
-		<div class="w-[240px] lg:w-[320px] order-first">
+		<div class="w-[240px] lg:w-[320px] order-1">
 			<a
 				class="focus:outline-orient-400/75 focus:outline focus:outline-offset-4"
 				href="<?php bloginfo('url'); ?>"
@@ -107,14 +107,14 @@ $menuItemsSecondary = [
 			</a>
 		</div>
 
-		<div class="nav-ctrls | flex flex-row justify-end order-last print:hidden">
+		<div class="nav-ctrls | flex flex-row justify-end order-3 print:hidden">
 			<button class="toggle-mobile-nav | ml-2 p-2 border-2 border-neutral-500 rounded-sm  |  sm:rounded-lg cursor-pointer md:hidden  focus:bg-neutral-800 focus:text-orient-400" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>
 			</button>
 		</div>
 
 		<nav class="menus-container | md:flex md:flex-col md:grow md:order-1  print:hidden" id="primary-navigation" aria-label="Main Navigation">
-			<ul class="disclosure-nav | list-none font-head font-semibold order-first md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-6 ">
+			<ul class="disclosure-nav | list-none font-head font-semibold order-1 md:flex md:gap-x-2 md:justify-end md:order-2 lg:gap-x-6 ">
 				<?php
 				foreach ( $menuItemsPrimary as $primary ) {
 					if ( $primary['hasChildren'] === true ) {
@@ -137,7 +137,7 @@ $menuItemsSecondary = [
 				?>
 			</ul>
 
-			<ul class="secondary-nav | font-head md:text-lg text-neutral-200 md:order-first md:justify-end flex flex-col md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 print:hidden">
+			<ul class="secondary-nav | font-head md:text-lg text-neutral-200 md:order-1 md:justify-end flex flex-col md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 print:hidden">
 				<?php
 				foreach ( $menuItemsSecondary as $secondary ) {
 					echo '<li class="p-2 md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font hover:underline hover:text-orient-400 hover:decoration-neutral-200" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';

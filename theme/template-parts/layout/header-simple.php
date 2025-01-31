@@ -96,7 +96,7 @@ $menuItemsSecondary = [
 <header id="masthead" class="nav-header  |  bg-white  |  dark:bg-neutral-900 dark:text-neutral-100 print:bg-white print:shadow-none sticky top-0 z-[39] ">
 	<div role="navigation" class="flex items-center justify-between px-2 py-3  |  md:container lg:px-[16px]">
 
-		<div class="w-[240px] order-first  |  lg:w-[320px]">
+		<div class="w-[240px] order-1  |  lg:w-[320px]">
 			<a
 				class="focus:outline-brand-blue/75 dark:focus:outline-orient-400/75 focus:outline focus:outline-offset-4"
 				href="<?php bloginfo('url'); ?>"
@@ -111,14 +111,14 @@ $menuItemsSecondary = [
 			</a>
 		</div>
 
-		<div class="nav-ctrls  |  flex flex-row justify-end order-last  |  print:hidden">
+		<div class="nav-ctrls  |  flex flex-row justify-end order-3  |  print:hidden">
 			<button class="toggle-mobile-nav  |  ml-2 p-2 border-2 border-neutral-500 rounded-sm cursor-pointer  |  sm:rounded-lg md:hidden focus:bg-orient-200 dark:focus:bg-neutral-800 dark:focus:text-orient-400" aria-controls="primary-navigation" aria-expanded="false" tabindex="0">
 				<span class="">Menu</span>
 			</button>
 		</div>
 
 		<nav class="menus-container  |  md:flex md:flex-col md:grow md:order-1 print:hidden" id="primary-navigation" aria-label="Main Navigation">
-			<ul class="disclosure-nav  |  list-none font-head font-semibold order-first  |  md:flex md:gap-x-2 md:justify-end md:order-last lg:gap-x-6 ">
+			<ul class="disclosure-nav  |  list-none font-head font-semibold order-1  |  md:flex md:gap-x-2 md:justify-end md:order-2 lg:gap-x-6 ">
 				<?php
 				foreach ( $menuItemsPrimary as $primary ) {
 					if ( $primary['hasChildren'] === true ) {
@@ -141,7 +141,7 @@ $menuItemsSecondary = [
 				?>
 			</ul>
 
-			<ul class="secondary-nav  |  font-head flex flex-col text-neutral-700  |  md:text-lg md:order-first md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
+			<ul class="secondary-nav  |  font-head flex flex-col text-neutral-700  |  md:text-lg md:order-1 md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
 				<?php
 				foreach ( $menuItemsSecondary as $secondary ) {
 					echo '<li class="p-2  |  md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font  |  hover:underline hover:text-brand-blue hover:decoration-neutral-400 dark:hover:text-neutral-100" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';

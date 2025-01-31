@@ -26,7 +26,7 @@
 	</header>
 
 	<div class="md:flex md:gap-8 lg:gap-16">
-		<div class="md:order-first md:w-2/3">
+		<div class="md:order-1 md:w-2/3">
 			<div <?php ll_content_class( 'entry-content' ) ?>>
 				<?php
 				the_content(
@@ -75,7 +75,7 @@
 			?>
 		</div>
 
-		<aside class="mt-8 md:mt-0 md:order-last md:w-1/3">
+		<aside class="mt-8 md:mt-0 md:order-2 md:w-1/3">
 			<?php if ( get_field( 'll_normal_contact_form_location' ) == 1 ) : ?>
 				<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">
 					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
