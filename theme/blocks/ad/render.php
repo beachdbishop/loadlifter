@@ -45,7 +45,7 @@ $ad_extra_classes	= get_field( 'll_ad_extra_classes' );
 	<a class="" href="<?php echo esc_url($ad_link); ?>">
 		<div class="container px-5 py-16 mx-auto">
 			<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-fit">
-				<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] leading-snug  |   sm:pr-16"><?php echo $ad_text; ?></span>
+				<span class="grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] leading-snug  |   sm:pr-16"><?php echo $ad_text; ?></span>
 				<div class="shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase duration-500 ease-in-out bg-transparent border border-white border-solid rounded-tl-2xl rounded-br-2xl transition-color  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><?php echo $ad_button_text; ?></div>
 			</div>
 		</div>

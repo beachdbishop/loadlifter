@@ -20,7 +20,7 @@ $peep_level 										= get_field( 'll_people_level' );
 <li class="person-card card-ic | group @container">
 	<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg bg-white border-neutral-200  |  dark:border-neutral-600 dark:bg-transparent">
 
-		<div class="card-text | flex-grow order-1">
+		<div class="card-text | grow order-1">
 			<?php
 			if ($peep_level['value'] !== '900') {
 				$title_classes = 'group-hover:text-mahogany-700 dark:group-hover:text-mahogany-600';

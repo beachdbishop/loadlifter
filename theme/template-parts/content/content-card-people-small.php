@@ -29,7 +29,7 @@ $peep_level                     = get_field( 'll_people_level' );
 			<?php } ?>
 		</div>
 
-		<div class="flex-grow">
+		<div class="grow">
 			<?php
 			if ($peep_level['value'] !== '900') {
 				$title_classes = 'dark:text-neutral-200 group-hover:text-brand-red';

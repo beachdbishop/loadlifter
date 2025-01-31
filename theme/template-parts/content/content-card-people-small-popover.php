@@ -22,7 +22,7 @@ $peep_level = get_field( 'll_people_level' );
 <li class="person-card popcard | @container" data-pop="<?php echo esc_attr( $slug ); ?>">
 	<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg bg-white border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800">
 
-		<div class="card-text | flex-grow order-1 md:text-center">
+		<div class="card-text | grow order-1 md:text-center">
 			<?php echo sprintf( '<h3 class="text-2xl lg:text-3xl !leading-none text-orient-800  |  dark:text-orient-400">%1$s <small>%2$s</small></h3>', get_the_title(), get_field( 'll_people_designations' ) ); ?>
 			<?php echo sprintf( '<p class="text-lg leading-tight text-neutral-600 font-head dark:text-neutral-500">%1$s</p>', get_field( 'll_people_title' ) ); ?>
 		</div>
@@ -49,7 +49,7 @@ $peep_level = get_field( 'll_people_level' );
 		<?php } ?>
 
 		<div class="card-img | shrink-0 order-0 object-cover object-center rounded-full bg-neutral-100 bg-no-repeat bg-cover" style="background-image: url(<?php echo esc_attr( $headshot ); ?>); background-position: center top;">
-			<div class="w-16 h-16 lg:w-32 lg:h-32 aspect-square">&nbsp;</div>
+			<div class="size-16 lg:w-32 lg:h-32 aspect-square">&nbsp;</div>
 		</div>
 
 	</div>

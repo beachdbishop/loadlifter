@@ -79,7 +79,7 @@ if ( $peepauthor ) {
 						}
 
 						if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid border-neutral-200 text-neutral-700 dark:text-neutral-400 dark:border-neutral-700 *:inline-block print:my-1 print:text-sm">';
+							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid border-neutral-200 text-neutral-700  |  dark:text-neutral-400 dark:border-neutral-700 print:my-1 print:text-sm">';
 								$peep_department = get_field_object( 'll_people_department' );
 								$peep_dept_value = $peep_department['value'];
 								if ( $peep_dept_value ) {

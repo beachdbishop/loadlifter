@@ -261,6 +261,18 @@ ul.wp-block-list {
 }
 
 
+.inline-comma-sep {
+	span:not(:last-of-type)::after {
+		content: ", ";
+	}
+}
+.inline-pipe-sep {
+	span:not(:last-of-type)::after {
+		content: " | ";
+	}
+}
+
+
 @media screen and (min-width: 768px) {
 	.is-style-circle,
 	.is-style-circle-red,

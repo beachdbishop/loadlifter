@@ -21,7 +21,7 @@ $icon = ( get_field( 'll_page_icon' ) ) ? get_field( 'll_page_icon' ) : 'fa-page
 			</span>
 		</div>
 
-		<div class="flex-grow">
+		<div class="grow">
 			<?php the_title( '<h3 class="text-xl font-head font-semibold uppercase text-neutral-900  |  dark:text-neutral-200"><a class="" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 			<!-- <p class="text-sm text-neutral-500">extra detail</p> -->
 		</div>

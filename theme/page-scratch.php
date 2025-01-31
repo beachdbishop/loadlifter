@@ -51,7 +51,7 @@ get_header();
 							<a href="#" class="decoration-none">
 								<div class="container px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
-										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
+										<span class="grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
 										<div class="shrink-0 px-8 py-2 mt-10 text-base text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-grill-hot"></i> Button</div>
 									</div>
 								</div>
@@ -64,7 +64,7 @@ get_header();
 							<a href="#">
 								<div class="px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
-										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
+										<span class="grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
 										<div class="shrink-0 px-8 py-2 mt-10 text-white bg-transparent border border-white border-solid papercorners-16  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><i class="fa-regular fa-mustache"></i> Details</div>
 									</div>
 								</div>
@@ -77,7 +77,7 @@ get_header();
 							<a href="#">
 								<div class="px-5 py-16 mx-auto">
 									<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-2/3">
-										<span class="flex-grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
+										<span class="grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)]  |  sm:pr-16">Slow-carb next level shoindxgoitch ethical authentic, scenester sriracha forage.</span>
 										<div class="shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase bg-transparent border border-white border-solid papercorners-16  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0">Button</div>
 									</div>
 								</div>
