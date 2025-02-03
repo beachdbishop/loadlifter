@@ -21,70 +21,40 @@ dd {
 	padding-bottom: var(--wp--preset--spacing--20, 0.5rem);
 }
 
-dd::marker {
-	color: var(--wp--preset--color--brand-red-pale);
-}
+dd::marker { color: var(--wp--preset--color--brand-red-pale); }
 
-ol.is-style-default,
-ol:not([class]),
-ol.wp-block-list {
-	list-style: decimal;
-	padding-inline-start: 1.5rem;
 
-	li::marker {
-		color: var(--color-neutral-500);
-	}
-}
-ul.is-style-default,
-ul:not([class]),
-ul.wp-block-list {
-	list-style: disc;
-	padding-inline-start: 1.5rem;
+ol:where(.is-style-default, :not([class]), .wp-block-list) { list-style: decimal; }
+ol:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: var(--color-neutral-500); }
 
-	li::marker {
-		color: var(--color-neutral-300);
-	}
-}
+ol:where(.is-style-default, :not([class]), .wp-block-list),
+ul:where(.is-style-default, :not([class]), .wp-block-list) { padding-inline-start: 1.5rem; }
+
+ul:where(.is-style-default, :not([class]), .wp-block-list) { list-style: disc; }
+ul:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: var(--color-neutral-300); }
+
 
 .prose:not(.grid) li:not(:last-child),
-.prose *:not(.grid) > li:not(:last-child) {
-	margin-bottom: var(--wp--preset--spacing--20, 0.5rem);
-}
+.prose *:not(.grid) > li:not(:last-child) { margin-bottom: var(--wp--preset--spacing--20, 0.5rem); }
 
-.list-square {
-	list-style-type: square;
-}
+.list-square { list-style-type: square; }
 
-.list-checked li::before {
-	content: "\f058";
-}
+.list-checked li::before { content: "\f058"; }
 
 .is-style-list-none,
 .prose .is-style-list-none {
 	list-style-type: none;
 	padding-left: 0;
-
-
 }
 .is-style-list-none li,
-.prose .is-style-list-none li {
-	padding-left: 0;
-}
+.prose .is-style-list-none li { padding-left: 0; }
 
 .is-style-list-square,
-.prose .is-style-list-square {
-	list-style-type: square;
-}
+.prose .is-style-list-square { list-style-type: square; }
 
-.is-style-list-columns-2 {
-	columns: 1;
-}
-.is-style-list-columns-2 li {
-	break-inside: avoid-column;
-}
-.is-style-list-columns-2 li:first-of-type {
-	margin-top: 0;
-}
+.is-style-list-columns-2 { columns: 1; }
+.is-style-list-columns-2 li { break-inside: avoid-column; }
+.is-style-list-columns-2 li:first-of-type { margin-top: 0; }
 
 /* inspiration: https://codepen.io/joshwcomeau/pen/VwxwYbG */
 [class*="is-style-list-divide-"],
@@ -261,16 +231,8 @@ ul.wp-block-list {
 }
 
 
-.inline-comma-sep {
-	span:not(:last-of-type)::after {
-		content: ", ";
-	}
-}
-.inline-pipe-sep {
-	span:not(:last-of-type)::after {
-		content: " | ";
-	}
-}
+.inline-comma-sep span:not(:last-of-type)::after { content: ", "; }
+.inline-pipe-sep span:not(:last-of-type)::after {	content: " | ";	}
 
 
 @media screen and (min-width: 768px) {

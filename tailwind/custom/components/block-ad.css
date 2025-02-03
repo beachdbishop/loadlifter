@@ -4,11 +4,11 @@
 	background-color: transparent;
 }
 .llad.is-style-brand-red {
-	background-color: var(--wp--preset--color--brand-red);
+	background-color: var(--color-mahogany-700);
 }
 .llad.is-style-brand-blue {
-	background-color: var(--wp--preset--color--brand-blue);
+	background-color: var(--color-orient-800);
 }
 .llad.is-style-brand-gray {
-	background-color: var(--wp--preset--color--brand-gray);
+	background-color: var(--color-neutral-600);
 }

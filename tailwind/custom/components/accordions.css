@@ -11,10 +11,10 @@ summary {
 	cursor: pointer;
 	position: relative;
 	z-index: 10;
+}
 
-	> * {
-		display: inline;
-	}
+summary > * {
+	display: inline;
 }
 
 summary::marker,
@@ -29,8 +29,6 @@ details[open] summary::-webkit-details-marker {
 .accordions {
 	margin-bottom: 2rem;
 }
-
-
 
 .accordions	details {
 	margin-bottom: 2px;
@@ -47,7 +45,6 @@ details[open] summary::-webkit-details-marker {
 	padding-top: 0.25rem;
 	font-size: 1.875rem/* 30px */;
 	line-height: 2.25rem;
-
 }
 .accordions summary::before {
 	content: '+';

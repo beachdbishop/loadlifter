@@ -5,20 +5,55 @@
  * edit `./tailwind/tailwind-theme.css`, which contains your project’s custom
  * design tokens, or files in the `./tailwind/custom` folder.
  */
+
 /**
- * Because this file shares code with `tailwind.css`, we import the shared code
- * to avoid duplication.
+ * Add Tailwind Typography and a corresponding config file.
  */
- @import "./partials/header.css";
- @source "./safelist.txt";
+/* @plugin "@_tw/typography";
+@config "../tailwind-typography.config.js"; */
+/**
+ * Add the WordPress file header.
+ */
+@import "./custom/file-header.css";
+/**
+ * Add both the default Tailwind theme and your custom theme.
+ */
+@import "./tailwind-theme.css";
+/**
+ * Add custom `@font-face` rules.
+ */
+@import "./custom/fonts.css";
+@source "./safelist.txt";
+/**
+ * Add your custom base styles.
+ */
+@layer base {
+	@import "./custom/base.css";
+}
+
+/**
+ * Add only components that make sense to included in the editor.
+ */
+@import "./custom/components/accordions.css";
+@import "./custom/components/block-ad.css";
+@import "./custom/components/block-callout.css";
+@import "./custom/components/buttons.css";
+@import "./custom/components/footnotes.css";
+@import "./custom/components/images.css";
+@import "./custom/components/lists.css";
+@import "./custom/components/notes.css";
+@import "./custom/components/pagination.css";
+@import "./custom/components/sep-and-spacers.css";
+@import "./custom/components/social-links.css";
+@import "./custom/components/tables.css";
+@import "./custom/components/wp-block-cover.css";
+@import "./custom/components/wp-block-quotes.css";
+
+@import "./custom/components/zzz-dev.css";
+
  /**
-	* Add your custom base styles.
+	* Add Tailwind's utility classes and any utility classes registered by
+	* plugins, then add custom utility classes.
 	*/
- @layer base {
-	 @import "./custom/base.css";
- }
- /**
-	* Because this file shares code with `tailwind.css`, we import the shared code
-	* to avoid duplication.
-	*/
- @import "./partials/footer.css";
+@import "tailwindcss/utilities";
+@import "./custom/utilities.css";
