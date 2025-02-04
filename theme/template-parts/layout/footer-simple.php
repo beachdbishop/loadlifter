@@ -103,11 +103,11 @@ if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 				?>
 			</p>
 
-			<nav aria-label="Legal submenu" class="menu-legal"><? // Legal ?>
+			<nav aria-label="Legal submenu" class="menu-legal"><?php // Legal ?>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'll_menu_below_disclaimers',
-					'container_class' => 'footermenu text-sm',
+					'container_class' => 'text-sm',
 					'walker' => new LL_Menu_Walker()
 				) );
 				?>
