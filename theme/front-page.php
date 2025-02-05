@@ -45,11 +45,11 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</video>
 
 				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
-					<h1 class="leading-none text-white tracking-light  |  lg:text-6xl">
+					<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
 						<?php echo $video_heading; ?>
 					</h1>
 
-					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400  |  lg:text-4xl">
+					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
 						<?php echo $video_subheading; ?>
 					</p>
 
@@ -90,9 +90,9 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 			<?php endif; ?>
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-linear-70 from-orient-950 from-30% via-orient-800 via-50% to-orient-950 to-90% bg-180pct">
-				<div class="px-2 z-10 wp-block-group post-grid has-orient-200-color  |  lg:px-[16px]">
-					<h2 id="trending" class="mb-4  text-orient-200  |  lg:mb-8">Trending now</h2>
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-orient-950 bg-linear-70 from-orient-950 from-30% via-orient-800 via-50% to-orient-950 to-90% bg-180pct">
+				<div class="px-2 z-10 wp-block-group post-grid  |  lg:px-[16px]">
+					<h2 id="trending" class="mb-4  text-orient-100  |  lg:mb-8">Trending now</h2>
 					<?php echo do_shortcode(
 						'[display-posts
 						post_type="post,page,industries"
@@ -101,14 +101,14 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						orderby="modified"
 						order="DESC"
 						wrapper="ul"
-						wrapper_class="dps-grid-3max cards-ic text-orient-200"
+						wrapper_class="dps-grid-3max cards-ic text-orient-100"
 						layout="card-ic-min" /]'
 					); ?>
 				</div>
 			</section>
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-neutral-300  |  dark:bg-neutral-900 dark:text-neutral-300">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300">
 				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php echo do_shortcode(
