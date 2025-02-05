@@ -55,10 +55,10 @@
 				?>
 			</ul>
 
-			<ul class="secondary-nav  |  flex flex-colfont-head text-neutral-200  |  md:order-1 md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 print:hidden">
+			<ul class="secondary-nav  |  flex flex-col font-head text-neutral-200  |  md:order-1 md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 print:hidden">
 				<?php
 				foreach ( LL_NAV_SECONDARY as $secondary ) {
-					echo sprintf( '<li class="p-2 md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font hover:underline hover:text-orient-400 hover:decoration-neutral-200" href="%1$s">%2$s</a></li>',
+					echo sprintf( '<li class="p-2  |  md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font  |  hover:underline hover:text-orient-400 hover:decoration-neutral-200" href="%1$s">%2$s</a></li>',
 						$secondary['url'],
 						$secondary['label'],
 					);

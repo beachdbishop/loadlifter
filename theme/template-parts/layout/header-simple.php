@@ -54,7 +54,10 @@
 							$isMega,
 						);
 					} else {
-						echo '<li><a class="main-link  |  underline-offset-2  |  md:text-lg lg:text-2xl" href="' . $primary['url'] . '">' . $primary['label'] . '</a></li>';
+						echo sprintf( '<li><a class="main-link  |  underline-offset-2  |  md:text-lg lg:text-2xl" href="%1$s">%2$s</a></li>',
+							$primary['url'],
+							$primary['label'],
+						);
 					}
 				}
 				?>
@@ -63,7 +66,10 @@
 			<ul class="secondary-nav  |  font-head flex flex-col text-neutral-700  |  md:text-lg md:order-1 md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden">
 				<?php
 				foreach ( LL_NAV_SECONDARY as $secondary ) {
-					echo '<li class="p-2  |  md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font  |  hover:underline hover:text-brand-blue hover:decoration-neutral-400 dark:hover:text-neutral-100" href="' . $secondary['url'] . '">' . $secondary['label'] . '</a></li>';
+					echo sprintf( '<li class="p-2  |  md:py-0"><a class="underline-offset-2 decoration-dotted decoration-from-font  |  hover:underline hover:text-brand-blue hover:decoration-neutral-400 dark:hover:text-neutral-100" href="%1$s">%2$s</a></li>',
+						$secondary['url'],
+						$secondary['label'],
+					);
 				}
 				?>
 				<li class="md:max-w-[200px] lg:max-w-fit"><?php get_search_form(); ?></li>
