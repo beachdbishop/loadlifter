@@ -44,6 +44,17 @@
 	--color-orient-800: #00668e;
 	--color-orient-900: #075273;
 	--color-orient-950: #092f42;
+	--color-gold-50: oklch(98.49% 0.02 91.54);
+	--color-gold-100: oklch(97% 0.042 92.18);
+	--color-gold-200: oklch(93.69% 0.086 91.55);
+	--color-gold-300: oklch(91.08% 0.12 91.28);
+	--color-gold-400: oklch(88.66% 0.148 90.44);
+	--color-gold-500: oklch(86.03% 0.167 87.74);
+	--color-gold-600: oklch(84.03% 0.172 84.07);
+	--color-gold-700: oklch(68.5% 0.141 84.38);
+	--color-gold-800: oklch(50.79% 0.104 85.75);
+	--color-gold-900: oklch(32.6% 0.067 89.06);
+	--color-gold-950: oklch(20.85% 0.043 91.85);
 
 	--color-brand-gray-faint: #fafafa;
 	--color-brand-gray-pale: #d4d4d4;
@@ -57,7 +68,6 @@
 	--color-brand-blue-pale: #2dcfff;
 	--color-brand-blue: #00668e;
 	--color-brand-blue-dark: #092f42;
-
 
 	--font-head: serenity, sans-serif;
   --font-serif: Georgia, serif;
