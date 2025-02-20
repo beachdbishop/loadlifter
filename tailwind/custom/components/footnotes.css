@@ -3,23 +3,25 @@
  */
 
 ol.wp-block-footnotes {
-	max-width: 65ch;
+	/* max-width: 65ch; */
 	font-size: 0.875rem;
-  line-height: 1.25rem
+  line-height: 1.25;
+	list-style-type: decimal;
+	margin-left: 1.5rem;
 }
 
 sup.fn a {
 	color: var(--color-mahogany-700);
-	font-weight: 700;
+	font-weight: 600;
 	text-decoration-line: none;
 }
-sup.fn:hover {
+sup.fn a:hover {
 	color: currentColor;
 }
 
 @media screen and (min-width: 1024px) {
 	ol.wp-block-footnotes {
 		font-size: 1rem;
-    line-height: 1.5rem;
+    line-height: 1.5;
 	}
 }
