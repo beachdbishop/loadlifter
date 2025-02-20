@@ -33,9 +33,8 @@ body {
 .hist { font-variant-alternates: historical-forms; }
 
 
-strong, b, th {
-	font-weight: 600;
-}
+/* we only have 300 and 600 weights of Serenity */
+:where(h1, h2, h3, h4, h5, h6) strong, b, th { font-weight: 600; }
 
 h1, h2, h3, h4, h5 {
 	font-family: var(--font-head);

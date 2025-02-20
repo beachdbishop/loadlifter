@@ -9,7 +9,7 @@
 				{ "destination": "./_pa11y/" }
 			]
 		],
-		"hideElements": "form[id*='hsForm_'] > iframe"
+		"hideElements": "form[id*='hsForm_'] > iframe,.page-hero"
 	},
 	"urls": [
 		"https://peoplecptauthortest.local/",

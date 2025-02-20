@@ -33,6 +33,7 @@
 		"watch:tailwind:frontend": "npm run development:tailwind:frontend -- --watch",
 		"watch:tailwind:slidercss": "npm run development:tailwind:slidercss -- --watch",
 		"watch:tailwind:editor": "npm run development:tailwind:editor -- --watch",
+		"watch:tailwind:editor:extra": "npm run development:tailwind:editor:extra -- --watch",
 		"watch:esbuild": "npm run development:esbuild -- --watch",
 		"watch:browser-sync": "browser-sync start --proxy \"https://peoplecptauthortest.local\" --files \"theme\" --no-notify --no-inject-changes --no-ghost-mode",
 		"watch": "run-p \"watch:**\"",
