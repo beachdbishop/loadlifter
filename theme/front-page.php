@@ -44,14 +44,15 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 					Your browser does not support the video tag.
 				</video>
 
-				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 space-y-6 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
-					<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
-						<?php echo $video_heading; ?>
-					</h1>
-
-					<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
-						<?php echo $video_subheading; ?>
-					</p>
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
+					<hgroup class="space-y-6">
+						<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
+							<?php echo $video_heading; ?>
+						</h1>
+						<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
+							<?php echo $video_subheading; ?>
+						</p>
+					</hgroup>
 
 					<?php if ( ( !empty( $hero_cta1_text ) ) && ( !empty( $hero_cta1_url ) ) ) : ?>
 					<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
