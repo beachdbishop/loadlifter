@@ -55,18 +55,17 @@ $page_state                     = get_field( 'll_page_state' );
 
 						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
 							<?php
-							if ( $page_below_fold_content ) :
-								echo do_shortcode( $page_below_fold_content );
-							endif;
-							?>
-
-							<?php
 							if ( $page_gmap ) :
 								echo '<section class="w-screen ml-[50%] -translate-x-1/2 relative h-[600px] overflow-hidden bg-brand-neutral-200  |  print:hidden">';
 									echo '<div class="absolute inset-0">';
 										echo '<iframe src="' . $page_gmap . '" width="100%" height="600px" style="border: 0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of ' . $page_city . ', ' . $page_state . '"></iframe>';
 									echo '</div>';
 								echo '</section>';
+							endif;
+
+
+							if ( $page_below_fold_content ) :
+								echo do_shortcode( $page_below_fold_content );
 							endif;
 							?>
 						</div>

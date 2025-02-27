@@ -69,9 +69,8 @@ $page_below_fold								= get_field( 'll_below_fold' );
 									echo '</div>';
 								echo '</section>';
 							endif;
-							?>
 
-							<?php
+
 							if ( $page_below_fold ) :
 								echo do_shortcode( $page_below_fold );
 							endif;
