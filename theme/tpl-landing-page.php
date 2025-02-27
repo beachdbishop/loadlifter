@@ -33,7 +33,7 @@ $page_city                      = get_field( 'll_page_city' );
 $page_state                     = get_field( 'll_page_state' );
 ?>
 
-	<main id="primary" class="landing-page  |  bg-white dark:bg-neutral-900">
+	<main id="primary" class="landing-page  |  bg-white  |  dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -42,7 +42,7 @@ $page_state                     = get_field( 'll_page_state' );
 			?>
 
 			<?php if ( get_field( 'll_hide_featured_image' ) === false ) :
-					echo ll_better_page_hero( $page_title, $page_message );
+				echo ll_better_page_hero( $page_title, $page_message );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
