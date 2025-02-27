@@ -58,6 +58,7 @@
                 "id": ""
             },
             "choices": {
+                "--": "--",
                 "Alabama": "Alabama",
                 "Alaska": "Alaska",
                 "Arizona": "Arizona",
@@ -113,6 +114,7 @@
             "return_format": "label",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
             "placeholder": ""
@@ -227,5 +229,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1699396777
+    "modified": 1740597435
 }
