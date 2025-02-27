@@ -18,7 +18,7 @@ function r( $var ) {
 }
 
 
-add_filter( 'get_post_metadata', 'll_add_dynamic_post_meta', 10, 4 );
+// add_filter( 'get_post_metadata', 'll_add_dynamic_post_meta', 10, 4 );
 /**
  * Add dynamically-generated "post meta" to `\WP_Post` objects
  *
