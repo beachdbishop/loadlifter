@@ -18,7 +18,7 @@ get_header();
 
 				<header>
 					<?php
-					the_archive_title( '<h2 class="entry-title text-orient-800  |  dark:text-orient-400">', '</h2>' );
+					the_archive_title( '<h1 class="entry-title text-orient-800  |  dark:text-orient-400">', '</h1>' );
 					the_archive_description( '<div class="font-head">', '</div>' );
 					?>
 				</header>

@@ -78,9 +78,6 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				<?php // Only display the content if it exists ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white  |  dark:bg-neutral-800' ); ?>>
 					<div class="px-2 container  |  lg:px-[16px]">
-						<header>
-							<?php the_title( '<h1 class="entry-title | hidden ">', '</h1>' ); ?>
-						</header>
 
 						<div <?php ll_content_class( 'entry-content' ); ?>>
 							<?php the_content(); ?>
