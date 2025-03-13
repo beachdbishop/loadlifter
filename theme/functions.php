@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.0.13' );
+	define( 'LL_VERSION', '3.0.14' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {

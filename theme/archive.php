@@ -7,6 +7,13 @@
  * @package Load_Lifter
  */
 
+// if ( is_archive() ) {
+// 	$tag = get_tag( get_query_var( 'tag' ) );
+// 	$tag_id = $tag->term_id;
+// 	$tag_title = $tag->name;
+// 	$tag_description = $tag->description ? $tag->description : "Review our comprehensive {$tag_title} archive which covers a variety of topics including accounting, audit, and tax issues.";
+// }
+
 get_header();
 ?>
 

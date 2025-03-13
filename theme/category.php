@@ -7,14 +7,14 @@
  * @package Load_Lifter
  */
 
- if ( is_archive() ) {
-		$cat = get_category( get_query_var( 'cat' ) );
-		$cat_id = $cat->term_id;
-		$cat_title = $cat->name;
-		$cat_description = $cat->description ? $cat->description : "Review our comprehensive {$cat_title} archive which covers a variety of topics including accounting, audit, and tax issues.";
+if ( is_archive() ) {
+	$cat = get_category( get_query_var( 'cat' ) );
+	$cat_id = $cat->term_id;
+	$cat_title = $cat->name;
+	$cat_description = $cat->description ? $cat->description : "Review our comprehensive {$cat_title} archive which covers a variety of topics including accounting, audit, and tax issues.";
 
-		$rel_industry               = get_field( 'cat_featured_industry', 'category_' . $cat_id );
-		$rel_services               = get_field( 'cat_featured_services', 'category_' . $cat_id );
+	$rel_industry               = get_field( 'cat_featured_industry', 'category_' . $cat_id );
+	$rel_services               = get_field( 'cat_featured_services', 'category_' . $cat_id );
 }
 
 get_header();
@@ -27,9 +27,9 @@ get_header();
 		<?php if ( have_posts() ) : ?>
 
 			<header class="mb-2">
-				<h2 class="mb-2 entry-title text-orient-800  |  dark:text-orient-400"><?php echo ll_wrap_last_word( get_the_archive_title() ); ?></h2>
+				<h1 class="mb-2 entry-title text-orient-800  |  dark:text-orient-400"><?php echo ll_wrap_last_word( get_the_archive_title() ); ?></h1>
 				<?php if ( get_the_archive_description() ) {
-					the_archive_description( '<h3>', '</h3>' );
+					the_archive_description( '<p>', '</p>' );
 				} ?>
 			</header>
 
