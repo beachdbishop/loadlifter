@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.0.14' );
+	define( 'LL_VERSION', '3.0.15' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -72,10 +72,7 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 						</li>
 						<li class="lg:py-4">
 							<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
-								<a href="/soar/" title="Strategic Operations &amp; Advisory Resources">
-									<span class="hidden md:inline">SOAR</span>
-									<span class="inline tracking-tight md:hidden">Strategic Operations &amp; Advisory Resources</span>
-								</a>
+								<a href="/soar/" title="Strategic Operations &amp; Advisory Resources">Strategic Advisory</a>
 							</p>
 							[listmenu menu="submenu SOAR" container_class="hidden submenu mb-2  |  md:block" /]
 						</li>
