@@ -103,7 +103,7 @@ td, math, time[datetime*=":"] {
 	font-variant-numeric: proportional-nums;
 	line-height: 1.7;
 
-	-webkit-hyphens: auto;
+	/* -webkit-hyphens: auto;
 	-webkit-hyphenate-limit-before: 4;
 	-webkit-hyphenate-limit-after: 3;
 	-webkit-hyphenate-limit-lines: 2;
@@ -112,7 +112,7 @@ td, math, time[datetime*=":"] {
 	hyphenate-limit-chars: 10;
 	hyphenate-limit-lines: 2;
 	hyphenate-limit-zone: 8%;
-	hyphenate-limit-last: always;
+	hyphenate-limit-last: always; */
 }
 
 .prose pre, .prose code, .prose var, .prose samp, .prose kbd,
