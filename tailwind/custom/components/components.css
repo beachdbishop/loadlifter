@@ -65,6 +65,13 @@
 	margin-left: 1rem;
 }
 
+.front-intro p {
+	max-width: 60ch;
+}
+.front-intro img {
+	border-radius: 96px 0 96px 0;
+}
+
 
 @supports (mask-repeat: no-repeat) or (-webkit-mask-repeat: no-repeat) {
 	.mask-logo {

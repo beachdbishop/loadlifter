@@ -56,7 +56,7 @@ if ( ! function_exists( 'll_make_bfco_job_opening' ) ) {
 			'public'                => true,
 			'show_ui'               => true,
 			'show_in_menu'          => true,
-			'menu_position'         => 20,
+			'menu_position'         => 20.3,
 			'menu_icon'             => 'dashicons-businesswoman',
 			'show_in_admin_bar'     => true,
 			'show_in_nav_menus'     => false,

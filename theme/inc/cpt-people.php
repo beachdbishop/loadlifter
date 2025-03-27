@@ -55,7 +55,7 @@ function ll_register_people_cpt() {
 		'public'                => true,
 		'show_ui'               => true,
 		'show_in_menu'          => true,
-		'menu_position'         => 20,
+		'menu_position'         => 20.2,
 		'menu_icon'             => 'dashicons-businesswoman',
 		'show_in_admin_bar'     => true,
 		'show_in_nav_menus'     => true,

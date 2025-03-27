@@ -20,8 +20,10 @@ $featvideo                      = get_field( 'll_page_hero_video' );
 $brand_message                  = get_field( 'll_brand_message' );
 $page_excerpt                   = get_the_excerpt();
 $trending                       = get_field( 'll_front_trending_items' );
-$video_heading                  = 'Partners who value your vision';
-$video_subheading               = 'Work with our advisors and experience the power of collaboration and what it can accomplish.';
+// $video_heading                  = 'Partners who value your vision';
+// $video_subheading               = 'Work with our advisors and experience the power of collaboration and what it can accomplish.';
+$video_heading                  = get_field( 'll_page_title_override' );
+$video_subheading               = get_field( 'll_custom_subheader' );
 $hero_cta1_text									= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url									= get_field( 'll_hero_cta1_url' );
 $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
@@ -49,7 +51,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
 							<?php echo $video_heading; ?>
 						</h1>
-						<p class="text-2xl leading-normal font-head max-w-[44ch] !text-orient-400 drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
+						<p class="text-2xl leading-normal font-head ax-w-[44ch] !text-orient-400 drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
 							<?php echo $video_subheading; ?>
 						</p>
 					</hgroup>
@@ -76,7 +78,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 
 			<?php if ( get_the_content() ) : ?>
 				<?php // Only display the content if it exists ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white  |  dark:bg-neutral-800' ); ?>>
+				<section id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white  |  dark:bg-neutral-800' ); ?> aria-label="Content">
 					<div class="px-2 container  |  lg:px-[16px]">
 
 						<div <?php ll_content_class( 'entry-content' ); ?>>
@@ -84,29 +86,31 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 						</div>
 
 					</div>
-				</article>
+				</section>
 			<?php endif; ?>
 
-
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-orient-950 bg-linear-70 from-orient-950 from-30% via-orient-800 via-50% to-orient-950 to-90% bg-180pct">
+			<?php
+			// Removing based on discussion with Heather and Brian on 20250313
+			?>
+			<!-- section class="full-bleed ll-equal-vert-padding not-prose bg-orient-950 bg-linear-70 from-orient-950 from-30% via-orient-800 via-50% to-orient-950 to-90% bg-180pct" aria-labelledby="trending">
 				<div class="px-2 z-10 wp-block-group post-grid  |  lg:px-[16px]">
 					<h2 id="trending" class="mb-4  text-orient-100  |  lg:mb-8">Trending now</h2>
-					<?php echo do_shortcode(
-						'[display-posts
-						post_type="post,page,industries"
-						id="' . implode( ', ', $trending ) . '"
-						ignore_sticky_posts="true"
-						orderby="modified"
-						order="DESC"
-						wrapper="ul"
-						wrapper_class="dps-grid-3max cards-ic text-orient-100"
-						layout="card-ic-min" /]'
-					); ?>
+					<?php // echo do_shortcode(
+						// '[display-posts
+						// post_type="post,page,industries"
+						// id="' . implode( ', ', $trending ) . '"
+						// ignore_sticky_posts="true"
+						// orderby="modified"
+						// order="DESC"
+						// wrapper="ul"
+						// wrapper_class="dps-grid-3max cards-ic text-orient-100"
+						// layout="card-ic-min" /]'
+					// ); ?>
 				</div>
-			</section>
+			</section -->
 
 
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300">
+			<section class="full-bleed ll-equal-vert-padding not-prose bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
 				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php echo do_shortcode(
@@ -123,7 +127,7 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</div>
 			</section>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300">
+			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
 				<div class="post-grid  |  px-2  |  lg:px-[16px]">
 					<div class="flex items-center justify-between mb-4">
 						<h2 id="recent">Recent Posts</h2>
