@@ -7,6 +7,60 @@
  * @package Load_Lifter
  */
 
+if ( ! function_exists( 'll_disnav_mainlink' ) ) :
+	function ll_disnav_mainlink( $link, $label, $labelshort = null ) {
+		$mainlink_classes = 'main-link  |  font-head font-semibold underline-offset-2 flex items-center border border-solid border-transparent bg-transparent decoration-auto py-1  |  hover:text-orient-800 hover:underline';
+
+		if ( !empty( $labelshort ) ) {
+			$mainlink_html = sprintf( '<a
+						href="%1$s"
+						id="link_%6$s"
+						class="%5$s"
+						aria-label="%2$s"
+					>
+						<span class="inline md:hidden xl:inline" aria-hidden="true">%3$s</span>
+						<span class="hidden md:inline xl:hidden" aria-hidden="true">%4$s</span>
+					</a>',
+					$link,
+					esc_attr( $label ),
+					esc_html( $label ),
+					esc_html( $labelshort ),
+					$mainlink_classes,
+					sanitize_key( $label )
+				);
+			} else {
+				$mainlink_html = sprintf( '<a
+						href="%1$s"
+						id="link_%5$s"
+						class="%4$s"
+					>
+						%3$s
+					</a>',
+					$link,
+					esc_attr( $label ),
+					esc_html( $label ),
+					$mainlink_classes,
+					sanitize_key( $label )
+				);
+			}
+
+			return $mainlink_html;
+	}
+endif;
+
+if ( ! function_exists( 'll_disnav_button' ) ) :
+	function ll_disnav_button( $target ) {
+		$slug = sanitize_key( $target );
+
+		return '<button
+			type="button"
+			aria-expanded="false"
+			aria-controls="menu_' . $slug . '"
+			aria-labelledby="link_' . $slug . '"
+		><i class="fa-regular fa-angle-down"></i></button>';
+	}
+endif;
+
 
 if ( ! function_exists( 'll_show_social_links' ) ) :
 	/**
@@ -331,8 +385,8 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 				<div class="text-neutral-800 flex flex-col justify-center min-h-[240px]  |  md:min-h-(--height-hero) print:min-h-min">
 
 					<hgroup class="space-y-6">
-						<h1 class="leading-none text-white tracking-light text-pretty   |  <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black" style="text-wrap: unset; text-shadow: #222 1px 0 10px"><?php echo $h1; ?></h1>
-						<?php if ( !empty( $h2 ) ) { ?><p class="font-head text-2xl leading-none text-pretty !text-orient-400  |  md:max-w-5xl lg:text-4xl lg:print:!text-base print:!text-black"><?php echo $h2; ?></p><?php } ?>
+						<h1 class="leading-none text-white tracking-light text-pretty text-shadow-lg/50  |  <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black" style="text-wrap: unset;"><?php echo $h1; ?></h1>
+						<?php if ( !empty( $h2 ) ) { ?><p class="font-head text-2xl leading-none text-pretty text-shadow-lg/50 !text-orient-400  |  md:max-w-5xl lg:text-4xl lg:print:!text-base print:!text-black"><?php echo $h2; ?></p><?php } ?>
 					</hgroup>
 
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>

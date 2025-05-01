@@ -184,7 +184,7 @@ if ( $page_post_category ) {
 								</div>
 							<?php endif; ?>
 
-							<?php if ( $page_form ) :
+							<?php if ( ( get_field( 'll_normal_contact_form_location' ) != 1 ) && ( $page_form ) ) :
 								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
 								echo do_shortcode( $page_form );
 								echo '</div>';

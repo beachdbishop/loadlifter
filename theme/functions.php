@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.0.17' );
+	define( 'LL_VERSION', '3.2.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -35,7 +35,6 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 		*/
 	define(
 		'LL_TYPOGRAPHY_CLASSES',
-		// 'prose'
 		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm'
 	);
 
@@ -115,26 +114,6 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 	);
 }
 
-if ( ! defined( 'LL_NAV_SECONDARY' ) ) {
-	define(
-		'LL_NAV_SECONDARY',
-		[
-			"clients" => [
-				"label" => 'Client Center',
-				"url" => '/client-center/',
-			],
-			"insights" => [
-				"label" => 'Insights',
-				"url" => '/blog/',
-			],
-			"events" => [
-				"label" => 'Events',
-				"url" => '/category/events/',
-			],
-		]
-	);
-}
-
 if ( ! defined( 'LL_DISCLAIMER_CYBER' ) ) {
 	define(
 		'LL_DISCLAIMER_CYBER',
@@ -179,6 +158,9 @@ if ( ! function_exists( 'll_setup' ) ) :
 
 		register_nav_menus(
 			array(
+				'll_nav_1' => __( 'Nav Primary slot', 'loadlifter' ),
+				'll_nav_2' => __( 'Nav Utility slot', 'loadlifter' ),
+				// 'll_menu_primary_head' => __( 'Primary', 'loadlifter' ),
 				'll_menu_col_1' => __( 'Footer Column 1', 'loadlifter' ),
 				'll_menu_col_2' => __( 'Footer Column 2', 'loadlifter' ),
 				'll_menu_col_3' => __( 'Footer Column 3', 'loadlifter' ),
@@ -359,6 +341,44 @@ function ll_tinymce_add_class( $settings ) {
 	return $settings;
 }
 add_filter( 'tiny_mce_before_init', 'll_tinymce_add_class' );
+
+
+/**
+ * Limit the block editor to heading levels supported by Tailwind Typography.
+ *
+ * @param array  $args Array of arguments for registering a block type.
+ * @param string $block_type Block type name including namespace.
+ * @return array
+ */
+function ll_modify_heading_levels( $args, $block_type ) {
+	if ( 'core/heading' !== $block_type ) {
+		return $args;
+	}
+
+	// Remove `<h1>`, `<h5>` and `<h6>`.
+	$args['attributes']['levelOptions']['default'] = array( 2, 3, 4 );
+
+	return $args;
+}
+add_filter( 'register_block_type_args', 'll_modify_heading_levels', 10, 2 );
+
+
+/**
+ * Uh...
+ */
+function add_search_item_to_utility_nav( $items, $args ) {
+	if ( $args->menu === 'Nav Utility' ) {
+		$items .= '<li class="hidden theme-changer  |  dark:text-yellow-400">
+			<button @click="darkMode = !darkMode" aria-label="Toggle Theme">
+				<i class="fa-regular fa-moon fa-fw inline dark:hidden"></i>
+				<i class="fa-regular fa-sun fa-fw hidden dark:inline"></i>
+			</button>
+		</li>
+		<li class="md:max-w-[200px] xl:max-w-fit">' . get_search_form( false ) . '</li>';
+	}
+	return $items;
+}
+add_filter( 'wp_nav_menu_items', 'add_search_item_to_utility_nav', 10, 2 );
 
 
 /**
