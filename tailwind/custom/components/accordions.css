@@ -51,23 +51,23 @@ details[open] summary::-webkit-details-marker {
 	font-family: var(--font-mono);
 	margin-right: 0.25rem;
 }
-.accordions summary:hover::before {
-	@apply motion-safe:animate-pulse;
-}
 
 .accordions .details-inner {
 	background-color: var(--color-neutral-50);
 	padding-inline: 0.5rem;
 	padding-block: 1rem;
 	position: relative;
-	/* will-change: transform; */
 	z-index: 5;
+	transition: height 0.5s ease, content-visibility 0.5s ease allow-discrete;
+	height: 0;
+	overflow: clip;
 }
-
+.accordions details[open] .details-inner {
+	height: auto;
+}
 .accordions .details-inner > ul {
 	margin-block: 0 !important;
 }
-
 
 .accordions.is-style-default details[open] summary {
 	color: var(--color-neutral-900);
@@ -102,10 +102,23 @@ details[open] summary::-webkit-details-marker {
 	color: var(--wp--preset--color--brand-red-pale);
 }
 
-/* details[open] summary ~ * {
-	@apply motion-safe:animate-[fade-in-from-top_300ms];
-} */
 
+@media (prefers-reduced-motion: no-preference) {
+	.accordions summary:hover::before {
+		animation: var(--animate-pulse) /* pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite */;
+	}
+}
+
+/* via: https://css-tricks.com/using-styling-the-details-element/#aa-animate-the-opening-and-closing */
+/* @supports (interpolate-size: allow-keywords) {
+	:root {
+		interpolate-size: allow-keywords;
+	}
+
+	.accordions details[open] .details-inner {
+		height: auto;
+	}
+} */
 
 @media (prefers-color-scheme: dark) {
 	.accordions .details-inner {

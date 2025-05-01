@@ -8,7 +8,7 @@
 }
 
 :root {
-	--nav-height: 124px;
+	interpolate-size: allow-keywords;
 	overscroll-behavior-x: contain;
 }
 

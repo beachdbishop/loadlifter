@@ -75,6 +75,7 @@
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
 	--height-hero: 360px;
+	--nav-height: 124px;
 
 	--aspect-headshot: 95 / 127;
 	--aspect-featured-image: 384 / 125;
