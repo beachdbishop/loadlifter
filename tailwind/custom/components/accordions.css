@@ -27,7 +27,7 @@ details[open] summary::-webkit-details-marker {
 }
 
 .accordions {
-	margin-bottom: 2rem;
+	margin-bottom: --spacing(8);
 }
 
 .accordions	details {
