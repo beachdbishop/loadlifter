@@ -54,6 +54,8 @@ get_header();
 
 						<div class="prose  |  lg:prose-xl">
 							<?php the_content(); ?>
+
+							<?php // echo do_shortcode( '[display-posts post_type="post" date_query_after="2018-12-31" date_query_before="2020-01-01" posts_per_page="-1" layout="table-urls" /]' ); ?>
 						</div>
 
 					</div>

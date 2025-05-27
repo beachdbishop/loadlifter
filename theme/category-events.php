@@ -8,6 +8,49 @@
  */
 
 get_header();
+
+$events_limit = 3;
+$archived_limit = 12;
+
+$query_events_args = [
+	'post_type' => 'post',
+	'posts_per_page' => $events_limit,
+	'post_status' => 'publish',
+	'tax_query' => [
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => 'events',
+			'operator' => 'IN',
+		],
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => 'archived-events',
+			'operator' => 'NOT IN',
+		],
+	],
+	'orderby' => 'date',
+	'order' => 'DESC'
+];
+$query_archived_events_args = [
+	'post_type' => 'post',
+	'posts_per_page' => $archived_limit,
+	'post_status' => 'publish',
+	'tax_query' => [
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => 'archived-events',
+			'operator' => 'IN',
+		],
+	],
+	'orderby' => 'date',
+	'order' => 'DESC'
+];
+
+$eventsQuery = new WP_Query( $query_events_args );
+$archivedEventsQuery = new WP_Query( $query_archived_events_args );
 ?>
 
 	<main id="primary" class="pt-4 bg-white  |  dark:bg-neutral-900 md:pt-6 lg:pt-8">
@@ -21,35 +64,57 @@ get_header();
 			</header>
 
 			<div class="">
-				<h2 class="mb-4 font-bold font-sans text-neutral-600  |  dark:text-neutral-400">Upcoming</h2>
-				<?php echo do_shortcode( '[display-posts
-					category="events"
-					tag="upcoming"
-					orderby="date"
-					order="DESC"
-					wrapper="ul"
-					wrapper_class="dps-grid-3max cards-ic"
-					layout="card-ic"
-					no_posts_message="Check back for upcoming events."
-					/]' ); ?>
+				<?php
+				if ( $eventsQuery->have_posts() ) :
+				?>
+					<div class="flex items-center justify-between mb-4">
+						<h2 class="font-semibold">Upcoming</h2>
+						<?php
+						// if ( $eventsQuery->found_posts > $blogposts_limit ) :
+						// 	echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
+						// endif;
+						?>
+					</div>
+					<ul class="dps-grid-3max cards-ic">
+					<?php
+					while ( $eventsQuery->have_posts() ) :
+						$eventsQuery->the_post();
+						global $post;
+						get_template_part( 'template-parts/content/content', 'card-ic' );
+					endwhile;
+					?>
+					</ul>
+				<?php
+				wp_reset_query();
+				endif;
+				?>
 
-				<div class="mt-8 ll-equal-vert-padding full-bleed not-prose bg-linear-to-br from-neutral-100 to-neutral-300  |  dark:bg-linear-to-br dark:from-neutral-800 dark:to-neutral-600">
+				<div class="mt-8 ll-equal-vert-padding full-bleed bg-linear-to-br from-white to-neutral-200  |  dark:from-neutral-900 dark:to-neutral-700 lg:mt-16">
 					<div class="px-2  |  lg:px-[16px]">
-						<h3 class="mb-4 tracking-wide uppercase font-sans">Archived Events</h3>
-						<?php // echo do_shortcode( '[display-posts category="archived-events" orderby="date" order="DESC" wrapper="div" wrapper_class="dps-grid-4max" layout="card-simple" /]' );
-						echo do_shortcode('[display-posts
-						taxonomy="category"
-						tax_term="events"
-						tax_operator="IN"
-						taxonomy_2="post_tag"
-						tax_2_term="upcoming"
-						tax_2_operator="NOT IN"
-						orderby="date"
-						order="DESC"
-						wrapper="ul"
-						wrapper_class="dps-grid-4max cards-ic"
-						layout="card-ic-min"
-						/]'); ?>
+						<?php
+						if ( $archivedEventsQuery->have_posts() ) :
+						?>
+							<div class="flex items-center justify-between mb-4">
+								<h3 class="font-semibold">Archived Events</h3>
+								<?php
+								if ( $archivedEventsQuery->found_posts > $blogposts_limit ) :
+									echo '<a href="/category/archived-events/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
+								endif;
+								?>
+							</div>
+							<ul class="dps-grid-4max cards-ic">
+							<?php
+							while ( $archivedEventsQuery->have_posts() ) :
+								$archivedEventsQuery->the_post();
+								global $post;
+								get_template_part( 'template-parts/content/content', 'card-ic-min' );
+							endwhile;
+							?>
+							</ul>
+						<?php
+						wp_reset_query();
+						endif;
+						?>
 					</div>
 				</div>
 			</div>

@@ -10,6 +10,8 @@
 
 get_header();
 
+$team_member_limit = 4;
+
 $page_id                        = get_the_ID();
 if (get_field('ll_page_title_override')) {
 		$page_title                 = get_field('ll_page_title_override');
@@ -131,10 +133,19 @@ $cards_benefits = [
 ];
 
 if ('local' === wp_get_environment_type()) {
-	$hr_ids                     = '1842,1843,3969,5169';
+	$hr_ids                     = [1842,1843,3969,5169];
 } else {
-	$hr_ids                     = '31394,31603,32639,35019';
+	$hr_ids                     = [31394,31603,32639,35019];
 }
+
+$query_team_args = [
+	'post_type' => 'people',
+	// 'posts_per_page' => $team_member_limit,
+	'post__in' => $hr_ids,
+	'orderby' => 'll_people_level',
+	'order' => 'ASC',
+];
+$teamQuery = new WP_Query( $query_team_args );
 ?>
 
 	<main id="primary" class="careers-page  |  bg-white  |  dark:bg-neutral-900">
@@ -301,20 +312,25 @@ if ('local' === wp_get_environment_type()) {
 							<?php echo do_shortcode( '[awardlogos /]' ); ?>
 						</div>
 
+						<?php
+						if ( $teamQuery->have_posts() ) :
+						?>
 						<div class="px-2  |  lg:px-[16px]">
 							<h2 class="mb-4">Our Team</h2>
-							<?php echo do_shortcode('[display-posts
-								post_type="people"
-								id="' . $hr_ids . '"
-								orderby="ll_people_level"
-								order="ASC"
-								posts_per_page="4"
-								wrapper="ul"
-								wrapper_class="list-none dps-grid-4max"
-								layout="card-people-small-desigs"
-								/]');
+							<ul class="list-none dps-grid-4max" data-team-ids="<?php echo esc_attr( $hr_ids ); ?>">
+							<?php
+							while ( $teamQuery->have_posts() ) :
+								$teamQuery->the_post();
+								global $post;
+								get_template_part( 'template-parts/content/content', 'card-people-small-desigs' );
+							endwhile;
 							?>
+							</ul>
 						</div>
+						<?php
+						wp_reset_query();
+						endif;
+						?>
 					</section>
 
 					<?php

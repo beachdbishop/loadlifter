@@ -28,6 +28,41 @@ $hero_cta1_text									= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url									= get_field( 'll_hero_cta1_url' );
 $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
 $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
+
+$blogposts_limit = 4;
+$query_blog_args = [
+	'post_type' => 'post',
+	'posts_per_page' => $blogposts_limit,
+	'post_status' => 'publish',
+	'tax_query' => [
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => 'archived-events',
+			'operator' => 'NOT IN',
+		],
+		[
+			'taxonomy' => 'category',
+			'field' => 'slug',
+			'terms' => 'resources',
+			'operator' => 'NOT IN',
+		],
+	],
+	'orderby' => 'date',
+	'order' => 'DESC'
+];
+$query_ind_args = [
+	'post_type' => 'page',
+	'post_parent' => $page_id_industries,
+	'posts_per_page' => '-1',
+	'post_status' => 'publish',
+	'orderby' => 'title',
+	'order' => 'ASC'
+];
+
+
+$postsQuery = new WP_Query( $query_blog_args );
+$industriesQuery = new WP_Query( $query_ind_args );
 ?>
 
 	<main id="primary" class="front-page  |  bg-white  |  dark:bg-neutral-900">
@@ -89,65 +124,55 @@ $hero_cta2_url									= get_field( 'll_hero_cta2_url' );
 				</section>
 			<?php endif; ?>
 
-			<?php
-			// Removing based on discussion with Heather and Brian on 20250313
-			?>
-			<!-- section class="full-bleed ll-equal-vert-padding not-prose bg-orient-950 bg-linear-70 from-orient-950 from-30% via-orient-800 via-50% to-orient-950 to-90% bg-180pct" aria-labelledby="trending">
-				<div class="px-2 z-10 wp-block-group post-grid  |  lg:px-[16px]">
-					<h2 id="trending" class="mb-4  text-orient-100  |  lg:mb-8">Trending now</h2>
-					<?php // echo do_shortcode(
-						// '[display-posts
-						// post_type="post,page,industries"
-						// id="' . implode( ', ', $trending ) . '"
-						// ignore_sticky_posts="true"
-						// orderby="modified"
-						// order="DESC"
-						// wrapper="ul"
-						// wrapper_class="dps-grid-3max cards-ic text-orient-100"
-						// layout="card-ic-min" /]'
-					// ); ?>
-				</div>
-			</section -->
-
-
-			<section class="full-bleed ll-equal-vert-padding not-prose bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
+			<section class="full-bleed ll-equal-vert-padding bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
 				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
-					<?php echo do_shortcode(
-						'[display-posts
-						post_type="page"
-						post_parent="' . $page_id_industries . '"
-						orderby="title"
-						order="ASC"
-						posts_per_page="-1"
-						wrapper="div"
-						wrapper_class="ind-card-flips is-style-default mx-auto max-w-6xl"
-						layout="card-ic-flip-sm" /]'
-					); ?>
+					<?php
+					if ( $industriesQuery->have_posts() ) :
+					?>
+						<div class="ind-card-flips is-style-default mx-auto max-w-6xl">
+						<?php
+						while ( $industriesQuery->have_posts() ) :
+							$industriesQuery->the_post();
+							global $post;
+							get_template_part( 'template-parts/content/content', 'card-ic-flip-sm' );
+						endwhile;
+						?>
+						</div>
+					<?php
+					wp_reset_query();
+					endif;
+					?>
 				</div>
 			</section>
 
 			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
 				<div class="post-grid  |  px-2  |  lg:px-[16px]">
-					<div class="flex items-center justify-between mb-4">
-						<h2 id="recent">Recent Posts</h2>
-						<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-800 rounded-lg text-orient-800  |  hover:text-orient-950 hover:border-orient-950 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>
-					</div>
 					<?php
+					if ( $postsQuery->have_posts() ) :
+					?>
+						<div class="flex items-center justify-between mb-4">
+							<h2 id="recent">Recent Posts</h2>
+							<?php
+							if ( $postsQuery->found_posts > $posts_limit ) :
+								echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-800 rounded-lg text-orient-800  |  hover:text-orient-950 hover:border-orient-950 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>';
+							endif;
+							?>
+						</div>
 
-					echo do_shortcode(
-						'[display-posts
-						taxonomy="category"
-						tax_term="events"
-						tax_operator="NOT IN"
-						posts_per_page="4"
-						ignore_sticky_posts="true"
-						orderby="date"
-						order="DESC"
-						wrapper="ul"
-						wrapper_class="dps-grid-4max cards-ic"
-						layout="card-ic" /]'
-					); ?>
+						<ul class="dps-grid-4max cards-ic">
+						<?php
+						while ( $postsQuery->have_posts() ) :
+							$postsQuery->the_post();
+							global $post;
+							get_template_part( 'template-parts/content/content', 'card-ic' );
+						endwhile;
+						?>
+						</ul>
+					<?php
+					wp_reset_query();
+					endif;
+					?>
 				</div>
 			</section>
 
