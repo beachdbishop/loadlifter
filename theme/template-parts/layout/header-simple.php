@@ -68,7 +68,7 @@
 				[
 					'theme_location' 		=> 'll_nav_2',
 					'menu' 							=> 'Nav Utility',
-					'menu_class'		 		=> 'secondary-nav  |  font-head flex flex-col text-neutral-700  |  md:text-lg md:order-1 md:justify-end md:items-center md:gap-x-1 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden',
+					'menu_class'		 		=> 'secondary-nav  |  font-head flex flex-col text-neutral-700  |  md:text-lg md:order-1 md:justify-end md:items-center md:gap-x-3 md:flex-row md:pb-1 lg:text-xl lg:gap-x-4 dark:text-neutral-300 print:hidden',
 					'container' 				=> false,
 				]
 			)

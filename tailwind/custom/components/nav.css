@@ -141,6 +141,8 @@ body.admin-bar .nav-header { top: var(--wp-admin--admin-bar--height, 0px); }
 
 
 
+
+
 /* Submenus */
 .submenu .menu { list-style-type: none; }
 .submenu .menu-item { margin-top: 0.5rem; }
@@ -227,6 +229,11 @@ body.admin-bar .nav-header { top: var(--wp-admin--admin-bar--height, 0px); }
 
 	.menus-container .icon {
 		fill: var(--color-neutral-200);
+	}
+
+	.secondary-nav a {
+		padding: --spacing(2);
+		line-height: 2;
 	}
 }
 
