@@ -17,7 +17,7 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class( ' overflow-x-hidden' ); ?>>
+<body <?php body_class( ' overflow-x-hidden  |  dark:bg-neutral-900' ); ?>>
 
 <?php wp_body_open(); ?>
 

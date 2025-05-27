@@ -24,8 +24,8 @@ $peep_level = get_field( 'll_people_level' );
 
 <li <?php post_class( 'card-ic  |  ' . $type_class . ' group flex flex-col relative border-neutral-100 border-2 ' . $order_class . '  |  focus-within:border-neutral-500 dark:border-neutral-700' ); ?>>
 
-	<div class="card-text  |  flex flex-col text grow order-1 bg-white  |  dark:bg-neutral-800 dark:text-neutral-300">
-		<h3 class="my-2 overflow-hidden tracking-wide text-brand-blue text-ellipsis  |  dark:text-orient-400">
+	<div class="card-text  |  flex flex-col text grow order-1 bg-white  |  dark:bg-neutral-900 dark:text-neutral-300">
+		<h3 class="my-2 overflow-hidden tracking-wide text-ellipsis  |  ">
 			<a href="<?php echo esc_url( get_permalink() ); ?>" class="focus:underline group-hover:decoration-orient-400 group-hover:underline">
 				<?php echo $page_title; ?>
 			</a>
@@ -90,10 +90,22 @@ $peep_level = get_field( 'll_people_level' );
 			}
 			?>
 
-			<?php if ( ( 'post' === get_post_type() ) && ( !in_category( 'events' ) ) ) {
+			<?php if ( ( 'post' === get_post_type() ) && ( !in_category( 'events' ) ) && ( !in_category( 'resources' ) ) ) {
 				echo '<span>' . esc_html( get_the_date() ) . '</span>';
 				echo " | ";
 				ll_posted_by();
+			} ?>
+
+			<?php if ( ( 'post' === get_post_type() ) && ( in_category( 'resources' ) ) ) {
+				$terms_list = wp_get_post_categories( $post->ID, array( 'fields' => 'names', 'exclude' => '286', 'order' => 'DESC' ) );
+				if ( $terms_list ) { // Check $terms_list has value
+					// $res_types = ['guides', 'reports', 'firm-information'];
+					foreach ( $terms_list as $term ) {
+						// if ( in_array( $term, $res_types ) ) {
+							echo '<span class="cat uppercase">' . esc_html( $term ) . '</span>';
+						// }
+					}
+				}
 			} ?>
 		</p>
 	</div>

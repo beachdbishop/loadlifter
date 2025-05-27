@@ -98,19 +98,25 @@ function ll_is_tree( $pid ) { // $pid = The ID of the page we're looking for pag
  */
 function ll_exclude_categories( $wp_query ) {
 	if ( wp_get_environment_type() == 'production' ) {
-		$catid = '1732';
+		$catarchevents = '1732';
+		$catresources = '1810';
 	}
 
 	if ( wp_get_environment_type() == 'staging' ) {
-		$catid = '1732';
+		$catarchevents = '1732';
+		$catresources = '1810';
 	}
 
 	if ( wp_get_environment_type() == 'local' ) {
-		$catid = '257';
+		$catarchevents = '257';
+		$catresources = '286';
 	}
 
-	if( is_home() || is_feed() || ( is_archive() && !is_category() ) ) {
-		set_query_var( 'cat', '-' . $catid );
+	// if( is_home() || is_feed() || ( is_archive() && !is_category() ) ) {
+	// 	set_query_var( 'cat', '-' . $catid );
+	// }
+	if ( ( is_home() ) || ( is_front_page() ) ) {
+		set_query_var( 'cat', '-' . $catarchevents . ',-' . $catresources );
 	}
 }
 add_action( 'pre_get_posts', 'll_exclude_categories' );

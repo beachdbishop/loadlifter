@@ -33,3 +33,30 @@
 		margin-top: 0;
 	}
 }
+
+
+
+
+.card-res {
+	display: grid;
+	grid-template: repeat(3, minmax(0, 1fr));
+	place-items: center;
+	place-content: center;
+	overflow: hidden;
+	max-height: 250px;
+}
+.card-res > .card-img {
+	grid-column: 1 / -1;
+	height: 250px;
+}
+.card-res > .card-text {
+	grid-column: 2 / -1;
+	/* background-color: var(--color-amber-100); */
+
+}
+
+.card-meta .cat:first-of-type { font-weight: bold; }
+.card-meta .cat:has(~ .cat):first-of-type::after {
+	content: ", ";
+	font-weight: normal;
+}
