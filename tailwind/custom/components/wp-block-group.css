@@ -1,0 +1,6 @@
+:root :where(.img-grid) {
+	@apply flex flex-col flex-wrap items-center gap-8 my-8 place-content-center  md:place-content-start md:flex-row lg:gap-x-16;
+}
+:root :where(.img-grid.is-layout-flow) > * {
+	margin-block-start: unset;
+}

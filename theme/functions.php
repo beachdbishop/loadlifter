@@ -181,7 +181,7 @@ if ( ! function_exists( 'll_setup' ) ) :
 
 		add_filter( 'feed_links_show_comments_feed', '__return_false' );
 
-		remove_theme_support( 'block-templates' ); // <-- FSE?
+		// remove_theme_support( 'block-templates' ); // <-- FSE?
 		remove_action( 'wp_head', 'rsd_link' );
 		remove_action( 'wp_head', 'wp_generator' );
 		remove_action( 'wp_head', 'index_rel_link' );
@@ -306,14 +306,28 @@ function ll_enq_a11y_slider_assets() {
 		wp_enqueue_script( 'a11y-slider' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
+function ll_enq_a11y_slider_scripts() {
+	global $post;
+	if ( ( !empty( get_field( 'll_ind_people', $post->ID ) ) ) && ( count( get_field( 'll_ind_people', $post->ID ) ) > 4 ) ) {
+		wp_enqueue_style( 'a11y-slider-styles' );
+		wp_enqueue_script( 'a11y-slider' );
+	}
+}
+// add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
+add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_scripts' ); /* No shortcode required in content */
+
 
 /**
  * Enqueue the block editor script.
  */
 function ll_enqueue_block_editor_script() {
+	$current_screen = function_exists( 'get_current_screen' ) ? get_current_screen() : null;
 
-	if ( is_admin() ) {
+	if (
+		$current_screen &&
+		$current_screen->is_block_editor() &&
+		'widgets' !== $current_screen->id
+	) {
 		wp_enqueue_script(
 			'll-editor',
 			get_template_directory_uri() . '/js/block-editor.min.js',
@@ -326,7 +340,6 @@ function ll_enqueue_block_editor_script() {
 		);
 		wp_add_inline_script( 'll-editor', "tailwindTypographyClasses = '" . esc_attr( LL_TYPOGRAPHY_CLASSES ) . "'.split(' ');", 'before' );
 	}
-
 }
 add_action( 'enqueue_block_assets', 'll_enqueue_block_editor_script' );
 
@@ -368,13 +381,14 @@ add_filter( 'register_block_type_args', 'll_modify_heading_levels', 10, 2 );
  */
 function add_search_item_to_utility_nav( $items, $args ) {
 	if ( $args->menu === 'Nav Utility' ) {
-		$items .= '<li class="hidden theme-changer  |  dark:text-yellow-400">
-			<button @click="darkMode = !darkMode" aria-label="Toggle Theme">
-				<i class="fa-regular fa-moon fa-fw inline dark:hidden"></i>
-				<i class="fa-regular fa-sun fa-fw hidden dark:inline"></i>
-			</button>
-		</li>
-		<li class="md:max-w-[200px] xl:max-w-fit">' . get_search_form( false ) . '</li>';
+		// $items .= '<li class="hidden theme-changer  |  dark:text-yellow-400">
+		// 	<button /*@click="darkMode = !darkMode"*/ aria-label="Toggle Theme">
+		// 		<i class="fa-regular fa-moon fa-fw inline dark:hidden"></i>
+		// 		<i class="fa-regular fa-sun fa-fw hidden dark:inline"></i>
+		// 	</button>
+		// </li>
+		// <li class="md:max-w-[200px] xl:max-w-fit">' . get_search_form( false ) . '</li>';
+		$items .= '<li class="md:max-w-[200px] xl:max-w-fit">' . get_search_form( false ) . '</li>';
 	}
 	return $items;
 }

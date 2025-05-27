@@ -157,7 +157,8 @@ $cards_about = [
 							<?php if ( is_page( 'about' ) ) : ?>
 								<h3 class="mb-6">Awards and recognition</h3>
 								<p>We are proud of our unique workplace culture.</p>
-								<?php echo do_shortcode( '[awardlogos /]' ); ?>
+								<?php // echo do_shortcode( '[awardlogos /]' ); ?>
+								<?php block_template_part( 'img-grid-awards' ); ?>
 								<p>&nbsp;</p>
 							<?php endif; ?>
 

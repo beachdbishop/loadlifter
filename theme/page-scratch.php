@@ -35,6 +35,10 @@ get_header();
 					<?php the_content(); ?>
 					<div class="clear-both">&nbsp;</div>
 
+					<?php // echo do_shortcode( '[display-posts post_type="post" date_query_after="2021-12-31" date_query_before="2023-07-01" layout="table-urls" /]' ); ?>
+
+					<?php block_template_part( 'img-grid-assoc-construction' ); ?>
+
 					<p class="mb-4  |  lg:mb-8">This paragraph is inside a <code>.prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
 					<h2>Testing deprecated shortcode</h2>
