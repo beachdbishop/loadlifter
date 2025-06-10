@@ -80,6 +80,13 @@ $query_firminfo_args = [
 $postsQuery = new WP_Query( $query_blog_args );
 $reportsQuery = new WP_Query( $query_reports_args );
 $firminfoQuery = new WP_Query( $query_firminfo_args );
+
+function ll_res_query_nope( $heading, $message = 'There are currently no resources of this type available.' ) {
+	$html = sprintf( '<h3 class="font-semibold">%1$s</h3>
+		<p class="">%2$s</p>', $heading, $message );
+
+	return $html;
+}
 ?>
 
 	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
@@ -106,7 +113,7 @@ $firminfoQuery = new WP_Query( $query_firminfo_args );
 					<h2 class="font-semibold">Recent Blog Posts</h2>
 					<?php
 					if ( $postsQuery->found_posts > $blogposts_limit ) :
-						echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
+						echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
 					endif;
 					?>
 				</div>
@@ -135,7 +142,7 @@ $firminfoQuery = new WP_Query( $query_firminfo_args );
 						<h3 class="font-semibold">Reports</h3>
 						<?php
 						if ( $reportsQuery->found_posts > $reports_limit ) :
-							echo '<a href="/category/reports/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-neutral-900 hover:border-neutral-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
+							echo '<a href="/category/reports/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
 						endif;
 						?>
 					</div>
@@ -149,6 +156,8 @@ $firminfoQuery = new WP_Query( $query_firminfo_args );
 					?>
 					</ul>
 				<?php
+				else :
+					echo ll_res_query_nope( 'Reports' );
 				wp_reset_query();
 				endif;
 				?>
@@ -168,7 +177,7 @@ $firminfoQuery = new WP_Query( $query_firminfo_args );
 						<h3 class="font-semibold">Firm Information</h3>
 						<?php
 						if ( $firminfoQuery->found_posts > $firminfo_limit ) :
-							echo '<a href="/category/firminfo/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-neutral-900 hover:border-neutral-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
+							echo '<a href="/category/firminfo/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-neutral-900 hover:border-neutral-500 dark:border-neutral-300 dark:text-neutral-300 dark:hover:text-neutral-100">View All</a>';
 						endif;
 						?>
 					</div>
@@ -183,6 +192,8 @@ $firminfoQuery = new WP_Query( $query_firminfo_args );
 					?>
 					</ul>
 				<?php
+				else :
+					echo ll_res_query_nope( 'Firm Information' );
 				wp_reset_query();
 				endif;
 				?>

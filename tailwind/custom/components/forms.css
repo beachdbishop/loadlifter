@@ -122,6 +122,16 @@ input[type="submit"]:active {
 	border-width: 2px;
 	border-color: var(--color-red-700) !important;
 }
+.legal-consent-container > *:not(:first-child) {
+	margin-top: 0.5rem;
+}
+.legal-consent-container .hs-richtext {
+	font-size: var(--text-sm);
+}
+.legal-consent-container label > span {
+	font-size: var(--text-sm);
+	line-height: 1.1;
+}
 
 /* date fields might be a problem */
 
