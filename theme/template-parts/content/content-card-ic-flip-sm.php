@@ -30,7 +30,7 @@ $feat_image_url                 = wp_get_attachment_image_src( get_post_thumbnai
 					</div>
 				<?php endif; ?>
 
-				<h3 class="text-2xl mt-2 font-light leading-none text-current <?php echo $title_is_long; ?>">
+				<h3 class="mt-2 font-light leading-none text-current text-xl <?php // echo $title_is_long; ?>">
 					<?php echo $title; ?>
 				</h3>
 			</div>
