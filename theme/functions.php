@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.3.4' );
+	define( 'LL_VERSION', '3.3.5' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -308,7 +308,7 @@ function ll_enq_a11y_slider_assets() {
 }
 function ll_enq_a11y_slider_scripts() {
 	global $post;
-	if ( ( !empty( get_field( 'll_ind_people', $post->ID ) ) ) && ( count( get_field( 'll_ind_people', $post->ID ) ) > 4 ) ) {
+	if ( ( !empty( get_field( 'll_ind_people', $post->ID ) ) ) && ( count( get_field( 'll_ind_people', $post->ID ) ) > 4 ) || is_page( 'idea-committee' ) ) {
 		wp_enqueue_style( 'a11y-slider-styles' );
 		wp_enqueue_script( 'a11y-slider' );
 	}

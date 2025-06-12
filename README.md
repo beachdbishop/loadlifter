@@ -18,6 +18,8 @@ Looking for live reloading? Learn how to [add Browsersync to your project](https
 
 See the complete [development documentation](https://underscoretw.com/docs/) for more details.
 
+**BONUS**: See `theme/parts/_readme.md` for info on re-using Synced Patterns as template parts within .php files.
+
 ## Deployment
 
 6. Run `npm run bundle`
