@@ -55,8 +55,8 @@ $page_below_fold								= get_field( 'll_below_fold' );
 
 						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
 							<h3 class="mb-4">Certified Experts</h3>
-							<?php	// echo do_shortcode( '[cybercertlogos /]' ); ?>
-							<?php block_template_part( 'img-grid-assoc-cyber' ); ?>
+							<?php	echo do_shortcode( '[cybercertlogos /]' ); ?>
+							<?php // block_template_part( 'img-grid-assoc-cyber' ); ?>
 							<?php // block_template_part( 'img-grid-awards' ); ?>
 
 							<!-- wp:spacer {"className":"is-style-md"} -->
