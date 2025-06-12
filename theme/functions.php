@@ -308,7 +308,7 @@ function ll_enq_a11y_slider_assets() {
 }
 function ll_enq_a11y_slider_scripts() {
 	global $post;
-	if ( ( !empty( get_field( 'll_ind_people', $post->ID ) ) ) && ( count( get_field( 'll_ind_people', $post->ID ) ) > 4 ) ) {
+	if ( ( !empty( get_field( 'll_ind_people', $post->ID ) ) ) && ( count( get_field( 'll_ind_people', $post->ID ) ) > 4 ) || is_page( 'idea-committee' ) ) {
 		wp_enqueue_style( 'a11y-slider-styles' );
 		wp_enqueue_script( 'a11y-slider' );
 	}
