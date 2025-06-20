@@ -82,7 +82,7 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 				"url" => '/industries/',
 				"hasChildren" => true,
 					"submenuContent" => '<ul class="pl-0">
-						<li><a href="/industries/cannabis-phoenix-tucson-arizona-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-cannabis"></i> Cannabis</a></li>
+						<li><a href="/industries/cannabis-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-cannabis"></i> Cannabis</a></li>
 						<li><a href="/industries/construction-phoenix-tucson-arizona-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-helmet-safety"></i> Construction</a></li>
 						<li><a href="/industries/financial-professional-services/"><i class="mr-1 fa-duotone fa-fw fa-briefcase"></i> Financial &amp; Professional Services</a></li>
 						<li><a href="/industries/healthcare-phoenix-tucson-arizona-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-stethoscope"></i> Healthcare</a></li>
