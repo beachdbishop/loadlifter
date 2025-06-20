@@ -83,7 +83,7 @@ $page_excerpt = get_the_excerpt();
 
 								<aside class="">
 									<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">
-										<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+										<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 									</div>
 									<!--   A R E A   S I D E   -->
 									<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>

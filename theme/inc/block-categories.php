@@ -17,6 +17,13 @@ function ll_register_block_pattern_categories() {
 			]
 		);
 
+		register_block_pattern_category(
+			'dev',
+			[
+				'label' => esc_html__( 'Dev Only', 'loadlifter' ),
+			]
+		);
+
 	}
 }
 add_action( 'init', 'll_register_block_pattern_categories' );

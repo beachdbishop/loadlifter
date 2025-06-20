@@ -1,0 +1,44 @@
+{
+	"$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
+  "name": "loadlifter/color-chip",
+  "title": "Color Chip",
+  "description": "Block for displaying a theme color.",
+  "apiVersion": 2,
+  "style": "block-color-chip",
+  "script": "",
+  "category": "dev",
+  "icon": "color-picker",
+  "keywords": ["color", "colors"],
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "brand", "label": "In Brand" }
+  ],
+  "supports": {
+    "align": false,
+    "anchor": true,
+    "alignContent": false,
+    "color": {
+			"text": false,
+			"background": false,
+			"link": false
+    },
+    "alignText": false,
+    "html": false,
+    "jsx": true,
+    "fullHeight": false
+  },
+  "attributes": {
+  },
+  "example": {
+    "attributes": {
+      "data": {
+        "ll-color": "#ce182d",
+        "ll-color-title": "Mahogany 700"
+      }
+    }
+  },
+  "acf": {
+    "mode": "auto",
+    "renderTemplate": "render.php"
+  }
+}

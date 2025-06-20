@@ -132,7 +132,7 @@ if ( $peepauthor ) {
 			</div>
 
 			<aside class="peepgrid-c | md:mt-0 md:order-3">
-				<?php get_template_part( 'template-parts/form/form-hubspot-contact', 'sidebar' ); ?>
+				<?php get_template_part( 'template-parts/form/form-hubspot-contact', 'main' ); ?>
 
 				<?php if ( get_field( 'll_people_quote' ) ) { ?>
 				<hr class="mt-8">

@@ -539,3 +539,34 @@ function ll_format_phone_number( $number, $output = null ) {
 			break;
 	}
 }
+
+
+
+
+function ll_hex_to_rgb( $hex ) {
+	// Remove the '#' if it exists
+	$hex = ltrim( $hex, '#' );
+
+	// If shorthand (e.g., #abc), expand it to full form (e.g., #aabbcc)
+	if ( strlen( $hex ) === 3 ) {
+		$hex = str_repeat( $hex[0], 2 ) . str_repeat( $hex[1], 2 ) . str_repeat( $hex[2], 2 );
+	}
+
+	// Convert to RGB values
+	$rgb = [
+		'red' => hexdec(substr($hex, 0, 2)),
+		'green' => hexdec(substr($hex, 2, 2)),
+		'blue' => hexdec(substr($hex, 4, 2))
+	];
+
+	// return $rgb;
+	return 'rgb(' . $rgb['red'] . ' ' . $rgb['green'] . ' ' . $rgb['blue'] . ')';
+
+}
+
+// Example usage
+// $hexColor = "#1e90ff";
+// $rgbColor = ll_hex_to_rgb($hexColor);
+
+// print_r($rgbColor);
+// Output: Array ( [red] => 30 [green] => 144 [blue] => 255 )

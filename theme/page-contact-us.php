@@ -56,7 +56,7 @@ $page_excerpt                   = get_the_excerpt();
 						<div class="grid md:grid-cols-2 gap-8  |  lg:gap-16">
 
 							<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">
-								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 							</div>
 
 							<aside class="space-y-8">
