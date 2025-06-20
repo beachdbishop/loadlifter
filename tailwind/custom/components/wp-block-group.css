@@ -1,6 +1,12 @@
 :root :where(.img-grid) {
 	@apply flex flex-col flex-wrap items-center gap-8 my-8 place-content-center  md:place-content-start md:flex-row lg:gap-x-16;
 }
-:root :where(.img-grid.is-layout-flow) > * {
+
+:root :where(.ll-color-chips) {
+	@apply flex flex-col flex-wrap gap-1 my-2 place-content-center  md:place-content-start md:flex-row lg:my-4;
+}
+
+:root :where(.img-grid.is-layout-flow) > *,
+:root :where(.ll-color-chips.is-layout-flow) > * {
 	margin-block-start: unset;
 }

@@ -56,43 +56,8 @@ div:not(.block-editor-block-list__layout) .full-bleed > div {
 	width: 1em;
 }
 
-.papercorners-4 {
-	border-radius: 4px 0 4px;
-}
-.papercorners-6 {
-	border-radius: 6px 0 6px;
-}
-.papercorners-8 {
-	border-radius: 8px 0 8px;
-}
-.papercorners-12 {
-	border-radius: 12px 0 12px;
-}
-.papercorners-16 {
-	border-radius: 16px 0 16px;
-}
-.papercorners-24 {
-	border-radius: 24px 0 24px;
-}
-.papercorners-36 {
-	border-radius: 36px 0 36px;
-}
-.papercorners-48 {
-	border-radius: 48px 0 48px;
-}
-.papercorners-60 {
-	border-radius: 60px 0 60px;
-}
-.papercorners-72 {
-	border-radius: 72px 0 72px;
-}
-.papercorners-84 {
-	border-radius: 84px 0 84px;
-}
-.papercorners-144 {
-	border-radius: 144px 0 144px;
-}
-.papercorners {
-	--_corner: clamp(3.75rem, 2.659rem + 5.45vw, 6.75rem);
-	border-radius: var(--_corner) 0 var(--_corner);
+
+@utility papercorners-* {
+	border-radius: --value(--papercorner-*) 0 --value(--papercorner-*);
+	padding: calc(--value(--papercorner-*) * 0.8) !important;
 }

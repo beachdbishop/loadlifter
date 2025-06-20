@@ -1,0 +1,86 @@
+{
+    "key": "group_6852f0644cdec",
+    "title": "Block: Color Chip",
+    "fields": [
+        {
+            "key": "field_6852f064c5cc5",
+            "label": "Color",
+            "name": "ll_color",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string",
+            "allow_in_bindings": 1
+        },
+        {
+            "key": "field_6852f4eecf1f6",
+            "label": "Title",
+            "name": "ll_color_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Mahogany 500",
+            "maxlength": 128,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6852f0c8c5cc6",
+            "label": "Note",
+            "name": "ll_color_note",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": 255,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "loadlifter\/color-chip"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Fields for Color Chip blocks",
+    "show_in_rest": 0,
+    "modified": 1750267415
+}

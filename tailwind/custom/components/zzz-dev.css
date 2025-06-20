@@ -10,3 +10,12 @@ img.todo {
 div.todo {
 	background-color: var(--color-pink-100);
 }
+
+
+
+.llcolorchip.is-style-default {
+	border-color: var(--color-neutral-100);
+}
+.llcolorchip.is-style-brand {
+	border-color: var(--color-gold-500);
+}
