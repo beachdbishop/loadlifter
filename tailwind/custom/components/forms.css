@@ -107,6 +107,7 @@ input[type="submit"]:active {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+
 .hbspt-form span.hs-form-required {
 	font-weight: 700;
 	color: var(--color-orange-800);
@@ -122,11 +123,23 @@ input[type="submit"]:active {
 	border-width: 2px;
 	border-color: var(--color-red-700) !important;
 }
+.hs-dependent-field > * + * {
+	margin-block-start: --spacing(4);
+}
+.hs_subscribe_to_our_newsletter label {
+	font-size: var(--text-sm);
+}
 .legal-consent-container > *:not(:first-child) {
 	margin-top: 0.5rem;
 }
+.legal-consent-container > .hs-richtext:first-of-type {
+	display: none;
+}
 .legal-consent-container .hs-richtext {
 	font-size: var(--text-sm);
+}
+.legal-consent-container .hs-richtext p:empty {
+	display: none;
 }
 .legal-consent-container label > span {
 	font-size: var(--text-sm);
