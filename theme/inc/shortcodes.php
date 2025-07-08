@@ -62,7 +62,8 @@ add_shortcode( 'listmenu', 'll_listmenu_shortcode' );
  * Using a shortcode to conditionally enqueue the a11y-slider js
  */
 function ll_a11y_slider_shortcode() {
-	return '';
+	$amarkup = '<span data-short="a11yslider"></span>';
+	return $amarkup;
 }
 add_shortcode( 'a11yslider', 'll_a11y_slider_shortcode' );
 

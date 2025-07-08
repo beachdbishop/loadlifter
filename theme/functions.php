@@ -13,7 +13,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.3.7' );
+	define( 'LL_VERSION', '3.3.8' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -59,7 +59,7 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 					"submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
 						<li class="lg:py-4">
 							<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
-								<a href="/assurance/">Audit &amp; Assurance</a>
+								<a href="/audit-assurance/">Audit &amp; Assurance</a>
 							</p>
 							[listmenu menu="submenu Assurance" container_class="hidden submenu mb-2  |  md:block" /]
 						</li>
@@ -313,7 +313,7 @@ function ll_enq_a11y_slider_scripts() {
 		wp_enqueue_script( 'a11y-slider' );
 	}
 }
-// add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
+add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
 add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_scripts' ); /* No shortcode required in content */
 
 
