@@ -65,7 +65,7 @@ $postsQuery = new WP_Query( $query_blog_args );
 $industriesQuery = new WP_Query( $query_ind_args );
 ?>
 
-	<main id="primary" class="front-page  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="front-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :

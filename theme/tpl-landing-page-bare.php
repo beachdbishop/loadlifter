@@ -21,7 +21,7 @@ $page_message               = get_field( 'll_brand_message' );
 $page_excerpt               = get_the_excerpt();
 ?>
 
-	<main id="primary" class="landing-page | bg-white dark:bg-neutral-900">
+	<main id="primary" class="landing-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :

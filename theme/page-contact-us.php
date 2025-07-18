@@ -27,7 +27,7 @@ $page_excerpt                   = get_the_excerpt();
 // $hs_form_id 										= 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
 ?>
 
-	<main id="primary" class="contact-page  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="contact-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :

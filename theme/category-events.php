@@ -53,7 +53,7 @@ $eventsQuery = new WP_Query( $query_events_args );
 $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 ?>
 
-	<main id="primary" class="pt-4 bg-white  |  dark:bg-neutral-900 md:pt-6 lg:pt-8">
+	<main id="primary" class="pt-4 bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900 md:pt-6 lg:pt-8">
 		<div class="px-2 container  |  lg:px-[16px] ">
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 

@@ -89,7 +89,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 }
 ?>
 
-	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 		<div class="page-hero  |  wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0  |  print:py-4 print:bg-white print:text-black">
 			<span aria-hidden="true" class="page-hero-overlay  |  z-[1] absolute top-0 right-0 bottom-0 left-0  |  print:hidden"></span>
 			<img width="1920" height="625" src="https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources.jpg" class="wp-block-cover__image-background not-transparent wp-post-image print:hidden not-transparent wp-post-image" alt="" decoding="async" srcset="https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources.jpg 1920w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-500x163.avif 500w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-1200x391.avif 1200w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-768x250.avif 768w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-1536x500.avif 1536w" sizes="(782px < width) 1920px, (max-width: 1920px) 100vw, 1920px">

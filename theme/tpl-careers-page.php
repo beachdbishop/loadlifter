@@ -148,7 +148,7 @@ $query_team_args = [
 $teamQuery = new WP_Query( $query_team_args );
 ?>
 
-	<main id="primary" class="careers-page  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="careers-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -157,7 +157,7 @@ $teamQuery = new WP_Query( $query_team_args );
 
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
+			<article id="post-<?php the_ID(); ?>" <?php post_class('pt-8'); ?>>
 				<div class="px-2 container  |  lg:px-[16px]">
 
 					<?php if (is_page('career-opps')) : ?>

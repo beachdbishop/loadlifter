@@ -31,7 +31,7 @@ if ( get_field( 'll_custom_subheader' ) ) {
 $page_excerpt                   = get_the_excerpt();
 ?>
 
-	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :

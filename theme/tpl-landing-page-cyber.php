@@ -33,7 +33,7 @@ $page_state                     = get_field( 'll_page_state' );
 $page_below_fold								= get_field( 'll_below_fold' );
 ?>
 
-	<main id="primary" class="landing-page lp-cyber  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="landing-page lp-cyber  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
