@@ -22,6 +22,26 @@ $loc_phone_link_html = '<p class="leading-snug" property="telephone"><a href="te
 // } else {
 // 	$loc_fax_html = '';
 // }
+
+$data = [
+	'@context' => 'https://schema.org',
+	'@type' => 'LocalBusiness',
+	'address' => [
+		'@type' => 'PostalAddress',
+		'addressLocality' => get_field( 'll_loc_city' ),
+		'addressRegion' => get_field( 'll_loc_state' ),
+		'streetAddress' => get_field( 'll_loc_street1' ),
+		'extendedAddress' => get_field( 'll_loc_street2' ),
+		'postalCode' => get_field( 'll_loc_zip' ),
+	],
+	'description' => LL_COMPANY_DESC_SHORT,
+	'name' => LL_COMPANY_NICE_NAME . ' ' . get_field( 'll_loc_city' ),
+	'telephone' => get_field( 'll_loc_phone' ),
+	'faxNumber' => get_field( 'll_loc_fax' ),
+];
+echo '<script type="application/ld+json">';
+echo json_encode( $data, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT );
+echo '</script>';
 ?>
 
 <?php
@@ -56,12 +76,12 @@ endif;
 
 				<h2><?php echo LL_COMPANY_NICE_NAME . ' ' . get_field( 'll_loc_city' ); ?></h2>
 
-				<div class="not-italic mb-8  |  lg:mb-12 print:space-y-1" property="address" typeof="PostalAddress">
-					<p class="street-address  |  leading-snug " property="streetAddress"><?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
+				<div class="not-italic mb-8  |  lg:mb-12 print:space-y-1">
+					<p class="street-address  |  leading-snug "><?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
 					<p class="locality  |  leading-snug mb-2">
-						<span property="addressLocality"><?php echo get_field( 'll_loc_city' ); ?></span>,
-						<span class="state" property="addressRegion"><?php echo get_field( 'll_loc_state' ); ?></span>
-						<span class="zip" property="postalCode"><?php echo get_field( 'll_loc_zip' ); ?></span>
+						<span><?php echo get_field( 'll_loc_city' ); ?></span>,
+						<span class="state"><?php echo get_field( 'll_loc_state' ); ?></span>
+						<span class="zip"><?php echo get_field( 'll_loc_zip' ); ?></span>
 					</p>
 					<?php echo $loc_phone_link_html; ?>
 					<?php // echo $loc_fax_html; ?>
