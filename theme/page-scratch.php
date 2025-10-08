@@ -35,6 +35,134 @@ get_header();
 					<?php the_content(); ?>
 					<div class="clear-both">&nbsp;</div>
 
+
+<div class="ind-card-flips is-style-blue ">
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-file-xmark fa-stack-1x "></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Claim denial management
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Claim denial management
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Identify trends in denied claims and recommend strategies to reduce costly disruptions and speed up reimbursements.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-rectangle-history-circle-user fa-stack-1x"></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Medical <br />collections
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Medical collections
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Strengthen your patient collections process to increase revenue and reduce outstanding balances.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-credit-card fa-stack-1x"></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Charge capture optimization
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Charge capture optimization
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Analyze your current processes and help implement systems to capture billable services properly, reduce revenue leakage, and maximize reimbursements.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-file-invoice-dollar fa-stack-1x"></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Bad debt
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Bad debt&nbsp;<br />
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Establish proactive strategies, such as upfront payments and efficient receivables tracking, to decrease unpaid balances and minimize financial risk.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+</div>
+
+
 					<?php // echo do_shortcode( '[display-posts post_type="post" date_query_after="2021-12-31" date_query_before="2023-07-01" layout="table-urls" /]' ); ?>
 
 					<?php block_template_part( 'img-grid-assoc-construction' ); ?>
