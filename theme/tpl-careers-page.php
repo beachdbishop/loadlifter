@@ -189,28 +189,24 @@ $teamQuery = new WP_Query( $query_team_args );
 								<ul class="list-none grid gap-4 text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
 
 									<?php foreach( $cards_opps as $card ) {
-										echo '<li class="card-' . $card['slug'] . '  |  group flex flex-col relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
-											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300">
-												<p class="inline font-head font-semibold leading-none text-2xl">
+										echo '<li class="card-ic card-' . $card['slug'] . '  |  group flex flex-col relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
+
+											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300 md:!px-5">
+												<h3 class="inline font-semibold leading-none text-2xl">
 													<a class="group-hover:text-brand-blue dark:group-hover:text-orient-300" href="' . $card['link'] . '">
 														' . $card['label'] . '
 													</a>
-												</p>
-												<p class="inline text-2xl">
-													<a class="group-hover:text-brand-blue dark:group-hover:text-orient-300" href="' . $card['link'] . '" aria-label="Read more about ' . $card['label'] . '">
-														<i class="fa-regular fa-angle-right"></i>
-													</a>
-												</p>
+												</h3>
 											</div>
+
 											<div class="card-img  |  bg-neutral-500 relative overflow-hidden">
-												<a href="' . $card['link'] . '">
-													<img
-														alt="' . $card['img-alt'] . '"
-														src="' . $card['img-wide'] . '"
-														class="min-h-60 w-full object-cover transition duration-200 ease-in-out  |  group-hover:scale-110"
-													/>
-												</a>
+												<img
+													alt="' . $card['img-alt'] . '"
+													src="' . $card['img-wide'] . '"
+													class="min-h-60 w-full object-cover transition duration-200 ease-in-out  |  group-hover:scale-110"
+												/>
 											</div>
+
 										</li>';
 									} ?>
 
