@@ -12,16 +12,17 @@
 	gap: 1rem;
 
 	list-style: none;
+	padding-inline-start: 0;
 }
 
-.ind-card-flips	.card:hover .card-content,
-.ind-card-flips	.card:active .card-content,
-.ind-card-flips	.card:focus .card-content {
+.ind-card-flips .card:hover .card-content,
+.ind-card-flips .card:active .card-content,
+.ind-card-flips .card:focus .card-content {
 	transform: rotateY(180deg);
 }
 
-.ind-card-flips	.card-back p,
-.ind-card-flips	.card-back li {
+.ind-card-flips .card-back p,
+.ind-card-flips .card-back li {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
@@ -29,7 +30,6 @@
 .ind-card-flips:has(.card-ic-flip) {
 	--_card-size: 180px;
 }
-
 
 .ind-card-flips.is-style-default {
 	--_card-front-bg: var(--color-neutral-100);

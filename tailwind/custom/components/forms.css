@@ -107,7 +107,10 @@ input[type="submit"]:active {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-
+.hbspt-form .hs-field-desc {
+  font-style: italic;
+  font-size: var(--text-sm);
+}
 .hbspt-form span.hs-form-required {
 	font-weight: 700;
 	color: var(--color-orange-800);
@@ -153,7 +156,7 @@ input[type="submit"]:active {
 		border-color: var(--color-neutral-700);
 		background-color: var(--color-neutral-800);
 		background-image: none;
-		color: var(--color-neutral-400);
+		color: var(--color-neutral-200);
 	}
 	input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]),
 	select,
