@@ -309,7 +309,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<section id="awards" class="bg-white full-bleed ll-equal-vert-padding  |  dark:bg-neutral-900">
 						<div class="px-2  |  lg:px-[16px]">
 							<h2 class="mb-4">Awards and recognition</h2>
-							<?php echo do_shortcode( '[awardlogos /]' ); ?>
+							<?php block_template_part( 'img-grid-awards' ); ?>
 						</div>
 
 						<?php
