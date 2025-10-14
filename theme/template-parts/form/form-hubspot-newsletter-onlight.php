@@ -21,7 +21,7 @@ $hs_form_id = 'e9f9a025-96c0-4a18-b642-17a605422edf';
 					hsScript.src='//js.hsforms.net/forms/v2.js';
 					hsScript.onload = function() {
 							hbspt.forms.create({
-									region: "na1",
+									region: "na2",
 									portalId: "5578910",
 									target: '#llhsform',
 									formId: "<?php echo $hs_form_id; ?>"
@@ -41,7 +41,7 @@ $hs_form_id = 'e9f9a025-96c0-4a18-b642-17a605422edf';
 		// Also check immediately in case the form is already in view on the initial page load
 		loadHubSpotForm();
 	</script>
-	<!-- <script>hbspt.forms.create({region: "na1", portalId: "5578910", formId: "e9f9a025-96c0-4a18-b642-17a605422edf"});</script> -->
+	<!-- <script>hbspt.forms.create({region: "na2", portalId: "5578910", formId: "e9f9a025-96c0-4a18-b642-17a605422edf"});</script> -->
 	<noscript>
 		<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex print:hidden">
 			<div class="wp-block-button is-style-outline"><a href="mailto:info@beachfleischman.com?subject=Newsletter%20opt-in from:%20<?php echo esc_attr( get_the_title() ); ?>" class="wp-block-button__link has-brand-red-color has-text-color wp-element-button "><i class="fa-solid fa-envelope"></i> Email us</a></div>

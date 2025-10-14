@@ -251,7 +251,7 @@ $shared_values = [
 												hsScript.src='//js.hsforms.net/forms/v2.js';
 												hsScript.onload = function() {
 													hbspt.forms.create({
-														region: "na1",
+														region: "na2",
 														portalId: "5578910",
 														target: '#llhsform',
 														formId: "c8675641-3e68-4ff7-9dc3-ae3636fbf1c8"

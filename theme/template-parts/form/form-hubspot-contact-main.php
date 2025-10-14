@@ -20,7 +20,7 @@ echo ( wp_get_environment_type() == 'local' ) ? '<p class="font-mono text-sm tod
 			hsScript.src='//js.hsforms.net/forms/v2.js';
 			hsScript.onload = function() {
 				hbspt.forms.create({
-					region: "na1",
+					region: "na2",
 					portalId: "5578910",
 					target: '#llhsform',
 					formId: "<?php echo $hs_form_id; ?>"
