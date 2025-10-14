@@ -186,10 +186,10 @@ $teamQuery = new WP_Query( $query_team_args );
 						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-linear-to-t from-neutral-300 via-neutral-100 to-white  |  dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
 							<div class="px-2  |  lg:px-[16px]">
 								<h2 class="mb-4 font-head">Opportunities</h2>
-								<ul class="list-none grid gap-4 text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
+								<ul class="list-none grid gap-4 grid-rows-[auto_1fr] text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
 
 									<?php foreach( $cards_opps as $card ) {
-										echo '<li class="card-ic card-' . $card['slug'] . '  |  group flex flex-col relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
+										echo '<li class="card-ic card-' . $card['slug'] . '  |  group grid gap-0 grid-rows-subgrid row-span-2 relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
 
 											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300 md:!px-5">
 												<h3 class="inline font-semibold leading-none text-2xl">
