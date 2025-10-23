@@ -22,6 +22,7 @@ if ( get_field( 'll_people_organization' ) === 'BeachFleischman' ) {
 	$peep_class                 = 'external';
 }
 
+$peep_designations              = get_field( 'll_people_designations' );
 $peep_level                     = get_field( 'll_people_level' );
 
 if ( $peepauthor ) {
@@ -55,7 +56,7 @@ if ( $peepauthor ) {
 
 		<div class="peepgrid peep-<?php echo $peep_class; ?> peep-<?php echo esc_attr( $peep_level['value'] ); ?>  |  md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
 
-			<div class="peepgrid-a | pb-8 md:pt-2 md:pb-0 md:order-2">
+			<div class="peepgrid-a  |  pb-8 md:pt-2 md:pb-0 md:order-2">
 				<?php
 				// echo "<div class=\"headshot-wrapper | relative before:content-[''] before:absolute before:top-2 before:left-2 before:w-full before:h-full before:bg-transparent before:bg-repeat before:bg-[bottom_right] before:bg-headshot print:before:bg-none\">";
 				?>
@@ -68,10 +69,14 @@ if ( $peepauthor ) {
 				<header class="mb-4">
 					<?php
 					if ( $peep_class === 'internal' ) {
-						the_title( '<h1 class="entry-title | mb-0 text-orient-800  |  dark:text-orient-400 print:text-xl">', '</h1>' );
+						if( ( $peep_designations ) && ( strlen( $peep_designations ) < 13 ) ) {
+							echo '<h1 class="mb-0 text-orient-800  |  dark:text-orient-400 print:text-xl">' . get_the_title() . '<small class="leading-tighter tracking-tight  |  print:text-base">, ' . $peep_designations . '</small></h1>';
+						} else {
+							the_title( '<h1 class="mb-0 text-orient-800  |  dark:text-orient-400 print:text-xl">', '</h1>' );
 
-						if( get_field( 'll_people_designations' ) ) {
-							echo sprintf( '<h2 class="leading-normal tracking-tight text-neutral-500 print:text-base">%1$s</h2>', get_field( 'll_people_designations' ) );
+							if( $peep_designations ) {
+								echo sprintf( '<h2 class="mt-2 leading-tighter tracking-tight text-neutral-500  |  print:text-base">%1$s</h2>', $peep_designations );
+							}
 						}
 
 						if( get_field( 'll_people_title' ) ) {
