@@ -14,7 +14,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.3.11' );
+	define( 'LL_VERSION', '3.3.12' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -236,7 +236,8 @@ function ll_scripts() {
 	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
 
 	// wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
-	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
+	// wp_enqueue_script( 'fa6-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
+	wp_enqueue_script( 'fa7-kit', 'https://kit.fontawesome.com/576405c4bf.js' );
 
 	if ( !is_page_template( LL_LP_TEMPLATES ) ) {
 		wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
