@@ -43,10 +43,10 @@ if ( $post_featimg == true ) {
 
 
 			<div class="full-bleed not-prose bg-neutral-950 text-neutral-50 text-center py-2 m-0">
-				<p class="text-sm">Dev Version: You're currently using the temporary Event Mock-up template. This is all hard-coded. No Block Editor content here.</p>
+				<p class="text-sm text-yellow-300">Dev Version: You're currently using the temporary Event Mock-up template. This is all hard-coded. No Block Editor content here.</p>
 			</div>
 
-			<link rel="preconnect" href="https://fonts.googleapis.com">
+			<!-- link rel="preconnect" href="https://fonts.googleapis.com">
 			<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 			<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 			<style>
@@ -55,41 +55,89 @@ if ( $post_featimg == true ) {
 					font-weight: 400;
 					font-style: normal;
 				}
-			</style>
-			<section class="full-bleed mixer">
-				<div class="not-prose px-2 py-8 text-xl text-white font-head  |  md:text-2xl md:container md:py-12 lg:py-20 lg:px-[16px]">
-					<header class="md:pb-4 lg:pb-0">
-						<h2 class="text-2xl font-light text-white leading-tight  |  lg:text-3xl">beachfleischman's</h2>
-						<h3 class="text-3xl text-white leading-tight tracking-tight font-abril  |  md:text-4xl lg:text-5xl">construction industry</h3>
-						<h4 class="mb-4 text-5xl text-pink-650 font-abril font-bold leading-none tracking-tight  |  md:text-6xl lg:text-8xl">networking mixer</h4>
-						<p class="font-light  |  lg:text-3xl">Enjoy complimentary drinks and appetizers while connecting with fellow professionals in the construction industry.</p>
-					</header>
-					<div class="w-full  |  md:flex md:flex-row lg:my-12">
-						<div class="w-full mb-8 text-center  |  md:w-1/3 md:mb-0 md:order-last">
-							<div class="relative mx-auto rounded-full bg-purple-450 aspect-square" style="width: 200px;">
-								<div class="z-10 flex flex-row items-center justify-center w-full h-full">
-									<span class="font-bold leading-none font-abril" style="color: rgba(255,255,255,0.1); font-size: 200px">2</span>
-								</div>
-								<div class="absolute top-0 left-0 z-20 flex flex-row items-center justify-center w-full h-full">
-									<p class="text-4xl font-bold leading-none font-abril">2 dates<br>2 locations</p>
-								</div>
-							</div>
+			</style -->
+			<!-- section class="full-bleed" style="background-image: linear-gradient(var(--color-orient-900), var(--color-orient-500)), url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,e_grayscale,f_auto,q_50/v1762447345/2025_1002_Construction_Webinar_Invite_Image_uh6g3n.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; background-blend-mode: overlay;" -->
+			<section class="full-bleed" style="background-color: var(--color-orient-900); background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,q_50/v1762447333/2025_1002_Construction_Webinar_Invite_Image_blue_jjgrx7.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+				<div class="not-prose px-2 pb-16 text-white space-y-8  |  md:container lg:space-y-16 lg:px-4">
+
+					<header class="full-bleed bg-orient-800">
+						<div class="px-2 py-8  |  md:container  lg:px-4 lg:py-12">
+							<h1 class="font-semibold text-orient-300 leading-tight">Big Tax Changes for Construction Companies in 2025</h1>
+							<h2 class="text-white leading-tight tracking-tight">Construction Industry Tax Update - Live Webinar</h2>
 						</div>
-						<div class="w-full  |  md:w-2/3 md:order-first">
-							<div class="mb-8">
-								<h4 class="inline-block px-12 pt-3 pb-2 mb-3 -ml-12 text-white font-abril bg-pink-650 bg-skewed  |  md:-ml-16 md:text-3xl md:px-16 lg:-ml-20 lg:text-4xl lg:px-20">Tuesday, January 17, 2023 • Phoenix</h4>
-								<p class="lg:text-3xl font-abril">4:30pm - 6:30pm • The Gladly <small>(Whiskey Room)</small></p>
-								<p>2201 E. Camelback Rd., Phoenix, AZ 85016</p>
-							</div>
-							<div class="mb-8">
-								<h4 class="inline-block px-12 pt-3 pb-2 mb-3 -ml-12 text-white font-abril bg-pink-650 bg-skewed  |  md:-ml-16 md:text-3xl md:px-16 lg:-ml-20 lg:text-4xl lg:px-20">Thursday, January 19, 2023 • Tucson</h4>
-								<p class="lg:text-3xl font-abril">4:30pm - 6:30pm • Union Public House</p>
-								<p>4340 N. Campbell Ave., Ste 100, Tucson, AZ 85718</p>
-							</div>
+					</header>
+
+					<div class="flex flex-col gap-2 items-center h-full  |  sm:flex-row lg:gap-4">
+						<div class="shrink-0">
+							<span class="fa-stack fa-2x">
+								<i class="fa-solid fa-circle fa-stack-2x"></i>
+								<i class="fa-regular fa-calendar-clock fa-stack-1x text-orient-900"></i>
+							</span>
+						</div>
+						<div class="grow">
+							<h2 class="font-semibold">Thursday, November 20, 2025<br />7:30 - 9:00AM (MST)</h2>
+							<h3>Complimentary | CPE Credit: 1.8 hours</h3>
+						</div>
+					</div>
+					<div class=" grid gap-16  |  lg:grid-cols-2">
+
+						<div class="entry-content">
+							<p>The One Big Beautiful Bill Act introduced significant tax changes that could impact how construction companies plan, invest, and manage their cash flow.</p>
+							<p>Join us for a live webinar and learn what's been extended, expanded, or made permanent and how to capture new tax savings before year-end.</p>
+							<h3 class="font-semibold">We'll cover these key topics and more during the session:</h3>
+							<ul class="fa-ul">
+								<li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Depreciation and expensing of fixed assets</li>
+								<li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Research and experimental deductions</li>
+								<li><span class="fa-li"><i class="fa-solid fa-check"></i></span>QBI 20% deduction</li>
+								<li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Business interest expense limits</li>
+								<li><span class="fa-li"><i class="fa-solid fa-check"></i></span>Expiring green energy credits</li>
+								<li><span class="fa-li"><i class="fa-solid fa-check"></i></span>New exception to POC method for residential construction contracts</li>
+							</ul>
+						</div>
+						<div class="bg-white/70 text-orient-900 rounded-3xl p-8  |  lg:p-12 lg:rounded-[3rem]">
+							<h3 class="font-semibold">Speakers:</h3>
+							<ul class="list-none mt-4 grid grid-cols-1 gap-8 ">
+								<li class="person-card card-ic | group @container">
+									<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full">
+										<div class="card-text | grow order-1">
+											<h3 class="!leading-none font-semibold">Bryan S. Eto, <small>CPA, CCIFP, CFE, CGMA</small></h3>
+											<p class="leading-tight">Principal/Construction Practice Leader<br />BeachFleischman</p>
+										</div>
+										<div class="card-img  |  shrink-0 object-cover object-center rounded-full border-3 border-orient-800 bg-neutral-100 bg-no-repeat bg-[center_top]" style="background-image: url('https://beachfleischman.com/wp-content/uploads/2022/10/bio_rect-beto.jpg'); background-size: 128px 171px;">
+											<div class="size-32 aspect-square">&nbsp;</div>
+										</div>
+									</div>
+								</li>
+								<li class="person-card card-ic | group @container">
+									<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full">
+										<div class="card-text | grow order-1">
+											<h3 class="!leading-none font-semibold">Christine Ulibarri, <small>CPA, CCIFP</small></h3>
+											<p class="leading-tight">Principal<br />BeachFleischman</p>
+										</div>
+										<div class="card-img  |  shrink-0 object-cover object-center rounded-full border-3 border-orient-800 bg-neutral-100 bg-no-repeat bg-[center_top]" style="background-image: url('https://beachfleischman.com/wp-content/uploads/2022/10/bio_rect-culibarri.jpg'); background-size: 128px 171px;">
+											<div class="size-32 aspect-square">&nbsp;</div>
+										</div>
+									</div>
+								</li>
+								<li class="person-card card-ic | group @container">
+									<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full">
+										<div class="card-text | grow order-1">
+											<h3 class="!leading-none font-semibold">Lauren M. Pierson, <small>CPA</small></h3>
+											<p class="leading-tight">Tax Senior Manager<br />BeachFleischman</p>
+										</div>
+										<div class="card-img  |  shrink-0 object-cover object-center rounded-full border-3 border-orient-800 bg-neutral-100 bg-no-repeat bg-[center_top]" style="background-image: url('https://beachfleischman.com/wp-content/uploads/2023/02/bio_rect-lpierson.jpg'); background-size: 128px 171px;">
+											<div class="size-32 aspect-square">&nbsp;</div>
+										</div>
+									</div>
+								</li>
+							</ul>
 						</div>
 					</div>
 					<div class="w-full mt-8 min-h-32">
-						<p class="my-4 text-center font-bold">Registration for this event has closed.</p>
+						<h3 class="text-center font-bold">Registration now to ensure you don't miss this timely update!</h3>
+						<p class="text-center mt-8">
+							<a href="https://attendee.gotowebinar.com/register/1093509844948043359" class="text-2xl px-5 py-4 font-head font-semibold border-2 border-white bg-white rounded-lg text-orient-800  |  hover:bg-mahogany-700 hover:text-white hover:border-mahogany-700"><i class="fa-solid fa-user-circle-plus"></i> Register</a>
+						</p>
 					</div>
 				</div>
 			</section>
