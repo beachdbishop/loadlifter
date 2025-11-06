@@ -81,8 +81,8 @@ $industriesQuery = new WP_Query( $query_ind_args );
 					Your browser does not support the video tag.
 				</video>
 
-				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
-					<hgroup class="space-y-6">
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2  |  lg:px-4 lg:min-h-(--height-hero)">
+					<hgroup class="space-y-2  |  lg:space-y-6">
 						<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
 							<?php echo $video_heading; ?>
 						</h1>

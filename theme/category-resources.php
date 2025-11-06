@@ -94,8 +94,8 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 			<span aria-hidden="true" class="page-hero-overlay  |  z-[1] absolute top-0 right-0 bottom-0 left-0  |  print:hidden"></span>
 			<img width="1920" height="625" src="https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources.jpg" class="wp-block-cover__image-background not-transparent wp-post-image print:hidden not-transparent wp-post-image" alt="" decoding="async" srcset="https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources.jpg 1920w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-500x163.avif 500w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-1200x391.avif 1200w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-768x250.avif 768w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-1536x500.avif 1536w" sizes="(782px < width) 1920px, (max-width: 1920px) 100vw, 1920px">
 			<div class="wp-block-cover__inner-container  |  px-2 lg:px-4 print:!px-0">
-				<div class="text-neutral-800 flex flex-col justify-center min-h-[240px]  |  md:min-h-(--height-hero) print:min-h-min">
-					<hgroup class="space-y-6">
+				<div class="text-neutral-800 flex flex-col justify-center  |  lg:min-h-(--height-hero) print:min-h-min">
+					<hgroup class="space-y-2  |  lg:space-y-6">
 						<h1 class="leading-none text-white tracking-light text-pretty text-shadow-lg/50  |   lg:text-6xl lg:print:!text-xl print:text-black" style="text-wrap: unset;">Resources</h1>
 						<p class="font-head text-2xl leading-none text-pretty text-shadow-lg/50 !text-orient-400  |  md:max-w-5xl lg:text-4xl lg:print:!text-base print:!text-black">Gain clarity for the road ahead.</p>
 					</hgroup>

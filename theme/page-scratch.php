@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<main id="primary" class="bg-amber-50  |  dark:bg-amber-900">
+<main id="primary" class="bg-amber-50 relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-amber-900">
 	<?php
 	while (have_posts()) :
 		the_post();

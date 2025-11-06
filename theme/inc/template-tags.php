@@ -382,9 +382,10 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image print:hidden'] ); ?>
 
 			<div class="wp-block-cover__inner-container  |  px-2 lg:px-4 print:!px-0">
-				<div class="text-neutral-800 flex flex-col justify-center min-h-[240px]  |  md:min-h-(--height-hero) print:min-h-min">
+				<!-- div class="text-neutral-800 flex flex-col justify-center min-h-[240px]  |  md:min-h-(--height-hero) print:min-h-min" -->
+				<div class="text-neutral-800 flex flex-col justify-center   |  lg:min-h-(--height-hero) print:min-h-min">
 
-					<hgroup class="space-y-6">
+					<hgroup class="space-y-2  |  lg:space-y-6">
 						<h1 class="leading-none text-white tracking-light text-pretty text-shadow-lg/50  |  <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:!text-xl print:text-black" style="text-wrap: unset;"><?php echo $h1; ?></h1>
 						<?php if ( !empty( $h2 ) ) { ?><p class="font-head text-2xl leading-none text-pretty text-shadow-lg/50 !text-orient-400  |  md:max-w-5xl lg:text-4xl lg:print:!text-base print:!text-black"><?php echo $h2; ?></p><?php } ?>
 					</hgroup>
