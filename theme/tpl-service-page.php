@@ -128,40 +128,40 @@ if ( $page_post_category ) {
 
 						<?php // SERVICE PROFESSIONALS AND INVOLVEMENT ?>
 						<?php if ( $page_people_display !== 'hide' || !empty( $page_groups_html ) ) : ?>
-							<section class="not-prose  |  print:hidden">
-								<?php
-								$wrapper_class = '';
-								if ( $page_people_display !== 'hide' && !empty( $page_people ) ) :
-									$wrapper_class = count( $page_people ) > 4 ? 'slider slider-people' : 'dps-grid-4max';
-									$wrapper_part = count( $page_people ) > 4 ? 'slide-people' : 'card-people-md';
-								?>
-									<h2>
-										<?php
-										$title_term = ( $post->post_parent == $page_id_industries ) ? 'Industry Professional' : 'Our Advisor';
-										echo ll_is_plural( $page_people ) ? "{$title_term}s" : $title_term;
-										?>
-									</h2>
-
+							<?php
+							$wrapper_class = '';
+							if ( $page_people_display !== 'hide' && !empty( $page_people ) ) :
+								$wrapper_class = count( $page_people ) > 4 ? 'slider slider-people' : 'dps-grid-4max';
+								$wrapper_part = count( $page_people ) > 4 ? 'slide-people' : 'card-people-md';
+							?>
+								<h2 class="print:hidden">
 									<?php
-									if ( $wrapper_class ) :
-										echo '<div class="mt-4 ' . esc_attr( $wrapper_class ) . '">';
-										while ( $teamQuery->have_posts() ) :
-											$teamQuery->the_post();
-											get_template_part( 'template-parts/content/content', $wrapper_part );
-										endwhile;
-										echo '</div>';
-									endif;
-
-									wp_reset_postdata();
+									$title_term = ( $post->post_parent == $page_id_industries ) ? 'Industry Professional' : 'Our Advisor';
+									echo ll_is_plural( $page_people ) ? "{$title_term}s" : $title_term;
 									?>
-								<?php endif; ?>
+								</h2>
 
 								<?php
-								// if ( !empty( $page_groups_html ) ) :
-								// 	echo do_shortcode( $page_groups_html );
-								// endif;
+								if ( $wrapper_class ) :
+									echo '<div class=" ' . esc_attr( $wrapper_class ) . '  |  print:hidden">';
+									while ( $teamQuery->have_posts() ) :
+										$teamQuery->the_post();
+										get_template_part( 'template-parts/content/content', $wrapper_part );
+									endwhile;
+									echo '</div>';
+								endif;
+
+								wp_reset_postdata();
 								?>
-							</section>
+							<?php endif; ?>
+
+							<?php
+							if ( !empty( $page_groups_html ) ) :
+								// echo '<div class="mt-12 space-y-6">';
+								echo do_shortcode( $page_groups_html );
+								// echo '</div>';
+							endif;
+							?>
 						<?php endif; ?>
 
 					</div>
