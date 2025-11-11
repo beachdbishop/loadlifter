@@ -97,7 +97,7 @@ $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 							<div class="flex items-center justify-between mb-4">
 								<h3 class="font-semibold">Archived Events</h3>
 								<?php
-								if ( $archivedEventsQuery->found_posts > $blogposts_limit ) :
+								if ( $archivedEventsQuery->found_posts > $archived_limit ) :
 									echo '<a href="/category/archived-events/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
 								endif;
 								?>
