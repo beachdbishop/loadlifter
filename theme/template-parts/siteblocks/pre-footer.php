@@ -3,10 +3,9 @@
  * Pre-Footer
  */
 ?>
-<?php /*
-<section class="full-bleed ">
-	<div class="py-2 mx-auto">
-        <p>Pre-footer content</p>
-	</div>
+
+<?php if ( ll_is_local_environment() ) { ?>
+<section class="p-8 lg:p-12 bg-amber-100">
+	<p>Pre Footer</p>
 </section>
-*/ ?>
+<?php } ?>
