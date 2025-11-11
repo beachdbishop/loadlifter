@@ -2,7 +2,7 @@
 /**
  * Pre-Header
  */
-$target_slug = 'webinar-big-tax-changes-construction-companies-2025';
+$target_slug = 'webinar-big-tax-changes-construction-2025';
 $target_date = new DateTime( '2025-11-20' );
 $current_date = new DateTime( 'today' );
 
