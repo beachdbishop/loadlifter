@@ -34,9 +34,9 @@ $cards_opps = [
 		"slug" => 'intern',
 		"label" => 'Internships',
 		"link" => '/career-opportunities/internships/',
-		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,w_480/v1676492725/feat__careers-internships--social_q07na1.jpg',
-		"img-wide" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-internships--social_q07na1.jpg',
-		"img-alt" => "Man and young man having a converstion at a table"
+		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_251,w_480/v1762991977/feat__20251112--internships-social2_noqqj9.jpg',
+		"img-wide" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto/v1762991977/feat__20251112--internships-social2_noqqj9.jpg',
+		"img-alt" => "Two interns sharing an entertaining moment while reviewing information on a tablet"
 	],
 	"grads" => [
 		"slug" => 'grad',
