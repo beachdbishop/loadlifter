@@ -13,7 +13,7 @@
 	<p class="text-center text-neutral-200 text-xl font-semibold tracking-wider uppercase">Press Release</p>
 </div>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'px-2 py-8  |  md:container lg:px-[16px]' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'px-2 py-8  |  md:container lg:px-4' ); ?>>
 
 	<header>
 		<?php

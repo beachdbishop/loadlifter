@@ -51,7 +51,7 @@ endif;
 ?>
 
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'location  |  py-8 px-2 container  |  lg:px-[16px]' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'location  |  py-8 px-2 container  |  lg:px-4' ); ?>>
 
 	<?php
 	if ( $hidden_featured_image == true ) :

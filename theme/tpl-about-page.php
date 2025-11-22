@@ -72,7 +72,7 @@ $cards_about = [
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<div class="px-2 container  |  lg:px-[16px] print:px-0">
+				<div class="px-2 container  |  lg:px-4 print:px-0">
 
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16 print:mt-0 print:gap-4">
 
@@ -152,7 +152,7 @@ $cards_about = [
 
 						</div>
 
-						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
+						<div class="my-16 ll-page-grid-area-b entry-content  |  md:my-0 md:col-span-3">
 
 							<?php if ( is_page( 'about' ) ) : ?>
 								<h3 class="mb-6">Awards and recognition</h3>

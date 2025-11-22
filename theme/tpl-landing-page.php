@@ -46,14 +46,14 @@ $page_state                     = get_field( 'll_page_state' );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp ' ); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 							<?php the_content(); ?>
 						</div>
 
-						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
+						<div class="my-16 ll-page-grid-area-b entry-content  |  md:my-0 md:col-span-3">
 							<?php
 							if ( $page_gmap ) :
 								echo '<section class="w-screen ml-[50%] -translate-x-1/2 relative h-[600px] overflow-hidden bg-brand-neutral-200  |  print:hidden">';

@@ -13,7 +13,7 @@
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
 <header id="masthead" class="nav-header permadark | bg-brand-blue-dark text-neutral-100 print:bg-white print:shadow-none sticky top-0 z-[39] ">
-	<div role="navigation" class="flex items-center justify-between px-2 py-3 md:container lg:px-[16px]">
+	<div role="navigation" class="flex items-center justify-between px-2 py-3 md:container lg:px-4">
 
 		<div class="w-[240px] lg:w-[320px] order-1">
 			<a

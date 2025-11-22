@@ -114,7 +114,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			<?php if ( get_the_content() ) : ?>
 				<?php // Only display the content if it exists ?>
 				<section id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white  |  dark:bg-neutral-800' ); ?> aria-label="Content">
-					<div class="px-2 container  |  lg:px-[16px]">
+					<div class="px-2 container  |  lg:px-4">
 
 						<div <?php ll_content_class( 'entry-content' ); ?>>
 							<?php the_content(); ?>
@@ -125,7 +125,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			<?php endif; ?>
 
 			<section class="full-bleed ll-equal-vert-padding bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
-				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
+				<div class="ind-grid  |  px-2  |  lg:px-4">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php
 					if ( $industriesQuery->have_posts() ) :
@@ -147,7 +147,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			</section>
 
 			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
-				<div class="post-grid  |  px-2  |  lg:px-[16px]">
+				<div class="post-grid  |  px-2  |  lg:px-4">
 					<?php
 					if ( $postsQuery->have_posts() ) :
 					?>

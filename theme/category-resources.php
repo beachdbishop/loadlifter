@@ -105,7 +105,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 		</div>
 
 
-		<section class="ll-equal-vert-padding px-2 container  |  lg:px-[16px]">
+		<section class="ll-equal-vert-padding px-2 container  |  lg:px-4">
 			<?php
 			if ( $postsQuery->have_posts() ) :
 			?>
@@ -134,7 +134,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 
 
 		<section class="full-bleed ll-equal-vert-padding bg-linear-to-br from-white to-neutral-200  |  dark:from-neutral-900 dark:to-neutral-700">
-			<div class="px-2  |  lg:px-[16px]">
+			<div class="px-2  |  lg:px-4">
 				<?php
 				if ( $reportsQuery->have_posts() ) :
 				?>
@@ -169,7 +169,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 			<span aria-hidden="true" class="bg-linear-to-br from-orient-50 to-orient-200 absolute top-0 right-0 bottom-0 left-0  |  dark:from-orient-800 dark:to-orient-950 print:hidden"></span>
 			<div class="deferred wp-block-cover__image-background bg-size-[128px] bg-fixed opacity-5  |  print:hidden" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tile-bg-bflogocolor.png');"></div>
 
-			<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 | lg:px-[16px]">
+			<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 | lg:px-4">
 				<?php
 				if ( $firminfoQuery->have_posts() ) :
 				?>

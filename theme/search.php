@@ -10,9 +10,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-8 bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
-		<div class="px-2 container  |  lg:px-[16px]">
+		<div class="px-2 container ll-equal-vert-padding  |  lg:px-4">
 
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 

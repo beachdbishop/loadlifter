@@ -150,10 +150,10 @@ $shared_values = [
 
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('py-12'); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4  |  lg:py-12'); ?>>
+			<div class="px-2 container  |  lg:px-4">
 
-				<div <?php ll_content_class( 'entry-conten ' ); ?>>
+				<div <?php ll_content_class( 'entry-content' ); ?>>
 					<div class="prose  |  lg:max-w-[900px]">
 						<?php the_content(); ?>
 					</div>
@@ -200,7 +200,7 @@ $shared_values = [
 
 
 					<section class="full-bleed py-6 bg-orient-50  |  dark:bg-neutral-950 lg:py-12">
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2  |  lg:px-4">
 							<h2 class="text-brand-blue-dark  |  dark:text-neutral-200 ">Shared values</h2>
 							<p class="my-2">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
 							<div class="mt-4 ind-card-flips is-style-white ">
@@ -234,7 +234,7 @@ $shared_values = [
 
 
 					<section class="full-bleed py-6 break-inside-avoid  |  lg:py-12 print:hidden">
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2  |  lg:px-4">
 							<div class="space-y-2">
 								<h2 class="text-brand-red"><a name="partner"></a>Partner with BeachFleischman today</h2>
 								<p class="lg:max-w-[900px]">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>

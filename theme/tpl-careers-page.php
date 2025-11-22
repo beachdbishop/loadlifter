@@ -158,12 +158,12 @@ $teamQuery = new WP_Query( $query_team_args );
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class('pt-8'); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 
 					<?php if (is_page('career-opps')) : ?>
 					<?php //   the page above is purposefully 'wrong' because we decided not to include this page nav. We may bring it back in the future, though. ?>
 						<section class="full-bleed ">
-							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm  |  lg:gap-4 lg:px-[16px]">
+							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm  |  lg:gap-4 lg:px-4">
 								<span>On this page:</span>
 								<a class="underline hover:decoration-orient-400" href="#why">Why BeachFleischman?</a>
 								<a class="underline hover:decoration-orient-400" href="#opportunities">Opportunities</a>
@@ -184,7 +184,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php if (is_page('career-opportunities')) : ?>
 					<?php //   O P P O R T U N I T I E S   ?>
 						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-linear-to-t from-neutral-300 via-neutral-100 to-white  |  dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2 class="mb-4 font-head">Opportunities</h2>
 								<ul class="list-none grid gap-4 grid-rows-[auto_1fr] text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
 
@@ -218,7 +218,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php if ( is_page('internships') ) { ?>
 					<?php //   E X P E C T   &   F U T U R E   ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose ">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2>What you can expect</h2>
 								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
@@ -229,7 +229,7 @@ $teamQuery = new WP_Query( $query_team_args );
 						</section>
 					<?php } else { ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2>What you can expect</h2>
 								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
@@ -261,7 +261,7 @@ $teamQuery = new WP_Query( $query_team_args );
 						}
 					</style>
 					<section id="culture" class="full-bleed not-prose ll-equal-vert-spacing">
-						<div class="flex flex-col px-2 space-y-4 lg:px-[16px]">
+						<div class="flex flex-col px-2 space-y-4 lg:px-4">
 							<h2 class="">Culture</h2>
 
 							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-orient-950 text-neutral-100">
@@ -290,7 +290,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php //   B E N E F I T S   ?>
 					<?php if ( !is_page('internships') ) : ?>
 						<section id="benefits" class="full-bleed">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2 class="mb-4">Benefits</h2>
 								<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 									<?php foreach( $cards_benefits as $card ) {
@@ -303,7 +303,7 @@ $teamQuery = new WP_Query( $query_team_args );
 
 					<?php //   A W A R D S   ?>
 					<section id="awards" class="bg-white full-bleed ll-equal-vert-padding  |  dark:bg-neutral-900">
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2 entry-content  |  lg:px-4">
 							<h2 class="mb-4">Awards and recognition</h2>
 							<?php block_template_part( 'img-grid-awards' ); ?>
 						</div>
@@ -311,7 +311,7 @@ $teamQuery = new WP_Query( $query_team_args );
 						<?php
 						if ( $teamQuery->have_posts() ) :
 						?>
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2 entry-content  |  lg:px-4">
 							<h2 class="mb-4">Our Team</h2>
 							<ul class="list-none dps-grid-4max" data-team-ids="<?php echo esc_attr( $hr_ids ); ?>">
 							<?php

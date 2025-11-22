@@ -23,7 +23,7 @@ if (!is_page_template('tpl-landing-page-bare.php')) {
 			style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
 
 		<div
-			class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-[16px]">
+			class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-4">
 
 			<div class="max-w-xs mb-4 fill-current">
 				<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>">

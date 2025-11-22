@@ -152,7 +152,7 @@ get_header();
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-4">
 
 				<div class="not-prose pb-8  |  lg:pb-16">
 					<?php the_content(); ?>
@@ -197,7 +197,7 @@ get_header();
 						<div class="prose space-y-4">
 							<h2 class="text-orient-800  |  dark:text-orient-400">Aiwyn Client Intro Video</h2>
 							<p>To create your account, you will need an email address, password, your client ID, and Invoice number, which can be found on any BeachFleischman invoice. Here's a step-by-step video to help you.</p>
-							<h4 class="text-brand-blue-dark font-semibold  |  dark:text-neutral-100">Need more help?</h4>
+							<h3 class="text-brand-blue-dark font-semibold  |  dark:text-neutral-100">Need more help?</h3>
 							<p>Reach out to our <a href="mailto:invoices@beachfleischman.com?subject=Client%20Center%20Help">Administrative Team</a>.</p>
 						</div>
 						<div class="">

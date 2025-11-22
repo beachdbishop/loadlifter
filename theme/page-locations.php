@@ -38,7 +38,7 @@ $page_excerpt = get_the_excerpt();
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-8 lg:py-16' ); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 
 					<?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
 						<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>

@@ -72,6 +72,7 @@
 	--font-head: serenity, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'Fira Code', Consolas, monospace;
+	--font-work: 'Work Sans', sans-serif;
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
 	--height-hero: 360px;

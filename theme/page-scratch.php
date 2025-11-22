@@ -23,7 +23,7 @@ get_header();
 	    ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4  |  md:py-6 lg:py-8'); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-4">
 
 				<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
@@ -176,7 +176,7 @@ get_header();
 
 					<?php echo do_shortcode( '[cyberdisclaimer /]' ); ?>
 
-					<div class="not-prose">
+					<div class="not-prose font-work">
 						<p class="mb-4  |  lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
 						<section class="group bg-gray-500 text-white bg-blend-multiply  |  md:rounded-lg  lg:mx-auto lg:max-w-5xl" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">

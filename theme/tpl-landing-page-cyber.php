@@ -46,14 +46,14 @@ $page_below_fold								= get_field( 'll_below_fold' );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp lp-cyber' ); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 							<?php the_content(); ?>
 						</div>
 
-						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
+						<div class="my-16 ll-page-grid-area-b entry-content  |  md:my-0 md:col-span-3">
 							<h3 class="mb-4">Certified Experts</h3>
 							<?php	// echo do_shortcode( '[cybercertlogos /]' ); ?>
 							<?php block_template_part( 'img-grid-assoc-cyber' ); ?>
