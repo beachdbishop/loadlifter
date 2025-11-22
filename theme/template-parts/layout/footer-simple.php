@@ -20,8 +20,6 @@ if ( ( !is_page_template( LL_LP_TEMPLATES ) ) && ( $show_expanded_menus ) ) {
 }
 
 if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
-	//   P R E F O O T E R   A R E A
-	get_template_part( 'template-parts/siteblocks/pre', 'footer' );
 	?>
 
 	<footer id="colophon" class="site-footer  |  wp-block-cover alignfull ll-equal-vert-padding !px-0 bg-neutral-950  |  lg:sticky lg:bottom-0 print:border-none print:bg-white">

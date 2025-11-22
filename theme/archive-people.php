@@ -98,7 +98,9 @@ $peopleQuery = new WP_Query( $args );
 				endif;
 				?>
 			</div>
-		</article><!-- #post-<?php the_ID(); ?> -->
+		</article>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

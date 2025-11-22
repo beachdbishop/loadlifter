@@ -240,6 +240,8 @@ get_header();
 
     <?php endwhile; ?>
 
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
+
 </main><!-- #main -->
 <?php
 get_footer();

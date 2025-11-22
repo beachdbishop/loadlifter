@@ -13,9 +13,7 @@ $site_seo_footer = get_field('seo_footer_text', 'option');
 
 
 if (!is_page_template('tpl-landing-page-bare.php')) {
-
-	//   P R E F O O T E R   A R E A
-	get_template_part('template-parts/siteblocks/pre', 'footer'); ?>
+	?>
 
 	<footer id="colophon"
 		class="site-footer wp-block-cover alignfull is-light text-white ll-equal-vert-padding !px-0 bg-neutral-950  |  print:text-neutral-700 print:bg-white lg:sticky lg:bottom-0">
