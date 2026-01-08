@@ -69,7 +69,7 @@ $peep_level = get_field( 'll_people_level' );
 
 			if ( has_excerpt() ) {
 				?>
-				<p class="mt-2 mb-4 text-sm  |  lg:text-base"><?php echo get_the_excerpt(); ?></p>
+				<p class="mt-2 mb-4 text-sm line-clamp-4  |  lg:text-base"><?php echo get_the_excerpt(); ?></p>
 				<?php
 			}
 		}
