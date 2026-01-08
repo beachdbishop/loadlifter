@@ -17,6 +17,27 @@
 }
 
 
+
+
+/* :root :where(.img-grid) figure {
+	transition: opacity .3s ease;
+	transition-delay: calc((sibling-index() - 1) * 100ms);
+
+	@starting-style {
+		opacity: 0;
+	}
+} */
+
+
+
+
+/* @media (width > 48rem) {
+	:root :where(.img-grid) {
+		--_min-col-size: 12rem;
+		grid-template-columns: repeat(auto-fit, minmax(min(var(--_min-col-size), 100%), 1fr));
+	}
+} */
+
 @media (width >= 48rem) {
 	:root :where(.img-grid:has(> :nth-child(2))) {
 		grid-template-columns: repeat(2, auto);
