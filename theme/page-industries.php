@@ -126,20 +126,21 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 							endif;
 							?>
 
-							<?php if ( ( $page_post_category ) && ( $resourcesQuery->have_posts() ) ) :
-							echo '<div class="ll-equal-vert-padding prose |    border border-pink-400 border-dashed">';
-								echo '<h3>Resources</h3>';
-								echo '<ul class="cards-ic" data-cat="' . $page_post_category->slug . '">';
-								while ( $resourcesQuery->have_posts() ) :
-									$resourcesQuery->the_post();
-									global $post;
+							<?php
+							// if ( ( $page_post_category ) && ( $resourcesQuery->have_posts() ) ) :
+							// 	echo '<div class="ll-equal-vert-padding prose |    border border-pink-400 border-dashed">';
+							// 		echo '<h3>Resources</h3>';
+							// 		echo '<ul class="cards-ic" data-cat="' . $page_post_category->slug . '">';
+							// 		while ( $resourcesQuery->have_posts() ) :
+							// 			$resourcesQuery->the_post();
+							// 			global $post;
 
-									// echo '<li><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . the_title() . '</a></li>';
-									the_title( '<li class=""><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
-								endwhile;
-								echo '</ul>';
-							echo '</div>';
-							endif;
+							// 			// echo '<li><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . the_title() . '</a></li>';
+							// 			the_title( '<li class=""><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
+							// 		endwhile;
+							// 		echo '</ul>';
+							// 	echo '</div>';
+							// endif;
 							?>
 
 							<div class="h-1">&nbsp;</div>
