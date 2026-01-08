@@ -386,7 +386,7 @@ button.a11y-slider-autoplay {
 			background-color: --alpha(var(--color-neutral-900) / 80%);
 		}
 		.a11y-slider-active {
-			background-color: --alpha(var(--color-neutral-900) / 100%);
+			background-color: --alpha(var(--color-neutral-800) / 100%);
 		}
 	}
 
