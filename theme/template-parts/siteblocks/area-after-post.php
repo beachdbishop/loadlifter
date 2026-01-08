@@ -2,11 +2,11 @@
 /**
  * Area Afer Post
  */
-// $target_category = 'construction';
-// // $target_slug = 'webinar-big-tax-changes-construction-companies-2025';
-// $target_date = new DateTime( '2025-11-20' );
-// $current_date = new DateTime( 'today' );
-// $tracking_link = 'https://beachfleischman.com/events/webinar-big-tax-changes-construction-2025/?utm_campaign=169751254-2025%2011%20Construction%20Webinar&utm_source=beach&utm_medium=after_post_banner';
+$target_category = 'construction';
+// $target_slug = 'webinar-big-tax-changes-construction-companies-2025';
+$target_date = new DateTime( '2025-11-20' );
+$current_date = new DateTime( 'today' );
+$tracking_link = 'https://beachfleischman.com/events/webinar-big-tax-changes-construction-2025/?utm_campaign=169751254-2025%2011%20Construction%20Webinar&utm_source=beach&utm_medium=after_post_banner';
 ?>
 
 <?php if ( ( $current_date < $target_date ) && ( in_category( $target_category ) ) ) { ?>
