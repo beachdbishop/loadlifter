@@ -112,6 +112,19 @@ endif;
 			<div id="contact" class="container-contact-form not-prose motion-preset-slide-u mb-8  |  lg:mb-16">
 				<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 			</div>
+
+			<?php
+			if ( $filler_content ) {
+				?><div class="entry-content mb-8  |  lg:mb-16">
+						<h3>Our <?php echo get_field( 'll_loc_city' ); ?> Accounting Team</h3>
+						<p>The Las Vegas office of BeachFleischman is staffed by experienced CPAs and advisors who bring both local insight and access to firm-wide expertise. </p>
+						<p>The lead of our Las Vegas team is <a href="#">Jessica Velazquez, CPA, CFE, Principal and Cannabis Practice Leader</a>.</p>
+						<p>Jessica brings nearly 20 years of experience, a deep understanding of the Las Vegas market, and a commitment to helping clients navigate complex tax and advisory engagements. Her leadership is representative of the Las Vegas team’s approach: proactive, collaborative and tailored to your needs.</p>
+					</div>
+				<?php
+			}
+			?>
+
 			<!--   A R E A   S I D E   -->
 			<?php get_template_part( 'template-parts/siteblocks/area', 'side' ); ?>
 		</aside>
