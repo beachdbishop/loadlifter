@@ -400,7 +400,9 @@ add_filter( 'wp_nav_menu_items', 'add_search_item_to_utility_nav', 10, 2 );
 /**
  * ACF Pro settings
  */
-require get_template_directory() . '/inc/acf.php';
+add_action( 'acf/init', function() {
+	require get_template_directory() . '/inc/acf.php';
+} );
 
 /**
  * Custom template tags for this theme.
