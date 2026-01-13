@@ -166,7 +166,7 @@ $cards_about = [
 						</div>
 
 						<div class="ll-page-grid-area-c">
-							<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">
+							<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">
 								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 							</div>
 						</div>

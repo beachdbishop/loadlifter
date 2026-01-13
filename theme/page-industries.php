@@ -112,7 +112,7 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 						<div class="ll-page-grid-area-c">
 							<?php
 							if ( get_field( 'll_normal_contact_form_location' ) == 1 ) :
-								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
+								echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
 								get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
 								echo '</div>';
 							endif;
@@ -120,7 +120,7 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 
 							<?php
 							if ( ( get_field( 'll_normal_contact_form_location' ) != 1 ) && ( $page_form ) ) :
-								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
+								echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif;
