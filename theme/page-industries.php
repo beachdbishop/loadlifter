@@ -142,8 +142,6 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 							// 	echo '</div>';
 							// endif;
 							?>
-
-							<div class="h-1">&nbsp;</div>
 						</div>
 
 					</div>

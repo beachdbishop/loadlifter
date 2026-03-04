@@ -132,7 +132,7 @@ $serviceParentsQuery = new WP_Query( $svc_parents_args );
 							?>
 
 							<?php if ( ( $page_post_category ) && ( $resourcesQuery->have_posts() ) ) :
-							echo '<div class="ll-equal-vert-padding prose |    border border-pink-400 border-dashed">';
+							echo '<div class="ll-equal-vert-padding prose border border-pink-400 border-dashed">';
 								echo '<h3>Resources</h3>';
 								echo '<ul class="cards-ic" data-cat="' . $page_post_category->slug . '">';
 								while ( $resourcesQuery->have_posts() ) :
@@ -146,8 +146,6 @@ $serviceParentsQuery = new WP_Query( $svc_parents_args );
 							echo '</div>';
 							endif;
 							?>
-
-							<div class="h-1">&nbsp;</div>
 						</div>
 
 					</div>

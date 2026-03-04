@@ -76,8 +76,6 @@ $page_state                     = get_field( 'll_page_state' );
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>
-
-							<div>&nbsp;</div>
 						</div>
 
 					</div>

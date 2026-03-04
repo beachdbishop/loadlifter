@@ -254,8 +254,6 @@ if ( $page_post_category ) {
 							echo '</div>';
 						endif;
 						?>
-
-						<div class="h-1">&nbsp;</div>
 					</div>
 
 				</div>
