@@ -6,8 +6,11 @@
   "apiVersion": 2,
   "style": "block-color-chip",
   "script": "",
-  "category": "dev",
-  "icon": "color-picker",
+  "category": "design",
+  "icon": {
+		"foreground": "#ce182d",
+		"src": "color-picker"
+	},
   "keywords": ["color", "colors"],
   "styles": [
     { "name": "default", "label": "Default", "isDefault": true },

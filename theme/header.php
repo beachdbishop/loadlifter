@@ -9,6 +9,10 @@
  * @package Load_Lifter
  */
 
+
+$new_nav = false;
+
+
 ?><!doctype html>
 <html <?php language_attributes(); ?> class="scroll-container">
 <head>
@@ -33,5 +37,9 @@
 	} elseif ( is_page_template( 'tpl-press-release-post.php' ) ) {
 		get_template_part( 'template-parts/layout/header', 'permadark' );
 	} else {
-		get_template_part( 'template-parts/layout/header', 'simple' );
+		if ( ll_is_local_environment() && ( $new_nav == true ) ) {
+			get_template_part( 'template-parts/layout/header', 'deeper' );
+		} else {
+			get_template_part( 'template-parts/layout/header', 'simple' );
+		}
 	} ?>

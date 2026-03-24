@@ -48,7 +48,7 @@ $query_reports_args = [
 		[
 			'taxonomy' => 'category',
 			'field' => 'slug',
-			'terms' => 'reports',
+			'terms' => ['reports', 'case-study'],
 			'operator' => 'IN',
 		],
 	],
@@ -139,11 +139,11 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 				if ( $reportsQuery->have_posts() ) :
 				?>
 					<div class="flex items-center justify-between mb-4">
-						<h3 class="font-semibold">Reports</h3>
+						<h3 class="font-semibold">Case Studies and Reports</h3>
 						<?php
-						if ( $reportsQuery->found_posts > $reports_limit ) :
-							echo '<a href="/category/reports/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
-						endif;
+						// if ( $reportsQuery->found_posts > $reports_limit ) :
+						// 	echo '<a href="/category/reports/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
+						// endif;
 						?>
 					</div>
 					<ul class="dps-grid-3max cards-ic">
@@ -157,7 +157,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 					</ul>
 				<?php
 				else :
-					echo ll_res_query_nope( 'Reports' );
+					echo ll_res_query_nope( 'Case Studies and Reports' );
 				wp_reset_query();
 				endif;
 				?>

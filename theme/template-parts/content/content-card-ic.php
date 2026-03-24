@@ -40,16 +40,36 @@ $peep_level = get_field( 'll_people_level' );
 			// 	$loc_fax_html = '';
 			// }
 			?>
-			<div class="not-italic mb-2" property="address" typeof="PostalAddress">
-				<p class="street-address  |  leading-snug" property="streetAddress"><?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
+			<!-- div class="not-italic mb-2" property="address" typeof="PostalAddress">
+				<p class="street-address  |  leading-snug" property="streetAddress"><?php // echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?></p>
 				<p class="locality  |  leading-snug mb-2">
-					<span property="addressLocality"><?php echo get_field( 'll_loc_city' ); ?></span>,
-					<span class="state" property="addressRegion"><?php echo get_field( 'll_loc_state' ); ?></span>
-					<span class="zip" property="postalCode"><?php echo get_field( 'll_loc_zip' ); ?></span>
+					<span property="addressLocality"><?php // echo get_field( 'll_loc_city' ); ?></span>,
+					<span class="state" property="addressRegion"><?php // echo get_field( 'll_loc_state' ); ?></span>
+					<span class="zip" property="postalCode"><?php // echo get_field( 'll_loc_zip' ); ?></span>
 				</p>
-				<p class="leading-snug" property="telephone"><?php echo ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach'); ?></p>
+				<p class="leading-snug" property="telephone"><?php // echo ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach'); ?></p>
 				<?php // echo $loc_fax_html; ?>
-			</div>
+			</div -->
+
+			<ul class="fa-ul space-y-4" style="--fa-li-margin: 2em">
+				<li class="street-address">
+					<span class="fa-li text-orient-800">
+						<i class="fa-regular fa-location-dot fa-fw"></i>
+					</span>
+					<?php echo get_field( 'll_loc_street1' ) . ', ' . get_field( 'll_loc_street2' ); ?><br />
+					<span class="locality">
+						<span><?php echo get_field( 'll_loc_city' ); ?></span>,
+						<span class="state"><?php echo get_field( 'll_loc_state' ); ?></span>
+						<span class="zip"><?php echo get_field( 'll_loc_zip' ); ?></span>
+					</span>
+				</li>
+				<li property="telephone">
+					<span class="fa-li text-orient-800">
+						<i class="fa-regular fa-phone fa-fw"></i>
+					</span>
+					<?php echo ll_format_phone_number( get_field( 'll_loc_phone' ), 'beach'); ?>
+				</li>
+			</ul>
 			<?php
 		} elseif ( 'people' === get_post_type() ) {
 			?>

@@ -7,7 +7,10 @@
   "style": "block-ad",
   "script": "",
   "category": "text",
-  "icon": "embed-photo",
+  "icon": {
+		"foreground": "#ce182d",
+		"src": "embed-photo"
+	},
   "keywords": ["ad", "promo", "banner"],
   "styles": [
     { "name": "default", "label": "Default", "isDefault": true },
