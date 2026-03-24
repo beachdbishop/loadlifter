@@ -83,7 +83,7 @@ if ( $peepauthor ) {
 							echo sprintf( '<h2 class="mt-2 text-neutral-700  |  dark:text-neutral-400 print:text-base">%1$s</h2>', get_field( 'll_people_title' ) );
 						}
 
-						if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
+						if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) || ( get_field( 'll_people_linkedin' )) ) {
 							echo '<div class="py-4 my-4 space-x-4 border-t border-b border-solid border-neutral-200 text-neutral-700  |  dark:text-neutral-400 dark:border-neutral-700 print:my-1 print:text-sm">';
 								$peep_department = get_field_object( 'll_people_department' );
 								$peep_dept_value = $peep_department['value'];
@@ -96,6 +96,10 @@ if ( $peepauthor ) {
 								$peep_loc = $peep_loc_value['label'];
 								if ( $peep_loc ) {
 									ll_people_show_location( $peep_loc );
+								}
+
+								if ( get_field( 'll_people_linkedin' ) ) {
+									echo sprintf( '<span><a href="%1$s" target="_blank" rel="noopener" class=""><i class="fa-brands fa-linkedin"></i> LinkedIn</a></span>', esc_url( get_field( 'll_people_linkedin' ) ) );
 								}
 
 							echo '</div>';
