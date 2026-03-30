@@ -1,0 +1,43 @@
+/* Custom LL Image with Text styles */
+.icon-with-text-item {
+	display: flex;
+	flex-direction: column;
+	gap: --spacing(2);
+
+	&.has-background {
+		padding: --spacing(4);
+		margin-block-start: 0;
+
+		&:first-of-type {
+			border-radius: --spacing(2) --spacing(2) 0 0;
+		}
+		&:last-of-type {
+			border-radius: 0 0 --spacing(2) --spacing(2);
+		}
+	}
+}
+
+.icon-with-text-item .item-icon {
+	display: flex;
+	justify-content: center;
+	order: 0;
+}
+.icon-with-text-item .acf-innerblocks-container {
+	order: 1;
+}
+
+
+@container content-area (width >= 32rem) {
+	/* 512px */
+	.icon-with-text-item {
+		flex-direction: row;
+		place-items: start;
+		align-items: center;
+		gap: --spacing(4);
+	}
+
+	.icon-with-text-item .item-icon {
+		justify-content: start;
+		gap: 0;
+	}
+}

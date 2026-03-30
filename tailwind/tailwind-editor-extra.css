@@ -15,9 +15,38 @@
  * This allows you to use classes from both the default Tailwind theme and
  * your custom theme.
  */
- @reference "./tailwind-theme.css";
+@reference "./tailwind-theme.css";
 
- .entry-header,
- .entry-content {
-	 @apply px-8;
- }
+.entry-header,
+.entry-content {
+	@apply px-8;
+}
+.wp-block-loadlifter-icon-with-text {
+	display: flex;
+	flex-direction: row;
+	place-items: start;
+	align-items: center;
+	gap: --spacing(4);
+
+	&.has-background {
+		padding: --spacing(4);
+		margin-block-start: 0;
+
+		&:first-of-type {
+			border-radius: --spacing(2) --spacing(2) 0 0;
+		}
+		&:last-of-type {
+			border-radius: 0 0 --spacing(2) --spacing(2);
+		}
+	}
+}
+
+.wp-block-loadlifter-icon-with-text .item-icon {
+	display: flex;
+	justify-content: start;
+	gap: 0;
+	order: 0;
+}
+.wp-block-loadlifter-icon-with-text .acf-innerblocks-container {
+	order: 1;
+}
