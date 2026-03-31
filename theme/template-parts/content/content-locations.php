@@ -76,7 +76,7 @@ $page_cta_button_text = "Contact us";
 				<?php the_content(); ?>
 
 
-				<section class="flex gap-4 my-6  |  md:gap-8 lg:my-12">
+				<section class="flex flex-col gap-6 my-6  |  lg:flex-row lg:my-12">
 					<div class="space-y-4 shrink">
 						<h2><?php echo LL_COMPANY_NICE_NAME . ' ' . get_field( 'll_loc_city' ); ?></h2>
 						<ul class="fa-ul space-y-4" style="--fa-li-margin: 2em">
