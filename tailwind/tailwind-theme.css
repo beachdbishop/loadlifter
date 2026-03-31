@@ -99,6 +99,8 @@
 	--papercorner-144: 144px;
 	--papercorner-auto: clamp(3.75rem, 2.659rem + 5.45vw, 6.75rem);
 
+	--map-transition: 0.3s;
+
 	--animate-fade-in-from-top: fade-in-from-top 600ms ease-out;
 	--animate-move-bg: move-bg 16s ease infinite;
 
