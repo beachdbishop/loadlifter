@@ -193,7 +193,7 @@ if ( $page_post_category ) {
 						<?php if ( ( $page_post_category ) && ( $postsQuery->have_posts() ) ) : ?>
 
 							<section class="full-bleed not-prose ll-equal-vert-padding bg-repeat  |  print:hidden"
-								style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/wavey-fingeprint.png');">
+								style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/wavey-fingerprint.png');">
 								<div class="post-grid  |  px-2  |  lg:px-4">
 									<div class="flex items-center justify-between mb-4">
 										<h2>Insights</h2>
