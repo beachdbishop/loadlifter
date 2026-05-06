@@ -35,8 +35,9 @@ $page_cta_body 									= get_field( 'll_ind_cta_body' );
 $page_cta_button_text 					= get_field( 'll_ind_cta_button_text' );
 $page_cta_html 									= get_field( 'll_ind_cta_html' );
 $page_groups_html 							= get_field( 'll_ind_groups_html' );
-$page_people 										= get_field( 'll_ind_people' );
 $page_people_display 						= get_field( 'll_ind_people_display_style' );
+$page_people_heading						= get_field( 'll_ind_people_heading' );
+$page_people 										= get_field( 'll_ind_people' );
 $page_form 											= get_field( 'ls_hs_form_html' );
 $hero_cta1_text 								= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url 									= get_field( 'll_hero_cta1_url' );
@@ -134,10 +135,11 @@ if ( $page_post_category ) {
 								$wrapper_class = count( $page_people ) > 4 ? 'slider slider-people' : 'dps-grid-4max';
 								$wrapper_part = count( $page_people ) > 4 ? 'slide-people' : 'card-people-md';
 							?>
-								<h2 class="print:hidden">
+								<h2 class="lg:mt-8 print:hidden">
 									<?php
-									$title_term = ( $post->post_parent == $page_id_industries ) ? 'Industry Professional' : 'Our Advisor';
-									echo ll_is_plural( $page_people ) ? "{$title_term}s" : $title_term;
+									// $title_term = ( $post->post_parent == $page_id_industries ) ? 'Industry Professional' : 'Our Advisor';
+									// echo ll_is_plural( $page_people ) ? "{$title_term}s" : $title_term;
+									echo !empty( $page_people_heading ) ? $page_people_heading : "Our Advisors";
 									?>
 								</h2>
 
@@ -157,9 +159,7 @@ if ( $page_post_category ) {
 
 							<?php
 							if ( !empty( $page_groups_html ) ) :
-								// echo '<div class="mt-12 space-y-6">';
 								echo do_shortcode( $page_groups_html );
-								// echo '</div>';
 							endif;
 							?>
 						<?php endif; ?>
