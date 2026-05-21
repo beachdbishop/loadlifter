@@ -15,15 +15,22 @@ $site_seo_footer = get_field('seo_footer_text', 'option');
 if (!is_page_template('tpl-landing-page-bare.php')) {
 	?>
 
-	<footer id="colophon"
-		class="site-footer wp-block-cover alignfull is-light text-white ll-equal-vert-padding !px-0 bg-neutral-950  |  print:text-neutral-700 print:bg-white lg:sticky lg:bottom-0">
-		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-60 has-background-dim"></span>
-		<div role="img" aria-label="The Arizona desert at sunrise"
-			class="wp-block-cover__image-background bg-center bg-no-repeat  |  lg:bg-position-[0 50%] print:hidden"
-			style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
-
+	<footer
+		id="colophon"
+		class="site-footer wp-block-cover alignfull is-light text-white ll-equal-vert-padding px-0! bg-neutral-950  |  print:text-neutral-700 print:bg-white lg:sticky lg:bottom-0"
+	>
+		<span
+			aria-hidden="true"
+			class="wp-block-cover__background has-background-dim-60 has-background-dim"
+		></span>
 		<div
-			class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-4">
+			role="img"
+			aria-label="The Arizona desert at sunrise"
+			class="wp-block-cover__image-background bg-center bg-no-repeat  |  lg:bg-position-[0 50%] print:hidden"
+			style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')">
+		</div>
+
+		<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 space-y-8 | lg:px-4">
 
 			<div class="max-w-xs mb-4 fill-current">
 				<a href="<?php bloginfo('url'); ?>" aria-label="<?php echo bloginfo('name'); ?>">

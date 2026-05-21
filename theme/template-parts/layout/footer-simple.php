@@ -22,9 +22,20 @@ if ( ( !is_page_template( LL_LP_TEMPLATES ) ) && ( $show_expanded_menus ) ) {
 if ( !is_page_template( 'tpl-landing-page-bare.php' ) ) {
 	?>
 
-	<footer id="colophon" class="site-footer  |  wp-block-cover alignfull ll-equal-vert-padding !px-0 bg-neutral-950  |  lg:sticky lg:bottom-0 print:border-none print:bg-white">
-		<span aria-hidden="true" class="wp-block-cover__background has-background-dim-70 has-background-dim print:hidden"></span>
-		<div role="img" aria-label="The Arizona desert at sunrise" class="deferred wp-block-cover__image-background bg-center bg-cover bg-no-repeat  |  lg:bg-position-[0 50%] print:hidden" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"></div>
+	<footer
+		id="colophon"
+		class="site-footer  |  wp-block-cover alignfull ll-equal-vert-padding px-0! bg-neutral-950  |  lg:sticky lg:bottom-0 print:border-none print:bg-white"
+	>
+		<span
+			aria-hidden="true"
+			class="wp-block-cover__background has-background-dim-70 has-background-dim print:hidden"
+		></span>
+		<div
+			role="img"
+			aria-label="The Arizona desert at sunrise"
+			class="wp-block-cover__image-background bg-center bg-cover bg-no-repeat  |  lg:bg-position-[0 50%] print:hidden"
+			style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/phx-desert-color-no-crop.jpg')"
+		></div>
 
 		<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2  |  lg:px-4">
 			<div class="footer-grid  |  grid grid-cols-1 gap-x-8 gap-y-12 text-neutral-100  |  md:grid-cols-2 lg:grid-cols-5 print:hidden print:text-neutral-700">
