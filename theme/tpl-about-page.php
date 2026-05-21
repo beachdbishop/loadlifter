@@ -80,7 +80,7 @@ $cards_about = [
 
 							<?php if ( is_page('temporarilydisablingthischeck--about') ) : ?>
 								<?php // Just before launch, we decided to omit this display on the About Us page. Keeping the code just in case... ?>
-								<div class="not-prose ind-card-flips is-style-blue">
+								<div class="not-prose ll-card-flips is-style-blue">
 									<?php foreach( $cards_about as $card ) {
 										echo '<div class="ind-' . $card['icon'] . '">
 											<a href="' . $card['link'] . '" rel="bookmark">

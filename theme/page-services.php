@@ -74,7 +74,7 @@ $serviceParentsQuery = new WP_Query( $svc_parents_args );
 							the_content();
 
 							if ( $serviceParentsQuery->have_posts() ) :
-								echo '<div class="ind-card-flips is-style-blue max-w-6xl">';
+								echo '<div class="ll-card-flips is-style-blue max-w-6xl">';
 
 								while ( $serviceParentsQuery->have_posts() ) :
 									$serviceParentsQuery->the_post();

@@ -32,6 +32,19 @@ $new_nav = false;
 <div id="page">
 	<a href="#primary" class="sr-only"><?php esc_html_e( 'Skip to content', 'loadlifter' ); ?></a>
 
+	<?php
+	/**
+	 * if the Markdown Alternate plugin is active AND the currently viewed item is in
+	 * the list of post types below, output a visually hidden notice indicating that
+	 * there is a Markdown version of this url available optimized for AI/LLM tools.
+	 */
+	if ( ( is_plugin_active( 'markdown-alternate-main/markdown-alternate.php' ) ) && in_array( get_post_type(), ['page', 'post', 'people', 'locations'], true ) ) {
+		$curr = get_permalink();
+		$md_url = untrailingslashit( $curr ) . '.md';
+		echo '<div class="sr-only" aria-hidden="true">A Markdown version of this page is available at ' . esc_url( $md_url ) . ' &mdash; optimized for AI and LLM tools.</div>';
+	}
+	?>
+
 	<?php if ( is_page_template( LL_LP_TEMPLATES ) ) {
     get_template_part( 'template-parts/layout/header', 'lp');
 	} elseif ( is_page_template( 'tpl-press-release-post.php' ) ) {

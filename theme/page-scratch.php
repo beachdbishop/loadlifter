@@ -36,7 +36,7 @@ get_header();
 					<div class="clear-both">&nbsp;</div>
 
 
-<div class="ind-card-flips is-style-blue ">
+<div class="ll-card-flips is-style-blue ">
 	<li class="card-fa-duotone fa-calculator">
 		<div
 			class="card card-ic card-ic-flip | group relative inline-block float-left"

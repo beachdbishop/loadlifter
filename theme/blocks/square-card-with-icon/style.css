@@ -1,0 +1,151 @@
+/* Block: Square Card with Icon */
+
+.ll-card-flips {
+	--_card-text-shadow: 0px 1px 0px rgb(0 0 0 / 0.1),
+			0px 1px 1px rgb(0 0 0 / 0.1),
+			0px 2px 2px rgb(0 0 0 / 0.1);
+}
+
+.ll-card-flips:has(.square-card) .sq-small {
+	width: var(--sqcard-small);
+	height: var(--sqcard-small);
+	perspective: 500px;
+}
+
+.ll-card-flips:has(.square-card) .sq-large {
+	width: var(--sqcard-large);
+	height: var(--sqcard-large);
+	perspective: 600px;
+}
+
+
+.square-card .card-content {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 0.5rem;
+}
+
+
+.square-card .card-front,
+.square-card .card-back {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.5rem;
+	padding-inline: calc(var(--spacing) * 4);
+
+	h3 {
+		color: currentColor;
+		line-height: 1;
+	}
+	h3,
+	p {
+		text-shadow: var(--_card-text-shadow);
+	}
+}
+
+.square-card .card-front {
+	background-color: var(--_card-front-bg);
+	color: var(--_card-front-text);
+	text-align: center;
+	backface-visibility: hidden;
+}
+
+.square-card .card-back {
+	background-color: var(--_card-back-bg);
+	color: var(--_card-back-text);
+	background-repeat: no-repeat;
+	background-size: cover ;
+	background-blend-mode: overlay;
+
+	h3 {
+		letter-spacing: 0.025em;
+		text-align: center;
+		text-transform: uppercase;
+	}
+}
+
+.square-card .card-icon {
+	color: var(--_card-front-icon);
+}
+
+
+.sq-small .card-front,
+.sq-small .card-back { gap: calc(var(--spacing) * 2); }
+.sq-small .card-front {
+	h3 { font-size: var(--text-2xl); }
+}
+.sq-small .card-back {
+	h3 { font-size: var(--text-xl); }
+}
+
+.sq-large .card-front,
+.sq-large .card-back { gap: calc(var(--spacing) * 3); }
+.sq-large .card-front {
+	h3 { font-size: var(--text-3xl); }
+}
+.sq-large .card-back {
+	h3 { font-size: var(--text-2xl); }
+}
+
+
+.square-card:hover .card-front {
+	@media (hover: hover) {
+    background-color: transparent;
+  }
+}
+
+/* .group-hover\:bg-white {
+  &:is(:where(.group):hover *) {
+    @media (hover: hover) {
+      background-color: var(--color-white) ;
+    }
+  }
+} */
+
+
+.ll-card-flips {
+	/* .flip-no .card-front {
+		background-color: var(--color-neutral-50);
+		color: var(--color-orient-800);
+	}
+	.square-card:hover .flip-no .card-front {
+		background-color: var(--color-white);
+	} */
+
+	.flip-no .card-front {
+		border-width: 1px;
+		border-style: solid;
+		border-color: var(--color-neutral-50);
+
+		@media (prefers-color-scheme: dark) {
+			border-color: var(--color-neutral-800);
+		}
+	}
+
+	.square-card:hover .flip-yes .card-content,
+	.square-card:active .flip-yes .card-content,
+	.square-card:focus .flip-yes .card-content {
+		transform: rotateY(180deg);
+	}
+
+	.square-card:hover .flip-no .card-content {
+		transform: none;
+	}
+
+
+
+	.flip-yes .card-content {
+		transform-style: preserve-3d;
+	}
+	.flip-yes .card-back {
+		backface-visibility: hidden;
+		transform: rotateY(180deg);
+	}
+}

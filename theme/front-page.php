@@ -130,7 +130,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 					<?php
 					if ( $industriesQuery->have_posts() ) :
 					?>
-						<div class="ind-card-flips is-style-default mx-auto max-w-6xl">
+						<div class="ll-card-flips is-style-default mx-auto max-w-6xl">
 						<?php
 						while ( $industriesQuery->have_posts() ) :
 							$industriesQuery->the_post();

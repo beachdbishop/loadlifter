@@ -14,7 +14,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.5.3' );
+	define( 'LL_VERSION', '3.6.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -181,6 +181,7 @@ if ( ! function_exists( 'll_setup' ) ) :
 		add_post_type_support( 'page', 'excerpt' );
 
 		add_filter( 'feed_links_show_comments_feed', '__return_false' );
+		// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 		// remove_theme_support( 'block-templates' ); // <-- FSE?
 		remove_action( 'wp_head', 'rsd_link' );
@@ -395,6 +396,20 @@ function add_search_item_to_utility_nav( $items, $args ) {
 	return $items;
 }
 add_filter( 'wp_nav_menu_items', 'add_search_item_to_utility_nav', 10, 2 );
+
+
+/**
+ * Block AI functionality added in WordPress 7.0
+ */
+add_filter( 'wpai_enabled_connectors', '__return_false' );
+
+
+add_filter( 'markdown_alternate_supported_post_types', function( $types ) {
+	$types[] = 'people';
+	$types[] = 'locations';
+
+	return $types;
+} );
 
 
 /**

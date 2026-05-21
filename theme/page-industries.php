@@ -69,7 +69,7 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 
 							if ( $industriesQuery->have_posts() ) :
 								echo '<h2>Industries we serve</h2>';
-								echo '<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="ind-card-flips is-style-blue mx-auto !max-w-2xl">';
+								echo '<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="ll-card-flips is-style-blue mx-auto !max-w-2xl">';
 
 								while ( $industriesQuery->have_posts() ) :
 									$industriesQuery->the_post();

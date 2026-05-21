@@ -6,9 +6,14 @@
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 300ms;
 }
-.cards-ic:has(:hover) .card-ic:not(:hover) {
-	opacity: 70%;
+.cards-ic .card-ic {
+	opacity: 0.8;
+
+	&:hover {
+		opacity: 1;
+	}
 }
+
 .card-ic:focus-within a:focus {
 	text-decoration-line: none;
 }
@@ -26,11 +31,11 @@
 }
 
 .card-ic + .card-ic {
-	margin-top: 1.5rem;
+	margin-block-start: 1.5rem;
 }
 @supports (display: grid) {
 	.card-ic + .card-ic {
-		margin-top: 0;
+		margin-block-start: 0;
 	}
 }
 

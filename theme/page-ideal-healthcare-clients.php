@@ -203,7 +203,7 @@ $shared_values = [
 						<div class="px-2  |  lg:px-4">
 							<h2 class="text-brand-blue-dark  |  dark:text-neutral-200 ">Shared values</h2>
 							<p class="my-2">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
-							<div class="mt-4 ind-card-flips is-style-white ">
+							<div class="mt-4 ll-card-flips is-style-white ">
 								<?php
 								foreach ( $shared_values as $value ) {
 									echo '<div class="card-' . $value['icon'] . '">

@@ -759,6 +759,9 @@ endif;
 
 if ( ! function_exists( 'll_no_link_card' ) ) :
 	function ll_no_link_card( $card ) {
+
+
+		/* Yes Flip, No Link, Large */
 		echo '<div>
 			<div class="card | relative inline-block float-left w-(--_card-size) h-(--_card-size) [perspective:600px]" style="--_card-back-bg: #092f42">
 				<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 [transform-style:preserve-3d] dark:shadow-none">
@@ -778,6 +781,8 @@ if ( ! function_exists( 'll_no_link_card' ) ) :
 				</div>
 			</div>
 		</div>';
+
+
 	}
 endif;
 

@@ -78,6 +78,9 @@
 	--height-hero: 360px;
 	--nav-height: 124px;
 
+	--sqcard-small: clamp(11.25rem, 10.795rem + 2.27vw, 12.5rem);
+	--sqcard-large: clamp(15rem, 13.909rem + 5.45vw, 18rem);
+
 	--aspect-headshot: 95 / 127;
 	--aspect-featured-image: 384 / 125;
 	--aspect-feat-375: 3.75 / 1;
