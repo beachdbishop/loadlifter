@@ -141,7 +141,7 @@ $shared_values = [
 ];
 ?>
 
-<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 	<?php
 	while (have_posts()) :
@@ -150,10 +150,10 @@ $shared_values = [
 
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('py-12'); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4  |  lg:py-12'); ?>>
+			<div class="px-2 container  |  lg:px-4">
 
-				<div <?php ll_content_class( 'entry-conten ' ); ?>>
+				<div <?php ll_content_class( 'entry-content' ); ?>>
 					<div class="prose  |  lg:max-w-[900px]">
 						<?php the_content(); ?>
 					</div>
@@ -200,10 +200,10 @@ $shared_values = [
 
 
 					<section class="full-bleed py-6 bg-orient-50  |  dark:bg-neutral-950 lg:py-12">
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2  |  lg:px-4">
 							<h2 class="text-brand-blue-dark  |  dark:text-neutral-200 ">Shared values</h2>
 							<p class="my-2">Building relationships with clients who share our core values is central to our service approach. These principles foster a mutually beneficial partnership built on trust and collaboration.</p>
-							<div class="mt-4 ind-card-flips is-style-white ">
+							<div class="mt-4 ll-card-flips is-style-white ">
 								<?php
 								foreach ( $shared_values as $value ) {
 									echo '<div class="card-' . $value['icon'] . '">
@@ -234,7 +234,7 @@ $shared_values = [
 
 
 					<section class="full-bleed py-6 break-inside-avoid  |  lg:py-12 print:hidden">
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2  |  lg:px-4">
 							<div class="space-y-2">
 								<h2 class="text-brand-red"><a name="partner"></a>Partner with BeachFleischman today</h2>
 								<p class="lg:max-w-[900px]">Discover how BeachFleischman's healthcare accounting and financial services can support your practice. Schedule a consultation with one of our tax professionals to explore tailored solutions for your financial needs.</p>
@@ -251,7 +251,7 @@ $shared_values = [
 												hsScript.src='//js.hsforms.net/forms/v2.js';
 												hsScript.onload = function() {
 													hbspt.forms.create({
-														region: "na1",
+														region: "na2",
 														portalId: "5578910",
 														target: '#llhsform',
 														formId: "c8675641-3e68-4ff7-9dc3-ae3636fbf1c8"
@@ -275,6 +275,8 @@ $shared_values = [
 		</article>
 
 	<?php endwhile; ?>
+
+	<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 </main>
 

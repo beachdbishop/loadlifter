@@ -72,10 +72,14 @@
 	--font-head: serenity, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'Fira Code', Consolas, monospace;
+	--font-work: 'Work Sans', sans-serif;
 	--container-content: var(--wp--style--global--content-size);
 	--container-wide: var(--wp--style--global--wide-size);
 	--height-hero: 360px;
 	--nav-height: 124px;
+
+	--sqcard-small: clamp(11.25rem, 10.795rem + 2.27vw, 12.5rem);
+	--sqcard-large: clamp(15rem, 13.909rem + 5.45vw, 18rem);
 
 	--aspect-headshot: 95 / 127;
 	--aspect-featured-image: 384 / 125;
@@ -83,6 +87,7 @@
 	--aspect-feat-43: 4.3 / 1;
 	--aspect-card: 2 / 1;
 
+	--radius-5xl: 4rem;
 	--papercorner-4: 4px;
 	--papercorner-6: 6px;
 	--papercorner-8: 8px;
@@ -96,6 +101,8 @@
 	--papercorner-84: 84px;
 	--papercorner-144: 144px;
 	--papercorner-auto: clamp(3.75rem, 2.659rem + 5.45vw, 6.75rem);
+
+	--map-transition: 0.3s;
 
 	--animate-fade-in-from-top: fade-in-from-top 600ms ease-out;
 	--animate-move-bg: move-bg 16s ease infinite;

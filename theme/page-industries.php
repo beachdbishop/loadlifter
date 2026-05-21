@@ -49,7 +49,7 @@ $ind_parents_args = [
 $industriesQuery = new WP_Query( $ind_parents_args );
 ?>
 
-	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -59,7 +59,7 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 			<?php echo ll_better_page_hero( $page_title, $page_message, $hero_cta1_text, $hero_cta1_url, $hero_cta2_text, $hero_cta2_url ); ?>
 
 			<article id="post-<?php the_ID(); ?>"	<?php post_class(); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
@@ -69,7 +69,7 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 
 							if ( $industriesQuery->have_posts() ) :
 								echo '<h2>Industries we serve</h2>';
-								echo '<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="ind-card-flips is-style-blue mx-auto !max-w-2xl">';
+								echo '<div class="wp-block-group is-layout-flow wp-block-group-is-layout-flow"><div class="ll-card-flips is-style-blue mx-auto !max-w-2xl">';
 
 								while ( $industriesQuery->have_posts() ) :
 									$industriesQuery->the_post();
@@ -112,7 +112,7 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 						<div class="ll-page-grid-area-c">
 							<?php
 							if ( get_field( 'll_normal_contact_form_location' ) == 1 ) :
-								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
+								echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
 								get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
 								echo '</div>';
 							endif;
@@ -120,29 +120,28 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 
 							<?php
 							if ( ( get_field( 'll_normal_contact_form_location' ) != 1 ) && ( $page_form ) ) :
-								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
+								echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif;
 							?>
 
-							<?php if ( ( $page_post_category ) && ( $resourcesQuery->have_posts() ) ) :
-							echo '<div class="ll-equal-vert-padding prose |    border border-pink-400 border-dashed">';
-								echo '<h3>Resources</h3>';
-								echo '<ul class="cards-ic" data-cat="' . $page_post_category->slug . '">';
-								while ( $resourcesQuery->have_posts() ) :
-									$resourcesQuery->the_post();
-									global $post;
+							<?php
+							// if ( ( $page_post_category ) && ( $resourcesQuery->have_posts() ) ) :
+							// 	echo '<div class="ll-equal-vert-padding prose |    border border-pink-400 border-dashed">';
+							// 		echo '<h3>Resources</h3>';
+							// 		echo '<ul class="cards-ic" data-cat="' . $page_post_category->slug . '">';
+							// 		while ( $resourcesQuery->have_posts() ) :
+							// 			$resourcesQuery->the_post();
+							// 			global $post;
 
-									// echo '<li><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . the_title() . '</a></li>';
-									the_title( '<li class=""><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
-								endwhile;
-								echo '</ul>';
-							echo '</div>';
-							endif;
+							// 			// echo '<li><a href="' . esc_url( get_permalink( $post->ID ) ) . '">' . the_title() . '</a></li>';
+							// 			the_title( '<li class=""><a href="' . esc_url( get_permalink() ) . '">', '</a></li>' );
+							// 		endwhile;
+							// 		echo '</ul>';
+							// 	echo '</div>';
+							// endif;
 							?>
-
-							<div class="h-1">&nbsp;</div>
 						</div>
 
 					</div>
@@ -163,6 +162,8 @@ $industriesQuery = new WP_Query( $ind_parents_args );
 		<?php
 		endwhile; // End of the loop.
 		?>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

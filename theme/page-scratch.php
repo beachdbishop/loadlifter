@@ -15,7 +15,7 @@
 get_header();
 ?>
 
-<main id="primary" class="bg-amber-50  |  dark:bg-amber-900">
+<main id="primary" class="bg-amber-50 relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-amber-900">
 	<?php
 	while (have_posts()) :
 		the_post();
@@ -23,7 +23,7 @@ get_header();
 	    ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-4  |  md:py-6 lg:py-8'); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-4">
 
 				<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
@@ -34,6 +34,134 @@ get_header();
 				<div class="prose entry-content  |  lg:prose-xl">
 					<?php the_content(); ?>
 					<div class="clear-both">&nbsp;</div>
+
+
+<div class="ll-card-flips is-style-blue ">
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-file-xmark fa-stack-1x "></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Claim denial management
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Claim denial management
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Identify trends in denied claims and recommend strategies to reduce costly disruptions and speed up reimbursements.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-rectangle-history-circle-user fa-stack-1x"></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Medical <br />collections
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Medical collections
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Strengthen your patient collections process to increase revenue and reduce outstanding balances.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-credit-card fa-stack-1x"></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Charge capture optimization
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Charge capture optimization
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Analyze your current processes and help implement systems to capture billable services properly, reduce revenue leakage, and maximize reimbursements.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+
+	<li class="card-fa-duotone fa-calculator">
+		<div
+			class="card card-ic card-ic-flip | group relative inline-block float-left"
+			style="cursor: pointer"
+		>
+			<div class="card-content | absolute w-full h-full rounded-lg shadow-lg shadow-neutral-300 transition-transform ease-out duration-700 | dark:shadow-none">
+				<div class="card-front | text-center absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 [backface-visibility:hidden]">
+					<div class="card-icon">
+						<span class="fa-stack fa-2x">
+							<i class="text-white fa-solid fa-circle fa-stack-2x  |  dark:text-neutral-900"></i>
+							<i class="fa-sharp-duotone fa-light fa-file-invoice-dollar fa-stack-1x"></i>
+						</span>
+					</div>
+
+					<h3 class="mt-2 font-light leading-none text-current text-xl">
+						Bad debt
+					</h3>
+				</div>
+				<div
+					class="card-back | absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4 bg-no-repeat bg-cover bg-blend-overlay shadow-neutral-900/50">
+					<h3	class="text-xl my-2 leading-none tracking-wide text-center text-current uppercase text-shadow">
+						Bad debt&nbsp;<br />
+					</h3>
+					<p class="text-center text-pretty text-shadow">
+						Establish proactive strategies, such as upfront payments and efficient receivables tracking, to decrease unpaid balances and minimize financial risk.
+					</p>
+				</div>
+			</div>
+		</div>
+	</li>
+</div>
+
 
 					<?php // echo do_shortcode( '[display-posts post_type="post" date_query_after="2021-12-31" date_query_before="2023-07-01" layout="table-urls" /]' ); ?>
 
@@ -48,7 +176,7 @@ get_header();
 
 					<?php echo do_shortcode( '[cyberdisclaimer /]' ); ?>
 
-					<div class="not-prose">
+					<div class="not-prose font-work">
 						<p class="mb-4  |  lg:mb-8">This paragraph is inside a <code>.not-prose</code> container and should have an arrow icon at the end of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, inventore! Excepturi ratione omnis qui, saepe animi blanditiis distinctio neque maiores, ipsa quo consequatur! Unde provident dolorum fugiat libero ullam rem. <i class="fa-regular fa-arrow-right"></i></p>
 
 						<section class="group bg-gray-500 text-white bg-blend-multiply  |  md:rounded-lg  lg:mx-auto lg:max-w-5xl" style="background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1595894445/feat__20200727--opportunity-zones_hdzthd.jpg')">
@@ -111,6 +239,8 @@ get_header();
 		</article>
 
     <?php endwhile; ?>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 </main><!-- #main -->
 <?php

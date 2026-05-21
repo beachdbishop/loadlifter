@@ -2,41 +2,84 @@
  * Custom styles to immediately follow Tailwind’s `base` layer
 */
 
-
 body {
 	--tw-text-opacity: 1;
 	font-family: var(--font-sans);
-  color: var(--color-neutral-800);
+	color: var(--color-neutral-800);
 }
 
+.dlig {
+	font-variant-ligatures: discretionary-ligatures;
+}
+.hlig {
+	font-variant-ligatures: historical-ligatures;
+}
+.dlig.hlig {
+	font-variant-ligatures: discretionary-ligatures historical-ligatures;
+} /* Apply both historic and discretionary */
 
-.dlig { font-variant-ligatures: discretionary-ligatures; }
-.hlig { font-variant-ligatures: historical-ligatures; }
-.dlig.hlig { font-variant-ligatures: discretionary-ligatures historical-ligatures; } /* Apply both historic and discretionary */
+.pnum {
+	font-variant-numeric: proportional-nums;
+}
+.tnum {
+	font-variant-numeric: tabular-nums;
+}
+.lnum {
+	font-variant-numeric: lining-nums;
+}
+.onum {
+	font-variant-numeric: oldstyle-nums;
+}
+.zero {
+	font-variant-numeric: slashed-zero;
+}
+.pnum.zero {
+	font-variant-numeric: proportional-nums slashed-zero;
+} /* Apply slashed zeroes to proportional numerals */
+.tnum.zero {
+	font-variant-numeric: tabular-nums slashed-zero;
+}
+.lnum.zero {
+	font-variant-numeric: lining-nums slashed-zero;
+}
+.onum.zero {
+	font-variant-numeric: oldstyle-nums slashed-zero;
+}
+.tnum.lnum.zero {
+	font-variant-numeric: tabular-nums lining-nums slashed-zero;
+}
 
-.pnum { font-variant-numeric: proportional-nums; }
-.tnum { font-variant-numeric: tabular-nums;    }
-.lnum { font-variant-numeric: lining-nums; }
-.onum { font-variant-numeric: oldstyle-nums; }
-.zero { font-variant-numeric: slashed-zero;    }
-.pnum.zero { font-variant-numeric: proportional-nums slashed-zero; } /* Apply slashed zeroes to proportional numerals */
-.tnum.zero { font-variant-numeric: tabular-nums slashed-zero; }
-.lnum.zero { font-variant-numeric: lining-nums slashed-zero; }
-.onum.zero { font-variant-numeric: oldstyle-nums slashed-zero; }
-.tnum.lnum.zero { font-variant-numeric: tabular-nums lining-nums slashed-zero; }
-
-.frac { font-variant-numeric: diagonal-fractions; }
-.afrc { font-variant-numeric: stacked-fractions; }
-.ordn { font-variant-numeric: ordinal; }
-.smcp { font-variant-caps: small-caps; }
-.c2sc { font-variant-caps: unicase; }
-.hist { font-variant-alternates: historical-forms; }
-
+.frac {
+	font-variant-numeric: diagonal-fractions;
+}
+.afrc {
+	font-variant-numeric: stacked-fractions;
+}
+.ordn {
+	font-variant-numeric: ordinal;
+}
+.smcp {
+	font-variant-caps: small-caps;
+}
+.c2sc {
+	font-variant-caps: unicase;
+}
+.hist {
+	font-variant-alternates: historical-forms;
+}
 
 /* we only have 300 and 600 weights of Serenity */
-:where(h1, h2, h3, h4, h5, h6) strong, b, th { font-weight: 600; }
+:where(h1, h2, h3, h4, h5, h6) strong,
+b,
+th {
+	font-weight: 600;
+}
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
 	font-family: var(--font-head);
 	font-weight: 300;
 	font-variant-numeric: lining-nums;
@@ -44,44 +87,53 @@ h1, h2, h3, h4, h5 {
 }
 
 @supports (text-wrap: balance) {
-	h1, h2, h3,	h4,	h5 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
 		text-wrap: balance;
 	}
 }
 
 h1 {
-	font-size: 3rem;
-}
-h2 {
 	font-size: 2.25rem;
 }
-h3 {
+h2 {
 	font-size: 1.875rem;
 }
-h4 {
+h3 {
 	font-size: 1.5rem;
 }
-h5 {
+h4 {
 	font-size: 1.25rem;
 }
-h6 {
+h5 {
 	font-size: 1.125rem;
+}
+h6 {
+	font-size: 1rem;
 	text-transform: uppercase;
 	letter-spacing: 0.025em;
 }
 
-td, math, time[datetime*=":"] {
+td,
+math,
+time[datetime*=":"] {
 	font-variant-numeric: tabular-nums lining-nums slashed-zero;
 }
-
 
 :focus {
 	outline: 2px dashed;
 }
 
+:target {
+	scroll-margin-block-start: 4em;
+}
 
-@supports ( font-variant-position: sub ) {
-	sub, .sub {
+@supports (font-variant-position: sub) {
+	sub,
+	.sub {
 		vertical-align: baseline;
 		font-size: 100%;
 		line-height: inherit;
@@ -89,8 +141,9 @@ td, math, time[datetime*=":"] {
 	}
 }
 
-@supports ( font-variant-position: super ) {
-	sup, .sup {
+@supports (font-variant-position: super) {
+	sup,
+	.sup {
 		vertical-align: baseline;
 		font-size: 100%;
 		line-height: inherit;
@@ -115,8 +168,17 @@ td, math, time[datetime*=":"] {
 	hyphenate-limit-last: always; */
 }
 
-.prose pre, .prose code, .prose var, .prose samp, .prose kbd,
-.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+.prose pre,
+.prose code,
+.prose var,
+.prose samp,
+.prose kbd,
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
 	-webkit-hyphens: manual;
 	hyphens: manual;
 }
@@ -143,16 +205,46 @@ td, math, time[datetime*=":"] {
 	border-bottom: 2px solid var(--color-orient-600);
 } */
 
-:lang(en) > * { quotes: '“' '”' '‘' '’' ; } /* “Generic English ‘style’” */
+:lang(en) > * {
+	quotes: "“" "”" "‘" "’";
+} /* “Generic English ‘style’” */
 .prose :where(.wp-block-quote, blockquote) {
 	border-color: transparent;
 }
 q::before,
-blockquote p::before { content: open-quote }
+blockquote p::before {
+	content: open-quote;
+}
 q::after,
-blockquote p::after { content: close-quote }
+blockquote p::after {
+	content: close-quote;
+}
 q p,
 blockquote p {
 	font-family: var(--font-serif);
 	font-style: italic;
+}
+
+
+@media (width >= 48rem) {
+	h1 {
+		font-size: 3rem;
+	}
+	h2 {
+		font-size: 2.25rem;
+	}
+	h3 {
+		font-size: 1.875rem;
+	}
+	h4 {
+		font-size: 1.5rem;
+	}
+	h5 {
+		font-size: 1.25rem;
+	}
+	h6 {
+		font-size: 1.125rem;
+		text-transform: uppercase;
+		letter-spacing: 0.025em;
+	}
 }

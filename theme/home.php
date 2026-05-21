@@ -15,8 +15,8 @@
 get_header();
 ?>
 
-	<main id="primary" class="py-8 bg-white  |  dark:bg-neutral-900">
-		<div class="px-2 container  |  lg:px-[16px]">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+		<div class="px-2 py-8 container  |  lg:px-4">
 
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
@@ -59,6 +59,9 @@ get_header();
 			<?php endif; ?>
 
 		</div>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
+
 	</main><!-- #main -->
 
 <?php

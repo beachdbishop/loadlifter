@@ -43,10 +43,10 @@ $peopleQuery = new WP_Query( $args );
 
 ?>
 
-	<main id="primary" class="page-people  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="page-people  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-8' ); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-4">
 				<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 				<?php if ( $peopleQuery->have_posts() ) : ?>
@@ -98,7 +98,9 @@ $peopleQuery = new WP_Query( $args );
 				endif;
 				?>
 			</div>
-		</article><!-- #post-<?php the_ID(); ?> -->
+		</article>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

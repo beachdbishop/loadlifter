@@ -12,7 +12,7 @@
 get_header();
 ?>
 
-<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 	<?php
 	while ( have_posts() ) :
@@ -22,6 +22,8 @@ get_header();
 
 	endwhile; // End of the loop.
 	?>
+
+	<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 </main><!-- #main -->
 

@@ -26,7 +26,7 @@ if ( get_field( 'll_custom_subheader' ) ) {
 $page_excerpt = get_the_excerpt();
 ?>
 
-	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -38,7 +38,7 @@ $page_excerpt = get_the_excerpt();
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'py-8 lg:py-16' ); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 
 					<?php if ( get_field( 'll_hide_featured_image' ) === true ) { ?>
 						<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
@@ -82,7 +82,7 @@ $page_excerpt = get_the_excerpt();
 								</div>
 
 								<aside class="">
-									<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">
+									<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">
 										<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 									</div>
 									<!--   A R E A   S I D E   -->
@@ -109,6 +109,8 @@ $page_excerpt = get_the_excerpt();
 			<?php
 		endwhile; // End of the loop.
 		?>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

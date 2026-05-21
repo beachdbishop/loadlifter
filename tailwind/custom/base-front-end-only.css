@@ -29,6 +29,10 @@ html {
 	}
 }
 
+.entry-content {
+	container: content-area / inline-size;
+}
+
 .entry-content > * + * {
 	margin-block-start: var(--wp--preset--spacing--50);
 }

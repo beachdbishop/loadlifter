@@ -48,7 +48,7 @@ $query_reports_args = [
 		[
 			'taxonomy' => 'category',
 			'field' => 'slug',
-			'terms' => 'reports',
+			'terms' => ['reports', 'case-study'],
 			'operator' => 'IN',
 		],
 	],
@@ -89,13 +89,13 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 }
 ?>
 
-	<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 		<div class="page-hero  |  wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0  |  print:py-4 print:bg-white print:text-black">
 			<span aria-hidden="true" class="page-hero-overlay  |  z-[1] absolute top-0 right-0 bottom-0 left-0  |  print:hidden"></span>
 			<img width="1920" height="625" src="https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources.jpg" class="wp-block-cover__image-background not-transparent wp-post-image print:hidden not-transparent wp-post-image" alt="" decoding="async" srcset="https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources.jpg 1920w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-500x163.avif 500w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-1200x391.avif 1200w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-768x250.avif 768w, https://beachfleischman.com/wp-content/uploads/2025/05/feat__resources-1536x500.avif 1536w" sizes="(782px < width) 1920px, (max-width: 1920px) 100vw, 1920px">
 			<div class="wp-block-cover__inner-container  |  px-2 lg:px-4 print:!px-0">
-				<div class="text-neutral-800 flex flex-col justify-center min-h-[240px]  |  md:min-h-(--height-hero) print:min-h-min">
-					<hgroup class="space-y-6">
+				<div class="text-neutral-800 flex flex-col justify-center  |  lg:min-h-(--height-hero) print:min-h-min">
+					<hgroup class="space-y-2  |  lg:space-y-6">
 						<h1 class="leading-none text-white tracking-light text-pretty text-shadow-lg/50  |   lg:text-6xl lg:print:!text-xl print:text-black" style="text-wrap: unset;">Resources</h1>
 						<p class="font-head text-2xl leading-none text-pretty text-shadow-lg/50 !text-orient-400  |  md:max-w-5xl lg:text-4xl lg:print:!text-base print:!text-black">Gain clarity for the road ahead.</p>
 					</hgroup>
@@ -105,7 +105,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 		</div>
 
 
-		<section class="ll-equal-vert-padding px-2 container  |  lg:px-[16px]">
+		<section class="ll-equal-vert-padding px-2 container  |  lg:px-4">
 			<?php
 			if ( $postsQuery->have_posts() ) :
 			?>
@@ -134,16 +134,16 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 
 
 		<section class="full-bleed ll-equal-vert-padding bg-linear-to-br from-white to-neutral-200  |  dark:from-neutral-900 dark:to-neutral-700">
-			<div class="px-2  |  lg:px-[16px]">
+			<div class="px-2  |  lg:px-4">
 				<?php
 				if ( $reportsQuery->have_posts() ) :
 				?>
 					<div class="flex items-center justify-between mb-4">
-						<h3 class="font-semibold">Reports</h3>
+						<h3 class="font-semibold">Case Studies and Reports</h3>
 						<?php
-						if ( $reportsQuery->found_posts > $reports_limit ) :
-							echo '<a href="/category/reports/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
-						endif;
+						// if ( $reportsQuery->found_posts > $reports_limit ) :
+						// 	echo '<a href="/category/reports/" class="px-5 py-3 font-head font-semibold border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
+						// endif;
 						?>
 					</div>
 					<ul class="dps-grid-3max cards-ic">
@@ -157,7 +157,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 					</ul>
 				<?php
 				else :
-					echo ll_res_query_nope( 'Reports' );
+					echo ll_res_query_nope( 'Case Studies and Reports' );
 				wp_reset_query();
 				endif;
 				?>
@@ -169,7 +169,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 			<span aria-hidden="true" class="bg-linear-to-br from-orient-50 to-orient-200 absolute top-0 right-0 bottom-0 left-0  |  dark:from-orient-800 dark:to-orient-950 print:hidden"></span>
 			<div class="deferred wp-block-cover__image-background bg-size-[128px] bg-fixed opacity-5  |  print:hidden" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/tile-bg-bflogocolor.png');"></div>
 
-			<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 | lg:px-[16px]">
+			<div class="wp-block-cover__inner-container is-layout-flow wp-block-cover-is-layout-flow px-2 | lg:px-4">
 				<?php
 				if ( $firminfoQuery->have_posts() ) :
 				?>
@@ -199,6 +199,8 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 				?>
 			</div>
 		</section>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

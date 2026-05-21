@@ -1,0 +1,242 @@
+{
+    "key": "group_69b301cb40b51",
+    "title": "Block: Icon with Text",
+    "fields": [
+        {
+            "key": "field_69b84d8577dfc",
+            "label": "Style",
+            "name": "ll_it_style",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "single": "Single icon",
+                "stacked": "Stacked icon on Shape"
+            },
+            "default_value": "single",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "horizontal",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_69c1d2cccbf3c",
+            "label": "Icon size",
+            "name": "ll_it_icon_size",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69b84d8577dfc",
+                        "operator": "==",
+                        "value": "single"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default": "Default",
+                "fa-2x": "2x",
+                "fa-4x": "4x"
+            },
+            "default_value": "default",
+            "return_format": "value",
+            "allow_null": 0,
+            "other_choice": 0,
+            "allow_in_bindings": 0,
+            "layout": "vertical",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_69b301cb15db8",
+            "label": "Stack Size",
+            "name": "ll_it_stack_size",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69b84d8577dfc",
+                        "operator": "==",
+                        "value": "stacked"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fa-2x": "2x",
+                "fa-4x": "4x"
+            },
+            "default_value": "fa-2x",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69b30247a481a",
+            "label": "Background Shape",
+            "name": "ll_it_background_shape",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69b84d8577dfc",
+                        "operator": "==",
+                        "value": "stacked"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fa-circle": "Circle",
+                "fa-square": "Square",
+                "fa-badge": "Badge",
+                "fa-seal": "Seal",
+                "fa-certificate": "Certificate",
+                "fa-diamond": "Diamond",
+                "fa-pentagon": "Pentagon",
+                "fa-hexagon": "Hexagon"
+            },
+            "default_value": "fa-circle",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69b30360e3ed4",
+            "label": "Background Color",
+            "name": "ll_it_background_color_pick",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_69b84d8577dfc",
+                        "operator": "==",
+                        "value": "stacked"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#00668e",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "show_custom_palette": 0,
+            "show_color_wheel": 1,
+            "custom_palette_source": "",
+            "palette_colors": ""
+        },
+        {
+            "key": "field_69b30c9853a72",
+            "label": "Icon String",
+            "name": "ll_it_icon_ident",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Provide the <a href=\"https:\/\/fontawesome.com\/icons\/\" target=\"_blank\">FontAwesome<\/a> string that identifies the desired icon. Do not include the whole HTML element.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "fa-solid fa-star",
+            "maxlength": 255,
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69b30c6853a71",
+            "label": "Icon Color",
+            "name": "ll_it_icon_color_pick",
+            "aria-label": "",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "rgb(255,255,255)",
+            "enable_opacity": 1,
+            "return_format": "string",
+            "allow_in_bindings": 0,
+            "show_custom_palette": 0,
+            "show_color_wheel": 1,
+            "custom_palette_source": "",
+            "palette_colors": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "loadlifter\/icon-with-text"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "modified": 1774310394
+}

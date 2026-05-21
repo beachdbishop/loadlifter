@@ -17,7 +17,7 @@ $f_applylink                    = get_field( 'apply_link' );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'py-4 md:py-6 lg:py-8' ); ?>>
-	<div class="px-2 md:container lg:px-[16px]">
+	<div class="px-2 md:container lg:px-4">
 
 	<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 

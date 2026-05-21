@@ -49,9 +49,9 @@ if ( $author_org === 'BeachFleischman' ) {
 }
 ?>
 
-<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
-	<div class="px-2 container  |  lg:px-[16px]">
+	<div class="px-2 py-8 container  |  lg:px-4">
 		<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 		<div class="peepgrid peep-<?php echo $peep_class; ?>  |  md:grid md:grid-cols-3 gap-4 lg:grid-cols-4 lg:gap-16">
@@ -170,6 +170,9 @@ if ( $author_org === 'BeachFleischman' ) {
 			</aside>
 		</div>
 	</div>
+
+	<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
+
 </main><!-- #main -->
 
 <?php

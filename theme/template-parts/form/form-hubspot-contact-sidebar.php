@@ -24,7 +24,7 @@ if ( ( in_category( 'construction' ) ) || ( is_page( 'Construction' ) ) ) {
 			hsScript.src='//js.hsforms.net/forms/v2.js';
 			hsScript.onload = function() {
 				hbspt.forms.create({
-					region: "na1",
+					region: "na2",
 					portalId: "5578910",
 					target: '#llhsform',
 					formId: "<?php echo $hs_form_id; ?>"
@@ -43,7 +43,7 @@ if ( ( in_category( 'construction' ) ) || ( is_page( 'Construction' ) ) ) {
 	// Also check immediately in case the form is already in view on the initial page load
 	loadHubSpotForm();
 </script>
-<!-- <script>hbspt.forms.create({region: "na1", portalId: "5578910", formId: "<?php // echo $hs_form_id; ?>"});</script> -->
+<!-- <script>hbspt.forms.create({region: "na2", portalId: "5578910", formId: "<?php // echo $hs_form_id; ?>"});</script> -->
 <noscript>
 	<p class="my-4">Let us know what you need.</p>
 	<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex print:hidden">

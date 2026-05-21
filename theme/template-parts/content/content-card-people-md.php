@@ -42,16 +42,22 @@ $peep_level = get_field( 'll_people_level' );
 		echo sprintf( '<p class="text-lg leading-tight text-center font-head">%1$s</p>', get_field( 'll_people_title' ) );
 	}
 
+	echo '<footer class="mt-2 text-sm text-center text-neutral-600 *:block *:px-2 dark:text-neutral-400">';
 	if ( $peep_level['value'] != 800 ) {
 		if ( ( get_field_object( 'll_people_department' ) ) || ( get_field_object( 'll_people_location' ) ) ) {
-			echo '<footer class="mt-2 text-sm text-center text-neutral-600 *:block *:px-2 dark:text-neutral-400">';
-				$peep_department = get_field_object( 'll_people_department' );
-				$peep_dept_value = $peep_department['value'];
-				if ( $peep_dept_value ) {
-					ll_people_show_dept_list( $peep_dept_value );
-				}
-			echo '</footer>';
+
+			$peep_department = get_field_object( 'll_people_department' );
+			$peep_dept_value = $peep_department['value'];
+			if ( $peep_dept_value ) {
+				ll_people_show_dept_list( $peep_dept_value );
+			}
+
 		}
 	}
+
+	if ( get_field( 'll_people_linkedin' ) ) {
+		echo sprintf( '<span class="mt-2"><a href="%1$s" target="_blank" rel="noopener" class="hover:text-brand-blue"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></span>', esc_url( get_field( 'll_people_linkedin' ) ) );
+	}
+	echo '</footer>';
 	?>
 </article>

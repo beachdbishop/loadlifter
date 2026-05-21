@@ -113,7 +113,9 @@
             "allow_null": 0,
             "ui": 1,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         },
         {
             "key": "field_64b82ab01e649",
@@ -267,6 +269,24 @@
             "bidirectional_target": []
         },
         {
+            "key": "field_69b43d4ba7251",
+            "label": "LinkedIn Profile",
+            "name": "ll_people_linkedin",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_634da1d2e1c25",
             "label": "Favorite Quote",
             "name": "ll_people_quote",
@@ -374,5 +394,6 @@
     "active": true,
     "description": "",
     "show_in_rest": 1,
-    "modified": 1733244332
+    "display_title": "",
+    "modified": 1773419912
 }

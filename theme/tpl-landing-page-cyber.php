@@ -33,7 +33,7 @@ $page_state                     = get_field( 'll_page_state' );
 $page_below_fold								= get_field( 'll_below_fold' );
 ?>
 
-	<main id="primary" class="landing-page lp-cyber  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="landing-page lp-cyber  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -46,14 +46,14 @@ $page_below_fold								= get_field( 'll_below_fold' );
 			endif; ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( 'lp lp-cyber' ); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+				<div class="px-2 container  |  lg:px-4">
 					<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
 
 						<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 							<?php the_content(); ?>
 						</div>
 
-						<div class="my-16 ll-page-grid-area-b  |  md:my-0 md:col-span-3">
+						<div class="my-16 ll-page-grid-area-b entry-content  |  md:my-0 md:col-span-3">
 							<h3 class="mb-4">Certified Experts</h3>
 							<?php	// echo do_shortcode( '[cybercertlogos /]' ); ?>
 							<?php block_template_part( 'img-grid-assoc-cyber' ); ?>
@@ -80,12 +80,10 @@ $page_below_fold								= get_field( 'll_below_fold' );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16 motion-safe:animate-fade-in-from-top">';
+								echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>
-
-							<div>&nbsp;</div>
 						</div>
 
 					</div>

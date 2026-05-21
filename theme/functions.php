@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Load Lifter functions and definitions
  *
@@ -13,7 +14,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.3.8' );
+	define( 'LL_VERSION', '3.6.0' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -21,6 +22,7 @@ if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
 }
 if ( ! defined( 'LL_COMPANY_NICE_NAME' ) ) {
 	define( 'LL_COMPANY_NICE_NAME', 'BeachFleischman' );
+	define( 'LL_COMPANY_DESC_SHORT', 'Arizona\'s largest locally-owned public accounting firm and one of the Top 200 largest CPA firms in the United States.' );
 }
 
 if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
@@ -37,7 +39,6 @@ if ( ! defined( 'LL_TYPOGRAPHY_CLASSES' ) ) {
 		'LL_TYPOGRAPHY_CLASSES',
 		'prose prose-neutral prose-headings:font-light prose-h4:font-light max-w-none prose-blockquote:font-serif lg:prose-xl dark:prose-invert print:prose-sm lg:print:prose-sm'
 	);
-
 }
 
 if ( ! defined( 'LL_LP_TEMPLATES' ) ) {
@@ -56,7 +57,7 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 				"label" => 'Services',
 				"url" => '/services/',
 				"hasChildren" => true,
-					"submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
+				"submenuContent" => '<ul class="md:container md:grid md:grid-cols-3 md:gap-4 lg:gap-8">
 						<li class="lg:py-4">
 							<p class="font-semibold  |  md:text-lg md:border-b-2 md:border-orient-400 lg:text-2xl">
 								<a href="/audit-assurance/">Audit &amp; Assurance</a>
@@ -81,7 +82,7 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 				"label" => 'Industries',
 				"url" => '/industries/',
 				"hasChildren" => true,
-					"submenuContent" => '<ul class="pl-0">
+				"submenuContent" => '<ul class="pl-0">
 						<li><a href="/industries/cannabis-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-cannabis"></i> Cannabis</a></li>
 						<li><a href="/industries/construction-phoenix-tucson-arizona-accountants-cpas/"><i class="mr-1 fa-duotone fa-fw fa-helmet-safety"></i> Construction</a></li>
 						<li><a href="/industries/financial-professional-services/"><i class="mr-1 fa-duotone fa-fw fa-briefcase"></i> Financial &amp; Professional Services</a></li>
@@ -103,7 +104,7 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 				"label" => 'Careers',
 				"url" => '/career-opportunities/',
 				"hasChildren" => true,
-					"submenuContent" => '[listmenu menu="submenu Careers" /]',
+				"submenuContent" => '[listmenu menu="submenu Careers" /]',
 			],
 			"contact" => [
 				"label" => 'Contact',
@@ -180,6 +181,7 @@ if ( ! function_exists( 'll_setup' ) ) :
 		add_post_type_support( 'page', 'excerpt' );
 
 		add_filter( 'feed_links_show_comments_feed', '__return_false' );
+		// add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 		// remove_theme_support( 'block-templates' ); // <-- FSE?
 		remove_action( 'wp_head', 'rsd_link' );
@@ -191,8 +193,8 @@ if ( ! function_exists( 'll_setup' ) ) :
 		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
 		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
-		remove_action( 'wp_head', 'print_emoji_detection_script', 7);
-		remove_action( 'wp_print_styles', 'print_emoji_styles');
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 		remove_action( 'admin_print_styles', 'print_emoji_styles' );
 	}
@@ -235,7 +237,8 @@ function ll_scripts() {
 	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
 
 	// wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
-	wp_enqueue_script( 'fa-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
+	// wp_enqueue_script( 'fa6-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
+	wp_enqueue_script( 'fa7-kit', 'https://kit.fontawesome.com/576405c4bf.js' );
 
 	if ( !is_page_template( LL_LP_TEMPLATES ) ) {
 		wp_enqueue_script( 'loadlifter-script', get_template_directory_uri() . '/js/script.min.js', [ 'wp-blocks' ], LL_VERSION, true );
@@ -244,7 +247,7 @@ function ll_scripts() {
 add_action( 'wp_enqueue_scripts', 'll_scripts' );
 
 
-add_filter( 'flying_press_exclude_from_minify:css' , function ($exclude_keywords) {
+add_filter( 'flying_press_exclude_from_minify:css', function ($exclude_keywords) {
 	$exclude_keywords = ['loadlifter'];
 	return $exclude_keywords;
 });
@@ -259,7 +262,7 @@ function ll_load_admin_styles() {
 	wp_register_style( 'rsms-inter', 'https://rsms.me/inter/inter.css' );
 	wp_enqueue_style( 'rsms-inter' );
 
-	wp_enqueue_style( 'll-admin', get_template_directory_uri().'/admin.css' );
+	wp_enqueue_style( 'll-admin', get_template_directory_uri() . '/admin.css' );
 }
 
 
@@ -396,9 +399,25 @@ add_filter( 'wp_nav_menu_items', 'add_search_item_to_utility_nav', 10, 2 );
 
 
 /**
+ * Block AI functionality added in WordPress 7.0
+ */
+add_filter( 'wpai_enabled_connectors', '__return_false' );
+
+
+add_filter( 'markdown_alternate_supported_post_types', function( $types ) {
+	$types[] = 'people';
+	$types[] = 'locations';
+
+	return $types;
+} );
+
+
+/**
  * ACF Pro settings
  */
-require get_template_directory() . '/inc/acf.php';
+add_action( 'acf/init', function() {
+	require get_template_directory() . '/inc/acf.php';
+} );
 
 /**
  * Custom template tags for this theme.

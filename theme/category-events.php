@@ -53,8 +53,8 @@ $eventsQuery = new WP_Query( $query_events_args );
 $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 ?>
 
-	<main id="primary" class="pt-4 bg-white  |  dark:bg-neutral-900 md:pt-6 lg:pt-8">
-		<div class="px-2 container  |  lg:px-[16px] ">
+	<main id="primary" class="pt-4 bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900 md:pt-6 lg:pt-8">
+		<div class="px-2 container  |  lg:px-4 ">
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 			<header class="flex gap-4 mb-4">
@@ -90,14 +90,14 @@ $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 				?>
 
 				<div class="mt-8 ll-equal-vert-padding full-bleed bg-linear-to-br from-white to-neutral-200  |  dark:from-neutral-900 dark:to-neutral-700 lg:mt-16">
-					<div class="px-2  |  lg:px-[16px]">
+					<div class="px-2  |  lg:px-4">
 						<?php
 						if ( $archivedEventsQuery->have_posts() ) :
 						?>
 							<div class="flex items-center justify-between mb-4">
 								<h3 class="font-semibold">Archived Events</h3>
 								<?php
-								if ( $archivedEventsQuery->found_posts > $blogposts_limit ) :
+								if ( $archivedEventsQuery->found_posts > $archived_limit ) :
 									echo '<a href="/category/archived-events/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
 								endif;
 								?>
@@ -120,6 +120,9 @@ $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 			</div>
 
 		</div>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
+
 	</main><!-- #main -->
 
 <?php

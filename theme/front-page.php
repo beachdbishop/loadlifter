@@ -65,7 +65,7 @@ $postsQuery = new WP_Query( $query_blog_args );
 $industriesQuery = new WP_Query( $query_ind_args );
 ?>
 
-	<main id="primary" class="front-page  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="front-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 
 		<?php
 		while ( have_posts() ) :
@@ -81,8 +81,8 @@ $industriesQuery = new WP_Query( $query_ind_args );
 					Your browser does not support the video tag.
 				</video>
 
-				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2 min-h-[240px]  |  lg:px-[16px] md:min-h-(--height-hero)">
-					<hgroup class="space-y-6">
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2  |  lg:px-4 lg:min-h-(--height-hero)">
+					<hgroup class="space-y-2  |  lg:space-y-6">
 						<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
 							<?php echo $video_heading; ?>
 						</h1>
@@ -114,7 +114,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			<?php if ( get_the_content() ) : ?>
 				<?php // Only display the content if it exists ?>
 				<section id="post-<?php the_ID(); ?>" <?php post_class( 'll-equal-vert-padding bg-white  |  dark:bg-neutral-800' ); ?> aria-label="Content">
-					<div class="px-2 container  |  lg:px-[16px]">
+					<div class="px-2 container  |  lg:px-4">
 
 						<div <?php ll_content_class( 'entry-content' ); ?>>
 							<?php the_content(); ?>
@@ -125,12 +125,12 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			<?php endif; ?>
 
 			<section class="full-bleed ll-equal-vert-padding bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
-				<div class="ind-grid  |  px-2  |  lg:px-[16px]">
+				<div class="ind-grid  |  px-2  |  lg:px-4">
 					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
 					<?php
 					if ( $industriesQuery->have_posts() ) :
 					?>
-						<div class="ind-card-flips is-style-default mx-auto max-w-6xl">
+						<div class="ll-card-flips is-style-default mx-auto max-w-6xl">
 						<?php
 						while ( $industriesQuery->have_posts() ) :
 							$industriesQuery->the_post();
@@ -147,14 +147,14 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			</section>
 
 			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
-				<div class="post-grid  |  px-2  |  lg:px-[16px]">
+				<div class="post-grid  |  px-2  |  lg:px-4">
 					<?php
 					if ( $postsQuery->have_posts() ) :
 					?>
 						<div class="flex items-center justify-between mb-4">
 							<h2 id="recent">Recent Posts</h2>
 							<?php
-							if ( $postsQuery->found_posts > $posts_limit ) :
+							if ( $postsQuery->found_posts > $blogposts_limit ) :
 								echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-800 rounded-lg text-orient-800  |  hover:text-orient-950 hover:border-orient-950 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>';
 							endif;
 							?>
@@ -177,6 +177,8 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			</section>
 
 		<?php endwhile; ?>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

@@ -10,9 +10,9 @@
 get_header();
 ?>
 
-	<main id="primary" class="bg-amber-50 py-8  |  dark:bg-amber-950">
+	<main id="primary" class="bg-amber-50 relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-amber-950">
 
-		<section class="px-2 container  |  lg:px-[16px]">
+		<section class="px-2 container ll-equal-vert-padding  |  lg:px-4">
 			<header>
 				<h1 class="entry-title  |  text-amber-800 dark:text-amber-300"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'loadlifter' ); ?></h1>
 			</header>
@@ -46,6 +46,8 @@ get_header();
 
 			</div>
 		</section>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 	</main><!-- #main -->
 

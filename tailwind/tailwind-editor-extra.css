@@ -15,9 +15,112 @@
  * This allows you to use classes from both the default Tailwind theme and
  * your custom theme.
  */
- @reference "./tailwind-theme.css";
+@reference "./tailwind-theme.css";
 
- .entry-header,
- .entry-content {
-	 @apply px-8;
- }
+.entry-header,
+.entry-content {
+	@apply px-8;
+}
+
+
+
+
+
+
+
+
+
+
+.wp-block-loadlifter-image-with-text {
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: auto;
+	gap: 0;
+}
+.wp-block-loadlifter-image-with-text .item-img {
+	grid-column: 1 / 2;
+	grid-row: 1 / -1;
+}
+.wp-block-loadlifter-image-with-text .item-img > div {
+	background-color: var(--color-orient-100);
+	width: 100%;
+	height: 100%;
+	min-height: 180px;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container {
+	padding-inline: --spacing(4);
+	padding-block: --spacing(6);
+	grid-column: 2 / -1;
+	grid-row: 1 / -1;
+
+	h3 {
+		margin-block-end: --spacing(2);
+	}
+}
+
+/* Possible WP color palette overrides for media text block */
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-faint-background-color) {
+	background-color: var(--color-brand-gray-faint);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-pale-background-color) {
+	background-color: var(--color-brand-gray-pale);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-background-color) {
+	background-color: var(--color-brand-gray);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-dark-background-color) {
+	background-color: var(--color-brand-gray-dark);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-blue-faint-background-color) {
+	background-color: var(--color-brand-blue-faint);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-blue-pale-background-color) {
+	background-color: var(--color-brand-blue-pale);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-blue-background-color) {
+	background-color: var(--color-brand-blue);
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-blue-dark-background-color) {
+	background-color: var(--color-brand-blue-dark);
+}
+
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-white-color) {
+	color: white;
+}
+.wp-block-loadlifter-image-with-text .acf-innerblocks-container:not(:has(div.has-text-color)) {
+	color: initial;
+}
+
+
+
+.wp-block-loadlifter-icon-with-text {
+	display: flex;
+	flex-direction: row;
+	place-items: start;
+	align-items: center;
+	gap: --spacing(4);
+
+	&.has-background {
+		padding: --spacing(4);
+		margin-block-start: 0;
+
+		&:first-of-type {
+			border-radius: --spacing(2) --spacing(2) 0 0;
+		}
+		&:last-of-type {
+			border-radius: 0 0 --spacing(2) --spacing(2);
+		}
+	}
+}
+
+.wp-block-loadlifter-icon-with-text .item-icon {
+	display: flex;
+	justify-content: start;
+	gap: 0;
+	order: 0;
+}
+.wp-block-loadlifter-icon-with-text .acf-innerblocks-container {
+	order: 1;
+}

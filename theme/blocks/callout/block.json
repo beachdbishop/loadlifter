@@ -7,7 +7,10 @@
   "style": "block-callout",
   "script": "",
   "category": "common",
-  "icon": "info",
+  "icon": {
+		"foreground": "#ce182d",
+		"src": "info"
+	},
   "keywords": ["note", "callout", "admonition"],
   "styles": [
     { "name": "default", "label": "Default", "isDefault": true },

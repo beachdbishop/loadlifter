@@ -1,0 +1,161 @@
+
+.visualization {
+	--_accent-color: var(--color-orient-700);
+	--_rad: calc(infinity * 1px);
+
+	border-width: 1px;
+	border-style: solid;
+	border-color: var(--_accent-color);
+}
+
+.visualization svg.map {
+	.state {
+		fill: var(--color-neutral-300);
+		/* default color for all states not specified below */
+	}
+	.borders {
+		stroke: var(--color-neutral-200);
+		stroke-width: 1;
+		/* color and width of borders between states */
+	}
+	.dccircle {
+		display: yes;
+		/* set display to yes to show the circle for the District of Columbia, or none to hide it */
+	}
+	.separator1 {
+		/* stroke: #B0B0B0;  */
+		stroke: var(--color-neutral-200);
+		stroke-width: 2;
+		/* color and width of lines around Alaska and Hawaii */
+	}
+}
+
+label .rec-med {
+	background-color: var(--color-emerald-600);
+}
+
+#map-cannabis-form:has(#legal:checked) + svg.map .rec-med,
+#map-cannabis-form:has(#legal:checked) + svg.map .state.rec-med,
+#map-cannabis-form:has(#all:checked) + svg.map .rec-med,
+#map-cannabis-form:has(#all:checked) + svg.map .state.rec-med {
+	/* fill: url('#emerald-diagonal-up'); */
+	fill: var(--color-emerald-600);
+
+	opacity: 0.8;
+	transition: fill var(--map-transition);
+
+	&:hover {
+		opacity: 1;
+	}
+}
+#map-cannabis-form:has(#all:checked) + svg.map .legalmed,
+#map-cannabis-form:has(#legalmed:checked) + svg.map .legalmed {
+	fill: url('#sky-crosses');
+	opacity: 0.8;
+	transition: fill var(--map-transition);
+
+	&:hover {
+		opacity: 1;
+	}
+}
+#map-cannabis-form:has(#all:checked) + svg.map .illegal,
+#map-cannabis-form:has(#illegal:checked) + svg.map .illegal {
+	fill: url('#red-diagonal-down');
+	opacity: 0.8;
+	transition: fill var(--map-transition);
+
+	&:hover {
+		opacity: 1;
+	}
+}
+
+
+
+@container content-area (width >= 32rem) {
+	.visualization-group-radio {
+		/* display: flex; */
+	}
+	.visualization-group-radio > .input-group {
+		/* margin-block: --spacing(1); */
+
+		input {
+			display: none;
+		}
+
+		/* label {
+			background: transparent;
+			padding: --spacing(1) --spacing(2);
+			font-size: 1em;
+			border-color: var(--_accent-color);
+			border-style: solid;
+			border-top-width: 2px;
+			border-bottom-width: 2px;
+			border-left-width: 2px;
+
+			cursor: pointer;
+			transition: colors var(--map-transition);
+
+			&:hover {
+				background-color: var(--color-neutral-50);
+				color: var(--_accent-color);
+			}
+		} */
+
+		/* input:checked + label {
+			background-color: var(--_accent-color);
+			color: white;
+		}
+
+		&:first-of-type label {
+			border-radius: var(--_rad) 0 0 var(--_rad);
+			padding-left: --spacing(3);
+		}
+		&:last-of-type label {
+			border-radius: 0 var(--_rad) var(--_rad) 0;
+			border-right-width: 2px;
+			padding-right: --spacing(3);
+		} */
+	}
+}
+
+
+
+/* @container content-area (width >= 56rem) {
+	.visualization-group-radio > .input-group {
+		margin-block: --spacing(2);
+
+		label {
+			padding: --spacing(2) --spacing(4);
+		}
+
+		&:first-of-type label {
+			padding-left: --spacing(5);
+		}
+		&:last-of-type label {
+			padding-right: --spacing(5);
+		}
+	}
+} */
+
+
+
+@media (prefers-color-scheme: dark) {
+	/* .visualization {
+		--_accent-color: var(--color-orient-600);
+	} */
+	.visualization svg.map .state {
+		fill: var(--color-neutral-700);
+	}
+	.visualization svg.map .borders {
+		stroke: var(--color-neutral-800);
+	}
+	.visualization svg.map .separator1 {
+		stroke: var(--color-neutral-700);
+	}
+
+	/* @container content-area (width >= 32rem) {
+		.visualization-group-radio > .input-group label:hover {
+			background-color: var(--color-neutral-700);
+		}
+	} */
+}

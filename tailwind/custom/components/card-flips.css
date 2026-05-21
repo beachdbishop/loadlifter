@@ -1,5 +1,5 @@
 /* Cards that flip */
-.ind-card-flips {
+.ll-card-flips {
 	--_card-size: 288px;
 	--_card-front-bg: var(--color-neutral-100);
 	--_card-front-icon: var(--color-neutral-800);
@@ -12,46 +12,46 @@
 	gap: 1rem;
 
 	list-style: none;
+	padding-inline-start: 0;
 }
 
-.ind-card-flips	.card:hover .card-content,
-.ind-card-flips	.card:active .card-content,
-.ind-card-flips	.card:focus .card-content {
+.ll-card-flips .card:hover .card-content,
+.ll-card-flips .card:active .card-content,
+.ll-card-flips .card:focus .card-content {
 	transform: rotateY(180deg);
 }
 
-.ind-card-flips	.card-back p,
-.ind-card-flips	.card-back li {
+.ll-card-flips .card-back p,
+.ll-card-flips .card-back li {
 	font-size: 0.875rem;
 	line-height: 1.25rem;
 }
 
-.ind-card-flips:has(.card-ic-flip) {
+.ll-card-flips:has(.card-ic-flip) {
 	--_card-size: 180px;
 }
 
-
-.ind-card-flips.is-style-default {
+.ll-card-flips.is-style-default {
 	--_card-front-bg: var(--color-neutral-100);
 	--_card-front-text: var(--color-neutral-800);
 	--_card-front-icon: var(--color-orient-800);
 	--_card-back-bg: var(--color-neutral-700);
 }
 
-.ind-card-flips.is-style-blue {
+.ll-card-flips.is-style-blue {
 	--_card-front-bg: var(--color-orient-800);
 	--_card-front-text: var(--color-neutral-50);
 	--_card-front-icon: var(--color-orient-950);
 	--_card-back-bg: var(--color-orient-950);
 }
 
-.ind-card-flips.is-style-red {
+.ll-card-flips.is-style-red {
 	--_card-front-bg: var(--color-mahogany-700);
 	--_card-front-text: var(--color-neutral-100);
 	--_card-front-icon: var(--color-mahogany-800);
 	--_card-back-bg: var(--color-red-950);
 }
-.ind-card-flips.is-style-white {
+.ll-card-flips.is-style-white {
 	--_card-front-bg: var(--color-white);
 	--_card-front-text: var(--color-orient-950);
 	--_card-front-icon: var(--color-white);
@@ -86,27 +86,27 @@
 }
 
 @media (prefers-color-scheme: dark) {
-	.ind-card-flips.is-style-default {
+	.ll-card-flips.is-style-default {
 		--_card-front-bg: var(--color-neutral-800);
 		--_card-front-text: var(--color-neutral-100);
 		--_card-front-icon: var(--color-orient-400);
 		--_card-back-bg: var(--color-neutral-700);
 	}
 
-	.ind-card-flips.is-style-blue {
+	.ll-card-flips.is-style-blue {
 		--_card-front-bg: var(--color-orient-950);
 		--_card-front-text: var(--color-neutral-300);
 		--_card-front-icon: var(--color-orient-400);
 		--_card-back-bg: var(--color-neutral-700);
 	}
 
-	.ind-card-flips.is-style-red {
+	.ll-card-flips.is-style-red {
 		--_card-front-bg: var(--color-mahogany-950);
 		--_card-front-text: var(--color-neutral-300);
 		--_card-front-icon: var(--color-mahogany-500);
 		--_card-back-bg: var(--color-neutral-700);
 	}
-	.ind-card-flips.is-style-white {
+	.ll-card-flips.is-style-white {
 		--_card-front-bg: var(--color-neutral-800);
 		--_card-front-text: var(--color-orient-600);
 		--_card-front-icon: var(--color-white);
@@ -116,17 +116,21 @@
 }
 
 @media screen and (min-width: 768px) {
-	.ind-card-flips:has(.card-ic-flip) {
+	.ll-card-flips:has(.card-ic-flip) {
 		--_card-size: 190px;
+	}
+
+	:root :where(.is-layout-flow) > .square-card {
+		margin-block-start: unset;
 	}
 }
 
 @media screen and (min-width: 1024px) {
-	.ind-card-flips {
+	.ll-card-flips {
 		gap: 2rem;
 	}
 
-	.ind-card-flips:has(.card-ic-flip) {
+	.ll-card-flips:has(.card-ic-flip) {
 		--_card-size: 200px;
 	}
 }

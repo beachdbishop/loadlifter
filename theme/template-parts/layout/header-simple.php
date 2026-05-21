@@ -12,8 +12,8 @@
 <?php //   P R E H E A D E R   A R E A   ?>
 <?php get_template_part( 'template-parts/siteblocks/pre', 'header' ); ?>
 
-<header id="masthead" class="nav-header  |  bg-white sticky top-0 z-[39]  |  dark:bg-neutral-900 dark:text-neutral-100 dark:shadow-none md:shadow-neutral-600/50 md:shadow-md print:bg-white print:shadow-none">
-	<div role="navigation" class="flex items-center justify-between px-2 py-3  |  md:container lg:px-[16px]">
+<header id="masthead" class="nav-header  |  bg-white border-solid border-neutral-200 border-b-2 sticky top-0 z-[39]  |  dark:bg-neutral-900 dark:text-neutral-100 dark:border-neutral-700 print:bg-white">
+	<div role="navigation" class="flex items-center justify-between px-2 py-3  |  md:container lg:px-4">
 
 		<div class="w-[240px] order-1  |  lg:w-[320px]">
 			<a

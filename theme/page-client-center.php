@@ -34,20 +34,24 @@ if ( get_field( 'll_custom_subheader' ) ) {
 // }
 
 
-function ll_clientcenter_platform_card( $card ) {
-	$plat_html = '<div class="p-2  |  md:p-0">';
-	$plat_html .= '<img src="'.$card['image'].'" alt="'.$card['image_alt'].'" width="'.$card['image_width'].'" height="'.$card['image_height'].'">';
-	$plat_html .= '<p class="my-8  |  lg:my-12">' . $card['blurb'] . '</p>';
-	$plat_html .= '<div class="w-full flex gap-2">';
-	$plat_html .= '<a href="' . $card['button1_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" target="_blank"><i class="mr-1 ' . $card['button1_icon'] . '"></i> ' . $card['button1_text'] . '</a>';
-	if ( $card['button2_url'] ) {
-		$plat_html .= '<a href="' . $card['button2_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" target="_blank"><i class="mr-1 ' . $card['button2_icon'] . '"></i> ' . $card['button2_text'] . '</a>';
+function ll_clientcenter_platform_card_sub( $platform ) {
+	$button1_ext = ( strpos( $platform['button1_url'], 'https://' ) === 0 ) ? ' target="_blank"' : '';
+	$button2_ext = ( strpos( $platform['button2_url'], 'https://' ) === 0 ) ? ' target="_blank"' : '';
+
+	$plat_html = '<div class="p-2 grid grid-rows-subgrid row-span-3 gap-y-6  |  md:p-0 lg:gap-y-8">';
+	$plat_html .= '<img src="'.$platform['image'].'" alt="'.$platform['image_alt'].'" width="'.$platform['image_width'].'" height="'.$platform['image_height'].'">';
+	$plat_html .= '<p class="">' . $platform['blurb'] . '</p>';
+	$plat_html .= '<div class="w-full flex flex-wrap gap-2">';
+	$plat_html .= '<a href="' . $platform['button1_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" ' . $button1_ext . '><i class="mr-1 ' . $platform['button1_icon'] . '"></i> ' . $platform['button1_text'] . '</a>';
+	if ( $platform['button2_url'] ) {
+		$plat_html .= '<a href="' . $platform['button2_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" ' . $button2_ext . '><i class="mr-1 ' . $platform['button2_icon'] . '"></i> ' . $platform['button2_text'] . '</a>';
 	}
 	$plat_html .= '</div>';
 	$plat_html .= '</div>';
 
 	return $plat_html;
 }
+
 
 $platforms = [
 	"safesend" => [
@@ -64,10 +68,10 @@ $platforms = [
 	],
 	"sharefile" => [
 		"label"         => 'ShareFile',
-		"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,h_90/v1695918882/logo_sharefile_uzqlf3.png',
+		"image"         => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,f_auto,w_360/v1778626356/sharefile-logo-nav_qrjdhu.svg',
 		"image_alt"     => 'logo: ShareFile',
-		"image_width"   => '279',
-		"image_height"  => '90',
+		"image_width"   => '400',
+		"image_height"  => '55',
 		"blurb"         => 'ShareFile is a secure collaboration and file sharing platform that supports document-centric tasks and workflow needs.',
 		"button1_url"   => 'https://beachfleischman.sharefile.com/',
 		"button1_text"  => 'ShareFile',
@@ -142,7 +146,7 @@ $doclinks = [
 get_header();
 ?>
 
-<main id="primary" class="bg-white  |  dark:bg-neutral-900">
+<main id="primary" class="its-the-client-center-template bg-white relative z-10 shadow-xl  😶☔🤓  |  lg:shadow-2xl dark:bg-neutral-900">
 
 	<?php
 	while (have_posts()) :
@@ -152,7 +156,7 @@ get_header();
 		<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
-			<div class="px-2 container  |  lg:px-[16px]">
+			<div class="px-2 container  |  lg:px-4">
 
 				<div class="not-prose pb-8  |  lg:pb-16">
 					<?php the_content(); ?>
@@ -168,13 +172,19 @@ get_header();
 					</div>
 
 					<h3 class="text-center text-brand-blue dark:text-neutral-200 mt-20">Guides</h3>
-					<div class="mt-4 ind-card-flips is-style-blue ">
+					<div class="mt-4 ll-card-flips is-style- ">
 					 	<?php
 						foreach ( $doclinks as $link ) {
+
+
+							/* No Flip, Yes Link, Small */
 							echo '<div class="card-' . $link['icon'] . '">
 								<a href="' . esc_url( $link['link'] ) . '" rel="bookmark">
+
 									<div class="group relative inline-block w-[180px] h-[180px] md:w-[190px] md:h-[190px] lg:w-[200px] lg:h-[200px]">
+
 										<div class="card-content  |  absolute w-full h-full rounded-lg shadow-md shadow-neutral-300  |  dark:shadow-none group-hover:shadow-lg dark:group-hover:shadow-none">
+
 											<div class="card-front  |  text-center bg-neutral-50 border border-neutral-100 text-brand-blue absolute w-full h-full flex flex-col items-center justify-center rounded-lg px-4  |  group-hover:bg-white dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:group-hover:bg-neutral-900">
 												<div class="card-icon  |  text-brand-blue  |  dark:text-orient-400">
 													<span class="fa-stack fa-2x">
@@ -184,10 +194,15 @@ get_header();
 												</div>
 												<h4 class="mt-2 font-light leading-none text-current">' . $link['title'] . '</h4>
 											</div>
+
 										</div>
+
 									</div>
+
 								</a>
 							</div>';
+
+
 						}
 						?>
 					</div>
@@ -197,7 +212,7 @@ get_header();
 						<div class="prose space-y-4">
 							<h2 class="text-orient-800  |  dark:text-orient-400">Aiwyn Client Intro Video</h2>
 							<p>To create your account, you will need an email address, password, your client ID, and Invoice number, which can be found on any BeachFleischman invoice. Here's a step-by-step video to help you.</p>
-							<h4 class="text-brand-blue-dark font-semibold  |  dark:text-neutral-100">Need more help?</h4>
+							<h3 class="text-brand-blue-dark font-semibold  |  dark:text-neutral-100">Need more help?</h3>
 							<p>Reach out to our <a href="mailto:invoices@beachfleischman.com?subject=Client%20Center%20Help">Administrative Team</a>.</p>
 						</div>
 						<div class="">
@@ -209,11 +224,11 @@ get_header();
 
 					<div class="mt-16 border-t-4 border-solid border-neutral-300 h-16  |  lg:mt-20 lg:h-20">&nbsp;</div>
 
-					<div class="grid gap-16 mb-12  |  lg:mb-24 lg:grid-cols-2 lg:grid-rows-2">
+					<div class="grid gap-16 mb-12  |  lg:mb-24 lg:grid-cols-2 lg:gap-y-20">
 
 						<?php
 						foreach ( $platforms as $platform ) {
-							echo ll_clientcenter_platform_card( $platform );
+							echo ll_clientcenter_platform_card_sub( $platform );
 						}
 						?>
 
@@ -232,6 +247,8 @@ get_header();
 		</article>
 
 	<?php endwhile; ?>
+
+	<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
 
 </main>
 

@@ -13,7 +13,7 @@
 	ll_featured_image();
 endif; ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'px-2 py-8  |  md:container lg:px-[16px]' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'px-2 py-8  |  md:container lg:px-4' ); ?>>
 
 	<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
@@ -77,9 +77,9 @@ endif; ?>
 			?>
 		</div>
 
-		<aside class="mt-8 md:mt-0 md:order-2 md:w-1/3">
+		<div class="mt-8 md:mt-0 md:order-2 md:w-1/3">
 			<?php if ( ( get_field( 'll_normal_contact_form_location' ) == 1 ) && ( !in_category( 'resources' ) ) ) : ?>
-				<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">
+				<div id="contact" class="container-contact-form not-prose  |  motion-safe:motion-preset-slide-up">
 					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 				</div>
 			<?php endif; ?>
@@ -100,7 +100,7 @@ endif; ?>
 				?>
 				</div>
 			<?php endif; ?>
-		</aside>
+		</div>
 	</div>
 
 </article><!-- post-<?php the_ID(); ?> -->

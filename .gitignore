@@ -9,11 +9,10 @@
 *.min.js
 
 # Ignore generated CSS files:
-a11yslider.css
-ab-csc.css
-style.css
-style-editor.css
-style-editor-extra.css
+/theme/a11yslider.css
+/theme/style.css
+/theme/style-editor.css
+/theme/style-editor-extra.css
 
 # Ignore the generated zip file:
 loadlifter.zip

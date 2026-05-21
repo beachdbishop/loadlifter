@@ -34,9 +34,9 @@ $cards_opps = [
 		"slug" => 'intern',
 		"label" => 'Internships',
 		"link" => '/career-opportunities/internships/',
-		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,w_480/v1676492725/feat__careers-internships--social_q07na1.jpg',
-		"img-wide" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-internships--social_q07na1.jpg',
-		"img-alt" => "Man and young man having a converstion at a table"
+		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_251,w_480/v1762991977/feat__20251112--internships-social2_noqqj9.jpg',
+		"img-wide" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto/v1762991977/feat__20251112--internships-social2_noqqj9.jpg',
+		"img-alt" => "Two interns sharing an entertaining moment while reviewing information on a tablet"
 	],
 	"grads" => [
 		"slug" => 'grad',
@@ -148,7 +148,7 @@ $query_team_args = [
 $teamQuery = new WP_Query( $query_team_args );
 ?>
 
-	<main id="primary" class="careers-page  |  bg-white  |  dark:bg-neutral-900">
+	<main id="primary" class="careers-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
 		<?php
 		while ( have_posts() ) :
 			the_post();
@@ -157,13 +157,13 @@ $teamQuery = new WP_Query( $query_team_args );
 
 			<?php echo ll_better_page_hero( $page_title, $page_message ); ?>
 
-			<article id="post-<?php the_ID(); ?>" <?php post_class('py-8'); ?>>
-				<div class="px-2 container  |  lg:px-[16px]">
+			<article id="post-<?php the_ID(); ?>" <?php post_class('pt-8'); ?>>
+				<div class="px-2 container  |  lg:px-4">
 
 					<?php if (is_page('career-opps')) : ?>
 					<?php //   the page above is purposefully 'wrong' because we decided not to include this page nav. We may bring it back in the future, though. ?>
 						<section class="full-bleed ">
-							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm  |  lg:gap-4 lg:px-[16px]">
+							<div class="flex flex-wrap justify-start gap-2 px-2 py-4 text-sm  |  lg:gap-4 lg:px-4">
 								<span>On this page:</span>
 								<a class="underline hover:decoration-orient-400" href="#why">Why BeachFleischman?</a>
 								<a class="underline hover:decoration-orient-400" href="#opportunities">Opportunities</a>
@@ -184,33 +184,29 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php if (is_page('career-opportunities')) : ?>
 					<?php //   O P P O R T U N I T I E S   ?>
 						<section id="opportunities" class="full-bleed ll-equal-vert-padding bg-linear-to-t from-neutral-300 via-neutral-100 to-white  |  dark:from-neutral-700 dark:via-neutral-800 dark:to-neutral-900">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2 class="mb-4 font-head">Opportunities</h2>
-								<ul class="list-none grid gap-4 text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
+								<ul class="list-none grid gap-4 grid-rows-[auto_1fr] text-neutral-600  |  md:grid-cols-3 lg:gap-8 dark:text-neutral-400">
 
 									<?php foreach( $cards_opps as $card ) {
-										echo '<li class="card-' . $card['slug'] . '  |  group flex flex-col relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
-											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300">
-												<p class="inline font-head font-semibold leading-none text-2xl">
+										echo '<li class="card-ic card-' . $card['slug'] . '  |  group grid gap-0 grid-rows-subgrid row-span-2 relative border-transparent border-2 shadow-orient-700  |  focus-within:shadow-lg focus-within:border-neutral-500 dark:border-neutral-700 dark:shadow-orient-500">
+
+											<div class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300 md:!px-5">
+												<h3 class="inline font-semibold leading-none text-2xl">
 													<a class="group-hover:text-brand-blue dark:group-hover:text-orient-300" href="' . $card['link'] . '">
 														' . $card['label'] . '
 													</a>
-												</p>
-												<p class="inline text-2xl">
-													<a class="group-hover:text-brand-blue dark:group-hover:text-orient-300" href="' . $card['link'] . '" aria-label="Read more about ' . $card['label'] . '">
-														<i class="fa-regular fa-angle-right"></i>
-													</a>
-												</p>
+												</h3>
 											</div>
+
 											<div class="card-img  |  bg-neutral-500 relative overflow-hidden">
-												<a href="' . $card['link'] . '">
-													<img
-														alt="' . $card['img-alt'] . '"
-														src="' . $card['img-wide'] . '"
-														class="min-h-60 w-full object-cover transition duration-200 ease-in-out  |  group-hover:scale-110"
-													/>
-												</a>
+												<img
+													alt="' . $card['img-alt'] . '"
+													src="' . $card['img-wide'] . '"
+													class="min-h-60 w-full object-cover transition duration-200 ease-in-out  |  group-hover:scale-110"
+												/>
 											</div>
+
 										</li>';
 									} ?>
 
@@ -222,9 +218,9 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php if ( is_page('internships') ) { ?>
 					<?php //   E X P E C T   &   F U T U R E   ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose ">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2>What you can expect</h2>
-								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
+								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
 									ll_no_link_card( $card );
 								} ?>
@@ -233,16 +229,16 @@ $teamQuery = new WP_Query( $query_team_args );
 						</section>
 					<?php } else { ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2>What you can expect</h2>
-								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
+								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
 									ll_no_link_card( $card );
 								} ?>
 								</div>
 
 								<h2>Your future</h2>
-								<div class="ind-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
+								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_future as $card ) {
 									ll_no_link_card( $card );
 								} ?>
@@ -265,7 +261,7 @@ $teamQuery = new WP_Query( $query_team_args );
 						}
 					</style>
 					<section id="culture" class="full-bleed not-prose ll-equal-vert-spacing">
-						<div class="flex flex-col px-2 space-y-4 lg:px-[16px]">
+						<div class="flex flex-col px-2 space-y-4 lg:px-4">
 							<h2 class="">Culture</h2>
 
 							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-orient-950 text-neutral-100">
@@ -294,7 +290,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php //   B E N E F I T S   ?>
 					<?php if ( !is_page('internships') ) : ?>
 						<section id="benefits" class="full-bleed">
-							<div class="px-2  |  lg:px-[16px]">
+							<div class="px-2  |  lg:px-4">
 								<h2 class="mb-4">Benefits</h2>
 								<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 									<?php foreach( $cards_benefits as $card ) {
@@ -307,15 +303,15 @@ $teamQuery = new WP_Query( $query_team_args );
 
 					<?php //   A W A R D S   ?>
 					<section id="awards" class="bg-white full-bleed ll-equal-vert-padding  |  dark:bg-neutral-900">
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2 entry-content  |  lg:px-4">
 							<h2 class="mb-4">Awards and recognition</h2>
-							<?php echo do_shortcode( '[awardlogos /]' ); ?>
+							<?php block_template_part( 'img-grid-awards' ); ?>
 						</div>
 
 						<?php
 						if ( $teamQuery->have_posts() ) :
 						?>
-						<div class="px-2  |  lg:px-[16px]">
+						<div class="px-2 entry-content  |  lg:px-4">
 							<h2 class="mb-4">Our Team</h2>
 							<ul class="list-none dps-grid-4max" data-team-ids="<?php echo esc_attr( $hr_ids ); ?>">
 							<?php
@@ -353,6 +349,9 @@ $teamQuery = new WP_Query( $query_team_args );
 			<?php
 		endwhile; // End of the loop.
 		?>
+
+		<?php /*   P R E F O O T E R   A R E A   */   get_template_part( 'template-parts/siteblocks/pre', 'footer' ); ?>
+
 	</main><!-- #main -->
 
 <?php
