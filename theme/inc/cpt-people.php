@@ -49,7 +49,12 @@ function ll_register_people_cpt() {
 		'label'                 => __( 'Person', 'loadlifter' ),
 		'description'           => __( 'Key People', 'loadlifter' ),
 		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'revisions', 'thumbnail' ),
+		'supports'              => array(
+			'title',
+			'editor' => array( 'notes' => true ),
+			'revisions',
+			'thumbnail'
+		),
 		'taxonomies'            => array( 'location', 'department', 'level' ),
 		'hierarchical'          => false,
 		'public'                => true,
