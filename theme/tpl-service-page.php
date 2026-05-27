@@ -192,8 +192,7 @@ if ( $page_post_category ) {
 
 						<?php if ( ( $page_post_category ) && ( $postsQuery->have_posts() ) ) : ?>
 
-							<section class="full-bleed not-prose ll-equal-vert-padding bg-repeat  |  print:hidden"
-								style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/wavey-fingerprint.png');">
+							<section class="featured-posts-indsvc  |  full-bleed not-prose ll-equal-vert-padding bg-repeat  |  print:hidden">
 								<div class="post-grid  |  px-2  |  lg:px-4">
 									<div class="flex items-center justify-between mb-4">
 										<h2>Insights</h2>
@@ -211,9 +210,6 @@ if ( $page_post_category ) {
 									?>
 								</div>
 							</section>
-
-							<?php /* The visual gap Eric requested between Insights and the CTA section */ ?>
-							<!-- div style="height:100px" aria-hidden="true" class="wp-block-spacer is-style-md"></div -->
 
 						<?php
 						wp_reset_query();

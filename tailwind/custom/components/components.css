@@ -177,17 +177,6 @@ aside .timestamp {
 .headshot-wrapper img {	z-index: 2; }
 
 
-/* Openings */
-/* .container-openings-list {
-	margin-top: 2rem;
-	border-width: 2px;
-	border-style: solid;
-	border-color: var(--color-neutral-500);
-	background-color: white;
-	padding: 2rem;
-} */
-
-
 /* Section: CTA */
 .cta {
 	align-items: center;
@@ -198,6 +187,14 @@ aside .timestamp {
 	overflow: clip;
 	padding: 0;
 	position: relative;
+}
+
+
+/* Section: Recent Posts at bottom of Industry or Service pages */
+.featured-posts-indsvc {
+	background-color: transparent;
+	background-image: url('/wp-content/themes/loadlifter/theme/img/wavey-fingerprint.svg');
+	background-repeat: repeat;
 }
 
 
@@ -261,12 +258,6 @@ aside .timestamp {
 }
 
 @media screen and (min-width: 1024px) {
-	/* .page-title,
-	.entry-title {
-		font-size: 3rem;
-    line-height: 1;
-	} */
-
 	.entry-content .alignleft {
 		margin-bottom: 2rem;
 		margin-right: 2rem;

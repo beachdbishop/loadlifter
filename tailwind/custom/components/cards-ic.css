@@ -7,10 +7,10 @@
 	transition-duration: 300ms;
 }
 .cards-ic .card-ic {
-	opacity: 0.8;
+	filter: saturate(0.75);
 
 	&:hover {
-		opacity: 1;
+		filter: saturate(1);
 	}
 }
 
