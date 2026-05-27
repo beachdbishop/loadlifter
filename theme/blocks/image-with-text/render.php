@@ -31,56 +31,53 @@ if ( $image ) {
 
 $block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$block_id = ' id="ll_imagetext_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+	$block_id = sanitize_title( $block['anchor'] );
 } else {
-	$block_id = ' id="ll_imagetext_' . $block['id'] . ' "';
+	$block_id = 'll_imagetext_' . $block['id'];
 }
 
-$classes = [ 'image-with-text-item group' ];
+$classes = [ 'group' ];
 if ( ! empty( $block['className'] ) ) {
     $classes = array_merge( $classes, explode( ' ', $block['className'] ) );
 }
 
-$mt_inner_template = array(
-	array(
+$mt_inner_template = [
+	[
 		'core/group',
-		array(
-			'layout' => array(
+		[
+			'layout' => [
 				'type' => 'constrained'
-			)
-		),
-		array(
-			array(
+			]
+		],
+		[
+			[
 				'core/heading',
-				array(
+				[
 					'level' => 3
-				),
-				array()
-			),
-			array(
+				],
+				[]
+			],
+			[
 				'core/paragraph',
-				array(),
-				array()
-			),
+				[],
+				[]
+			],
 
-		)
-	),
-);
+		]
+	],
+];
 ?>
 
 
 <?php if ( ! $is_preview ) { ?>
 <div
 	<?php
-	echo wp_kses_data(
-		get_block_wrapper_attributes(
-			array(
-				'id'    => $block_id,
-				'class' => esc_attr( join( ' ', $classes ) ),
-			)
-		)
-	);
-	?>
+	echo get_block_wrapper_attributes(
+		[
+			'id' => $block_id,
+			'class' => esc_attr( join( ' ', $classes ) )
+		]
+	); ?>
 >
 <?php } ?>
 

@@ -9,14 +9,16 @@
 	"keywords": ["image", "photo", "text", "feature"],
 	"script": "block-image-with-text",
 	"style": "block-image-with-text",
+	"styles": [
+		{ "name": "default", "label": "Default", "isDefault": true },
+		{ "name": "image-on-right", "label": "Image on Right" }
+	],
 	"supports": {
 		"align": false,
 		"anchor": true,
 		"alignContent": false,
-		"background": false,
-		"color": true,
 		"alignText": false,
-		"spacing": false,
+		"color": true,
 		"fullHeight": false,
 		"customCSS": false
 	},

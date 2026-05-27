@@ -126,11 +126,6 @@ add_action( 'init', function() {
 		'label'				=> __( 'Rounded', 'loadlifter' ),
 	] );
 
-	register_block_style( 'loadlifter/image-with-text', [
-		'name'				=> 'duotone',
-		'label'				=> __( 'Duotone', 'loadlifter' ),
-	] );
-
 	register_block_style( 'core/spacer', [
 		'name'				=> 'xs',
 		'label'				=> __( 'XS', 'loadlifter' ),
