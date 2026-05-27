@@ -11,17 +11,16 @@
 	"style": "block-person-card-popover",
 	"supports": {
 		"align": false,
-		"anchor": true,
 		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
 		"color": {
 			"text": false,
 			"background": false,
 			"link": false
 		},
-		"alignText": false,
 		"html": false,
 		"jsx": true,
-		"spacing": false,
 		"fullHeight": false
 	},
 	"acf": {

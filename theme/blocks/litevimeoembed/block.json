@@ -11,19 +11,18 @@
 	"style": "block-litevimeoembed",
 	"supports": {
 		"align": false,
-		"anchor": true,
 		"alignContent": false,
+		"alignText": false,
+		"anchor": true,
 		"color": {
 			"text": false,
 			"background": true,
 			"link": false
 		},
-		"alignText": false,
+		"customCSS": false,
 		"html": false,
 		"jsx": true,
-		"spacing": false,
-		"fullHeight": false,
-		"customCSS": false
+		"fullHeight": false
 	},
 	"attributes": {
 		"backgroundColor": {

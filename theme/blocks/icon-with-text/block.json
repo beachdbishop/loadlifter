@@ -13,12 +13,10 @@
 		"align": false,
 		"anchor": true,
 		"alignContent": false,
-		"background": true,
-		"color": true,
 		"alignText": false,
-		"spacing": false,
-		"fullHeight": false,
-		"customCSS": false
+		"color": true,
+		"customCSS": false,
+		"fullHeight": false
 	},
 	"acf": {
 		"mode": "auto",

@@ -9,17 +9,14 @@
 	"keywords": ["map", "cannabis", "chart", "viz", "visualization", "infographic"],
 	"script": "block-viz-cannabis-states",
 	"style": "block-viz-cannabis-states",
-	"multiple": false,
 	"supports": {
 		"align": false,
-		"anchor": true,
 		"alignContent": false,
-		"background": false,
-		"color": false,
 		"alignText": false,
-		"spacing": false,
+		"anchor": true,
+		"customCSS": true,
 		"fullHeight": false,
-		"customCSS": true
+		"multiple": false
 	},
 	"acf": {
 		"mode": "auto",

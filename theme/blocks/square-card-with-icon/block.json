@@ -9,17 +9,15 @@
 	"keywords": ["card", "icon", "image", "text", "feature"],
 	"script": "block-square-card-with-icon",
 	"style": "block-square-card-with-icon",
-	"multiple": true,
 	"supports": {
 		"align": false,
-		"anchor": true,
 		"alignContent": false,
-		"background": false,
-		"color": false,
 		"alignText": false,
-		"spacing": false,
+		"anchor": true,
+		"color": false,
+		"customCSS": false,
 		"fullHeight": false,
-		"customCSS": false
+		"multiple": true
 	},
 	"acf": {
 		"mode": "auto",

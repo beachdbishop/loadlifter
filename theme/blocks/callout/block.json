@@ -36,7 +36,6 @@
     "alignText": false,
     "html": false,
     "jsx": true,
-    "spacing": false,
     "fullHeight": false,
 		"customCSS": false
   },
@@ -53,6 +52,7 @@
   },
   "acf": {
     "mode": "auto",
+		"blockVersion": 3,
     "renderTemplate": "render.php"
   }
 }
