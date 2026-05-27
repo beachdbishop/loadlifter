@@ -16,6 +16,7 @@
 $flip_enabled	= get_field( 'll_sqcard_flip_enabled' ); /* required, true by default */
 $title = get_field( 'll_sqcard_title' ); /* required */
 $title_is_long = ( ( iconv_strlen( $title, 'UTF-8' ) > 30 ) ? 'text-lg' : '' );
+$back_title	= ( !empty( get_field( 'll_sqcard_backtitle' ) ) ) ? get_field( 'll_sqcard_backtitle' ) : $title;
 $icon = get_field( 'll_sqcard_icon' ); /* required */
 $url = get_field( 'll_sqcard_url' ); /*  required */
 $size = get_field( 'll_sqcard_size' ); /* required, small by default */
@@ -36,10 +37,11 @@ if ( $image ) {
 }
 
 
-// Create id attribute allowing for custom "anchor" value.
-$block_id = 'll_sqcard_' . $block['id'];
-if( !empty( $block['anchor'] ) ) {
-	$id = $block['anchor'];
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = ' id="ll_sqcard_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_sqcard_' . $block['id'] . ' "';
 }
 
 $classes = [ 'square-card card-item' ];
@@ -85,7 +87,7 @@ if ( ! $is_preview ) {
 					<div class="card-back  |  shadow-neutral-900/50" style="background-image: url('<?php echo esc_attr( $thumb ); ?>')" aria-label="<?php echo esc_attr( $alt ); ?>'">
 						<h3 class="">
 							<a class="s" href="<?php echo esc_url( $url ); ?>" rel="bookmark">
-								<?php echo $title; ?>
+								<?php echo $back_title; ?>
 							</a>
 						</h3>
 						<p class="<?php echo esc_attr( 'text-' . $message_alignment ); ?>">

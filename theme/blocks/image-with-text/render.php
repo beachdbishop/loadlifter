@@ -12,10 +12,28 @@
  * 						its parent block.
  */
 
-// Create id attribute allowing for custom "anchor" value.
-$block_id = 'll_it_' . $block['id'];
-if( !empty( $block['anchor'] ) ) {
-	$id = $block['anchor'];
+
+$image = get_field( 'll_mt_image' );
+if ( $image ) {
+	// Image variables.
+	$image_url = $image['url'];
+	$image_title = $image['title'];
+	$alt = $image['alt'];
+	$caption = $image['caption'];
+
+	// Thumbnail size attributes.
+	$size = 'medium_large';
+	$thumb = $image['sizes'][ $size ];
+	$width = $image['sizes'][ $size . '-width' ];
+	$height = $image['sizes'][ $size . '-height' ];
+}
+
+
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = ' id="ll_imagetext_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_imagetext_' . $block['id'] . ' "';
 }
 
 $classes = [ 'image-with-text-item group' ];
@@ -48,22 +66,6 @@ $mt_inner_template = array(
 		)
 	),
 );
-
-
-$image = get_field( 'll_mt_image' );
-if ( $image ) {
-	// Image variables.
-	$image_url = $image['url'];
-	$image_title = $image['title'];
-	$alt = $image['alt'];
-	$caption = $image['caption'];
-
-	// Thumbnail size attributes.
-	$size = 'medium_large';
-	$thumb = $image['sizes'][ $size ];
-	$width = $image['sizes'][ $size . '-width' ];
-	$height = $image['sizes'][ $size . '-height' ];
-}
 ?>
 
 

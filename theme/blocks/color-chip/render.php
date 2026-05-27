@@ -12,10 +12,20 @@
  * 			its parent block.
  */
 
-// Support custom "anchor" values.
-$anchor = '';
+
+// Load values and assign defaults.
+$color_value 			= get_field( 'll_color' );
+$color_title			= get_field( 'll_color_title' );
+$color_note				= get_field( 'll_color_note' );
+$color_in_rgb			= ll_hex_to_rgb( get_field( 'll_color' ) );
+// $color_in_oklch = SOMEDAY
+
+
+$block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
+	$block_id = ' id="ll_chip_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_chip_' . $block['id'] . ' "';
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
@@ -26,16 +36,11 @@ if ( ! empty( $block['className'] ) ) {
 if ( ! empty( $block['align'] ) ) {
 	$class_name .= ' align' . $block['align'];
 }
-
-// Load values and assign defaults.
-$color_value 			= get_field( 'll_color' );
-$color_title			= get_field( 'll_color_title' );
-$color_note				= get_field( 'll_color_note' );
-$color_in_rgb			= ll_hex_to_rgb( get_field( 'll_color' ) );
 ?>
 
+<!-- TODO: Add CSS Subgrid to control similar vertical size -->
 
-<figure <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?>  |  w-34 flex flex-col  border-2 bg-white p-1">
+<figure <?php echo $block_id; ?> class="<?php echo esc_attr($class_name); ?>  |  w-34 flex flex-col border-2 bg-white p-1">
 	<figcaption class="text-center font-mono font-normal text-sm order-2  |  ">
 		<span><?php echo esc_html( $color_title ); ?></span><br>
 		<code class="font-bold uppercase"><?php echo esc_html( $color_value ); ?></code><br>

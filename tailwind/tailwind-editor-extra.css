@@ -30,7 +30,6 @@
 
 
 
-
 .wp-block-loadlifter-image-with-text {
 	display: grid;
 	grid-template-columns: 1fr 2fr;
@@ -50,18 +49,18 @@
 	background-repeat: no-repeat;
 }
 .wp-block-loadlifter-image-with-text .acf-innerblocks-container {
-	padding-inline: --spacing(4);
-	padding-block: --spacing(6);
+	padding-inline: var(--wp--preset--spacing--40);
+	padding-block: var(--wp--preset--spacing--50);
 	grid-column: 2 / -1;
 	grid-row: 1 / -1;
 
 	h3 {
-		margin-block-end: --spacing(2);
+		margin-block-end: calc(var(--wp--preset--spacing--40) / 2);
 	}
 }
 
 /* Possible WP color palette overrides for media text block */
-.wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-faint-background-color) {
+/* .wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-faint-background-color) {
 	background-color: var(--color-brand-gray-faint);
 }
 .wp-block-loadlifter-image-with-text .acf-innerblocks-container:has(div.has-brand-gray-pale-background-color) {
@@ -91,7 +90,7 @@
 }
 .wp-block-loadlifter-image-with-text .acf-innerblocks-container:not(:has(div.has-text-color)) {
 	color: initial;
-}
+} */
 
 
 
@@ -100,17 +99,17 @@
 	flex-direction: row;
 	place-items: start;
 	align-items: center;
-	gap: --spacing(4);
+	gap: var(--wp--preset--spacing--40);
 
 	&.has-background {
-		padding: --spacing(4);
+		padding: var(--wp--preset--spacing--40);
 		margin-block-start: 0;
 
 		&:first-of-type {
-			border-radius: --spacing(2) --spacing(2) 0 0;
+			border-radius: calc(var(--wp--preset--spacing--40) / 2) calc(var(--wp--preset--spacing--40) / 2) 0 0;
 		}
 		&:last-of-type {
-			border-radius: 0 0 --spacing(2) --spacing(2);
+			border-radius: 0 0 calc(var(--wp--preset--spacing--40) / 2) calc(var(--wp--preset--spacing--40) / 2);
 		}
 	}
 }

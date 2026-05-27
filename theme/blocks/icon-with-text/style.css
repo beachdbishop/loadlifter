@@ -1,1 +1,43 @@
-/* */
+/* Custom LL Icon with Text styles */
+.wp-block-loadlifter-icon-with-text {
+	display: flex;
+	flex-direction: column;
+	gap: calc(var(--spacing) * 2);
+
+	&.has-background {
+		padding: calc(var(--spacing) * 4);
+		margin-block-start: 0;
+
+		&:first-of-type {
+			border-radius: calc(var(--spacing) * 2) calc(var(--spacing) * 2) 0 0;
+		}
+		&:last-of-type {
+			border-radius: 0 0 calc(var(--spacing) * 2) calc(var(--spacing) * 2);
+		}
+	}
+}
+
+.wp-block-loadlifter-icon-with-text .item-icon {
+	display: flex;
+	justify-content: center;
+	order: 0;
+}
+.wp-block-loadlifter-icon-with-text .acf-innerblocks-container {
+	order: 1;
+}
+
+
+@container content-area (width >= 32rem) {
+	/* 512px */
+	.wp-block-loadlifter-icon-with-text {
+		flex-direction: row;
+		place-items: start;
+		align-items: center;
+		gap: calc(var(--spacing) * 4);
+	}
+
+	.wp-block-loadlifter-icon-with-text .item-icon {
+		justify-content: start;
+		gap: 0;
+	}
+}

@@ -12,14 +12,21 @@
  * 						its parent block.
  */
 
-// Create id attribute allowing for custom "anchor" value.
-$id = 'll-' . $block['id'];
-if( !empty($block['anchor']) ) {
-	$id = $block['anchor'];
-}
 
 $video_id = get_field( 'll_litevimeo_id' );
 $inline_styles = get_field( 'll_litevimeo_styles' );
+
+
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = ' id="ll_litevimeo_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_litevimeo_' . $block['id'] . ' "';
+}
 ?>
 
-<lite-vimeo	id="<?php echo esc_attr($id); ?>"	videoid="<?php echo esc_attr($video_id); ?>" style="<?php echo esc_attr($inline_styles); ?>"></lite-vimeo>
+<lite-vimeo
+	id="<?php echo esc_attr( $block_id ); ?>"
+	videoid="<?php echo esc_attr( $video_id ); ?>"
+	style="<?php echo esc_attr( $inline_styles ); ?>"
+></lite-vimeo>

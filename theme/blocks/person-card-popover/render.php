@@ -12,12 +12,6 @@
  * 						its parent block.
  */
 
-// Create id attribute allowing for custom "anchor" value.
-$id = 'll_' . $block['id'];
-if( !empty($block['anchor']) ) {
-	$id = $block['anchor'];
-}
-
 
 $person = get_field( 'll_person' );
 $slug = 'p' . $person->ID;
@@ -31,8 +25,16 @@ if ( $peep_thumbnail ) {
 $peep_level = get_field( 'll_people_level', $person->ID );
 
 
-if( $person ) : ?>
-	<div	id="<?php echo esc_attr($id); ?>" class="person-card popcard | @container" data-pop="<?php echo esc_attr( $slug ); ?>">
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = ' id="ll_personpop_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_personpop_' . $block['id'] . ' "';
+}
+
+
+if( ( ! $is_preview ) && ( $person ) ) : ?>
+	<div <?php echo esc_attr($block_id); ?> class="person-card popcard | @container" data-pop="<?php echo esc_attr( $slug ); ?>">
 		<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg bg-white border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800">
 
 			<div class="card-text | grow order-1 md:text-center">

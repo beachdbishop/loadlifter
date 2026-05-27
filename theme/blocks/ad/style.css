@@ -1,0 +1,20 @@
+/* Block: Ad */
+.llad span.grow {
+	text-shadow: 2px 2px 8px var(--color-neutral-900),
+		-4px -4px 16px var(--color-neutral-600);
+}
+
+.llad:not([class*="is-style-"]) {
+	/* Default = Clear */
+	/* background-color: transparent; */
+	background-color: var(--color-neutral-500);
+}
+.llad.is-style-brand-red {
+	background-color: var(--color-mahogany-700);
+}
+.llad.is-style-brand-blue {
+	background-color: var(--color-orient-800);
+}
+.llad.is-style-brand-gray {
+	background-color: var(--color-neutral-700);
+}

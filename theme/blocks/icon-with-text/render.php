@@ -12,15 +12,26 @@
  * 						its parent block.
  */
 
-// Create id attribute allowing for custom "anchor" value.
-$block_id = 'll_it_' . $block['id'];
-if( !empty( $block['anchor'] ) ) {
-	$id = $block['anchor'];
+
+$it_style = get_field( 'll_it_style' );
+$icon_size = get_field( 'll_it_icon_size' );
+$stack_size = get_field( 'll_it_stack_size' );
+$bg_shape = get_field( 'll_it_background_shape' );
+$bg_color = get_field( 'll_it_background_color_pick' );
+$icon_ident = get_field( 'll_it_icon_ident' );
+$icon_color = get_field( 'll_it_icon_color_pick' );
+
+
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = ' id="ll_icontext_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_icontext_' . $block['id'] . ' "';
 }
 
 $class_name = 'icon-with-text-item';
 if ( ! empty( $block['className'] ) ) {
-    $class_name .= ' ' . $block['className'];
+  $class_name .= ' ' . $block['className'];
 }
 
 $mt_inner_template = array(
@@ -41,14 +52,6 @@ $mt_inner_template = array(
 		)
 	),
 );
-
-$it_style = get_field( 'll_it_style' );
-$icon_size = get_field( 'll_it_icon_size' );
-$stack_size = get_field( 'll_it_stack_size' );
-$bg_shape = get_field( 'll_it_background_shape' );
-$bg_color = get_field( 'll_it_background_color_pick' );
-$icon_ident = get_field( 'll_it_icon_ident' );
-$icon_color = get_field( 'll_it_icon_color_pick' );
 ?>
 
 

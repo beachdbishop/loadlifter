@@ -1,0 +1,29 @@
+
+:root :where(.ll-color-chips) {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	gap: var(--spacing);
+	margin-block: calc(var(--spacing) * 2);
+	place-content: center;
+
+	&.is-layout-flow > * {
+		margin-block-start: unset;
+	}
+
+	@media (width >= 48rem) {
+		place-content: start;
+		flex-direction: row;
+	}
+
+	@media (width >= 64rem) {
+		margin-block: calc(var(--spacing) * 4);
+	}
+}
+
+.llcolorchip.is-style-default {
+	border-color: var(--color-neutral-100);
+}
+.llcolorchip.is-style-brand {
+	border-color: var(--color-gold-600);
+}

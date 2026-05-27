@@ -12,22 +12,24 @@
  * 						its parent block.
  */
 
-// Create id attribute allowing for custom "anchor" value.
-$block_id = 'll_viz_' . $block['id'];
-if( !empty( $block['anchor'] ) ) {
-	$id = $block['anchor'];
-}
-
 
 $viz_title = 'Cannabis Legality by U.S. State';
 $viz_legal = 'To the best of our knowledge, this information is current as of 2026/03/20.';
+
+
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = ' id="ll_viz_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_viz_' . $block['id'] . ' "';
+}
 ?>
 
 
 
 
 
-<div id="<?php echo esc_attr($block_id); ?>" class="visualization p-4 space-y-4  |  lg:p-8 lg:space-y-8">
+<div <?php echo esc_attr($block_id); ?> class="visualization p-4 space-y-4  |  lg:p-8 lg:space-y-8">
 
 	<h3><?php echo $viz_title; ?></h3>
 

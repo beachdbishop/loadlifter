@@ -11,19 +11,17 @@
  * @param   array $context The context provided to the block by the post or its parent block.
  */
 
-// Support custom "anchor" values.
-$anchor = '';
+
+$block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-  $anchor = 'id="' . esc_attr( $block['anchor'] ) . '" ';
+	$block_id = ' id="ll_ad_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = ' id="ll_ad_' . $block['id'] . ' "';
 }
 
-// Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'llad';
+$block_classes = [ 'llad' ];
 if ( ! empty( $block['className'] ) ) {
-  $class_name .= ' ' . $block['className'];
-}
-if ( ! empty( $block['align'] ) ) {
-  $class_name .= ' align' . $block['align'];
+	$block_classes = array_merge( $block_classes, explode( ' ', $block['className'] ) );
 }
 
 // Load values and assign defaults.
@@ -41,13 +39,23 @@ $ad_extra_classes	= get_field( 'll_ad_extra_classes' );
 
 // Default style is CLEAR!
 ?>
-<section <?php echo $anchor; ?> class="<?php echo esc_attr($class_name); ?>  |  not-prose group text-white bg-center bg-cover bg-blend-multiply  |  <?php echo esc_attr($ad_width_classes); ?> <?php echo esc_attr($ad_extra_classes); ?>" style="background-image: url('<?php echo esc_url($ad_image); ?>')">
-	<a class="" href="<?php echo esc_url($ad_link); ?>">
+
+
+<section <?php echo $block_id; ?> class="<?php echo implode( ' ', $block_classes); ?>  |  not-prose group text-white bg-center bg-cover bg-blend-multiply  |  <?php echo esc_attr( $ad_width_classes ); ?> <?php echo esc_attr( $ad_extra_classes ); ?>" style="background-image: url('<?php echo esc_url( $ad_image ); ?>')">
+
+	<?php if ( ! $is_preview ) {
+		echo '<a class="" href="' . esc_url( $ad_link ) . '">';
+	} ?>
+
 		<div class="container px-5 py-16 mx-auto">
 			<div class="flex flex-col items-start mx-auto  |  sm:flex-row sm:items-center lg:w-fit">
-				<span class="grow text-white [text-shadow:_1px_0_10px_rgb(0_0_0_/_70%)] leading-snug  |   sm:pr-16"><?php echo $ad_text; ?></span>
-				<div class="shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase duration-500 ease-in-out bg-transparent border border-white border-solid rounded-tl-2xl rounded-br-2xl transition-color  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><?php echo $ad_button_text; ?></div>
+				<span class="grow text-white leading-snug  |  sm:pr-16"><?php echo $ad_text; ?></span>
+				<div class="shrink-0 px-8 py-2 mt-10 text-sm font-bold text-white uppercase duration-500 ease-in-out bg-transparent border-2 border-white border-solid rounded-tl-2xl rounded-br-2xl transition-color  |  focus:outline-hidden group-hover:bg-white group-hover:text-gray-800 sm:mt-0"><?php echo $ad_button_text; ?></div>
 			</div>
 		</div>
-	</a>
+
+	<?php if ( ! $is_preview ) {
+		echo '</a>';
+	} ?>
+
 </section>
