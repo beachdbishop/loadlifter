@@ -72,7 +72,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 			the_post();
 			?>
 
-			<div class="page-hero  |  wp-block-cover bg-neutral-950 ll-equal-vert-padding !px-0">
+			<div class="page-hero  |  wp-block-cover bg-neutral-950 ll-equal-vert-padding px-0!">
 				<span class="page-hero-overlay  |  z-[1] absolute top-0 right-0 bottom-0 left-0"></span>
 
 				<video playsinline autoplay muted loop poster="<?php echo $featimg[0]; ?>" class="wp-block-cover__video-background intrinsic-ignore print:hidden" data-object-fit="cover">
@@ -81,12 +81,12 @@ $industriesQuery = new WP_Query( $query_ind_args );
 					Your browser does not support the video tag.
 				</video>
 
-				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2  |  lg:px-4 lg:min-h-(--height-hero)">
+				<div class="wp-block-cover__inner-container text-left flex flex-col justify-center px-2  |  lg:px-4 lg:min-h-hero">
 					<hgroup class="space-y-2  |  lg:space-y-6">
 						<h1 class="leading-none text-white tracking-light drop-shadow-lg shadow-neutral-950  |  lg:text-6xl">
 							<?php echo $video_heading; ?>
 						</h1>
-						<p class="text-2xl leading-normal font-head ax-w-[44ch] !text-orient-400 drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
+						<p class="text-2xl leading-normal font-head ax-w-[44ch] text-orient-400! drop-shadow-lg shadow-neutral-950  |  lg:text-4xl">
 							<?php echo $video_subheading; ?>
 						</p>
 					</hgroup>
@@ -94,7 +94,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 					<?php if ( ( !empty( $hero_cta1_text ) ) && ( !empty( $hero_cta1_url ) ) ) : ?>
 					<div class="wp-block-buttons is-layout-flex wp-block-buttons-is-layout-flex">
 						<div class="inline-block m-0">
-							<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg text-neutral-100 !bg-brand-red-dark border-brand-red-dark shadow-md shadow-neutral-950 hover:border-white hover:text-white" href="<?php echo $hero_cta1_url; ?>">
+							<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg text-neutral-100 bg-brand-red-dark! border-brand-red-dark shadow-md shadow-neutral-950 hover:border-white hover:text-white" href="<?php echo $hero_cta1_url; ?>">
 								<?php echo $hero_cta1_text; ?>
 							</a>
 						</div>
@@ -124,29 +124,8 @@ $industriesQuery = new WP_Query( $query_ind_args );
 				</section>
 			<?php endif; ?>
 
-			<section class="full-bleed ll-equal-vert-padding bg-neutral-200  |  dark:bg-neutral-900 dark:text-neutral-300" aria-labelledby="industries">
-				<div class="ind-grid  |  px-2  |  lg:px-4">
-					<h2 id="industries" class="mb-4 lg:mb-8">Industry Knowledge</h2>
-					<?php
-					if ( $industriesQuery->have_posts() ) :
-					?>
-						<div class="ll-card-flips is-style-default mx-auto max-w-6xl">
-						<?php
-						while ( $industriesQuery->have_posts() ) :
-							$industriesQuery->the_post();
-							global $post;
-							get_template_part( 'template-parts/content/content', 'card-ic-flip-sm' );
-						endwhile;
-						?>
-						</div>
-					<?php
-					wp_reset_query();
-					endif;
-					?>
-				</div>
-			</section>
 
-			<section class="full-bleed ll-equal-vert-padding not-prose  |  dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
+			<section class="full-bleed ll-equal-vert-padding-bottom not-prose  |  dark:bg-neutral-800 dark:text-neutral-300" aria-labelledby="recent">
 				<div class="post-grid  |  px-2  |  lg:px-4">
 					<?php
 					if ( $postsQuery->have_posts() ) :
