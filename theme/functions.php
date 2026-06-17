@@ -188,11 +188,11 @@ if ( ! function_exists( 'll_setup' ) ) :
 		remove_action( 'wp_head', 'wp_generator' );
 		remove_action( 'wp_head', 'index_rel_link' );
 		remove_action( 'wp_head', 'wlwmanifest_link' );
-		remove_action( 'wp_head', 'start_post_rel_link', 10, 0 );
-		remove_action( 'wp_head', 'parent_post_rel_link', 10, 0 );
-		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10, 0 );
-		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0 );
-		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'start_post_rel_link', 10 );
+		remove_action( 'wp_head', 'parent_post_rel_link', 10 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link', 10 );
+		remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10 );
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
@@ -235,6 +235,7 @@ function ll_scripts() {
 	wp_register_script( 'a11y-slider', get_template_directory_uri() . '/js/a11y-slider.min.js', [], '', false );
 	wp_register_script( 'block-litevimeoembed', 'https://cdn.jsdelivr.net/npm/lite-vimeo-embed/+esm', [], false, false );
 	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
+	// TODO: Is this^ script really used anymore?
 
 	// wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
 	// wp_enqueue_script( 'fa6-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
@@ -257,6 +258,10 @@ function ll_disable_wp_links_menu() {
 	remove_menu_page( 'link-manager.php' );
 }
 
+function ll_load_dev_styles() {
+	wp_enqueue_style( 'loadlifter-dev', get_template_directory_uri() . '/zzz-dev.css', [], LL_VERSION );
+}
+
 
 function ll_load_admin_styles() {
 	wp_register_style( 'rsms-inter', 'https://rsms.me/inter/inter.css' );
@@ -277,6 +282,7 @@ add_filter( 'yarpp_enqueue_thumbnails_style', '__return_false' );
 
 switch( wp_get_environment_type() ) {
 	case 'local':
+		add_action( 'wp_enqueue_scripts', 'll_load_dev_styles' );
 		add_action( 'admin_enqueue_scripts', 'll_load_admin_styles' );
 		add_filter( 'be_media_from_production_url', function() {
 			return 'https://beachfleischman.com';
@@ -284,6 +290,7 @@ switch( wp_get_environment_type() ) {
 		break;
 
 	case 'staging':
+		add_action( 'wp_enqueue_scripts', 'll_load_dev_styles' );
 		add_action( 'admin_enqueue_scripts', 'll_load_admin_styles' );
 		add_filter( 'be_media_from_production_url', function() {
 			return 'https://beachfleischman.com';
@@ -384,14 +391,7 @@ add_filter( 'register_block_type_args', 'll_modify_heading_levels', 10, 2 );
  */
 function add_search_item_to_utility_nav( $items, $args ) {
 	if ( $args->menu === 'Nav Utility' ) {
-		// $items .= '<li class="hidden theme-changer  |  dark:text-yellow-400">
-		// 	<button /*@click="darkMode = !darkMode"*/ aria-label="Toggle Theme">
-		// 		<i class="fa-regular fa-moon fa-fw inline dark:hidden"></i>
-		// 		<i class="fa-regular fa-sun fa-fw hidden dark:inline"></i>
-		// 	</button>
-		// </li>
-		// <li class="md:max-w-[200px] xl:max-w-fit">' . get_search_form( false ) . '</li>';
-		$items .= '<li class="md:max-w-[140px] xl:max-w-fit">' . get_search_form( false ) . '</li>';
+		$items .= '<li class="md:max-w-35 xl:max-w-fit">' . get_search_form( false ) . '</li>';
 	}
 	return $items;
 }

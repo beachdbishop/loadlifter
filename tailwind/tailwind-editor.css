@@ -1,63 +1,17 @@
 /**
- * This file outputs to `style-editor.css`, your main block editor style sheet.
+ * Additional styles applied only to the WordPress editor
  *
- * You probably won’t need to edit this file. You’re more likely to want to
- * edit `./tailwind/tailwind-theme.css`, which contains your project’s custom
- * design tokens, or files in the `./tailwind/custom` folder.
+ * It is sometimes necessary to add additional styles for the WordPress block
+ * editor, generally to improve the editor experience. For example, you may
+ * want to tweak the appearance of the title area to better match your site’s
+ * front end, or you may need to change the appearance of a block to better
+ * distinguish between its fields while editing.
+ *
+ * Those styles should be added in this file, and they will be added only to
+ * the block editor.
  */
 
 /**
- * Add Tailwind Typography and a corresponding config file.
+ * Import editor styles from Tailwind Typography fork.
  */
-/* @plugin "@_tw/typography";
-@config "../tailwind-typography.config.js"; */
-/**
- * Add the WordPress file header.
- */
-@import "./custom/file-header.css";
-/**
- * Add both the default Tailwind theme and your custom theme.
- */
-@import "./tailwind-theme.css";
-/**
- * Add custom `@font-face` rules.
- */
-@import "./custom/fonts.css";
-@source "./safelist.txt";
-/**
- * Add your custom base styles.
- */
-@layer base {
-	@import "./custom/base.css";
-}
-
-
-
-/**
- * Add only components that make sense to included in the editor.
- */
-@import "./custom/components/accordions.css";
-@import "./custom/components/block-ad.css";
-@import "./custom/components/block-callout.css";
-@import "./custom/components/buttons.css";
-@import "./custom/components/footnotes.css";
-@import "./custom/components/images.css";
-@import "./custom/components/lists.css";
-@import "./custom/components/notes.css";
-@import "./custom/components/pagination.css";
-@import "./custom/components/sep-and-spacers.css";
-@import "./custom/components/social-links.css";
-@import "./custom/components/tables.css";
-@import "./custom/components/wp-block-cover.css";
-@import "./custom/components/wp-block-group.css";
-@import "./custom/components/wp-block-quotes.css";
-@import "./custom/components/wp-block-media-text.css";
-
-@import "./custom/components/zzz-dev.css";
-
- /**
-	* Add Tailwind's utility classes and any utility classes registered by
-	* plugins, then add custom utility classes.
-	*/
-@import "tailwindcss/utilities";
-@import "./custom/utilities.css";
+@import "@_tw/typography/editor";

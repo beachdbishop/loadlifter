@@ -26,6 +26,8 @@ div:not(.block-editor-block-list__layout) .full-bleed {
 }
 div:not(.block-editor-block-list__layout) .full-bleed > div {
 	@apply container;
+	/* padding-inline-start: env(safe-area-inset-right);
+	padding-inline-end: env(safe-area-inset-left); */
 }
 
 

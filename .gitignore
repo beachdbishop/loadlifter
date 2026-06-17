@@ -2,9 +2,6 @@
 /node_modules
 /vendor
 
-# Ignore pa11y reports folder
-/_pa11y
-
 # Ignore generated JavaScript files:
 *.min.js
 
@@ -12,10 +9,13 @@
 /theme/a11yslider.css
 /theme/style.css
 /theme/style-editor.css
-/theme/style-editor-extra.css
+tailwind-intellisense.css
 
 # Ignore the generated zip file:
 loadlifter.zip
+
+# Ignore the dev-only stylesheet:
+/theme/zzz-dev.css
 
 # Ignore .DS_Store files from macOS:
 .DS_Store

@@ -32,7 +32,7 @@ $page_excerpt                   = get_the_excerpt();
 $cards_opps = [
 	"internships" => [
 		"slug" => 'intern',
-		"label" => 'Internships',
+		"label" => 'Accounting Internships',
 		"link" => '/career-opportunities/internships/',
 		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,h_251,w_480/v1762991977/feat__20251112--internships-social2_noqqj9.jpg',
 		"img-wide" => 'https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto/v1762991977/feat__20251112--internships-social2_noqqj9.jpg',
@@ -48,7 +48,7 @@ $cards_opps = [
 	],
 	"pros" => [
 		"slug" => 'pro',
-		"label" => 'Experienced Professionals',
+		"label" => 'Experienced Accounting Professionals',
 		"link" => '/career-opportunities/experienced-professionals/',
 		"img" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto,w_480/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg',
 		"img-wide" => 'https://res.cloudinary.com/beachfleischman/image/upload/dpr_auto,f_auto/v1676492725/feat__careers-exp-pro--social_oxpiif.jpg',
@@ -237,7 +237,7 @@ $teamQuery = new WP_Query( $query_team_args );
 								} ?>
 								</div>
 
-								<h2>Your future</h2>
+								<h2>Your future in Accounting Services</h2>
 								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_future as $card ) {
 									ll_no_link_card( $card );
@@ -260,9 +260,10 @@ $teamQuery = new WP_Query( $query_team_args );
 							.block-cover-idea { background-image: url('https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto,w_1536/v1677875018/feat__careers--idea_ifhenr.jpg'); }
 						}
 					</style>
+					<?php // NOTE: this^ inline css is here so that it doesn't have to be copied into each page that uses this template. ?>
 					<section id="culture" class="full-bleed not-prose ll-equal-vert-spacing">
 						<div class="flex flex-col px-2 space-y-4 lg:px-4">
-							<h2 class="">Culture</h2>
+							<h2 class="">Firm Culture</h2>
 
 							<div class="block-cover-women overflow-hidden bg-cover bg-center bg-no-repeat bg-orient-950 text-neutral-100">
 								<div class="p-8 bg-linear-to-r from-orient-950 via-orient-950/80 to-orient-950/40  |  md:p-12 lg:px-26 lg:py-24">
@@ -291,7 +292,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php if ( !is_page('internships') ) : ?>
 						<section id="benefits" class="full-bleed">
 							<div class="px-2  |  lg:px-4">
-								<h2 class="mb-4">Benefits</h2>
+								<h2 class="mb-4">BeachFleischman Benefits</h2>
 								<div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
 									<?php foreach( $cards_benefits as $card ) {
 										ll_render_hover_card( $card );
@@ -311,7 +312,7 @@ $teamQuery = new WP_Query( $query_team_args );
 						<?php
 						if ( $teamQuery->have_posts() ) :
 						?>
-						<div class="px-2 entry-content  |  lg:px-4">
+						<div class="px-2 entry-content mt-4  |  lg:px-4 lg:mt-8">
 							<h2 class="mb-4">Our Team</h2>
 							<ul class="list-none dps-grid-4max" data-team-ids="<?php echo esc_attr( $hr_ids ); ?>">
 							<?php

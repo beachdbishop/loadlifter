@@ -17,7 +17,7 @@ $new_nav = false;
 <html <?php language_attributes(); ?> class="scroll-container">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, viewport-fit=cover">
 	<?php wp_head(); ?>
 </head>
 
