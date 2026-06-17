@@ -219,7 +219,7 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php //   E X P E C T   &   F U T U R E   ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose ">
 							<div class="px-2  |  lg:px-4">
-								<h2>What you can expect</h2>
+								<h2>What you can expect at BeachFleischman</h2>
 								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
 									ll_no_link_card( $card );
@@ -230,14 +230,14 @@ $teamQuery = new WP_Query( $query_team_args );
 					<?php } else { ?>
 						<section class="full-bleed ll-equal-vert-spacing not-prose">
 							<div class="px-2  |  lg:px-4">
-								<h2>What you can expect</h2>
+								<h2>What you can expect at BeachFleischman</h2>
 								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_expect as $card ) {
 									ll_no_link_card( $card );
 								} ?>
 								</div>
 
-								<h2>Your future in Accounting Services</h2>
+								<h2>Your future</h2>
 								<div class="ll-card-flips is-style-default | mx-auto my-4 md:my-12 lg:my-12 ">
 								<?php foreach( $cards_future as $card ) {
 									ll_no_link_card( $card );

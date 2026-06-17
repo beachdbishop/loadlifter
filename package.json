@@ -1,5 +1,7 @@
 {
+	"$schema": "https://json.schemastore.org/package.json",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"development:tailwind:frontend": "npx postcss ./tailwind.css -o ./theme/style.css --verbose",
 		"development:tailwind:slidercss": "npx postcss ./tailwind/a11y-slider.css -o ./theme/a11yslider.css",
