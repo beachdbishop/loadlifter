@@ -27,6 +27,11 @@ html {
 	html {
 		--_scroll-padding: 100px;
 	}
+
+	/* :is(.lg\:prose-xl :not(:where([class~='not-prose'],[class~='not-prose'] *))):where(.prose > :first-child) {
+		margin-top: unset !important;
+		margin-block-start: unset !important;
+	} */
 }
 
 .entry-content {
