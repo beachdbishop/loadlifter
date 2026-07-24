@@ -220,6 +220,9 @@ function ll_show_post_source( $column, $post_id ) {
 		if ( $source === 'checkpoint' )
 			echo '<span class="ll_adm-tag ll_adm-tag--topline">TopLine (Checkpoint)</span>';
 
+		if ( $source === 'topline' )
+			echo '<span class="ll_adm-tag ll_adm-tag--topline">TopLine (Checkpoint)</span>';
+
 		if ( $source === 'other' )
 			echo '<span class="ll_adm-tag ll_adm-tag--other">Other</span>';
 	}

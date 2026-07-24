@@ -82,6 +82,8 @@
 	}
 }
 
+/* TODO: Is this class still in use somewhere? */
+/* Don't copy this approach... that path doesn't work on dev, only in production! */
 .bg-brandmarkmono {
 	--mark-mono-size: 320px;
 	background-image: url("/wp-content/themes/loadlifter/theme/img/brandmarkmono.svg");
@@ -187,14 +189,6 @@ aside .timestamp {
 	overflow: clip;
 	padding: 0;
 	position: relative;
-}
-
-
-/* Section: Recent Posts at bottom of Industry or Service pages */
-.featured-posts-indsvc {
-	background-color: transparent;
-	background-image: url('/wp-content/themes/loadlifter/theme/img/wavey-fingerprint.svg');
-	background-repeat: repeat;
 }
 
 

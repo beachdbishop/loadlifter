@@ -34,10 +34,10 @@ $page_cta_heading 							= get_field( 'll_ind_cta_heading' );
 $page_cta_body 									= get_field( 'll_ind_cta_body' );
 $page_cta_button_text 					= get_field( 'll_ind_cta_button_text' );
 $page_cta_html 									= get_field( 'll_ind_cta_html' );
-$page_groups_html 							= get_field( 'll_ind_groups_html' );
-$page_people_display 						= get_field( 'll_ind_people_display_style' );
-$page_people_heading						= get_field( 'll_ind_people_heading' );
-$page_people 										= get_field( 'll_ind_people' );
+// $page_groups_html 							= get_field( 'll_ind_groups_html' );
+// $page_people_display 						= get_field( 'll_ind_people_display_style' );
+// $page_people_heading						= get_field( 'll_ind_people_heading' );
+// $page_people 										= get_field( 'll_ind_people' );
 $page_form 											= get_field( 'ls_hs_form_html' );
 $hero_cta1_text 								= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url 									= get_field( 'll_hero_cta1_url' );
@@ -95,18 +95,18 @@ if ( $page_post_category ) {
 		'order' => 'DESC',
 	];
 
-	$query_team_args = [
-		'post_type' => 'people',
-		'post__in' => $page_people,
-		'posts_per_page' => -1,
-		'orderby' => 'meta_value',
-		'order' => 'ASC',
-		'meta_key' => 'll_people_last_name',
-	];
+	// $query_team_args = [
+	// 	'post_type' => 'people',
+	// 	'post__in' => $page_people,
+	// 	'posts_per_page' => -1,
+	// 	'orderby' => 'meta_value',
+	// 	'order' => 'ASC',
+	// 	'meta_key' => 'll_people_last_name',
+	// ];
 
 	$postsQuery = new WP_Query( $qargs );
 	$resourcesQuery = new WP_Query( $resargs );
-	$teamQuery = new WP_Query( $query_team_args );
+	// $teamQuery = new WP_Query( $query_team_args );
 }
 ?>
 
@@ -121,48 +121,11 @@ if ( $page_post_category ) {
 
 		<article id="post-<?php the_ID(); ?>"	<?php post_class(); ?>>
 			<div class="px-2 container  |  lg:px-4">
-				<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 lg:gap-16">
+				<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 2xl:gap-16">
 
 					<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 
 						<?php the_content(); ?>
-
-						<?php // SERVICE PROFESSIONALS AND INVOLVEMENT ?>
-						<?php if ( $page_people_display !== 'hide' || !empty( $page_groups_html ) ) : ?>
-							<?php
-							$wrapper_class = '';
-							if ( $page_people_display !== 'hide' && !empty( $page_people ) ) :
-								$wrapper_class = count( $page_people ) > 4 ? 'slider slider-people' : 'dps-grid-4max';
-								$wrapper_part = count( $page_people ) > 4 ? 'slide-people' : 'card-people-md';
-							?>
-								<h2 class="lg:mt-8 print:hidden">
-									<?php
-									// $title_term = ( $post->post_parent == $page_id_industries ) ? 'Industry Professional' : 'Our Advisor';
-									// echo ll_is_plural( $page_people ) ? "{$title_term}s" : $title_term;
-									echo !empty( $page_people_heading ) ? $page_people_heading : "Our Advisors";
-									?>
-								</h2>
-
-								<?php
-								if ( $wrapper_class ) :
-									echo '<div class=" ' . esc_attr( $wrapper_class ) . '  |  print:hidden">';
-									while ( $teamQuery->have_posts() ) :
-										$teamQuery->the_post();
-										get_template_part( 'template-parts/content/content', $wrapper_part );
-									endwhile;
-									echo '</div>';
-								endif;
-
-								wp_reset_postdata();
-								?>
-							<?php endif; ?>
-
-							<?php
-							if ( !empty( $page_groups_html ) ) :
-								echo do_shortcode( $page_groups_html );
-							endif;
-							?>
-						<?php endif; ?>
 
 					</div>
 
@@ -192,7 +155,7 @@ if ( $page_post_category ) {
 
 						<?php if ( ( $page_post_category ) && ( $postsQuery->have_posts() ) ) : ?>
 
-							<section class="featured-posts-indsvc  |  full-bleed not-prose ll-equal-vert-padding bg-repeat  |  print:hidden">
+							<section class="full-bleed not-prose ll-equal-vert-padding bg-transparent bg-repeat  |  print:hidden" style="background-image:url('<?php echo get_template_directory_uri(); ?>/img/wavey-fingerprint.svg">
 								<div class="post-grid  |  px-2  |  lg:px-4">
 									<div class="flex items-center justify-between mb-4">
 										<h2>Insights</h2>
@@ -255,17 +218,6 @@ if ( $page_post_category ) {
 				</div>
 			</div>
 		</article>
-
-		<?php if ( ( $page_people_display !== 'hide' ) && ( count( $page_people ) > 4 ) ) : ?>
-			<script>
-				const slider = new A11YSlider(document.querySelector(".slider"), {
-					arrows: false,
-					autoplay: true,
-					autoplaySpeed: 5000,
-					dots: true
-				});
-			</script>
-		<?php endif; ?>
 
 	<?php
 	endwhile; // End of the loop.

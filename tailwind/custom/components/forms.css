@@ -133,9 +133,17 @@ input[type="submit"]:active {
 .hs-dependent-field > * + * {
 	margin-block-start: --spacing(4);
 }
+
+.hs_service_category .inputs-list,
 .hs_subscribe_to_our_newsletter label {
 	font-size: var(--text-sm);
 }
+
+#service_category9-c8675641-3e68-4ff7-9dc3-ae3636fbf1c8 + span {
+	/* ffs, the long choice - 401(k), Pension, & Profit Sharing Plan Administration */
+	letter-spacing: -0.4px;
+}
+
 .legal-consent-container > *:not(:first-child) {
 	margin-top: --spacing(2);
 }

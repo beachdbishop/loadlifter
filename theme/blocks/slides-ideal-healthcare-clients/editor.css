@@ -1,0 +1,26 @@
+/* .wp-block-loadlifter-slides-ideal-healthcare-clients .acf-innerblocks-container {
+	display: flex;
+	gap: 0.5rem;
+	padding-bottom: 1rem;
+	padding-top: 0.5rem;
+
+	& > * {
+		flex-shrink: 0;
+		flex-grow: 0;
+		flex-basis: auto;
+	}
+} */
+
+
+.ll-note-admin {
+	background-color: ivory;
+	color: saddlebrown;
+	border: 1px solid moccasin;
+	border-radius: 10px;
+	padding: 0.25rem 0.5rem;
+
+	> * {
+		line-height: 1.1;
+		margin-block: 0.5em;
+	}
+}

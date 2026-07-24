@@ -14,21 +14,22 @@
 
 get_header();
 
-$page_id                        = get_the_ID();
+$page_id = get_the_ID();
 if (get_field('ll_page_title_override')) {
-     $page_title                = get_field('ll_page_title_override');
+  $page_title = get_field('ll_page_title_override');
 } else {
-     $page_title                = get_the_title();
+	$page_title = get_the_title();
 }
 
 if ( get_field( 'll_custom_subheader' ) ) {
-	$page_message 								= get_field( 'll_custom_subheader' );
+	$page_message = get_field( 'll_custom_subheader' );
 } else {
-	$brand_message								= get_field( 'll_brand_message' );
-	$page_message									= $brand_message['label'];
+	$brand_message = get_field( 'll_brand_message' );
+	$page_message = $brand_message['label'];
 }
 
-$page_excerpt                   = get_the_excerpt();
+$page_excerpt = get_the_excerpt();
+$page_form = get_field( 'ls_hs_form_html' );
 ?>
 
 	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
@@ -58,7 +59,7 @@ $page_excerpt                   = get_the_excerpt();
 
 						<?php the_content(); ?>
 
-						<div class="clear-both">&nbsp;</div>
+						<!-- div class="clear-both">&nbsp;</div -->
 
 						<?php
 						wp_link_pages(
@@ -70,7 +71,22 @@ $page_excerpt                   = get_the_excerpt();
 						?>
 					</div>
 
-					<?php get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
+					<?php // get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
+					<?php
+					if ( get_field( 'll_normal_contact_form_location' ) == 1 ) :
+						echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+						get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
+						echo '</div>';
+					endif;
+					?>
+
+					<?php
+					if ( ( get_field( 'll_normal_contact_form_location' ) != 1 ) && ( $page_form ) ) :
+						echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+						echo do_shortcode( $page_form );
+						echo '</div>';
+					endif;
+					?>
 
 				</div>
 			</article>

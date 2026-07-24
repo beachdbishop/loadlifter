@@ -80,16 +80,19 @@
                 "--": "Unknown",
                 "original": "Original Content",
                 "strategic7": "Strategic 7",
-                "checkpoint": "TopLine (Checkpoint)",
+                "topline": "TopLine",
                 "other": "Other"
             },
             "default_value": false,
             "return_format": "array",
             "multiple": 0,
             "allow_null": 0,
+            "allow_in_bindings": 1,
             "ui": 0,
             "ajax": 0,
-            "placeholder": ""
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
         }
     ],
     "location": [
@@ -110,5 +113,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1720569965
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1784235199
 }

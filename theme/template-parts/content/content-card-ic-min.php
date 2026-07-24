@@ -23,7 +23,7 @@ $peep_level = get_field( 'll_people_level' );
 <li <?php post_class( 'card-ic min  |  group flex flex-col relative border-transparent border-2 ' . $order_class . '  |  focus-within:border-neutral-500' ); ?>>
 
 	<!-- div class="card-text  |  flex flex-col text grow order-1 bg-white  <?php /* if ( 'location' === get_post_type() ) { echo '|  dark:bg-neutral-800 dark:text-neutral-300'; } */ ?>" -->
-	<div class="card-text  |  flex flex-col text grow order-1 bg-transparent  |  dark:text-neutral-300">
+	<div class="card-text  |  flex flex-col text grow order-1 bg-white  |  dark:text-neutral-300 dark:bg-neutral-800">
 		<h3 class="my-2 overflow-hidden tracking-wide text-ellipsis">
 			<a href="<?php echo esc_url( get_permalink() ); ?>" class="focus:underline group-hover:decoration-orient-400 group-hover:underline">
 				<?php echo $page_title; ?>
