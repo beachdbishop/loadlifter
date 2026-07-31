@@ -59,8 +59,7 @@ if ( ! empty( $block['className'] ) ) {
 			autoplay: true,
 			autoplaySpeed: 5000,
 			dots: true
-		});
-		console.log('People Slider enabled.');"
+		});"
 	);
 }
 ?>

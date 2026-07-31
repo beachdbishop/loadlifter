@@ -134,8 +134,7 @@ if ( $is_preview ) {
 			customPaging: function(index, a11YSlider) {
 				return '<button class=\"betsy-dot\">' + index + '</button>';
 			}
-		});
-		console.log('healthcare Slider enabled.');"
+		});"
 	);
 }
 ?>
