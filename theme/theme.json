@@ -363,6 +363,7 @@
 			},
 			"button": {
 				"border": {
+					"width": "2px",
 					"radius": "8px",
 					"color": "transparent"
 				},
