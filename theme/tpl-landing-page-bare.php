@@ -13,12 +13,13 @@ get_header();
 
 $page_id                    = get_the_ID();
 if (get_field('ll_page_title_override')) {
-		$page_title             = get_field('ll_page_title_override');
+	$page_title             = get_field('ll_page_title_override');
 } else {
-		$page_title             = get_the_title();
+	$page_title             = get_the_title();
 }
 $page_message               = get_field( 'll_brand_message' );
 $page_excerpt               = get_the_excerpt();
+$page_form                  = get_field( 'ls_hs_form_html' );
 ?>
 
 	<main id="primary" class="landing-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
@@ -31,13 +32,19 @@ $page_excerpt               = get_the_excerpt();
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 				<div <?php ll_content_class( 'entry-content' ); ?>>
-					<?php the_content(); ?>
+					<?php
+					the_content();
+
+					if ( $page_form ) {
+						// echo do_shortcode( $page_form );
+						echo $page_form;
+					}
+					?>
 				</div>
 			</article>
 
 		<?php endwhile; ?>
 
 	</main><!-- #main -->
-
 <?php
 get_footer();
