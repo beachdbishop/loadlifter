@@ -13,6 +13,8 @@
  */
 
 
+// TODO: Make drop shadows an option, not a default
+
 $flip_enabled	= get_field( 'll_sqcard_flip_enabled' ); /* required, true by default */
 $title = get_field( 'll_sqcard_title' ); /* required */
 $title_is_long = ( ( iconv_strlen( $title, 'UTF-8' ) > 30 ) ? 'text-lg' : '' );
