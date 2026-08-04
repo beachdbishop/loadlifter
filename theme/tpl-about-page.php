@@ -109,7 +109,7 @@ $cards_about = [
 
 							<?php the_content(); ?>
 
-							<?php if ( is_page( 'idea-committee' ) ) :
+							<?php if ( is_page( 'disable-idea-committee' ) ) :
 								$args = [
 									'post_type' 							=> 'people',
 									'post_status' 						=> 'publish',

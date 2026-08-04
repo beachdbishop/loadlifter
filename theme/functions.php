@@ -14,7 +14,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.7.1' );
+	define( 'LL_VERSION', '3.7.2' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -304,27 +304,6 @@ switch( wp_get_environment_type() ) {
 		add_filter( 'jetpack_just_in_time_msgs', '__return_false', 99 );
 		break;
 }
-
-
-/**
- * Enqueue CSS and JS for A11y Slider when shortcode is present
- */
-function ll_enq_a11y_slider_assets() {
-	global $post;
-	if( is_a( $post, 'WP_Post' ) && has_shortcode( $post->post_content, 'a11yslider' ) ) {
-		wp_enqueue_style( 'a11y-slider-styles' );
-		wp_enqueue_script( 'a11y-slider' );
-	}
-}
-function ll_enq_a11y_slider_scripts() {
-	global $post;
-	if ( ( !empty( get_field( 'll_ind_people', $post->ID ) ) ) && ( count( get_field( 'll_ind_people', $post->ID ) ) > 4 ) || is_page( 'idea-committee' ) ) {
-		wp_enqueue_style( 'a11y-slider-styles' );
-		wp_enqueue_script( 'a11y-slider' );
-	}
-}
-add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_assets' );
-add_action( 'wp_enqueue_scripts', 'll_enq_a11y_slider_scripts' ); /* No shortcode required in content */
 
 
 /**
