@@ -65,5 +65,5 @@ div:not(.block-editor-block-list__layout) .full-bleed > div {
 
 @utility papercorners-* {
 	border-radius: --value(--papercorner-*) 0 --value(--papercorner-*);
-	padding: calc(--value(--papercorner-*) * 0.8) !important;
+	padding: calc(--value(--papercorner-*) * 0.7) --value(--papercorner-*) !important;
 }

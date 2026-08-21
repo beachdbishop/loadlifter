@@ -2,6 +2,10 @@ table caption {
 	caption-side: bottom;
 	padding-block: var(--spacing-2);
 	text-align: left;
+
+	@media screen and (width >= 1280px) {
+		text-align: center;
+	}
 }
 
 table caption,
@@ -10,13 +14,21 @@ figcaption {
 	font-weight: 600;
 }
 
-.prose thead,
+
+
+.prose thead {
+	background-color: light-dark(var(--color-neutral-200), var(--color-neutral-950));
+
+	@media (prefers-color-scheme: dark) {
+		border-color: var(--color-neutral-600);
+	}
+}
 .prose tfoot {
-	background-color: var(--color-neutral-200);
+	background-color: light-dark(var(--color-neutral-200), var(--color-neutral-950));
 }
 .prose th {
 	--tw-border-opacity: 1;
-	border-color: rgb(212 212 212 / var(--tw-border-opacity)) /* neutral-300 */;
+	border-color: light-dark(var(--color-neutral-300), var(--color-neutral-600));
 	border-style: solid;
 }
 .prose thead th {
@@ -27,12 +39,12 @@ figcaption {
 	vertical-align: top;
 }
 .prose tbody tr:nth-child(even) {
-	background: color-mix(in srgb, var(--color-neutral-200), transparent 60%);
+	background: color-mix(in srgb, light-dark(var(--color-neutral-200), var(--color-neutral-600)), transparent 60%);
 }
 .prose table td {
 	--tw-border-opacity: 1;
   border-bottom-width: 1px;
-  border-color: rgb(229 229 229 / var(--tw-border-opacity)) /* neutral-200 */;
+  border-color: light-dark(var(--color-neutral-200), var(--color-neutral-600));
 	border-style: solid;
 	border-top-width: 1px;
 }
@@ -56,7 +68,7 @@ figcaption {
 
 [role="region"][aria-labelledby][tabindex] {
   overflow: auto;
-  border: 0.1em solid var(--color-neutral-300);
+  border: 0.1em solid light-dark(var(--color-neutral-300), var(--color-neutral-600));
 }
 
 [role="region"][aria-labelledby][tabindex]:focus {
@@ -68,36 +80,3 @@ figcaption {
   margin: 0;
   border: none;
 }
-
-
-@media (prefers-color-scheme: dark) {
-
-	.prose thead {
-		background-color: var(--color-neutral-950);
-		border-color: var(--color-neutral-600);
-	}
-	.prose tfoot {
-		background-color: var(--color-neutral-950);
-	}
-
-	.prose table th,
-	.prose table td {
-		border-color: var(--color-neutral-600);
-	}
-
-	.prose tbody tr:nth-child(even) {
-		background: color-mix(in srgb, var(--color-neutral-600), transparent 60%);
-	}
-
-	[role="region"][aria-labelledby][tabindex] {
-		border: 0.1em solid var(--color-neutral-600);
-	}
-}
-
-@media screen and (min-width: 1280px) {
-	table caption {
-		text-align: center;
-	}
-}
-
-

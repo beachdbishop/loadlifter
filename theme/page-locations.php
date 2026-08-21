@@ -26,7 +26,7 @@ if ( get_field( 'll_custom_subheader' ) ) {
 $page_excerpt = get_the_excerpt();
 ?>
 
-	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :
@@ -82,7 +82,7 @@ $page_excerpt = get_the_excerpt();
 								</div>
 
 								<aside class="">
-									<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">
+									<div id="contact" class="container-contact-form not-prose">
 										<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 									</div>
 									<!--   A R E A   S I D E   -->

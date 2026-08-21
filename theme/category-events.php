@@ -53,14 +53,12 @@ $eventsQuery = new WP_Query( $query_events_args );
 $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 ?>
 
-	<main id="primary" class="pt-4 bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900 md:pt-6 lg:pt-8">
-		<div class="px-2 container  |  lg:px-4 ">
+	<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
+		<div class="px-2 pt-4 container  |  lg:px-4 md:pt-6 lg:pt-8">
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
-			<header class="flex gap-4 mb-4">
-				<div class="basis-2/3">
-					<h1 class="text-orient-800  |  dark:text-orient-400">Events</h1>
-				</div>
+			<header class="mb-4">
+				<h1 class="my-4 text-orient-800  |  lg:my-8 dark:text-orient-400">Events</h1>
 			</header>
 
 			<div class="">
@@ -71,7 +69,7 @@ $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 						<h2 class="font-semibold">Upcoming</h2>
 						<?php
 						// if ( $eventsQuery->found_posts > $blogposts_limit ) :
-						// 	echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
+						// 	echo '<a href="/blog/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
 						// endif;
 						?>
 					</div>
@@ -98,7 +96,7 @@ $archivedEventsQuery = new WP_Query( $query_archived_events_args );
 								<h3 class="font-semibold">Archived Events</h3>
 								<?php
 								if ( $archivedEventsQuery->found_posts > $archived_limit ) :
-									echo '<a href="/category/archived-events/" class="px-5 py-3 font-head font-semibold border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
+									echo '<a href="/category/archived-events/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:hover:text-orient-500 dark:hover:border-orient-900">View All</a>';
 								endif;
 								?>
 							</div>

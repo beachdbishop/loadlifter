@@ -1,5 +1,3 @@
-/* Group of card-ic parts */
-
 .cards-ic {
 	list-style-type: none;
 	transition-property: opacity;
@@ -40,8 +38,6 @@
 }
 
 
-
-
 .card-res {
 	display: grid;
 	grid-template: repeat(3, minmax(0, 1fr));
@@ -56,8 +52,6 @@
 }
 .card-res > .card-text {
 	grid-column: 2 / -1;
-	/* background-color: var(--color-amber-100); */
-
 }
 
 .card-meta .cat:first-of-type { font-weight: bold; }

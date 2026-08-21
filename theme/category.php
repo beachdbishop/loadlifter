@@ -20,14 +20,14 @@ if ( is_archive() ) {
 get_header();
 ?>
 
-<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
-	<div class="px-2 py-8 container  |  lg:px-4 ">
+<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
+	<div class="px-2 py-8 container  |  lg:px-4">
 		<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 		<?php if ( have_posts() ) : ?>
 
 			<header class="mb-2">
-				<h1 class="mb-2 entry-title text-orient-800  |  dark:text-orient-400"><?php echo ll_wrap_last_word( get_the_archive_title() ); ?></h1>
+				<h1 class="text-orient-800  |  lg:mt-8 dark:text-orient-400"><?php the_archive_title(); ?></h1>
 				<?php if ( get_the_archive_description() ) {
 					the_archive_description( '<p>', '</p>' );
 				} ?>

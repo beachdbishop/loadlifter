@@ -49,7 +49,7 @@ if ( $author_org === 'BeachFleischman' ) {
 }
 ?>
 
-<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 	<div class="px-2 py-8 container  |  lg:px-4">
 		<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
@@ -58,7 +58,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 			<div class="peepgrid-a  |  pb-8 md:pt-2 md:pb-0 md:order-2">
 				<?php if ( $author_thumbnail ) { ?>
-					<div class="headshot  |  max-w-[380px] mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>" role="img">
+					<div class="headshot  |  max-w-95 mb-2 md:mb-4 bg-brand-red-faint bg-cover" style="background-image: url('<?php echo esc_url($url) ?>');" aria-label="<?php echo esc_attr($alt); ?>" role="img">
 						<div class="aspect-headshot">&nbsp;</div>
 					</div>
 				<?php } ?>
@@ -66,7 +66,7 @@ if ( $author_org === 'BeachFleischman' ) {
 
 			<div class="peepgrid-b  |  md:col-span-2 md:row-span-2 md:order-1 lg:col-span-3">
 				<header class="mb-4">
-					<h1 class="entry-title  |  mb-0 text-orient-800  |  dark:text-orient-400">Articles by <span class="text-brand-red font-semibold"><?php echo $author_name; ?></span></h1>
+					<h1 class="mb-0 text-orient-800  |  lg:mt-4 dark:text-orient-400">Articles by <span class="text-brand-red font-semibold"><?php echo $author_name; ?></span></h1>
 					<?php if (!empty($author_desigs)) {
 						echo sprintf('<h2 class="leading-normal tracking-tight text-neutral-500">%1$s</h2>', $author_desigs);
 					} ?>

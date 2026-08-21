@@ -43,9 +43,9 @@ function ll_clientcenter_platform_card_sub( $platform ) {
 	$plat_html .= '<img src="'.$platform['image'].'" alt="'.$platform['image_alt'].'" width="'.$platform['image_width'].'" height="'.$platform['image_height'].'">';
 	$plat_html .= '<p class="">' . $platform['blurb'] . '</p>';
 	$plat_html .= '<div class="w-full flex flex-wrap gap-2">';
-	$plat_html .= '<a href="' . $platform['button1_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" ' . $button1_ext . '><i class="mr-1 ' . $platform['button1_icon'] . '"></i> ' . $platform['button1_text'] . '</a>';
+	$plat_html .= '<a href="' . $platform['button1_url'] . '" class="px-6 py-3 font-head font-semibold leading-none border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" ' . $button1_ext . '><i class="mr-1 ' . $platform['button1_icon'] . '"></i> ' . $platform['button1_text'] . '</a>';
 	if ( $platform['button2_url'] ) {
-		$plat_html .= '<a href="' . $platform['button2_url'] . '" class="px-5 py-3 font-head font-semibold border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" ' . $button2_ext . '><i class="mr-1 ' . $platform['button2_icon'] . '"></i> ' . $platform['button2_text'] . '</a>';
+		$plat_html .= '<a href="' . $platform['button2_url'] . '" class="px-6 py-3 font-head font-semibold leading-none border-2 border-brand-blue rounded-lg text-brand-blue  |  hover:text-brand-blue-dark hover:border-orient-400 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200" ' . $button2_ext . '><i class="mr-1 ' . $platform['button2_icon'] . '"></i> ' . $platform['button2_text'] . '</a>';
 	}
 	$plat_html .= '</div>';
 	$plat_html .= '</div>';
@@ -147,7 +147,7 @@ $doclinks = [
 get_header();
 ?>
 
-<main id="primary" class="its-the-client-center-template bg-white relative z-10 shadow-xl  😶☔🤓  |  lg:shadow-2xl dark:bg-neutral-900">
+<main id="primary" class="its-the-client-center-template relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 	<?php
 	while (have_posts()) :
@@ -162,7 +162,7 @@ get_header();
 				<div class="pb-8  |  lg:pb-16">
 					<?php the_content(); ?>
 
-					<div class="mt-16 border-t-4 border-solid border-neutral-300 h-16  |  lg:mt-20 lg:h-20">&nbsp;</div>
+					<div class="mt-16 h-16 border-t-4 border-solid border-neutral-300  |  lg:mt-20 lg:h-20">&nbsp;</div>
 
 					<div class="not-prose grid gap-16  |  lg:grid-cols-2 lg:gap-y-20">
 						<?php
@@ -171,13 +171,6 @@ get_header();
 						}
 						?>
 					</div>
-
-					<!-- div class="llcallout  |  is-style-success not-prose bg-white border-2 rounded-br-2xl shadow-md  |  dark:bg-neutral-800 ">
-						<p class="p-2 font-semibold llcallout-title "><i class="fa-regular fa-envelope mr-1"></i> Note</p>
-						<div class="acf-innerblocks-container prose">
-							<p>For assistance with any of the technology platforms listed above, <a href="mailto:clientsupport@beachfleischman.com">email Client Support</a>.</p>
-						</div>
-					</div -->
 
 				</div>
 

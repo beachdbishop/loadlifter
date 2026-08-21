@@ -27,7 +27,7 @@ $page_excerpt                   = get_the_excerpt();
 // $hs_form_id 										= 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
 ?>
 
-	<main id="primary" class="contact-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="contact-page  |  relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :
@@ -55,7 +55,7 @@ $page_excerpt                   = get_the_excerpt();
 
 						<div class="grid md:grid-cols-2 gap-8  |  lg:gap-16">
 
-							<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">
+							<div id="contact" class="container-contact-form not-prose">
 								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 							</div>
 

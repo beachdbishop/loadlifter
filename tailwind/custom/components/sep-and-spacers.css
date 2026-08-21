@@ -1,6 +1,6 @@
 /* Separators */
 [class*="is-style-sep-"] {
-	margin-block: 1rem;
+	margin-block: --spacing(8);
 	height: 3px;
 	width: 100%;
 	border-width: 0;
@@ -12,17 +12,15 @@
 		var(--_end) 66%,
 		var(--_end) 100%
 	);
-}
-@media screen and (min-width: 768px) {
-	[class*="is-style-sep-"] {
-		margin-block: 1.5rem;
+
+	@media screen and (width >= 768px) {
+		margin-block: --spacing(12);
+	}
+	@media screen and (width >= 1024px) {
+		margin-block: --spacing(16);
 	}
 }
-@media screen and (min-width: 1024px) {
-	[class*="is-style-sep-"] {
-		margin-block: 2rem;
-	}
-}
+
 
 
 .is-style-sep-blue {

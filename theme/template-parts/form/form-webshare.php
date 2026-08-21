@@ -71,8 +71,8 @@ createApp({share}).mount();
 	</div>
 	<div :class="!noOptionsAvailable() ? 'flex gap-2' : null" hidden :hidden="noOptionsAvailable()">
 		<div class="relative" v-if="webShareSupported">
-			<button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 border-orient-900 rounded-lg text-orient-900 font-head shadow-neutral-900/10  |  hover:shadow-xl hover:bg-orient-900 hover:text-white focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 dark:border-orient-400 dark:text-orient-400 dark:hover:text-neutral-800 dark:hover:bg-orient-400 sm:w-auto lg:text-lg" data-theme="ghost" @click="share">
-					<span><i class="fa-solid fa-share"></i> Share</span>
+			<button class="inline-flex items-center justify-center px-6 py-3 font-bold no-underline border-2 border-orient-900 rounded-lg text-orient-900 font-head shadow-neutral-900/10  |  hover:shadow-xl hover:bg-orient-900 hover:text-white focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 dark:border-orient-400 dark:text-orient-400 dark:hover:text-neutral-800 dark:hover:bg-orient-400 sm:w-auto lg:text-lg" data-theme="ghost" @click="share">
+					<span class="leading-none"><i class="fa-solid fa-share"></i> Share</span>
 			</button>
 			<p
 				role="alert"
@@ -87,8 +87,8 @@ createApp({share}).mount();
 			</p>
 		</div>
 		<div class="relative" v-if="clipboardSupported">
-			<button class="inline-flex items-center justify-center px-5 py-3 font-bold no-underline border-2 border-orient-900 rounded-lg text-orient-900 font-head shadow-neutral-900/10  |  hover:shadow-xl hover:bg-orient-900 hover:text-white focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 dark:border-orient-400 dark:text-orient-400 dark:hover:text-neutral-800 dark:hover:bg-orient-400 sm:w-auto lg:text-lg" data-theme="ghost" @click="copyLink">
-					<span><i class="fa-solid fa-copy"></i> Copy link</span>
+			<button class="inline-flex items-center justify-center px-6 py-3 font-bold no-underline border-2 border-orient-900 rounded-lg text-orient-900 font-head shadow-neutral-900/10  |  hover:shadow-xl hover:bg-orient-900 hover:text-white focus:outline-hidden focus:ring-3 focus:ring-3-orient-400/80 dark:border-orient-400 dark:text-orient-400 dark:hover:text-neutral-800 dark:hover:bg-orient-400 sm:w-auto lg:text-lg" data-theme="ghost" @click="copyLink">
+					<span class="leading-none"><i class="fa-solid fa-copy"></i> Copy link</span>
 			</button>
 			<p
 				role="alert"

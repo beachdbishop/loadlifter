@@ -41,8 +41,8 @@ if ( ! empty( $block['align'] ) ) {
 ?>
 
 
-<div <?php echo $block_id; ?> class="<?php echo esc_attr($class_name); ?>  |  not-prose bg-white border-2 rounded-br-2xl shadow-md  |  dark:bg-neutral-800">
-	<p class="p-2 font-semibold llcallout-title ">
+<div <?php echo $block_id; ?> class="<?php echo esc_attr($class_name); ?>  |  not-prose border-2 rounded-br-2xl shadow-md">
+	<p class="llcallout-title  |  px-5 py-2 font-semibold">
 		<?php if( !empty( $callout_icon ) ): ?>
 			<i class="<?php echo esc_attr( $callout_icon ); ?> mr-1"></i>
 		<?php endif; ?>

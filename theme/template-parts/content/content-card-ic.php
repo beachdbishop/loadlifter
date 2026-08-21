@@ -22,7 +22,7 @@ $peep_level = get_field( 'll_people_level' );
 
 
 
-<li <?php post_class( 'card-ic  |  ' . $type_class . ' group flex flex-col relative border-neutral-100 border-2 ' . $order_class . '  |  focus-within:border-neutral-500 dark:border-neutral-700' ); ?>>
+<li <?php post_class( 'card-ic  |  ' . $type_class . ' group flex flex-col relative border-neutral-100 border-2 ' . $order_class . '  |  focus-within:border-neutral-500 dark:border-neutral-800' ); ?>>
 
 	<div class="card-text  |  flex flex-col text grow order-1 bg-white  |  dark:bg-neutral-900 dark:text-neutral-300">
 		<h3 class="my-2 overflow-hidden tracking-wide text-ellipsis  |  ">

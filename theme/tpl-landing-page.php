@@ -33,7 +33,7 @@ $page_city                      = get_field( 'll_page_city' );
 $page_state                     = get_field( 'll_page_state' );
 ?>
 
-	<main id="primary" class="landing-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="landing-page  |  relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :
@@ -72,7 +72,7 @@ $page_state                     = get_field( 'll_page_state' );
 
 						<div class="ll-page-grid-area-c">
 							<?php if ( $page_form ) :
-								echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+								echo '<div id="contact" class="container-contact-form not-prose">';
 								echo do_shortcode( $page_form );
 								echo '</div>';
 							endif; ?>

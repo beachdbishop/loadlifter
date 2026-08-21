@@ -1,11 +1,22 @@
 /**
  * Custom styles to immediately follow Tailwind’s `base` layer
 */
+html {
+	color-scheme: light dark;
+}
 
 body {
-	--tw-text-opacity: 1;
 	font-family: var(--font-sans);
-	color: var(--color-neutral-800);
+	color: light-dark(var(--color-near-black), var(--color-near-white));
+
+	@media print {
+		background-color: transparent;
+		color: black;
+	}
+}
+
+main {
+	background-color: light-dark(white, var(--color-neutral-900));
 }
 
 .dlig {
@@ -156,17 +167,6 @@ time[datetime*=":"] {
 	text-wrap: pretty;
 	font-variant-numeric: proportional-nums;
 	line-height: 1.7;
-
-	/* -webkit-hyphens: auto;
-	-webkit-hyphenate-limit-before: 4;
-	-webkit-hyphenate-limit-after: 3;
-	-webkit-hyphenate-limit-lines: 2;
-
-	hyphens: auto;
-	hyphenate-limit-chars: 10;
-	hyphenate-limit-lines: 2;
-	hyphenate-limit-zone: 8%;
-	hyphenate-limit-last: always; */
 }
 
 .prose pre,
@@ -194,17 +194,6 @@ time[datetime*=":"] {
 .prose a:not([class]):hover {
 	text-decoration-color: color-mix(in oklch, currentColor, transparent 30%);
 }
-/* .prose :where(a):not(:where([class~=wp-block-button__link],
-[class~=not-prose],
-[class~=not-prose] *)) {
-	text-decoration: none;
-	border-bottom: 2px solid var(--color-neutral-400);
-}
-.prose :where([href]):not(:where([class~=wp-block-button__link],
-[class~=not-prose],
-[class~=not-prose] *)):hover {
-	border-bottom: 2px solid var(--color-orient-600);
-} */
 
 :lang(en) > * {
 	quotes: "“" "”" "‘" "’";
@@ -224,4 +213,9 @@ q p,
 blockquote p {
 	font-family: var(--font-serif);
 	font-style: italic;
+}
+
+.dark-section,
+.on-darkbg {
+	color-scheme: dark;
 }

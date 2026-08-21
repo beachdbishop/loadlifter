@@ -114,7 +114,7 @@ $page_cta_button_text = "Contact us";
 		</div>
 
 		<aside class="mt-8  |  md:mt-0 md:order-2 md:w-1/3">
-			<div id="contact" class="container-contact-form not-prose motion-preset-slide-u mb-8  |  lg:mb-16">
+			<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16">
 				<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
 			</div>
 

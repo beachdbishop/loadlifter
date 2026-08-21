@@ -103,7 +103,7 @@ label .rec-med {
 
 		/* input:checked + label {
 			background-color: var(--_accent-color);
-			color: white;
+			color: var(--color-near-white);
 		}
 
 		&:first-of-type label {

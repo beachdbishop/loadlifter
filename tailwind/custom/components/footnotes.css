@@ -7,21 +7,20 @@ ol.wp-block-footnotes {
 	font-size: 0.875rem;
   line-height: 1.25;
 	list-style-type: decimal;
-	margin-left: 1.5rem;
+	margin-left: --spacing(12);
+
+	@media screen and (width >= 1024px) {
+		font-size: 1rem;
+    line-height: 1.5;
+	}
 }
 
 sup.fn a {
 	color: var(--color-mahogany-700);
 	font-weight: 600;
 	text-decoration-line: none;
-}
-sup.fn a:hover {
-	color: currentColor;
-}
 
-@media screen and (min-width: 1024px) {
-	ol.wp-block-footnotes {
-		font-size: 1rem;
-    line-height: 1.5;
+	&:hover {
+		color: currentColor;
 	}
 }

@@ -70,9 +70,9 @@ if ( $peepauthor ) {
 					<?php
 					if ( $peep_class === 'internal' ) {
 						if( ( $peep_designations ) && ( strlen( $peep_designations ) < 13 ) ) {
-							echo '<h1 class="mb-0 text-orient-800  |  dark:text-orient-400 print:text-xl">' . get_the_title() . '<small class="leading-tighter tracking-tight  |  print:text-base">, ' . $peep_designations . '</small></h1>';
+							echo '<h1 class="mb-0 text-orient-800  |  lg:mt-4 dark:text-orient-400 print:text-xl">' . get_the_title() . '<small class="leading-tighter tracking-tight  |  print:text-base">, ' . $peep_designations . '</small></h1>';
 						} else {
-							the_title( '<h1 class="mb-0 text-orient-800  |  dark:text-orient-400 print:text-xl">', '</h1>' );
+							the_title( '<h1 class="mb-0 text-orient-800  |  lg:mt-4 dark:text-orient-400 print:text-xl">', '</h1>' );
 
 							if( $peep_designations ) {
 								echo sprintf( '<h2 class="mt-2 leading-tighter tracking-tight text-neutral-500  |  print:text-base">%1$s</h2>', $peep_designations );

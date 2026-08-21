@@ -1,16 +1,40 @@
 /*   P A G E   H E R O   */
-.page-hero.wp-block-cover,
-.page-hero.wp-block-cover-image {
-	min-height: unset !important;
+.page-hero {
+	&.wp-block-cover,
+	&.wp-block-cover-image {
+		min-height: unset !important;
+	}
+
+	hgroup *,
+	.wp-block-buttons,
+	.breadcrumbs {
+		opacity: 0;
+		animation: fade-in-from-bottom var(--animate-duration);
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+
+		@media screen and (prefers-reduced-motion: reduce) {
+			opacity: 1;
+			animation: none !important;
+		}
+	}
+	hgroup p {
+		animation-delay: var(--animate-delay-multiple);
+	}
+	.wp-block-buttons {
+		animation-delay: calc(2 * var(--animate-delay-multiple));
+	}
+	.breadcrumbs {
+		animation-delay: calc(3 * var(--animate-delay-multiple));
+	}
 }
+
 
 .page-hero-overlay {
 	background-color: hsl(0 0% 16% / 0.75);
 	background-image: none;
-}
 
-@media (width >= 64rem) /* lg / 1024px and up */ {
-	.page-hero-overlay {
+	@media (width >= 64rem) /* lg / 1024px and up */ {
 		background-color: unset;
 		background-image: linear-gradient(to right, hsl(0 0% 16% / 0.98) 0%, hsl(0 0% 16% / 0.85) 45%, hsl(0 0% 16% / 0.6) 65%, hsl(0 0% 16% / 0.2) 85%, hsl(0 0% 16% / 0) 100% );
 	}

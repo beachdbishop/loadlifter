@@ -32,7 +32,7 @@ $page_excerpt = get_the_excerpt();
 $page_form = get_field( 'ls_hs_form_html' );
 ?>
 
-	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :
@@ -74,7 +74,7 @@ $page_form = get_field( 'ls_hs_form_html' );
 					<?php // get_template_part( 'template-parts/form/form', 'hubspot' ); ?>
 					<?php
 					if ( get_field( 'll_normal_contact_form_location' ) == 1 ) :
-						echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+						echo '<div id="contact" class="container-contact-form not-prose">';
 						get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
 						echo '</div>';
 					endif;
@@ -82,7 +82,7 @@ $page_form = get_field( 'ls_hs_form_html' );
 
 					<?php
 					if ( ( get_field( 'll_normal_contact_form_location' ) != 1 ) && ( $page_form ) ) :
-						echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+						echo '<div id="contact" class="container-contact-form not-prose">';
 						echo do_shortcode( $page_form );
 						echo '</div>';
 					endif;

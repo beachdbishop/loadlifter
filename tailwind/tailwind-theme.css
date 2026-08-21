@@ -64,6 +64,9 @@
 	--color-brand-blue: #00668e;
 	--color-brand-blue-dark: #092f42;
 
+	--color-near-white: oklch(96% 0 0);
+	--color-near-black: oklch(25% 0 0);
+
 	--font-head: serenity, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: 'Fira Code', Consolas, monospace;
@@ -100,6 +103,7 @@
 	--map-transition: 0.3s;
 
 	--animate-fade-in-from-top: fade-in-from-top 600ms ease-out;
+	--animate-fade-in-from-bottom: fade-in-from-bottom 600ms ease-in-out;
 	--animate-move-bg: move-bg 16s ease infinite;
 
 	@keyframes move-bg {
@@ -121,5 +125,20 @@
 			transform: translateY(0);
 		}
 	}
+
+	@keyframes fade-in-from-bottom {
+		0% {
+			opacity: 0;
+			translate: 0 1lh;
+		}
+		100% {
+			opacity: 1;
+			translate: 0;
+		}
+	}
+
+	/* staggered animation defaults */
+	--animate-duration: 600ms;
+	--animate-delay-multiple: 400ms;
 
 }

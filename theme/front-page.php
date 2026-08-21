@@ -134,7 +134,7 @@ $industriesQuery = new WP_Query( $query_ind_args );
 							<h2 id="recent">Recent Posts</h2>
 							<?php
 							if ( $postsQuery->found_posts > $blogposts_limit ) :
-								echo '<a href="/blog/" class="px-5 py-3 font-head font-semibold border-2 border-orient-800 rounded-lg text-orient-800  |  hover:text-orient-950 hover:border-orient-950 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>';
+								echo '<a href="/blog/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-orient-800 rounded-lg text-orient-800  |  hover:text-orient-950 hover:border-orient-950 dark:text-orient-400 dark:border-orient-400 dark:hover:text-orient-200 dark:hover:border-orient-200">View All</a>';
 							endif;
 							?>
 						</div>

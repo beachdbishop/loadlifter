@@ -61,7 +61,7 @@ $cards_about = [
 ];
 ?>
 
-	<main id="primary" class="about-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="about-page  |  relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :
@@ -166,7 +166,7 @@ $cards_about = [
 						</div>
 
 						<div class="ll-page-grid-area-c">
-							<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">
+							<div id="contact" class="container-contact-form not-prose">
 								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 							</div>
 						</div>

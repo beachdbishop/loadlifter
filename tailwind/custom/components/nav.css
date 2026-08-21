@@ -10,13 +10,16 @@ body.admin-bar .nav-header {
 }
 
 .disclosure-nav .dropmenu:not(.mega) {
-	filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-	background-color: white;
 	--tw-border-opacity: 1;
+	--tw-bg-opacity: 1;
+	--tw-text-opacity: 1;
+	filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
+	background-color: light-dark(var(--color-white), var(--color-near-black));
   border-color: rgb(0 102 142 / var(--tw-border-opacity));
 	border-bottom-right-radius: 0.125rem;
   border-bottom-left-radius: 0.125rem;
 	border-top-width: 4px;
+	color: light-dark(inherit, rgb(229 229 229 / var(--tw-text-opacity)));
 	position: absolute;
 	top: 100%;
 	z-index: 20;
@@ -31,10 +34,11 @@ body.admin-bar .nav-header {
 .disclosure-nav .dropmenu.mega {
 	--tw-border-opacity: 1;
 	--tw-text-opacity: 1;
+	--tw-bg-opacity: 1;
   filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-  color: rgb(10 10 10 / var(--tw-text-opacity));
+  color: light-dark(rgb(10 10 10 / var(--tw-text-opacity)), rgb(229 229 229 / var(--tw-text-opacity)));
 	animation: fade-in-from-top 300ms;
-	background-color: white;
+	background-color: light-dark(var(--color-white), var(--color-neutral-950));
 	border-bottom-right-radius: 0.125rem/* 2px */;
   border-bottom-left-radius: 0.125rem/* 2px */;
 	border-top-width: 4px;
@@ -58,7 +62,7 @@ body.admin-bar .nav-header {
 
 .disclosure-nav ul a {
 	border-width: 0;
-	color: var(--color-neutral-950);
+	color: light-dark(var(--color-neutral-950), var(--color-neutral-100));
 	display: block;
 	margin: 0;
 	padding-inline: 1rem;
@@ -68,8 +72,8 @@ body.admin-bar .nav-header {
 
 .disclosure-nav ul a:hover,
 .disclosure-nav ul a:focus {
-	background-color: var(--color-neutral-100);
-	color: black;
+	background-color: light-dark(var(--color-neutral-100), var(--color-neutral-800));
+	color: light-dark(var(--color-near-black), var(--color-neutral-100));
 	margin-bottom: 0;
 	text-decoration-color: var(--color-orient-400);
 	text-decoration-line: underline;
@@ -95,7 +99,7 @@ body.admin-bar .nav-header {
 }
 .disclosure-nav button:hover,
 .disclosure-nav .main-link:hover {
-	color: var(--color-orient-800);
+	color: light-dark(var(--color-orient-800), white);
 	text-decoration-line: underline;
 }
 
@@ -111,7 +115,7 @@ body.admin-bar .nav-header {
 	transform: rotate(45deg);
 	border-bottom-width: 1px;
 	border-right-width: 1px;
-	border-color: var(--color-neutral-900);
+	border-color: light-dark(var(--color-neutral-900), var(--color-neutral-200));
 }
 
 .disclosure-nav .main-link + button::after {
@@ -120,7 +124,7 @@ body.admin-bar .nav-header {
 
 .disclosure-nav button:focus,
 .disclosure-nav .main-link:focus {
-	outline-color: rgb(0 102 142 / 0.75);
+	outline-color: light-dark(rgb(0 102 142 / 0.75), rgb(103 232 249 / 0.75));
 	outline-offset: 4px;
 	outline-style: solid;
 	position: relative;
@@ -128,13 +132,13 @@ body.admin-bar .nav-header {
 
 .disclosure-nav button:hover,
 .disclosure-nav button[aria-expanded="true"] {
-	color: white;
+	color: var(--color-near-white);
 	background-color: var(--color-orient-800);
 }
 
 .disclosure-nav button:hover::after,
 .disclosure-nav button[aria-expanded="true"]::after {
-	border-color: white;
+	border-color: var(--color-near-white);
 }
 
 .disclosure-nav .nav-footer-only {
@@ -214,13 +218,10 @@ body.admin-bar .nav-header {
 }
 
 
-@media (max-width: 767px) {
 
-	.toggle-mobile-nav[aria-expanded="true"] {
-		color: var(--color-orient-800);
-	}
+.menus-container {
 
-	.menus-container {
+	@media (width <= 767px) {
 		inset: 3.5em 0 auto;
 		position: absolute;
 		display: none;
@@ -231,31 +232,57 @@ body.admin-bar .nav-header {
 		transition-duration: 500ms;
 		transition-timing-function: linear;
 	}
-	.menus-container a:hover,
-	.menus-container a:focus {
-		color: var(--color-orient-400);
-	}
-	.menus-container a:active {
-		color: var(--color-mahogany-700);
-	}
+}
 
-	.menus-container[data-visible] {
-		display: block;
-		background-color: var(--color-neutral-50);
-		color: var(--color-neutral-800);
+.menus-container[data-visible] {
+	--tw-bg-opacity: 1;
+	--tw-text-opacity: 1;
+
+	@media (width <= 767px) {
 		--tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 		--tw-shadow-color: rgb(23 23 23 / 0.6);
 		--tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+		display: block;
+		background-color: light-dark(var(--color-neutral-50), rgb(38 38 38 / var(--tw-bg-opacity)));
+		color: light-dark(var(--color-neutral-800), rgb(245 245 245 / var(--tw-text-opacity)));
 		box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 	}
+}
+
+.menus-container a:hover,
+.menus-container a:focus {
+
+	@media (width <= 767px) {
+		color: var(--color-orient-400);
+	}
+}
+.menus-container a:active {
+
+	@media (width <= 767px) {
+		color: var(--color-mahogany-700);
+	}
+}
+.menus-container .icon {
+
+	@media (width <= 767px) {
+		fill: light-dark(var(--color-neutral-200), var(--color-neutral-100));
+	}
+}
+
+
+@media (max-width: 767px) {
+
+	.toggle-mobile-nav[aria-expanded="true"] {
+		color: var(--color-orient-800);
+	}
+
+
 	.permadark .menus-container[data-visible] {
 		background-color: var(--color-orient-950);
 		color: var(--color-neutral-200);
 	}
 
-	.menus-container .icon {
-		fill: var(--color-neutral-200);
-	}
+
 
 	.secondary-nav a {
 		padding: --spacing(2);
@@ -310,49 +337,5 @@ body.admin-bar .nav-header {
 
 	.menu-legal ul.menu {
 		gap: 1.5rem;
-	}
-}
-
-@media (prefers-color-scheme: dark) {
-	.disclosure-nav .dropmenu:not(.mega) {
-		--tw-bg-opacity: 1;
-		--tw-text-opacity: 1;
-    background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-    color: rgb(229 229 229 / var(--tw-text-opacity));
-  	filter: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
-	}
-	.disclosure-nav .dropmenu.mega {
-		--tw-bg-opacity: 1;
-		--tw-text-opacity: 1;
-    background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-    color: rgb(229 229 229 / var(--tw-text-opacity));
-	}
-	.disclosure-nav ul a {
-		color: var(--color-neutral-100);
-	}
-	.disclosure-nav ul a:hover,
-	.disclosure-nav ul a:focus {
-		background-color: var(--color-neutral-900);
-		color: var(--color-neutral-100);
-	}
-	.disclosure-nav button:hover,
-	.disclosure-nav .main-link:hover {
-		color: white;
-	}
-	.disclosure-nav button::after {
-		border-color: var(--color-neutral-200);
-	}
-	.disclosure-nav button:focus,
-	.disclosure-nav .main-link:focus {
-		outline-color: rgb(103 232 249 / 0.75);
-	}
-	.menus-container[data-visible] {
-		--tw-bg-opacity: 1;
-		--tw-text-opacity: 1;
-    background-color: rgb(38 38 38 / var(--tw-bg-opacity));
-    color: rgb(245 245 245 / var(--tw-text-opacity));
-	}
-	.menus-container .icon {
-		fill: var(--color-neutral-100);
 	}
 }

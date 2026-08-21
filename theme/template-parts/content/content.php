@@ -20,9 +20,9 @@ endif; ?>
 	<header>
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title | md:py-8 dark:text-neutral-100">', '</h1>' );
+			the_title( '<h1 class="entry-title  | dark:text-neutral-100">', '</h1>' );
 		else :
-			the_title( '<h2 class="entry-title | dark:text-neutral-100"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+			the_title( '<h2 class="entry-title  | dark:text-neutral-100"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
 		?>
 	</header>
@@ -63,8 +63,8 @@ endif; ?>
 
 			<?php get_template_part( 'template-parts/siteblocks/area', 'after-post' ); ?>
 
-			<?php	// if( ( get_field( 'll_hide_related' ) !== 1 ) && ( yarpp_related_exist() ) ) {
-				if ( get_field( 'll_hide_related' ) != 1 ) {
+			<?php
+			if ( get_field( 'll_hide_related' ) != 1 ) {
 				yarpp_related(
 					[
 						'limit'                         => 3,
@@ -79,7 +79,7 @@ endif; ?>
 
 		<div class="mt-8 md:mt-0 md:order-2 md:w-1/3">
 			<?php if ( ( get_field( 'll_normal_contact_form_location' ) == 1 ) && ( !in_category( 'resources' ) ) ) : ?>
-				<div id="contact" class="container-contact-form not-prose  |  motion-safe:motion-preset-slide-up">
+				<div id="contact" class="container-contact-form not-prose">
 					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 				</div>
 			<?php endif; ?>

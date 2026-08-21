@@ -45,7 +45,6 @@
 		"tailwindcss": "^4.3.0"
 	},
 	"browserslist": [
-		"defaults",
-		"maintained node versions"
+		"baseline 2024 with downstream"
 	]
 }

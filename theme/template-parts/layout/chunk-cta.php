@@ -48,7 +48,7 @@ $args = wp_parse_args(
 			</div>
 
 			<div class="w-full  |  md:max-w-fit">
-				<a href="<?php echo esc_html( $args['part_data']['cta_button_url'] ); ?>" class="px-5 py-4 font-head font-semibold border-2 border-orient-950 bg-orient-950 rounded-lg text-orient-200  |  hover:text-white hover:border-orient-200">
+				<a href="<?php echo esc_html( $args['part_data']['cta_button_url'] ); ?>" class="px-6 py-3 font-head font-semibold leading-none border-2 border-orient-950 bg-orient-950 rounded-lg text-orient-200  |  hover:text-white hover:border-orient-200">
 				<?php echo $args['part_data']['cta_button_text']; ?>
 				</a>
 			</div>

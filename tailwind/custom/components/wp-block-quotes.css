@@ -1,49 +1,41 @@
 /* Quotes */
 .wp-block-quote p {
-	margin-block: 1rem;
-	font-size: 1.25rem;
-  line-height: 1.75rem;
+	margin-block: --spacing(8);
+	font-size: --spacing(10);
+  line-height: --spacing(14);
+
+	@media (width >= 1024px) {
+		font-size: --spacing(12);
+    line-height: --spacing(16);
+	}
 }
 .wp-block-quote cite {
 	font-family: var(--font-head);
-	font-size: 1rem;
-  line-height: 1.5rem;
+	font-size: --spacing(8);
+  line-height: --spacing(12);
 	font-style: normal;
+
+	@media (width >= 1024px) {
+		font-size: --spacing(9);
+    line-height: --spacing(14);
+	}
 }
 .wp-block-quote cite::before {
   content: '—';
 }
 
 .wp-block-quote.is-style-default {
-	color: var(--color-orient-950);
+	color: light-dark(var(--color-orient-950), var(--color-orient-400));
 	border-color: var(--color-orient-800);
 	position: relative;
-	border-radius: 0.5rem;
+	border-radius: --spacing(4);
 	border-top-width: 4px;
 	border-right-width: 0px;
 	border-bottom-width: 4px;
 	border-left-width: 0px;
-	padding: 1rem;
-}
+	padding: --spacing(8);
 
-@media (prefers-color-scheme: dark) {
-	.wp-block-quote.is-style-default {
-		color: var(--color-orient-400);
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.wp-block-quote p {
-		font-size: 1.5rem;
-    line-height: 2rem;
-	}
-
-	.wp-block-quote cite {
-		font-size: 1.125rem;
-    line-height: 1.75rem;
-	}
-
-	.wp-block-quote.is-style-default {
-		padding-inline: 2rem;
+	@media (width >= 1024px) {
+		padding-inline: --spacing(16);
 	}
 }

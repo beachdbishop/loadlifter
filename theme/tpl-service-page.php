@@ -110,7 +110,7 @@ if ( $page_post_category ) {
 }
 ?>
 
-<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 	<?php
 	while ( have_posts() ) :
@@ -121,7 +121,7 @@ if ( $page_post_category ) {
 
 		<article id="post-<?php the_ID(); ?>"	<?php post_class(); ?>>
 			<div class="px-2 container  |  lg:px-4">
-				<div class="mt-4 ll-page-grid  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 2xl:gap-16">
+				<div class="ll-page-grid mt-4  |  md:gap-8 md:mt-8 md:grid md:auto-rows-auto lg:mt-16 2xl:gap-16">
 
 					<div <?php ll_content_class( 'entry-content ll-page-grid-area-a  |  md:col-span-2' ); ?>>
 
@@ -184,7 +184,7 @@ if ( $page_post_category ) {
 					<div class="ll-page-grid-area-c">
 						<?php
 						if ( get_field( 'll_normal_contact_form_location' ) == 1 ) :
-							echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+							echo '<div id="contact" class="container-contact-form not-prose">';
 							get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
 							echo '</div>';
 						endif;
@@ -192,7 +192,7 @@ if ( $page_post_category ) {
 
 						<?php
 						if ( ( get_field( 'll_normal_contact_form_location' ) != 1 ) && ( $page_form ) ) :
-							echo '<div id="contact" class="container-contact-form not-prose  |  motion-safe:animate-fade-in-from-top">';
+							echo '<div id="contact" class="container-contact-form not-prose">';
 							echo do_shortcode( $page_form );
 							echo '</div>';
 						endif;

@@ -13,12 +13,12 @@
 	<p class="text-center text-neutral-200 text-xl font-semibold tracking-wider uppercase">Press Release</p>
 </div>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'px-2 py-8  |  md:container lg:px-4' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'px-2  |  md:container lg:px-4' ); ?>>
 
 	<header>
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title | md:py-8 dark:text-neutral-100">', '</h1>' );
+			the_title( '<h1 class="entry-title | dark:text-neutral-100">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title | dark:text-neutral-100"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -77,7 +77,7 @@
 
 		<aside class="mt-8 md:mt-0 md:order-2 md:w-1/3">
 			<?php if ( get_field( 'll_normal_contact_form_location' ) == 1 ) : ?>
-				<div id="contact" class="container-contact-form not-prose motion-preset-slide-up mb-8 lg:mb-16">
+				<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16">
 					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
 				</div>
 			<?php endif; ?>

@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<div class="px-2 container ll-equal-vert-padding  |  lg:px-4">
 

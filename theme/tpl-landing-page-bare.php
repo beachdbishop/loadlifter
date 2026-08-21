@@ -22,7 +22,7 @@ $page_excerpt               = get_the_excerpt();
 $page_form                  = get_field( 'ls_hs_form_html' );
 ?>
 
-	<main id="primary" class="landing-page  |  bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="landing-page  |  relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :

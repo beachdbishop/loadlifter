@@ -36,7 +36,7 @@ if ( $page_featimg == true ) {
 get_header();
 ?>
 
-<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 	<?php
 	while (have_posts()) :

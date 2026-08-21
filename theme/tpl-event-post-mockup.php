@@ -27,7 +27,7 @@ if ( $post_featimg == true ) {
 	[popover]::backdrop {background-color: rgb(0 51 102 / 0.5); backdrop-filter: blur(4px);}
 </style>
 
-<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 	<?php
 	while ( have_posts() ) :

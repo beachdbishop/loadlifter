@@ -15,15 +15,15 @@
 get_header();
 ?>
 
-	<main id="primary" class="bg-white relative z-10 shadow-xl  |  lg:shadow-2xl dark:bg-neutral-900">
+	<main id="primary" class="relative z-10 shadow-xl  |  lg:shadow-2xl">
 		<div class="px-2 py-8 container  |  lg:px-4">
 
 			<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
-			<header class="mb-8 md:grid md:grid-cols-2 md:gap-16">
+			<header class="mb-8  |  md:grid md:grid-cols-2 md:gap-16">
 				<div class="">
-					<h1 class="text-orient-800  |  dark:text-orient-400"><?php echo ll_wrap_last_word( 'A-Z Blog' ); ?></h1>
-					<p class="my-4 lg:my-8">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
+					<h1 class="my-4 text-orient-800  |  lg:my-8 dark:text-orient-400">A-Z Blog</h1>
+					<p class="">The latest insights, events, and resources as well as emerging accounting, audit, tax, and business trends.</p>
 				</div>
 
 				<div class="mt-8  |  lg:mt-0 lg:grid lg:grid-cols-2 lg:gap-16 print:hidden">

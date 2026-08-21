@@ -19,12 +19,15 @@
  */
 .page-title,
 .entry-title {
-	margin-bottom: 1.5rem;
+	margin-block: --spacing(8);
 	overflow-wrap: break-word;
-	/* font-size: 2.25rem/* 36px */
-  /* line-height: 2.5rem; */
 	color: var(--color-neutral-900);
+
+	@media screen and (width >= 768px) {
+		margin-block: --spacing(12);
+	}
 }
+
 
 /**
  * Post content styles (via Tailwind Typography)
@@ -56,14 +59,25 @@
 }
 .entry-content .alignleft {
 	float: left;
-	margin-bottom: 1rem;
-	margin-right: 1rem;
+	margin-bottom: --spacing(8);
+	margin-right: --spacing(8);
+
+	@media screen and (width >= 1024px) {
+		margin-bottom: --spacing(16);
+		margin-right: --spacing(16);
+	}
 }
 .entry-content .alignright {
 	float: right;
-	margin-bottom: 1rem;
-	margin-left: 1rem;
+	margin-bottom: --spacing(8);
+	margin-left: --spacing(8);
+
+	@media screen and (width >= 1024px) {
+		margin-bottom: --spacing(16);
+		margin-left: --spacing(16);
+	}
 }
+
 
 .front-intro p {
 	max-width: 64ch;
@@ -82,16 +96,6 @@
 	}
 }
 
-/* TODO: Is this class still in use somewhere? */
-/* Don't copy this approach... that path doesn't work on dev, only in production! */
-.bg-brandmarkmono {
-	--mark-mono-size: 320px;
-	background-image: url("/wp-content/themes/loadlifter/theme/img/brandmarkmono.svg");
-	background-position: -140px 32px;
-	background-size: var(--mark-mono-size);
-	background-repeat: no-repeat;
-	min-height: calc(var(--mark-mono-size) + 2em);
-}
 
 .single-post .empty-feat-img {
 	display: none;
@@ -102,13 +106,13 @@
 }
 
 aside .timestamp {
-	margin-block: 1rem;
+	margin-block: --spacing(8);
 	display: block;
 	width: 100%;
 	border-bottom-width: 1px;
 	border-top-width: 1px;
-	border-color: var(--color-neutral-200);
-	padding-block: 1rem;
+	border-color: light-dark(var(--color-neutral-200), var(--color-neutral-600));
+	padding-block: --spacing(8);
 }
 .date-updated::before {
 	content: "(Updated: ";
@@ -122,29 +126,41 @@ aside .timestamp {
 }
 .list--tags a {
 	white-space: nowrap;
-	background-color: var(--color-neutral-100);
-	border-radius: 0.5rem 0 0.5rem;
-	padding-inline: 0.5rem;
-	padding-block: 0.25rem;
+	background-color: light-dark(var(--color-neutral-100), var(--color-neutral-800));
+	border-radius: --spacing(4) 0 --spacing(4);
+	padding-inline: --spacing(4);
+	padding-block: --spacing(2);
 	font-size: 14px;
-	color: var(--color-neutral-600);
+	color: light-dark(var(--color-neutral-600), var(--color-neutral-100));
 }
 .list--tags a:hover {
-	background-color: var(--color-orient-400);
-	color: var(--color-orient-950);
+	background-color: light-dark(var(--color-orient-400), var(--color-orient-950));
+	color: light-dark(var(--color-orient-950), var(--color-orient-400));
 }
 
 .catlist a { font-weight: 700; }
 
 .logogrid {
 	margin-inline: auto;
-	margin-block: 4rem;
+	margin-block: --spacing(32);
 	display: grid;
 	max-width: max-content;
 	grid-template-columns: repeat(1, minmax(0, 1fr));
 	place-content: center;
 	column-gap: 8rem;
-	row-gap: 2rem;
+	row-gap: --spacing(16);
+
+	@media screen and (width >= 640px) {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	@media screen and (width >= 768px) {
+		column-gap: --spacing(32);
+	}
+
+	@media screen and (width >= 1024px) {
+		column-gap: 8rem;
+	}
 }
 .logogrid > div {
 	display: flex;
@@ -160,7 +176,11 @@ aside .timestamp {
 }
 
 .image__featured--outer {
-	background-image: linear-gradient(0deg, hsla(0, 0%, 64%, 0) 40%, hsla(0, 0%, 64%, 1) 95%);
+	background-image: linear-gradient(
+		0deg,
+		light-dark(hsla(0, 0%, 64%, 0), hsla(0, 0%, 4%, 0)) 40%,
+		light-dark(hsla(0, 0%, 64%, 1), hsl(0, 0%, 4%, 1)) 95%
+	);
 }
 .post-card.type-people .image__featured--inner {
 	background-position: center -5rem;
@@ -192,37 +212,7 @@ aside .timestamp {
 }
 
 
-@media (prefers-color-scheme: dark) {
-	.image__featured--outer {
-		background-image: linear-gradient(0deg, hsla(0, 0%, 4%, 0) 40%, hsl(0, 0%, 4%, 1) 95%);
-	}
-
-	aside .timestamp {
-		border-color: var(--color-neutral-600);
-	}
-
-	.list--tags a {
-		background-color: var(--color-neutral-800);
-		color: var(--color-neutral-100);
-	}
-	.list--tags a:hover {
-		background-color: var(--color-orient-950);
-		color: var(--color-orient-400);
-	}
-}
-
-@media screen and (min-width: 640px) {
-	.logogrid {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
-	}
-}
-
 @media screen and (min-width: 768px) {
-	.page-title,
-	.entry-title {
-		margin-bottom: 2rem
-	}
-
 	.ll-page-grid {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		grid-template-areas:
@@ -244,25 +234,5 @@ aside .timestamp {
 
 	.peepgrid {
 		grid-template-rows: 500px auto;
-	}
-
-	.logogrid {
-		column-gap: 4rem;
-	}
-}
-
-@media screen and (min-width: 1024px) {
-	.entry-content .alignleft {
-		margin-bottom: 2rem;
-		margin-right: 2rem;
-	}
-
-	.entry-content .alignright {
-		margin-bottom: 2rem;
-		margin-left: 2rem;
-	}
-
-	.logogrid {
-		column-gap: 8rem;
 	}
 }
