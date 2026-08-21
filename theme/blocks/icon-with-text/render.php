@@ -1,6 +1,6 @@
 <?php
 /**
- * LL Media & Text block template.
+ * LL Icon with Text block template.
  *
  * @param			array $block The block settings and attributes
  * @param			string $content The block inner HTML (empty).
@@ -24,9 +24,9 @@ $icon_color = get_field( 'll_it_icon_color_pick' );
 
 $block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$block_id = ' id="ll_icontext_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+	$block_id = sanitize_title( $block['anchor'] );
 } else {
-	$block_id = ' id="ll_icontext_' . $block['id'] . ' "';
+	$block_id = 'll_icontext_' . $block['id'];
 }
 
 $class_name = 'icon-with-text-item';

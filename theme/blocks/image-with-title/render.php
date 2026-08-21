@@ -66,7 +66,7 @@ $mt_inner_template = [
 <?php } ?>
 
 	<InnerBlocks
-		class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-800 dark:text-neutral-300 md:px-5!"
+		class="card-text  |  p-4 order-1 bg-white flex justify-between  |  dark:bg-neutral-900 dark:text-neutral-200 md:px-5!"
 		template="<?php echo esc_attr( json_encode( $mt_inner_template ) ); ?>"
 	/>
 

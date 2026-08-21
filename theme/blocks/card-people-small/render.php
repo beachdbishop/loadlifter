@@ -19,7 +19,11 @@ $name = esc_html( $person->post_title );
 $desigs = esc_html( $person->ll_people_designations );
 $jobtitle = esc_html( $person->ll_people_title );
 $person_feat_img = wp_get_attachment_image_src( get_post_thumbnail_id( $person->ID ), 'full' );
-$image = esc_url( $person_feat_img[0] );
+if ( $person_feat_img ) {
+	$image = esc_url( $person_feat_img[0] );
+} else {
+	$image = esc_url( get_template_directory_uri() . '/img/headshot__empty.svg' );
+}
 
 
 $block_id = '';

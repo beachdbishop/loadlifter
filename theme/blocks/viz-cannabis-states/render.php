@@ -19,9 +19,9 @@ $viz_legal = 'To the best of our knowledge, this information is current as of 20
 
 $block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$block_id = ' id="ll_viz_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+	$block_id = sanitize_title( $block['anchor'] );
 } else {
-	$block_id = ' id="ll_viz_' . $block['id'] . ' "';
+	$block_id = 'll_viz_' . $block['id'];
 }
 ?>
 

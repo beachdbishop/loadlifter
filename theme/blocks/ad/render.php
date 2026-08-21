@@ -11,19 +11,6 @@
  * @param   array $context The context provided to the block by the post or its parent block.
  */
 
-
-$block_id = '';
-if ( ! empty( $block['anchor'] ) ) {
-	$block_id = ' id="ll_ad_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
-} else {
-	$block_id = ' id="ll_ad_' . $block['id'] . ' "';
-}
-
-$block_classes = [ 'llad' ];
-if ( ! empty( $block['className'] ) ) {
-	$block_classes = array_merge( $block_classes, explode( ' ', $block['className'] ) );
-}
-
 // Load values and assign defaults.
 $ad_image			= get_field( 'll_ad_image' );
 $ad_link			= get_field( 'll_ad_link' );
@@ -36,6 +23,20 @@ if ( $ad_width === true ) {
 	$ad_width_classes = 'rounded-none  |  sm:rounded-md md:rounded-lg lg:mx-auto';
 }
 $ad_extra_classes	= get_field( 'll_ad_extra_classes' );
+
+
+$block_id = '';
+if ( ! empty( $block['anchor'] ) ) {
+	$block_id = sanitize_title( $block['anchor'] ) . '"';
+} else {
+	$block_id = 'll_ad_' . $block['id'];
+}
+
+$block_classes = [ 'llad' ];
+if ( ! empty( $block['className'] ) ) {
+	$block_classes = array_merge( $block_classes, explode( ' ', $block['className'] ) );
+}
+
 
 // Default style is CLEAR!
 ?>

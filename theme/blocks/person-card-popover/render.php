@@ -27,9 +27,9 @@ $peep_level = get_field( 'll_people_level', $person->ID );
 
 $block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$block_id = ' id="ll_personpop_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+	$block_id = sanitize_title( $block['anchor'] );
 } else {
-	$block_id = ' id="ll_personpop_' . $block['id'] . ' "';
+	$block_id = 'll_personpop_' . $block['id'];
 }
 
 
@@ -38,7 +38,7 @@ if( ( ! $is_preview ) && ( $person ) ) : ?>
 		<div class="flex flex-col @2xs:flex-row gap-2 items-center h-full p-4 border rounded-lg bg-white border-neutral-200 dark:border-neutral-600 dark:bg-neutral-800">
 
 			<div class="card-text | grow order-1 md:text-center">
-				<?php echo sprintf( '<h3 class="text-2xl lg:text-3xl !leading-none text-orient-800  |  dark:text-orient-400">%1$s <small>%2$s</small></h3>', $person->post_title, get_field( 'll_people_designations', $person->ID ) ); ?>
+				<?php echo sprintf( '<h3 class="text-2xl lg:text-3xl leading-none! text-orient-800  |  dark:text-orient-400">%1$s <small>%2$s</small></h3>', $person->post_title, get_field( 'll_people_designations', $person->ID ) ); ?>
 				<?php echo sprintf( '<p class="text-lg leading-tight text-neutral-600 font-head dark:text-neutral-500">%1$s</p>', get_field( 'll_people_title', $person->ID ) ); ?>
 			</div>
 

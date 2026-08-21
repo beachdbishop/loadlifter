@@ -19,9 +19,9 @@ $inline_styles = get_field( 'll_litevimeo_styles' );
 
 $block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
-	$block_id = ' id="ll_litevimeo_' . $block['id'] . ' ' . sanitize_title( $block['anchor'] ) . '"';
+	$block_id = sanitize_title( $block['anchor'] );
 } else {
-	$block_id = ' id="ll_litevimeo_' . $block['id'] . ' "';
+	$block_id = 'll_litevimeo_' . $block['id'];
 }
 ?>
 

@@ -27,7 +27,7 @@ $block_id = '';
 if ( ! empty( $block['anchor'] ) ) {
 	$block_id = sanitize_title( $block['anchor'] );
 } else {
-	$block_id = 'll_icontext_' . $block['id'];
+	$block_id = 'll_slideperson_' . $block['id'];
 }
 
 $class_name = 'slide-person';

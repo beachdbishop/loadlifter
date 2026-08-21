@@ -18,7 +18,7 @@
 
 		@media (hover: hover) {
 			&:is(:where(.group):hover *) {
-				color: var(--color-brand-blue);
+				color: light-dark(var(--color-orient-800), var(--color-orient-400));
 			}
 		}
 	}
