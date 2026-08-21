@@ -58,10 +58,10 @@ if ( ! empty( $block['className'] ) ) {
 	<div class="flex flex-col gap-2 items-center h-full p-4 border rounded-lg bg-white border-neutral-200  |  dark:border-neutral-600 dark:bg-transparent  |  @2xs:flex-row">
 
 		<div class="card-text grow order-1">
-			<h3 class="text-xl leading-none  |  <?php if ( get_field( 'll_card_allow_link' ) ) { echo esc_attr( 'group-hover:text-mahogany-700 dark:group-hover:text-mahogany-500' ); } ?>  |  lg:text-2xl">
+			<h3 class="text-xl leading-none  |  <?php if ( get_field( 'll_card_allow_link' ) ) { echo esc_attr( 'group-hover:text-mahogany-700 dark:group-hover:text-mahogany-500' ); } ?> lg:text-2xl">
 				<?php
 				if ( get_field( 'll_card_allow_link' ) ) {
-					echo '<a class="" href="' . $link . '" rel="bookmark">' . $name . '</a>';
+					echo '<a class="allow-link-' . get_field( 'll_card_allow_link' ) . '" href="' . $link . '" rel="bookmark">' . $name . '</a>';
 				} else {
 					echo $name;
 				}
@@ -75,9 +75,7 @@ if ( ! empty( $block['className'] ) ) {
 		</div>
 
 		<div class="card-img shrink-0 object-cover object-center rounded-full bg-neutral-100 bg-no-repeat bg-position-[center_top]" style="background-image: url(<?php echo $image; ?>); background-size: 64px 86px;">
-			<a class="" href="<?php echo $link; ?>" rel="bookmark" aria-label="<?php echo esc_attr( 'View ' . $name . '\'s bio' ); ?>">
-				<div class="size-16 aspect-square">&nbsp;</div>
-			</a>
+			<div class="size-16 aspect-square">&nbsp;</div>
 		</div>
 
 	</div>
