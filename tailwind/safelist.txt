@@ -2,9 +2,6 @@
 bg-orient-50
 bg-orient-100
 bg-orient-900
-bg-orient-950
-bg-linear-to-r
-from-orient-950
 gap-0
 grid-rows-subgrid
 order-2
@@ -20,12 +17,7 @@ papercorners-84
 papercorners-144
 papercorners-auto
 w-72
-hover:text-mahogany-300
-sm:text-left
-md:p-12
 md:float-right
 md:ml-2
-lg:px-26
-lg:py-24
 lg:w-96
 lg:ml-4

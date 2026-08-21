@@ -1,0 +1,13 @@
+.wp-block-loadlifter-mini-hero {
+
+
+	a {
+		/* text-decoration: none !important; */
+
+		@media (hover: hover) {
+			&:hover {
+				color: var(--color-mahogany-300);
+			}
+		}
+	}
+}
