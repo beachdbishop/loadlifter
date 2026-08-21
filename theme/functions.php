@@ -14,7 +14,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.7.2' );
+	define( 'LL_VERSION', '3.7.3' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -223,7 +223,6 @@ function ll_content_width() {
 // add_action( 'admin_init', 'll_remove_default_block_styles' );
 
 function ll_scripts() {
-	// wp_register_style( 'a11y-slider-base', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.css', [], '' ); /* 20240712 - rolled these into the local a11yslider.css file. Do not need this third-party file */
 	wp_register_style( 'a11y-slider-styles', get_template_directory_uri() . '/a11yslider.css', [], LL_VERSION );
 	wp_enqueue_style( 'loadlifter-style', get_stylesheet_uri(), [], LL_VERSION );
 	if ( get_field( 'll_postpage_css' ) ) {
@@ -231,14 +230,10 @@ function ll_scripts() {
 		wp_add_inline_style( 'loadlifter-style', $inline_css );
 	}
 
-	// wp_register_script( 'a11y-slider', 'https://unpkg.com/a11y-slider@latest/dist/a11y-slider.js', [], '', false );
 	wp_register_script( 'a11y-slider', get_template_directory_uri() . '/js/a11y-slider.min.js', [], '', false );
 	wp_register_script( 'block-litevimeoembed', 'https://cdn.jsdelivr.net/npm/lite-vimeo-embed/+esm', [], false, false );
 	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
 	// TODO: Is this^ script really used anymore?
-
-	// wp_enqueue_script( 'hubspot-forms', 'https://js.hsforms.net/forms/v2.js', [], LL_VERSION, false );
-	// wp_enqueue_script( 'fa6-kit', 'https://kit.fontawesome.com/e89cbc8fa5.js' );
 	wp_enqueue_script( 'fa7-kit', 'https://kit.fontawesome.com/576405c4bf.js' );
 
 	if ( !is_page_template( LL_LP_TEMPLATES ) ) {
@@ -368,7 +363,7 @@ add_filter( 'register_block_type_args', 'll_modify_heading_levels', 10, 2 );
 /**
  * Uh...
  */
-function add_search_item_to_utility_nav( $items, $args ) {
+function add_search_item_to_utility_nav( string $items, object $args ) {
 	if ( $args->menu === 'Nav Utility' ) {
 		$items .= '<li class="md:max-w-35 xl:max-w-fit">' . get_search_form( false ) . '</li>';
 	}

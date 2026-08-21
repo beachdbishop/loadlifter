@@ -1,0 +1,25 @@
+/* Custom LL Image with Title styles */
+:root :where(.is-layout-flow) > .wp-block-loadlifter-image-with-title {
+	margin-block-start: unset !important;
+}
+
+.wp-block-loadlifter-image-with-title {
+
+	gap: 0;
+
+	h3 {
+		font-weight: 600;
+		font-size: var(--text-2xl);
+		line-height: 1;
+		letter-spacing: -0.175px;
+	}
+	a {
+		text-decoration: none !important;
+
+		@media (hover: hover) {
+			&:is(:where(.group):hover *) {
+				color: var(--color-brand-blue);
+			}
+		}
+	}
+}

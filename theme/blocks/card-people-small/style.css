@@ -1,0 +1,7 @@
+:root :where(.is-layout-flow) > .wp-block-loadlifter-card-people-small {
+	margin-block-start: unset !important;
+}
+
+.wp-block-loadlifter-card-people-small h3 {
+	text-wrap: initial;
+}

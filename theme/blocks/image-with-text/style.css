@@ -16,7 +16,7 @@
 	&.has-brand-gray-dark-background-color .wp-block-group,
 	&.has-brand-blue-background-color .wp-block-group,
 	&.has-brand-blue-dark-background-color .wp-block-group {
-		color: white;
+		color: var(--color-near-white);
 	}
 }
 .wp-block-loadlifter-image-with-text:has(+ .wp-block-loadlifter-image-with-text) {

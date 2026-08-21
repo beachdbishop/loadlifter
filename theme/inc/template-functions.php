@@ -493,7 +493,7 @@ function ll_show_reusable_blocks_menu() {
  *
  * @via https://davidwalsh.name/word-wrap-mootools-php
  */
-function ll_no_widows( $text, $minWords = 3) {
+function ll_no_widows( string $text, $minWords = 3) {
 	$return = $text;
 	$arr = explode(' ', $text);
 	if(count($arr) >= $minWords) {
@@ -505,25 +505,10 @@ function ll_no_widows( $text, $minWords = 3) {
 }
 
 
-function ll_is_plural( $target ) {
+function ll_is_plural( array $target ) {
 	if ( count( $target ) > 1) {
 		return true;
 	}
-}
-
-
-/**
- * Wrap last word with span
- * @author: Elron
- * https://stackoverflow.com/questions/18612872/get-the-last-word-of-a-string
- */
-function ll_wrap_last_word( $string ) {
-	// Breaks string to pieces
-	$pieces = explode(" ", $string);
-	// Modifies the last word
-	$pieces[count($pieces)-1] = '<span class="font-bold">' . $pieces[count($pieces)-1] . '</span>';
-	// Returns the glued pieces
-	return implode(" ", $pieces);
 }
 
 
@@ -566,10 +551,8 @@ function ll_hex_to_rgb( $hex ) {
 	return 'rgb(' . $rgb['red'] . ' ' . $rgb['green'] . ' ' . $rgb['blue'] . ')';
 
 }
-
 // Example usage
 // $hexColor = "#1e90ff";
 // $rgbColor = ll_hex_to_rgb($hexColor);
-
 // print_r($rgbColor);
 // Output: Array ( [red] => 30 [green] => 144 [blue] => 255 )
