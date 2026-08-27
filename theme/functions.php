@@ -404,9 +404,6 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/cpt-people.php';
 require get_template_directory() . '/inc/cpt-locations.php';
-if ( 'production' !== wp_get_environment_type() ) {
-	require get_template_directory() . '/inc/cpt-job-openings.php';
-}
 
 /**
  * Register block categories, patterns, and styles
