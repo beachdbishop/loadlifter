@@ -1,7 +1,7 @@
 <?php
 // intended partial to be used on Contact Us, Location pages, and Bios
 $hs_form_id = '261a21eb-ffe6-41ea-86c1-a593e5c494c1';
-echo ( wp_get_environment_type() == 'local' ) ? '<p class="font-mono text-sm todo hidden  |  lg:block ">partial: ' . __FILE__ . '</p>' : '';
+echo ( wp_get_environment_type() == 'local' ) ? '<p class=" devnote font-mono text-sm hidden  |  lg:block ">partial: ' . __FILE__ . '</p>' : '';
 ?>
 <h3 class="mb-4 text-brand-blue-dark  |  dark:text-orient-400 print:hidden">Contact us</h3>
 <div class="not-prose hbspt-form max-w-prose" id="llhsform"></div>

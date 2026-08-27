@@ -16,7 +16,16 @@
 	place-content: center;
 }
 
-:root :where(.img-grid.is-layout-flow) > * {
+:root :where(.img-flexwrap) {
+	display: flex;
+	flex-wrap: wrap;
+	gap: --spacing(4);
+	justify-content: flex-start;
+	align-items: center;
+}
+
+:root :where(.img-grid.is-layout-flow) > *,
+:root :where(.img-flexwrap.is-layout-flow) > * {
 	margin-block-start: unset;
 }
 
@@ -56,6 +65,10 @@
 			grid-auto-flow: column;
 			grid-auto-columns: auto;
 			place-content: start;
+		}
+
+		:root :where(.img-flexwrap:has(> :nth-child(2))) {
+			gap: --spacing(8);
 		}
 	}
 }

@@ -232,8 +232,6 @@ function ll_scripts() {
 
 	wp_register_script( 'a11y-slider', get_template_directory_uri() . '/js/a11y-slider.min.js', [], '', false );
 	wp_register_script( 'block-litevimeoembed', 'https://cdn.jsdelivr.net/npm/lite-vimeo-embed/+esm', [], false, false );
-	wp_register_script( 'gcharts', 'https://www.gstatic.com/charts/loader.js', [], LL_VERSION, true );
-	// TODO: Is this^ script really used anymore?
 	wp_enqueue_script( 'fa7-kit', 'https://kit.fontawesome.com/576405c4bf.js' );
 
 	if ( !is_page_template( LL_LP_TEMPLATES ) ) {
