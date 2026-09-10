@@ -518,3 +518,43 @@ function ll_hex_to_rgb( $hex ) {
 // $rgbColor = ll_hex_to_rgb($hexColor);
 // print_r($rgbColor);
 // Output: Array ( [red] => 30 [green] => 144 [blue] => 255 )
+
+
+
+// Add a new column for file size in the Media Library
+add_filter( 'manage_upload_columns', function( $columns ) {
+	$columns['filesize'] = __( 'File Size', 'attitude' );
+	return $columns;
+});
+
+// Populate the file size column
+add_action( 'manage_media_custom_column', function( $column_name, $post_id ) {
+	if ($column_name === 'filesize') {
+		$file_path = get_attached_file( $post_id );
+		if ( file_exists( $file_path ) ) {
+			$size = filesize( $file_path );
+			$formatted_size = size_format( $size, 2 );
+
+			// Determine text decoration based on size thresholds
+			if ( $size < 249999 ) {
+				$decor = ''; // Default color
+				$note = ''; // Default note
+			} elseif ( $size < 999999 ) {
+				$decor = 'color: oklch(70.5% 0.213 47.604); font-weight: bold;';
+				$note = 'Can this be optimized?';
+			} else {
+				$decor = 'color: oklch(57.7% 0.245 27.325); font-weight: bold; font-style: italic';
+				$note = 'Unless this is a video, there is really no reason this image should be this large. Replace it with a smaller version, please!';
+			}
+
+			// Output with optional color styling
+			if ($decor) {
+				echo '<span style="' . esc_attr( $decor ) . '" title="' . esc_attr( $note ) . '">' . esc_html( $formatted_size ) . '</span>';
+			} else {
+				echo esc_html( $formatted_size );
+			}
+		} else {
+			echo __('N/A', 'textdomain');
+		}
+	}
+}, 10, 2);
