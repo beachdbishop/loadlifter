@@ -1,0 +1,12 @@
+.ll-note-admin {
+	background-color: ivory;
+	color: saddlebrown;
+	border: 1px solid moccasin;
+	border-radius: 10px;
+	padding: 0.25rem 0.5rem;
+
+	> * {
+		line-height: 1.1;
+		margin-block: 0.5em;
+	}
+}

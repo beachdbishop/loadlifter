@@ -71,7 +71,6 @@ $mt_inner_template = [
 	/>
 
 	<div class="card-img  |  bg-neutral-500 relative overflow-hidden">
-		<!-- img alt="Two interns sharing an entertaining moment while reviewing information on a tablet" src="https://res.cloudinary.com/beachfleischman/image/upload/c_scale,dpr_auto,f_auto/v1762991977/feat__20251112--internships-social2_noqqj9.jpg"  -->
 		<img
 			src="<?php echo esc_attr( $thumb ); ?>"
 			alt="<?php echo esc_attr( $alt ); ?>"

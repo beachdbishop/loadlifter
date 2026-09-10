@@ -20,6 +20,17 @@
 	"acf": {
 		"mode": "auto",
 		"blockVersion": 3,
-		"renderTemplate": "render.php"
+		"renderTemplate": "render.php",
+		"fields": [
+			{
+				"name": "ll_mh_image",
+				"label": "Background Image",
+				"type": "image",
+				"return_format": "array",
+				"library": "all",
+				"instructions": "Upload a 'featured image' sized version (1920 x 625).",
+				"preview_size": "large"
+			}
+		]
 	}
 }

@@ -29,7 +29,7 @@ if ( ! empty( $block['anchor'] ) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$class_name = 'llcolorchip';
+$class_name = 'llcolorchip w-34 flex flex-col border-2 bg-white p-1';
 if ( ! empty( $block['className'] ) ) {
 	$class_name .= ' ' . $block['className'];
 }
@@ -38,9 +38,20 @@ if ( ! empty( $block['align'] ) ) {
 }
 ?>
 
-<!-- TODO: Add CSS Subgrid to control similar vertical size -->
 
-<figure <?php echo $block_id; ?> class="<?php echo esc_attr( $class_name ); ?> w-34 flex flex-col border-2 bg-white p-1">
+<!-- figure <?php echo $block_id; ?> class="<?php echo esc_attr( $class_name ); ?> w-34 flex flex-col border-2 bg-white p-1" -->
+<figure
+	<?php
+	echo wp_kses_data(
+		get_block_wrapper_attributes(
+			array(
+				'id'    => $block_id,
+				'class' => esc_attr( $class_name ),
+			)
+		)
+	);
+	?>
+>
 	<figcaption class="text-center font-mono font-normal text-sm order-2  |  ">
 		<span><?php echo esc_html( $color_title ); ?></span><br>
 		<code class="font-bold uppercase"><?php echo esc_html( $color_value ); ?></code><br>

@@ -14,6 +14,7 @@
 
 
 $viz_title = 'Cannabis Legality by U.S. State';
+$viz_svgtitle = 'Map of the United States, territories not included';
 $viz_legal = 'To the best of our knowledge, this information is current as of 2026/03/20.';
 
 
@@ -26,80 +27,83 @@ if ( ! empty( $block['anchor'] ) ) {
 ?>
 
 
+<div <?php echo esc_attr($block_id); ?> class="visualization p-2 space-y-4  |  lg:p-8 lg:space-y-8">
 
-
-
-<div <?php echo esc_attr($block_id); ?> class="visualization p-4 space-y-4  |  lg:p-8 lg:space-y-8">
-
-	<h3><?php echo $viz_title; ?></h3>
+	<h3><?php echo esc_html__( $viz_title, 'loadlifter' ); ?></h3>
 
 	<?php if ( ! $is_preview ) { ?>
 	<form action="null" id="map-cannabis-form" class="mb-4" >
 		<fieldset>
-			<div class="md:inline-flex md:flex-row md:gap-2 md:items-center">
+			<div class="font-mono text-sm  |  md:flex md:flex-row md:gap-2 md:items-center">
 				<legend>Legend:</legend>
-				<div class="map-filters group visualization-group-radio ">
-					<div class="input-group">
+				<div class="map-filters group visualization-group-radio space-y-1  |  md:grow md:flex md:flex-row md:items-center md:gap-2 lg:gap-4">
+					<div class="input-group flex">
 						<input type="radio" name="legality" id="all" value="showall" checked>
-						<label for="all">All</label>
+						<label for="all" class="flex items-center gap-1">
+							<div class="inline-block h-5 aspect-square border border-neutral-500 bg-no-repeat" style="background-image: conic-gradient(from 180deg, var(--_color-legal) 0%, var(--_color-legal) 50%, var(--_color-legalmed) 50%,var(--_color-legalmed) 75%, var(--_color-illegal) 75%, var(--_color-illegal) 100%);">&nbsp;</div>
+							All
+						</label>
 					</div>
-					<div class="input-group">
+					<div class="input-group flex">
 						<input type="radio" name="legality" id="legal" value="legal">
 						<label for="legal" class="flex items-center gap-1">
-							<div class="inline-block h-5 aspect-square border-2 border-transparent rec-med">&nbsp;</div>
+							<div class="inline-block h-5 aspect-square border border-neutral-500" style="background-color: var(--_color-legal)">&nbsp;</div>
 							Fully Legal
 						</label>
 					</div>
-					<div class="input-group">
+					<div class="input-group flex">
 						<input type="radio" name="legality" id="legalmed" value="legalmed">
-						<label for="legalmed">Medical Use Only</label>
+						<label for="legalmed" class="flex items-center gap-1">
+							<div class="inline-block h-5 aspect-square border border-neutral-500" style="background-color: var(--_color-legalmed)">&nbsp;</div>
+							Medical Use Only
+						</label>
 					</div>
 					<!--div class="input-group">
 						<input type="radio" name="legality" id="illegal" value="illegal">
 						<label for="illegal">Fully Illegal</label>
 					</div -->
-					<div class="input-group">
+					<!-- div class="input-group">
 						<input type="radio" name="legality" id="none" value="none">
 						<label for="none">None</label>
-					</div>
+					</div -->
 				</div>
 			</div>
 		</fieldset>
 	</form>
 
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 959 593" class="map">
-		<title>Map of the United States, territories not included</title>
+		<title><?php echo esc_html__( $viz_svgtitle, 'loadlifter' ); ?></title>
 		<defs>
 			<pattern id="img1" patternUnits="userSpaceOnUse" width="100" height="100">
 				<image href="assets/pattern_triangles_up.png" x="0" y="0" width="100" height="100" />
 			</pattern>
 
 
-			<pattern id="emerald-diagonal-up" patternUnits="userSpaceOnUse" width="20" height="20">
+			<!-- pattern id="emerald-diagonal-up" patternUnits="userSpaceOnUse" width="20" height="20">
 				<rect width="20" height="20" fill="var(--color-emerald-400, white)"/>
 				<polygon points="0,16 4,20 0,20" fill="var(--color-emerald-900, green)"/>
 				<polygon points="16,20 20,16 20,20" fill="var(--color-emerald-900, green)"/>
-			</pattern>
+			</pattern -->
 
-			<pattern id="red-diagonal-down" patternUnits="userSpaceOnUse" width="20" height="20">
+			<!-- pattern id="red-diagonal-down" patternUnits="userSpaceOnUse" width="20" height="20">
 				<rect width="20" height="20" fill="var(--color-red-400, white)"/>
 				<polygon points="0,0 4,0 0,4" fill="var(--color-red-800, red)"/>
 				<polygon points="16,0 20,0 20,4" fill="var(--color-red-800, red)"/>
-			</pattern>
+			</pattern -->
 
-			<pattern id="amber-diagonal-down" patternUnits="userSpaceOnUse" width="20" height="20">
+			<!-- pattern id="amber-diagonal-down" patternUnits="userSpaceOnUse" width="20" height="20">
 				<rect width="20" height="20" fill="var(--color-amber-300, white)"/>
 				<polygon points="0,0 4,0 0,4" fill="var(--color-amber-900, red)"/>
 				<polygon points="16,0 20,0 20,4" fill="var(--color-amber-900, red)"/>
-			</pattern>
+			</pattern -->
 
-			<pattern id="sky-crosses" patternUnits="userSpaceOnUse" width="20" height="20">
+			<!-- pattern id="sky-crosses" patternUnits="userSpaceOnUse" width="20" height="20">
 				<rect width="20" height="20" fill="var(--color-sky-400, white)"/>
 				<polygon points="0,0 4,0 4,2 2,2 2,4 0,4" fill="var(--color-sky-800, blue)"/>
 				<polygon points="16,0 20,0 20,4 18,4 18,2 16,2" fill="var(--color-sky-800, blue)"/>
 				<polygon points="18,16 20,16 20,20 16,20 16,18 18,18 " fill="var(--color-sky-800, blue)"/>
 				<polygon points="0,16 2,16 2,18 4,18 4,20 0,20" fill="var(--color-sky-800, blue)"/>
-			</pattern>
+			</pattern -->
 			<!-- Example usage -->
 			<!-- rect width="100%" height="100%" fill="url(#emerald-diagonal)"/ -->
 		</defs>
@@ -349,11 +353,11 @@ if ( ! empty( $block['anchor'] ) ) {
 	<!-- Source of original SVG file: https://commons.wikimedia.org/wiki/File:Blank_US_Map_(states_only).svg -->
 	<?php } ?>
 
-	<?php if ( $is_preview ) { ?>
-		<img src="<?php echo get_template_directory_uri(); ?>/blocks/viz-cannabis-states/static-us-map.png" alt="static U.S. states" style="margin-inline: auto !important;" />
-		<p style="color: #0c0; font-weight: bold"><em>Note: Map is dynamic in frontend view</em></p>
-	<?php } ?>
+	<?php if ( $is_preview ) {
+		echo '<div class="ll-note-admin"><p><span class="dashicons dashicons-info"></span> <strong>Note</strong>: Map is dynamic in frontend view.</p></div>';
+		echo '<img src="' . get_template_directory_uri() . '/blocks/viz-cannabis-states/static-us-map.png" alt="static U.S. states" style="margin-inline: auto !important;" />';
+	} ?>
 
-	<p class="text-sm"><?php echo $viz_legal; ?></p>
+	<p class="text-sm"><?php echo esc_html__( $viz_legal, 'loadlifter' ); ?></p>
 
 </div>

@@ -22,6 +22,18 @@
 	"acf": {
 		"mode": "auto",
 		"blockVersion": 3,
-		"renderTemplate": "render.php"
+		"renderTemplate": "render.php",
+		"fields": [
+			{
+				"name": "ll_slide_person",
+				"label": "Person",
+				"type": "post_object",
+				"return_format": "object",
+				"required": true,
+				"post_type": "people",
+				"allow_null": false,
+				"multiple": false
+			}
+		]
 	}
 }

@@ -41,6 +41,67 @@
 	"acf": {
 		"mode": "auto",
 		"blockVersion": 3,
-		"renderTemplate": "render.php"
+		"renderTemplate": "render.php",
+		"fields": [
+			{
+				"name": "ll_ad_image",
+				"label": "Background Image",
+				"type": "image",
+				"required": 1,
+				"return_format": "url",
+				"library": "all",
+				"min_width": "800",
+				"min_height": "200",
+				"min_size": "",
+				"max_width": "2000",
+				"max_height": "1000",
+				"max_size": "",
+				"mime_types": "jpg,png,webp,avif",
+				"allow_in_bindings": 0,
+				"preview_size": "medium"
+			},
+			{
+				"name": "ll_ad_link",
+				"label": "Link",
+				"type": "url",
+				"required": 1
+			},
+			{
+				"name": "ll_ad_text",
+				"label": "Text",
+				"type": "text",
+				"maxlength": 255,
+				"required": 1
+			},
+			{
+				"name": "ll_ad_button_text",
+				"label": "Button Text",
+				"type": "text",
+				"maxlength": 128,
+				"required": 0
+			},
+			{
+				"name": "ll_ad_width",
+				"label": "Width",
+				"type": "true_false",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"message": "Full width?",
+				"default_value": 0,
+				"allow_in_bindings": 1,
+				"ui": 1,
+				"ui_on_text": "Yes",
+				"ui_off_text": "No"
+			},
+			{
+				"name": "ll_ad_extra_classes",
+				"label": "Extra Classes",
+				"type": "text",
+				"instructions": "Add any additional Tailwindcss classes you need on this ad",
+				"allow_in_bindings": 1,
+				"required": 0
+			}
+		]
 	}
 }

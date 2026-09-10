@@ -21,6 +21,31 @@
 	"acf": {
 		"mode": "auto",
 		"blockVersion": 3,
-		"renderTemplate": "render.php"
+		"renderTemplate": "render.php",
+		"fields": [
+			{
+				"name": "ll_card_person",
+				"label": "Person",
+				"type": "post_object",
+				"return_format": "object",
+				"post_type": "people",
+				"allow_null": false,
+				"multiple": false
+			},
+			{
+				"name": "ll_card_show_desigs",
+				"label": "Show Designations",
+				"type": "true_false",
+				"default_value": true,
+				"message": "Hides desigmations if unchecked."
+			},
+			{
+				"name": "ll_card_allow_link",
+				"label": "Allow Link to Bio",
+				"type": "true_false",
+				"default_value": true,
+				"message": "Prevents link to bio if unchecked."
+			}
+		]
 	}
 }

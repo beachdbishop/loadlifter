@@ -26,9 +26,9 @@
     "anchor": true,
     "alignContent": false,
     "color": {
-        "text": false,
-        "background": false,
-        "link": false
+			"text": false,
+			"background": false,
+			"link": false
     },
     "alignText": false,
     "html": false,
@@ -50,6 +50,22 @@
   "acf": {
     "mode": "auto",
 		"blockVersion": 3,
-    "renderTemplate": "render.php"
+    "renderTemplate": "render.php",
+		"fields": [
+			{
+				"name": "ll_callout_title",
+				"label": "Title",
+				"type": "text",
+				"required": 0,
+				"allow_in_bindings": 1
+			},
+			{
+				"name": "ll_callout_icon",
+				"label": "FA Icon",
+				"type": "text",
+				"required": 0,
+				"allow_in_bindings": 1
+			}
+		]
   }
 }
