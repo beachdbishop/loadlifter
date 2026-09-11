@@ -24,27 +24,75 @@
 		"renderTemplate": "render.php",
 		"fields": [
 			{
-				"name": "ll_card_person",
+				"key": "field_6a838c6a331fc",
 				"label": "Person",
+				"name": "ll_card_person",
+				"aria-label": "",
 				"type": "post_object",
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"post_type": [
+					"people"
+				],
+				"post_status": [
+					"publish"
+				],
+				"taxonomy": "",
 				"return_format": "object",
-				"post_type": "people",
-				"allow_null": false,
-				"multiple": false
+				"multiple": 0,
+				"allow_null": 0,
+				"allow_in_bindings": 0,
+				"bidirectional": 0,
+				"ui": 1,
+				"bidirectional_target": []
 			},
 			{
-				"name": "ll_card_show_desigs",
+				"key": "field_6a83970965375",
 				"label": "Show Designations",
+				"name": "ll_card_show_desigs",
+				"aria-label": "",
 				"type": "true_false",
-				"default_value": true,
-				"message": "Hides desigmations if unchecked."
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"message": "",
+				"default_value": 1,
+				"allow_in_bindings": 0,
+				"ui": 0,
+				"ui_on_text": "",
+				"ui_off_text": ""
 			},
 			{
-				"name": "ll_card_allow_link",
+				"key": "field_6a83976a65376",
 				"label": "Allow Link to Bio",
+				"name": "ll_card_allow_link",
+				"aria-label": "",
 				"type": "true_false",
-				"default_value": true,
-				"message": "Prevents link to bio if unchecked."
+				"instructions": "",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"message": "Prevents link to bio if unchecked",
+				"default_value": 1,
+				"allow_in_bindings": 0,
+				"ui": 0,
+				"ui_on_text": "",
+				"ui_off_text": ""
 			}
 		]
 	}

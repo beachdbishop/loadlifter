@@ -53,18 +53,44 @@
     "renderTemplate": "render.php",
 		"fields": [
 			{
-				"name": "ll_callout_title",
+				"key": "field_632900cd94234",
 				"label": "Title",
+				"name": "ll_callout_title",
+				"aria-label": "",
 				"type": "text",
+				"instructions": "",
 				"required": 0,
-				"allow_in_bindings": 1
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "",
+				"maxlength": "",
+				"placeholder": "Callout",
+				"prepend": "",
+				"append": ""
 			},
 			{
+				"key": "field_63f001bd2587e",
+				"label": "Font Awesome Icon",
 				"name": "ll_callout_icon",
-				"label": "FA Icon",
+				"aria-label": "",
 				"type": "text",
+				"instructions": "",
 				"required": 0,
-				"allow_in_bindings": 1
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "",
+				"maxlength": "",
+				"placeholder": "fa-regular fa-notebook",
+				"prepend": "",
+				"append": ""
 			}
 		]
   }
