@@ -374,37 +374,93 @@ endif;
 
 
 if ( ! function_exists( 'll_better_page_hero' ) ) :
-	function ll_better_page_hero( string $h1, string $h2, $cta1_text = null, $cta1_url = null, $cta2_text = null, $cta2_url = null, $maxw = null ) {
+	/**
+	 * Outputs the page hero.
+	 *
+	 * @param string $h1 Primary heading.
+	 * @param string $h2 Optional supporting heading.
+	 * @param string|null $cta1_text Primary CTA text.
+	 * @param string|null $cta1_url Primary CTA URL.
+	 * @param string|null $cta2_text Secondary CTA text.
+	 * @param string|null $cta2_url Secondary CTA URL.
+	 * @param bool $maxw Whether to constrain the H1 width.
+	 *
+	 * @return void
+	 */
+
+	function ll_better_page_hero(
+		string $h1,
+		string $h2,
+		?string $cta1_text = null,
+		?string $cta1_url = null,
+		?string $cta2_text = null,
+		?string $cta2_url = null,
+		bool $maxw = false
+		): void {
 		?>
 
-		<div class="page-hero  |  wp-block-cover bg-neutral-950 ll-equal-vert-padding px-0!  |  print:py-4 print:bg-white print:text-black">
-			<span aria-hidden="true" class="page-hero-overlay  |  z-1 absolute top-0 right-0 bottom-0 left-0  |  print:hidden"></span>
-			<?php echo the_post_thumbnail( 'full', ['class' => 'wp-block-cover__image-background not-transparent wp-post-image print:hidden'] ); ?>
+		<div class="page-hero wp-block-cover bg-neutral-950 ll-equal-vert-padding px-0!  |  print:py-4 print:bg-white print:text-black">
+			<span aria-hidden="true" class="page-hero-overlay z-1 absolute top-0 right-0 bottom-0 left-0  |  print:hidden"></span>
+			<?php
+			if ( has_post_thumbnail() ) {
+				the_post_thumbnail(
+					'full',
+					[
+						'class' => 'wp-block-cover__image-background not-transparent wp-post-image print:hidden',
+						'fetchpriority' => 'high',
+					]
+				);
+			}
+			?>
 
-			<div class="wp-block-cover__inner-container  |  px-2 lg:px-4 print:px-0!">
-				<div class="text-neutral-800 flex flex-col justify-center   |  lg:min-h-hero print:min-h-min">
+			<div class="wp-block-cover__inner-container px-2  |  lg:px-4 print:px-0!">
+				<div class="text-neutral-800 flex flex-col justify-center  |  lg:min-h-hero print:min-h-min">
 
 					<hgroup class="space-y-2  |  lg:space-y-6">
-						<h1 class="leading-none text-white tracking-light text-pretty text-shadow-lg/50  |  <?php if ( $maxw == 1 ) { echo ' md:max-w-5xl'; } ?> lg:text-6xl lg:print:text-xl! print:text-black" style="text-wrap: unset;"><?php echo $h1; ?></h1>
-						<?php if ( !empty( $h2 ) ) { ?><p class="font-head text-2xl leading-none text-pretty text-shadow-lg/50 text-orient-400!  |  md:max-w-5xl lg:text-4xl lg:print:text-base! print:text-black!"><?php echo $h2; ?></p><?php } ?>
+						<h1
+							class="leading-none text-white tracking-light text-pretty text-shadow-lg/50  |  <?php if ( $maxw == 1 ) { echo esc_attr( ' md:max-w-5xl' ); } ?> lg:text-6xl lg:print:text-xl! print:text-black"
+							style="text-wrap: unset;"
+						>
+							<?php echo esc_html( $h1 ); ?>
+						</h1>
+						<?php if ( !empty( $h2 ) ) { ?>
+							<p class="font-head text-2xl leading-none text-pretty text-shadow-lg/50 text-orient-400!  |  md:max-w-5xl lg:text-4xl lg:print:text-base! print:text-black!">
+								<?php echo esc_html( $h2 ); ?>
+							</p>
+						<?php } ?>
 					</hgroup>
 
 					<?php if ( ( !empty( $cta1_text ) ) && ( !empty( $cta1_url ) ) ) { ?>
 						<div class="wp-block-buttons mt-6 is-layout-flex wp-block-buttons-is-layout-flex *:inline-block *:m-0">
 							<div class="print:hidden">
-								<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg text-neutral-100 bg-brand-red-dark! border-brand-red-dark shadow-md shadow-neutral-950  | hover:border-white hover:text-white" href="<?php echo $cta1_url; ?>"><?php echo $cta1_text; ?></a>
+								<a
+									class="border-2 px-6 py-3 font-head font-semibold leading-none no-underline rounded-lg text-neutral-100 bg-brand-red-dark! border-brand-red-dark shadow-md shadow-neutral-950  | hover:border-white hover:text-white"
+									href="<?php echo esc_attr( $cta1_url ); ?>"
+								>
+									<?php echo esc_html( $cta1_text ); ?>
+								</a>
 							</div>
 							<?php if ( ( !empty( $cta2_text ) ) && ( !empty( $cta2_url ) ) ) { ?>
 								<div class="print:hidden">
-									<a class="border-2 inline-flex items-center justify-center px-5 py-3 font-head font-semibold no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950  | hover:bg-transparent hover:border-orient-400 hover:text-orient-400" href="<?php echo $cta2_url; ?>"><?php echo $cta2_text; ?></a>
+									<a
+										class="border-2 px-6 py-3 font-head font-semibold leading-none no-underline rounded-lg bg-transparent border-neutral-200 text-neutral-200 shadow-md shadow-neutral-950  | hover:bg-transparent hover:border-orient-400 hover:text-orient-400"
+										href="<?php echo esc_attr( $cta2_url ); ?>"
+									>
+										<?php echo esc_html( $cta2_text ); ?>
+									</a>
 								</div>
 							<?php } ?>
 						</div>
 					<?php } ?>
 				</div>
 
-				<?php if ( ( function_exists( 'bcn_display' ) ) && ( !is_page_template( LL_LP_TEMPLATES ) ) ) { ?>
-					<nav class="breadcrumbs  |  mt-4 font-head text-neutral-50  |  sm:mt-0 print:mt-8 print:text-black" aria-label="Breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org">
+				<?php if ( ( !is_page_template( LL_LP_TEMPLATES ) ) && ( function_exists( 'bcn_display' ) ) ) { ?>
+					<nav
+						class="breadcrumbs mt-4 font-head text-neutral-50  |  sm:mt-0 print:mt-8 print:text-black"
+						aria-label="Breadcrumbs"
+						typeof="BreadcrumbList"
+						vocab="https://schema.org"
+					>
 						<?php echo bcn_display( true ); ?>
 					</nav>
 				<?php } ?>
@@ -414,6 +470,8 @@ if ( ! function_exists( 'll_better_page_hero' ) ) :
 		<?php
 	}
 endif;
+
+
 
 
 /* Used on Posts */
