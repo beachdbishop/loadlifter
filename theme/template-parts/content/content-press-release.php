@@ -7,6 +7,7 @@
  * @package Load_Lifter
  */
 
+$page_form_id 									= get_field( 'll_hubspot_form_id' ) ?: '261a21eb-ffe6-41ea-86c1-a593e5c494c1';
 ?>
 
 <div class="full-bleed not-prose py-16" style="background-image: var(--wp--preset--gradient--eased-from-brand-blue-dark-to-brand-blue)">
@@ -78,7 +79,20 @@
 		<aside class="mt-8 md:mt-0 md:order-2 md:w-1/3">
 			<?php if ( get_field( 'll_normal_contact_form_location' ) == 1 ) : ?>
 				<div id="contact" class="container-contact-form not-prose mb-8  |  lg:mb-16">
-					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+					<?php
+					get_template_part(
+						'template-parts/form/form',
+						'hubspot-form-by-id',
+						$args = [
+							'class' => '',
+							'part_data' => [
+								'hs_form_id' => $page_form_id,
+								'form_heading' => 'Contact us',
+								'form_button_text' => 'Submit',
+							]
+						]
+					);
+					?>
 				</div>
 			<?php endif; ?>
 

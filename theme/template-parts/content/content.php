@@ -7,6 +7,18 @@
  * @package Load_Lifter
  */
 
+if ( empty( get_field( 'll_hubspot_form_id' ) ) ) {
+	if ( ( in_category( 'construction' ) ) || ( in_category( 'manufacturing' ) ) || ( in_category( 'nonprofit' ) ) ) {
+		$page_form_id = '0b8c65d8-af2a-43e6-b68f-d496c8280633';
+	} elseif ( in_category( 'cannabis' ) ) {
+		$page_form_id = 'ec2d5c9d-3b25-425a-b171-c4dbcee2563e';
+	} else {
+		$page_form_id	= 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
+	}
+} else {
+	/* Override defaults with Form ID specified in ACF field. */
+	$page_form_id	= get_field( 'll_hubspot_form_id' );
+}
 ?>
 
 <?php if ( get_field( 'll_hide_featured_image' ) != true ) :
@@ -80,7 +92,20 @@ endif; ?>
 		<div class="mt-8 md:mt-0 md:order-2 md:w-1/3">
 			<?php if ( ( get_field( 'll_normal_contact_form_location' ) == 1 ) && ( !in_category( 'resources' ) ) ) : ?>
 				<div id="contact" class="container-contact-form not-prose">
-					<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' ); ?>
+					<?php
+					get_template_part(
+						'template-parts/form/form',
+						'hubspot-form-by-id',
+						$args = [
+							'class' => '',
+							'part_data' => [
+								'hs_form_id' => $page_form_id,
+								'form_heading' => 'Contact us',
+								'form_button_text' => 'Submit',
+							]
+						]
+					);
+					?>
 				</div>
 			<?php endif; ?>
 

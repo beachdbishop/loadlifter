@@ -1,3 +1,14 @@
+/* Variables for the New HubSpot Form Builder */
+/* via: https://developers.hubspot.com/docs/cms/start-building/features/forms/forms */
+:root {
+  /* --hsf-global__font-family: 'impact'; */
+  --hsf-global__font-size: 18px;
+  --hsf-global__color: #222;
+  --hsf-background__background-color: #ededed;
+}
+
+
+
 /* Styles for Forms and HubSpot Form Embeds */
 .container-contact-form {
 	margin-bottom: --spacing(2);
@@ -96,8 +107,6 @@ textarea:focus {
 	border-color: rgb(0 102 142 / 0.8);
 }
 
-
-
 select {
 	padding-block: --spacing(1);
 }
@@ -182,54 +191,89 @@ input[type="submit"]:active {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.hbspt-form .hs-field-desc {
-  font-style: italic;
-  font-size: var(--text-sm);
+.hbspt-form {
+
+	.hs-field-desc {
+		font-style: italic;
+		font-size: var(--text-sm);
+	}
+
+	span.hs-form-required {
+		font-weight: 700;
+		color: light-dark(var(--color-orange-800), var(--color-orange-300));
+	}
+
+	.hs-error-msg {
+		font-size: 1rem;
+		line-height: 1.5;
+		font-weight: 700;
+		font-style: italic;
+		color: light-dark(var(--color-red-700), var(--color-red-300));
+	}
+
+	.invalid {
+		border-width: 2px;
+		border-color: light-dark(var(--color-red-700), var(--color-red-300)) !important;
+	}
+
 }
-.hbspt-form span.hs-form-required {
-	font-weight: 700;
-	color: light-dark(var(--color-orange-800), var(--color-orange-300));
-}
-.hbspt-form .hs-error-msg {
-	font-size: 1rem;
-	line-height: 1.5;
-	font-weight: 700;
-	font-style: italic;
-	color: light-dark(var(--color-red-700), var(--color-red-300));
-}
-.hbspt-form .invalid {
-	border-width: 2px;
-	border-color: light-dark(var(--color-red-700), var(--color-red-300)) !important;
-}
+
 .hs-dependent-field > * + * {
 	margin-block-start: --spacing(4);
 }
 
-.hs_service_category .inputs-list,
-.hs_subscribe_to_our_newsletter label {
-	font-size: var(--text-sm);
-}
-
-#service_category9-c8675641-3e68-4ff7-9dc3-ae3636fbf1c8 + span {
+#service_category10-c8675641-3e68-4ff7-9dc3-ae3636fbf1c8 + span,
+#service_category9-ec2d5c9d-3b25-425a-b171-c4dbcee2563e + span,
+#service_category9-0b8c65d8-af2a-43e6-b68f-d496c8280633 + span {
 	/* ffs, the long choice - "401(k), Pension, & Profit Sharing Plan Administration" */
 	letter-spacing: -0.4px;
 }
 
-.legal-consent-container > *:not(:first-child) {
-	margin-top: --spacing(2);
-}
-.legal-consent-container > .hs-richtext:first-of-type {
-	display: none;
-}
-.legal-consent-container .hs-richtext {
+
+.multi-container label,
+.hs-form-booleancheckbox label {
 	font-size: var(--text-sm);
+	display: flex;
+	gap: --spacing(1);
+
+	@media screen and (width >= 768px) {
+		gap: --spacing(2);
+	}
+
+	input {
+		flex-shrink: 1;
+	}
+	& > span {
+		flex-grow: 1;
+		line-height: 1.2;
+	}
 }
-.legal-consent-container .hs-richtext p:empty {
-	display: none;
-}
-.legal-consent-container label > span {
-	font-size: var(--text-sm);
-	line-height: 1.1;
+
+
+.legal-consent-container {
+
+	& > *:not(:first-child) {
+		margin-top: --spacing(2);
+	}
+
+	& > .hs-richtext:first-of-type {
+		display: none;
+	}
+	& .hs-richtext {
+		font-size: var(--text-sm);
+
+		p:empty {
+			display: none;
+		}
+	}
+
+	& .hs-form-booleancheckbox-display input.hs-input {
+		float: none;
+	}
+	& .hs-form-booleancheckbox-display > span {
+		display: inline !important;
+		margin-left: unset !important;
+	}
 }
 
 /* date fields might be a problem */

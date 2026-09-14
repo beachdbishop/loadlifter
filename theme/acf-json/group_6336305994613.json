@@ -23,6 +23,35 @@
             "ui": 1
         },
         {
+            "key": "field_6aa4767613bc6",
+            "label": "HubSpot Form ID",
+            "name": "ll_hubspot_form_id",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "If you need a non-default HubSpot form shown on this page\/post, reach out to Daniel Bishop re: getting the relevant HubSpot Form ID.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6336305aa87d8",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "261a21eb-ffe6-41ea-86c1-a593e5c494c1",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_65aa9282f23aa",
             "label": "HubSpot Form HTML",
             "name": "ls_hs_form_html",
@@ -213,5 +242,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1705677492
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1789164337
 }

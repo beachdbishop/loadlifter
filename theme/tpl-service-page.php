@@ -13,6 +13,7 @@ get_header();
 $page_id                        = get_the_ID();
 $page_id_industries             = ( wp_get_environment_type() == 'local' ) ? '3196' : '31923';
 
+
 if ( get_field( 'll_page_title_override' ) ) {
 	$page_title                 	= get_field( 'll_page_title_override' );
 } else {
@@ -34,11 +35,10 @@ $page_cta_heading 							= get_field( 'll_ind_cta_heading' );
 $page_cta_body 									= get_field( 'll_ind_cta_body' );
 $page_cta_button_text 					= get_field( 'll_ind_cta_button_text' );
 $page_cta_html 									= get_field( 'll_ind_cta_html' );
-// $page_groups_html 							= get_field( 'll_ind_groups_html' );
-// $page_people_display 						= get_field( 'll_ind_people_display_style' );
-// $page_people_heading						= get_field( 'll_ind_people_heading' );
-// $page_people 										= get_field( 'll_ind_people' );
+
+$page_form_id										= get_field( 'll_hubspot_form_id' ) ?: 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
 $page_form 											= get_field( 'ls_hs_form_html' );
+
 $hero_cta1_text 								= get_field( 'll_hero_cta1_text' );
 $hero_cta1_url 									= get_field( 'll_hero_cta1_url' );
 $hero_cta2_text									= get_field( 'll_hero_cta2_text' );
@@ -185,7 +185,20 @@ if ( $page_post_category ) {
 						<?php
 						if ( get_field( 'll_normal_contact_form_location' ) == 1 ) :
 							echo '<div id="contact" class="container-contact-form not-prose">';
-							get_template_part( 'template-parts/form/form', 'hubspot-contact-sidebar' );
+
+							get_template_part(
+								'template-parts/form/form',
+								'hubspot-form-by-id',
+								$args = [
+									'class' => '',
+									'part_data' => [
+										'hs_form_id' => $page_form_id,
+										'form_heading' => 'Contact us',
+										'form_button_text' => 'Submit',
+									]
+								]
+							);
+
 							echo '</div>';
 						endif;
 						?>

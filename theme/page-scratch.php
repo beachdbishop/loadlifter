@@ -233,8 +233,7 @@ get_header();
 					<div class="p-4 rounded-tl rounded-br md:p-8 bg-brand-red-faint  |  md:rounded-tl-lg md:rounded-br-lg">Nothing. WP overriding safe classes experiment.</div>
 
 				</div>
-				<?php // get_template_part( 'template-parts/form/form', 'hubspot' );
-				?>
+
 			</div>
 		</article>
 

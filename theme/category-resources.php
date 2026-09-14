@@ -113,7 +113,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 					<h2 class="font-semibold">Recent Blog Posts</h2>
 					<?php
 					if ( $postsQuery->found_posts > $blogposts_limit ) :
-						echo '<a href="/blog/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View All</a>';
+						echo '<a href="/blog/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-orient-700 rounded-lg text-orient-700  |  hover:text-orient-900 hover:border-orient-500 dark:border-neutral-400 dark:text-neutral-400 dark:hover:text-neutral-100">View&nbsp;All</a>';
 					endif;
 					?>
 				</div>
@@ -177,7 +177,7 @@ function ll_res_query_nope( $heading, $message = 'There are currently no resourc
 						<h3 class="font-semibold">Firm Information</h3>
 						<?php
 						if ( $firminfoQuery->found_posts > $firminfo_limit ) :
-							echo '<a href="/category/firminfo/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-neutral-900 hover:border-neutral-500 dark:border-neutral-300 dark:text-neutral-300 dark:hover:text-neutral-100">View All</a>';
+							echo '<a href="/category/firminfo/" class="px-6 py-3 font-head font-semibold leading-none border-2 border-neutral-600 rounded-lg text-neutral-600  |  hover:text-neutral-900 hover:border-neutral-500 dark:border-neutral-300 dark:text-neutral-300 dark:hover:text-neutral-100">View&nbsp;All</a>';
 						endif;
 						?>
 					</div>

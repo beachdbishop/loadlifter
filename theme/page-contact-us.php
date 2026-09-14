@@ -9,25 +9,24 @@
 
 get_header();
 
-$page_id                        = get_the_ID();
+$page_id                      = get_the_ID();
 if (get_field('ll_page_title_override')) {
-	$page_title                = get_field('ll_page_title_override');
+	$page_title                	= get_field('ll_page_title_override');
 } else {
-	$page_title                = get_the_title();
+	$page_title                	= get_the_title();
 }
 
 if ( get_field( 'll_custom_subheader' ) ) {
-	$page_message 								= get_field( 'll_custom_subheader' );
+	$page_message 							= get_field( 'll_custom_subheader' );
 } else {
-	$brand_message								= get_field( 'll_brand_message' );
-	$page_message									= $brand_message['label'];
+	$brand_message							= get_field( 'll_brand_message' );
+	$page_message								= $brand_message['label'];
 }
 
-$page_excerpt                   = get_the_excerpt();
-// $hs_form_id 										= 'c8675641-3e68-4ff7-9dc3-ae3636fbf1c8';
+$page_excerpt                 = get_the_excerpt();
 ?>
 
-	<main id="primary" class="contact-page  |  relative z-10 shadow-xl  |  lg:shadow-2xl">
+	<main id="primary" class="contact-page relative z-10 shadow-xl  |  lg:shadow-2xl">
 
 		<?php
 		while ( have_posts() ) :
@@ -45,7 +44,7 @@ $page_excerpt                   = get_the_excerpt();
 						<?php get_template_part( 'template-parts/layout/chunk', 'breadcrumbs' ); ?>
 
 						<header class="mb-4">
-							<?php the_title( '<h1 class="entry-title  |  text-orient-800  |  dark:text-orient-400">', '</h1>' ); ?>
+							<?php the_title( '<h1 class="entry-title text-orient-800  |  dark:text-orient-400">', '</h1>' ); ?>
 						</header>
 					<?php } ?>
 
@@ -53,10 +52,16 @@ $page_excerpt                   = get_the_excerpt();
 
 						<?php the_content(); ?>
 
-						<div class="grid md:grid-cols-2 gap-8  |  lg:gap-16">
+						<div class="grid gap-8  |  md:grid-cols-2 lg:gap-16">
 
 							<div id="contact" class="container-contact-form not-prose">
-								<?php get_template_part( 'template-parts/form/form', 'hubspot-contact-main' ); ?>
+								<?php
+								/* Loads "Contact Us (Main) by default */
+								get_template_part(
+									'template-parts/form/form',
+									'hubspot-form-by-id'
+								);
+								?>
 							</div>
 
 							<aside class="space-y-8">
@@ -74,7 +79,7 @@ $page_excerpt                   = get_the_excerpt();
 
 								if ( $locationQuery->have_posts() ) : ?>
 									<h2 class="text-3xl text-neutral-600  |  dark:text-neutral-400">Our Locations</h2>
-									<ul class="cards-ic grid grid-cols-1 gap-2 mt-0  |  ">
+									<ul class="not-prose cards-ic grid grid-cols-1 gap-2 mt-0  |  *:not-last:mb-0! ">
 										<?php /* Start the Loop */
 										while ( $locationQuery->have_posts() ) :
 											$locationQuery->the_post();

@@ -1,10 +1,32 @@
 <?php
-// intended partial to be used on Contact Us, Location pages, and Bios
-$hs_form_id = '261a21eb-ffe6-41ea-86c1-a593e5c494c1';
-echo ( wp_get_environment_type() == 'local' ) ? '<p class=" devnote font-mono text-sm hidden  |  lg:block ">partial: ' . __FILE__ . '</p>' : '';
-?>
-<h3 class="mb-4 text-brand-blue-dark  |  dark:text-orient-400 print:hidden">Contact us</h3>
-<div class="not-prose hbspt-form max-w-prose" id="llhsform"></div>
+/**
+ * Intended partial to be used in sidebar of pages / posts
+ *
+ * @package Load_Lifter
+ * @since 3.8.1
+ */
+
+// Set defaults.
+$args = wp_parse_args(
+	$args,
+	[
+		'class'	=> '',
+		'part_data' => [
+			'hs_form_id' => '261a21eb-ffe6-41ea-86c1-a593e5c494c1',
+			'form_heading' => 'Contact us',
+			'form_button_text' => 'Submit',
+		]
+	]
+);
+
+
+if ( wp_get_environment_type() == 'local' ) { ?>
+	<p class="devnote  |  lg:block ">partial: <?php echo __FILE__; ?></p>
+<?php } ?>
+
+<h3 class="mb-4 text-brand-blue-dark  |  dark:text-orient-400 print:hidden"><?php echo esc_html( $args['part_data']['form_heading'] ); ?></h3>
+<div class="<?php echo esc_attr( $args[ 'class' ] ); ?> not-prose hbspt-form max-w-prose" id="llhsform"></div>
+
 <script>
 	// Function to load the HubSpot form
 	// via: https://community.hubspot.com/t5/CRM/Hubspot-web-form-integration-scripts-slowing-WordPress-website/m-p/332393
@@ -23,7 +45,9 @@ echo ( wp_get_environment_type() == 'local' ) ? '<p class=" devnote font-mono te
 					region: "na2",
 					portalId: "5578910",
 					target: '#llhsform',
-					formId: "<?php echo $hs_form_id; ?>"
+					formId: "<?php echo esc_attr( $args['part_data']['hs_form_id'] ); ?>",
+					manuallyBlockedEmailDomain: ['beachfleischman.com'],
+					submitText: "<?php echo esc_html( $args['part_data']['form_button_text'] ); ?>"
 				});
 			};
 			document.body.appendChild(hsScript);
@@ -39,9 +63,18 @@ echo ( wp_get_environment_type() == 'local' ) ? '<p class=" devnote font-mono te
 	// Also check immediately in case the form is already in view on the initial page load
 	loadHubSpotForm();
 </script>
+
+<?php // fallback for no javascript ?>
 <noscript>
 	<p class="my-4  |  print:hidden">Let us know what you need.</p>
 	<div class="wp-block-buttons is-content-justification-left is-layout-flex wp-block-buttons-is-layout-flex  |  print:hidden">
-		<div class="wp-block-button is-style-outline"><a href="mailto:info@beachfleischman.com?subject=Inquiry%20from:%20<?php echo esc_attr( get_the_title() ); ?>" class="wp-block-button__link has-brand-red-color has-text-color wp-element-button "><i class="fa-solid fa-envelope"></i> Email us</a></div>
+		<div class="wp-block-button is-style-outline">
+			<a
+				href="mailto:info@beachfleischman.com?subject=Inquiry%20from:%20<?php echo esc_attr( get_the_title() ); ?>"
+				class="wp-block-button__link has-brand-red-color has-text-color wp-element-button"
+			>
+				<i class="fa-solid fa-envelope"></i> Email us
+			</a>
+		</div>
 	</div>
 </noscript>
