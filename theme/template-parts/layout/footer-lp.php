@@ -41,7 +41,7 @@ if (!is_page_template('tpl-landing-page-bare.php')) {
 			</div>
 
 			<?php if (is_page_template('tpl-landing-page-cyber.php')) { ?>
-				<p class="mt-8 text-sm print:break-inside-avoid-page print:mt-2"><?php echo LL_DISCLAIMER_CYBER; ?></p>
+				<p class="mt-8 text-sm print:break-inside-avoid-page print:mt-2"><?php echo get_field( 'll_disclaimer_silent_sector', 'option' ); ?></p>
 				<p class="mt-4 text-sm print:break-inside-avoid-page print:mt-2">
 					<?php
 					if ($page_seo_footer) {

@@ -58,6 +58,10 @@ endif; ?>
 					)
 				);
 
+				if ( ! has_category( [ 'news', 'resources' ] ) ) {
+					echo '<p class="my-16 text-neutral-600 italic |  dark:text-neutral-400 print:break-inside-avoid-page print:mt-2">' . get_field( 'll_disclaimer_blog_content', 'option' ) . '</p>';
+				}
+
 				if ( get_field( 'll_hide_socialshare' ) != 1 ) {
 					get_template_part( 'template-parts/form/form', 'webshare' );
 				}

@@ -121,6 +121,48 @@
             "disabled": 0
         },
         {
+            "key": "field_6ac5686ede95c",
+            "label": "Disclaimer - Blog Content",
+            "name": "ll_disclaimer_blog_content",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<strong>Disclaimer<\/strong>: This website post is provided for general informational purposes only and does not constitute legal, tax, accounting, investment, or other professional advice. It should not be relied upon as a substitute for consultation with qualified professional advisers who are familiar with your specific circumstances. Before making decisions or taking action, consult an appropriate adviser. Portions of this content may have been reviewed, revised, or refined with the assistance of artificial intelligence (AI) tools and are subject to human oversight. The information is provided \"as is\" without any representation or warranty, express or implied, regarding its accuracy, completeness, or timeliness. Articles published on this website are not intended or written to be used for the purpose of avoiding tax penalties under applicable law.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_6ac57f95619d7",
+            "label": "Disclaimer - Silent Sector",
+            "name": "ll_disclaimer_silent_sector",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "Disclaimer: BeachFleischman PLLC and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither BeachFleischman PLLC nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "rows": "",
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
             "key": "field_6075c6657aefe",
             "label": "Last Updated",
             "name": "last_updated",
@@ -136,7 +178,8 @@
             },
             "display_format": "Y-m-d H:i:s",
             "return_format": "Y-m-d H:i:s",
-            "first_day": 0
+            "first_day": 0,
+            "default_to_current_date": 0
         }
     ],
     "location": [
@@ -157,5 +200,8 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1698449084
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1791328277
 }

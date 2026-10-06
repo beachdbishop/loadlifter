@@ -14,7 +14,7 @@ if ( ! defined( 'LL_VERSION' ) ) {
 		*
 		* This is used primarily for cache busting. If you use `npm run bundle` to create your production build, the value below will be replaced in the generated zip file with a timestamp, converted to base 36.
 		*/
-	define( 'LL_VERSION', '3.8.1' );
+	define( 'LL_VERSION', '3.8.2' );
 }
 
 if ( ! defined( 'LL_COMPANY_LEGAL_NAME' ) ) {
@@ -112,13 +112,6 @@ if ( ! defined( 'LL_NAV_PRIMARY' ) ) {
 				"hasChildren" => false,
 			],
 		]
-	);
-}
-
-if ( ! defined( 'LL_DISCLAIMER_CYBER' ) ) {
-	define(
-		'LL_DISCLAIMER_CYBER',
-		sprintf( 'Disclaimer: %1$s and Silent Sector, LLC are separate independent legal entities and are not joint ventures, partners or members of a formal business organization. Neither %1$s nor Silent Sector, LLC has the authority to bind, act for or incur liability on behalf of the other.', LL_COMPANY_LEGAL_NAME )
 	);
 }
 
