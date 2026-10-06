@@ -211,7 +211,8 @@ input[type="submit"]:active {
 		color: light-dark(var(--color-red-700), var(--color-red-300));
 	}
 
-	.invalid {
+	.invalid,
+	:user-invalid {
 		border-width: 2px;
 		border-color: light-dark(var(--color-red-700), var(--color-red-300)) !important;
 	}
