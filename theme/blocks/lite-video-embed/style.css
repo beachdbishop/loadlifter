@@ -1,0 +1,60 @@
+.wp-block-loadlifter-lite-video-embed {
+  /* position: relative; */
+
+  &[open] {
+    .video-summary {
+      visibility: hidden;
+    }
+  }
+
+	& > .video-summary {
+    list-style: none;
+  }
+
+}
+
+/* .video-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  place-items: center;
+} */
+
+.video-playicon {
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+  /* height: clamp(4rem, 5vw, 8rem); */
+  /* width: clamp(4rem, 5vw, 8rem); */
+  /* z-index: 1; */
+  /* filter: drop-shadow(6px 6px 15px rgba(0, 0, 0, 1)); */
+  /* fill: white; */
+}
+
+/* .video-thumbnail {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  aspect-ration: 16 / 9;
+} */
+
+
+/* .video-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  aspect-ratio: 16 / 9;
+
+  & > iframe {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 16 / 9;
+  }
+} */

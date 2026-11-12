@@ -1,0 +1,91 @@
+{
+	"$schema": "https://advancedcustomfields.com/schemas/json/main/block.json",
+	"name": "loadlifter/lite-video-embed",
+	"title": "Lite Video Embed",
+	"description": "A performance-optimized video embed with zero javascript",
+	"apiVersion": 3,
+	"category": "media",
+	"icon": "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><!--!Font Awesome Free v7.3.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.--><path d='M0 256a256 256 0 1 1 512 0 256 256 0 1 1 -512 0zM188.3 147.1c-7.6 4.2-12.3 12.3-12.3 20.9l0 176c0 8.7 4.7 16.7 12.3 20.9s16.8 4.1 24.3-.5l144-88c7.1-4.4 11.5-12.1 11.5-20.5s-4.4-16.1-11.5-20.5l-144-88c-7.4-4.5-16.7-4.7-24.3-.5z'/></svg>",
+	"keywords": ["video", "embed"],
+	"script": "block-lite-video-embed",
+	"style": "block-lite-video-embed",
+	"supports": {
+		"align": false,
+		"anchor": true,
+		"alignContent": false,
+		"alignText": false,
+		"customCSS": false,
+		"fullHeight": false,
+		"multiple": true
+	},
+	"acf": {
+		"mode": "auto",
+		"blockVersion": 3,
+		"renderTemplate": "render.php",
+		"fields": [
+			{
+				"label": "Video",
+				"name": "ll_lve_video",
+				"aria-label": "",
+				"type": "url",
+				"instructions": "Provide URL of video file.",
+				"required": 1,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"default_value": "",
+				"placeholder": ""
+			},
+			{
+				"label": "Video Height",
+				"name": "ll_lve_videoheight",
+				"type": "number",
+				"required": 1,
+				"conditional_logic": 0
+			},
+			{
+				"label": "Video Width",
+				"name": "ll_lve_videowidth",
+				"type": "number",
+				"required": 1,
+				"conditional_logic": 0
+			},
+			{
+				"label": "Video Title",
+				"name": "ll_lve_videotitle",
+				"type": "text",
+				"required": 1,
+				"conditional_logic": 0,
+				"maxlength": 255
+			},
+			{
+				"label": "Thumbnail Image",
+				"name": "ll_lve_image",
+				"aria-label": "",
+				"type": "image",
+				"instructions": "Upload a thumbnail image. This should be the same dimensions as the video file.",
+				"required": 0,
+				"conditional_logic": 0,
+				"wrapper": {
+					"width": "",
+					"class": "",
+					"id": ""
+				},
+				"return_format": "array",
+				"library": "all",
+				"min_width": "",
+				"min_height": "",
+				"min_size": "",
+				"max_width": "",
+				"max_height": "",
+				"max_size": "",
+				"mime_types": "",
+				"allow_in_bindings": 0,
+				"preview_size": "large"
+			}
+		]
+	}
+}
