@@ -97,7 +97,7 @@ h5 {
 	line-height: 1.1;
 }
 
-@supports (text-wrap: balance) {
+/* @supports (text-wrap: balance) {
 	h1,
 	h2,
 	h3,
@@ -105,7 +105,7 @@ h5 {
 	h5 {
 		text-wrap: balance;
 	}
-}
+} */
 
 h1 {
 	font-size: clamp(2.25rem, 1.909rem + 1.7vw, 3rem);
