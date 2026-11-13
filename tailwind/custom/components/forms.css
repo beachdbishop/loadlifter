@@ -226,7 +226,7 @@ input[type="submit"]:active {
 #service_category10-c8675641-3e68-4ff7-9dc3-ae3636fbf1c8 + span,
 #service_category9-ec2d5c9d-3b25-425a-b171-c4dbcee2563e + span,
 #service_category9-0b8c65d8-af2a-43e6-b68f-d496c8280633 + span {
-	/* ffs, the long choice - "401(k), Pension, & Profit Sharing Plan Administration" */
+	/* the long choice - "401(k), Pension, & Profit Sharing Plan Administration" */
 	letter-spacing: -0.4px;
 }
 

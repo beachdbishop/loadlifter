@@ -19,25 +19,49 @@ dd {
 	padding-bottom: var(--wp--preset--spacing--20, 0.5rem);
 }
 
-dd::marker { color: var(--wp--preset--color--brand-red-pale); }
+dd::marker {
+	color: var(--wp--preset--color--brand-red-pale);
+}
 
 
-ol:where(.is-style-default, :not([class]), .wp-block-list) { list-style: decimal; }
-ol:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: var(--color-neutral-500); }
+ol:where(.is-style-default, :not([class]),
+.wp-block-list) {
+	list-style: decimal;
+}
+ol:where(.is-style-default, :not([class]),
+.wp-block-list) li::marker {
+	color: var(--color-neutral-500);
+}
 
-ol:where(.is-style-default, :not([class]), .wp-block-list),
-ul:where(.is-style-default, :not([class]), .wp-block-list) { padding-inline-start: 1.5rem; }
+ol:where(.is-style-default, :not([class]),
+.wp-block-list),
+ul:where(.is-style-default, :not([class]),
+.wp-block-list) {
+	padding-inline-start: 1.5rem;
+}
 
-ul:where(.is-style-default, :not([class]), .wp-block-list) { list-style: disc; }
-ul:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: var(--color-neutral-300); }
+ul:where(.is-style-default, :not([class]),
+.wp-block-list) {
+	list-style: disc;
+}
+ul:where(.is-style-default, :not([class]),
+.wp-block-list) li::marker {
+	color: var(--color-neutral-300);
+}
 
 
 .prose:not(.grid) li:not(:last-child),
-.prose *:not(.grid) > li:not(:last-child) { margin-bottom: var(--wp--preset--spacing--20, 0.5rem); }
+.prose *:not(.grid) > li:not(:last-child) {
+	margin-bottom: var(--wp--preset--spacing--20, 0.5rem);
+}
 
-.list-square { list-style-type: square; }
+.list-square {
+	list-style-type: square;
+}
 
-.list-checked li::before { content: "\f058"; }
+.list-checked li::before {
+	content: "\f058";
+}
 
 .is-style-list-none,
 .prose .is-style-list-none {
@@ -45,10 +69,14 @@ ul:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: v
 	padding-left: 0;
 }
 .is-style-list-none li,
-.prose .is-style-list-none li { padding-left: 0; }
+.prose .is-style-list-none li {
+	padding-left: 0;
+}
 
 .is-style-list-square,
-.prose .is-style-list-square { list-style-type: square; }
+.prose .is-style-list-square {
+	list-style-type: square;
+}
 
 .is-style-list-columns-2 {
 	columns: 1;
@@ -71,9 +99,13 @@ ul:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: v
 	}
 }
 .is-style-list-columns-2 li,
-.is-style-list-multicolumn li { break-inside: avoid-column; }
+.is-style-list-multicolumn li {
+	break-inside: avoid-column;
+}
 .is-style-list-columns-2 li:first-of-type,
-.is-style-list-multicolumn li:first-of-type { margin-top: 0; }
+.is-style-list-multicolumn li:first-of-type {
+	margin-top: 0;
+}
 
 
 
@@ -280,5 +312,9 @@ ul:where(.is-style-default, :not([class]), .wp-block-list) li::marker { color: v
 	margin-bottom: 1rem;
 }
 
-.inline-comma-sep span:not(:last-of-type)::after { content: ", "; }
-.inline-pipe-sep span:not(:last-of-type)::after {	content: " | ";	}
+.inline-comma-sep span:not(:last-of-type)::after {
+	content: ", ";
+}
+.inline-pipe-sep span:not(:last-of-type)::after {
+	content: " | ";
+}
